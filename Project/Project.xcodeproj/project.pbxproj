@@ -53,6 +53,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A9A0035EDBE6E5C6A3B4ACA /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0786295BBBD6D902F198 /* VKMessage */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		1A9A00511346086DBF6DF06A /* VKAudio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKAudio;
+			sourceTree = "<group>";
+		};
+		1A9A00A7627BB8D5966ACB3E /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0A3EE1C0A8E69749FC3E /* VKGroup */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		1A9A00D4F9FC799759B497EF /* RestKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RestKit;
+			sourceTree = "<group>";
+		};
 		1A9A00E3C0F27458E987CD98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,12 +97,147 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1A9A0156FA64611C577B4034 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1A9A0175F4369CC5C9F2FEC0 /* VKStorage */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A06F204D201BE77800354 /* VKStorageItem */,
+			);
+			path = VKStorage;
+			sourceTree = "<group>";
+		};
 		1A9A021843E1B91E8D61CA0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				1A9A0872BA5F01364902C76C /* Project.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1A9A02286AC48A547B76B638 /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0D9B85A15A6B5B7B5198 /* VKLike */,
+			);
+			path = Likes;
+			sourceTree = "<group>";
+		};
+		1A9A02B44BD3623BC556140A /* VKWallPost */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKWallPost;
+			sourceTree = "<group>";
+		};
+		1A9A03CE4232632B3824EEC1 /* AudioAlbums */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A00511346086DBF6DF06A /* VKAudio */,
+				1A9A07AA972D735A4BDEC007 /* VKAudioAlbum */,
+			);
+			path = AudioAlbums;
+			sourceTree = "<group>";
+		};
+		1A9A03F37447CDE95F6109F2 /* VKConnector */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0175F4369CC5C9F2FEC0 /* VKStorage */,
+			);
+			path = VKConnector;
+			sourceTree = "<group>";
+		};
+		1A9A040E3BCC9082079CFFE6 /* KGModal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KGModal;
+			sourceTree = "<group>";
+		};
+		1A9A043E86EEE1ADFCC0B9E7 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0499EFAD1A11B12E2037 /* VKNote */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		1A9A0499EFAD1A11B12E2037 /* VKNote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKNote;
+			sourceTree = "<group>";
+		};
+		1A9A04CDB5C8815936C26FE7 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0D058A57C0FD522DBC77 /* VKDocument */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		1A9A04F43A4B83D3DBAEDFCC /* VideoAlbums */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A08A24777FF3407629B30 /* VKVideoAlbum */,
+				1A9A0BBD31D3AF2D866ADB42 /* VKVideo */,
+			);
+			path = VideoAlbums;
+			sourceTree = "<group>";
+		};
+		1A9A06ECC1B971F262B4F132 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A040E3BCC9082079CFFE6 /* KGModal */,
+				1A9A0156FA64611C577B4034 /* Helpers */,
+				1A9A0DAC31807326A6808A54 /* AFNetworking */,
+				1A9A00D4F9FC799759B497EF /* RestKit */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		1A9A06F204D201BE77800354 /* VKStorageItem */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0A8B52B49B3FBC4FF8B1 /* VKCookies */,
+				1A9A0BDDB11EFF1703284602 /* VKCachedData */,
+				1A9A07F66114ADD311B55612 /* VKAccessToken */,
+			);
+			path = VKStorageItem;
+			sourceTree = "<group>";
+		};
+		1A9A0786295BBBD6D902F198 /* VKMessage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKMessage;
+			sourceTree = "<group>";
+		};
+		1A9A07AA972D735A4BDEC007 /* VKAudioAlbum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKAudioAlbum;
+			sourceTree = "<group>";
+		};
+		1A9A07F66114ADD311B55612 /* VKAccessToken */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKAccessToken;
+			sourceTree = "<group>";
+		};
+		1A9A08A24777FF3407629B30 /* VKVideoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKVideoAlbum;
 			sourceTree = "<group>";
 		};
 		1A9A08D92DB1EF47C34EDC87 /* Frameworks */ = {
@@ -85,13 +250,103 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1A9A091762DC66D7CD717A3B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0946E0EF78FC99BE20AB /* VKUser */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1A9A092C45F49B01DFA814D7 /* VKRequest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKRequest;
+			sourceTree = "<group>";
+		};
+		1A9A0946E0EF78FC99BE20AB /* VKUser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKUser;
+			sourceTree = "<group>";
+		};
+		1A9A097E95D2A9FAFD9A223C /* VKPhotoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKPhotoAlbum;
+			sourceTree = "<group>";
+		};
+		1A9A09ABA9DF19D7242EF6A1 /* PhotoAlbums */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0FA7269CC3F669F3B7EE /* VKPhoto */,
+				1A9A097E95D2A9FAFD9A223C /* VKPhotoAlbum */,
+			);
+			path = PhotoAlbums;
+			sourceTree = "<group>";
+		};
+		1A9A0A3EE1C0A8E69749FC3E /* VKGroup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKGroup;
+			sourceTree = "<group>";
+		};
 		1A9A0A45A52FEE8C137A374B = {
 			isa = PBXGroup;
 			children = (
 				1A9A021843E1B91E8D61CA0A /* Products */,
 				1A9A08D92DB1EF47C34EDC87 /* Frameworks */,
 				1A9A0BFAB67423F6630F5BDB /* Project */,
+				1A9A0DC861175D34C9C2D8E9 /* Vkontakte-iOS-SDK-v2.0 */,
 			);
+			sourceTree = "<group>";
+		};
+		1A9A0A48899AD2810F08AB97 /* NewsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0D4E9A0339F111B33A24 /* VKNewsfeedItem */,
+			);
+			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		1A9A0A8B52B49B3FBC4FF8B1 /* VKCookies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKCookies;
+			sourceTree = "<group>";
+		};
+		1A9A0AE64CA1B0C67A9879A5 /* VKStatus */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKStatus;
+			sourceTree = "<group>";
+		};
+		1A9A0B4AA20564CBB330933C /* Wall */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A02B44BD3623BC556140A /* VKWallPost */,
+			);
+			path = Wall;
+			sourceTree = "<group>";
+		};
+		1A9A0BBD31D3AF2D866ADB42 /* VKVideo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKVideo;
+			sourceTree = "<group>";
+		};
+		1A9A0BDDB11EFF1703284602 /* VKCachedData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKCachedData;
 			sourceTree = "<group>";
 		};
 		1A9A0BFAB67423F6630F5BDB /* Project */ = {
@@ -105,6 +360,87 @@
 				1A9A00094B3E2A8AD54E023E /* ASAViewController.xib */,
 			);
 			path = Project;
+			sourceTree = "<group>";
+		};
+		1A9A0CE74D065D484901E57F /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0E6531B0EB1F746FDF92 /* VKPlace */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		1A9A0D058A57C0FD522DBC77 /* VKDocument */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKDocument;
+			sourceTree = "<group>";
+		};
+		1A9A0D4E9A0339F111B33A24 /* VKNewsfeedItem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKNewsfeedItem;
+			sourceTree = "<group>";
+		};
+		1A9A0D9B85A15A6B5B7B5198 /* VKLike */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKLike;
+			sourceTree = "<group>";
+		};
+		1A9A0DAC31807326A6808A54 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		1A9A0DC861175D34C9C2D8E9 /* Vkontakte-iOS-SDK-v2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A06ECC1B971F262B4F132 /* Libraries */,
+				1A9A03F37447CDE95F6109F2 /* VKConnector */,
+				1A9A092C45F49B01DFA814D7 /* VKRequest */,
+				1A9A091762DC66D7CD717A3B /* User */,
+				1A9A0B4AA20564CBB330933C /* Wall */,
+				1A9A09ABA9DF19D7242EF6A1 /* PhotoAlbums */,
+				1A9A0CE74D065D484901E57F /* Places */,
+				1A9A0E327AB769C40667BAC2 /* Status */,
+				1A9A04F43A4B83D3DBAEDFCC /* VideoAlbums */,
+				1A9A02286AC48A547B76B638 /* Likes */,
+				1A9A0035EDBE6E5C6A3B4ACA /* Messages */,
+				1A9A0A48899AD2810F08AB97 /* NewsFeed */,
+				1A9A043E86EEE1ADFCC0B9E7 /* Notes */,
+				1A9A00A7627BB8D5966ACB3E /* Groups */,
+				1A9A03CE4232632B3824EEC1 /* AudioAlbums */,
+				1A9A04CDB5C8815936C26FE7 /* Documents */,
+			);
+			path = "Vkontakte-iOS-SDK-v2.0";
+			sourceTree = "<group>";
+		};
+		1A9A0E327AB769C40667BAC2 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A0AE64CA1B0C67A9879A5 /* VKStatus */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		1A9A0E6531B0EB1F746FDF92 /* VKPlace */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKPlace;
+			sourceTree = "<group>";
+		};
+		1A9A0FA7269CC3F669F3B7EE /* VKPhoto */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKPhoto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
