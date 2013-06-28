@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>Vkontakte-iOS-SDK-v2.0</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						<NodeRef refid="14"/>
+						<NodeRef refid="15"/>
+						<NodeRef refid="16"/>
+						<NodeRef refid="17"/>
+						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
+						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
+						<NodeRef refid="22"/>
+						<NodeRef refid="23"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node type="folder">
+					<Name>Categories</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
+						<NodeRef refid="26"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node type="folder">
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="27"/>
+						
+					</Subnodes>
+				</Node>
+				
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		
+		<Node id="1">
+			<Name>KGModal</Name>
+			<Path>Classes/KGModal.html</Path>
+		</Node>
+		<Node id="2">
+			<Name>VKAccessToken</Name>
+			<Path>Classes/VKAccessToken.html</Path>
+		</Node>
+		<Node id="3">
+			<Name>VKAudio</Name>
+			<Path>Classes/VKAudio.html</Path>
+		</Node>
+		<Node id="4">
+			<Name>VKAudioAlbum</Name>
+			<Path>Classes/VKAudioAlbum.html</Path>
+		</Node>
+		<Node id="5">
+			<Name>VKCachedData</Name>
+			<Path>Classes/VKCachedData.html</Path>
+		</Node>
+		<Node id="6">
+			<Name>VKConnector</Name>
+			<Path>Classes/VKConnector.html</Path>
+		</Node>
+		<Node id="7">
+			<Name>VKDocument</Name>
+			<Path>Classes/VKDocument.html</Path>
+		</Node>
+		<Node id="8">
+			<Name>VKGroup</Name>
+			<Path>Classes/VKGroup.html</Path>
+		</Node>
+		<Node id="9">
+			<Name>VKLike</Name>
+			<Path>Classes/VKLike.html</Path>
+		</Node>
+		<Node id="10">
+			<Name>VKMessage</Name>
+			<Path>Classes/VKMessage.html</Path>
+		</Node>
+		<Node id="11">
+			<Name>VKNewsfeedItem</Name>
+			<Path>Classes/VKNewsfeedItem.html</Path>
+		</Node>
+		<Node id="12">
+			<Name>VKNote</Name>
+			<Path>Classes/VKNote.html</Path>
+		</Node>
+		<Node id="13">
+			<Name>VKPhoto</Name>
+			<Path>Classes/VKPhoto.html</Path>
+		</Node>
+		<Node id="14">
+			<Name>VKPhotoAlbum</Name>
+			<Path>Classes/VKPhotoAlbum.html</Path>
+		</Node>
+		<Node id="15">
+			<Name>VKPlace</Name>
+			<Path>Classes/VKPlace.html</Path>
+		</Node>
+		<Node id="16">
+			<Name>VKRequest</Name>
+			<Path>Classes/VKRequest.html</Path>
+		</Node>
+		<Node id="17">
+			<Name>VKStatus</Name>
+			<Path>Classes/VKStatus.html</Path>
+		</Node>
+		<Node id="18">
+			<Name>VKStorage</Name>
+			<Path>Classes/VKStorage.html</Path>
+		</Node>
+		<Node id="19">
+			<Name>VKStorageItem</Name>
+			<Path>Classes/VKStorageItem.html</Path>
+		</Node>
+		<Node id="20">
+			<Name>VKUser</Name>
+			<Path>Classes/VKUser.html</Path>
+		</Node>
+		<Node id="21">
+			<Name>VKVideo</Name>
+			<Path>Classes/VKVideo.html</Path>
+		</Node>
+		<Node id="22">
+			<Name>VKVideoAlbum</Name>
+			<Path>Classes/VKVideoAlbum.html</Path>
+		</Node>
+		<Node id="23">
+			<Name>VKWallPost</Name>
+			<Path>Classes/VKWallPost.html</Path>
+		</Node>
+		
+		<Node id="24">
+			<Name>NSData(toBase64)</Name>
+			<Path>Categories/NSData+toBase64.html</Path>
+		</Node>
+		<Node id="25">
+			<Name>NSString(encodeURL)</Name>
+			<Path>Categories/NSString+encodeURL.html</Path>
+		</Node>
+		<Node id="26">
+			<Name>NSString(toBase64)</Name>
+			<Path>Categories/NSString+toBase64.html</Path>
+		</Node>
+		
+		<Node id="27">
+			<Name>VKConnectorProtocol</Name>
+			<Path>Protocols/VKConnectorProtocol.html</Path>
+		</Node>
+		
+	</Library>
+</DocSetNodes>

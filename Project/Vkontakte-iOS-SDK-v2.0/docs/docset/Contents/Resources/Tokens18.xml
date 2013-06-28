@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VKStorage.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VKStorage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setIsEmpty:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
+			
+			
+			<Anchor>//api/name/isEmpty</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/isEmpty</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
+			
+			
+			<Anchor>//api/name/isEmpty</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/isEmpty</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
+			
+			
+			<Anchor>//api/name/isEmpty</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setCount:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
+			
+			
+			<Anchor>//api/name/count</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/count</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
+			
+			
+			<Anchor>//api/name/count</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/count</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
+			
+			
+			<Anchor>//api/name/count</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKStorage/sharedStorage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)sharedStorage</Declaration>
+			
+			
+			<Anchor>//api/name/sharedStorage</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/addItem:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>- (void)addItem:(VKStorageItem *)item</Declaration>
+			
+			
+			<Anchor>//api/name/addItem:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/removeItem:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeItem:(VKStorageItem *)item</Declaration>
+			
+			
+			<Anchor>//api/name/removeItem:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/clean</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>- (void)clean</Declaration>
+			
+			
+			<Anchor>//api/name/clean</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/cleanCachedData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>- (void)cleanCachedData</Declaration>
+			
+			
+			<Anchor>//api/name/cleanCachedData</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storageItemForUserID:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>- (VKStorageItem *)storageItemForUserID:(NSUInteger)userID</Declaration>
+			
+			
+			<Anchor>//api/name/storageItemForUserID:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+	</File>
+</Tokens>

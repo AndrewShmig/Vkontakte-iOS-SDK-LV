@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VKStorageItem.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VKStorageItem</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/setAccessToken:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
+			
+			
+			<Anchor>//api/name/accessToken</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/accessToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
+			
+			
+			<Anchor>//api/name/accessToken</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKStorageItem/accessToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
+			
+			
+			<Anchor>//api/name/accessToken</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/setCachedData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
+			
+			
+			<Anchor>//api/name/cachedData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/cachedData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
+			
+			
+			<Anchor>//api/name/cachedData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKStorageItem/cachedData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
+			
+			
+			<Anchor>//api/name/cachedData</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/initWithAccessToken:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithAccessToken:(VKAccessToken *)token</Declaration>
+			
+			
+			<Anchor>//api/name/initWithAccessToken:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/description</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)description</Declaration>
+			
+			
+			<Anchor>//api/name/description</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+	</File>
+</Tokens>
