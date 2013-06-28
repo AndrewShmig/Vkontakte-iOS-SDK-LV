@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 //
 #import "VKStorage.h"
+#import "VKStorageItem.h"
 
 
 @implementation VKStorage

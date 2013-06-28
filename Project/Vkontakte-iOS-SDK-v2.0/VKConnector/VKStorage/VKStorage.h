@@ -27,5 +27,21 @@
 #import <Foundation/Foundation.h>
 
 
+@class VKStorageItem;
+
+
 @interface VKStorage : NSObject
+
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) NSUInteger count;
+
++ (instancetype)sharedStorage;
+
+- (void)addItem:(VKStorageItem *)item;
+- (void)removeItem:(VKStorageItem *)item;
+- (void)clean;
+- (void)cleanCachedData;
+
+- (VKStorageItem *)storageItemForUserID:(NSUInteger)userID;
+
 @end

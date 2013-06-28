@@ -27,5 +27,19 @@
 #import <Foundation/Foundation.h>
 
 
+@class VKAccessToken;
+@class VKCachedData;
+
+
 @interface VKStorageItem : NSObject
+
+
+@property (nonatomic, strong, readonly) VKAccessToken *accessToken;
+@property (nonatomic, strong, readonly) VKCachedData *cachedData;
+
+
+- (instancetype)initWithAccessToken:(VKAccessToken *)token;
+
+- (NSString *)description;
+
 @end

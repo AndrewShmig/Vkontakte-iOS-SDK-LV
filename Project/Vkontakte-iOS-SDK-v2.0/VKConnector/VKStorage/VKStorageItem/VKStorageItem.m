@@ -25,10 +25,27 @@
 // THE SOFTWARE.
 //
 #import "VKStorageItem.h"
+#import "VKAccessToken.h"
 
 
 @implementation VKStorageItem
 {
 
 }
+
+#pragma mark Visible VKStorageItem methods
+#pragma mark - Init methods
+
+- (instancetype)initWithAccessToken:(VKAccessToken *)token
+{
+    return nil;
+}
+
+#pragma mark - Overriden methods
+
+- (NSString *)description
+{
+    return nil;
+}
+
 @end
