@@ -12,6 +12,8 @@
 		1A9A00E47DA7E7DD93C69BE7 /* VKDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A09397FA327F6E2A34F42 /* VKDocument.m */; };
 		1A9A011E8C185DA69EC94598 /* VKConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07D8CDD07F73FC5F8543 /* VKConnector.m */; };
 		1A9A0162E5128362355B2120 /* TestVKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0C8FF91D8F22139BB4D7 /* TestVKAccessToken.m */; };
+		1A9A017C66A945A072C9BD11 /* NSString+encodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0D81099D4EA4D9E7F018 /* NSString+encodeURL.m */; };
+		1A9A0195EDAB653A84BAD551 /* NSData+toBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0408BCE7970F71316B48 /* NSData+toBase64.m */; };
 		1A9A0217FF8F8483DEA02042 /* VKPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A008D0E804966B33F1B28 /* VKPlace.m */; };
 		1A9A0237B2142F2F229F6D9E /* VKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0683B80D4C250B79C07B /* VKAccessToken.m */; };
 		1A9A02598E50190CB66C637D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A0C59427298DCF6A6DD29 /* Default@2x.png */; };
@@ -29,9 +31,11 @@
 		1A9A097D690011CE4A2E4E3B /* ASAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A00094B3E2A8AD54E023E /* ASAViewController.xib */; };
 		1A9A098F7ED3D1C374BCCE71 /* VKWallPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A016DD3A56C4C935809AC /* VKWallPost.m */; };
 		1A9A09A00CEB8B8E324E1FC2 /* NSString+toBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A09184C65874073214DF2 /* NSString+toBase64.m */; };
+		1A9A09A9E0216B78AFEB22F0 /* VKCachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0C6DB228D9C29270079D /* VKCachedData.m */; };
 		1A9A09B3B79A22F26C2ACB6D /* ASAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A086C5F5EEDC2CBB27DE4 /* ASAAppDelegate.m */; };
 		1A9A09DCD9995C6CB09D2DE1 /* VKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0683B80D4C250B79C07B /* VKAccessToken.m */; };
 		1A9A0A1226FC19EC3716BBDD /* VKVideoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0CC0048DA667C592B9AB /* VKVideoAlbum.m */; };
+		1A9A0A4D2216BBB5CD07A829 /* TestVKCachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0D67B051B072C5311A86 /* TestVKCachedData.m */; };
 		1A9A0A58C5B95B453344A27E /* VKVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A011E3FB28FEBF2BF35D9 /* VKVideo.m */; };
 		1A9A0B5774848F2DD67471E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0D576F77FB86579EDC64 /* UIKit.framework */; };
 		1A9A0B8A3660DF5489ADF51D /* VKMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A08A0AA9A5C26A2A65434 /* VKMessage.m */; };
@@ -39,6 +43,7 @@
 		1A9A0BCA16D4DA5C0D2EC755 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A096027F402AF6A3D38C1 /* Foundation.framework */; };
 		1A9A0C2507364BB49637312B /* VKGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A05F5C5F0A65A56C80385 /* VKGroup.m */; };
 		1A9A0CC02BA92BB8EDE354C5 /* VKLike.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A03E6689ED0CFAB5C43CA /* VKLike.m */; };
+		1A9A0CC746ED5FDCCDB20B8D /* NSString+toBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A09184C65874073214DF2 /* NSString+toBase64.m */; };
 		1A9A0CE95A82F6C5FEF42DD6 /* VKStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A032CE66CAC3973615B40 /* VKStatus.m */; };
 		1A9A0D09ABE416CCBA75B1CA /* VKPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0F45009A4316EA3F08C2 /* VKPhotoAlbum.m */; };
 		1A9A0D5EAE2CE21BC15FFBF7 /* ASAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A01D617DF81896B8D4019 /* ASAViewController.m */; };
@@ -70,6 +75,7 @@
 		1A9A0107B331311771DB0B55 /* VKStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKStorage.m; sourceTree = "<group>"; };
 		1A9A011315B569A4E30AB76C /* VKCachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCachedData.h; sourceTree = "<group>"; };
 		1A9A011E3FB28FEBF2BF35D9 /* VKVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideo.m; sourceTree = "<group>"; };
+		1A9A013558F70E6C9F110E6B /* TestVKCachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVKCachedData.h; sourceTree = "<group>"; };
 		1A9A0142F4C7E071E08AC98D /* VKAudioAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAudioAlbum.h; sourceTree = "<group>"; };
 		1A9A0159AC2A5E7764F5D832 /* VKPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKPhoto.m; sourceTree = "<group>"; };
 		1A9A016DD3A56C4C935809AC /* VKWallPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKWallPost.m; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 		1A9A0CC0048DA667C592B9AB /* VKVideoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoAlbum.m; sourceTree = "<group>"; };
 		1A9A0D43140E1B9B96168EBF /* VKVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideo.h; sourceTree = "<group>"; };
 		1A9A0D576F77FB86579EDC64 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1A9A0D67B051B072C5311A86 /* TestVKCachedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVKCachedData.m; sourceTree = "<group>"; };
 		1A9A0D81099D4EA4D9E7F018 /* NSString+encodeURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+encodeURL.m"; sourceTree = "<group>"; };
 		1A9A0F23359FE2D37D04E5B0 /* VKNewsfeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKNewsfeedItem.m; sourceTree = "<group>"; };
 		1A9A0F45009A4316EA3F08C2 /* VKPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKPhotoAlbum.m; sourceTree = "<group>"; };
@@ -580,6 +587,8 @@
 				D5F19C65177EDF8E005C49F7 /* Supporting Files */,
 				1A9A0B4DDC7145E148738544 /* TestVKAccessToken.h */,
 				1A9A0C8FF91D8F22139BB4D7 /* TestVKAccessToken.m */,
+				1A9A013558F70E6C9F110E6B /* TestVKCachedData.h */,
+				1A9A0D67B051B072C5311A86 /* TestVKCachedData.m */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -792,6 +801,11 @@
 			files = (
 				1A9A0162E5128362355B2120 /* TestVKAccessToken.m in Sources */,
 				1A9A09DCD9995C6CB09D2DE1 /* VKAccessToken.m in Sources */,
+				1A9A0A4D2216BBB5CD07A829 /* TestVKCachedData.m in Sources */,
+				1A9A09A9E0216B78AFEB22F0 /* VKCachedData.m in Sources */,
+				1A9A0195EDAB653A84BAD551 /* NSData+toBase64.m in Sources */,
+				1A9A017C66A945A072C9BD11 /* NSString+encodeURL.m in Sources */,
+				1A9A0CC746ED5FDCCDB20B8D /* NSString+toBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

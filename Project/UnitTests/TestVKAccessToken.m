@@ -110,4 +110,117 @@
     STAssertTrue([token isValid], @"Not expired token.");
 }
 
+- (void)testCopy1
+{
+    VKAccessToken *token1 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"1"
+                                            expirationTime:1
+                                               permissions:@[@"wall",
+                                                             @"friends"]];
+    VKAccessToken *token1Copy = [token1 copy];
+
+    STAssertTrue([token1 isEqual:token1Copy], @"Tokens should be equal.");
+}
+
+- (void)testCopy2
+{
+    VKAccessToken *token1 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"1"];
+    VKAccessToken *token1Copy = [token1 copy];
+
+    STAssertTrue([token1 isEqual:token1Copy], @"Tokens should be equal.");
+}
+
+- (void)testIsEqual1
+{
+    VKAccessToken *token1 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"2"];
+    VKAccessToken *token2 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"2"];
+
+    STAssertTrue([token1 isEqual:token2], @"Tokens should be equal.");
+}
+
+- (void)testIsEqual2
+{
+    VKAccessToken *token1 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"2"];
+    VKAccessToken *token2 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"3"];
+
+    STAssertFalse([token1 isEqual:token2], @"Tokens are not equal.");
+}
+
+- (void)testIsEqual3
+{
+    VKAccessToken *token1 = [[VKAccessToken alloc]
+                                            initWithUserID:2
+                                               accessToken:@"4"];
+    VKAccessToken *token2 = [[VKAccessToken alloc]
+                                            initWithUserID:3
+                                               accessToken:@"4"];
+
+    STAssertFalse([token1 isEqual:token2], @"Tokens are not equal.");
+}
+
+- (void)testIsEqual4
+{
+    VKAccessToken *token1 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"1"
+                                            expirationTime:0
+                                               permissions:@[@"offline",
+                                                             @"friends"]];
+    VKAccessToken *token2 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"1"
+                                            expirationTime:0
+                                               permissions:@[@"offline",
+                                                             @"friends"]];
+
+    STAssertTrue([token1 isEqual:token2], @"Token are equal.");
+}
+
+- (void)testIsEqual5
+{
+    VKAccessToken *token1 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"1"
+                                            expirationTime:0
+                                               permissions:@[@"friends",
+                                                             @"offline"]];
+    VKAccessToken *token2 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"1"
+                                            expirationTime:0
+                                               permissions:@[@"offline",
+                                                             @"friends"]];
+
+    STAssertTrue([token1 isEqual:token2], @"Tokens are equal.");
+}
+
+- (void)testIsEqual6
+{
+    VKAccessToken *token1 = [[VKAccessToken alloc]
+                                            initWithUserID:2
+                                               accessToken:@"1"
+                                            expirationTime:0
+                                               permissions:@[@"friends",
+                                                             @"offline"]];
+    VKAccessToken *token2 = [[VKAccessToken alloc]
+                                            initWithUserID:1
+                                               accessToken:@"1"
+                                            expirationTime:0
+                                               permissions:@[@"offline",
+                                                             @"friends"]];
+
+    STAssertFalse([token1 isEqual:token2], @"Tokens are not equal.");
+}
+
 @end

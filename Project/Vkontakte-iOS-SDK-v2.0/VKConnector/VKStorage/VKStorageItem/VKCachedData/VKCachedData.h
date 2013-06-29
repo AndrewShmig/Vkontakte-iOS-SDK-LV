@@ -27,5 +27,37 @@
 #import <Foundation/Foundation.h>
 
 
+typedef enum
+{
+
+    VKCachedDataLiveTimeNever = 0,
+    VKCachedDataLiveTimeOneMinute = 60,
+    VKCachedDataLiveTimeThreeMinutes = 3 * 60,
+    VKCachedDataLiveTimeFiveMinutes = 5 * 60,
+    VKCachedDataLiveTimeOneHour = 1 * 60 * 60,
+    VKCachedDataLiveTimeFiveHours = 5 * 60 * 60,
+    VKCachedDataLiveTimeOneDay = 24 * 60 * 60,
+    VKCachedDataLiveTimeOneWeek = 7 * 24 * 60 * 60,
+    VKCachedDataLiveTimeOneMonth = 30 * 7 * 24 * 60 * 60,
+    VKCacheddataLiveTimeOneYear = 365 * 30 * 7 * 24 * 60 * 60,
+    VKCachedDataLiveTimeForever = -1,
+
+} VKCachedDataLiveTime;
+
+
 @interface VKCachedData : NSObject
+
+- (instancetype)initWithCacheDirectory:(NSString *)path;
+
+- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url;
+- (void)addCachedData:(NSData *)cache
+               forURL:(NSURL *)url
+             liveTime:(VKCachedDataLiveTime)cacheLiveTime;
+- (void)removeCachedDataForURL:(NSURL *)url;
+- (void)clearCachedData;
+
+- (BOOL)containsCachedDataForURL:(NSURL *)url;
+
+- (NSData *)cachedDataForURL:(NSURL *)url;
+
 @end

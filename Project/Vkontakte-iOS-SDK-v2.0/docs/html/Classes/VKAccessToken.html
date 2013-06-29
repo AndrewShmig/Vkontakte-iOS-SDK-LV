@@ -70,6 +70,8 @@
 	
 	<option value="//api/name/initWithUserID:accessToken:expirationTime:permissions:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithUserID:accessToken:expirationTime:permissions:</option>
 	
+	<option value="//api/name/isEqual:">&nbsp;&nbsp;&nbsp;&nbsp;- isEqual:</option>
+	
 	
 	
 </select>
@@ -133,6 +135,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithUserID:accessToken:expirationTime:">initWithUserID:accessToken:expirationTime:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithUserID:accessToken:expirationTime:permissions:">initWithUserID:accessToken:expirationTime:permissions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isEqual:">isEqual:</a></span></li>
 	
 </ul></li>
 
@@ -291,6 +295,13 @@ NO - если токен всё еще действует, иначе - YES.</p>
 	<span class="tooltip">
 		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
 		<span class="tooltip"><p>Описание состояния класса VKAccessToken.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isEqual:">&ndash;&nbsp;isEqual:</a></code>
+		<span class="tooltip"><p>Проверяет токены доступов на равенство</p></span>
 	</span>
 	
 	
@@ -886,6 +897,59 @@ NO - если токен всё еще действует, иначе - YES.</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>Объект VKAccessToken класса.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKAccessToken.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isEqual:" title="isEqual:"></a>
+	<h3 class="subsubtitle method-title">isEqual:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Проверяет токены доступов на равенство</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isEqual:(VKAccessToken *)<em>token</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>токен доступа с которым необходимо сравнить</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES - если токены доступа равны (на результат сравнения влияет только сам
+токен доступа, список пользовательских разрешений и идентификатор пользователя, которому
+принадлежит данный токен)</p>
 	</div>
 	
 	

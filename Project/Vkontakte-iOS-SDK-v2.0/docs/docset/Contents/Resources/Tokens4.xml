@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKAudioAlbum.html">
+	<File path="Classes/VKAudio.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKAudioAlbum</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/VKAudio</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKAudioAlbum.h</DeclaredIn>
+			<DeclaredIn>VKAudio.h</DeclaredIn>
 			
 			<NodeRef refid="4"/>
 		</Token>
