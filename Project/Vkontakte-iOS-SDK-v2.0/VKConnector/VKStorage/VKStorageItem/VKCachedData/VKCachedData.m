@@ -87,6 +87,11 @@
 {
     NSLog(@"%s", __FUNCTION__);
 
+//    нет надобности сохранять в кэше запрос с таким временем жизни
+    if(cacheLiveTime == VKCachedDataLiveTimeNever)
+        return;
+
+//    сохраняем данные запроса в кэше
     NSString *encodedCachedURL = [[url absoluteString] toBase64];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
@@ -171,9 +176,6 @@
     NSUInteger creationTimestamp = [cachedFile[@"creationTimestamp"] unsignedIntegerValue];
 
 //    определяем наши действия в соответствии с указанным временем жизни кэша запроса
-    if (liveTime == VKCachedDataLiveTimeNever)
-        return nil;
-
     if (liveTime == VKCachedDataLiveTimeForever)
         return cachedData;
 

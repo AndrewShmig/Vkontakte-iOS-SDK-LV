@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKPlace.html">
+	<File path="Classes/VKNewsfeedItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKPlace</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/VKNewsfeedItem</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKPlace.h</DeclaredIn>
+			<DeclaredIn>VKNewsfeedItem.h</DeclaredIn>
 			
 			<NodeRef refid="16"/>
 		</Token>

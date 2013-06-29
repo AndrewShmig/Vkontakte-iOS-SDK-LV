@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKCachedData.html">
+	<File path="Classes/TestVKCachedData.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKCachedData</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/TestVKCachedData</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>
+			<DeclaredIn>TestVKCachedData.h</DeclaredIn>
 			
 			<NodeRef refid="6"/>
 		</Token>

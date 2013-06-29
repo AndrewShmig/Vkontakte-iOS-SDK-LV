@@ -26,26 +26,28 @@
 //
 #import "VKStorageItem.h"
 #import "VKAccessToken.h"
+#import "VKCachedData.h"
 
 
 @implementation VKStorageItem
-{
-
-}
 
 #pragma mark Visible VKStorageItem methods
 #pragma mark - Init methods
 
 - (instancetype)initWithAccessToken:(VKAccessToken *)token
+                    mainStoragePath:(NSString *)path
 {
-    return nil;
-}
+    self = [super init];
 
-#pragma mark - Overriden methods
+    if (self) {
+        NSString *cache;
+        cache = [path stringByAppendingFormat:@"%@/", @(_accessToken.userID)];
 
-- (NSString *)description
-{
-    return nil;
+        _accessToken = [token copy];
+        _cachedData = [[VKCachedData alloc] initWithCacheDirectory:cache];
+    }
+
+    return self;
 }
 
 @end

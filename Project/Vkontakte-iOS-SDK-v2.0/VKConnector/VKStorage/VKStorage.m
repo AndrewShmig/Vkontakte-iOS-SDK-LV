@@ -26,10 +26,213 @@
 //
 #import "VKStorage.h"
 #import "VKStorageItem.h"
+#import "VKAccessToken.h"
+#import "VKCachedData.h"
 
 
 @implementation VKStorage
 {
-
+    NSMutableDictionary *_storageItems;
 }
+
+#pragma mark Visible VKStorage methods
+#pragma mark - Init methods
+
+- (instancetype)init
+{
+    self = [super init];
+
+    if (self) {
+        _storageItems = [[NSMutableDictionary alloc] init];
+
+        [self loadStorage];
+    }
+
+    return self;
+}
+
+#pragma mark - Shared storage
+
++ (instancetype)sharedStorage
+{
+    static VKStorage *sharedStorage;
+
+    dispatch_once_t predicate;
+    dispatch_once(&predicate, ^
+    {
+        sharedStorage = [[[self class] alloc] init];
+
+//        проверим, если kVKStorageCachePath существует, если нет - создадим
+//        а параллельно будет создан и kVKStoragePath
+        NSString *cacheStoragePath = [sharedStorage fullCacheStoragePath];
+
+        if (![[NSFileManager defaultManager]
+                             fileExistsAtPath:cacheStoragePath]) {
+
+            [[NSFileManager defaultManager]
+                            createDirectoryAtPath:cacheStoragePath
+                      withIntermediateDirectories:YES
+                                       attributes:nil
+                                            error:nil];
+        }
+    });
+
+    return sharedStorage;
+}
+
+#pragma mark - Getters
+
+- (BOOL)isEmpty
+{
+    return ([_storageItems count] == 0);
+}
+
+- (NSUInteger)count
+{
+    return [_storageItems count];
+}
+
+- (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)token
+{
+    VKStorageItem *storageItem = [[VKStorageItem alloc]
+                                                 initWithAccessToken:token
+                                                     mainStoragePath:[self fullStoragePath]];
+
+    return storageItem;
+}
+
+- (NSArray *)storageItems
+{
+    NSMutableArray *storageItems = [[NSMutableArray alloc] init];
+
+    [_storageItems enumerateKeysAndObjectsUsingBlock:^(id key,
+                                                       id obj,
+                                                       BOOL *stop)
+    {
+        [storageItems addObject:(VKStorageItem *)obj];
+    }];
+
+    return storageItems;
+}
+
+#pragma mark - Storage manipulation methods
+
+- (void)addItem:(VKStorageItem *)item
+{
+    id storageKey = @(item.accessToken.userID);
+    _storageItems[storageKey] = item;
+
+    [self saveStorage];
+}
+
+- (void)removeItem:(VKStorageItem *)item
+{
+    id storageKey = @(item.accessToken.userID);
+    [_storageItems removeObjectForKey:storageKey];
+
+    [self saveStorage];
+}
+
+- (void)clean
+{
+    [_storageItems removeAllObjects];
+
+    [self saveStorage];
+}
+
+- (void)cleanCachedData
+{
+    dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+
+    dispatch_async(backgroundQueue, ^{
+
+        [[NSFileManager defaultManager]
+                        removeItemAtPath:[self fullCacheStoragePath]
+                                   error:nil];
+
+        [[NSFileManager defaultManager]
+                        createDirectoryAtPath:[self fullCacheStoragePath]
+                  withIntermediateDirectories:YES
+                                   attributes:nil
+                                        error:nil];
+    });
+}
+
+- (VKStorageItem *)storageItemForUserID:(NSUInteger)userID
+{
+    id storageKey = @(userID);
+    return _storageItems[storageKey];
+}
+
+#pragma mark - Storage paths
+
+- (NSString *)fullStoragePath
+{
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    return [cachePath stringByAppendingFormat:@"%@", kVKStoragePath];
+}
+
+- (NSString *)fullCacheStoragePath
+{
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    return [cachePath stringByAppendingFormat:@"%@", kVKStorageCachePath];
+}
+
+#pragma mark - Storage hidden methods
+
+- (void)loadStorage
+{
+    NSDictionary *storageDefaults = [[NSUserDefaults standardUserDefaults]
+                                                     objectForKey:kVKStorageUserDefaultsKey];
+
+//    хранилище пустое, создаем
+    if(nil == storageDefaults){
+        [[NSUserDefaults standardUserDefaults]
+                         setObject:@{}
+                            forKey:kVKStorageUserDefaultsKey];
+    } else {
+//        загрузка данных из хранилища
+        NSDictionary *storage = [[NSUserDefaults standardUserDefaults]
+                                                 objectForKey:kVKStorageUserDefaultsKey];
+
+        [storage enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+        {
+            NSDictionary *value = (NSDictionary *)obj;
+
+            VKAccessToken *token;
+            token = [[VKAccessToken alloc]
+                                    initWithUserID:[value[@"userID"] unsignedIntegerValue]
+                                       accessToken:value[@"token"]
+                                    expirationTime:[value[@"expirationTime"] doubleValue]
+                                       permissions:value[@"permissions"]];
+
+            VKStorageItem *storageItem = [[VKStorageItem alloc]
+                                                         initWithAccessToken:token
+                                                             mainStoragePath:[self fullStoragePath]];
+
+            _storageItems[@(token.userID)] = storageItem;
+        }];
+    }
+}
+
+- (void)saveStorage
+{
+//    сохраняем только данные токенов доступов
+//    данные кэшев мы сможем потом просто восстановить
+    NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *newStorage = [[NSMutableDictionary alloc] init];
+    newStorage[kVKStorageUserDefaultsKey] = @{};
+
+    [_storageItems enumerateKeysAndObjectsUsingBlock:^(id key,
+                                                       id obj,
+                                                       BOOL *stop)
+    {
+        VKAccessToken *token = [(VKStorageItem *)obj accessToken];
+
+        newStorage[kVKStorageUserDefaultsKey][@(token.userID)] = [token tokenAsDictionary];
+    }];
+
+    [myDefaults setObject:newStorage forKey:kVKStorageUserDefaultsKey];
+}
+
 @end

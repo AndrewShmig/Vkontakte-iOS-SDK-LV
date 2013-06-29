@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/TestVKAccessToken.html">
+	<File path="Classes/ASAViewController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/TestVKAccessToken</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ASAViewController</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>TestVKAccessToken.h</DeclaredIn>
+			<DeclaredIn>ASAViewController.h</DeclaredIn>
 			
 			<NodeRef refid="2"/>
 		</Token>

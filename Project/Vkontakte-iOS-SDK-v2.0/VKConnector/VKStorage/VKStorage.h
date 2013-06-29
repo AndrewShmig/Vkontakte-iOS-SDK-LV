@@ -27,15 +27,27 @@
 #import <Foundation/Foundation.h>
 
 
+static NSString *const kVKStorageUserDefaultsKey = @"Vkontakte-iOS-SDK-v2.0-Storage";
+
+
+static NSString *const kVKStoragePath = @"/Vkontakte-iOS-SDK-v2.0-Storage/";
+static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-v2.0-Storage/Cache/";
+
+
 @class VKStorageItem;
+@class VKAccessToken;
 
 
 @interface VKStorage : NSObject
 
 @property (nonatomic, readonly) BOOL isEmpty;
 @property (nonatomic, readonly) NSUInteger count;
+@property (nonatomic, readonly) NSString *fullStoragePath;
+@property (nonatomic, readonly) NSString *fullCacheStoragePath;
 
 + (instancetype)sharedStorage;
+
+- (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)token;
 
 - (void)addItem:(VKStorageItem *)item;
 - (void)removeItem:(VKStorageItem *)item;
@@ -43,5 +55,6 @@
 - (void)cleanCachedData;
 
 - (VKStorageItem *)storageItemForUserID:(NSUInteger)userID;
+- (NSArray *)storageItems;
 
 @end

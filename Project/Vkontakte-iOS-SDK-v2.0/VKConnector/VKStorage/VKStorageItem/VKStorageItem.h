@@ -33,13 +33,10 @@
 
 @interface VKStorageItem : NSObject
 
-
 @property (nonatomic, strong, readonly) VKAccessToken *accessToken;
 @property (nonatomic, strong, readonly) VKCachedData *cachedData;
 
-
-- (instancetype)initWithAccessToken:(VKAccessToken *)token;
-
-- (NSString *)description;
+- (instancetype)initWithAccessToken:(VKAccessToken *)token
+                    mainStoragePath:(NSString *)path;
 
 @end

@@ -35,6 +35,10 @@
 						<NodeRef refid="22"/>
 						<NodeRef refid="23"/>
 						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
+						<NodeRef refid="26"/>
+						<NodeRef refid="27"/>
+						<NodeRef refid="28"/>
 						
 					</Subnodes>
 				</Node>
@@ -44,9 +48,9 @@
 					<Name>Categories</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="25"/>
-						<NodeRef refid="26"/>
-						<NodeRef refid="27"/>
+						<NodeRef refid="29"/>
+						<NodeRef refid="30"/>
+						<NodeRef refid="31"/>
 						
 					</Subnodes>
 				</Node>
@@ -56,7 +60,7 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="28"/>
+						<NodeRef refid="32"/>
 						
 					</Subnodes>
 				</Node>
@@ -67,116 +71,132 @@
 	<Library>
 		
 		<Node id="1">
+			<Name>ASAAppDelegate</Name>
+			<Path>Classes/ASAAppDelegate.html</Path>
+		</Node>
+		<Node id="2">
+			<Name>ASAViewController</Name>
+			<Path>Classes/ASAViewController.html</Path>
+		</Node>
+		<Node id="3">
+			<Name>AppDelegate</Name>
+			<Path>Classes/AppDelegate.html</Path>
+		</Node>
+		<Node id="4">
 			<Name>KGModal</Name>
 			<Path>Classes/KGModal.html</Path>
 		</Node>
-		<Node id="2">
+		<Node id="5">
 			<Name>TestVKAccessToken</Name>
 			<Path>Classes/TestVKAccessToken.html</Path>
 		</Node>
-		<Node id="3">
+		<Node id="6">
+			<Name>TestVKCachedData</Name>
+			<Path>Classes/TestVKCachedData.html</Path>
+		</Node>
+		<Node id="7">
 			<Name>VKAccessToken</Name>
 			<Path>Classes/VKAccessToken.html</Path>
 		</Node>
-		<Node id="4">
+		<Node id="8">
 			<Name>VKAudio</Name>
 			<Path>Classes/VKAudio.html</Path>
 		</Node>
-		<Node id="5">
+		<Node id="9">
 			<Name>VKAudioAlbum</Name>
 			<Path>Classes/VKAudioAlbum.html</Path>
 		</Node>
-		<Node id="6">
+		<Node id="10">
 			<Name>VKCachedData</Name>
 			<Path>Classes/VKCachedData.html</Path>
 		</Node>
-		<Node id="7">
+		<Node id="11">
 			<Name>VKConnector</Name>
 			<Path>Classes/VKConnector.html</Path>
 		</Node>
-		<Node id="8">
+		<Node id="12">
 			<Name>VKDocument</Name>
 			<Path>Classes/VKDocument.html</Path>
 		</Node>
-		<Node id="9">
+		<Node id="13">
 			<Name>VKGroup</Name>
 			<Path>Classes/VKGroup.html</Path>
 		</Node>
-		<Node id="10">
+		<Node id="14">
 			<Name>VKLike</Name>
 			<Path>Classes/VKLike.html</Path>
 		</Node>
-		<Node id="11">
+		<Node id="15">
 			<Name>VKMessage</Name>
 			<Path>Classes/VKMessage.html</Path>
 		</Node>
-		<Node id="12">
+		<Node id="16">
 			<Name>VKNewsfeedItem</Name>
 			<Path>Classes/VKNewsfeedItem.html</Path>
 		</Node>
-		<Node id="13">
+		<Node id="17">
 			<Name>VKNote</Name>
 			<Path>Classes/VKNote.html</Path>
 		</Node>
-		<Node id="14">
+		<Node id="18">
 			<Name>VKPhoto</Name>
 			<Path>Classes/VKPhoto.html</Path>
 		</Node>
-		<Node id="15">
+		<Node id="19">
 			<Name>VKPhotoAlbum</Name>
 			<Path>Classes/VKPhotoAlbum.html</Path>
 		</Node>
-		<Node id="16">
+		<Node id="20">
 			<Name>VKPlace</Name>
 			<Path>Classes/VKPlace.html</Path>
 		</Node>
-		<Node id="17">
+		<Node id="21">
 			<Name>VKRequest</Name>
 			<Path>Classes/VKRequest.html</Path>
 		</Node>
-		<Node id="18">
+		<Node id="22">
 			<Name>VKStatus</Name>
 			<Path>Classes/VKStatus.html</Path>
 		</Node>
-		<Node id="19">
+		<Node id="23">
 			<Name>VKStorage</Name>
 			<Path>Classes/VKStorage.html</Path>
 		</Node>
-		<Node id="20">
+		<Node id="24">
 			<Name>VKStorageItem</Name>
 			<Path>Classes/VKStorageItem.html</Path>
 		</Node>
-		<Node id="21">
+		<Node id="25">
 			<Name>VKUser</Name>
 			<Path>Classes/VKUser.html</Path>
 		</Node>
-		<Node id="22">
+		<Node id="26">
 			<Name>VKVideo</Name>
 			<Path>Classes/VKVideo.html</Path>
 		</Node>
-		<Node id="23">
+		<Node id="27">
 			<Name>VKVideoAlbum</Name>
 			<Path>Classes/VKVideoAlbum.html</Path>
 		</Node>
-		<Node id="24">
+		<Node id="28">
 			<Name>VKWallPost</Name>
 			<Path>Classes/VKWallPost.html</Path>
 		</Node>
 		
-		<Node id="25">
+		<Node id="29">
 			<Name>NSData(toBase64)</Name>
 			<Path>Categories/NSData+toBase64.html</Path>
 		</Node>
-		<Node id="26">
+		<Node id="30">
 			<Name>NSString(encodeURL)</Name>
 			<Path>Categories/NSString+encodeURL.html</Path>
 		</Node>
-		<Node id="27">
+		<Node id="31">
 			<Name>NSString(toBase64)</Name>
 			<Path>Categories/NSString+toBase64.html</Path>
 		</Node>
 		
-		<Node id="28">
+		<Node id="32">
 			<Name>VKConnectorProtocol</Name>
 			<Path>Protocols/VKConnectorProtocol.html</Path>
 		</Node>

@@ -31,6 +31,8 @@
 #import "VKConnector.h"
 #import "VKAccessToken.h"
 #import "KGModal.h"
+#import "VKStorage.h"
+#import "VKStorageItem.h"
 
 
 #define MARGIN_WIDTH 25.0 // ширина отступа от границ экрана
@@ -162,8 +164,15 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                            expirationTime:expiration_time
                                               permissions:[_settings componentsSeparatedByString:@","]];
 
-//            сохраняем токен доступа
-//            TODO: добавление токена доступа в хранилище
+//            сохраняем токен доступа в хранилище
+            VKStorageItem *storageItem = [[VKStorage sharedStorage]
+                                                     createStorageItemForAccessToken:_accessToken];
+            [[VKStorage sharedStorage] addItem:storageItem];
+
+//          TODO: здесь должен быть, наверно, какой-то код, который будет активировать текущий токен
+//            и делать его основным - будет использовать при запросах
+//            примерно так: [VKUser activateUserID:_accessToken.userID], а потом можно
+//            спокойно будет обращаться [VKUser currentUser]
 
 //            уведомляем программиста, что токен был обновлён
             if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalSucceeded:)])

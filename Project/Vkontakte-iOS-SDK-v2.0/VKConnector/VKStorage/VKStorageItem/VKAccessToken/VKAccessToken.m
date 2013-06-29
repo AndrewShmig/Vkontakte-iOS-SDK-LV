@@ -101,6 +101,19 @@
     return [desc description];
 }
 
+- (NSDictionary *)tokenAsDictionary
+{
+    NSDictionary *tokenDictionary = @{
+            @"userID"         : @(self.userID),
+            @"expirationTime" : @(((NSUInteger) (self.creationTime + self.expirationTime))),
+            @"creationTime"   : @(((NSUInteger) self.creationTime)),
+            @"permissions"    : self.permissions,
+            @"token"          : self.token
+    };
+
+    return tokenDictionary;
+}
+
 - (BOOL)isEqual:(VKAccessToken *)token
 {
     NSLog(@"%s", __FUNCTION__);

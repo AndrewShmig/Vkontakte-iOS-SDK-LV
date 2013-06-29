@@ -1,337 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/KGModal.html">
+	<File path="Classes/ASAAppDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/KGModal</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/ASAAppDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>
+			<DeclaredIn>ASAAppDelegate.h</DeclaredIn>
 			
 			<NodeRef refid="1"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/setTapOutsideToDismiss:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ASAAppDelegate/setWindow:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
+			<DeclaredIn>ASAAppDelegate.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
 			
 			
-			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
+			<Anchor>//api/name/window</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/tapOutsideToDismiss</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ASAAppDelegate/window</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
+			<DeclaredIn>ASAAppDelegate.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
 			
 			
-			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
+			<Anchor>//api/name/window</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/KGModal/tapOutsideToDismiss</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ASAAppDelegate/window</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
+			<DeclaredIn>ASAAppDelegate.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
+			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
 			
 			
-			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
+			<Anchor>//api/name/window</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/setAnimateWhenDismissed:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ASAAppDelegate/setViewController:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
+			<DeclaredIn>ASAAppDelegate.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
+			<Declaration>@property (strong, nonatomic) ASAViewController *viewController</Declaration>
 			
 			
-			<Anchor>//api/name/animateWhenDismissed</Anchor>
+			<Anchor>//api/name/viewController</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/animateWhenDismissed</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ASAAppDelegate/viewController</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
+			<DeclaredIn>ASAAppDelegate.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
+			<Declaration>@property (strong, nonatomic) ASAViewController *viewController</Declaration>
 			
 			
-			<Anchor>//api/name/animateWhenDismissed</Anchor>
+			<Anchor>//api/name/viewController</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/KGModal/animateWhenDismissed</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ASAAppDelegate/viewController</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
+			<DeclaredIn>ASAAppDelegate.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
+			<Declaration>@property (strong, nonatomic) ASAViewController *viewController</Declaration>
 			
 			
-			<Anchor>//api/name/animateWhenDismissed</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/setShowCloseButton:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
-			
-			
-			<Anchor>//api/name/showCloseButton</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/showCloseButton</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
-			
-			
-			<Anchor>//api/name/showCloseButton</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/KGModal/showCloseButton</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
-			
-			
-			<Anchor>//api/name/showCloseButton</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/setModalBackgroundColor:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
-			
-			
-			<Anchor>//api/name/modalBackgroundColor</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/modalBackgroundColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
-			
-			
-			<Anchor>//api/name/modalBackgroundColor</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/KGModal/modalBackgroundColor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
-			
-			
-			<Anchor>//api/name/modalBackgroundColor</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/setBackgroundDisplayStyle:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
-			
-			
-			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/backgroundDisplayStyle</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
-			
-			
-			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/KGModal/backgroundDisplayStyle</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
-			
-			
-			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/setShouldRotate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
-			
-			
-			<Anchor>//api/name/shouldRotate</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/shouldRotate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
-			
-			
-			<Anchor>//api/name/shouldRotate</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/KGModal/shouldRotate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
-			
-			
-			<Anchor>//api/name/shouldRotate</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/KGModal/sharedInstance</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>+ (instancetype)sharedInstance</Declaration>
-			
-			
-			<Anchor>//api/name/sharedInstance</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/showWithContentView:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>- (void)showWithContentView:(UIView *)contentView</Declaration>
-			
-			
-			<Anchor>//api/name/showWithContentView:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/showWithContentView:andAnimated:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>- (void)showWithContentView:(UIView *)contentView andAnimated:(BOOL)animated</Declaration>
-			
-			
-			<Anchor>//api/name/showWithContentView:andAnimated:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/showWithContentViewController:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>- (void)showWithContentViewController:(UIViewController *)contentViewController</Declaration>
-			
-			
-			<Anchor>//api/name/showWithContentViewController:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/showWithContentViewController:andAnimated:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>- (void)showWithContentViewController:(UIViewController *)contentViewController andAnimated:(BOOL)animated</Declaration>
-			
-			
-			<Anchor>//api/name/showWithContentViewController:andAnimated:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/hide</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>- (void)hide</Declaration>
-			
-			
-			<Anchor>//api/name/hide</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/hideWithCompletionBlock:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>- (void)hideWithCompletionBlock:(void ( ^ ) ( ))completion</Declaration>
-			
-			
-			<Anchor>//api/name/hideWithCompletionBlock:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/hideAnimated:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>- (void)hideAnimated:(BOOL)animated</Declaration>
-			
-			
-			<Anchor>//api/name/hideAnimated:</Anchor>
-            <NodeRef refid="1"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/KGModal/hideAnimated:withCompletionBlock:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>KGModal.h</DeclaredIn>			
-			
-			<Declaration>- (void)hideAnimated:(BOOL)animated withCompletionBlock:(void ( ^ ) ( ))completion</Declaration>
-			
-			
-			<Anchor>//api/name/hideAnimated:withCompletionBlock:</Anchor>
+			<Anchor>//api/name/viewController</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

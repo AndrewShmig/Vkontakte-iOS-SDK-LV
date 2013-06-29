@@ -732,7 +732,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"Vkontakte-iOS-SDK-v2.0\" \\\n--project-company \"AndrewShmig\" \\\n--company-id \"com.andrewshmig\" \\\n--docset-atom-filename \"DTFoundation.atom\" \\\n--docset-feed-url \"http://cocoanetics.github.com/DTFoundation/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://cocoanetics.github.com/DTFoundation/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://cocoanetics.github.com/DTFoundation/\" \\\n--output \"${PROJECT_DIR}/Vkontakte-iOS-SDK-v2.0/docs\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"ASAAppDelegate.h\" \\\n--ignore \"ASAViewController.h\" \\\n--ignore \"AppDelegate.h\" \\\n--ignore \"LoadableCategory.h\" \\\n\"${PROJECT_DIR}\"";
+			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"Vkontakte-iOS-SDK-v2.0\" \\\n--project-company \"AndrewShmig\" \\\n--company-id \"com.andrewshmig\" \\\n--docset-atom-filename \"DTFoundation.atom\" \\\n--docset-feed-url \"http://cocoanetics.github.com/DTFoundation/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://cocoanetics.github.com/DTFoundation/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://cocoanetics.github.com/DTFoundation/\" \\\n--output \"${PROJECT_DIR}/Vkontakte-iOS-SDK-v2.0/docs\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"LoadableCategory.h\" \\\n\"${PROJECT_DIR}\"";
 		};
 		D5F19C5E177EDF8E005C49F7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1016,6 +1016,7 @@
 				D5F19C6F177EDF8E005C49F7 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
