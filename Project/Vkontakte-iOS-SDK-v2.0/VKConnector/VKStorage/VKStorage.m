@@ -103,16 +103,7 @@
 
 - (NSArray *)storageItems
 {
-    NSMutableArray *storageItems = [[NSMutableArray alloc] init];
-
-    [_storageItems enumerateKeysAndObjectsUsingBlock:^(id key,
-                                                       id obj,
-                                                       BOOL *stop)
-    {
-        [storageItems addObject:(VKStorageItem *)obj];
-    }];
-
-    return storageItems;
+    return [_storageItems allValues];
 }
 
 #pragma mark - Storage manipulation methods
@@ -136,6 +127,7 @@
 - (void)clean
 {
     [_storageItems removeAllObjects];
+    [self cleanCachedData];
 
     [self saveStorage];
 }
