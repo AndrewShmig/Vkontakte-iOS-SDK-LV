@@ -1,0 +1,113 @@
+//
+//
+// Copyright (c) 2013 Andrew Shmig
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the "Software"), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
+//
+
+#import "TestVKAccessToken.h"
+#import "VKAccessToken.h"
+
+@implementation TestVKAccessToken
+
+- (void)testPermissions1
+{
+    VKAccessToken *token = [[VKAccessToken alloc] init];
+
+    STAssertFalse([token hasPermission:@"offline"], @"Has no offline permission.");
+}
+
+- (void)testPermissions2
+{
+    VKAccessToken *token = [[VKAccessToken alloc]
+                                           initWithUserID:1
+                                              accessToken:@"token"
+                                           expirationTime:1
+                                              permissions:@[@"offline",
+                                                            @"wall",
+                                                            @"friends",
+                                                            @"feed"]];
+
+    STAssertTrue([token hasPermission:@"friends"], @"Has friends permission.");
+}
+
+- (void)testIsValid1
+{
+    VKAccessToken *token = [[VKAccessToken alloc] init];
+
+    STAssertFalse([token isValid], @"Invalid token.");
+}
+
+- (void)testIsValid2
+{
+    VKAccessToken *token = [[VKAccessToken alloc]
+                                           initWithUserID:1
+                                              accessToken:nil];
+
+    STAssertFalse([token isValid], @"Invalid token.");
+}
+
+- (void)testIsValid3
+{
+    VKAccessToken *token = [[VKAccessToken alloc]
+                                           initWithUserID:1
+                                              accessToken:@""];
+
+    STAssertFalse([token isValid], @"Valid token.");
+}
+
+- (void)testIsExpired1
+{
+    VKAccessToken *token = [[VKAccessToken alloc]
+                                           initWithUserID:1
+                                              accessToken:@""
+                                           expirationTime:0];
+
+    STAssertTrue([token isExpired], @"Expired token.");
+}
+
+- (void)testIsExpired2
+{
+    VKAccessToken *token = [[VKAccessToken alloc]
+                                           initWithUserID:1
+                                              accessToken:@""
+                                           expirationTime:0
+                                              permissions:@[@"offline"]];
+
+    STAssertFalse([token isExpired], @"Not expired token.");
+}
+
+- (void)testIsExpired3
+{
+    NSTimeInterval currentTimestamp = [[NSDate date] timeIntervalSince1970];
+    VKAccessToken *token = [[VKAccessToken alloc]
+                                           initWithUserID:1
+                                              accessToken:@""
+                                           expirationTime:currentTimestamp + 80000
+                                              permissions:@[@"friends",
+                                                            @"wall"]];
+
+    STAssertTrue([token isValid], @"Not expired token.");
+}
+
+@end
