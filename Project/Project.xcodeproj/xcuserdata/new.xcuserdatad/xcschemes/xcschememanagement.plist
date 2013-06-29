@@ -14,10 +14,30 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>UnitTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1A9A0EABB17090BD9F6AF610</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D52DDC71177EDDAF00E05B30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D52DDC8C177EDDAF00E05B30</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D52DDCA7177EDEF900E05B30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -28,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>D574AC75177DF3D900DC36F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5F19C5F177EDF8E005C49F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

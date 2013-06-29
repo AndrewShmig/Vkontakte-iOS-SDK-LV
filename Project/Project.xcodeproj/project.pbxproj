@@ -11,6 +11,7 @@
 		1A9A0024B9B75236BAB9CB97 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A01FAEB437DA940BE21D3 /* Default.png */; };
 		1A9A00E47DA7E7DD93C69BE7 /* VKDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A09397FA327F6E2A34F42 /* VKDocument.m */; };
 		1A9A011E8C185DA69EC94598 /* VKConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07D8CDD07F73FC5F8543 /* VKConnector.m */; };
+		1A9A0162E5128362355B2120 /* TestVKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0C8FF91D8F22139BB4D7 /* TestVKAccessToken.m */; };
 		1A9A0217FF8F8483DEA02042 /* VKPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A008D0E804966B33F1B28 /* VKPlace.m */; };
 		1A9A0237B2142F2F229F6D9E /* VKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0683B80D4C250B79C07B /* VKAccessToken.m */; };
 		1A9A02598E50190CB66C637D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A0C59427298DCF6A6DD29 /* Default@2x.png */; };
@@ -29,6 +30,7 @@
 		1A9A098F7ED3D1C374BCCE71 /* VKWallPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A016DD3A56C4C935809AC /* VKWallPost.m */; };
 		1A9A09A00CEB8B8E324E1FC2 /* NSString+toBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A09184C65874073214DF2 /* NSString+toBase64.m */; };
 		1A9A09B3B79A22F26C2ACB6D /* ASAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A086C5F5EEDC2CBB27DE4 /* ASAAppDelegate.m */; };
+		1A9A09DCD9995C6CB09D2DE1 /* VKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0683B80D4C250B79C07B /* VKAccessToken.m */; };
 		1A9A0A1226FC19EC3716BBDD /* VKVideoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0CC0048DA667C592B9AB /* VKVideoAlbum.m */; };
 		1A9A0A58C5B95B453344A27E /* VKVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A011E3FB28FEBF2BF35D9 /* VKVideo.m */; };
 		1A9A0B5774848F2DD67471E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0D576F77FB86579EDC64 /* UIKit.framework */; };
@@ -54,6 +56,10 @@
 		D574AC87177DF3D900DC36F9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D574AC86177DF3D900DC36F9 /* Default.png */; };
 		D574AC89177DF3D900DC36F9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D574AC88177DF3D900DC36F9 /* Default@2x.png */; };
 		D574AC8B177DF3D900DC36F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D574AC8A177DF3D900DC36F9 /* Default-568h@2x.png */; };
+		D5F19C61177EDF8E005C49F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52DDC8E177EDDAF00E05B30 /* SenTestingKit.framework */; };
+		D5F19C62177EDF8E005C49F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0D576F77FB86579EDC64 /* UIKit.framework */; };
+		D5F19C63177EDF8E005C49F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A096027F402AF6A3D38C1 /* Foundation.framework */; };
+		D5F19C69177EDF8E005C49F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F19C67177EDF8E005C49F7 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,11 +121,13 @@
 		1A9A0A4D128A25F3CAE32971 /* VKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRequest.h; sourceTree = "<group>"; };
 		1A9A0B0D373DE67026492013 /* VKLike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKLike.h; sourceTree = "<group>"; };
 		1A9A0B261588ADDCB3B78A56 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1A9A0B4DDC7145E148738544 /* TestVKAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVKAccessToken.h; sourceTree = "<group>"; };
 		1A9A0B96A7DE82D1C516811A /* NSString+toBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+toBase64.h"; sourceTree = "<group>"; };
 		1A9A0C0795C26F6C2BC7F8C0 /* NSString+encodeURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+encodeURL.h"; sourceTree = "<group>"; };
 		1A9A0C41621BB75E1B94C99B /* VKStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKStorage.h; sourceTree = "<group>"; };
 		1A9A0C59427298DCF6A6DD29 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1A9A0C6DB228D9C29270079D /* VKCachedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCachedData.m; sourceTree = "<group>"; };
+		1A9A0C8FF91D8F22139BB4D7 /* TestVKAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVKAccessToken.m; sourceTree = "<group>"; };
 		1A9A0CC0048DA667C592B9AB /* VKVideoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoAlbum.m; sourceTree = "<group>"; };
 		1A9A0D43140E1B9B96168EBF /* VKVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideo.h; sourceTree = "<group>"; };
 		1A9A0D576F77FB86579EDC64 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -127,6 +135,7 @@
 		1A9A0F23359FE2D37D04E5B0 /* VKNewsfeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKNewsfeedItem.m; sourceTree = "<group>"; };
 		1A9A0F45009A4316EA3F08C2 /* VKPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKPhotoAlbum.m; sourceTree = "<group>"; };
 		1A9A0F527EF608191560F646 /* ASAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAViewController.h; sourceTree = "<group>"; };
+		D52DDC8E177EDDAF00E05B30 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D574AC57177DF1DF00DC36F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D574AC76177DF3D900DC36F9 /* AppleDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D574AC7C177DF3D900DC36F9 /* AppleDoc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppleDoc-Info.plist"; sourceTree = "<group>"; };
@@ -138,6 +147,10 @@
 		D574AC86177DF3D900DC36F9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D574AC88177DF3D900DC36F9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D574AC8A177DF3D900DC36F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D5F19C60177EDF8E005C49F7 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F19C66177EDF8E005C49F7 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
+		D5F19C68177EDF8E005C49F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5F19C6D177EDF8E005C49F7 /* UnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +172,16 @@
 				D574AC77177DF3D900DC36F9 /* UIKit.framework in Frameworks */,
 				D574AC78177DF3D900DC36F9 /* Foundation.framework in Frameworks */,
 				D574AC79177DF3D900DC36F9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F19C5C177EDF8E005C49F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F19C61177EDF8E005C49F7 /* SenTestingKit.framework in Frameworks */,
+				D5F19C62177EDF8E005C49F7 /* UIKit.framework in Frameworks */,
+				D5F19C63177EDF8E005C49F7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +264,7 @@
 			children = (
 				1A9A0872BA5F01364902C76C /* Project.app */,
 				D574AC76177DF3D900DC36F9 /* AppleDoc.app */,
+				D5F19C60177EDF8E005C49F7 /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -368,6 +392,7 @@
 				1A9A0B261588ADDCB3B78A56 /* CoreGraphics.framework */,
 				D574AC57177DF1DF00DC36F9 /* CoreData.framework */,
 				1A9A0019D60C4FB08AA755A3 /* QuartzCore.framework */,
+				D52DDC8E177EDDAF00E05B30 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -412,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				D574AC7A177DF3D900DC36F9 /* AppleDoc */,
+				D5F19C64177EDF8E005C49F7 /* UnitTests */,
 				1A9A021843E1B91E8D61CA0A /* Products */,
 				1A9A08D92DB1EF47C34EDC87 /* Frameworks */,
 				1A9A0BFAB67423F6630F5BDB /* Project */,
@@ -548,6 +574,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D5F19C64177EDF8E005C49F7 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5F19C65177EDF8E005C49F7 /* Supporting Files */,
+				1A9A0B4DDC7145E148738544 /* TestVKAccessToken.h */,
+				1A9A0C8FF91D8F22139BB4D7 /* TestVKAccessToken.m */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		D5F19C65177EDF8E005C49F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5F19C66177EDF8E005C49F7 /* UnitTests-Info.plist */,
+				D5F19C67177EDF8E005C49F7 /* InfoPlist.strings */,
+				D5F19C6D177EDF8E005C49F7 /* UnitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -586,6 +632,24 @@
 			productReference = D574AC76177DF3D900DC36F9 /* AppleDoc.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D5F19C5F177EDF8E005C49F7 /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F19C70177EDF8E005C49F7 /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				D5F19C5B177EDF8E005C49F7 /* Sources */,
+				D5F19C5C177EDF8E005C49F7 /* Frameworks */,
+				D5F19C5D177EDF8E005C49F7 /* Resources */,
+				D5F19C5E177EDF8E005C49F7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = D5F19C60177EDF8E005C49F7 /* UnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -608,6 +672,7 @@
 			targets = (
 				1A9A0EABB17090BD9F6AF610 /* Project */,
 				D574AC75177DF3D900DC36F9 /* AppleDoc */,
+				D5F19C5F177EDF8E005C49F7 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -636,6 +701,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5F19C5D177EDF8E005C49F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F19C69177EDF8E005C49F7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -651,6 +724,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"Vkontakte-iOS-SDK-v2.0\" \\\n--project-company \"AndrewShmig\" \\\n--company-id \"com.andrewshmig\" \\\n--docset-atom-filename \"DTFoundation.atom\" \\\n--docset-feed-url \"http://cocoanetics.github.com/DTFoundation/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://cocoanetics.github.com/DTFoundation/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://cocoanetics.github.com/DTFoundation/\" \\\n--output \"${PROJECT_DIR}/Vkontakte-iOS-SDK-v2.0/docs\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"ASAAppDelegate.h\" \\\n--ignore \"ASAViewController.h\" \\\n--ignore \"AppDelegate.h\" \\\n--ignore \"LoadableCategory.h\" \\\n\"${PROJECT_DIR}\"";
+		};
+		D5F19C5E177EDF8E005C49F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -700,6 +786,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5F19C5B177EDF8E005C49F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A9A0162E5128362355B2120 /* TestVKAccessToken.m in Sources */,
+				1A9A09DCD9995C6CB09D2DE1 /* VKAccessToken.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -723,6 +818,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				D574AC7E177DF3D900DC36F9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D5F19C67177EDF8E005C49F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5F19C68177EDF8E005C49F7 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -832,6 +935,36 @@
 			};
 			name = Debug;
 		};
+		D5F19C6E177EDF8E005C49F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
+				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		D5F19C6F177EDF8E005C49F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
+				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -861,6 +994,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D5F19C70177EDF8E005C49F7 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F19C6E177EDF8E005C49F7 /* Release */,
+				D5F19C6F177EDF8E005C49F7 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
