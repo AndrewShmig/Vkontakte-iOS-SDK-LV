@@ -39,7 +39,7 @@ typedef enum
     VKCachedDataLiveTimeOneDay = 24 * 60 * 60,
     VKCachedDataLiveTimeOneWeek = 7 * 24 * 60 * 60,
     VKCachedDataLiveTimeOneMonth = 30 * 7 * 24 * 60 * 60,
-    VKCacheddataLiveTimeOneYear = 365 * 30 * 7 * 24 * 60 * 60,
+    VKCachedDataLiveTimeOneYear = 365 * 30 * 7 * 24 * 60 * 60,
     VKCachedDataLiveTimeForever = -1,
 
 } VKCachedDataLiveTime;
