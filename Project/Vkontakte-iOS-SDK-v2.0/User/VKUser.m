@@ -55,13 +55,30 @@ static VKUser *_currentUser;
 
 + (instancetype)currentUser
 {
-//    если никакой пользователь еще не был активирован программистом,
-//    и в хранилище есть данные, то активируем первого попавшегося пользователя
-    if(nil == _currentUser && ![[VKStorage sharedStorage] isEmpty]){
-        NSArray *storageItems = [[VKStorage sharedStorage] storageItems];
-        VKStorageItem *storageItem = storageItems[0];
+    if(nil == _currentUser){
+//        пользователь еще не был запрошен и не был установлен активным
+        if([[VKStorage sharedStorage] isEmpty]){
 
-        _currentUser = [[VKUser alloc] initWithStorageItem:storageItem];
+//            хранилище не содержит данных о пользователях
+            _currentUser = nil;
+
+        } else {
+
+//            хранилище содержит некоторые данные
+//            устанавливаем произвольного пользователя активным
+            VKStorageItem *storageItem = [[[VKStorage sharedStorage] storageItems] lastObject];
+            _currentUser = [[VKUser alloc] initWithStorageItem:storageItem];
+
+        }
+
+        return _currentUser;
+    }
+
+//    пользователь установлен, но в хранилище его записи нет (возможно была удалена), а этого нельзя так оставлять - сбрасываем
+    if(nil == [[VKStorage sharedStorage] storageItemForUserID:_currentUser.accessToken.userID]){
+
+        _currentUser = nil;
+
     }
 
     return _currentUser;
