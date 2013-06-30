@@ -57,12 +57,7 @@ static VKUser *_currentUser;
 {
     if(nil == _currentUser){
 //        пользователь еще не был запрошен и не был установлен активным
-        if([[VKStorage sharedStorage] isEmpty]){
-
-//            хранилище не содержит данных о пользователях
-            _currentUser = nil;
-
-        } else {
+        if(![[VKStorage sharedStorage] isEmpty]){
 
 //            хранилище содержит некоторые данные
 //            устанавливаем произвольного пользователя активным
