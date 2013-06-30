@@ -147,21 +147,21 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     NSString *url = [[request URL] absoluteString];
 
     if ([url hasPrefix:_redirectURL]) {
-        NSString *query_string = [url componentsSeparatedByString:@"#"][1];
+        NSString *queryString = [url componentsSeparatedByString:@"#"][1];
 
 //        проверяем одобрил ли пользователь наше приложение или нет
-        if ([query_string hasPrefix:@"access_token"]) {
-            NSArray *parts = [query_string componentsSeparatedByString:@"&"];
+        if ([queryString hasPrefix:@"access_token"]) {
+            NSArray *parts = [queryString componentsSeparatedByString:@"&"];
 
 //            пользователь одобрил наше приложение, парсим полученные данные
-            NSString *access_token = [parts[0] componentsSeparatedByString:@"="][1];
-            NSTimeInterval expiration_time = [[parts[1] componentsSeparatedByString:@"="][1] doubleValue];
-            NSUInteger user_id = [[parts[2] componentsSeparatedByString:@"="][1] unsignedIntValue];
+            NSString *accessToken = [parts[0] componentsSeparatedByString:@"="][1];
+            NSTimeInterval expirationTime = [[parts[1] componentsSeparatedByString:@"="][1] doubleValue];
+            NSUInteger userID = [[parts[2] componentsSeparatedByString:@"="][1] unsignedIntValue];
 
             _accessToken = [[VKAccessToken alloc]
-                                           initWithUserID:user_id
-                                              accessToken:access_token
-                                           expirationTime:expiration_time
+                                           initWithUserID:userID
+                                              accessToken:accessToken
+                                           expirationTime:expirationTime
                                               permissions:[_settings componentsSeparatedByString:@","]];
 
 //            сохраняем токен доступа в хранилище

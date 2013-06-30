@@ -56,8 +56,6 @@ typedef enum
 - (void)removeCachedDataForURL:(NSURL *)url;
 - (void)clearCachedData;
 
-- (BOOL)containsCachedDataForURL:(NSURL *)url;
-
 - (NSData *)cachedDataForURL:(NSURL *)url;
 
 @end

@@ -43,19 +43,16 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 - (void)VKConnector:(VKConnector *)connector accessTokenInvalidated:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
-    NSLog(@"%@", accessToken);
 }
 
 - (void)VKConnector:(VKConnector *)connector accessTokenRenewalFailed:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
-    NSLog(@"accessToken: %@", accessToken);
 }
 
 - (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
-    NSLog(@"accessToken: %@", accessToken);
 }
 
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error

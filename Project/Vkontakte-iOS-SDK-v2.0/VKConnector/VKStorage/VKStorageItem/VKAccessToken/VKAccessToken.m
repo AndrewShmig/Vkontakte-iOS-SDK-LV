@@ -28,7 +28,6 @@
 //
 #import "VKAccessToken.h"
 
-#define NSLog //NSLog
 
 @implementation VKAccessToken
 
@@ -39,8 +38,6 @@
                 expirationTime:(NSTimeInterval)expirationTime
                    permissions:(NSArray *)permissions
 {
-    NSLog(@"%s", __FUNCTION__);
-
     if (self = [super init]) {
         _userID = userID;
         _token = [token copy];
@@ -56,8 +53,6 @@
                    accessToken:(NSString *)token
                 expirationTime:(NSTimeInterval)expirationTime
 {
-    NSLog(@"%s", __FUNCTION__);
-
     return [self initWithUserID:userID
                     accessToken:token
                  expirationTime:expirationTime
@@ -66,8 +61,6 @@
 
 - (instancetype)initWithUserID:(NSUInteger)userID accessToken:(NSString *)token
 {
-    NSLog(@"%s", __FUNCTION__);
-
     return [self initWithUserID:userID
                     accessToken:token
                  expirationTime:0
@@ -76,8 +69,6 @@
 
 - (instancetype)init
 {
-    NSLog(@"%s", __FUNCTION__);
-
     return [self initWithUserID:0
                     accessToken:@""
                  expirationTime:0
@@ -88,8 +79,6 @@
 
 - (NSString *)description
 {
-    NSLog(@"%s", __FUNCTION__);
-
     NSDictionary *desc = @{
             @"User ID"         : @(self.userID),
             @"Expiration time" : @(((NSUInteger) (self.creationTime + self.expirationTime))),
@@ -116,8 +105,6 @@
 
 - (BOOL)isEqual:(VKAccessToken *)token
 {
-    NSLog(@"%s", __FUNCTION__);
-
     NSSet *currentSet = [NSSet setWithArray:self.permissions];
     NSSet *otherSet = [NSSet setWithArray:token.permissions];
 
@@ -128,8 +115,6 @@
 
 - (VKAccessToken *)copyWithZone:(NSZone *)zone
 {
-    NSLog(@"%s", __FUNCTION__);
-
     VKAccessToken *copyToken = [[VKAccessToken alloc] initWithUserID:self.userID
                                                          accessToken:self.token
                                                       expirationTime:self.expirationTime
@@ -142,15 +127,11 @@
 
 - (BOOL)hasPermission:(NSString *)permission
 {
-    NSLog(@"%s", __FUNCTION__);
-
     return [self.permissions containsObject:permission];
 }
 
 - (BOOL)isExpired
 {
-    NSLog(@"%s", __FUNCTION__);
-
     NSTimeInterval currentTimestamp = [[NSDate date] timeIntervalSince1970];
 
     if (self.expirationTime == 0 && [self hasPermission:@"offline"])
@@ -161,8 +142,6 @@
 
 - (BOOL)isValid
 {
-    NSLog(@"%s", __FUNCTION__);
-
     return (nil != self.token && ![self isExpired]);
 }
 

@@ -56,13 +56,13 @@
 + (instancetype)sharedStorage
 {
     static VKStorage *sharedStorage;
+    static dispatch_once_t predicate;
 
-    dispatch_once_t predicate;
     dispatch_once(&predicate, ^
     {
         sharedStorage = [[[self class] alloc] init];
 
-//        проверим, если kVKStorageCachePath существует, если нет - создадим
+//        проверим, если kVKStorageCachePath существует, если нет - создадим,
 //        а параллельно будет создан и kVKStoragePath
         NSString *cacheStoragePath = [sharedStorage fullCacheStoragePath];
 
@@ -96,7 +96,7 @@
 {
     VKStorageItem *storageItem = [[VKStorageItem alloc]
                                                  initWithAccessToken:token
-                                                     mainStoragePath:[self fullStoragePath]];
+                                                mainCacheStoragePath:[self fullCacheStoragePath]];
 
     return storageItem;
 }
@@ -110,6 +110,9 @@
 
 - (void)addItem:(VKStorageItem *)item
 {
+    if (nil == item || nil == item.accessToken || nil == item.cachedData)
+        return;
+
     id storageKey = @(item.accessToken.userID);
     _storageItems[storageKey] = item;
 
@@ -136,7 +139,8 @@
 {
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
 
-    dispatch_async(backgroundQueue, ^{
+    dispatch_async(backgroundQueue, ^
+    {
 
         [[NSFileManager defaultManager]
                         removeItemAtPath:[self fullCacheStoragePath]
@@ -178,7 +182,7 @@
                                                      objectForKey:kVKStorageUserDefaultsKey];
 
 //    хранилище пустое, создаем
-    if(nil == storageDefaults){
+    if (nil == storageDefaults) {
         [[NSUserDefaults standardUserDefaults]
                          setObject:@{}
                             forKey:kVKStorageUserDefaultsKey];
@@ -189,7 +193,7 @@
 
         [storage enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
         {
-            NSDictionary *value = (NSDictionary *)obj;
+            NSDictionary *value = (NSDictionary *) obj;
 
             VKAccessToken *token;
             token = [[VKAccessToken alloc]
@@ -200,7 +204,7 @@
 
             VKStorageItem *storageItem = [[VKStorageItem alloc]
                                                          initWithAccessToken:token
-                                                             mainStoragePath:[self fullStoragePath]];
+                                                        mainCacheStoragePath:[self fullCacheStoragePath]];
 
             _storageItems[@(token.userID)] = storageItem;
         }];
@@ -213,18 +217,19 @@
 //    данные кэшев мы сможем потом просто восстановить
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *newStorage = [[NSMutableDictionary alloc] init];
-    newStorage[kVKStorageUserDefaultsKey] = @{};
 
     [_storageItems enumerateKeysAndObjectsUsingBlock:^(id key,
                                                        id obj,
                                                        BOOL *stop)
     {
-        VKAccessToken *token = [(VKStorageItem *)obj accessToken];
+        VKAccessToken *token = [(VKStorageItem *) obj accessToken];
 
-        newStorage[kVKStorageUserDefaultsKey][@(token.userID)] = [token tokenAsDictionary];
+        [newStorage setObject:[token tokenAsDictionary]
+                       forKey:[NSString stringWithFormat:@"%d", token.userID]];
     }];
 
-    [myDefaults setObject:newStorage forKey:kVKStorageUserDefaultsKey];
+    [myDefaults setObject:newStorage
+                   forKey:kVKStorageUserDefaultsKey];
 }
 
 @end

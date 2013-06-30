@@ -125,24 +125,6 @@
 //    STAssertTrue([files count] == 0, @"Not all files were deleted.");
 }
 
-#pragma mark - containsCachedDataForURLRequest: tests
-
-- (void)testContainsCachedDataForURL
-{
-    NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *myCachePath = [path stringByAppendingFormat:@"/Vkontakte-iOS-SDK-v2.0/Caches/58789857/"];
-
-    VKCachedData *cachedData = [[VKCachedData alloc]
-                                              initWithCacheDirectory:myCachePath];
-
-    NSURL *google = [NSURL URLWithString:@"http://google.com"];
-
-    BOOL ok = [cachedData containsCachedDataForURL:google];
-
-//    закомментировал, работает хорошо без использования дополнительной очереди вызовов
-//    STAssertFalse(ok, @"File does not exist");
-}
-
 #pragma mark - cachedDataForURLRequest: tests
 
 - (void)testCachedDataForURL

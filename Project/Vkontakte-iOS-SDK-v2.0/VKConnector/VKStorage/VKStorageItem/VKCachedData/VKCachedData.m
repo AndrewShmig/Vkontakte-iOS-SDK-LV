@@ -29,9 +29,6 @@
 #import "NSString+toBase64.h"
 
 
-#define NSLog //NSLog
-
-
 @implementation VKCachedData
 {
     NSString *_cacheDirectoryPath;
@@ -44,8 +41,6 @@
 
 - (instancetype)initWithCacheDirectory:(NSString *)path
 {
-    NSLog(@"%s", __FUNCTION__);
-
     self = [super init];
 
     if (self) {
@@ -62,15 +57,13 @@
 
 - (void)addCachedData:(NSData *)cache forURL:(NSURL *)url
 {
-    NSLog(@"%s", __FUNCTION__);
-
     NSString *encodedCachedURL = [[url absoluteString] toBase64];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
     NSUInteger creationTimestamp = ((NSUInteger) [[NSDate date]
                                                           timeIntervalSince1970]);
 
-    NSDictionary *cacheRecord = @{@"liveTime"          : @(VKCachedDataLiveTimeNever),
+    NSDictionary *cacheRecord = @{@"liveTime"          : @(VKCachedDataLiveTimeOneHour),
                                   @"data"              : (cache == nil ? [NSNull null] : cache),
                                   @"creationTimestamp" : @(creationTimestamp)};
 
@@ -85,8 +78,6 @@
                forURL:(NSURL *)url
              liveTime:(VKCachedDataLiveTime)cacheLiveTime
 {
-    NSLog(@"%s", __FUNCTION__);
-
 //    нет надобности сохранять в кэше запрос с таким временем жизни
     if(cacheLiveTime == VKCachedDataLiveTimeNever)
         return;
@@ -111,8 +102,6 @@
 
 - (void)removeCachedDataForURL:(NSURL *)url
 {
-    NSLog(@"%s", __FUNCTION__);
-
     NSString *encodedCachedURL = [[url absoluteString] toBase64];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
@@ -126,41 +115,23 @@
 
 - (void)clearCachedData
 {
-    NSLog(@"%s", __FUNCTION__);
+    dispatch_async(_backgroudQueue, ^{
 
-    NSArray *cachedFiles = [[NSFileManager defaultManager]
-                                           contentsOfDirectoryAtPath:_cacheDirectoryPath
-                                                               error:nil];
+        [[NSFileManager defaultManager]
+                        removeItemAtPath:_cacheDirectoryPath
+                                   error:nil];
 
-    dispatch_async(_backgroudQueue, ^
-    {
-        for (NSString *fileName in cachedFiles) {
-            NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
-                                                                              fileName];
+        [[NSFileManager defaultManager]
+                        createDirectoryAtPath:_cacheDirectoryPath
+                  withIntermediateDirectories:YES
+                                   attributes:nil
+                                        error:nil];
 
-            [[NSFileManager defaultManager]
-                            removeItemAtPath:filePath
-                                       error:nil];
-        }
     });
-}
-
-- (BOOL)containsCachedDataForURL:(NSURL *)url
-{
-    NSLog(@"%s", __FUNCTION__);
-
-    NSString *encodedCachedURL = [[url absoluteString] toBase64];
-    NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
-                                                                      encodedCachedURL];
-
-    return [[NSFileManager defaultManager]
-                           fileExistsAtPath:filePath];
 }
 
 - (NSData *)cachedDataForURL:(NSURL *)url
 {
-    NSLog(@"%s", __FUNCTION__);
-
     NSString *encodedCachedURL = [[url absoluteString] toBase64];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
@@ -194,8 +165,6 @@
 
 - (void)createDirectoryIfNotExists:(NSString *)path
 {
-    NSLog(@"%s", __FUNCTION__);
-
     if (![[NSFileManager defaultManager]
                          fileExistsAtPath:path]) {
 

@@ -35,19 +35,21 @@
 #pragma mark - Init methods
 
 - (instancetype)initWithAccessToken:(VKAccessToken *)token
-                    mainStoragePath:(NSString *)path
+               mainCacheStoragePath:(NSString *)path
 {
     self = [super init];
 
-    if (self) {
+    if (self && nil != token && nil != path) {
         NSString *cache;
-        cache = [path stringByAppendingFormat:@"%@/", @(_accessToken.userID)];
-
         _accessToken = [token copy];
+
+        cache = [path stringByAppendingFormat:@"%@/", @(_accessToken.userID)];
         _cachedData = [[VKCachedData alloc] initWithCacheDirectory:cache];
+
+        return self;
     }
 
-    return self;
+    return nil;
 }
 
 @end

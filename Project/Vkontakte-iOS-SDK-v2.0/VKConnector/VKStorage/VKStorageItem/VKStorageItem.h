@@ -37,6 +37,6 @@
 @property (nonatomic, strong, readonly) VKCachedData *cachedData;
 
 - (instancetype)initWithAccessToken:(VKAccessToken *)token
-                    mainStoragePath:(NSString *)path;
+                    mainCacheStoragePath:(NSString *)path;
 
 @end
