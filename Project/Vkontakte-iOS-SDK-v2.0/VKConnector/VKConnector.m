@@ -236,7 +236,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     NSArray *cookies = [[NSUserDefaults standardUserDefaults]
                                         objectForKey:kVKAuthorizationCookiesUserDefaultsKey];
 
-    if(nil == cookies)
+    if (nil == cookies)
         return;
 
     for (NSDictionary *c in cookies) {
@@ -253,7 +253,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     NSMutableArray *savedCookies = [NSMutableArray array];
 
     for (NSHTTPCookie *c in cookies) {
-        [savedCookies addObject:c.properties];
+        if (NSNotFound != [c.domain rangeOfString:@"vk.com"].location) {
+            [savedCookies addObject:c.properties];
+        }
     }
 
     [[NSUserDefaults standardUserDefaults]
