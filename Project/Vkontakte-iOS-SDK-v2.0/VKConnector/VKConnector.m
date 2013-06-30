@@ -33,6 +33,7 @@
 #import "KGModal.h"
 #import "VKStorage.h"
 #import "VKStorageItem.h"
+#import "VKUser.h"
 
 
 #define MARGIN_WIDTH 25.0 // ширина отступа от границ экрана
@@ -73,6 +74,7 @@
 {
     _permissions = permissions;
     _appID = appID;
+    _requireAppAuthorizationEachTime = YES;
 
     _settings = [self.permissions componentsJoinedByString:@","];
     _redirectURL = @"https://oauth.vk.com/blank.html";
@@ -125,6 +127,11 @@
     NSURL *url = [NSURL URLWithString:urlAsString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
+    if (![self requireAppAuthorizationEachTime])
+        [self loadAppAuthorizationCookies];
+    else
+        [self clearAppAuthorizationCookies];
+
 //    отображаем попап, если токен недействителен
     if (/* TODO: проверка текущего активного токена доступа на действительность */1) {
         [_innerWebView loadRequest:request];
@@ -169,10 +176,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                                      createStorageItemForAccessToken:_accessToken];
             [[VKStorage sharedStorage] addItem:storageItem];
 
-//          TODO: здесь должен быть, наверно, какой-то код, который будет активировать текущий токен
-//            и делать его основным - будет использовать при запросах
-//            примерно так: [VKUser activateUserID:_accessToken.userID], а потом можно
-//            спокойно будет обращаться [VKUser currentUser]
+            if (![self requireAppAuthorizationEachTime])
+                [self saveAppAuthorizationCookies];
 
 //            уведомляем программиста, что токен был обновлён
             if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalSucceeded:)])
@@ -207,6 +212,53 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [_activityIndicator startAnimating];
+}
+
+#pragma mark - Cookies manipulation methods
+
+- (void)clearAppAuthorizationCookies
+{
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+
+    for (NSHTTPCookie *cookie in cookies) {
+        if (NSNotFound != [cookie.domain rangeOfString:@"vk.com"].location) {
+            [[NSHTTPCookieStorage sharedHTTPCookieStorage]
+                                  deleteCookie:cookie];
+        }
+    }
+
+    [[NSUserDefaults standardUserDefaults]
+                     removeObjectForKey:kVKAuthorizationCookiesUserDefaultsKey];
+}
+
+- (void)loadAppAuthorizationCookies
+{
+    NSArray *cookies = [[NSUserDefaults standardUserDefaults]
+                                        objectForKey:kVKAuthorizationCookiesUserDefaultsKey];
+
+    if(nil == cookies)
+        return;
+
+    for (NSDictionary *c in cookies) {
+        NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:c];
+
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage]
+                              setCookie:cookie];
+    }
+}
+
+- (void)saveAppAuthorizationCookies
+{
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+    NSMutableArray *savedCookies = [NSMutableArray array];
+
+    for (NSHTTPCookie *c in cookies) {
+        [savedCookies addObject:c.properties];
+    }
+
+    [[NSUserDefaults standardUserDefaults]
+                     setObject:savedCookies
+                        forKey:kVKAuthorizationCookiesUserDefaultsKey];
 }
 
 @end

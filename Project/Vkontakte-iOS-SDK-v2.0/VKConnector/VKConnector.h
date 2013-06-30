@@ -31,6 +31,10 @@
 #import <Foundation/Foundation.h>
 #import "VKMethods.h"
 
+
+static NSString *const kVKAuthorizationCookiesUserDefaultsKey = @"Vkontakte-iOS-SDK-v2.0-AuthorizationCookies";
+
+
 @class VKAccessToken;
 @class VKConnector;
 @class KGModal;
@@ -146,6 +150,11 @@ parsingErrorOccured:(NSError *)error;
  */
 @property (nonatomic, strong, readonly) NSArray *permissions;
 
+/** Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
+По умолчанию принимает значение YES.
+*/
+@property (nonatomic, assign, readwrite) BOOL requireAppAuthorizationEachTime;
+
 /**
 @name Методы класса
 */
@@ -165,5 +174,13 @@ parsingErrorOccured:(NSError *)error;
 - (void)startWithAppID:(NSString *)appID
             permissons:(NSArray *)permissions;
 
+/**
+@name Манипулирование куками авторизации
+*/
+/** Удаляет куки, которые были получены при авторизации последним пользователем приложения.
+Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
+несколько своих учетных записей социальной сети или для авторизации другого пользователя.
+*/
+- (void)clearAppAuthorizationCookies;
 
 @end

@@ -26,6 +26,17 @@
 //
 #import <Foundation/Foundation.h>
 
+@class VKAccessToken;
+
 
 @interface VKUser : NSObject
+
+@property (nonatomic, readonly) VKAccessToken *accessToken;
+
++ (instancetype)currentUser;
++ (BOOL)activateUserWithID:(NSUInteger)userID;
++ (NSArray *)localUsers;
+
+- (NSString *)description;
+
 @end

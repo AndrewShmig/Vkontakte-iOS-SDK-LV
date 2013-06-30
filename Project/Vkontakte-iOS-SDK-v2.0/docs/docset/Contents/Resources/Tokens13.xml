@@ -121,6 +121,45 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/setRequireAppAuthorizationEachTime:</TokenIdentifier>
+			<Abstract type="html">Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
+По умолчанию принимает значение YES.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL requireAppAuthorizationEachTime</Declaration>
+			
+			
+			<Anchor>//api/name/requireAppAuthorizationEachTime</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/requireAppAuthorizationEachTime</TokenIdentifier>
+			<Abstract type="html">Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
+По умолчанию принимает значение YES.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL requireAppAuthorizationEachTime</Declaration>
+			
+			
+			<Anchor>//api/name/requireAppAuthorizationEachTime</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKConnector/requireAppAuthorizationEachTime</TokenIdentifier>
+			<Abstract type="html">Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
+По умолчанию принимает значение YES.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL requireAppAuthorizationEachTime</Declaration>
+			
+			
+			<Anchor>//api/name/requireAppAuthorizationEachTime</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKConnector/sharedInstance</TokenIdentifier>
 			<Abstract type="html">Метод класса для получения экземпляра сиглтона.
 Если объект отсутствует, то он будет создан. Не может быть равен nil или NULL.</Abstract>
@@ -150,6 +189,20 @@
 			</Parameters>
 			
 			<Anchor>//api/name/startWithAppID:permissons:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/clearAppAuthorizationCookies</TokenIdentifier>
+			<Abstract type="html">Удаляет куки, которые были получены при авторизации последним пользователем приложения.
+Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
+несколько своих учетных записей социальной сети или для авторизации другого пользователя.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>- (void)clearAppAuthorizationCookies</Declaration>
+			
+			
+			<Anchor>//api/name/clearAppAuthorizationCookies</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

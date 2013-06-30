@@ -25,10 +25,87 @@
 // THE SOFTWARE.
 //
 #import "VKUser.h"
+#import "VKStorage.h"
+#import "VKStorageItem.h"
+#import "VKAccessToken.h"
 
 
 @implementation VKUser
 {
-
+    VKStorageItem *_storageItem;
 }
+
+#pragma mark Visible VKUser methods
+#pragma mark - Init methods
+
+- (instancetype)initWithStorageItem:(VKStorageItem *)storageItem
+{
+    self = [super init];
+
+    if(self){
+        _storageItem = storageItem;
+    }
+
+    return self;
+}
+
+#pragma mark - Class methods
+
+static VKUser *_currentUser;
+
++ (instancetype)currentUser
+{
+//    если никакой пользователь еще не был активирован программистом,
+//    и в хранилище есть данные, то активируем первого попавшегося пользователя
+    if(nil == _currentUser && ![[VKStorage sharedStorage] isEmpty]){
+        NSArray *storageItems = [[VKStorage sharedStorage] storageItems];
+        VKStorageItem *storageItem = storageItems[0];
+
+        _currentUser = [[VKUser alloc] initWithStorageItem:storageItem];
+    }
+
+    return _currentUser;
+}
+
++ (BOOL)activateUserWithID:(NSUInteger)userID
+{
+    VKStorageItem *storageItem = [[VKStorage sharedStorage] storageItemForUserID:userID];
+
+    if(nil == storageItem)
+        return NO;
+
+    _currentUser = [[VKUser alloc] initWithStorageItem:storageItem];
+
+    return YES;
+}
+
++ (NSArray *)localUsers
+{
+    NSMutableArray *localUsers = [[NSMutableArray alloc] init];
+
+    [[[VKStorage sharedStorage] storageItems]
+                 enumerateObjectsUsingBlock:^(id obj,
+                                              NSUInteger idx,
+                                              BOOL *stop)
+                 {
+                     [localUsers addObject:@(((VKStorageItem *) obj).accessToken.userID)];
+                 }];
+
+    return localUsers;
+}
+
+#pragma mark - Setters & Getters
+
+- (VKAccessToken *)accessToken
+{
+    return _storageItem.accessToken;
+}
+
+#pragma mark - Overriden methods
+
+- (NSString *)description
+{
+    return [_storageItem.accessToken description];
+}
+
 @end

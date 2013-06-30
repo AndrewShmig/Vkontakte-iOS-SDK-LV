@@ -45,6 +45,8 @@
 	
 	<option value="//api/name/permissions">&nbsp;&nbsp;&nbsp;&nbsp;permissions</option>
 	
+	<option value="//api/name/requireAppAuthorizationEachTime">&nbsp;&nbsp;&nbsp;&nbsp;requireAppAuthorizationEachTime</option>
+	
 	
 	
 	
@@ -56,6 +58,8 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/clearAppAuthorizationCookies">&nbsp;&nbsp;&nbsp;&nbsp;- clearAppAuthorizationCookies</option>
 	
 	<option value="//api/name/startWithAppID:permissons:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithAppID:permissons:</option>
 	
@@ -81,6 +85,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Авторизация пользователем приложения">Авторизация пользователем приложения</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Манипулирование куками авторизации">Манипулирование куками авторизации</a></span></li>
+	
 </ul></li>
 
 
@@ -95,6 +101,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/permissions">permissions</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requireAppAuthorizationEachTime">requireAppAuthorizationEachTime</a></span></li>
+	
 </ul></li>
 
 
@@ -108,6 +116,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearAppAuthorizationCookies">clearAppAuthorizationCookies</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithAppID:permissons:">startWithAppID:permissons:</a></span></li>
 	
@@ -196,6 +206,14 @@
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requireAppAuthorizationEachTime">&nbsp;&nbsp;requireAppAuthorizationEachTime</a></code>
+		<span class="tooltip"><p>Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
+По умолчанию принимает значение YES.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li>
 						</ul>
 						
@@ -224,6 +242,23 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/startWithAppID:permissons:">&ndash;&nbsp;startWithAppID:permissons:</a></code>
 		<span class="tooltip"><p>Инициализирует запуск коннектора с заданными параметрами</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Манипулирование куками авторизации" name="task_Манипулирование куками авторизации"></a>
+						<h3 class="subsubtitle task-title">Манипулирование куками авторизации</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearAppAuthorizationCookies">&ndash;&nbsp;clearAppAuthorizationCookies</a></code>
+		<span class="tooltip"><p>Удаляет куки, которые были получены при авторизации последним пользователем приложения.
+Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
+несколько своих учетных записей социальной сети или для авторизации другого пользователя.</p></span>
 	</span>
 	
 	
@@ -348,6 +383,43 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/requireAppAuthorizationEachTime" title="requireAppAuthorizationEachTime"></a>
+	<h3 class="subsubtitle method-title">requireAppAuthorizationEachTime</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
+По умолчанию принимает значение YES.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) BOOL requireAppAuthorizationEachTime</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKConnector.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -400,6 +472,44 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/clearAppAuthorizationCookies" title="clearAppAuthorizationCookies"></a>
+	<h3 class="subsubtitle method-title">clearAppAuthorizationCookies</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Удаляет куки, которые были получены при авторизации последним пользователем приложения.
+Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
+несколько своих учетных записей социальной сети или для авторизации другого пользователя.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)clearAppAuthorizationCookies</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKConnector.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/startWithAppID:permissons:" title="startWithAppID:permissons:"></a>
