@@ -1,99 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKCachedData.html">
+	<File path="Classes/VKAudio.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKCachedData</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/VKAudio</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>
+			<DeclaredIn>VKAudio.h</DeclaredIn>
 			
 			<NodeRef refid="10"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/initWithCacheDirectory:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (instancetype)initWithCacheDirectory:(NSString *)path</Declaration>
-			
-			
-			<Anchor>//api/name/initWithCacheDirectory:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url</Declaration>
-			
-			
-			<Anchor>//api/name/addCachedData:forURL:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:liveTime:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url liveTime:(VKCachedDataLiveTime)cacheLiveTime</Declaration>
-			
-			
-			<Anchor>//api/name/addCachedData:forURL:liveTime:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/removeCachedDataForURL:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (void)removeCachedDataForURL:(NSURL *)url</Declaration>
-			
-			
-			<Anchor>//api/name/removeCachedDataForURL:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/clearCachedData</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (void)clearCachedData</Declaration>
-			
-			
-			<Anchor>//api/name/clearCachedData</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/containsCachedDataForURL:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (BOOL)containsCachedDataForURL:(NSURL *)url</Declaration>
-			
-			
-			<Anchor>//api/name/containsCachedDataForURL:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/cachedDataForURL:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (NSData *)cachedDataForURL:(NSURL *)url</Declaration>
-			
-			
-			<Anchor>//api/name/cachedDataForURL:</Anchor>
-            <NodeRef refid="10"/>
-		</Token>
 		
 	</File>
 </Tokens>

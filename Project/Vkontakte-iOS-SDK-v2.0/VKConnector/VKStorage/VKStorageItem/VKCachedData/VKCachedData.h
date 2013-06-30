@@ -26,7 +26,8 @@
 //
 #import <Foundation/Foundation.h>
 
-
+/** Перечисление возможных сроков действия кэша.
+*/
 typedef enum
 {
 
@@ -44,18 +45,69 @@ typedef enum
 
 } VKCachedDataLiveTime;
 
-
+/** Класс предназначен для хранения, получения, удаления кэша запросов.
+Хранение кэша осуществляется на диске и в директории указанной при инициализации
+класса.
+*/
 @interface VKCachedData : NSObject
 
+/**
+@name Методы инициализации
+*/
+/** Инициализация объекта для кэширования запросов
+
+@param path директория в которой должны будут храниться кэшируемые данные.
+Если директория не существует, то будет создана.
+@return объект типа VKCachedData
+*/
 - (instancetype)initWithCacheDirectory:(NSString *)path;
 
+/**
+@name Методы манипуляции с кэшем
+*/
+/** Добавляет данные в кэш
+По умолчанию время жизни кэша устанавливается равным одному часу.
+
+@param cache данные, которые необходимо закэшировать
+@param url URL который соответствует кешируемым данным
+*/
 - (void)addCachedData:(NSData *)cache forURL:(NSURL *)url;
+
+/** Добавляет данные в кэш
+
+@param cache данные, которые необходимо закэшировать
+@param url URL который соответствует кешируемым данным
+@param cacheLiveTime время жизни кэша. Возможные варианты перечислены в VKCachedDataLiveTime
+(VKCachedDataLiveTimeOneHour, VKCachedDataLiveTimeOneDay, VKCachedDataLiveTimeForever etc)
+*/
 - (void)addCachedData:(NSData *)cache
                forURL:(NSURL *)url
              liveTime:(VKCachedDataLiveTime)cacheLiveTime;
+
+/** Удаление кэша указанного URL
+
+@param url URL, закэшированные данные которого необходимо удалить
+*/
 - (void)removeCachedDataForURL:(NSURL *)url;
+
+/** Удаление всех закэшированных данных в директории, которой был инициализирован
+данный объект
+*/
 - (void)clearCachedData;
 
+/** Удаление директории с данными кэша
+*/
+- (void)removeCachedDataDirectory;
+
+/**
+@name Получение закэшированных данных
+*/
+/** Возвращает закэшированные данные по указанному URL, либо nil, если время действия
+кэша истекло или его нет.
+
+@param url URL, закэшированные данные по которому необходимо получить
+@return экземпляр класса NSData, закэшированные данные указанного URL
+*/
 - (NSData *)cachedDataForURL:(NSURL *)url;
 
 @end

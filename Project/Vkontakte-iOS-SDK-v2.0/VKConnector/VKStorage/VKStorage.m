@@ -122,6 +122,8 @@
 - (void)removeItem:(VKStorageItem *)item
 {
     id storageKey = @(item.accessToken.userID);
+
+    [item.cachedData removeCachedDataDirectory];
     [_storageItems removeObjectForKey:storageKey];
 
     [self saveStorage];

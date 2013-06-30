@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -69,6 +71,8 @@
 	
 	<option value="//api/name/storageItemForUserID:">&nbsp;&nbsp;&nbsp;&nbsp;- storageItemForUserID:</option>
 	
+	<option value="//api/name/storageItems">&nbsp;&nbsp;&nbsp;&nbsp;- storageItems</option>
+	
 	
 	
 </select>
@@ -78,10 +82,22 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Свойства">Свойства</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Инициализация">Инициализация</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Создание элементов хранилища">Создание элементов хранилища</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Манипулирование данными хранилища">Манипулирование данными хранилища</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Чтение элементов хранилища">Чтение элементов хранилища</a></span></li>
 	
 </ul></li>
 
@@ -125,6 +141,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/storageItemForUserID:">storageItemForUserID:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/storageItems">storageItems</a></span></li>
+	
 </ul></li>
 
 
@@ -159,6 +177,17 @@
 					
 					
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Класс представляет собой хранилище для пользовательских токенов доступа и
+закэшированных данных.
+Основным хранимым элементом является элемент типа <a href="../Classes/VKStorageItem.html">VKStorageItem</a>, который содержит
+пользовательский токен доступа и связанную с ним директорию для кэша.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -166,84 +195,123 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Свойства" name="task_Свойства"></a>
+						<h3 class="subsubtitle task-title">Свойства</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/isEmpty">&nbsp;&nbsp;isEmpty</a></code>
-		
+		<span class="tooltip"><p>Является ли хранилище пустым</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/count">&nbsp;&nbsp;count</a></code>
-		
+		<span class="tooltip"><p>Кол-во элементов находящихся в хранилище</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fullStoragePath">&nbsp;&nbsp;fullStoragePath</a></code>
-		
+		<span class="tooltip"><p>Полный путь к основной директории хранилища</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fullCacheStoragePath">&nbsp;&nbsp;fullCacheStoragePath</a></code>
-		
+		<span class="tooltip"><p>Полный путь к основной директории кэша хранилища</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Инициализация" name="task_Инициализация"></a>
+						<h3 class="subsubtitle task-title">Инициализация</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/sharedStorage">+&nbsp;sharedStorage</a></code>
-		
+		<span class="tooltip"><p>Общее хранилище</p></span>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Создание элементов хранилища" name="task_Создание элементов хранилища"></a>
+						<h3 class="subsubtitle task-title">Создание элементов хранилища</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/createStorageItemForAccessToken:">&ndash;&nbsp;createStorageItemForAccessToken:</a></code>
-		
+		<span class="tooltip"><p>Создаёт элемент хранилища</p></span>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Манипулирование данными хранилища" name="task_Манипулирование данными хранилища"></a>
+						<h3 class="subsubtitle task-title">Манипулирование данными хранилища</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addItem:">&ndash;&nbsp;addItem:</a></code>
-		
+		<span class="tooltip"><p>Добавляет в хранилище новый элемент</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeItem:">&ndash;&nbsp;removeItem:</a></code>
-		
+		<span class="tooltip"><p>Удаляет из хранилища указанный элемент</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/clean">&ndash;&nbsp;clean</a></code>
-		
+		<span class="tooltip"><p>Удаляет все данные из хранилище.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/cleanCachedData">&ndash;&nbsp;cleanCachedData</a></code>
-		
+		<span class="tooltip"><p>Удаляет все данные кэша в хранилище</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Чтение элементов хранилища" name="task_Чтение элементов хранилища"></a>
+						<h3 class="subsubtitle task-title">Чтение элементов хранилища</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/storageItemForUserID:">&ndash;&nbsp;storageItemForUserID:</a></code>
+		<span class="tooltip"><p>Получение элемента хранилища по пользовательскому идентификатору</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/storageItemForUserID:">&ndash;&nbsp;storageItemForUserID:</a></code>
-		
+		<code><a href="#//api/name/storageItems">&ndash;&nbsp;storageItems</a></code>
+		<span class="tooltip"><p>Список всех элементов хранилища</p></span>
 	</span>
 	
 	
@@ -265,10 +333,35 @@
 	<h3 class="subsubtitle method-title">count</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Кол-во элементов находящихся в хранилище</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger count</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -276,10 +369,35 @@
 	<h3 class="subsubtitle method-title">fullCacheStoragePath</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Полный путь к основной директории кэша хранилища</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *fullCacheStoragePath</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -287,10 +405,35 @@
 	<h3 class="subsubtitle method-title">fullStoragePath</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Полный путь к основной директории хранилища</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *fullStoragePath</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -298,10 +441,35 @@
 	<h3 class="subsubtitle method-title">isEmpty</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Является ли хранилище пустым</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isEmpty</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -317,10 +485,40 @@
 	<h3 class="subsubtitle method-title">sharedStorage</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Общее хранилище</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (instancetype)sharedStorage</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>экземпляр класс VKStorage</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -336,10 +534,45 @@
 	<h3 class="subsubtitle method-title">addItem:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавляет в хранилище новый элемент</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)addItem:(VKStorageItem *)<em>item</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>item</em></dt>
+			<dd><p>элемент хранилища</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -347,10 +580,35 @@
 	<h3 class="subsubtitle method-title">clean</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Удаляет все данные из хранилище.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)clean</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -358,10 +616,35 @@
 	<h3 class="subsubtitle method-title">cleanCachedData</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Удаляет все данные кэша в хранилище</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)cleanCachedData</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -369,10 +652,50 @@
 	<h3 class="subsubtitle method-title">createStorageItemForAccessToken:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Создаёт элемент хранилища</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)<em>token</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>пользовательский токен доступа для которого будет создан элемент хранилища</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>экземпляр класс <a href="../Classes/VKStorageItem.html">VKStorageItem</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -380,10 +703,45 @@
 	<h3 class="subsubtitle method-title">removeItem:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Удаляет из хранилища указанный элемент</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)removeItem:(VKStorageItem *)<em>item</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>item</em></dt>
+			<dd><p>элемент хранилища</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -391,10 +749,91 @@
 	<h3 class="subsubtitle method-title">storageItemForUserID:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Получение элемента хранилища по пользовательскому идентификатору</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (VKStorageItem *)storageItemForUserID:(NSUInteger)<em>userID</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userID</em></dt>
+			<dd><p>пользовательский идентификатор</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>экземпляр класса <a href="../Classes/VKStorageItem.html">VKStorageItem</a>, либо nil, если элемента в хранилище</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/storageItems" title="storageItems"></a>
+	<h3 class="subsubtitle method-title">storageItems</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Список всех элементов хранилища</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)storageItems</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>массив со всеми элементами хранилища типа <a href="../Classes/VKStorageItem.html">VKStorageItem</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKStorage.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>

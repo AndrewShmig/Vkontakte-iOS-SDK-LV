@@ -130,6 +130,16 @@
     });
 }
 
+- (void)removeCachedDataDirectory
+{
+    dispatch_async(_backgroudQueue, ^{
+
+        [[NSFileManager defaultManager] removeItemAtPath:_cacheDirectoryPath
+                                                   error:nil];
+
+    });
+}
+
 - (NSData *)cachedDataForURL:(NSURL *)url
 {
     NSString *encodedCachedURL = [[url absoluteString] toBase64];
