@@ -27,5 +27,62 @@
 #import <Foundation/Foundation.h>
 
 
-@interface VKRequest : NSObject
+@class VKRequest;
+
+
+@protocol VKRequestProtocol
+
+@required
+- (void)VKRequest:(NSURLRequest *)request
+         response:(id)response;
+
+@optional
+- (void)     VKRequest:(NSURLRequest *)request
+connectionErrorOccured:(NSError *)error;
+
+- (void)  VKRequest:(NSURLRequest *)request
+parsingErrorOccured:(NSError *)error;
+
+- (void)VKRequest:(NSURLRequest *)request
+       totalBytes:(NSUInteger)totalBytes
+  downloadedBytes:(NSUInteger)downloadedBytes;
+
+- (void)VKRequest:(NSURLRequest *)request
+       totalBytes:(NSUInteger)totalBytes
+     uplodedBytes:(NSUInteger)uploadedBytes;
+
+@end
+
+
+@interface VKRequest : NSObject <NSURLConnectionDataDelegate>
+
+@property (nonatomic, weak, readwrite) id <VKRequestProtocol> delegate;
+
++ (instancetype)request:(NSURLRequest *)request
+               delegate:(id <VKRequestProtocol>)delegate;
+
++ (instancetype)requestHTTPMethod:(NSString *)httpMethod
+                              URL:(NSURL *)url
+                          headers:(NSDictionary *)headers
+                             body:(NSData *)body
+                         delegate:(id <VKRequestProtocol>)delegate;
+
++ (instancetype)requestMethod:(NSString *)methodName
+                      options:(NSDictionary *)options
+                     delegate:(id <VKRequestProtocol>)delegate;
+
+- (instancetype)initWithRequest:(NSURLRequest *)request;
+
+- (instancetype)initWithHTTPMethod:(NSString *)httpMethod
+                               URL:(NSURL *)url
+                           headers:(NSDictionary *)headers
+                              body:(NSData *)body;
+
+- (instancetype)initWithMethod:(NSString *)methodName
+                       options:(NSDictionary *)options;
+
+- (void)start;
+
+- (void)cancel;
+
 @end

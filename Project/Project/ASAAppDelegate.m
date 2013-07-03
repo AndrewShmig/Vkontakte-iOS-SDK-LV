@@ -9,6 +9,7 @@
 #import "ASAAppDelegate.h"
 #import "ASAViewController.h"
 #import "VKAccessToken.h"
+#import "VKUser.h"
 
 
 static NSString *const kVKAppID = @"3541027";
