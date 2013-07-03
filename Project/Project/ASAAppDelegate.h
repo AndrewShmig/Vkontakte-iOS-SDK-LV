@@ -13,7 +13,7 @@
 @class ASAViewController;
 
 
-@interface ASAAppDelegate : UIResponder <UIApplicationDelegate, VKConnectorProtocol>
+@interface ASAAppDelegate : UIResponder <UIApplicationDelegate, VKConnectorDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

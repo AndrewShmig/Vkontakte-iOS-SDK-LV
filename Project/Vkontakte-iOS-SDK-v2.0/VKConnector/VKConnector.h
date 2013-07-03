@@ -41,7 +41,7 @@
 /** Протокол объявляет методы отслеживания изменения статуса токена доступа
  хранимого классом VKConnector.
  */
-@protocol VKConnectorProtocol <NSObject>
+@protocol VKConnectorDelegate <NSObject>
 
 @optional
 /**
@@ -72,16 +72,16 @@
  @param connector объект класса VKConnector отправляющий сообщение.
  @param accessToken токен доступа, срок действия которого истёк.
  */
-- (void)VKConnector:(VKConnector *)connector
-        accessTokenInvalidated:(VKAccessToken *)accessToken;
+- (void)   VKConnector:(VKConnector *)connector
+accessTokenInvalidated:(VKAccessToken *)accessToken;
 
 /** Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.
  
  @param connector объект класса VKConnector отправляющий сообщение.
  @param accessToken новый токен доступа, который был получен.
  */
-- (void)VKConnector:(VKConnector *)connector
-        accessTokenRenewalSucceeded:(VKAccessToken *)accessToken;
+- (void)        VKConnector:(VKConnector *)connector
+accessTokenRenewalSucceeded:(VKAccessToken *)accessToken;
 
 /** Метод, вызов которого сигнализирует о том, что обновление токена доступа не
  удалось.
@@ -91,8 +91,8 @@
  @param connector объект класса VKConnector отправляющего сообщение.
  @param accessToken токен доступа (равен nil)
  */
-- (void)VKConnector:(VKConnector *)connector
-        accessTokenRenewalFailed:(VKAccessToken *)accessToken;
+- (void)     VKConnector:(VKConnector *)connector
+accessTokenRenewalFailed:(VKAccessToken *)accessToken;
 
 /**
  @name Connection & Parsing
@@ -102,8 +102,8 @@
  @param connector объект класса VKConnector отправляющего сообщение
  @param error объект ошибки содержащий описание причины возникновения ошибки
  */
-- (void)VKConnector:(VKConnector *)connector
-        connectionErrorOccured:(NSError *)error;
+- (void)   VKConnector:(VKConnector *)connector
+connectionErrorOccured:(NSError *)error;
 
 /** Метод, вызов которого сигнализирует о том, что произошла ошибка при парсинге JSON ответа сервера
  
@@ -114,10 +114,6 @@
 parsingErrorOccured:(NSError *)error;
 
 @end
-
-
-
-
 
 
 /** Класс предназначен для получения приложением доступа к пользовательской учетной
@@ -137,7 +133,7 @@ parsingErrorOccured:(NSError *)error;
 */
 /** Делегат VKConnector
  */
-@property (nonatomic, weak, readwrite) id<VKConnectorProtocol> delegate;
+@property (nonatomic, weak, readwrite) id <VKConnectorDelegate> delegate;
 
 /** Идентификатор приложения Вконтакте
  */
@@ -153,7 +149,7 @@ parsingErrorOccured:(NSError *)error;
 /** Метод класса для получения экземпляра сиглтона.
 * Если объект отсутствует, то он будет создан. Не может быть равен nil или NULL.
 */
-+ (id) sharedInstance;
++ (id)sharedInstance;
 
 /**
 @name Авторизация пользователем приложения

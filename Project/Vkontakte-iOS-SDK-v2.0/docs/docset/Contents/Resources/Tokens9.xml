@@ -358,18 +358,6 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/tokenAsDictionary</TokenIdentifier>
-			<Abstract type="html">Токен доступа в виде словаря</Abstract>
-			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
-			
-			<Declaration>- (NSDictionary *)tokenAsDictionary</Declaration>
-			
-			<ReturnValue><Abstract type="html">Словрь с данными токена доступа</Abstract></ReturnValue>
-			<Anchor>//api/name/tokenAsDictionary</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/isEqual:</TokenIdentifier>
 			<Abstract type="html">Проверяет токены доступов на равенство</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			

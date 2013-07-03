@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKPhoto.html">
+	<File path="Protocols/VKRequestDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKPhoto</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intf/VKRequestDelegate</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKPhoto.h</DeclaredIn>
+			<DeclaredIn>VKRequest.h</DeclaredIn>
 			
 			<NodeRef refid="20"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:response:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request response:(id)response</Declaration>
+			
+			
+			<Anchor>//api/name/VKRequest:response:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:connectionErrorOccured:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request connectionErrorOccured:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/VKRequest:connectionErrorOccured:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:parsingErrorOccured:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request parsingErrorOccured:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/VKRequest:parsingErrorOccured:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:totalBytes:downloadedBytes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request totalBytes:(NSUInteger)totalBytes downloadedBytes:(NSUInteger)downloadedBytes</Declaration>
+			
+			
+			<Anchor>//api/name/VKRequest:totalBytes:downloadedBytes:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:totalBytes:uploadedBytes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request totalBytes:(NSUInteger)totalBytes uploadedBytes:(NSUInteger)uploadedBytes</Declaration>
+			
+			
+			<Anchor>//api/name/VKRequest:totalBytes:uploadedBytes:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
 		
 	</File>
 </Tokens>

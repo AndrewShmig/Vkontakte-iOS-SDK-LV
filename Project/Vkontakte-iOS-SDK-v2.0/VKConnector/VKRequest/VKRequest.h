@@ -25,51 +25,54 @@
 // THE SOFTWARE.
 //
 #import <Foundation/Foundation.h>
+#import "VKCachedData.h"
 
 
 @class VKRequest;
 
 
-@protocol VKRequestProtocol
+@protocol VKRequestDelegate
 
 @required
-- (void)VKRequest:(NSURLRequest *)request
+- (void)VKRequest:(VKRequest *)request
          response:(id)response;
 
 @optional
-- (void)     VKRequest:(NSURLRequest *)request
+- (void)     VKRequest:(VKRequest *)request
 connectionErrorOccured:(NSError *)error;
 
-- (void)  VKRequest:(NSURLRequest *)request
+- (void)  VKRequest:(VKRequest *)request
 parsingErrorOccured:(NSError *)error;
 
-- (void)VKRequest:(NSURLRequest *)request
+- (void)VKRequest:(VKRequest *)request
        totalBytes:(NSUInteger)totalBytes
   downloadedBytes:(NSUInteger)downloadedBytes;
 
-- (void)VKRequest:(NSURLRequest *)request
+- (void)VKRequest:(VKRequest *)request
        totalBytes:(NSUInteger)totalBytes
-     uploadedBytes:(NSUInteger)uploadedBytes;
+    uploadedBytes:(NSUInteger)uploadedBytes;
 
 @end
 
 
 @interface VKRequest : NSObject <NSURLConnectionDataDelegate>
 
-@property (nonatomic, weak, readwrite) id <VKRequestProtocol> delegate;
+@property (nonatomic, weak, readwrite) id <VKRequestDelegate> delegate;
+@property (nonatomic, strong, readwrite) id signature;
+@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime;
 
 + (instancetype)request:(NSURLRequest *)request
-               delegate:(id <VKRequestProtocol>)delegate;
+               delegate:(id <VKRequestDelegate>)delegate;
 
 + (instancetype)requestHTTPMethod:(NSString *)httpMethod
                               URL:(NSURL *)url
                           headers:(NSDictionary *)headers
                              body:(NSData *)body
-                         delegate:(id <VKRequestProtocol>)delegate;
+                         delegate:(id <VKRequestDelegate>)delegate;
 
 + (instancetype)requestMethod:(NSString *)methodName
                       options:(NSDictionary *)options
-                     delegate:(id <VKRequestProtocol>)delegate;
+                     delegate:(id <VKRequestDelegate>)delegate;
 
 - (instancetype)initWithRequest:(NSURLRequest *)request;
 

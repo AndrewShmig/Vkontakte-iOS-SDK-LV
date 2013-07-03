@@ -1,159 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKCachedData.html">
+	<File path="Classes/VKRequest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKCachedData</TokenIdentifier>
-			<Abstract type="html">Класс предназначен для хранения, получения, удаления кэша запросов.
-Хранение кэша осуществляется на диске и в директории указанной при инициализации
-класса.</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VKRequest</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>
 			
 			<NodeRef refid="12"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/initWithCacheDirectory:</TokenIdentifier>
-			<Abstract type="html">Инициализация объекта для кэширования запросов</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (instancetype)initWithCacheDirectory:(NSString *)path</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>path</Name>
-					<Abstract type="html">директория в которой должны будут храниться кэшируемые данные.
-Если директория не существует, то будет создана.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">объект типа VKCachedData</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCacheDirectory:</Anchor>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:</TokenIdentifier>
-			<Abstract type="html">Добавляет данные в кэш
-По умолчанию время жизни кэша устанавливается равным одному часу.</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>cache</Name>
-					<Abstract type="html">данные, которые необходимо закэшировать</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL который соответствует кешируемым данным</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/addCachedData:forURL:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:liveTime:</TokenIdentifier>
-			<Abstract type="html">Добавляет данные в кэш</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url liveTime:(VKCachedDataLiveTime)cacheLiveTime</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>cache</Name>
-					<Abstract type="html">данные, которые необходимо закэшировать</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL который соответствует кешируемым данным</Abstract>
-				</Parameter><Parameter>
-					<Name>cacheLiveTime</Name>
-					<Abstract type="html">время жизни кэша. Возможные варианты перечислены в VKCachedDataLiveTime
-(VKCachedDataLiveTimeOneHour, VKCachedDataLiveTimeOneDay, VKCachedDataLiveTimeForever etc)</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/addCachedData:forURL:liveTime:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/removeCachedDataForURL:</TokenIdentifier>
-			<Abstract type="html">Удаление кэша указанного URL</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setSignature:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)removeCachedDataForURL:(NSURL *)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные которого необходимо удалить</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
 			
-			<Anchor>//api/name/removeCachedDataForURL:</Anchor>
+			
+			<Anchor>//api/name/signature</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/clearCachedData</TokenIdentifier>
-			<Abstract type="html">Удаление всех закэшированных данных в директории, которой был инициализирован
-данный объект</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/signature</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)clearCachedData</Declaration>
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
 			
 			
-			<Anchor>//api/name/clearCachedData</Anchor>
+			<Anchor>//api/name/signature</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/removeCachedDataDirectory</TokenIdentifier>
-			<Abstract type="html">Удаление директории с данными кэша</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/signature</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)removeCachedDataDirectory</Declaration>
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
 			
 			
-			<Anchor>//api/name/removeCachedDataDirectory</Anchor>
+			<Anchor>//api/name/signature</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/cachedDataForURL:</TokenIdentifier>
-			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если время действия
-кэша истекло или его нет.</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setCacheLiveTime:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (NSData *)cachedDataForURL:(NSURL *)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
-			<Anchor>//api/name/cachedDataForURL:</Anchor>
+			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			
+			
+			<Anchor>//api/name/cacheLiveTime</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/cachedDataForURL:offlineMode:</TokenIdentifier>
-			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если для данного
-запроса нет кэша.</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cacheLiveTime</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (NSData *)cachedDataForURL:(NSURL *)url offlineMode:(BOOL)offlineMode</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
-				</Parameter><Parameter>
-					<Name>offlineMode</Name>
-					<Abstract type="html">оффлайн режим запроса кэша (как работает описано в Обсуждении)</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
-			<Anchor>//api/name/cachedDataForURL:offlineMode:</Anchor>
+			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			
+			
+			<Anchor>//api/name/cacheLiveTime</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/cacheLiveTime</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			
+			
+			<Anchor>//api/name/cacheLiveTime</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/request:delegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)request:(NSURLRequest *)request delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/request:delegate:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestHTTPMethod:URL:headers:body:delegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)requestHTTPMethod:(NSString *)httpMethod URL:(NSURL *)url headers:(NSDictionary *)headers body:(NSData *)body delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/requestHTTPMethod:URL:headers:body:delegate:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestMethod:options:delegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)requestMethod:(NSString *)methodName options:(NSDictionary *)options delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/requestMethod:options:delegate:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithRequest:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithRequest:(NSURLRequest *)request</Declaration>
+			
+			
+			<Anchor>//api/name/initWithRequest:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithHTTPMethod:URL:headers:body:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithHTTPMethod:(NSString *)httpMethod URL:(NSURL *)url headers:(NSDictionary *)headers body:(NSData *)body</Declaration>
+			
+			
+			<Anchor>//api/name/initWithHTTPMethod:URL:headers:body:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithMethod:options:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithMethod:(NSString *)methodName options:(NSDictionary *)options</Declaration>
+			
+			
+			<Anchor>//api/name/initWithMethod:options:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/start</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cancel</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)cancel</Declaration>
+			
+			
+			<Anchor>//api/name/cancel</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

@@ -27,6 +27,7 @@
 #import <Foundation/Foundation.h>
 
 @class VKAccessToken;
+@class VKCachedData;
 
 
 @interface VKUser : NSObject

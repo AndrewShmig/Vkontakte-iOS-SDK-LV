@@ -26,7 +26,6 @@
 //
 #import "VKCachedData.h"
 #import "NSString+toBase64.h"
-#import "NSString+toBase64.h"
 
 
 @implementation VKCachedData
@@ -163,9 +162,6 @@
     NSUInteger creationTimestamp = [cachedFile[@"creationTimestamp"] unsignedIntegerValue];
 
 //    определяем наши действия в соответствии с указанным временем жизни кэша запроса
-    if (liveTime == VKCachedDataLiveTimeForever)
-        return cachedData;
-
     NSUInteger currentTimestamp = ((NSUInteger) [[NSDate date]
                                                          timeIntervalSince1970]);
     if (!offlineMode && (creationTimestamp + liveTime) < currentTimestamp) {

@@ -152,7 +152,6 @@
                                      contentsOfDirectoryAtPath:[[VKStorage sharedStorage]
                                                                            fullCacheStoragePath]
                                                          error:nil];
-    NSLog(@"=>files: %@", files);
 
 //    работает правильно, закомментировал потому, что удаление происходит в другом потоке
 //    STAssertTrue([files count] == 0, @"Cache is not cleared");

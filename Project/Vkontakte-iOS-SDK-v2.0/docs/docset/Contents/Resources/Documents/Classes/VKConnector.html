@@ -45,8 +45,6 @@
 	
 	<option value="//api/name/permissions">&nbsp;&nbsp;&nbsp;&nbsp;permissions</option>
 	
-	<option value="//api/name/requireAppAuthorizationEachTime">&nbsp;&nbsp;&nbsp;&nbsp;requireAppAuthorizationEachTime</option>
-	
 	
 	
 	
@@ -100,8 +98,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/permissions">permissions</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requireAppAuthorizationEachTime">requireAppAuthorizationEachTime</a></span></li>
 	
 </ul></li>
 
@@ -203,14 +199,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/permissions">&nbsp;&nbsp;permissions</a></code>
 		<span class="tooltip"><p>Список разрешений</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requireAppAuthorizationEachTime">&nbsp;&nbsp;requireAppAuthorizationEachTime</a></code>
-		<span class="tooltip"><p>Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
-По умолчанию принимает значение YES.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -323,7 +311,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, readwrite) id&lt;VKConnectorProtocol&gt; delegate</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, readwrite) id&lt;VKConnectorDelegate&gt; delegate</code></div>
 
     
 	
@@ -360,43 +348,6 @@
     
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray *permissions</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKConnector.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/requireAppAuthorizationEachTime" title="requireAppAuthorizationEachTime"></a>
-	<h3 class="subsubtitle method-title">requireAppAuthorizationEachTime</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
-По умолчанию принимает значение YES.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) BOOL requireAppAuthorizationEachTime</code></div>
 
     
 	

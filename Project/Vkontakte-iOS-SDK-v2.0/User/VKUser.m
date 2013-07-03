@@ -28,6 +28,7 @@
 #import "VKStorage.h"
 #import "VKStorageItem.h"
 #import "VKAccessToken.h"
+#import "VKCachedData.h"
 
 
 @implementation VKUser

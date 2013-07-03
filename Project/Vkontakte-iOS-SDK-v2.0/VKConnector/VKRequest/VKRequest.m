@@ -25,10 +25,9 @@
 // THE SOFTWARE.
 //
 #import "VKRequest.h"
+#import "VKUser.h"
 
 
 @implementation VKRequest
-{
 
-}
 @end

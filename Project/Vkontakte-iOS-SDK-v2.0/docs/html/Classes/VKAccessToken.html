@@ -72,8 +72,6 @@
 	
 	<option value="//api/name/isEqual:">&nbsp;&nbsp;&nbsp;&nbsp;- isEqual:</option>
 	
-	<option value="//api/name/tokenAsDictionary">&nbsp;&nbsp;&nbsp;&nbsp;- tokenAsDictionary</option>
-	
 	
 	
 </select>
@@ -140,8 +138,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isEqual:">isEqual:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokenAsDictionary">tokenAsDictionary</a></span></li>
-	
 </ul></li>
 
 
@@ -169,7 +165,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSCopying</td>
+	<td class="specification-value">NSCoding<br />NSCopying</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">VKAccessToken.h</td>
@@ -299,13 +295,6 @@ NO - если токен всё еще действует, иначе - YES.</p>
 	<span class="tooltip">
 		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
 		<span class="tooltip"><p>Описание состояния класса VKAccessToken.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/tokenAsDictionary">&ndash;&nbsp;tokenAsDictionary</a></code>
-		<span class="tooltip"><p>Токен доступа в виде словаря</p></span>
 	</span>
 	
 	
@@ -961,47 +950,6 @@ NO - если токен всё еще действует, иначе - YES.</p>
 		<p>YES - если токены доступа равны (на результат сравнения влияет только сам
 токен доступа, список пользовательских разрешений и идентификатор пользователя, которому
 принадлежит данный токен)</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKAccessToken.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/tokenAsDictionary" title="tokenAsDictionary"></a>
-	<h3 class="subsubtitle method-title">tokenAsDictionary</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Токен доступа в виде словаря</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSDictionary *)tokenAsDictionary</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Словрь с данными токена доступа</p>
 	</div>
 	
 	
