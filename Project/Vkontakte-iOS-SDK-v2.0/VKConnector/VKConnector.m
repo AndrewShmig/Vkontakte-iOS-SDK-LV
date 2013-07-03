@@ -33,7 +33,6 @@
 #import "KGModal.h"
 #import "VKStorage.h"
 #import "VKStorageItem.h"
-#import "VKUser.h"
 
 
 #define MARGIN_WIDTH 25.0 // ширина отступа от границ экрана
@@ -52,7 +51,7 @@
     VKAccessToken *_accessToken;
 }
 
-#pragma mark - Init methods
+#pragma mark - Init methods & Class methods
 
 + (instancetype)sharedInstance
 {
@@ -74,7 +73,6 @@
 {
     _permissions = permissions;
     _appID = appID;
-    _requireAppAuthorizationEachTime = YES;
 
     _settings = [self.permissions componentsJoinedByString:@","];
     _redirectURL = @"https://oauth.vk.com/blank.html";
@@ -127,22 +125,15 @@
     NSURL *url = [NSURL URLWithString:urlAsString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
-    if (![self requireAppAuthorizationEachTime])
-        [self loadAppAuthorizationCookies];
-    else
-        [self clearAppAuthorizationCookies];
+//    отображаем попап
+    [_innerWebView loadRequest:request];
 
-//    отображаем попап, если токен недействителен
-    if (/* TODO: проверка текущего активного токена доступа на действительность */1) {
-        [_innerWebView loadRequest:request];
+    if ([self.delegate respondsToSelector:@selector(VKConnector:willShowModalView:)])
+        [self.delegate VKConnector:self
+                 willShowModalView:[KGModal sharedInstance]];
 
-        if ([self.delegate respondsToSelector:@selector(VKConnector:willShowModalView:)])
-            [self.delegate VKConnector:self
-                     willShowModalView:[KGModal sharedInstance]];
-
-        [[KGModal sharedInstance] showWithContentView:_mainView
-                                          andAnimated:YES];
-    }
+    [[KGModal sharedInstance] showWithContentView:_mainView
+                                      andAnimated:YES];
 }
 
 #pragma mark - WebView delegate methods
@@ -175,9 +166,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
             VKStorageItem *storageItem = [[VKStorage sharedStorage]
                                                      createStorageItemForAccessToken:_accessToken];
             [[VKStorage sharedStorage] addItem:storageItem];
-
-            if (![self requireAppAuthorizationEachTime])
-                [self saveAppAuthorizationCookies];
 
 //            уведомляем программиста, что токен был обновлён
             if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalSucceeded:)])
@@ -226,41 +214,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                   deleteCookie:cookie];
         }
     }
-
-    [[NSUserDefaults standardUserDefaults]
-                     removeObjectForKey:kVKAuthorizationCookiesUserDefaultsKey];
-}
-
-- (void)loadAppAuthorizationCookies
-{
-    NSArray *cookies = [[NSUserDefaults standardUserDefaults]
-                                        objectForKey:kVKAuthorizationCookiesUserDefaultsKey];
-
-    if (nil == cookies)
-        return;
-
-    for (NSDictionary *c in cookies) {
-        NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:c];
-
-        [[NSHTTPCookieStorage sharedHTTPCookieStorage]
-                              setCookie:cookie];
-    }
-}
-
-- (void)saveAppAuthorizationCookies
-{
-    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
-    NSMutableArray *savedCookies = [NSMutableArray array];
-
-    for (NSHTTPCookie *c in cookies) {
-        if (NSNotFound != [c.domain rangeOfString:@"vk.com"].location) {
-            [savedCookies addObject:c.properties];
-        }
-    }
-
-    [[NSUserDefaults standardUserDefaults]
-                     setObject:savedCookies
-                        forKey:kVKAuthorizationCookiesUserDefaultsKey];
 }
 
 @end

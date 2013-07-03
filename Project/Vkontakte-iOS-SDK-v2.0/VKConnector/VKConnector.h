@@ -32,9 +32,6 @@
 #import "VKMethods.h"
 
 
-static NSString *const kVKAuthorizationCookiesUserDefaultsKey = @"Vkontakte-iOS-SDK-v2.0-AuthorizationCookies";
-
-
 @class VKAccessToken;
 @class VKConnector;
 @class KGModal;
@@ -140,7 +137,7 @@ parsingErrorOccured:(NSError *)error;
 */
 /** Делегат VKConnector
  */
-@property (nonatomic, weak) id<VKConnectorProtocol> delegate;
+@property (nonatomic, weak, readwrite) id<VKConnectorProtocol> delegate;
 
 /** Идентификатор приложения Вконтакте
  */
@@ -149,11 +146,6 @@ parsingErrorOccured:(NSError *)error;
 /** Список разрешений
  */
 @property (nonatomic, strong, readonly) NSArray *permissions;
-
-/** Запрашивать ли у пользователя авторизацию в социальной сети каждый раз.
-По умолчанию принимает значение YES.
-*/
-@property (nonatomic, assign, readwrite) BOOL requireAppAuthorizationEachTime;
 
 /**
 @name Методы класса

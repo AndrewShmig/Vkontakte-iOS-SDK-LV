@@ -33,6 +33,22 @@
 
 #pragma mark - Init methods
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+
+    if(!self)
+        return nil;
+
+    self->_userID = (NSUInteger)[aDecoder decodeIntegerForKey:@"userID"];
+    self->_token = [aDecoder decodeObjectForKey:@"token"];
+    self->_expirationTime = [aDecoder decodeDoubleForKey:@"expirationTime"];
+    self->_permissions = [aDecoder decodeObjectForKey:@"permissions"];
+    self->_creationTime = [aDecoder decodeDoubleForKey:@"creationTime"];
+
+    return self;
+}
+
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
                 expirationTime:(NSTimeInterval)expirationTime
@@ -90,17 +106,13 @@
     return [desc description];
 }
 
-- (NSDictionary *)tokenAsDictionary
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    NSDictionary *tokenDictionary = @{
-            @"userID"         : @(self.userID),
-            @"expirationTime" : @(((NSUInteger) (self.creationTime + self.expirationTime))),
-            @"creationTime"   : @(((NSUInteger) self.creationTime)),
-            @"permissions"    : self.permissions,
-            @"token"          : self.token
-    };
-
-    return tokenDictionary;
+    [aCoder encodeInteger:_userID forKey:@"userID"];
+    [aCoder encodeObject:_token forKey:@"token"];
+    [aCoder encodeDouble:_expirationTime forKey:@"expirationTime"];
+    [aCoder encodeObject:_permissions forKey:@"permissions"];
+    [aCoder encodeDouble:_creationTime forKey:@"creationTime"];
 }
 
 - (BOOL)isEqual:(VKAccessToken *)token

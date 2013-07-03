@@ -142,6 +142,12 @@
 
 - (NSData *)cachedDataForURL:(NSURL *)url
 {
+    return [self cachedDataForURL:url
+                      offlineMode:NO];
+}
+
+- (NSData *)cachedDataForURL:(NSURL *)url offlineMode:(BOOL)offlineMode
+{
     NSString *encodedCachedURL = [[url absoluteString] toBase64];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
@@ -162,7 +168,7 @@
 
     NSUInteger currentTimestamp = ((NSUInteger) [[NSDate date]
                                                          timeIntervalSince1970]);
-    if ((creationTimestamp + liveTime) < currentTimestamp) {
+    if (!offlineMode && (creationTimestamp + liveTime) < currentTimestamp) {
         [self removeCachedDataForURL:url];
         return nil;
     }

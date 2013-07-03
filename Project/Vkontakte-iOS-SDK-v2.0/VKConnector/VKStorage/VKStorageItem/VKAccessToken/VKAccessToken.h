@@ -40,7 +40,7 @@
  - токен доступа
  */
 
-@interface VKAccessToken : NSObject <NSCopying>
+@interface VKAccessToken : NSObject <NSCopying, NSCoding>
 
 /**
  @name Свойства
@@ -149,11 +149,6 @@
  */
 - (NSString *)description;
 
-/** Токен доступа в виде словаря
-@return Словрь с данными токена доступа
-*/
-- (NSDictionary *)tokenAsDictionary;
-
 /** Проверяет токены доступов на равенство
 @param token токен доступа с которым необходимо сравнить
 @return YES - если токены доступа равны (на результат сравнения влияет только сам
@@ -161,7 +156,6 @@
 принадлежит данный токен)
 */
 - (BOOL)isEqual:(VKAccessToken *)token;
-
 
 /**
  @name Публичные методы

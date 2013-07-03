@@ -195,14 +195,7 @@
 
         [storage enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
         {
-            NSDictionary *value = (NSDictionary *) obj;
-
-            VKAccessToken *token;
-            token = [[VKAccessToken alloc]
-                                    initWithUserID:[value[@"userID"] unsignedIntegerValue]
-                                       accessToken:value[@"token"]
-                                    expirationTime:[value[@"expirationTime"] doubleValue]
-                                       permissions:value[@"permissions"]];
+            VKAccessToken *token = [NSKeyedUnarchiver unarchiveObjectWithData:obj];
 
             VKStorageItem *storageItem = [[VKStorageItem alloc]
                                                          initWithAccessToken:token
@@ -226,7 +219,7 @@
     {
         VKAccessToken *token = [(VKStorageItem *) obj accessToken];
 
-        [newStorage setObject:[token tokenAsDictionary]
+        [newStorage setObject:[NSKeyedArchiver archivedDataWithRootObject:token]
                        forKey:[NSString stringWithFormat:@"%d", token.userID]];
     }];
 

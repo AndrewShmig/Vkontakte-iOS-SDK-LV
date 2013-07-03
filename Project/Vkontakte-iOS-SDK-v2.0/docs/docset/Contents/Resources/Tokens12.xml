@@ -136,5 +136,26 @@
             <NodeRef refid="12"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/cachedDataForURL:offlineMode:</TokenIdentifier>
+			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если для данного
+запроса нет кэша.</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (NSData *)cachedDataForURL:(NSURL *)url offlineMode:(BOOL)offlineMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
+				</Parameter><Parameter>
+					<Name>offlineMode</Name>
+					<Abstract type="html">оффлайн режим запроса кэша (как работает описано в Обсуждении)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
+			<Anchor>//api/name/cachedDataForURL:offlineMode:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
 	</File>
 </Tokens>
