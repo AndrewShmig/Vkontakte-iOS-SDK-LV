@@ -49,7 +49,7 @@ parsingErrorOccured:(NSError *)error;
 
 - (void)VKRequest:(NSURLRequest *)request
        totalBytes:(NSUInteger)totalBytes
-     uplodedBytes:(NSUInteger)uploadedBytes;
+     uploadedBytes:(NSUInteger)uploadedBytes;
 
 @end
 
