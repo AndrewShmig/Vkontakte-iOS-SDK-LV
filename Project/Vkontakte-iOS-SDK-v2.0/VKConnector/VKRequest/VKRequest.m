@@ -138,7 +138,8 @@
     [fullURL appendString:[params componentsJoinedByString:@"&"]];
 
     NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
 
     return [self initWithRequest:request];
 }
