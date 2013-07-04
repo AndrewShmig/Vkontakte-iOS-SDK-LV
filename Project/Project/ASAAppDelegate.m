@@ -32,6 +32,11 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
     return YES;
 }
 
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[VKUser currentUser] info];
+}
+
 - (void)VKConnector:(VKConnector *)connector willShowModalView:(KGModal *)view
 {
     NSLog(@"%s", __FUNCTION__);
@@ -55,17 +60,10 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 - (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
-    NSLog(@"---------------------------------------");
 
-    NSURL *url = [NSURL URLWithString:@"https://api.vk.com/method/users.search"];
-    NSURLRequest *r = [NSURLRequest requestWithURL:url];
-    VKRequest *request = [VKRequest request:r
-                                   delegate:self];
+    [VKUser currentUser].delegate = self;
 
-    request.cacheLiveTime = VKCachedDataLiveTimeFiveMinutes;
-    request.signature = @"Hello World!";
-
-    [request start];
+    [[VKUser currentUser] info];
 }
 
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error
@@ -83,8 +81,8 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 - (void)VKRequest:(VKRequest *)request response:(id)response
 {
     NSLog(@"%s", __FUNCTION__);
-    NSLog(@"response: %@", response);
     NSLog(@"request: %@", request);
+    NSLog(@"response: %@", response);
 }
 
 - (void)VKRequest:(VKRequest *)request parsingErrorOccured:(NSError *)error

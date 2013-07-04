@@ -169,6 +169,6 @@ parsingErrorOccured:(NSError *)error;
 Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
 несколько своих учетных записей социальной сети или для авторизации другого пользователя.
 */
-- (void)clearAppAuthorizationCookies;
+- (void)logoutCurrentUser;
 
 @end

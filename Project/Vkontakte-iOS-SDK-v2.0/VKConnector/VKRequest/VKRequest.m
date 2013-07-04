@@ -128,6 +128,7 @@
     INFO_LOG();
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+
     [request setHTTPMethod:[httpMethod uppercaseString]];
     [request setURL:url];
     [request setAllHTTPHeaderFields:headers];
@@ -144,17 +145,25 @@
     NSMutableString *fullURL = [NSMutableString string];
     [fullURL appendFormat:@"%@%@", kVKAPIURLPrefix, methodName];
 
+//    нет надобности добавлять "?", если параметров нет
+    if (0 != [options count])
+        [fullURL appendString:@"?"];
+
     NSMutableArray *params = [NSMutableArray array];
     [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
     {
-        NSString *objString = (NSString *) obj;
-        NSString *keyString = (NSString *) key;
         NSString *param = [NSString stringWithFormat:@"%@=%@",
-                                                     keyString,
-                                                     [objString encodeURL]];
+                                                     key,
+                                                     [[obj description]
+                                                           encodeURL]];
 
         [params addObject:param];
     }];
+
+//    сортировка нужна для того, чтобы одинаковые запросы имели одинаковый MD5
+//    не стоит забывать, что при итерации по словарю порядок чтения записей может
+//    быть каждый раз разный
+    [params sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 
     [fullURL appendString:[params componentsJoinedByString:@"&"]];
 
@@ -208,11 +217,11 @@
 - (NSString *)description
 {
     NSDictionary *description = @{
-            @"delegate": self.delegate,
-            @"signature": self.signature,
-            @"cacheLiveTime": @(self.cacheLiveTime),
-            @"offlineMode": (self.offlineMode ? @"YES" : @"NO"),
-            @"request": [_request description]
+            @"delegate"      : self.delegate,
+            @"signature"     : self.signature,
+            @"cacheLiveTime" : @(self.cacheLiveTime),
+            @"offlineMode"   : (self.offlineMode ? @"YES" : @"NO"),
+            @"request"       : [_request description]
     };
 
     return [description description];
@@ -234,8 +243,8 @@ didReceiveResponse:(NSURLResponse *)response
             NSError *error = [NSError errorWithDomain:@"VKRequestErrorDomain"
                                                  code:[httpResponse statusCode]
                                              userInfo:@{
-                                                     @"Response headers"             : [httpResponse allHeaderFields],
-                                                     @"Localized status code string" : [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]
+                                                     @"Response headers" : [httpResponse allHeaderFields],
+                                                     @"Localized status code string": [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]
                                              }];
 
             [self.delegate VKRequest:self
@@ -318,14 +327,17 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     }
 
 //    кэшируем данные запроса, если запрос GET
-    NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];
-    VKStorageItem *item = [[VKStorage sharedStorage]
-                                      storageItemForUserID:currentUserID];
-
     if (!_isDataFromCache && VKCachedDataLiveTimeNever != _cacheLiveTime && ![@"POST" isEqualToString:connection.currentRequest.HTTPMethod]) {
+
+        NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];
+        VKStorageItem *item = [[VKStorage sharedStorage]
+                                          storageItemForUserID:currentUserID];
+
         [item.cachedData addCachedData:_receivedData
                                 forURL:connection.currentRequest.URL
                               liveTime:_cacheLiveTime];
+
+        _isDataFromCache = NO;
     }
 
 //    возвращаем Foundation объект

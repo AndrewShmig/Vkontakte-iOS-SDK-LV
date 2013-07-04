@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/TestVKRequest.html">
+	<File path="Classes/TestVKStorage.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/TestVKRequest</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cl/TestVKStorage</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>TestVKRequest.h</DeclaredIn>
+			<DeclaredIn>TestVKStorage.h</DeclaredIn>
 			
 			<NodeRef refid="7"/>
 		</Token>

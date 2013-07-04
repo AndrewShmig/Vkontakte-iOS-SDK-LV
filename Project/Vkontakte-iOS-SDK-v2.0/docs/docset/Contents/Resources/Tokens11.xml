@@ -1,159 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKCachedData.html">
+	<File path="Classes/VKConnector.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKCachedData</TokenIdentifier>
-			<Abstract type="html">Класс предназначен для хранения, получения, удаления кэша запросов.
-Хранение кэша осуществляется на диске и в директории указанной при инициализации
-класса.</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VKConnector</TokenIdentifier>
+			<Abstract type="html">Класс предназначен для получения приложением доступа к пользовательской учетной
+записи и осуществления запросов к API сервиса методами GET/POST.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>
 			
 			<NodeRef refid="11"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/initWithCacheDirectory:</TokenIdentifier>
-			<Abstract type="html">Инициализация объекта для кэширования запросов</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Делегат VKConnector</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (instancetype)initWithCacheDirectory:(NSString *)path</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>path</Name>
-					<Abstract type="html">директория в которой должны будут храниться кэшируемые данные.
-Если директория не существует, то будет создана.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">объект типа VKCachedData</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithCacheDirectory:</Anchor>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKConnectorDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:</TokenIdentifier>
-			<Abstract type="html">Добавляет данные в кэш
-По умолчанию время жизни кэша устанавливается равным одному часу.</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/delegate</TokenIdentifier>
+			<Abstract type="html">Делегат VKConnector</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url</Declaration>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKConnectorDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKConnector/delegate</TokenIdentifier>
+			<Abstract type="html">Делегат VKConnector</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKConnectorDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/setAppID:</TokenIdentifier>
+			<Abstract type="html">Идентификатор приложения Вконтакте</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *appID</Declaration>
+			
+			
+			<Anchor>//api/name/appID</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/appID</TokenIdentifier>
+			<Abstract type="html">Идентификатор приложения Вконтакте</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *appID</Declaration>
+			
+			
+			<Anchor>//api/name/appID</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKConnector/appID</TokenIdentifier>
+			<Abstract type="html">Идентификатор приложения Вконтакте</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *appID</Declaration>
+			
+			
+			<Anchor>//api/name/appID</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/setPermissions:</TokenIdentifier>
+			<Abstract type="html">Список разрешений</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *permissions</Declaration>
+			
+			
+			<Anchor>//api/name/permissions</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/permissions</TokenIdentifier>
+			<Abstract type="html">Список разрешений</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *permissions</Declaration>
+			
+			
+			<Anchor>//api/name/permissions</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKConnector/permissions</TokenIdentifier>
+			<Abstract type="html">Список разрешений</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *permissions</Declaration>
+			
+			
+			<Anchor>//api/name/permissions</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKConnector/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Метод класса для получения экземпляра сиглтона.
+Если объект отсутствует, то он будет создан. Не может быть равен nil или NULL.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>+ (id)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/startWithAppID:permissons:</TokenIdentifier>
+			<Abstract type="html">Инициализирует запуск коннектора с заданными параметрами</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>- (void)startWithAppID:(NSString *)appID permissons:(NSArray *)permissions</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>cache</Name>
-					<Abstract type="html">данные, которые необходимо закэшировать</Abstract>
+					<Name>appID</Name>
+					<Abstract type="html">Идентификатор приложения полученный при регистрации.</Abstract>
 				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL который соответствует кешируемым данным</Abstract>
+					<Name>permissions</Name>
+					<Abstract type="html">Массив доступов (разрешений), которые необходимо получить приложению.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/addCachedData:forURL:</Anchor>
+			<Anchor>//api/name/startWithAppID:permissons:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:liveTime:</TokenIdentifier>
-			<Abstract type="html">Добавляет данные в кэш</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/logoutCurrentUser</TokenIdentifier>
+			<Abstract type="html">Удаляет куки, которые были получены при авторизации последним пользователем приложения.
+Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
+несколько своих учетных записей социальной сети или для авторизации другого пользователя.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url liveTime:(VKCachedDataLiveTime)cacheLiveTime</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>cache</Name>
-					<Abstract type="html">данные, которые необходимо закэшировать</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL который соответствует кешируемым данным</Abstract>
-				</Parameter><Parameter>
-					<Name>cacheLiveTime</Name>
-					<Abstract type="html">время жизни кэша. Возможные варианты перечислены в VKCachedDataLiveTime
-(VKCachedDataLiveTimeOneHour, VKCachedDataLiveTimeOneDay, VKCachedDataLiveTimeForever etc)</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/addCachedData:forURL:liveTime:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/removeCachedDataForURL:</TokenIdentifier>
-			<Abstract type="html">Удаление кэша указанного URL</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (void)removeCachedDataForURL:(NSURL *)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные которого необходимо удалить</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/removeCachedDataForURL:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/clearCachedData</TokenIdentifier>
-			<Abstract type="html">Удаление всех закэшированных данных в директории, которой был инициализирован
-данный объект</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (void)clearCachedData</Declaration>
+			<Declaration>- (void)logoutCurrentUser</Declaration>
 			
 			
-			<Anchor>//api/name/clearCachedData</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/removeCachedDataDirectory</TokenIdentifier>
-			<Abstract type="html">Удаление директории с данными кэша</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (void)removeCachedDataDirectory</Declaration>
-			
-			
-			<Anchor>//api/name/removeCachedDataDirectory</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/cachedDataForURL:</TokenIdentifier>
-			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если время действия
-кэша истекло или его нет.</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (NSData *)cachedDataForURL:(NSURL *)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
-			<Anchor>//api/name/cachedDataForURL:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/cachedDataForURL:offlineMode:</TokenIdentifier>
-			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если для данного
-запроса нет кэша.</Abstract>
-			<DeclaredIn>VKCachedData.h</DeclaredIn>			
-			
-			<Declaration>- (NSData *)cachedDataForURL:(NSURL *)url offlineMode:(BOOL)offlineMode</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
-				</Parameter><Parameter>
-					<Name>offlineMode</Name>
-					<Abstract type="html">оффлайн режим запроса кэша (как работает описано в Обсуждении)</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
-			<Anchor>//api/name/cachedDataForURL:offlineMode:</Anchor>
+			<Anchor>//api/name/logoutCurrentUser</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

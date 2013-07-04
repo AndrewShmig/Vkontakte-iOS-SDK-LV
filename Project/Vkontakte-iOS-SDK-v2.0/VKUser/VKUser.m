@@ -28,7 +28,8 @@
 #import "VKStorage.h"
 #import "VKStorageItem.h"
 #import "VKAccessToken.h"
-#import "VKCachedData.h"
+#import "VKRequest.h"
+#import "VKMethods.h"
 
 
 @implementation VKUser
@@ -43,8 +44,9 @@
 {
     self = [super init];
 
-    if(self){
+    if (self) {
         _storageItem = storageItem;
+        _startAllRequestsImmediately = YES;
     }
 
     return self;
@@ -56,13 +58,14 @@ static VKUser *_currentUser;
 
 + (instancetype)currentUser
 {
-    if(nil == _currentUser){
+    if (nil == _currentUser) {
 //        пользователь еще не был запрошен и не был установлен активным
-        if(![[VKStorage sharedStorage] isEmpty]){
+        if (![[VKStorage sharedStorage] isEmpty]) {
 
 //            хранилище содержит некоторые данные
 //            устанавливаем произвольного пользователя активным
-            VKStorageItem *storageItem = [[[VKStorage sharedStorage] storageItems] lastObject];
+            VKStorageItem *storageItem = [[[VKStorage sharedStorage]
+                                                      storageItems] lastObject];
             _currentUser = [[VKUser alloc] initWithStorageItem:storageItem];
 
         }
@@ -71,10 +74,9 @@ static VKUser *_currentUser;
     }
 
 //    пользователь установлен, но в хранилище его записи нет (возможно была удалена), а этого нельзя так оставлять - сбрасываем
-    if(nil == [[VKStorage sharedStorage] storageItemForUserID:_currentUser.accessToken.userID]){
-
+    if (nil == [[VKStorage sharedStorage]
+                           storageItemForUserID:_currentUser.accessToken.userID]) {
         _currentUser = nil;
-
     }
 
     return _currentUser;
@@ -82,9 +84,10 @@ static VKUser *_currentUser;
 
 + (BOOL)activateUserWithID:(NSUInteger)userID
 {
-    VKStorageItem *storageItem = [[VKStorage sharedStorage] storageItemForUserID:userID];
+    VKStorageItem *storageItem = [[VKStorage sharedStorage]
+                                             storageItemForUserID:userID];
 
-    if(nil == storageItem)
+    if (nil == storageItem)
         return NO;
 
     _currentUser = [[VKUser alloc] initWithStorageItem:storageItem];
@@ -107,6 +110,23 @@ static VKUser *_currentUser;
     return localUsers;
 }
 
+- (VKRequest *)info
+{
+    NSString *fields = @"nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100";
+
+    VKRequest *infoRequest = [[VKRequest alloc]
+                                         initWithMethod:kVKUsersGet
+                                                options:@{
+                                                        @"fields" : fields
+                                                }];
+
+    infoRequest.delegate = self.delegate;
+    infoRequest.signature = NSStringFromSelector(_cmd);
+
+    if (self.startAllRequestsImmediately)
+        [infoRequest start];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken
@@ -114,7 +134,7 @@ static VKUser *_currentUser;
     return _storageItem.accessToken;
 }
 
-#pragma mark - Overriden methods
+#pragma mark - Overridden methods
 
 - (NSString *)description
 {

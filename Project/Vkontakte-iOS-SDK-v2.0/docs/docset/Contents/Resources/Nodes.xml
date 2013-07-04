@@ -26,7 +26,6 @@
 						<NodeRef refid="13"/>
 						<NodeRef refid="14"/>
 						<NodeRef refid="15"/>
-						<NodeRef refid="16"/>
 						
 					</Subnodes>
 				</Node>
@@ -36,6 +35,7 @@
 					<Name>Categories</Name>
 					<Path>index.html</Path>
 					<Subnodes>
+						<NodeRef refid="16"/>
 						<NodeRef refid="17"/>
 						<NodeRef refid="18"/>
 						<NodeRef refid="19"/>
@@ -84,49 +84,49 @@
 			<Path>Classes/TestVKCachedData.html</Path>
 		</Node>
 		<Node id="7">
-			<Name>TestVKRequest</Name>
-			<Path>Classes/TestVKRequest.html</Path>
-		</Node>
-		<Node id="8">
 			<Name>TestVKStorage</Name>
 			<Path>Classes/TestVKStorage.html</Path>
 		</Node>
-		<Node id="9">
+		<Node id="8">
 			<Name>TestVKStorageItem</Name>
 			<Path>Classes/TestVKStorageItem.html</Path>
 		</Node>
-		<Node id="10">
+		<Node id="9">
 			<Name>VKAccessToken</Name>
 			<Path>Classes/VKAccessToken.html</Path>
 		</Node>
-		<Node id="11">
+		<Node id="10">
 			<Name>VKCachedData</Name>
 			<Path>Classes/VKCachedData.html</Path>
 		</Node>
-		<Node id="12">
+		<Node id="11">
 			<Name>VKConnector</Name>
 			<Path>Classes/VKConnector.html</Path>
 		</Node>
-		<Node id="13">
+		<Node id="12">
 			<Name>VKRequest</Name>
 			<Path>Classes/VKRequest.html</Path>
 		</Node>
-		<Node id="14">
+		<Node id="13">
 			<Name>VKStorage</Name>
 			<Path>Classes/VKStorage.html</Path>
 		</Node>
-		<Node id="15">
+		<Node id="14">
 			<Name>VKStorageItem</Name>
 			<Path>Classes/VKStorageItem.html</Path>
 		</Node>
-		<Node id="16">
+		<Node id="15">
 			<Name>VKUser</Name>
 			<Path>Classes/VKUser.html</Path>
 		</Node>
 		
-		<Node id="17">
+		<Node id="16">
 			<Name>NSData(toBase64)</Name>
 			<Path>Categories/NSData+toBase64.html</Path>
+		</Node>
+		<Node id="17">
+			<Name>NSString(MD5)</Name>
+			<Path>Categories/NSString+MD5.html</Path>
 		</Node>
 		<Node id="18">
 			<Name>NSString(encodeURL)</Name>
