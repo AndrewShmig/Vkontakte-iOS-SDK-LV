@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKUser.html">
+	<File path="Classes/VKStorageItem.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKUser</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VKStorageItem</TokenIdentifier>
+			<Abstract type="html">Класс представляет собой элемент хранилища VKStorage.</Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>
 			
 			<NodeRef refid="15"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/setAccessToken:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/setAccessToken:</TokenIdentifier>
+			<Abstract type="html">Токен доступа</Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
-			
-			
-			<Anchor>//api/name/accessToken</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accessToken</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
 			
 			
 			<Anchor>//api/name/accessToken</Anchor>
@@ -36,11 +24,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKUser/accessToken</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/accessToken</TokenIdentifier>
+			<Abstract type="html">Токен доступа</Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
 			
 			
 			<Anchor>//api/name/accessToken</Anchor>
@@ -48,50 +36,70 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKUser/currentUser</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKStorageItem/accessToken</TokenIdentifier>
+			<Abstract type="html">Токен доступа</Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>+ (instancetype)currentUser</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
 			
 			
-			<Anchor>//api/name/currentUser</Anchor>
+			<Anchor>//api/name/accessToken</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKUser/activateUserWithID:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/setCachedData:</TokenIdentifier>
+			<Abstract type="html">Кэш запросов</Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>+ (BOOL)activateUserWithID:(NSUInteger)userID</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
 			
 			
-			<Anchor>//api/name/activateUserWithID:</Anchor>
+			<Anchor>//api/name/cachedData</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKUser/localUsers</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/cachedData</TokenIdentifier>
+			<Abstract type="html">Кэш запросов</Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>+ (NSArray *)localUsers</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
 			
 			
-			<Anchor>//api/name/localUsers</Anchor>
+			<Anchor>//api/name/cachedData</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/description</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKStorageItem/cachedData</TokenIdentifier>
+			<Abstract type="html">Кэш запросов</Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>- (NSString *)description</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
 			
 			
-			<Anchor>//api/name/description</Anchor>
+			<Anchor>//api/name/cachedData</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/initWithAccessToken:mainCacheStoragePath:</TokenIdentifier>
+			<Abstract type="html">Инициализация элемента хранилища токеном доступа и директорией кэша</Abstract>
+			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithAccessToken:(VKAccessToken *)token mainCacheStoragePath:(NSString *)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>token</Name>
+					<Abstract type="html">токен доступа с которым будет ассоциироваться элемент хранилища</Abstract>
+				</Parameter><Parameter>
+					<Name>path</Name>
+					<Abstract type="html">путь к директории в которой необходимо хранить кэш запросов</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">экземпляр класс VKStorageItem</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAccessToken:mainCacheStoragePath:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

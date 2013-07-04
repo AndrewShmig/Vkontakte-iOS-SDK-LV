@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -60,10 +62,16 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Обязательные">Обязательные</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Опциональные">Опциональные</a></span></li>
 	
 </ul></li>
 
@@ -118,6 +126,18 @@
 					
 					
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Протокол инкапсулирует в себе основные методы для отслеживания состояния
+осуществляемого запроса.</p>
+
+<p>Обязательным является лишь один метод - метод, который возвращает ответ, остальные
+являются опциональными.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -125,42 +145,53 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Обязательные" name="task_Обязательные"></a>
+						<h3 class="subsubtitle task-title">Обязательные</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKRequest:response:">&ndash;&nbsp;VKRequest:response:</a></code>
-		
+		<span class="tooltip"><p>Возвращает ответ сервера в виде Foundation объекта</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Опциональные" name="task_Опциональные"></a>
+						<h3 class="subsubtitle task-title">Опциональные</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKRequest:connectionErrorOccured:">&ndash;&nbsp;VKRequest:connectionErrorOccured:</a></code>
-		
+		<span class="tooltip"><p>Вызывается в случае, если произошла ошибка соединения</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKRequest:parsingErrorOccured:">&ndash;&nbsp;VKRequest:parsingErrorOccured:</a></code>
-		
+		<span class="tooltip"><p>Вызывается в случае, если произошла ошибка парсинга ответа сервера</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKRequest:totalBytes:downloadedBytes:">&ndash;&nbsp;VKRequest:totalBytes:downloadedBytes:</a></code>
-		
+		<span class="tooltip"><p>Вызывается каждый раз, когда получена новая порция данных (метод удобно
+использовать для отображения статуса загрузки данных)</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKRequest:totalBytes:uploadedBytes:">&ndash;&nbsp;VKRequest:totalBytes:uploadedBytes:</a></code>
-		
+		<span class="tooltip"><p>Вызывается каждый раз, когда отправлена очередная порция данных (метод удобно
+использовать для отображения статуса отправки данных, будь то загрузка аудио файла,
+видео файла или документа)</p></span>
 	</span>
 	
 	
@@ -186,10 +217,50 @@
 	<h3 class="subsubtitle method-title">VKRequest:connectionErrorOccured:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Вызывается в случае, если произошла ошибка соединения</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> connectionErrorOccured:(NSError *)<em>error</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>запрос к которому относится вызов метода делегата</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>ошибка с описанием причины сбоя при осуществлении запроса</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -197,10 +268,50 @@
 	<h3 class="subsubtitle method-title">VKRequest:parsingErrorOccured:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Вызывается в случае, если произошла ошибка парсинга ответа сервера</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> parsingErrorOccured:(NSError *)<em>error</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>запрос к которому относится вызов метода делегата</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>ошибка с описанием причины сбоя при осуществлении парсинга данных</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -208,10 +319,50 @@
 	<h3 class="subsubtitle method-title">VKRequest:response:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает ответ сервера в виде Foundation объекта</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> response:(id)<em>response</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>запрос к которому относится вызов метода делегата</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>response</em></dt>
+			<dd><p>ответ сервера в виде Foundation объекта</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -219,10 +370,57 @@
 	<h3 class="subsubtitle method-title">VKRequest:totalBytes:downloadedBytes:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Вызывается каждый раз, когда получена новая порция данных (метод удобно
+использовать для отображения статуса загрузки данных)</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> totalBytes:(NSUInteger)<em>totalBytes</em> downloadedBytes:(NSUInteger)<em>downloadedBytes</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>запрос к которому относится вызов метода делегата</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>totalBytes</em></dt>
+			<dd><p>суммарное кол-во байт, которые необходимо получить. Если по каким-то
+причинам не удаётся определить это кол-во, то будет передаваться 0</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>downloadedBytes</em></dt>
+			<dd><p>кол-во уже загруженных байт</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -230,10 +428,58 @@
 	<h3 class="subsubtitle method-title">VKRequest:totalBytes:uploadedBytes:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Вызывается каждый раз, когда отправлена очередная порция данных (метод удобно
+использовать для отображения статуса отправки данных, будь то загрузка аудио файла,
+видео файла или документа)</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> totalBytes:(NSUInteger)<em>totalBytes</em> uploadedBytes:(NSUInteger)<em>uploadedBytes</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>запрос к которому отновится вызов метода делегата</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>totalBytes</em></dt>
+			<dd><p>суммарное кол-во байт, которые необходимо получить. Если по каким-то
+причинам не удаётся определить это кол-во, от будет передаваться 0</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uploadedBytes</em></dt>
+			<dd><p>кол-во уже загруженных байт</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -249,7 +495,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-07-03)</span><br />
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-07-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -40,6 +42,8 @@
 	<option value="//api/name/cacheLiveTime">&nbsp;&nbsp;&nbsp;&nbsp;cacheLiveTime</option>
 	
 	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/offlineMode">&nbsp;&nbsp;&nbsp;&nbsp;offlineMode</option>
 	
 	<option value="//api/name/signature">&nbsp;&nbsp;&nbsp;&nbsp;signature</option>
 	
@@ -78,10 +82,18 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Свойства">Свойства</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы класса">Методы класса</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы экземпляра">Методы экземпляра</a></span></li>
 	
 </ul></li>
 
@@ -94,6 +106,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheLiveTime">cacheLiveTime</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/offlineMode">offlineMode</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/signature">signature</a></span></li>
 	
@@ -162,6 +176,14 @@
 					
 					
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Оболочка для осуществления запросов к социальной сети ВКонтакте</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -169,84 +191,110 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Свойства" name="task_Свойства"></a>
+						<h3 class="subsubtitle task-title">Свойства</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
-		
+		<span class="tooltip"><p>Делегат</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/signature">&nbsp;&nbsp;signature</a></code>
-		
+		<span class="tooltip"><p>Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
+один делегат осуществляет обработку нескольких запросов.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/cacheLiveTime">&nbsp;&nbsp;cacheLiveTime</a></code>
-		
+		<span class="tooltip"><p>Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/offlineMode">&nbsp;&nbsp;offlineMode</a></code>
+		<span class="tooltip"><p>Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Методы класса" name="task_Методы класса"></a>
+						<h3 class="subsubtitle task-title">Методы класса</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
 		<code><a href="#//api/name/request:delegate:">+&nbsp;request:delegate:</a></code>
-		
+		<span class="tooltip"><p>Создает и возвращает запроса</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/requestHTTPMethod:URL:headers:body:delegate:">+&nbsp;requestHTTPMethod:URL:headers:body:delegate:</a></code>
-		
+		<span class="tooltip"><p>Создает и возвращает запрос</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/requestMethod:options:delegate:">+&nbsp;requestMethod:options:delegate:</a></code>
-		
+		<span class="tooltip"><p>Создает и возвращает запрос</p></span>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Методы экземпляра" name="task_Методы экземпляра"></a>
+						<h3 class="subsubtitle task-title">Методы экземпляра</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/initWithRequest:">&ndash;&nbsp;initWithRequest:</a></code>
-		
+		<span class="tooltip"><p>Основной методы инициализации объекта</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/initWithHTTPMethod:URL:headers:body:">&ndash;&nbsp;initWithHTTPMethod:URL:headers:body:</a></code>
-		
+		<span class="tooltip"><p>Метод инициализации объекта</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/initWithMethod:options:">&ndash;&nbsp;initWithMethod:options:</a></code>
-		
+		<span class="tooltip"><p>Метод инициализации объекта</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
-		
+		<span class="tooltip"><p>Старт запроса</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/cancel">&ndash;&nbsp;cancel</a></code>
-		
+		<span class="tooltip"><p>Отмена запроса</p></span>
 	</span>
 	
 	
@@ -268,10 +316,35 @@
 	<h3 class="subsubtitle method-title">cacheLiveTime</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -279,10 +352,73 @@
 	<h3 class="subsubtitle method-title">delegate</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Делегат</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/offlineMode" title="offlineMode"></a>
+	<h3 class="subsubtitle method-title">offlineMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) BOOL offlineMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -290,10 +426,36 @@
 	<h3 class="subsubtitle method-title">signature</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
+один делегат осуществляет обработку нескольких запросов.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) id signature</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -309,10 +471,56 @@
 	<h3 class="subsubtitle method-title">request:delegate:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Создает и возвращает запроса</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (instancetype)request:(NSURLRequest *)<em>request</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>запрос, который будет использован в качестве основы</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>делегат, который будет получать уведомления/сообщения об изменении
+состояния объекта и данных</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>экземпляр класса VKRequest</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -320,10 +528,71 @@
 	<h3 class="subsubtitle method-title">requestHTTPMethod:URL:headers:body:delegate:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Создает и возвращает запрос</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (instancetype)requestHTTPMethod:(NSString *)<em>httpMethod</em> URL:(NSURL *)<em>url</em> headers:(NSDictionary *)<em>headers</em> body:(NSData *)<em>body</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>httpMethod</em></dt>
+			<dd><p>GET или POST</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>headers</em></dt>
+			<dd><p>заголовки запроса</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>body</em></dt>
+			<dd><p>тело запроса</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>делегат, который будет получать уведомления/сообщения об изменении
+состояния объекта и данных</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>URL на который будет осуществлен запрос</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>экземпляр класса VKRequest</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -331,10 +600,61 @@
 	<h3 class="subsubtitle method-title">requestMethod:options:delegate:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Создает и возвращает запрос</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (instancetype)requestMethod:(NSString *)<em>methodName</em> options:(NSDictionary *)<em>options</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>наименование метода API (users.get, groups.join etc)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>словарь передаваемых параметров этому методу</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>делегат, который будет получать уведомления/сообщения об изменении
+состояния объекта и данных</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>экземпляр класса VKRequest</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -350,10 +670,35 @@
 	<h3 class="subsubtitle method-title">cancel</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Отмена запроса</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)cancel</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -361,10 +706,65 @@
 	<h3 class="subsubtitle method-title">initWithHTTPMethod:URL:headers:body:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Метод инициализации объекта</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (instancetype)initWithHTTPMethod:(NSString *)<em>httpMethod</em> URL:(NSURL *)<em>url</em> headers:(NSDictionary *)<em>headers</em> body:(NSData *)<em>body</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>httpMethod</em></dt>
+			<dd><p>GET или POST</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>URL на который будет осуществлен запрос</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>headers</em></dt>
+			<dd><p>заголовки запроса</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>body</em></dt>
+			<dd><p>тело запроса</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>объекта типа VKRequest</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -372,10 +772,55 @@
 	<h3 class="subsubtitle method-title">initWithMethod:options:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Метод инициализации объекта</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (instancetype)initWithMethod:(NSString *)<em>methodName</em> options:(NSDictionary *)<em>options</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>наименования метода API (users.get, groups.join etc)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>словарь передаваемых параметров этому методу</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>объекта класса VKRequest</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -383,10 +828,50 @@
 	<h3 class="subsubtitle method-title">initWithRequest:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Основной методы инициализации объекта</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (instancetype)initWithRequest:(NSURLRequest *)<em>request</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>запрос, который будет использован в качестве основы</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>объект типа VKRequest</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -394,10 +879,35 @@
 	<h3 class="subsubtitle method-title">start</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Старт запроса</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)start</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -413,7 +923,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-07-03)</span><br />
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-07-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

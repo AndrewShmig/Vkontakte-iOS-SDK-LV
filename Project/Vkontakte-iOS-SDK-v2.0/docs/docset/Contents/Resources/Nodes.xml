@@ -26,6 +26,7 @@
 						<NodeRef refid="13"/>
 						<NodeRef refid="14"/>
 						<NodeRef refid="15"/>
+						<NodeRef refid="16"/>
 						
 					</Subnodes>
 				</Node>
@@ -35,9 +36,9 @@
 					<Name>Categories</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="16"/>
 						<NodeRef refid="17"/>
 						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
 						
 					</Subnodes>
 				</Node>
@@ -47,8 +48,8 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="19"/>
 						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
 						
 					</Subnodes>
 				</Node>
@@ -83,60 +84,64 @@
 			<Path>Classes/TestVKCachedData.html</Path>
 		</Node>
 		<Node id="7">
+			<Name>TestVKRequest</Name>
+			<Path>Classes/TestVKRequest.html</Path>
+		</Node>
+		<Node id="8">
 			<Name>TestVKStorage</Name>
 			<Path>Classes/TestVKStorage.html</Path>
 		</Node>
-		<Node id="8">
+		<Node id="9">
 			<Name>TestVKStorageItem</Name>
 			<Path>Classes/TestVKStorageItem.html</Path>
 		</Node>
-		<Node id="9">
+		<Node id="10">
 			<Name>VKAccessToken</Name>
 			<Path>Classes/VKAccessToken.html</Path>
 		</Node>
-		<Node id="10">
+		<Node id="11">
 			<Name>VKCachedData</Name>
 			<Path>Classes/VKCachedData.html</Path>
 		</Node>
-		<Node id="11">
+		<Node id="12">
 			<Name>VKConnector</Name>
 			<Path>Classes/VKConnector.html</Path>
 		</Node>
-		<Node id="12">
+		<Node id="13">
 			<Name>VKRequest</Name>
 			<Path>Classes/VKRequest.html</Path>
 		</Node>
-		<Node id="13">
+		<Node id="14">
 			<Name>VKStorage</Name>
 			<Path>Classes/VKStorage.html</Path>
 		</Node>
-		<Node id="14">
+		<Node id="15">
 			<Name>VKStorageItem</Name>
 			<Path>Classes/VKStorageItem.html</Path>
 		</Node>
-		<Node id="15">
+		<Node id="16">
 			<Name>VKUser</Name>
 			<Path>Classes/VKUser.html</Path>
 		</Node>
 		
-		<Node id="16">
+		<Node id="17">
 			<Name>NSData(toBase64)</Name>
 			<Path>Categories/NSData+toBase64.html</Path>
 		</Node>
-		<Node id="17">
+		<Node id="18">
 			<Name>NSString(encodeURL)</Name>
 			<Path>Categories/NSString+encodeURL.html</Path>
 		</Node>
-		<Node id="18">
+		<Node id="19">
 			<Name>NSString(toBase64)</Name>
 			<Path>Categories/NSString+toBase64.html</Path>
 		</Node>
 		
-		<Node id="19">
+		<Node id="20">
 			<Name>VKConnectorDelegate</Name>
 			<Path>Protocols/VKConnectorDelegate.html</Path>
 		</Node>
-		<Node id="20">
+		<Node id="21">
 			<Name>VKRequestDelegate</Name>
 			<Path>Protocols/VKRequestDelegate.html</Path>
 		</Node>
