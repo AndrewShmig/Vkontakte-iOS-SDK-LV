@@ -55,6 +55,17 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 - (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
+    NSLog(@"---------------------------------------");
+
+    NSURL *url = [NSURL URLWithString:@"https://api.vk.com/method/users.search"];
+    NSURLRequest *r = [NSURLRequest requestWithURL:url];
+    VKRequest *request = [VKRequest request:r
+                                   delegate:self];
+
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.signature = @"Hello World!";
+
+    [request start];
 }
 
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error
@@ -67,6 +78,41 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"error: %@", error);
+}
+
+- (void)VKRequest:(VKRequest *)request response:(id)response
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"response: %@", response);
+    NSLog(@"request: %@", request);
+}
+
+- (void)VKRequest:(VKRequest *)request parsingErrorOccured:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%@", error);
+}
+
+- (void)VKRequest:(VKRequest *)request connectionErrorOccured:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%@", error);
+}
+
+- (void)VKRequest:(VKRequest *)request
+       totalBytes:(NSUInteger)totalBytes
+    uploadedBytes:(NSUInteger)uploadedBytes
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%d %d", totalBytes, uploadedBytes);
+}
+
+- (void)VKRequest:(VKRequest *)request
+       totalBytes:(NSUInteger)totalBytes
+  downloadedBytes:(NSUInteger)downloadedBytes
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%d %d", totalBytes, downloadedBytes);
 }
 
 @end

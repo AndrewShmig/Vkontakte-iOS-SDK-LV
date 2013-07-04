@@ -1,5 +1,5 @@
 //
-// Created by AndrewShmig on 6/28/13.
+// Created by AndrewShmig on 7/4/13.
 //
 // Copyright (c) 2013 Andrew Shmig
 // 
@@ -24,37 +24,10 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
-#import "VKStorageItem.h"
-#import "VKAccessToken.h"
-#import "VKCachedData.h"
+#import <Foundation/Foundation.h>
 
+@interface NSString (MD5)
 
-#define INFO_LOG() NSLog(@"%s", __FUNCTION__);
-
-
-@implementation VKStorageItem
-
-#pragma mark Visible VKStorageItem methods
-#pragma mark - Init methods
-
-- (instancetype)initWithAccessToken:(VKAccessToken *)token
-               mainCacheStoragePath:(NSString *)path
-{
-    INFO_LOG();
-
-    self = [super init];
-
-    if (self && nil != token && nil != path) {
-        NSString *cache;
-        _accessToken = [token copy];
-
-        cache = [path stringByAppendingFormat:@"%@/", @(_accessToken.userID)];
-        _cachedData = [[VKCachedData alloc] initWithCacheDirectory:cache];
-
-        return self;
-    }
-
-    return nil;
-}
+- (NSString *)md5;
 
 @end

@@ -25,7 +25,10 @@
 // THE SOFTWARE.
 //
 #import "VKCachedData.h"
-#import "NSString+toBase64.h"
+#import "NSString+MD5.h"
+
+
+#define INFO_LOG() NSLog(@"%s", __FUNCTION__)
 
 
 @implementation VKCachedData
@@ -40,6 +43,8 @@
 
 - (instancetype)initWithCacheDirectory:(NSString *)path
 {
+    INFO_LOG();
+
     self = [super init];
 
     if (self) {
@@ -56,7 +61,9 @@
 
 - (void)addCachedData:(NSData *)cache forURL:(NSURL *)url
 {
-    NSString *encodedCachedURL = [[url absoluteString] toBase64];
+    INFO_LOG();
+
+    NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
     NSUInteger creationTimestamp = ((NSUInteger) [[NSDate date]
@@ -77,12 +84,14 @@
                forURL:(NSURL *)url
              liveTime:(VKCachedDataLiveTime)cacheLiveTime
 {
+    INFO_LOG();
+
 //    нет надобности сохранять в кэше запрос с таким временем жизни
-    if(cacheLiveTime == VKCachedDataLiveTimeNever)
+    if(VKCachedDataLiveTimeNever == cacheLiveTime)
         return;
 
 //    сохраняем данные запроса в кэше
-    NSString *encodedCachedURL = [[url absoluteString] toBase64];
+    NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
     NSUInteger creationTimestamp = ((NSUInteger) [[NSDate date]
@@ -101,7 +110,9 @@
 
 - (void)removeCachedDataForURL:(NSURL *)url
 {
-    NSString *encodedCachedURL = [[url absoluteString] toBase64];
+    INFO_LOG();
+
+    NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
 
@@ -114,6 +125,8 @@
 
 - (void)clearCachedData
 {
+    INFO_LOG();
+
     dispatch_async(_backgroudQueue, ^{
 
         [[NSFileManager defaultManager]
@@ -131,6 +144,8 @@
 
 - (void)removeCachedDataDirectory
 {
+    INFO_LOG();
+
     dispatch_async(_backgroudQueue, ^{
 
         [[NSFileManager defaultManager] removeItemAtPath:_cacheDirectoryPath
@@ -141,13 +156,17 @@
 
 - (NSData *)cachedDataForURL:(NSURL *)url
 {
+    INFO_LOG();
+
     return [self cachedDataForURL:url
                       offlineMode:NO];
 }
 
 - (NSData *)cachedDataForURL:(NSURL *)url offlineMode:(BOOL)offlineMode
 {
-    NSString *encodedCachedURL = [[url absoluteString] toBase64];
+    INFO_LOG();
+
+    NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
 
@@ -177,6 +196,8 @@
 
 - (void)createDirectoryIfNotExists:(NSString *)path
 {
+    INFO_LOG();
+
     if (![[NSFileManager defaultManager]
                          fileExistsAtPath:path]) {
 

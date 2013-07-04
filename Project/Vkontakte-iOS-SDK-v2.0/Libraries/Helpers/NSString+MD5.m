@@ -1,5 +1,5 @@
 //
-// Created by AndrewShmig on 6/28/13.
+// Created by AndrewShmig on 7/4/13.
 //
 // Copyright (c) 2013 Andrew Shmig
 // 
@@ -24,37 +24,24 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
-#import "VKStorageItem.h"
-#import "VKAccessToken.h"
-#import "VKCachedData.h"
+#import "NSString+MD5.h"
+#import <CommonCrypto/CommonDigest.h>
 
 
-#define INFO_LOG() NSLog(@"%s", __FUNCTION__);
+@implementation NSString (MD5)
 
-
-@implementation VKStorageItem
-
-#pragma mark Visible VKStorageItem methods
-#pragma mark - Init methods
-
-- (instancetype)initWithAccessToken:(VKAccessToken *)token
-               mainCacheStoragePath:(NSString *)path
+- (NSString *)md5
 {
-    INFO_LOG();
+    const char *cStr = [self UTF8String];
+    unsigned char digest[16];
+    CC_MD5( cStr, strlen(cStr), digest ); // This is the md5 call
 
-    self = [super init];
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
 
-    if (self && nil != token && nil != path) {
-        NSString *cache;
-        _accessToken = [token copy];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
 
-        cache = [path stringByAppendingFormat:@"%@/", @(_accessToken.userID)];
-        _cachedData = [[VKCachedData alloc] initWithCacheDirectory:cache];
-
-        return self;
-    }
-
-    return nil;
+    return  output;
 }
 
 @end

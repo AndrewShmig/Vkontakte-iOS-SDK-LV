@@ -29,12 +29,17 @@
 #import "VKAccessToken.h"
 
 
+#define INFO_LOG() NSLog(@"%s", __FUNCTION__)
+
+
 @implementation VKAccessToken
 
 #pragma mark - Init methods
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
+    INFO_LOG();
+
     self = [super init];
 
     if(!self)
@@ -54,6 +59,8 @@
                 expirationTime:(NSTimeInterval)expirationTime
                    permissions:(NSArray *)permissions
 {
+    INFO_LOG();
+
     if (self = [super init]) {
         _userID = userID;
         _token = [token copy];
@@ -69,6 +76,8 @@
                    accessToken:(NSString *)token
                 expirationTime:(NSTimeInterval)expirationTime
 {
+    INFO_LOG();
+
     return [self initWithUserID:userID
                     accessToken:token
                  expirationTime:expirationTime
@@ -77,6 +86,8 @@
 
 - (instancetype)initWithUserID:(NSUInteger)userID accessToken:(NSString *)token
 {
+    INFO_LOG();
+
     return [self initWithUserID:userID
                     accessToken:token
                  expirationTime:0
@@ -85,6 +96,8 @@
 
 - (instancetype)init
 {
+    INFO_LOG();
+
     return [self initWithUserID:0
                     accessToken:@""
                  expirationTime:0
@@ -95,6 +108,8 @@
 
 - (NSString *)description
 {
+    INFO_LOG();
+
     NSDictionary *desc = @{
             @"User ID"         : @(self.userID),
             @"Expiration time" : @(((NSUInteger) (self.creationTime + self.expirationTime))),
@@ -108,6 +123,8 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+    INFO_LOG();
+
     [aCoder encodeInteger:_userID forKey:@"userID"];
     [aCoder encodeObject:_token forKey:@"token"];
     [aCoder encodeDouble:_expirationTime forKey:@"expirationTime"];
@@ -117,6 +134,8 @@
 
 - (BOOL)isEqual:(VKAccessToken *)token
 {
+    INFO_LOG();
+
     NSSet *currentSet = [NSSet setWithArray:self.permissions];
     NSSet *otherSet = [NSSet setWithArray:token.permissions];
 
@@ -127,6 +146,8 @@
 
 - (VKAccessToken *)copyWithZone:(NSZone *)zone
 {
+    INFO_LOG();
+
     VKAccessToken *copyToken = [[VKAccessToken alloc] initWithUserID:self.userID
                                                          accessToken:self.token
                                                       expirationTime:self.expirationTime
@@ -139,11 +160,15 @@
 
 - (BOOL)hasPermission:(NSString *)permission
 {
+    INFO_LOG();
+
     return [self.permissions containsObject:permission];
 }
 
 - (BOOL)isExpired
 {
+    INFO_LOG();
+
     NSTimeInterval currentTimestamp = [[NSDate date] timeIntervalSince1970];
 
     if (self.expirationTime == 0 && [self hasPermission:@"offline"])
@@ -154,6 +179,8 @@
 
 - (BOOL)isValid
 {
+    INFO_LOG();
+
     return (nil != self.token && ![self isExpired]);
 }
 

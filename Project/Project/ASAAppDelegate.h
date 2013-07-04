@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "VKConnector.h"
+#import "VKRequest.h"
 
 
 @class ASAViewController;
 
 
-@interface ASAAppDelegate : UIResponder <UIApplicationDelegate, VKConnectorDelegate>
+@interface ASAAppDelegate : UIResponder <UIApplicationDelegate, VKConnectorDelegate, VKRequestDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

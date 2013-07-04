@@ -47,7 +47,7 @@ static NSString *const kVKAPIURLPrefix = @"https://api.vk.com/method/";
 Обязательным является лишь один метод - метод, который возвращает ответ, остальные
 являются опциональными.
 */
-@protocol VKRequestDelegate
+@protocol VKRequestDelegate <NSObject>
 
 @required
 /**

@@ -30,6 +30,9 @@
 #import "VKCachedData.h"
 
 
+#define INFO_LOG() NSLog(@"%s", __FUNCTION__)
+
+
 @implementation VKStorage
 {
     NSMutableDictionary *_storageItems;
@@ -40,6 +43,8 @@
 
 - (instancetype)init
 {
+    INFO_LOG();
+
     self = [super init];
 
     if (self) {
@@ -55,6 +60,8 @@
 
 + (instancetype)sharedStorage
 {
+    INFO_LOG();
+
     static VKStorage *sharedStorage;
     static dispatch_once_t predicate;
 
@@ -84,16 +91,22 @@
 
 - (BOOL)isEmpty
 {
+    INFO_LOG();
+
     return ([_storageItems count] == 0);
 }
 
 - (NSUInteger)count
 {
+    INFO_LOG();
+
     return [_storageItems count];
 }
 
 - (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)token
 {
+    INFO_LOG();
+
     VKStorageItem *storageItem = [[VKStorageItem alloc]
                                                  initWithAccessToken:token
                                                 mainCacheStoragePath:[self fullCacheStoragePath]];
@@ -103,6 +116,8 @@
 
 - (NSArray *)storageItems
 {
+    INFO_LOG();
+
     return [_storageItems allValues];
 }
 
@@ -110,6 +125,8 @@
 
 - (void)addItem:(VKStorageItem *)item
 {
+    INFO_LOG();
+
     if (nil == item || nil == item.accessToken || nil == item.cachedData)
         return;
 
@@ -121,6 +138,8 @@
 
 - (void)removeItem:(VKStorageItem *)item
 {
+    INFO_LOG();
+
     id storageKey = @(item.accessToken.userID);
 
     [item.cachedData removeCachedDataDirectory];
@@ -131,6 +150,8 @@
 
 - (void)clean
 {
+    INFO_LOG();
+
     [_storageItems removeAllObjects];
     [self cleanCachedData];
 
@@ -139,6 +160,8 @@
 
 - (void)cleanCachedData
 {
+    INFO_LOG();
+
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
 
     dispatch_async(backgroundQueue, ^
@@ -158,6 +181,8 @@
 
 - (VKStorageItem *)storageItemForUserID:(NSUInteger)userID
 {
+    INFO_LOG();
+
     id storageKey = @(userID);
     return _storageItems[storageKey];
 }
@@ -166,12 +191,16 @@
 
 - (NSString *)fullStoragePath
 {
+    INFO_LOG();
+
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     return [cachePath stringByAppendingFormat:@"%@", kVKStoragePath];
 }
 
 - (NSString *)fullCacheStoragePath
 {
+    INFO_LOG();
+
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     return [cachePath stringByAppendingFormat:@"%@", kVKStorageCachePath];
 }
@@ -180,6 +209,8 @@
 
 - (void)loadStorage
 {
+    INFO_LOG();
+
     NSDictionary *storageDefaults = [[NSUserDefaults standardUserDefaults]
                                                      objectForKey:kVKStorageUserDefaultsKey];
 
@@ -208,6 +239,8 @@
 
 - (void)saveStorage
 {
+    INFO_LOG();
+
 //    сохраняем только данные токенов доступов
 //    данные кэшев мы сможем потом просто восстановить
     NSUserDefaults *myDefaults = [NSUserDefaults standardUserDefaults];
