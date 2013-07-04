@@ -62,7 +62,7 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
     VKRequest *request = [VKRequest request:r
                                    delegate:self];
 
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCachedDataLiveTimeFiveMinutes;
     request.signature = @"Hello World!";
 
     [request start];

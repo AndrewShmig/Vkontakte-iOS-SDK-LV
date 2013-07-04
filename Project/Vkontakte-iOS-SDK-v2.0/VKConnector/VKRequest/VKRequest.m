@@ -42,6 +42,8 @@
 
     NSMutableData *_receivedData;
     NSUInteger _expectedDataSize;
+
+    BOOL _isDataFromCache;
 }
 
 #pragma mark Visible VKRequest methods
@@ -113,6 +115,7 @@
     _expectedDataSize = NSURLResponseUnknownContentLength;
     _cacheLiveTime = VKCachedDataLiveTimeOneHour;
     _offlineMode = NO;
+    _isDataFromCache = NO;
 
     return self;
 }
@@ -180,20 +183,10 @@
     NSData *cachedResponseData = [item.cachedData cachedDataForURL:_connection.currentRequest.URL
                                                        offlineMode:_offlineMode];
     if (nil != cachedResponseData) {
-        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:response:)]) {
+        _receivedData = [cachedResponseData mutableCopy];
+        _isDataFromCache = YES;
 
-            NSJSONReadingOptions mask = NSJSONReadingAllowFragments |
-                                        NSJSONReadingAllowFragments |
-                                        NSJSONReadingMutableContainers |
-                                        NSJSONReadingMutableLeaves;
-
-            id json = [NSJSONSerialization JSONObjectWithData:cachedResponseData
-                                                      options:mask
-                                                        error:nil];
-
-            [self.delegate VKRequest:self
-                            response:json];
-        }
+        [self connectionDidFinishLoading:_connection];
 
         return;
     }
@@ -329,7 +322,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
 
-    if (VKCachedDataLiveTimeNever != _cacheLiveTime && ![@"POST" isEqualToString:connection.currentRequest.HTTPMethod]) {
+    if (!_isDataFromCache && VKCachedDataLiveTimeNever != _cacheLiveTime && ![@"POST" isEqualToString:connection.currentRequest.HTTPMethod]) {
         [item.cachedData addCachedData:_receivedData
                                 forURL:connection.currentRequest.URL
                               liveTime:_cacheLiveTime];
