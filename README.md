@@ -16,6 +16,15 @@
 - [Загрузка аудиозаписи на сервер ВКонтакте со статусом](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Загрузка-аудиозаписи-на-сервер-ВКонтакте-со-статусом)
 - [Информация о друзьях в оффлайн режиме](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Информация-о-друзьях-в-оффлайн-режиме)
 
+Связанные статьи на Хабре:
+- [Вконтакте iOS SDK v1]()
+- [Вконтакте iOS SDK v2]()
+
+Связанные статьи в личном блоге:
+- [Как загружать файла на сервер?](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/objective-c.html)
+- [Вконтакте iOS SDK v1](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/vkontakte-ios-sdk-v10.html)
+- [ASASocialServices + Vkontakte](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/04/asasocialservices-vkontakte-ios.html)
+
 #License
 Copyright (c) 2013 Andrew Shmig
 
