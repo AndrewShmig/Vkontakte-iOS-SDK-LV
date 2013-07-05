@@ -190,7 +190,7 @@
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
 
-    NSData *cachedResponseData = [item.cachedData cachedDataForURL:_connection.currentRequest.URL
+    NSData *cachedResponseData = [item.cachedData cachedDataForURL:[self removeAccessTokenFromURL:_connection.currentRequest.URL]
                                                        offlineMode:_offlineMode];
     if (nil != cachedResponseData) {
         _receivedData = [cachedResponseData mutableCopy];
@@ -349,7 +349,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
                                           storageItemForUserID:currentUserID];
 
         [item.cachedData addCachedData:_receivedData
-                                forURL:connection.currentRequest.URL
+                                forURL:[self removeAccessTokenFromURL:connection.currentRequest.URL]
                               liveTime:_cacheLiveTime];
 
         _isDataFromCache = NO;
@@ -369,6 +369,27 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         [self.delegate VKRequest:self
           connectionErrorOccured:error];
     }
+}
+
+#pragma mark - private methods
+
+- (NSURL *)removeAccessTokenFromURL:(NSURL *)url
+{
+//    уберем токен доступа из строки запроса
+//    токен доступа может меняться при каждом обновлении (повторном входе пользователя),
+//    но создавать каждый раз новый кэш для одинаковых запросов с всего лишь разными
+//    токенами доступа нет смысла.
+    NSString *query = [url query];
+    NSArray *params = [query componentsSeparatedByString:@"&"];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF BEGINSWITH \"access_token\")"];
+    NSArray *newParams = [params filteredArrayUsingPredicate:predicate];
+
+    NSString *part1 = [[url absoluteString] componentsSeparatedByString:@"?"][0];
+    NSString *part2 = [newParams componentsJoinedByString:@"&"];
+    NSURL *newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", part1, part2]];
+
+    return newURL;
 }
 
 @end

@@ -78,12 +78,8 @@
     if(VKCachedDataLiveTimeNever == cacheLiveTime)
         return;
 
-//    почему лучше исключить токен доступа из URL перед кэшированием читать в
-//    описании метода removeAccessTokenFromCachedURL
-    NSURL *newURL = [self removeAccessTokenFromCachedURL:url];
-
 //    сохраняем данные запроса в кэше
-    NSString *encodedCachedURL = [[newURL absoluteString] md5];
+    NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
     NSUInteger creationTimestamp = ((NSUInteger) [[NSDate date]
@@ -158,8 +154,7 @@
 {
     INFO_LOG();
 
-    NSURL *newURL = [self removeAccessTokenFromCachedURL:url];
-    NSString *encodedCachedURL = [[newURL absoluteString] md5];
+    NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
 
@@ -186,25 +181,6 @@
 }
 
 #pragma mark - private methods
-
-- (NSURL *)removeAccessTokenFromCachedURL:(NSURL *)url
-{
-    //    уберем токен доступа из строки запроса
-//    токен доступа может меняться при каждом обновлении (повторном входе пользователя),
-//    но создавать каждый раз новый кэш для одинаковых запросов с всего лишь разными
-//    токенами доступа нет смысла.
-    NSString *query = [url query];
-    NSArray *params = [query componentsSeparatedByString:@"&"];
-
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF BEGINSWITH \"access_token\")"];
-    NSArray *newParams = [params filteredArrayUsingPredicate:predicate];
-
-    NSString *part1 = [[url absoluteString] componentsSeparatedByString:@"?"][0];
-    NSString *part2 = [newParams componentsJoinedByString:@"&"];
-    NSURL *newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", part1, part2]];
-
-    return newURL;
-}
 
 - (void)createDirectoryIfNotExists:(NSString *)path
 {

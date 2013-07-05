@@ -84,7 +84,8 @@
                     permissions:@[]];
 }
 
-- (instancetype)initWithUserID:(NSUInteger)userID accessToken:(NSString *)token
+- (instancetype)initWithUserID:(NSUInteger)userID
+                   accessToken:(NSString *)token
 {
     INFO_LOG();
 
