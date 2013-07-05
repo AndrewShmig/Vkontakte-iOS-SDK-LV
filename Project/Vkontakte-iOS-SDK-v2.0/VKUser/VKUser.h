@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 //
 #import <Foundation/Foundation.h>
+#import "VKCachedData.h"
 
 
 @class VKAccessToken;
