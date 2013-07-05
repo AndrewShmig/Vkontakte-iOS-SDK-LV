@@ -115,19 +115,13 @@ static VKUser *_currentUser;
 
 - (VKRequest *)info
 {
-    return [self infoAboutUserWithID:self.accessToken.userID];
-}
-
-- (VKRequest *)infoAboutUserWithID:(NSUInteger)userID
-{
-    NSString *fields = @"nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100";
-    NSNumber *currentUserID = @(userID);
+    NSDictionary *options = @{
+            @"uids": @(self.accessToken.userID),
+            @"fields": @"nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100"
+    };
 
     return [self configureRequestMethod:kVKUsersGet
-                                options:@{
-                                        @"fields" : fields,
-                                        @"uids"   : currentUserID
-                                }
+                                options:options
                                selector:_cmd];
 }
 
@@ -142,11 +136,10 @@ static VKUser *_currentUser;
 {
 //    токен доступа в каких-то запросах нужен, а в каких-то нет
 //    поэтому добавлять токен доступа будет только в обязательных случаях
-    NSMutableDictionary *mutableOptions = [options mutableCopy];
-    mutableOptions[@"access_token"] = self.accessToken.token;
+    options = [self addAccessTokenKey:options];
 
     return [self configureRequestMethod:kVKUsersSearch
-                                options:mutableOptions
+                                options:options
                                selector:_cmd];
 }
 
@@ -160,6 +153,121 @@ static VKUser *_currentUser;
 - (VKRequest *)followersWithCustomOptions:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKUsersGetFollowers
+                                options:options
+                               selector:_cmd];
+}
+
+#pragma mark - Wall
+
+- (VKRequest *)wallGetWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKWallGet
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKWallGetById
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallSavePost
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallPost
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallRepost
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallGetReposts
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallEdit
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallDelete
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallRestore
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallGetComments
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallAddComment
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallDeleteComment
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options
+{
+    options = [self addAccessTokenKey:options];
+
+    return [self configureRequestMethod:kVKWallRestoreComment
                                 options:options
                                selector:_cmd];
 }
@@ -179,6 +287,14 @@ static VKUser *_currentUser;
 }
 
 #pragma mark - Private methods
+
+- (NSDictionary *)addAccessTokenKey:(NSDictionary *)options
+{
+    NSMutableDictionary *ops = [options mutableCopy];
+    ops[@"access_token"] = self.accessToken.token;
+
+    return  ops;
+}
 
 - (VKRequest *)configureRequestMethod:(NSString *)methodName
                               options:(NSDictionary *)options

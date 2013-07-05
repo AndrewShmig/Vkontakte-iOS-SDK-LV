@@ -69,13 +69,37 @@
 	
 	<option value="//api/name/info">&nbsp;&nbsp;&nbsp;&nbsp;- info</option>
 	
-	<option value="//api/name/infoAboutUserWithID:">&nbsp;&nbsp;&nbsp;&nbsp;- infoAboutUserWithID:</option>
-	
 	<option value="//api/name/infoWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- infoWithCustomOptions:</option>
 	
 	<option value="//api/name/searchWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- searchWithCustomOptions:</option>
 	
 	<option value="//api/name/subscriptionsWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- subscriptionsWithCustomOptions:</option>
+	
+	<option value="//api/name/wallAddCommentWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallAddCommentWithCustomOptions:</option>
+	
+	<option value="//api/name/wallDeleteCommentWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallDeleteCommentWithCustomOptions:</option>
+	
+	<option value="//api/name/wallDeleteWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallDeleteWithCustomOptions:</option>
+	
+	<option value="//api/name/wallEditWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallEditWithCustomOptions:</option>
+	
+	<option value="//api/name/wallGetByIDWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallGetByIDWithCustomOptions:</option>
+	
+	<option value="//api/name/wallGetCommentsWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallGetCommentsWithCustomOptions:</option>
+	
+	<option value="//api/name/wallGetRepostsWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallGetRepostsWithCustomOptions:</option>
+	
+	<option value="//api/name/wallGetWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallGetWithCustomOptions:</option>
+	
+	<option value="//api/name/wallPostWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallPostWithCustomOptions:</option>
+	
+	<option value="//api/name/wallRepostWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallRepostWithCustomOptions:</option>
+	
+	<option value="//api/name/wallRestoreCommentWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallRestoreCommentWithCustomOptions:</option>
+	
+	<option value="//api/name/wallRestoreWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallRestoreWithCustomOptions:</option>
+	
+	<option value="//api/name/wallSavePostWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- wallSavePostWithCustomOptions:</option>
 	
 	
 	
@@ -98,6 +122,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы класса">Методы класса</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Пользователи">Пользователи</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Стена">Стена</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Переопределенные методы">Переопределенные методы</a></span></li>
 	
@@ -141,13 +167,37 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/info">info</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/infoAboutUserWithID:">infoAboutUserWithID:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/infoWithCustomOptions:">infoWithCustomOptions:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchWithCustomOptions:">searchWithCustomOptions:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/subscriptionsWithCustomOptions:">subscriptionsWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallAddCommentWithCustomOptions:">wallAddCommentWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallDeleteCommentWithCustomOptions:">wallDeleteCommentWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallDeleteWithCustomOptions:">wallDeleteWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallEditWithCustomOptions:">wallEditWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallGetByIDWithCustomOptions:">wallGetByIDWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallGetCommentsWithCustomOptions:">wallGetCommentsWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallGetRepostsWithCustomOptions:">wallGetRepostsWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallGetWithCustomOptions:">wallGetWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallPostWithCustomOptions:">wallPostWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallRepostWithCustomOptions:">wallRepostWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallRestoreCommentWithCustomOptions:">wallRestoreCommentWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallRestoreWithCustomOptions:">wallRestoreWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wallSavePostWithCustomOptions:">wallSavePostWithCustomOptions:</a></span></li>
 	
 </ul></li>
 
@@ -191,7 +241,10 @@
 
 <p>Класс так же позволяет изменить текущего активного пользователя на одного из
 пользователей находящихся в хранилище (ранее авторизованных). Получить список
-пользователей, которые авторизовывались можно используя метод <a href="#//api/name/localUsers">localUsers</a>.</p>
+пользователей, которые авторизовывались можно используя метод <a href="#//api/name/localUsers">localUsers</a>.</p><div class="warning"><p><strong>Warning:</strong> методы, которые требуют наличия access_token в запросе <em>перезаписывают</em>
+токен доступа, если таковой был указан при передаче словаря ключей-значений, на
+значение токена доступа текущего пользователя - self.<a href="#//api/name/accessToken">accessToken</a>.token.</p></div><div class="warning"><p><strong>Warning:</strong> по умолчанию у каждого запроса из класса VKUser подпись (signature)
+является строкой селектора инициировавшего/создавшего объекта запроса</p></div>
 					</div>
 					
 					
@@ -285,13 +338,6 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/infoAboutUserWithID:">&ndash;&nbsp;infoAboutUserWithID:</a></code>
-		<span class="tooltip"><p>Информация о пользователе с указанным идентификатором.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/infoWithCustomOptions:">&ndash;&nbsp;infoWithCustomOptions:</a></code>
 		<span class="tooltip"><p>Информация о пользователе(ях) с указанными параметрами</p></span>
 	</span>
@@ -315,6 +361,107 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/followersWithCustomOptions:">&ndash;&nbsp;followersWithCustomOptions:</a></code>
 		<span class="tooltip"><p>Возвращает список идентификаторов пользователей, которые являются подписчиками пользователя. Идентификаторы пользователей в списке отсортированы в порядке убывания времени их добавления.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Стена" name="task_Стена"></a>
+						<h3 class="subsubtitle task-title">Стена</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallGetWithCustomOptions:">&ndash;&nbsp;wallGetWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Возвращает список записей со стены пользователя или сообщества</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallGetByIDWithCustomOptions:">&ndash;&nbsp;wallGetByIDWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Возвращает список записей со стен пользователей по их идентификаторам</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallSavePostWithCustomOptions:">&ndash;&nbsp;wallSavePostWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
+При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallPostWithCustomOptions:">&ndash;&nbsp;wallPostWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Публикует новую запись на своей или чужой стене.
+Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallRepostWithCustomOptions:">&ndash;&nbsp;wallRepostWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Копирует объект на стену пользователя или сообщества</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallGetRepostsWithCustomOptions:">&ndash;&nbsp;wallGetRepostsWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Позволяет получать список репостов заданной записи</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallEditWithCustomOptions:">&ndash;&nbsp;wallEditWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Редактирует запись на стене</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallDeleteWithCustomOptions:">&ndash;&nbsp;wallDeleteWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Удаляет запись со стены</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallRestoreWithCustomOptions:">&ndash;&nbsp;wallRestoreWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Восстанавливает удаленную запись на стене пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallGetCommentsWithCustomOptions:">&ndash;&nbsp;wallGetCommentsWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Возвращает список комментариев к записи на стене пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallAddCommentWithCustomOptions:">&ndash;&nbsp;wallAddCommentWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Добавляет комментарий к записи на стене пользователя или сообщества</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallDeleteCommentWithCustomOptions:">&ndash;&nbsp;wallDeleteCommentWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Удаляет комментарий текущего пользователя к записи на своей или чужой стене</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallRestoreCommentWithCustomOptions:">&ndash;&nbsp;wallRestoreCommentWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</p></span>
 	</span>
 	
 	
@@ -846,66 +993,6 @@ nil.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/infoAboutUserWithID:" title="infoAboutUserWithID:"></a>
-	<h3 class="subsubtitle method-title">infoAboutUserWithID:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Информация о пользователе с указанным идентификатором.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (VKRequest *)infoAboutUserWithID:(NSUInteger)<em>userID</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>userID</em></dt>
-			<dd><p>идентификатор пользователя</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>экземпляр класса <a href="../Classes/VKRequest.html">VKRequest</a>, который инкапсулирует в себе все необходимые параметры для
-осуществления запроса пользовательской информации. Объект запроса возвращается по причине
-возможной необходимости отменить выполнение текущего запроса или отложенное выполнение запроса.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Следующие поля данных запрашиваются: nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100</p>
-
-<p>Детальную информацию можно найти по этой ссылке в документации: <a href="https://vk.com/dev/users.get">https://vk.com/dev/users.get</a></p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKUser.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/infoWithCustomOptions:" title="infoWithCustomOptions:"></a>
 	<h3 class="subsubtitle method-title">infoWithCustomOptions:</h3>
 	
@@ -1036,6 +1123,671 @@ nil.</p>
 			<dt><em>options</em></dt>
 			<dd><p>ключи-значения, с полным списком ключей можно ознакомиться по
 ссылке из документации: <a href="https://vk.com/dev/users.getSubscriptions">https://vk.com/dev/users.getSubscriptions</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallAddCommentWithCustomOptions:" title="wallAddCommentWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallAddCommentWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавляет комментарий к записи на стене пользователя или сообщества</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="http://vk.com/dev/wall.addComment">http://vk.com/dev/wall.addComment</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallDeleteCommentWithCustomOptions:" title="wallDeleteCommentWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallDeleteCommentWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Удаляет комментарий текущего пользователя к записи на своей или чужой стене</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.deleteComment">https://vk.com/dev/wall.deleteComment</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallDeleteWithCustomOptions:" title="wallDeleteWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallDeleteWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Удаляет запись со стены</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.delete">https://vk.com/dev/wall.delete</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallEditWithCustomOptions:" title="wallEditWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallEditWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Редактирует запись на стене</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.edit">https://vk.com/dev/wall.edit</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallGetByIDWithCustomOptions:" title="wallGetByIDWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallGetByIDWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает список записей со стен пользователей по их идентификаторам</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.getById">https://vk.com/dev/wall.getById</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallGetCommentsWithCustomOptions:" title="wallGetCommentsWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallGetCommentsWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает список комментариев к записи на стене пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.getComments">https://vk.com/dev/wall.getComments</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallGetRepostsWithCustomOptions:" title="wallGetRepostsWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallGetRepostsWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Позволяет получать список репостов заданной записи</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.getReposts">https://vk.com/dev/wall.getReposts</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallGetWithCustomOptions:" title="wallGetWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallGetWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает список записей со стены пользователя или сообщества</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallGetWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.get">https://vk.com/dev/wall.get</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallPostWithCustomOptions:" title="wallPostWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallPostWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Публикует новую запись на своей или чужой стене.
+Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.post">https://vk.com/dev/wall.post</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallRepostWithCustomOptions:" title="wallRepostWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallRepostWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Копирует объект на стену пользователя или сообщества</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.repost">https://vk.com/dev/wall.repost</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallRestoreCommentWithCustomOptions:" title="wallRestoreCommentWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallRestoreCommentWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.restoreComment">https://vk.com/dev/wall.restoreComment</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallRestoreWithCustomOptions:" title="wallRestoreWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallRestoreWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Восстанавливает удаленную запись на стене пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.restore">https://vk.com/dev/wall.restore</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wallSavePostWithCustomOptions:" title="wallSavePostWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">wallSavePostWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
+При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список в документации: <a href="https://vk.com/dev/wall.savePost">https://vk.com/dev/wall.savePost</a></p></dd>
 		</dl>
 		
 	</div>

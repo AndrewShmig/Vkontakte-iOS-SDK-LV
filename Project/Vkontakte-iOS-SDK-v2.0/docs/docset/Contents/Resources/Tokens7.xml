@@ -224,25 +224,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/infoAboutUserWithID:</TokenIdentifier>
-			<Abstract type="html">Информация о пользователе с указанным идентификатором.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)infoAboutUserWithID:(NSUInteger)userID</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>userID</Name>
-					<Abstract type="html">идентификатор пользователя</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKRequest, который инкапсулирует в себе все необходимые параметры для
-осуществления запроса пользовательской информации. Объект запроса возвращается по причине
-возможной необходимости отменить выполнение текущего запроса или отложенное выполнение запроса.</Abstract></ReturnValue>
-			<Anchor>//api/name/infoAboutUserWithID:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKUser/infoWithCustomOptions:</TokenIdentifier>
 			<Abstract type="html">Информация о пользователе(ях) с указанными параметрами</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
@@ -310,6 +291,229 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
 			<Anchor>//api/name/followersWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список записей со стены пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetByIDWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список записей со стен пользователей по их идентификаторам</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetByIDWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallSavePostWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
+При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.savePost</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallSavePostWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallPostWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Публикует новую запись на своей или чужой стене.
+Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.post</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallPostWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRepostWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Копирует объект на стену пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.repost</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRepostWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetRepostsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Позволяет получать список репостов заданной записи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getReposts</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetRepostsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallEditWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Редактирует запись на стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.edit</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallEditWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDeleteWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Удаляет запись со стены</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallDeleteWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestoreWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает удаленную запись на стене пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restore</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRestoreWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetCommentsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список комментариев к записи на стене пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getComments</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetCommentsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallAddCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Добавляет комментарий к записи на стене пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: http://vk.com/dev/wall.addComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallAddCommentWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDeleteCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Удаляет комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.deleteComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallDeleteCommentWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestoreCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restoreComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRestoreCommentWithCustomOptions:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

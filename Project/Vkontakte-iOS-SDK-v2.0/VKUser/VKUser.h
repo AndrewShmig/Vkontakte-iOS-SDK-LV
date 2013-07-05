@@ -40,6 +40,13 @@
  Класс так же позволяет изменить текущего активного пользователя на одного из
  пользователей находящихся в хранилище (ранее авторизованных). Получить список
  пользователей, которые авторизовывались можно используя метод localUsers.
+
+ @warning методы, которые требуют наличия access_token в запросе _перезаписывают_
+ токен доступа, если таковой был указан при передаче словаря ключей-значений, на
+ значение токена доступа текущего пользователя - self.accessToken.token.
+
+ @warning по умолчанию у каждого запроса из класса VKUser подпись (signature)
+ является строкой селектора инициировавшего/создавшего объекта запроса
  */
 @interface VKUser : NSObject
 
@@ -159,19 +166,6 @@ YES.
 */
 - (VKRequest *)info;
 
-/** Информация о пользователе с указанным идентификатором.
-
-Следующие поля данных запрашиваются: nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100
-
-Детальную информацию можно найти по этой ссылке в документации: https://vk.com/dev/users.get
-
-@param userID идентификатор пользователя
-@return экземпляр класса VKRequest, который инкапсулирует в себе все необходимые параметры для
-осуществления запроса пользовательской информации. Объект запроса возвращается по причине
-возможной необходимости отменить выполнение текущего запроса или отложенное выполнение запроса.
-*/
-- (VKRequest *)infoAboutUserWithID:(NSUInteger)userID;
-
 /** Информация о пользователе(ях) с указанными параметрами
 
 Описание параметров и возможные значения можно найти по ссылке: https://vk.com/dev/users.get
@@ -204,6 +198,102 @@ YES.
 @return @see info
 */
 - (VKRequest *)followersWithCustomOptions:(NSDictionary *)options;
+
+/**
+@name Стена
+*/
+/** Возвращает список записей со стены пользователя или сообщества
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.get
+@return @see info
+*/
+- (VKRequest *)wallGetWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список записей со стен пользователей по их идентификаторам
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.getById
+@return @see info
+*/
+- (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)options;
+
+/** Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
+При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.savePost
+@return @see info
+*/
+- (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)options;
+
+/** Публикует новую запись на своей или чужой стене.
+Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.post
+@return @see info
+*/
+- (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)options;
+
+/** Копирует объект на стену пользователя или сообщества
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.repost
+@return @see info
+*/
+- (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)options;
+
+/** Позволяет получать список репостов заданной записи
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.getReposts
+@return @see info
+*/
+- (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)options;
+
+/** Редактирует запись на стене
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.edit
+@return @see info
+*/
+- (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет запись со стены
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.delete
+@return @see info
+*/
+- (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)options;
+
+/** Восстанавливает удаленную запись на стене пользователя
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.restore
+@return @see info
+*/
+- (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список комментариев к записи на стене пользователя
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.getComments
+@return @see info
+*/
+- (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)options;
+
+/** Добавляет комментарий к записи на стене пользователя или сообщества
+
+@param options ключи-значения, полный список в документации: http://vk.com/dev/wall.addComment
+@return @see info
+*/
+- (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет комментарий текущего пользователя к записи на своей или чужой стене
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.deleteComment
+@return @see info
+*/
+- (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/wall.restoreComment
+@return @see info
+*/
+- (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options;
 
 /**
 @name Переопределенные методы
