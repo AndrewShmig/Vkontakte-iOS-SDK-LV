@@ -212,7 +212,7 @@
     [_connection cancel];
 }
 
-#pragma mark - Overriden methods
+#pragma mark - Overridden methods
 
 - (NSString *)description
 {
@@ -225,6 +225,18 @@
     };
 
     return [description description];
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    VKRequest *copy = [[VKRequest alloc]
+                                  initWithRequest:_request];
+
+    copy.signature = _signature;
+    copy.cacheLiveTime = _cacheLiveTime;
+    copy.offlineMode = _offlineMode;
+
+    return copy;
 }
 
 #pragma mark - NSURLConnectionDataDelegate
@@ -309,7 +321,6 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 //    обработка полного ответа сервера
     NSJSONReadingOptions mask = NSJSONReadingAllowFragments |
-            NSJSONReadingAllowFragments |
             NSJSONReadingMutableContainers |
             NSJSONReadingMutableLeaves;
     NSError *error;
@@ -326,7 +337,10 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         return;
     }
 
-//    кэшируем данные запроса, если запрос GET
+//    кэшируем данные запроса, если:
+//    1. данные запроса не из кэша
+//    2. время жизни кэша не установлено в "никогда"
+//    3. метод запроса GET
     if (!_isDataFromCache && VKCachedDataLiveTimeNever != _cacheLiveTime && ![@"POST" isEqualToString:connection.currentRequest.HTTPMethod]) {
 
         NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];

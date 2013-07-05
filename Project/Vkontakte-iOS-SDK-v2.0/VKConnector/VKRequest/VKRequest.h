@@ -111,7 +111,7 @@ parsingErrorOccured:(NSError *)error;
 
 /** Оболочка для осуществления запросов к социальной сети ВКонтакте
 */
-@interface VKRequest : NSObject <NSURLConnectionDataDelegate>
+@interface VKRequest : NSObject <NSURLConnectionDataDelegate, NSCopying>
 
 /**
 @name Свойства
@@ -205,6 +205,15 @@ parsingErrorOccured:(NSError *)error;
                               body:(NSData *)body;
 
 /** Метод инициализации объекта
+
+Рассмотрим пример:
+
+    VKRequest *request = [[VKRequest alloc] initWithMethod:@"users.get"
+                                        options:@{@"fields": @"nickname,bdate,status"}];
+
+Будет создан объект VKRequest и в последующем осуществлен вызов метода users.get
+социальной сети. Параметр fields будет равен "nickname,bdate,status", а значит
+социальная сеть вернет ник, дату рождения и статус текущего пользователя.
 
 @param methodName наименования метода API (users.get, groups.join etc)
 @param options словарь передаваемых параметров этому методу

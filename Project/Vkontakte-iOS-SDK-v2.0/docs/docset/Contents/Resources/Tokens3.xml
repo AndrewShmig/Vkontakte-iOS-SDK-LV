@@ -1,49 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/AppDelegate.html">
+	<File path="Classes/VKConnector.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/AppDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AppDelegate.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VKConnector</TokenIdentifier>
+			<Abstract type="html">Класс предназначен для получения приложением доступа к пользовательской учетной
+записи и осуществления запросов к API сервиса методами GET/POST.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>
 			
 			<NodeRef refid="3"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/setWindow:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AppDelegate.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Делегат VKConnector</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKConnectorDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/window</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/AppDelegate/window</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AppDelegate.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/delegate</TokenIdentifier>
+			<Abstract type="html">Делегат VKConnector</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKConnectorDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/window</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/AppDelegate/window</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>AppDelegate.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKConnector/delegate</TokenIdentifier>
+			<Abstract type="html">Делегат VKConnector</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>@property (strong, nonatomic) UIWindow *window</Declaration>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKConnectorDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/window</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/setAppID:</TokenIdentifier>
+			<Abstract type="html">Идентификатор приложения Вконтакте</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *appID</Declaration>
+			
+			
+			<Anchor>//api/name/appID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/appID</TokenIdentifier>
+			<Abstract type="html">Идентификатор приложения Вконтакте</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *appID</Declaration>
+			
+			
+			<Anchor>//api/name/appID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKConnector/appID</TokenIdentifier>
+			<Abstract type="html">Идентификатор приложения Вконтакте</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *appID</Declaration>
+			
+			
+			<Anchor>//api/name/appID</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/setPermissions:</TokenIdentifier>
+			<Abstract type="html">Список разрешений</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *permissions</Declaration>
+			
+			
+			<Anchor>//api/name/permissions</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/permissions</TokenIdentifier>
+			<Abstract type="html">Список разрешений</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *permissions</Declaration>
+			
+			
+			<Anchor>//api/name/permissions</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKConnector/permissions</TokenIdentifier>
+			<Abstract type="html">Список разрешений</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *permissions</Declaration>
+			
+			
+			<Anchor>//api/name/permissions</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKConnector/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Метод класса для получения экземпляра сиглтона.
+Если объект отсутствует, то он будет создан. Не может быть равен nil или NULL.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>+ (id)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/startWithAppID:permissons:</TokenIdentifier>
+			<Abstract type="html">Инициализирует запуск коннектора с заданными параметрами</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>- (void)startWithAppID:(NSString *)appID permissons:(NSArray *)permissions</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>appID</Name>
+					<Abstract type="html">Идентификатор приложения полученный при регистрации.</Abstract>
+				</Parameter><Parameter>
+					<Name>permissions</Name>
+					<Abstract type="html">Массив доступов (разрешений), которые необходимо получить приложению.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startWithAppID:permissons:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/logoutCurrentUser</TokenIdentifier>
+			<Abstract type="html">Удаляет куки, которые были получены при авторизации последним пользователем приложения.
+Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
+несколько своих учетных записей социальной сети или для авторизации другого пользователя.</Abstract>
+			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			
+			<Declaration>- (void)logoutCurrentUser</Declaration>
+			
+			
+			<Anchor>//api/name/logoutCurrentUser</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
