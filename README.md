@@ -1,5 +1,4 @@
-Vkontakte-iOS-SDK-v2.0
-======================
+#Vkontakte-iOS-SDK-v2
 
 Свои пожелания/идеи оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
 
@@ -10,6 +9,12 @@ Vkontakte-iOS-SDK-v2.0
 - [Коннектор](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Коннектор)
 - [Запросы](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Запросы)
 - [Пользователь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Пользователь)
+- [Документация](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Документация)
+
+Примеры приложений
+- [Список друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Список-друзей)
+- [Загрузка аудиозаписи на сервер ВКонтакте со статусом](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Загрузка-аудиозаписи-на-сервер-ВКонтакте-со-статусом)
+- [Информация о друзьях в оффлайн режиме](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Информация-о-друзьях-в-оффлайн-режиме)
 
 #License
 Copyright (c) 2013 Andrew Shmig
