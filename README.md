@@ -1,6 +1,9 @@
 #Vkontakte-iOS-SDK-v2
 
-Свои пожелания/идеи оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
+Свои пожелания/идеи/багрепорты оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
+
+Автор будет благодарен, если используя Vkontakte iOS SDK v1/v2 в своих приложениях, Вы напишете ему и укажете наименование
+(ссылку) приложения.
 
 Содержание
 - [Введение](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Введение)
@@ -24,6 +27,10 @@
 - [Как загружать файла на сервер?](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/objective-c.html)
 - [Вконтакте iOS SDK v1](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/vkontakte-ios-sdk-v10.html)
 - [ASASocialServices + Vkontakte](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/04/asasocialservices-vkontakte-ios.html)
+
+Приложения, которые используют VKontakte iOS SDK v1/v2:
+- ...
+- ...
 
 #License
 Copyright (c) 2013 Andrew Shmig
