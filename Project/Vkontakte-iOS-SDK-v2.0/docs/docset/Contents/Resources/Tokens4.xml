@@ -196,6 +196,9 @@
 					<Name>httpMethod</Name>
 					<Abstract type="html">GET или POST</Abstract>
 				</Parameter><Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL на который будет осуществлен запрос</Abstract>
+				</Parameter><Parameter>
 					<Name>headers</Name>
 					<Abstract type="html">заголовки запроса</Abstract>
 				</Parameter><Parameter>
@@ -205,9 +208,6 @@
 					<Name>delegate</Name>
 					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
 состояния объекта и данных</Abstract>
-				</Parameter><Parameter>
-					<Name>URL</Name>
-					<Abstract type="html">URL на который будет осуществлен запрос</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>

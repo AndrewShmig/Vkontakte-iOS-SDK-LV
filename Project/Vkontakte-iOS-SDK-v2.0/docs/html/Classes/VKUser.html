@@ -43,6 +43,8 @@
 	
 	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
 	
+	<option value="//api/name/offlineMode">&nbsp;&nbsp;&nbsp;&nbsp;offlineMode</option>
+	
 	<option value="//api/name/startAllRequestsImmediately">&nbsp;&nbsp;&nbsp;&nbsp;startAllRequestsImmediately</option>
 	
 	
@@ -63,7 +65,17 @@
 	
 	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
 	
+	<option value="//api/name/followersWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- followersWithCustomOptions:</option>
+	
 	<option value="//api/name/info">&nbsp;&nbsp;&nbsp;&nbsp;- info</option>
+	
+	<option value="//api/name/infoAboutUserWithID:">&nbsp;&nbsp;&nbsp;&nbsp;- infoAboutUserWithID:</option>
+	
+	<option value="//api/name/infoWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- infoWithCustomOptions:</option>
+	
+	<option value="//api/name/searchWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- searchWithCustomOptions:</option>
+	
+	<option value="//api/name/subscriptionsWithCustomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- subscriptionsWithCustomOptions:</option>
 	
 	
 	
@@ -101,6 +113,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/offlineMode">offlineMode</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startAllRequestsImmediately">startAllRequestsImmediately</a></span></li>
 	
 </ul></li>
@@ -123,7 +137,17 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/followersWithCustomOptions:">followersWithCustomOptions:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/info">info</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/infoAboutUserWithID:">infoAboutUserWithID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/infoWithCustomOptions:">infoWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchWithCustomOptions:">searchWithCustomOptions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/subscriptionsWithCustomOptions:">subscriptionsWithCustomOptions:</a></span></li>
 	
 </ul></li>
 
@@ -206,6 +230,15 @@
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/offlineMode">&nbsp;&nbsp;offlineMode</a></code>
+		<span class="tooltip"><p>Оффлайн режим. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li>
 						</ul>
 						
@@ -247,6 +280,41 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/info">&ndash;&nbsp;info</a></code>
 		<span class="tooltip"><p>Информация о текущем пользователе.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/infoAboutUserWithID:">&ndash;&nbsp;infoAboutUserWithID:</a></code>
+		<span class="tooltip"><p>Информация о пользователе с указанным идентификатором.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/infoWithCustomOptions:">&ndash;&nbsp;infoWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Информация о пользователе(ях) с указанными параметрами</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/searchWithCustomOptions:">&ndash;&nbsp;searchWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Возвращает список пользователей в соответствии с заданным критерием поиска</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/subscriptionsWithCustomOptions:">&ndash;&nbsp;subscriptionsWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Возвращает список идентификаторов пользователей и групп, которые входят в список подписок пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/followersWithCustomOptions:">&ndash;&nbsp;followersWithCustomOptions:</a></code>
+		<span class="tooltip"><p>Возвращает список идентификаторов пользователей, которые являются подписчиками пользователя. Идентификаторы пользователей в списке отсортированы в порядке убывания времени их добавления.</p></span>
 	</span>
 	
 	
@@ -347,6 +415,44 @@
 будут использованы.</p><div class="warning"><p><strong>Warning:</strong> возможно в будущем изменится обработка момента присвоения делегату
 значения nil, как вариант, все запущенные запросы будут отменены.</p></div>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/offlineMode" title="offlineMode"></a>
+	<h3 class="subsubtitle method-title">offlineMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Оффлайн режим. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readwrite) BOOL offlineMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -638,6 +744,58 @@ nil.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/followersWithCustomOptions:" title="followersWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">followersWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает список идентификаторов пользователей, которые являются подписчиками пользователя. Идентификаторы пользователей в списке отсортированы в порядке убывания времени их добавления.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)followersWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, с полным списком ключей можно ознакомиться по
+ссылке из документации: <a href="https://vk.com/dev/users.getFollowers">https://vk.com/dev/users.getFollowers</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/info" title="info"></a>
 	<h3 class="subsubtitle method-title">info</h3>
 	
@@ -672,6 +830,226 @@ nil.</p>
 
 <p>Детальную информацию можно найти по этой ссылке в документации: <a href="https://vk.com/dev/users.get">https://vk.com/dev/users.get</a></p>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/infoAboutUserWithID:" title="infoAboutUserWithID:"></a>
+	<h3 class="subsubtitle method-title">infoAboutUserWithID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Информация о пользователе с указанным идентификатором.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)infoAboutUserWithID:(NSUInteger)<em>userID</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userID</em></dt>
+			<dd><p>идентификатор пользователя</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>экземпляр класса <a href="../Classes/VKRequest.html">VKRequest</a>, который инкапсулирует в себе все необходимые параметры для
+осуществления запроса пользовательской информации. Объект запроса возвращается по причине
+возможной необходимости отменить выполнение текущего запроса или отложенное выполнение запроса.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Следующие поля данных запрашиваются: nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100</p>
+
+<p>Детальную информацию можно найти по этой ссылке в документации: <a href="https://vk.com/dev/users.get">https://vk.com/dev/users.get</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/infoWithCustomOptions:" title="infoWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">infoWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Информация о пользователе(ях) с указанными параметрами</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)infoWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, которые будут переданы при запросе методом GET</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Описание параметров и возможные значения можно найти по ссылке: <a href="https://vk.com/dev/users.get">https://vk.com/dev/users.get</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/searchWithCustomOptions:" title="searchWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">searchWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает список пользователей в соответствии с заданным критерием поиска</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)searchWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, с полным списком ключей можно ознакомиться по
+ссылке из документации: <a href="https://vk.com/dev/users.search">https://vk.com/dev/users.search</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/subscriptionsWithCustomOptions:" title="subscriptionsWithCustomOptions:"></a>
+	<h3 class="subsubtitle method-title">subscriptionsWithCustomOptions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает список идентификаторов пользователей и групп, которые входят в список подписок пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)subscriptionsWithCustomOptions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, с полным списком ключей можно ознакомиться по
+ссылке из документации: <a href="https://vk.com/dev/users.getSubscriptions">https://vk.com/dev/users.getSubscriptions</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
 	
 	
 	

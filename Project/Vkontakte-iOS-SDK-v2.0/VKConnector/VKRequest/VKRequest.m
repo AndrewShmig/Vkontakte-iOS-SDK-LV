@@ -153,7 +153,8 @@
     [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
     {
         NSString *param = [NSString stringWithFormat:@"%@=%@",
-                                                     key,
+                                                     [[key description]
+                                                           lowercaseString],
                                                      [[obj description]
                                                            encodeURL]];
 
@@ -255,8 +256,8 @@ didReceiveResponse:(NSURLResponse *)response
             NSError *error = [NSError errorWithDomain:@"VKRequestErrorDomain"
                                                  code:[httpResponse statusCode]
                                              userInfo:@{
-                                                     @"Response headers" : [httpResponse allHeaderFields],
-                                                     @"Localized status code string": [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]
+                                                     @"Response headers"             : [httpResponse allHeaderFields],
+                                                     @"Localized status code string" : [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]
                                              }];
 
             [self.delegate VKRequest:self

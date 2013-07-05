@@ -47,6 +47,7 @@
     if (self) {
         _storageItem = storageItem;
         _startAllRequestsImmediately = YES;
+        _offlineMode = NO;
     }
 
     return self;
@@ -110,21 +111,57 @@ static VKUser *_currentUser;
     return localUsers;
 }
 
+#pragma mark - Users
+
 - (VKRequest *)info
 {
+    return [self infoAboutUserWithID:self.accessToken.userID];
+}
+
+- (VKRequest *)infoAboutUserWithID:(NSUInteger)userID
+{
     NSString *fields = @"nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100";
+    NSNumber *currentUserID = @(userID);
 
-    VKRequest *infoRequest = [[VKRequest alloc]
-                                         initWithMethod:kVKUsersGet
-                                                options:@{
-                                                        @"fields" : fields
-                                                }];
+    return [self configureRequestMethod:kVKUsersGet
+                                options:@{
+                                        @"fields" : fields,
+                                        @"uids"   : currentUserID
+                                }
+                               selector:_cmd];
+}
 
-    infoRequest.delegate = self.delegate;
-    infoRequest.signature = NSStringFromSelector(_cmd);
+- (VKRequest *)infoWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKUsersGet
+                                options:options
+                               selector:_cmd];
+}
 
-    if (self.startAllRequestsImmediately)
-        [infoRequest start];
+- (VKRequest *)searchWithCustomOptions:(NSDictionary *)options
+{
+//    токен доступа в каких-то запросах нужен, а в каких-то нет
+//    поэтому добавлять токен доступа будет только в обязательных случаях
+    NSMutableDictionary *mutableOptions = [options mutableCopy];
+    mutableOptions[@"access_token"] = self.accessToken.token;
+
+    return [self configureRequestMethod:kVKUsersSearch
+                                options:mutableOptions
+                               selector:_cmd];
+}
+
+- (VKRequest *)subscriptionsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKUsersGetSubscriptions
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)followersWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKUsersGetFollowers
+                                options:options
+                               selector:_cmd];
 }
 
 #pragma mark - Setters & Getters
@@ -139,6 +176,26 @@ static VKUser *_currentUser;
 - (NSString *)description
 {
     return [_storageItem.accessToken description];
+}
+
+#pragma mark - Private methods
+
+- (VKRequest *)configureRequestMethod:(NSString *)methodName
+                              options:(NSDictionary *)options
+                             selector:(SEL)selector
+{
+    VKRequest *req = [[VKRequest alloc]
+                                 initWithMethod:methodName
+                                        options:options];
+
+    req.signature = NSStringFromSelector(selector);
+    req.offlineMode = self.offlineMode;
+    req.delegate = self.delegate;
+
+    if (self.startAllRequestsImmediately)
+        [req start];
+
+    return req;
 }
 
 @end

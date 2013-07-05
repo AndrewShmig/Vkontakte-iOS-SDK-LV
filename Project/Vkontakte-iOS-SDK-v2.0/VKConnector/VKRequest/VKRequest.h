@@ -152,7 +152,7 @@ parsingErrorOccured:(NSError *)error;
 /** Создает и возвращает запрос
 
 @param httpMethod GET или POST
-@param URL URL на который будет осуществлен запрос
+@param url URL на который будет осуществлен запрос
 @param headers заголовки запроса
 @param body тело запроса
 @param delegate делегат, который будет получать уведомления/сообщения об изменении

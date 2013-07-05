@@ -166,7 +166,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSURLConnectionDataDelegate</td>
+	<td class="specification-value">NSCopying<br />NSURLConnectionDataDelegate</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">VKRequest.h</td>
@@ -548,6 +548,11 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>URL на который будет осуществлен запрос</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
 			<dt><em>headers</em></dt>
 			<dd><p>заголовки запроса</p></dd>
 		</dl>
@@ -561,11 +566,6 @@
 			<dt><em>delegate</em></dt>
 			<dd><p>делегат, который будет получать уведомления/сообщения об изменении
 состояния объекта и данных</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>URL</em></dt>
-			<dd><p>URL на который будет осуществлен запрос</p></dd>
 		</dl>
 		
 	</div>

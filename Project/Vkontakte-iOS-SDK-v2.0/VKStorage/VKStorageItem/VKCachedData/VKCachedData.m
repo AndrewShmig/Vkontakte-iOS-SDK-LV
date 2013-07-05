@@ -35,7 +35,7 @@
 {
     NSString *_cacheDirectoryPath;
 
-    dispatch_queue_t _backgroudQueue;
+    dispatch_queue_t _backgroundQueue;
 }
 
 #pragma mark Visible VKCachedData methods
@@ -49,7 +49,7 @@
 
     if (self) {
         [self createDirectoryIfNotExists:path];
-        _backgroudQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        _backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
 
         _cacheDirectoryPath = [path copy];
     }
@@ -63,21 +63,9 @@
 {
     INFO_LOG();
 
-    NSString *encodedCachedURL = [[url absoluteString] md5];
-    NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
-                                                                      encodedCachedURL];
-    NSUInteger creationTimestamp = ((NSUInteger) [[NSDate date]
-                                                          timeIntervalSince1970]);
-
-    NSDictionary *cacheRecord = @{@"liveTime"          : @(VKCachedDataLiveTimeOneHour),
-                                  @"data"              : (cache == nil ? [NSNull null] : cache),
-                                  @"creationTimestamp" : @(creationTimestamp)};
-
-    dispatch_async(_backgroudQueue, ^
-    {
-        [cacheRecord writeToFile:filePath
-                      atomically:YES];
-    });
+    [self addCachedData:cache
+                 forURL:url
+               liveTime:VKCachedDataLiveTimeOneHour];
 }
 
 - (void)addCachedData:(NSData *)cache
@@ -90,8 +78,12 @@
     if(VKCachedDataLiveTimeNever == cacheLiveTime)
         return;
 
+//    почему лучше исключить токен доступа из URL перед кэшированием читать в
+//    описании метода removeAccessTokenFromCachedURL
+    NSURL *newURL = [self removeAccessTokenFromCachedURL:url];
+
 //    сохраняем данные запроса в кэше
-    NSString *encodedCachedURL = [[url absoluteString] md5];
+    NSString *encodedCachedURL = [[newURL absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
     NSUInteger creationTimestamp = ((NSUInteger) [[NSDate date]
@@ -101,7 +93,7 @@
                               @"data"              : (cache == nil ? [NSNull null] : cache),
                               @"creationTimestamp" : @(creationTimestamp)};
 
-    dispatch_async(_backgroudQueue, ^
+    dispatch_async(_backgroundQueue, ^
     {
         [options writeToFile:filePath
                   atomically:YES];
@@ -116,7 +108,7 @@
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
 
-    dispatch_async(_backgroudQueue, ^
+    dispatch_async(_backgroundQueue, ^
     {
         [[NSFileManager defaultManager] removeItemAtPath:filePath
                                                    error:nil];
@@ -127,7 +119,7 @@
 {
     INFO_LOG();
 
-    dispatch_async(_backgroudQueue, ^{
+    dispatch_async(_backgroundQueue, ^{
 
         [[NSFileManager defaultManager]
                         removeItemAtPath:_cacheDirectoryPath
@@ -146,7 +138,7 @@
 {
     INFO_LOG();
 
-    dispatch_async(_backgroudQueue, ^{
+    dispatch_async(_backgroundQueue, ^{
 
         [[NSFileManager defaultManager] removeItemAtPath:_cacheDirectoryPath
                                                    error:nil];
@@ -166,7 +158,8 @@
 {
     INFO_LOG();
 
-    NSString *encodedCachedURL = [[url absoluteString] md5];
+    NSURL *newURL = [self removeAccessTokenFromCachedURL:url];
+    NSString *encodedCachedURL = [[newURL absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
 
@@ -193,6 +186,25 @@
 }
 
 #pragma mark - private methods
+
+- (NSURL *)removeAccessTokenFromCachedURL:(NSURL *)url
+{
+    //    уберем токен доступа из строки запроса
+//    токен доступа может меняться при каждом обновлении (повторном входе пользователя),
+//    но создавать каждый раз новый кэш для одинаковых запросов с всего лишь разными
+//    токенами доступа нет смысла.
+    NSString *query = [url query];
+    NSArray *params = [query componentsSeparatedByString:@"&"];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF BEGINSWITH \"access_token\")"];
+    NSArray *newParams = [params filteredArrayUsingPredicate:predicate];
+
+    NSString *part1 = [[url absoluteString] componentsSeparatedByString:@"?"][0];
+    NSString *part2 = [newParams componentsJoinedByString:@"&"];
+    NSURL *newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", part1, part2]];
+
+    return newURL;
+}
 
 - (void)createDirectoryIfNotExists:(NSString *)path
 {

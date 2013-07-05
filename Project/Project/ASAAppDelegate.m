@@ -34,7 +34,9 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [[VKUser currentUser] info];
+    [[VKUser currentUser]
+            followersWithCustomOptions:@{
+            }];
 }
 
 - (void)VKConnector:(VKConnector *)connector willShowModalView:(KGModal *)view
@@ -63,7 +65,9 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 
     [VKUser currentUser].delegate = self;
 
-    [[VKUser currentUser] info];
+    [[VKUser currentUser]
+            followersWithCustomOptions:@{
+            }];
 }
 
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error

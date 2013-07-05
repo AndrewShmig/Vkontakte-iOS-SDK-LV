@@ -127,6 +127,48 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/setOfflineMode:</TokenIdentifier>
+			<Abstract type="html">Оффлайн режим. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			
+			
+			<Anchor>//api/name/offlineMode</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/offlineMode</TokenIdentifier>
+			<Abstract type="html">Оффлайн режим. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			
+			
+			<Anchor>//api/name/offlineMode</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKUser/offlineMode</TokenIdentifier>
+			<Abstract type="html">Оффлайн режим. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			
+			
+			<Anchor>//api/name/offlineMode</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKUser/currentUser</TokenIdentifier>
 			<Abstract type="html">Текущий активный пользователь.</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
@@ -178,6 +220,96 @@
 осуществления запроса пользовательской информации. Объект запроса возвращается по причине
 возможной необходимости отменить выполнение текущего запроса или отложенное выполнение запроса.</Abstract></ReturnValue>
 			<Anchor>//api/name/info</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/infoAboutUserWithID:</TokenIdentifier>
+			<Abstract type="html">Информация о пользователе с указанным идентификатором.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)infoAboutUserWithID:(NSUInteger)userID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userID</Name>
+					<Abstract type="html">идентификатор пользователя</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">экземпляр класса VKRequest, который инкапсулирует в себе все необходимые параметры для
+осуществления запроса пользовательской информации. Объект запроса возвращается по причине
+возможной необходимости отменить выполнение текущего запроса или отложенное выполнение запроса.</Abstract></ReturnValue>
+			<Anchor>//api/name/infoAboutUserWithID:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/infoWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Информация о пользователе(ях) с указанными параметрами</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)infoWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, которые будут переданы при запросе методом GET</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/infoWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/searchWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список пользователей в соответствии с заданным критерием поиска</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)searchWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, с полным списком ключей можно ознакомиться по
+ссылке из документации: https://vk.com/dev/users.search</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/searchWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/subscriptionsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список идентификаторов пользователей и групп, которые входят в список подписок пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)subscriptionsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, с полным списком ключей можно ознакомиться по
+ссылке из документации: https://vk.com/dev/users.getSubscriptions</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/subscriptionsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/followersWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список идентификаторов пользователей, которые являются подписчиками пользователя. Идентификаторы пользователей в списке отсортированы в порядке убывания времени их добавления.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)followersWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, с полным списком ключей можно ознакомиться по
+ссылке из документации: https://vk.com/dev/users.getFollowers</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/followersWithCustomOptions:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
