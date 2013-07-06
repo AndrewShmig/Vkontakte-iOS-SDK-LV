@@ -6,7 +6,7 @@
 (ссылку) приложения.
 
 Документация:
-* [Вики страницы](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/_pages).
+* [Вики страницы](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/_pages)
 * [Как работать с капчей ВК?](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11)
 
 Связанные статьи на Хабре:
