@@ -5,7 +5,9 @@
 Автор будет благодарен, если используя Vkontakte iOS SDK v1/v2 в своих приложениях, Вы напишете ему и укажете наименование
 (ссылку) приложения.
 
-Дополнительная информация находится на [Вики страницах](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/_pages).
+Документация:
+* Дополнительная информация находится на [Вики страницах](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/_pages).
+* [Как работать с капчей ВК?](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11)
 
 Связанные статьи на Хабре:
 - [Вконтакте iOS SDK v1](http://habrahabr.ru/post/184560/)
