@@ -12,7 +12,7 @@
 Связанные статьи на Хабре:
 - [Вконтакте iOS SDK v1](http://habrahabr.ru/post/184560/)
 - [Вконтакте iOS SDK v2](http://habrahabr.ru/post/185766/)
-- 
+
 Связанные статьи в личном блоге:
 - [Как загружать файла на сервер?](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/objective-c.html)
 - [Вконтакте iOS SDK v1](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/vkontakte-ios-sdk-v10.html)
