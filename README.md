@@ -5,6 +5,20 @@
 Автор будет благодарен, если используя Vkontakte iOS SDK v1/v2 в своих приложениях, Вы напишете ему и укажете наименование
 (ссылку) приложения.
 
+Связанные статьи на Хабре:
+- [Вконтакте iOS SDK v1](http://habrahabr.ru/post/184560/)
+- [Вконтакте iOS SDK v2]()
+
+Примеры приложений
+- [Список друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Список-друзей)
+- [Загрузка аудиозаписи на сервер ВКонтакте со статусом](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Загрузка-аудиозаписи-на-сервер-ВКонтакте-со-статусом)
+- [Информация о друзьях в оффлайн режиме](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Информация-о-друзьях-в-оффлайн-режиме)
+
+Связанные статьи в личном блоге:
+- [Как загружать файла на сервер?](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/objective-c.html)
+- [Вконтакте iOS SDK v1](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/vkontakte-ios-sdk-v10.html)
+- [ASASocialServices + Vkontakte](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/04/asasocialservices-vkontakte-ios.html)
+
 Содержание
 - [Введение](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Введение)
 - [Хранилище](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Хранилище)
@@ -13,20 +27,6 @@
 - [Запросы](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Запросы)
 - [Пользователь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Пользователь)
 - [Документация](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Документация)
-
-Примеры приложений
-- [Список друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Список-друзей)
-- [Загрузка аудиозаписи на сервер ВКонтакте со статусом](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Загрузка-аудиозаписи-на-сервер-ВКонтакте-со-статусом)
-- [Информация о друзьях в оффлайн режиме](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Информация-о-друзьях-в-оффлайн-режиме)
-
-Связанные статьи на Хабре:
-- [Вконтакте iOS SDK v1](http://habrahabr.ru/post/184560/)
-- [Вконтакте iOS SDK v2]()
-
-Связанные статьи в личном блоге:
-- [Как загружать файла на сервер?](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/objective-c.html)
-- [Вконтакте iOS SDK v1](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/vkontakte-ios-sdk-v10.html)
-- [ASASocialServices + Vkontakte](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/04/asasocialservices-vkontakte-ios.html)
 
 Приложения, которые используют VKontakte iOS SDK v1/v2:
 - ...
