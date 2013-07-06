@@ -7,7 +7,7 @@
 
 Связанные статьи на Хабре:
 - [Вконтакте iOS SDK v1](http://habrahabr.ru/post/184560/)
-- [Вконтакте iOS SDK v2]()
+- [Вконтакте iOS SDK v2](http://habrahabr.ru/post/185766/)
 
 Примеры приложений
 - [Список друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Список-друзей)
@@ -18,15 +18,6 @@
 - [Как загружать файла на сервер?](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/objective-c.html)
 - [Вконтакте iOS SDK v1](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/06/vkontakte-ios-sdk-v10.html)
 - [ASASocialServices + Vkontakte](http://developing-ios-apps-with-andrew-shmig.blogspot.ru/2013/04/asasocialservices-vkontakte-ios.html)
-
-Содержание
-- [Введение](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Введение)
-- [Хранилище](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Хранилище)
-- [Кэширование](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Кэширование)
-- [Коннектор](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Коннектор)
-- [Запросы](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Запросы)
-- [Пользователь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Пользователь)
-- [Документация](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/Документация)
 
 Приложения, которые используют VKontakte iOS SDK v1/v2:
 - ...
