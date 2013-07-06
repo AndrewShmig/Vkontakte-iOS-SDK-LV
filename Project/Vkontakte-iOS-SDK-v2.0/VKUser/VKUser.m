@@ -116,45 +116,46 @@ static VKUser *_currentUser;
 - (VKRequest *)info
 {
     NSDictionary *options = @{
-            @"uids": @(self.accessToken.userID),
-            @"fields": @"nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100"
+            @"uids"   : @(self.accessToken.userID),
+            @"fields" : @"nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100"
     };
 
     return [self configureRequestMethod:kVKUsersGet
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:NO];
 }
 
 - (VKRequest *)infoWithCustomOptions:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKUsersGet
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:NO];
 }
 
 - (VKRequest *)searchWithCustomOptions:(NSDictionary *)options
 {
-//    токен доступа в каких-то запросах нужен, а в каких-то нет
-//    поэтому добавлять токен доступа будет только в обязательных случаях
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKUsersSearch
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)subscriptionsWithCustomOptions:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKUsersGetSubscriptions
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:NO];
 }
 
 - (VKRequest *)followersWithCustomOptions:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKUsersGetFollowers
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:NO];
 }
 
 #pragma mark - Wall
@@ -163,113 +164,194 @@ static VKUser *_currentUser;
 {
     return [self configureRequestMethod:kVKWallGet
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:NO];
 }
 
 - (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallGetById
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:NO];
 }
 
 - (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallSavePost
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallPost
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallRepost
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallGetReposts
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallEdit
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallDelete
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallRestore
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallGetComments
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallAddComment
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallDeleteComment
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options
 {
-    options = [self addAccessTokenKey:options];
-
     return [self configureRequestMethod:kVKWallRestoreComment
                                 options:options
-                               selector:_cmd];
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Groups
+
+- (VKRequest *)groupsIsMemberWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsIsMember
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)groupsGetByIDWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsGetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)groupsGetWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)groupsGetMembersWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsGetMembers
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)groupsJoinWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsJoin
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)groupsLeaveWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsLeave
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)groupsSearchWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsSearch
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)groupsGetInvitesWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsGetInvites
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)groupsBanUserWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsBanUser
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)groupsUnbanUserWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsUnbanUser
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKGroupsGetBanned
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
 }
 
 #pragma mark - Setters & Getters
@@ -293,13 +375,17 @@ static VKUser *_currentUser;
     NSMutableDictionary *ops = [options mutableCopy];
     ops[@"access_token"] = self.accessToken.token;
 
-    return  ops;
+    return ops;
 }
 
 - (VKRequest *)configureRequestMethod:(NSString *)methodName
                               options:(NSDictionary *)options
                              selector:(SEL)selector
+                       addAccessToken:(BOOL)addToken
 {
+    if (addToken)
+        options = [self addAccessTokenKey:options];
+
     VKRequest *req = [[VKRequest alloc]
                                  initWithMethod:methodName
                                         options:options];

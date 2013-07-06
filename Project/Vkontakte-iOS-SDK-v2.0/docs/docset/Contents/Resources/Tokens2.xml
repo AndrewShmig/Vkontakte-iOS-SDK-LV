@@ -33,8 +33,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:</TokenIdentifier>
-			<Abstract type="html">Добавляет данные в кэш
-По умолчанию время жизни кэша устанавливается равным одному часу.</Abstract>
+			<Abstract type="html">Добавляет данные в кэш</Abstract>
 			<DeclaredIn>VKCachedData.h</DeclaredIn>			
 			
 			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url</Declaration>

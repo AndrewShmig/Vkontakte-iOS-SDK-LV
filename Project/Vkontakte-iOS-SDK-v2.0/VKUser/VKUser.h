@@ -296,6 +296,86 @@ YES.
 - (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options;
 
 /**
+@name Группы
+*/
+/** Возвращает информацию о том, является ли пользователь участником сообщества
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.isMember
+@return @see info
+*/
+- (VKRequest *)groupsIsMemberWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает информацию о заданном сообществе или о нескольких сообществах
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getById
+@return @see info
+*/
+- (VKRequest *)groupsGetByIDWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список сообществ указанного пользователя
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.get
+@return @see info
+*/
+- (VKRequest *)groupsGetWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список участников сообщества
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getMembers
+@return @see info
+*/
+- (VKRequest *)groupsGetMembersWithCustomOptions:(NSDictionary *)options;
+
+/** Данный метод позволяет вступить в группу, публичную страницу, а также подтвердить участие во встрече.
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.join
+@return @see info
+*/
+- (VKRequest *)groupsJoinWithCustomOptions:(NSDictionary *)options;
+
+/** Данный метод позволяет выходить из группы, публичной страницы, или встречи
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.leave
+@return @see info
+*/
+- (VKRequest *)groupsLeaveWithCustomOptions:(NSDictionary *)options;
+
+/** Осуществляет поиск сообществ по заданной подстроке
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.search
+@return @see info
+*/
+- (VKRequest *)groupsSearchWithCustomOptions:(NSDictionary *)options;
+
+/** Данный метод возвращает список приглашений в сообщества и встречи
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getInvites
+@return @see info
+*/
+- (VKRequest *)groupsGetInvitesWithCustomOptions:(NSDictionary *)options;
+
+/** Добавляет пользователя в черный список группы
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.banUser
+@return @see info
+*/
+- (VKRequest *)groupsBanUserWithCustomOptions:(NSDictionary *)options;
+
+/** Убирает пользователя из черного списка группы
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.unbanUser
+@return @see info
+*/
+- (VKRequest *)groupsUnbanUserWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список забаненных пользователей
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getBanned
+@return @see info
+*/
+- (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options;
+
+/**
 @name Переопределенные методы
  */
 /** Описание текущего пользователя
