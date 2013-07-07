@@ -111,6 +111,7 @@ static NSString *const kVKPhotosSaveProfilePhoto = @"photos.saveProfilePhoto";
 static NSString *const kVKPhotosSaveWallPhoto = @"photos.saveWallPhoto";
 static NSString *const kVKPhotosGetWallUploadServer = @"photos.getWallUploadServer";
 static NSString *const kVKPhotosGetMessagesUploadServer = @"photos.getMessagesUploadServer";
+static NSString *const kVKPhotosGetChatUploadServer = @"photos.getChatUploadServer";
 static NSString *const kVKPhotosSaveMessagesPhoto = @"photos.saveMessagesPhoto";
 static NSString *const kVKPhotosSearch = @"photos.search";
 static NSString *const kVKPhotosSave = @"photos.save";

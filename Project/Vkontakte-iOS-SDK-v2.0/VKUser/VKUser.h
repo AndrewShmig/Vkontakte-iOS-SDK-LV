@@ -200,6 +200,17 @@ YES.
 - (VKRequest *)followersWithCustomOptions:(NSDictionary *)options;
 
 /**
+@name Переопределенные методы
+ */
+/** Описание текущего пользователя
+*/
+- (NSString *)description;
+
+@end
+
+@interface VKUser (Wall)
+
+/**
 @name Стена
 */
 /** Возвращает список записей со стены пользователя или сообщества
@@ -295,85 +306,275 @@ YES.
 */
 - (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options;
 
+@end
+
+@interface VKUser (Photos)
+
 /**
-@name Группы
+@name Фотографии
 */
-/** Возвращает информацию о том, является ли пользователь участником сообщества
+/** Создает пустой альбом для фотографий
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.isMember
+@param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.createAlbum
 @return @see info
 */
-- (VKRequest *)groupsIsMemberWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosCreateAlbumWithCustomOptions:(NSDictionary *)options;
 
-/** Возвращает информацию о заданном сообществе или о нескольких сообществах
+/** Редактирует данные альбома для фотографий пользователя
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getById
+@param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.editAlbum
 @return @see info
 */
-- (VKRequest *)groupsGetByIDWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosEditAlbumWithCustomOptions:(NSDictionary *)options;
 
-/** Возвращает список сообществ указанного пользователя
+/** Возвращает список альбомов пользователя или сообщества
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.get
+@param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.getAlbums
 @return @see info
 */
-- (VKRequest *)groupsGetWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetAlbumsWithCustomOptions:(NSDictionary *)options;
 
-/** Возвращает список участников сообщества
+/** Возвращает список фотографий в альбоме
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getMembers
+@param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.get
 @return @see info
 */
-- (VKRequest *)groupsGetMembersWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetWithCustomOptions:(NSDictionary *)options;
 
-/** Данный метод позволяет вступить в группу, публичную страницу, а также подтвердить участие во встрече.
+/** Возвращает количество доступных альбомов пользователя
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.join
+@param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.getAlbumsCount
 @return @see info
 */
-- (VKRequest *)groupsJoinWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetAlbumsCountWithCustomOptions:(NSDictionary *)options;
 
-/** Данный метод позволяет выходить из группы, публичной страницы, или встречи
+/** Возвращает список фотографий со страницы пользователя или сообщества
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.leave
+@param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.getProfile
 @return @see info
 */
-- (VKRequest *)groupsLeaveWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetProfileWithCustomOptions:(NSDictionary *)options;
 
-/** Осуществляет поиск сообществ по заданной подстроке
+/** Возвращает информацию о фотографиях по их идентификаторам
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.search
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/photos.getById
 @return @see info
 */
-- (VKRequest *)groupsSearchWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetByIDWithCustomOptions:(NSDictionary *)options;
 
-/** Данный метод возвращает список приглашений в сообщества и встречи
+/** Возвращает адрес сервера для загрузки фотографий
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getInvites
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getUploadServer
 @return @see info
 */
-- (VKRequest *)groupsGetInvitesWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetUploadServerWithCustomOptions:(NSDictionary *)options;
 
-/** Добавляет пользователя в черный список группы
+/** Возвращает адрес сервера для загрузки фотографии на страницу пользователя
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.banUser
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getProfileUploadServer
 @return @see info
 */
-- (VKRequest *)groupsBanUserWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetProfileUploadServerWithCustomOptions:(NSDictionary *)options;
 
-/** Убирает пользователя из черного списка группы
+/** Позволяет получить адрес для загрузки фотографий мультидиалогов
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.unbanUser
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getChatUploadServer
 @return @see info
 */
-- (VKRequest *)groupsUnbanUserWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetChatUploadServerWithCustomOptions:(NSDictionary *)options;
 
-/** Возвращает список забаненных пользователей
+/** Сохраняет фотографию пользователя после успешной загрузки
 
-@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getBanned
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.saveProfilePhoto
 @return @see info
 */
-- (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosSaveProfilePhotoWithCustomOptions:(NSDictionary *)options;
+
+/** Сохраняет фотографии после успешной загрузки на URI, полученный методом photos.getWallUploadServer
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.saveWallPhoto
+@return @see info
+*/
+- (VKRequest *)photosSaveWallPhotoWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает адрес сервера для загрузки фотографии на стену пользователя.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getWallUploadServer
+@return @see info
+*/
+- (VKRequest *)photosGetWallUploadServerWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает адрес сервера для загрузки фотографии в личное сообщение пользователю
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getMessagesUploadServer
+@return @see info
+*/
+- (VKRequest *)photosGetMessagesUploadServerWithCustomOptions:(NSDictionary *)options;
+
+/** Сохраняет фотографию после успешной загрузки на URI, полученный методом photos.getMessagesUploadServer
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.saveMessagesPhoto
+@return @see info
+*/
+- (VKRequest *)photosSaveMessagesPhotoWithCustomOptions:(NSDictionary *)options;
+
+/** Осуществляет поиск изображений по местоположению или описанию
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.search
+@return @see info
+*/
+- (VKRequest *)photosSearchWithCustomOptions:(NSDictionary *)options;
+
+/** Сохраняет фотографии после успешной загрузки
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.save
+@return @see info
+*/
+- (VKRequest *)photosSaveWithCustomOptions:(NSDictionary *)options;
+
+/** Изменяет описание у выбранной фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.edit
+@return @see info
+*/
+- (VKRequest *)photosEditWithCustomOptions:(NSDictionary *)options;
+
+/** Переносит фотографию из одного альбома в другой
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.move
+@return @see info
+*/
+- (VKRequest *)photosMoveWithCustomOptions:(NSDictionary *)options;
+
+/** Делает фотографию обложкой альбома
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.makeCover
+@return @see info
+*/
+- (VKRequest *)photosMakeCoverWithCustomOptions:(NSDictionary *)options;
+
+/** Меняет порядок альбома в списке альбомов пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.reorderAlbums
+@return @see info
+*/
+- (VKRequest *)photosReorderAlbumsWithCustomOptions:(NSDictionary *)options;
+
+/** Меняет порядок фотографии в списке фотографий альбома пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.reorderPhotos
+@return @see info
+*/
+- (VKRequest *)photosReorderPhotosWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает все фотографии пользователя или сообщества в антихронологическом порядке
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getAll
+@return @see info
+*/
+- (VKRequest *)photosGetAllWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список фотографий, на которых отмечен пользователь
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getUserPhotos
+@return @see info
+*/
+- (VKRequest *)photosGetUserPhotosWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет указанный альбом для фотографий у текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.deleteAlbum
+@return @see info
+*/
+- (VKRequest *)photosDeleteAlbumWithCustomOptions:(NSDictionary *)options;
+
+/** Удаление фотографии на сайте
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.delete
+@return @see info
+*/
+- (VKRequest *)photosDeleteWithCustomOptions:(NSDictionary *)options;
+
+/** Подтверждает отметку на фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.confirmTag
+@return @see info
+*/
+- (VKRequest *)photosConfirmTagWithCusomOptions:(NSDictionary *)options;
+
+/** Возвращает список комментариев к фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getComments
+@return @see info
+*/
+- (VKRequest *)photosGetCommentsWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает отсортированный в антихронологическом порядке список всех комментариев к конкретному альбому или ко всем альбомам пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getAllComments
+@return @see info
+*/
+- (VKRequest *)photosGetAllCommentsWithCustomOptions:(NSDictionary *)options;
+
+/** Создает новый комментарий к фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.createComment
+@return @see info
+*/
+- (VKRequest *)photosCreateCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет комментарий к фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.deleteComment
+@return @see info
+*/
+- (VKRequest *)photosDeleteCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Восстанавливает удаленный комментарий к фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.restoreComment
+@return @see info
+*/
+- (VKRequest *)photosRestoreCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Изменяет текст комментария к фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.editComment
+@return @see info
+*/
+- (VKRequest *)photosEditCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список отметок на фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getTags
+@return @see info
+*/
+- (VKRequest *)photosGetTagsWithCustomOptions:(NSDictionary *)options;
+
+/** Добавляет отметку на фотографию
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.putTag
+@return @see info
+*/
+- (VKRequest *)photosPutTagWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет отметку с фотографии
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.removeTag
+@return @see info
+*/
+- (VKRequest *)photosRemoveTagWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список фотографий, на которых есть непросмотренные отметки
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getNewTags
+@return @see info
+*/
+- (VKRequest *)photosGetNewTagsWithCustomOptions:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Friends)
 
 /**
 @name Друзья
@@ -503,11 +704,88 @@ YES.
 */
 - (VKRequest *)friendsAreFriendsWithCustomOptions:(NSDictionary *)options;
 
+@end
+
+@interface VKUser (Groups)
+
 /**
-@name Переопределенные методы
- */
-/** Описание текущего пользователя
+@name Группы
 */
-- (NSString *)description;
+/** Возвращает информацию о том, является ли пользователь участником сообщества
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.isMember
+@return @see info
+*/
+- (VKRequest *)groupsIsMemberWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает информацию о заданном сообществе или о нескольких сообществах
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getById
+@return @see info
+*/
+- (VKRequest *)groupsGetByIDWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список сообществ указанного пользователя
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.get
+@return @see info
+*/
+- (VKRequest *)groupsGetWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список участников сообщества
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getMembers
+@return @see info
+*/
+- (VKRequest *)groupsGetMembersWithCustomOptions:(NSDictionary *)options;
+
+/** Данный метод позволяет вступить в группу, публичную страницу, а также подтвердить участие во встрече.
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.join
+@return @see info
+*/
+- (VKRequest *)groupsJoinWithCustomOptions:(NSDictionary *)options;
+
+/** Данный метод позволяет выходить из группы, публичной страницы, или встречи
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.leave
+@return @see info
+*/
+- (VKRequest *)groupsLeaveWithCustomOptions:(NSDictionary *)options;
+
+/** Осуществляет поиск сообществ по заданной подстроке
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.search
+@return @see info
+*/
+- (VKRequest *)groupsSearchWithCustomOptions:(NSDictionary *)options;
+
+/** Данный метод возвращает список приглашений в сообщества и встречи
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getInvites
+@return @see info
+*/
+- (VKRequest *)groupsGetInvitesWithCustomOptions:(NSDictionary *)options;
+
+/** Добавляет пользователя в черный список группы
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.banUser
+@return @see info
+*/
+- (VKRequest *)groupsBanUserWithCustomOptions:(NSDictionary *)options;
+
+/** Убирает пользователя из черного списка группы
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.unbanUser
+@return @see info
+*/
+- (VKRequest *)groupsUnbanUserWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список забаненных пользователей
+
+@param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getBanned
+@return @see info
+*/
+- (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options;
 
 @end

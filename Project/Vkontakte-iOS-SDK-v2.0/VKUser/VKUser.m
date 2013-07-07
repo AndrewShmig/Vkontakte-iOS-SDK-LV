@@ -492,6 +492,304 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Photos
+
+- (VKRequest *)photosCreateAlbumWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosCreateAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosEditAlbumWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosEditAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetAlbumsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetAlbums
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)photosGetWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)photosGetAlbumsCountWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetAlbumsCount
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetProfileWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetProfile
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetByIDWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetUploadServerWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetUploadServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetProfileUploadServerWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetProfileUploadServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetChatUploadServerWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetChatUploadServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosSaveProfilePhotoWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosSaveProfilePhoto
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosSaveWallPhotoWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosSaveWallPhoto
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetWallUploadServerWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetWallUploadServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetMessagesUploadServerWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetMessagesUploadServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosSaveMessagesPhotoWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosSaveMessagesPhoto
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosSearchWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosSearch
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)photosSaveWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosSave
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosEditWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosEdit
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosMoveWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosMove
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosMakeCoverWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosMakeCover
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosReorderAlbumsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosReorderAlbums
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosReorderPhotosWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosReorderPhotos
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetAllWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetAll
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetUserPhotosWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetUserPhotos
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosDeleteAlbumWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosDeleteAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosDeleteWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosDelete
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosConfirmTagWithCusomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosConfirmTag
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetCommentsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetComments
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetAllCommentsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetAllComments
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosCreateCommentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosCreateComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosDeleteCommentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosDeleteComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosRestoreCommentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosRestoreComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosEditCommentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosEditComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetTagsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetTags
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosPutTagWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosPutTag
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosRemoveTagWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosRemoveTag
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)photosGetNewTagsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPhotosGetNewTags
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken
