@@ -34,13 +34,6 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
     return YES;
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    [[VKUser currentUser]
-            followersWithCustomOptions:@{
-            }];
-}
-
 - (void)VKConnector:(VKConnector *)connector willShowModalView:(KGModal *)view
 {
     NSLog(@"%s", __FUNCTION__);
@@ -66,10 +59,11 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
     NSLog(@"%s", __FUNCTION__);
 
     [VKUser currentUser].delegate = self;
-
     [[VKUser currentUser]
-            followersWithCustomOptions:@{
-            }];
+             wallDeleteWithCustomOptions:@{
+                     @"owner_id": @1,
+                     @"post_id": @1
+             }];
 }
 
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error
@@ -87,8 +81,22 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 - (void)VKRequest:(VKRequest *)request response:(id)response
 {
     NSLog(@"%s", __FUNCTION__);
-    NSLog(@"request: %@", request);
     NSLog(@"response: %@", response);
+}
+
+- (void)VKRequest:(VKRequest *)request responseErrorOccured:(id)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"error: %@", error);
+}
+
+- (void)VKRequest:(VKRequest *)request
+       captchaSid:(NSString *)captchaSid
+     captchaImage:(NSString *)captchaImage
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"captchaSid: %@", captchaSid);
+    NSLog(@"captchaImage: %@", captchaImage);
 }
 
 - (void)VKRequest:(VKRequest *)request parsingErrorOccured:(NSError *)error

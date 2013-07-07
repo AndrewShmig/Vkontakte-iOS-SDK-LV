@@ -73,6 +73,49 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:responseErrorOccured:</TokenIdentifier>
+			<Abstract type="html">Вызывается в случае, если в ответе есть ошибка</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request responseErrorOccured:(id)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">ответ сервера с описанием ошибки</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/VKRequest:responseErrorOccured:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:captchaSid:captchaImage:</TokenIdentifier>
+			<Abstract type="html">Вызывается в случае, если требуется ввести капчу</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request captchaSid:(NSString *)captchaSid captchaImage:(NSString *)captchaImage</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+				</Parameter><Parameter>
+					<Name>captchaSid</Name>
+					<Abstract type="html">идентификатор captcha</Abstract>
+				</Parameter><Parameter>
+					<Name>captchaImage</Name>
+					<Abstract type="html">ссылка на изображение, которое нужно показать пользователю, чтобы он ввел текст с этого изображения</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/VKRequest:captchaSid:captchaImage:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:totalBytes:downloadedBytes:</TokenIdentifier>
 			<Abstract type="html">Вызывается каждый раз, когда получена новая порция данных (метод удобно
 использовать для отображения статуса загрузки данных)</Abstract>
