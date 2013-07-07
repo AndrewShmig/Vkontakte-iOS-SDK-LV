@@ -81,6 +81,26 @@ connectionErrorOccured:(NSError *)error;
 - (void)  VKRequest:(VKRequest *)request
 parsingErrorOccured:(NSError *)error;
 
+/** Вызывается в случае, если в ответе есть ошибка
+
+@param request запрос к которому относится вызов метода делегата
+@param error ответ сервера с описанием ошибки
+*/
+- (void)   VKRequest:(VKRequest *)request
+responseErrorOccured:(id)error;
+
+/** Вызывается в случае, если требуется ввести капчу
+
+Дополнительная информация по обработке капчи: https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11
+
+@param request запрос к которому относится вызов метода делегата
+@param captchaSid идентификатор captcha
+@param captchaImage ссылка на изображение, которое нужно показать пользователю, чтобы он ввел текст с этого изображения
+*/
+- (void)VKRequest:(VKRequest *)request
+       captchaSid:(NSString *)captchaSid
+     captchaImage:(NSString *)captchaImage;
+
 /** Вызывается каждый раз, когда получена новая порция данных (метод удобно
 использовать для отображения статуса загрузки данных)
 

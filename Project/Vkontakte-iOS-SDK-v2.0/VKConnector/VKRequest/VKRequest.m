@@ -35,6 +35,9 @@
 #define INFO_LOG() NSLog(@"%s", __FUNCTION__)
 
 
+#define kCaptchaErrorCode 14
+
+
 @implementation VKRequest
 {
     NSMutableURLRequest *_request;
@@ -338,11 +341,42 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         return;
     }
 
+//    проверим, если в ответе содержится ошибка
+    if(nil != json[@"error"]){
+
+//      капча ли?
+        if(kCaptchaErrorCode == [json[@"error"][@"error_code"] integerValue]){
+
+            if(nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:captchaSid:captchaImage:)]){
+                NSString *captchaSid = json[@"error"][@"captcha_sid"];
+                NSString *captchaImage = json[@"error"][@"captcha_img"];
+
+                [self.delegate VKRequest:self
+                              captchaSid:captchaSid
+                            captchaImage:captchaImage];
+            }
+
+//        прекращаем дальнейшую обработку
+//        кэшировать ошибки не будем
+            return;
+        }
+
+//        другая ошибка
+        if(nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:responseErrorOccured:)]){
+            [self.delegate VKRequest:self
+                responseErrorOccured:json[@"error"]];
+        }
+
+//        прекращаем дальнейшую обработку
+//        кэшировать ошибки не будем
+        return;
+    }
+
 //    кэшируем данные запроса, если:
 //    1. данные запроса не из кэша
 //    2. время жизни кэша не установлено в "никогда"
 //    3. метод запроса GET
-    if (!_isDataFromCache && VKCachedDataLiveTimeNever != _cacheLiveTime && ![@"POST" isEqualToString:connection.currentRequest.HTTPMethod]) {
+    if (!_isDataFromCache && VKCachedDataLiveTimeNever != self.cacheLiveTime && ![@"POST" isEqualToString:connection.currentRequest.HTTPMethod]) {
 
         NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];
         VKStorageItem *item = [[VKStorage sharedStorage]
@@ -350,7 +384,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
         [item.cachedData addCachedData:_receivedData
                                 forURL:[self removeAccessTokenFromURL:connection.currentRequest.URL]
-                              liveTime:_cacheLiveTime];
+                              liveTime:self.cacheLiveTime];
 
         _isDataFromCache = NO;
     }
