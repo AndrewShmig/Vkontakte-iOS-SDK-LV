@@ -376,6 +376,134 @@ YES.
 - (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options;
 
 /**
+@name Друзья
+*/
+/** Возвращает список идентификаторов друзей пользователя или расширенную информацию о друзьях пользователя (при использовании параметра fields)
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.get
+@return @see info
+*/
+- (VKRequest *)friendsGetWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список идентификаторов друзей пользователя, находящихся на сайте
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getOnline
+@return @see info
+*/
+- (VKRequest *)friendsGetOnlineWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список идентификаторов общих друзей между парой пользователей
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getMutual
+@return @see info
+*/
+- (VKRequest *)friendsGetMutualWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список идентификаторов недавно добавленных друзей текущего пользователя
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getRecent
+@return @see info
+*/
+- (VKRequest *)friendsGetRecentWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает информацию о полученных или отправленных заявках на добавление в друзья для текущего пользователя
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getRequests
+@return @see info
+*/
+- (VKRequest *)friendsGetRequestsWithCustomOptions:(NSDictionary *)options;
+
+/** Одобряет или создает заявку на добавление в друзья.
+
+Если идентификатор выбранного пользователя присутствует в списке заявок на добавление в друзья, полученном методом friends.getRequests, то одобряет заявку на добавление и добавляет выбранного пользователя в друзья к текущему пользователю. В противном случае создает заявку на добавление в друзья текущего пользователя к выбранному пользователю.
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.add
+@return @see info
+*/
+- (VKRequest *)friendsAddWithCustomOptions:(NSDictionary *)options;
+
+/** Редактирует списки друзей для выбранного друга
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.edit
+@return @see info
+*/
+- (VKRequest *)friendsEditWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет пользователя из списка друзей или отклоняет заявку в друзья
+
+Если идентификатор выбранного пользователя присутствует в списке заявок на добавление в друзья, полученном методом friends.getRequests, то отклоняет заявку на добавление в друзья к текущему пользователю. В противном случае удаляет выбранного пользователя из списка друзей текущего пользователя, который может быть получен методом friends.get
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.delete
+@return @see info
+*/
+- (VKRequest *)friendsDeleteWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список меток друзей текущего пользователя
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getLists
+@return @see info
+*/
+- (VKRequest *)friendsGetListsWithCustomOptions:(NSDictionary *)options;
+
+/** Создает новый список друзей у текущего пользователя
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.addList
+@return @see info
+*/
+- (VKRequest *)friendsAddListWithCustomOptions:(NSDictionary *)options;
+
+/** Редактирует существующий список друзей текущего пользователя
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.editList
+@return @see info
+*/
+- (VKRequest *)friendsEditListWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет существующий список друзей текущего пользователя
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.deleteList
+@return @see info
+*/
+- (VKRequest *)friendsDeleteListWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список идентификаторов друзей текущего пользователя, которые установили данное приложение
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getAppUsers
+@return @see info
+*/
+- (VKRequest *)friendsGetAppUsersWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список друзей пользователя, у которых завалидированные или указанные в профиле телефонные номера входят в заданный список.
+
+Использование данного метода возможно только если у текущего пользователя завалидирован номер мобильного телефона. Для проверки этого условия можно использовать метод users.get c параметрами uids=API_USER и fields=has_mobile, где API_USER равен идентификатору текущего пользователя.
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getByPhones
+@return @see info
+*/
+- (VKRequest *)friendsGetByPhonesWithCustomOptions:(NSDictionary *)options;
+
+/** Отмечает все входящие заявки на добавление в друзья как просмотренные
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.deleteAllRequests
+@return @see info
+*/
+- (VKRequest *)friendsDeleteAllRequestsWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список профилей пользователей, которые могут быть друзьями текущего пользователя.
+
+@param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getSuggestions
+@return @see info
+*/
+- (VKRequest *)friendsGetSuggestionsWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает информацию о том, добавлен ли текущий пользователь в друзья у указанных пользователей.
+
+@param options ключи-значения, полный список по ссылке: https://vk.com/dev/friends.areFriends
+@return @see info
+*/
+- (VKRequest *)friendsAreFriendsWithCustomOptions:(NSDictionary *)options;
+
+/**
 @name Переопределенные методы
  */
 /** Описание текущего пользователя

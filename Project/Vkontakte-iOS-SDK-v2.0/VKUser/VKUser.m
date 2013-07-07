@@ -354,6 +354,144 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Friends
+
+- (VKRequest *)friendsGetWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)friendsGetOnlineWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGetOnline
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsGetMutualWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGetMutual
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsGetRecentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGetRecent
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsGetRequestsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGetRequests
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsAddWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsAdd
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsEditWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsEdit
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsDeleteWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsDelete
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsGetListsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGetLists
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsAddListWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsAddList
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsEditListWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsEditList
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsDeleteListWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsDeleteList
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsGetAppUsersWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGetAppUsers
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsGetByPhonesWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGetByPhones
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsDeleteAllRequestsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsDeleteAllRequests
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsGetSuggestionsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsGetSuggestions
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)friendsAreFriendsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFriendsAreFriends
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken
