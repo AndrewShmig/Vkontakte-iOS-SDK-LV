@@ -173,7 +173,7 @@ YES.
 @param options ключи-значения, которые будут переданы при запросе методом GET
 @return @see info
 */
-- (VKRequest *)infoWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)info:(NSDictionary *)options;
 
 /** Возвращает список пользователей в соответствии с заданным критерием поиска
 
@@ -181,7 +181,7 @@ YES.
 ссылке из документации: https://vk.com/dev/users.search
 @return @see info
 */
-- (VKRequest *)searchWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)search:(NSDictionary *)options;
 
 /** Возвращает список идентификаторов пользователей и групп, которые входят в список подписок пользователя
 
@@ -189,7 +189,7 @@ YES.
 ссылке из документации: https://vk.com/dev/users.getSubscriptions
 @return @see info
 */
-- (VKRequest *)subscriptionsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)subscriptions:(NSDictionary *)options;
 
 /** Возвращает список идентификаторов пользователей, которые являются подписчиками пользователя. Идентификаторы пользователей в списке отсортированы в порядке убывания времени их добавления.
 
@@ -197,7 +197,7 @@ YES.
 ссылке из документации: https://vk.com/dev/users.getFollowers
 @return @see info
 */
-- (VKRequest *)followersWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)followers:(NSDictionary *)options;
 
 /**
 @name Переопределенные методы
@@ -218,14 +218,14 @@ YES.
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.get
 @return @see info
 */
-- (VKRequest *)wallGetWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallGet:(NSDictionary *)options;
 
 /** Возвращает список записей со стен пользователей по их идентификаторам
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.getById
 @return @see info
 */
-- (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallGetByID:(NSDictionary *)options;
 
 /** Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
 При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.
@@ -233,7 +233,7 @@ YES.
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.savePost
 @return @see info
 */
-- (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallSavePost:(NSDictionary *)options;
 
 /** Публикует новую запись на своей или чужой стене.
 Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.
@@ -241,70 +241,70 @@ YES.
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.post
 @return @see info
 */
-- (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallPost:(NSDictionary *)options;
 
 /** Копирует объект на стену пользователя или сообщества
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.repost
 @return @see info
 */
-- (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallRepost:(NSDictionary *)options;
 
 /** Позволяет получать список репостов заданной записи
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.getReposts
 @return @see info
 */
-- (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallGetReposts:(NSDictionary *)options;
 
 /** Редактирует запись на стене
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.edit
 @return @see info
 */
-- (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallEdit:(NSDictionary *)options;
 
 /** Удаляет запись со стены
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.delete
 @return @see info
 */
-- (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallDelete:(NSDictionary *)options;
 
 /** Восстанавливает удаленную запись на стене пользователя
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.restore
 @return @see info
 */
-- (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallRestore:(NSDictionary *)options;
 
 /** Возвращает список комментариев к записи на стене пользователя
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.getComments
 @return @see info
 */
-- (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallGetComments:(NSDictionary *)options;
 
 /** Добавляет комментарий к записи на стене пользователя или сообщества
 
 @param options ключи-значения, полный список в документации: http://vk.com/dev/wall.addComment
 @return @see info
 */
-- (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallAddComment:(NSDictionary *)options;
 
 /** Удаляет комментарий текущего пользователя к записи на своей или чужой стене
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.deleteComment
 @return @see info
 */
-- (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallDeleteComment:(NSDictionary *)options;
 
 /** Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/wall.restoreComment
 @return @see info
 */
-- (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)wallRestoreComment:(NSDictionary *)options;
 
 @end
 
@@ -318,182 +318,182 @@ YES.
 @param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.createAlbum
 @return @see info
 */
-- (VKRequest *)photosCreateAlbumWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosCreateAlbum:(NSDictionary *)options;
 
 /** Редактирует данные альбома для фотографий пользователя
 
 @param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.editAlbum
 @return @see info
 */
-- (VKRequest *)photosEditAlbumWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosEditAlbum:(NSDictionary *)options;
 
 /** Возвращает список альбомов пользователя или сообщества
 
 @param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.getAlbums
 @return @see info
 */
-- (VKRequest *)photosGetAlbumsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetAlbums:(NSDictionary *)options;
 
 /** Возвращает список фотографий в альбоме
 
 @param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.get
 @return @see info
 */
-- (VKRequest *)photosGetWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGet:(NSDictionary *)options;
 
 /** Возвращает количество доступных альбомов пользователя
 
 @param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.getAlbumsCount
 @return @see info
 */
-- (VKRequest *)photosGetAlbumsCountWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetAlbumsCount:(NSDictionary *)options;
 
 /** Возвращает список фотографий со страницы пользователя или сообщества
 
 @param options ключи-значения, полный список по ссылке: https://vk.com/dev/photos.getProfile
 @return @see info
 */
-- (VKRequest *)photosGetProfileWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetProfile:(NSDictionary *)options;
 
 /** Возвращает информацию о фотографиях по их идентификаторам
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/photos.getById
 @return @see info
 */
-- (VKRequest *)photosGetByIDWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetByID:(NSDictionary *)options;
 
 /** Возвращает адрес сервера для загрузки фотографий
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getUploadServer
 @return @see info
 */
-- (VKRequest *)photosGetUploadServerWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetUploadServer:(NSDictionary *)options;
 
 /** Возвращает адрес сервера для загрузки фотографии на страницу пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getProfileUploadServer
 @return @see info
 */
-- (VKRequest *)photosGetProfileUploadServerWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetProfileUploadServer:(NSDictionary *)options;
 
 /** Позволяет получить адрес для загрузки фотографий мультидиалогов
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getChatUploadServer
 @return @see info
 */
-- (VKRequest *)photosGetChatUploadServerWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetChatUploadServer:(NSDictionary *)options;
 
 /** Сохраняет фотографию пользователя после успешной загрузки
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.saveProfilePhoto
 @return @see info
 */
-- (VKRequest *)photosSaveProfilePhotoWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosSaveProfilePhoto:(NSDictionary *)options;
 
 /** Сохраняет фотографии после успешной загрузки на URI, полученный методом photos.getWallUploadServer
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.saveWallPhoto
 @return @see info
 */
-- (VKRequest *)photosSaveWallPhotoWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosSaveWallPhoto:(NSDictionary *)options;
 
 /** Возвращает адрес сервера для загрузки фотографии на стену пользователя.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getWallUploadServer
 @return @see info
 */
-- (VKRequest *)photosGetWallUploadServerWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetWallUploadServer:(NSDictionary *)options;
 
 /** Возвращает адрес сервера для загрузки фотографии в личное сообщение пользователю
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getMessagesUploadServer
 @return @see info
 */
-- (VKRequest *)photosGetMessagesUploadServerWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetMessagesUploadServer:(NSDictionary *)options;
 
 /** Сохраняет фотографию после успешной загрузки на URI, полученный методом photos.getMessagesUploadServer
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.saveMessagesPhoto
 @return @see info
 */
-- (VKRequest *)photosSaveMessagesPhotoWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosSaveMessagesPhoto:(NSDictionary *)options;
 
 /** Осуществляет поиск изображений по местоположению или описанию
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.search
 @return @see info
 */
-- (VKRequest *)photosSearchWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosSearch:(NSDictionary *)options;
 
 /** Сохраняет фотографии после успешной загрузки
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.save
 @return @see info
 */
-- (VKRequest *)photosSaveWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosSave:(NSDictionary *)options;
 
 /** Изменяет описание у выбранной фотографии
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.edit
 @return @see info
 */
-- (VKRequest *)photosEditWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosEdit:(NSDictionary *)options;
 
 /** Переносит фотографию из одного альбома в другой
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.move
 @return @see info
 */
-- (VKRequest *)photosMoveWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosMove:(NSDictionary *)options;
 
 /** Делает фотографию обложкой альбома
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.makeCover
 @return @see info
 */
-- (VKRequest *)photosMakeCoverWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosMakeCover:(NSDictionary *)options;
 
 /** Меняет порядок альбома в списке альбомов пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.reorderAlbums
 @return @see info
 */
-- (VKRequest *)photosReorderAlbumsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosReorderAlbums:(NSDictionary *)options;
 
 /** Меняет порядок фотографии в списке фотографий альбома пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.reorderPhotos
 @return @see info
 */
-- (VKRequest *)photosReorderPhotosWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosReorderPhotos:(NSDictionary *)options;
 
 /** Возвращает все фотографии пользователя или сообщества в антихронологическом порядке
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getAll
 @return @see info
 */
-- (VKRequest *)photosGetAllWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetAll:(NSDictionary *)options;
 
 /** Возвращает список фотографий, на которых отмечен пользователь
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getUserPhotos
 @return @see info
 */
-- (VKRequest *)photosGetUserPhotosWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetUserPhotos:(NSDictionary *)options;
 
 /** Удаляет указанный альбом для фотографий у текущего пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.deleteAlbum
 @return @see info
 */
-- (VKRequest *)photosDeleteAlbumWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosDeleteAlbum:(NSDictionary *)options;
 
 /** Удаление фотографии на сайте
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.delete
 @return @see info
 */
-- (VKRequest *)photosDeleteWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosDelete:(NSDictionary *)options;
 
 /** Подтверждает отметку на фотографии
 
@@ -507,70 +507,70 @@ YES.
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getComments
 @return @see info
 */
-- (VKRequest *)photosGetCommentsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetComments:(NSDictionary *)options;
 
 /** Возвращает отсортированный в антихронологическом порядке список всех комментариев к конкретному альбому или ко всем альбомам пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getAllComments
 @return @see info
 */
-- (VKRequest *)photosGetAllCommentsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetAllComments:(NSDictionary *)options;
 
 /** Создает новый комментарий к фотографии
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.createComment
 @return @see info
 */
-- (VKRequest *)photosCreateCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosCreateComment:(NSDictionary *)options;
 
 /** Удаляет комментарий к фотографии
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.deleteComment
 @return @see info
 */
-- (VKRequest *)photosDeleteCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosDeleteComment:(NSDictionary *)options;
 
 /** Восстанавливает удаленный комментарий к фотографии
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.restoreComment
 @return @see info
 */
-- (VKRequest *)photosRestoreCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosRestoreComment:(NSDictionary *)options;
 
 /** Изменяет текст комментария к фотографии
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.editComment
 @return @see info
 */
-- (VKRequest *)photosEditCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosEditComment:(NSDictionary *)options;
 
 /** Возвращает список отметок на фотографии
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getTags
 @return @see info
 */
-- (VKRequest *)photosGetTagsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetTags:(NSDictionary *)options;
 
 /** Добавляет отметку на фотографию
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.putTag
 @return @see info
 */
-- (VKRequest *)photosPutTagWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosPutTag:(NSDictionary *)options;
 
 /** Удаляет отметку с фотографии
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.removeTag
 @return @see info
 */
-- (VKRequest *)photosRemoveTagWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosRemoveTag:(NSDictionary *)options;
 
 /** Возвращает список фотографий, на которых есть непросмотренные отметки
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.getNewTags
 @return @see info
 */
-- (VKRequest *)photosGetNewTagsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)photosGetNewTags:(NSDictionary *)options;
 
 @end
 
@@ -584,35 +584,35 @@ YES.
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.get
 @return @see info
 */
-- (VKRequest *)friendsGetWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGet:(NSDictionary *)options;
 
 /** Возвращает список идентификаторов друзей пользователя, находящихся на сайте
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getOnline
 @return @see info
 */
-- (VKRequest *)friendsGetOnlineWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGetOnline:(NSDictionary *)options;
 
 /** Возвращает список идентификаторов общих друзей между парой пользователей
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getMutual
 @return @see info
 */
-- (VKRequest *)friendsGetMutualWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGetMutual:(NSDictionary *)options;
 
 /** Возвращает список идентификаторов недавно добавленных друзей текущего пользователя
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getRecent
 @return @see info
 */
-- (VKRequest *)friendsGetRecentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGetRecent:(NSDictionary *)options;
 
 /** Возвращает информацию о полученных или отправленных заявках на добавление в друзья для текущего пользователя
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getRequests
 @return @see info
 */
-- (VKRequest *)friendsGetRequestsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGetRequests:(NSDictionary *)options;
 
 /** Одобряет или создает заявку на добавление в друзья.
 
@@ -621,14 +621,14 @@ YES.
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.add
 @return @see info
 */
-- (VKRequest *)friendsAddWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsAdd:(NSDictionary *)options;
 
 /** Редактирует списки друзей для выбранного друга
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.edit
 @return @see info
 */
-- (VKRequest *)friendsEditWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsEdit:(NSDictionary *)options;
 
 /** Удаляет пользователя из списка друзей или отклоняет заявку в друзья
 
@@ -637,42 +637,42 @@ YES.
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.delete
 @return @see info
 */
-- (VKRequest *)friendsDeleteWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsDelete:(NSDictionary *)options;
 
 /** Возвращает список меток друзей текущего пользователя
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getLists
 @return @see info
 */
-- (VKRequest *)friendsGetListsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGetLists:(NSDictionary *)options;
 
 /** Создает новый список друзей у текущего пользователя
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.addList
 @return @see info
 */
-- (VKRequest *)friendsAddListWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsAddList:(NSDictionary *)options;
 
 /** Редактирует существующий список друзей текущего пользователя
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.editList
 @return @see info
 */
-- (VKRequest *)friendsEditListWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsEditList:(NSDictionary *)options;
 
 /** Удаляет существующий список друзей текущего пользователя
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.deleteList
 @return @see info
 */
-- (VKRequest *)friendsDeleteListWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsDeleteList:(NSDictionary *)options;
 
 /** Возвращает список идентификаторов друзей текущего пользователя, которые установили данное приложение
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getAppUsers
 @return @see info
 */
-- (VKRequest *)friendsGetAppUsersWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGetAppUsers:(NSDictionary *)options;
 
 /** Возвращает список друзей пользователя, у которых завалидированные или указанные в профиле телефонные номера входят в заданный список.
 
@@ -681,28 +681,28 @@ YES.
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getByPhones
 @return @see info
 */
-- (VKRequest *)friendsGetByPhonesWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGetByPhones:(NSDictionary *)options;
 
 /** Отмечает все входящие заявки на добавление в друзья как просмотренные
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.deleteAllRequests
 @return @see info
 */
-- (VKRequest *)friendsDeleteAllRequestsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsDeleteAllRequests:(NSDictionary *)options;
 
 /** Возвращает список профилей пользователей, которые могут быть друзьями текущего пользователя.
 
 @param options ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getSuggestions
 @return @see info
 */
-- (VKRequest *)friendsGetSuggestionsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsGetSuggestions:(NSDictionary *)options;
 
 /** Возвращает информацию о том, добавлен ли текущий пользователь в друзья у указанных пользователей.
 
 @param options ключи-значения, полный список по ссылке: https://vk.com/dev/friends.areFriends
 @return @see info
 */
-- (VKRequest *)friendsAreFriendsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)friendsAreFriends:(NSDictionary *)options;
 
 @end
 
@@ -716,77 +716,77 @@ YES.
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.isMember
 @return @see info
 */
-- (VKRequest *)groupsIsMemberWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsIsMember:(NSDictionary *)options;
 
 /** Возвращает информацию о заданном сообществе или о нескольких сообществах
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getById
 @return @see info
 */
-- (VKRequest *)groupsGetByIDWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsGetByID:(NSDictionary *)options;
 
 /** Возвращает список сообществ указанного пользователя
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.get
 @return @see info
 */
-- (VKRequest *)groupsGetWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsGet:(NSDictionary *)options;
 
 /** Возвращает список участников сообщества
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getMembers
 @return @see info
 */
-- (VKRequest *)groupsGetMembersWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsGetMembers:(NSDictionary *)options;
 
 /** Данный метод позволяет вступить в группу, публичную страницу, а также подтвердить участие во встрече.
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.join
 @return @see info
 */
-- (VKRequest *)groupsJoinWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsJoin:(NSDictionary *)options;
 
 /** Данный метод позволяет выходить из группы, публичной страницы, или встречи
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.leave
 @return @see info
 */
-- (VKRequest *)groupsLeaveWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsLeave:(NSDictionary *)options;
 
 /** Осуществляет поиск сообществ по заданной подстроке
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.search
 @return @see info
 */
-- (VKRequest *)groupsSearchWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsSearch:(NSDictionary *)options;
 
 /** Данный метод возвращает список приглашений в сообщества и встречи
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getInvites
 @return @see info
 */
-- (VKRequest *)groupsGetInvitesWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsGetInvites:(NSDictionary *)options;
 
 /** Добавляет пользователя в черный список группы
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.banUser
 @return @see info
 */
-- (VKRequest *)groupsBanUserWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsBanUser:(NSDictionary *)options;
 
 /** Убирает пользователя из черного списка группы
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.unbanUser
 @return @see info
 */
-- (VKRequest *)groupsUnbanUserWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsUnbanUser:(NSDictionary *)options;
 
 /** Возвращает список забаненных пользователей
 
 @param options ключи-значения, полный список в документации: https://vk.com/dev/groups.getBanned
 @return @see info
 */
-- (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)groupsGetBanned:(NSDictionary *)options;
 
 @end
 
@@ -800,160 +800,314 @@ YES.
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.get
 @return @see info
 */
-- (VKRequest *)videoGetWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoGet:(NSDictionary *)options;
 
 /** Редактирует данные видеозаписи на странице пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.edit
 @return @see info
 */
-- (VKRequest *)videoEditWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoEdit:(NSDictionary *)options;
 
 /** Добавляет видеозапись в список пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.add
 @return @see info
 */
-- (VKRequest *)videoAddWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoAdd:(NSDictionary *)options;
 
 /** Возвращает адрес сервера (необходимый для загрузки) и данные видеозаписи.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.save
 @return @see info
 */
-- (VKRequest *)videoSaveWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoSave:(NSDictionary *)options;
 
 /** Удаляет видеозапись со страницы пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.delete
 @return @see info
 */
-- (VKRequest *)videoDeleteWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoDelete:(NSDictionary *)options;
 
 /** Восстанавливает удаленную видеозапись
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.restore
 @return @see info
 */
-- (VKRequest *)videoRestoreWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoRestore:(NSDictionary *)options;
 
 /** Возвращает список видеозаписей в соответствии с заданным критерием поиска
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.search
 @return @see info
 */
-- (VKRequest *)videoSearchWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoSearch:(NSDictionary *)options;
 
 /** Возвращает список видеозаписей, на которых отмечен пользователь
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.getUserVideos
 @return @see info
 */
-- (VKRequest *)videoGetUserVideosWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoGetUserVideos:(NSDictionary *)options;
 
 /** Возвращает список альбомов видеозаписей пользователя или сообщества
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.getAlbums
 @return @see info
 */
-- (VKRequest *)videoGetAlbumsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoGetAlbums:(NSDictionary *)options;
 
 /** Создает пустой альбом видеозаписей
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.addAlbum
 @return @see info
 */
-- (VKRequest *)videoAddAlbumWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoAddAlbum:(NSDictionary *)options;
 
 /** Редактирует название альбома видеозаписей
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.editAlbum
 @return @see info
 */
-- (VKRequest *)videoEditAlbumWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoEditAlbum:(NSDictionary *)options;
 
 /** Удаляет альбом видеозаписей
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.deleteAlbum
 @return @see info
 */
-- (VKRequest *)videoDeleteAlbumWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoDeleteAlbum:(NSDictionary *)options;
 
 /** Перемещает видеозаписи в альбом
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.moveToAlbum
 @return @see info
 */
-- (VKRequest *)videoMoveToAlbumWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoMoveToAlbum:(NSDictionary *)options;
 
 /** Возвращает список комментариев к видеозаписи
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.getComments
 @return @see info
 */
-- (VKRequest *)videoGetCommentsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoGetComments:(NSDictionary *)options;
 
 /** Cоздает новый комментарий к видеозаписи
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.createComment
 @return @see info
 */
-- (VKRequest *)videoCreateCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoCreateComment:(NSDictionary *)options;
 
 /** Удаляет комментарий к видеозаписи.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.deleteComment
 @return @see info
 */
-- (VKRequest *)videoDeleteCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoDeleteComment:(NSDictionary *)options;
 
 /** Восстанавливает удаленный комментарий к видеозаписи
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.restoreComment
 @return @see info
 */
-- (VKRequest *)videoRestoreCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoRestoreComment:(NSDictionary *)options;
 
 /** Изменяет текст комментария к видеозаписи
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.editComment
 @return @see info
 */
-- (VKRequest *)videoEditCommentWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoEditComment:(NSDictionary *)options;
 
 /** Возвращает список отметок на видеозаписи
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.getTags
 @return @see info
 */
-- (VKRequest *)videoGetTagsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoGetTags:(NSDictionary *)options;
 
 /** Добавляет отметку на видеозапись
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.putTag
 @return @see info
 */
-- (VKRequest *)videoPutTagWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoPutTag:(NSDictionary *)options;
 
 /** Удаляет отметку с видеозаписи
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.removeTag
 @return @see info
 */
-- (VKRequest *)videoRemoveTagWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoRemoveTag:(NSDictionary *)options;
 
 /** Возвращает список видеозаписей, на которых есть непросмотренные отметки
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.getNewTags
 @return @see info
 */
-- (VKRequest *)videoGetNewTagsWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoGetNewTags:(NSDictionary *)options;
 
 /** Позволяет пожаловаться на видеозапись
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/video.report
 @return @see info
 */
-- (VKRequest *)videoReportWithCustomOptions:(NSDictionary *)options;
+- (VKRequest *)videoReport:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Audio)
+
+/**
+@name Аудио
+*/
+/** Возвращает список аудиозаписей пользователя или сообщества
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.get
+@return @see info
+*/
+- (VKRequest *)audioGet:(NSDictionary *)options;
+
+/** Возвращает информацию об аудиозаписях
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.getById
+@return @see info
+*/
+- (VKRequest *)audioGetByID:(NSDictionary *)options;
+
+/** Возвращает текст аудиозаписи
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.getLyrics
+@return @see info
+*/
+- (VKRequest *)audioGetLyrics:(NSDictionary *)options;
+
+/** Возвращает список аудиозаписей в соответствии с заданным критерием поиска
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.search
+@return @see info
+*/
+- (VKRequest *)audioSearch:(NSDictionary *)options;
+
+/** Возвращает адрес сервера для загрузки аудиозаписей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.getUploadServer
+@return @see info
+*/
+- (VKRequest *)audioGetUploadServer:(NSDictionary *)options;
+
+/** Сохраняет аудиозаписи после успешной загрузки
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.save
+@return @see info
+*/
+- (VKRequest *)audioSave:(NSDictionary *)options;
+
+/** Копирует аудиозапись на страницу пользователя или группы
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.add
+@return @see info
+*/
+- (VKRequest *)audioAdd:(NSDictionary *)options;
+
+/** Удаляет аудиозапись со страницы пользователя или сообщества
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.delete
+@return @see info
+*/
+- (VKRequest *)audioDelete:(NSDictionary *)options;
+
+/** Редактирует данные аудиозаписи на странице пользователя или сообщества
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.edit
+@return @see info
+*/
+- (VKRequest *)audioEdit:(NSDictionary *)options;
+
+/** Изменяет порядок аудиозаписи, перенося ее между аудиозаписями, идентификаторы которых переданы параметрами after и before
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.reorder
+@return @see info
+*/
+- (VKRequest *)audioReorder:(NSDictionary *)options;
+
+/** Восстанавливает аудиозапись после удаления
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.restore
+@param @see info
+*/
+- (VKRequest *)audioRestore:(NSDictionary *)options;
+
+/** Возвращает список альбомов аудиозаписей пользователя или группы
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.getAlbums
+@return @see info
+*/
+- (VKRequest *)audioGetAlbums:(NSDictionary *)options;
+
+/** Создает пустой альбом аудиозаписей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.addAlbum
+@return @see info
+*/
+- (VKRequest *)audioAddAlbum:(NSDictionary *)options;
+
+/** Редактирует название альбома аудиозаписей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.editAlbum
+@return @see info
+*/
+- (VKRequest *)audioEditAlbum:(NSDictionary *)options;
+
+/** Удаляет альбом аудиозаписей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.deleteAlbum
+@return @see info
+*/
+- (VKRequest *)audioDeleteAlbum:(NSDictionary *)options;
+
+/** Перемещает аудиозаписи в альбом
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.moveToAlbum
+@return @see info
+*/
+- (VKRequest *)audioMoveToAlbum:(NSDictionary *)options;
+
+/** Транслирует аудиозапись в статус пользователю или сообществу
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.setBroadcast
+@return @see info
+*/
+- (VKRequest *)audioSetBroadcast:(NSDictionary *)options;
+
+/** Возвращает список друзей и сообществ пользователя, которые транслируют музыку в статус
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.getBroadcastList
+@return @see info
+*/
+- (VKRequest *)audioGetBroadcastList:(NSDictionary *)options;
+
+/** Возвращает список рекомендуемых аудиозаписей на основе списка воспроизведения заданного пользователя или на основе одной выбранной аудиозаписи
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.getRecommendations
+@return @see info
+*/
+- (VKRequest *)audioGetRecommendations:(NSDictionary *)options;
+
+/** Возвращает список аудиозаписей из раздела "Популярное"
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.getPopular
+@return @see info
+*/
+- (VKRequest *)audioGetPopular:(NSDictionary *)options;
+
+/** Возвращает количество аудиозаписей пользователя или сообщества
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/audio.getCount
+@return @see info
+*/
+- (VKRequest *)audioGetCount:(NSDictionary *)options;
 
 @end

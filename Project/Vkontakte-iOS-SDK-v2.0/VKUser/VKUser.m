@@ -126,7 +126,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)infoWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)info:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKUsersGet
                                 options:options
@@ -134,7 +134,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)searchWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)search:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKUsersSearch
                                 options:options
@@ -142,7 +142,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)subscriptionsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)subscriptions:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKUsersGetSubscriptions
                                 options:options
@@ -150,7 +150,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)followersWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)followers:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKUsersGetFollowers
                                 options:options
@@ -160,7 +160,7 @@ static VKUser *_currentUser;
 
 #pragma mark - Wall
 
-- (VKRequest *)wallGetWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallGet:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallGet
                                 options:options
@@ -168,7 +168,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallGetByID:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallGetById
                                 options:options
@@ -176,7 +176,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallSavePost:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallSavePost
                                 options:options
@@ -184,7 +184,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallPost:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallPost
                                 options:options
@@ -192,7 +192,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallRepost:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallRepost
                                 options:options
@@ -200,7 +200,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallGetReposts:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallGetReposts
                                 options:options
@@ -208,7 +208,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallEdit:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallEdit
                                 options:options
@@ -216,7 +216,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallDelete:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallDelete
                                 options:options
@@ -224,7 +224,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallRestore:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallRestore
                                 options:options
@@ -232,7 +232,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallGetComments:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallGetComments
                                 options:options
@@ -240,7 +240,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallAddComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallAddComment
                                 options:options
@@ -248,7 +248,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallDeleteComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallDeleteComment
                                 options:options
@@ -256,7 +256,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)wallRestoreComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKWallRestoreComment
                                 options:options
@@ -266,7 +266,7 @@ static VKUser *_currentUser;
 
 #pragma mark - Groups
 
-- (VKRequest *)groupsIsMemberWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsIsMember:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsIsMember
                                 options:options
@@ -274,7 +274,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)groupsGetByIDWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsGetByID:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsGetById
                                 options:options
@@ -282,7 +282,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)groupsGetWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsGet:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsGet
                                 options:options
@@ -290,7 +290,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)groupsGetMembersWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsGetMembers:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsGetMembers
                                 options:options
@@ -298,7 +298,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)groupsJoinWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsJoin:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsJoin
                                 options:options
@@ -306,7 +306,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)groupsLeaveWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsLeave:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsLeave
                                 options:options
@@ -314,7 +314,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)groupsSearchWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsSearch:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsSearch
                                 options:options
@@ -322,7 +322,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)groupsGetInvitesWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsGetInvites:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsGetInvites
                                 options:options
@@ -330,7 +330,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)groupsBanUserWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsBanUser:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsBanUser
                                 options:options
@@ -338,7 +338,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)groupsUnbanUserWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsUnbanUser:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsUnbanUser
                                 options:options
@@ -346,7 +346,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)groupsGetBanned:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKGroupsGetBanned
                                 options:options
@@ -356,7 +356,7 @@ static VKUser *_currentUser;
 
 #pragma mark - Friends
 
-- (VKRequest *)friendsGetWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGet:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGet
                                 options:options
@@ -364,7 +364,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)friendsGetOnlineWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGetOnline:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGetOnline
                                 options:options
@@ -372,7 +372,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsGetMutualWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGetMutual:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGetMutual
                                 options:options
@@ -380,7 +380,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsGetRecentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGetRecent:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGetRecent
                                 options:options
@@ -388,7 +388,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsGetRequestsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGetRequests:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGetRequests
                                 options:options
@@ -396,7 +396,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsAddWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsAdd:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsAdd
                                 options:options
@@ -404,7 +404,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsEditWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsEdit:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsEdit
                                 options:options
@@ -412,7 +412,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsDeleteWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsDelete:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsDelete
                                 options:options
@@ -420,7 +420,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsGetListsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGetLists:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGetLists
                                 options:options
@@ -428,7 +428,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsAddListWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsAddList:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsAddList
                                 options:options
@@ -436,7 +436,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsEditListWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsEditList:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsEditList
                                 options:options
@@ -444,7 +444,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsDeleteListWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsDeleteList:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsDeleteList
                                 options:options
@@ -452,7 +452,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsGetAppUsersWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGetAppUsers:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGetAppUsers
                                 options:options
@@ -460,7 +460,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsGetByPhonesWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGetByPhones:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGetByPhones
                                 options:options
@@ -468,7 +468,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsDeleteAllRequestsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsDeleteAllRequests:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsDeleteAllRequests
                                 options:options
@@ -476,7 +476,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsGetSuggestionsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsGetSuggestions:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsGetSuggestions
                                 options:options
@@ -484,7 +484,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)friendsAreFriendsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)friendsAreFriends:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKFriendsAreFriends
                                 options:options
@@ -494,7 +494,7 @@ static VKUser *_currentUser;
 
 #pragma mark - Photos
 
-- (VKRequest *)photosCreateAlbumWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosCreateAlbum:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosCreateAlbum
                                 options:options
@@ -502,7 +502,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosEditAlbumWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosEditAlbum:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosEditAlbum
                                 options:options
@@ -510,7 +510,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetAlbumsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetAlbums:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetAlbums
                                 options:options
@@ -518,7 +518,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)photosGetWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGet:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGet
                                 options:options
@@ -526,7 +526,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)photosGetAlbumsCountWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetAlbumsCount:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetAlbumsCount
                                 options:options
@@ -534,7 +534,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetProfileWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetProfile:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetProfile
                                 options:options
@@ -542,7 +542,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetByIDWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetByID:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetById
                                 options:options
@@ -550,7 +550,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetUploadServerWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetUploadServer:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetUploadServer
                                 options:options
@@ -558,7 +558,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetProfileUploadServerWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetProfileUploadServer:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetProfileUploadServer
                                 options:options
@@ -566,7 +566,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetChatUploadServerWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetChatUploadServer:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetChatUploadServer
                                 options:options
@@ -574,7 +574,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosSaveProfilePhotoWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosSaveProfilePhoto:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosSaveProfilePhoto
                                 options:options
@@ -582,7 +582,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosSaveWallPhotoWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosSaveWallPhoto:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosSaveWallPhoto
                                 options:options
@@ -590,7 +590,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetWallUploadServerWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetWallUploadServer:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetWallUploadServer
                                 options:options
@@ -598,7 +598,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetMessagesUploadServerWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetMessagesUploadServer:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetMessagesUploadServer
                                 options:options
@@ -606,7 +606,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosSaveMessagesPhotoWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosSaveMessagesPhoto:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosSaveMessagesPhoto
                                 options:options
@@ -614,7 +614,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosSearchWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosSearch:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosSearch
                                 options:options
@@ -622,7 +622,7 @@ static VKUser *_currentUser;
                          addAccessToken:NO];
 }
 
-- (VKRequest *)photosSaveWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosSave:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosSave
                                 options:options
@@ -630,7 +630,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosEditWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosEdit:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosEdit
                                 options:options
@@ -638,7 +638,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosMoveWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosMove:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosMove
                                 options:options
@@ -646,7 +646,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosMakeCoverWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosMakeCover:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosMakeCover
                                 options:options
@@ -654,7 +654,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosReorderAlbumsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosReorderAlbums:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosReorderAlbums
                                 options:options
@@ -662,7 +662,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosReorderPhotosWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosReorderPhotos:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosReorderPhotos
                                 options:options
@@ -670,7 +670,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetAllWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetAll:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetAll
                                 options:options
@@ -678,7 +678,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetUserPhotosWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetUserPhotos:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetUserPhotos
                                 options:options
@@ -686,7 +686,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosDeleteAlbumWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosDeleteAlbum:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosDeleteAlbum
                                 options:options
@@ -694,7 +694,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosDeleteWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosDelete:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosDelete
                                 options:options
@@ -710,7 +710,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetCommentsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetComments:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetComments
                                 options:options
@@ -718,7 +718,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetAllCommentsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetAllComments:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetAllComments
                                 options:options
@@ -726,7 +726,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosCreateCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosCreateComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosCreateComment
                                 options:options
@@ -734,7 +734,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosDeleteCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosDeleteComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosDeleteComment
                                 options:options
@@ -742,7 +742,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosRestoreCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosRestoreComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosRestoreComment
                                 options:options
@@ -750,7 +750,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosEditCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosEditComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosEditComment
                                 options:options
@@ -758,7 +758,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetTagsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetTags:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetTags
                                 options:options
@@ -766,7 +766,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosPutTagWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosPutTag:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosPutTag
                                 options:options
@@ -774,7 +774,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosRemoveTagWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosRemoveTag:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosRemoveTag
                                 options:options
@@ -782,7 +782,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)photosGetNewTagsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)photosGetNewTags:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKPhotosGetNewTags
                                 options:options
@@ -792,7 +792,7 @@ static VKUser *_currentUser;
 
 #pragma mark - Video
 
-- (VKRequest *)videoGetWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoGet:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoGet
                                 options:options
@@ -800,7 +800,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoEditWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoEdit:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoEdit
                                 options:options
@@ -808,7 +808,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoAddWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoAdd:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoAdd
                                 options:options
@@ -816,7 +816,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoSaveWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoSave:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoSave
                                 options:options
@@ -824,7 +824,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoDeleteWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoDelete:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoDelete
                                 options:options
@@ -832,7 +832,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoRestoreWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoRestore:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoRestore
                                 options:options
@@ -840,7 +840,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoSearchWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoSearch:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoSearch
                                 options:options
@@ -848,7 +848,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoGetUserVideosWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoGetUserVideos:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoGetUserVideos
                                 options:options
@@ -856,7 +856,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoGetAlbumsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoGetAlbums:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoGetAlbums
                                 options:options
@@ -864,7 +864,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoAddAlbumWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoAddAlbum:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoAddAlbum
                                 options:options
@@ -872,7 +872,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoEditAlbumWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoEditAlbum:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoEditAlbum
                                 options:options
@@ -880,7 +880,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoDeleteAlbumWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoDeleteAlbum:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoDeleteAlbum
                                 options:options
@@ -888,7 +888,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoMoveToAlbumWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoMoveToAlbum:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoMoveToAlbum
                                 options:options
@@ -896,7 +896,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoGetCommentsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoGetComments:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoGetComments
                                 options:options
@@ -904,7 +904,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoCreateCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoCreateComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoCreateComment
                                 options:options
@@ -912,7 +912,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoDeleteCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoDeleteComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoDeleteComment
                                 options:options
@@ -920,7 +920,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoRestoreCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoRestoreComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoRestoreComment
                                 options:options
@@ -928,7 +928,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoEditCommentWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoEditComment:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoEditComment
                                 options:options
@@ -936,7 +936,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoGetTagsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoGetTags:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoGetTags
                                 options:options
@@ -944,7 +944,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoPutTagWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoPutTag:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoPutTag
                                 options:options
@@ -952,7 +952,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoRemoveTagWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoRemoveTag:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoRemoveTag
                                 options:options
@@ -960,7 +960,7 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoGetNewTagsWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoGetNewTags:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoGetNewTags
                                 options:options
@@ -968,9 +968,179 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
-- (VKRequest *)videoReportWithCustomOptions:(NSDictionary *)options
+- (VKRequest *)videoReport:(NSDictionary *)options
 {
     return [self configureRequestMethod:kVKVideoReport
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Audio
+
+- (VKRequest *)audioGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioGetByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioGetLyrics:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGetLyrics
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioSearch:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioSearch
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioGetUploadServer:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGetUploadServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioSave:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioSave
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioAdd:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioAdd
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioDelete:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioDelete
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioEdit:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioEdit
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioReorder:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioReorder
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioRestore:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioRestore
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioGetAlbums:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGetAlbums
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioAddAlbum:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioAddAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioEditAlbum:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioEditAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioDeleteAlbum:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioDeleteAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioMoveToAlbum:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioMoveToAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioSetBroadcast:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioSetBroadcast
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioGetBroadcastList:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGetBroadcast
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioGetRecommendations:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGetRecommendations
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioGetPopular:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGetPopular
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)audioGetCount:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAudioGetCount
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
