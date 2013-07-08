@@ -161,6 +161,7 @@ static NSString *const kVKVideoGetTags = @"video.getTags";
 static NSString *const kVKVideoPutTag = @"video.putTag";
 static NSString *const kVKVideoRemoveTag = @"video.removeTag";
 static NSString *const kVKVideoGetNewTags = @"video.getNewTags";
+static NSString *const kVKVideoReport = @"video.report";
 
 // -----------------------------------------------------------------------------
 // Audio

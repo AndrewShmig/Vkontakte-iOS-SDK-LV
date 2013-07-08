@@ -789,3 +789,171 @@ YES.
 - (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options;
 
 @end
+
+@interface VKUser (Video)
+
+/**
+@name Video
+*/
+/** Возвращает информацию о видеозаписях
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.get
+@return @see info
+*/
+- (VKRequest *)videoGetWithCustomOptions:(NSDictionary *)options;
+
+/** Редактирует данные видеозаписи на странице пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.edit
+@return @see info
+*/
+- (VKRequest *)videoEditWithCustomOptions:(NSDictionary *)options;
+
+/** Добавляет видеозапись в список пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.add
+@return @see info
+*/
+- (VKRequest *)videoAddWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает адрес сервера (необходимый для загрузки) и данные видеозаписи.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.save
+@return @see info
+*/
+- (VKRequest *)videoSaveWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет видеозапись со страницы пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.delete
+@return @see info
+*/
+- (VKRequest *)videoDeleteWithCustomOptions:(NSDictionary *)options;
+
+/** Восстанавливает удаленную видеозапись
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.restore
+@return @see info
+*/
+- (VKRequest *)videoRestoreWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список видеозаписей в соответствии с заданным критерием поиска
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.search
+@return @see info
+*/
+- (VKRequest *)videoSearchWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список видеозаписей, на которых отмечен пользователь
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.getUserVideos
+@return @see info
+*/
+- (VKRequest *)videoGetUserVideosWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список альбомов видеозаписей пользователя или сообщества
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.getAlbums
+@return @see info
+*/
+- (VKRequest *)videoGetAlbumsWithCustomOptions:(NSDictionary *)options;
+
+/** Создает пустой альбом видеозаписей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.addAlbum
+@return @see info
+*/
+- (VKRequest *)videoAddAlbumWithCustomOptions:(NSDictionary *)options;
+
+/** Редактирует название альбома видеозаписей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.editAlbum
+@return @see info
+*/
+- (VKRequest *)videoEditAlbumWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет альбом видеозаписей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.deleteAlbum
+@return @see info
+*/
+- (VKRequest *)videoDeleteAlbumWithCustomOptions:(NSDictionary *)options;
+
+/** Перемещает видеозаписи в альбом
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.moveToAlbum
+@return @see info
+*/
+- (VKRequest *)videoMoveToAlbumWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список комментариев к видеозаписи
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.getComments
+@return @see info
+*/
+- (VKRequest *)videoGetCommentsWithCustomOptions:(NSDictionary *)options;
+
+/** Cоздает новый комментарий к видеозаписи
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.createComment
+@return @see info
+*/
+- (VKRequest *)videoCreateCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет комментарий к видеозаписи.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.deleteComment
+@return @see info
+*/
+- (VKRequest *)videoDeleteCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Восстанавливает удаленный комментарий к видеозаписи
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.restoreComment
+@return @see info
+*/
+- (VKRequest *)videoRestoreCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Изменяет текст комментария к видеозаписи
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.editComment
+@return @see info
+*/
+- (VKRequest *)videoEditCommentWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список отметок на видеозаписи
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.getTags
+@return @see info
+*/
+- (VKRequest *)videoGetTagsWithCustomOptions:(NSDictionary *)options;
+
+/** Добавляет отметку на видеозапись
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.putTag
+@return @see info
+*/
+- (VKRequest *)videoPutTagWithCustomOptions:(NSDictionary *)options;
+
+/** Удаляет отметку с видеозаписи
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.removeTag
+@return @see info
+*/
+- (VKRequest *)videoRemoveTagWithCustomOptions:(NSDictionary *)options;
+
+/** Возвращает список видеозаписей, на которых есть непросмотренные отметки
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.getNewTags
+@return @see info
+*/
+- (VKRequest *)videoGetNewTagsWithCustomOptions:(NSDictionary *)options;
+
+/** Позволяет пожаловаться на видеозапись
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/video.report
+@return @see info
+*/
+- (VKRequest *)videoReportWithCustomOptions:(NSDictionary *)options;
+
+@end

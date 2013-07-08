@@ -307,416 +307,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список записей со стены пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallGetWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.get</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallGetWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetByIDWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список записей со стен пользователей по их идентификаторам</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getById</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallGetByIDWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallSavePostWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
-При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.savePost</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallSavePostWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallPostWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Публикует новую запись на своей или чужой стене.
-Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.post</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallPostWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRepostWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Копирует объект на стену пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.repost</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallRepostWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetRepostsWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Позволяет получать список репостов заданной записи</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getReposts</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallGetRepostsWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallEditWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Редактирует запись на стене</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.edit</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallEditWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDeleteWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Удаляет запись со стены</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.delete</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallDeleteWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestoreWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Восстанавливает удаленную запись на стене пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restore</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallRestoreWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetCommentsWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список комментариев к записи на стене пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getComments</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallGetCommentsWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallAddCommentWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Добавляет комментарий к записи на стене пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: http://vk.com/dev/wall.addComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallAddCommentWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDeleteCommentWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Удаляет комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.deleteComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallDeleteCommentWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestoreCommentWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restoreComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallRestoreCommentWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsIsMemberWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию о том, является ли пользователь участником сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsIsMemberWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.isMember</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsIsMemberWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetByIDWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию о заданном сообществе или о нескольких сообществах</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsGetByIDWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.getById</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsGetByIDWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список сообществ указанного пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsGetWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.get</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsGetWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetMembersWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список участников сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsGetMembersWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.getMembers</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsGetMembersWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsJoinWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Данный метод позволяет вступить в группу, публичную страницу, а также подтвердить участие во встрече.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsJoinWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.join</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsJoinWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsLeaveWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Данный метод позволяет выходить из группы, публичной страницы, или встречи</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsLeaveWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.leave</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsLeaveWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsSearchWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Осуществляет поиск сообществ по заданной подстроке</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsSearchWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.search</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsSearchWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetInvitesWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Данный метод возвращает список приглашений в сообщества и встречи</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsGetInvitesWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.getInvites</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsGetInvitesWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsBanUserWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Добавляет пользователя в черный список группы</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsBanUserWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.banUser</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsBanUserWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsUnbanUserWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Убирает пользователя из черного списка группы</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsUnbanUserWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.unbanUser</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsUnbanUserWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetBannedWithCustomOptions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список забаненных пользователей</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.getBanned</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/groupsGetBannedWithCustomOptions:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetWithCustomOptions:</TokenIdentifier>
 			<Abstract type="html">Возвращает список идентификаторов друзей пользователя или расширенную информацию о друзьях пользователя (при использовании параметра fields)</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
@@ -1002,6 +592,229 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
 			<Anchor>//api/name/friendsAreFriendsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список записей со стены пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetByIDWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список записей со стен пользователей по их идентификаторам</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetByIDWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetByIDWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallSavePostWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
+При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallSavePostWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.savePost</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallSavePostWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallPostWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Публикует новую запись на своей или чужой стене.
+Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallPostWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.post</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallPostWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRepostWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Копирует объект на стену пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRepostWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.repost</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRepostWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetRepostsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Позволяет получать список репостов заданной записи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetRepostsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getReposts</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetRepostsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallEditWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Редактирует запись на стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallEditWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.edit</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallEditWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDeleteWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Удаляет запись со стены</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallDeleteWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallDeleteWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestoreWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает удаленную запись на стене пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRestoreWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restore</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRestoreWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetCommentsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список комментариев к записи на стене пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetCommentsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getComments</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetCommentsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallAddCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Добавляет комментарий к записи на стене пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallAddCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: http://vk.com/dev/wall.addComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallAddCommentWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDeleteCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Удаляет комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallDeleteCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.deleteComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallDeleteCommentWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestoreCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRestoreCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restoreComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRestoreCommentWithCustomOptions:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -1631,6 +1444,584 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
 			<Anchor>//api/name/photosGetNewTagsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsIsMemberWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о том, является ли пользователь участником сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsIsMemberWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.isMember</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsIsMemberWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetByIDWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о заданном сообществе или о нескольких сообществах</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsGetByIDWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.getById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsGetByIDWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список сообществ указанного пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsGetWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsGetWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetMembersWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список участников сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsGetMembersWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.getMembers</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsGetMembersWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsJoinWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Данный метод позволяет вступить в группу, публичную страницу, а также подтвердить участие во встрече.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsJoinWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.join</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsJoinWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsLeaveWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Данный метод позволяет выходить из группы, публичной страницы, или встречи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsLeaveWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.leave</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsLeaveWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsSearchWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Осуществляет поиск сообществ по заданной подстроке</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsSearchWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.search</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsSearchWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetInvitesWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Данный метод возвращает список приглашений в сообщества и встречи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsGetInvitesWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.getInvites</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsGetInvitesWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsBanUserWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Добавляет пользователя в черный список группы</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsBanUserWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.banUser</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsBanUserWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsUnbanUserWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Убирает пользователя из черного списка группы</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsUnbanUserWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.unbanUser</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsUnbanUserWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsGetBannedWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список забаненных пользователей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)groupsGetBannedWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/groups.getBanned</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/groupsGetBannedWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoGetWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о видеозаписях</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoGetWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoGetWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoEditWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Редактирует данные видеозаписи на странице пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoEditWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.edit</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoEditWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoAddWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Добавляет видеозапись в список пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoAddWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.add</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoAddWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoSaveWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает адрес сервера (необходимый для загрузки) и данные видеозаписи.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoSaveWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.save</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoSaveWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoDeleteWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Удаляет видеозапись со страницы пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoDeleteWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoDeleteWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoRestoreWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает удаленную видеозапись</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoRestoreWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.restore</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoRestoreWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoSearchWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список видеозаписей в соответствии с заданным критерием поиска</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoSearchWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.search</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoSearchWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoGetUserVideosWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список видеозаписей, на которых отмечен пользователь</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoGetUserVideosWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.getUserVideos</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoGetUserVideosWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoGetAlbumsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список альбомов видеозаписей пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoGetAlbumsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.getAlbums</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoGetAlbumsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoAddAlbumWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Создает пустой альбом видеозаписей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoAddAlbumWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.addAlbum</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoAddAlbumWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoEditAlbumWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Редактирует название альбома видеозаписей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoEditAlbumWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.editAlbum</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoEditAlbumWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoDeleteAlbumWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Удаляет альбом видеозаписей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoDeleteAlbumWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.deleteAlbum</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoDeleteAlbumWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoMoveToAlbumWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Перемещает видеозаписи в альбом</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoMoveToAlbumWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.moveToAlbum</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoMoveToAlbumWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoGetCommentsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список комментариев к видеозаписи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoGetCommentsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.getComments</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoGetCommentsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoCreateCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Cоздает новый комментарий к видеозаписи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoCreateCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.createComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoCreateCommentWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoDeleteCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Удаляет комментарий к видеозаписи.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoDeleteCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.deleteComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoDeleteCommentWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoRestoreCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает удаленный комментарий к видеозаписи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoRestoreCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.restoreComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoRestoreCommentWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoEditCommentWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Изменяет текст комментария к видеозаписи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoEditCommentWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.editComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoEditCommentWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoGetTagsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список отметок на видеозаписи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoGetTagsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.getTags</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoGetTagsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoPutTagWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Добавляет отметку на видеозапись</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoPutTagWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.putTag</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoPutTagWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoRemoveTagWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Удаляет отметку с видеозаписи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoRemoveTagWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.removeTag</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoRemoveTagWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoGetNewTagsWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список видеозаписей, на которых есть непросмотренные отметки</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoGetNewTagsWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.getNewTags</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoGetNewTagsWithCustomOptions:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/videoReportWithCustomOptions:</TokenIdentifier>
+			<Abstract type="html">Позволяет пожаловаться на видеозапись</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)videoReportWithCustomOptions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/video.report</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/videoReportWithCustomOptions:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

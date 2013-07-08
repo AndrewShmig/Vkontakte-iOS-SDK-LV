@@ -790,6 +790,192 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Video
+
+- (VKRequest *)videoGetWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoEditWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoEdit
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoAddWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoAdd
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoSaveWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoSave
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoDeleteWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoDelete
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoRestoreWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoRestore
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoSearchWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoSearch
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoGetUserVideosWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoGetUserVideos
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoGetAlbumsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoGetAlbums
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoAddAlbumWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoAddAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoEditAlbumWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoEditAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoDeleteAlbumWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoDeleteAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoMoveToAlbumWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoMoveToAlbum
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoGetCommentsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoGetComments
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoCreateCommentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoCreateComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoDeleteCommentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoDeleteComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoRestoreCommentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoRestoreComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoEditCommentWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoEditComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoGetTagsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoGetTags
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoPutTagWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoPutTag
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoRemoveTagWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoRemoveTag
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoGetNewTagsWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoGetNewTags
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)videoReportWithCustomOptions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKVideoReport
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken
