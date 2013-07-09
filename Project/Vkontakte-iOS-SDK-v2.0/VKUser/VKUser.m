@@ -1146,6 +1146,208 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Messages
+
+- (VKRequest *)messagesGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesGetDialogs:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGetDialogs
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesGetByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesSearch:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesSearch
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesGetHistory:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGetHistory
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesSend:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesSend
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesDelete:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesDelete
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesDeleteDialog:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesDeleteDialog
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesRestore:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesRestore
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesMarkAsNew:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesMarkAsNew
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesMarkAsRead:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesMarkAsRead
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesMarkAsImportant:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesMarkAsImportant
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesGetLongPollServer:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGetLongPollServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesGetLongPollHistory:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGetLongPollHistory
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesGetChat:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGetChat
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesCreateChat:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesCreateChat
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesEditChat:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesEditChat
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesGetChatUsers:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGetChatUsers
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesSetActivity:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesSetActivity
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesSearchDialogs:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesSearchDialogs
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesAddChatUser:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesAddChatUser
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesRemoveChatUser:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesRemoveChatUser
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesGetLastActivity:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesGetLastActivity
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesSetChatPhoto:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesSetChatPhoto
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)messagesDeleteChatPhoto:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKMessagesDeleteChatPhoto
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken

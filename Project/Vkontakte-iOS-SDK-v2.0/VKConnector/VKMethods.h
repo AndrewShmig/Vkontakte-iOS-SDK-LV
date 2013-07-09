@@ -202,6 +202,7 @@ static NSString *const kVKMessagesDeleteDialog = @"messages.deleteDialog";
 static NSString *const kVKMessagesRestore = @"messages.restore";
 static NSString *const kVKMessagesMarkAsNew = @"messages.markAsNew";
 static NSString *const kVKMessagesMarkAsRead = @"messages.markAsRead";
+static NSString *const kVKMessagesMarkAsImportant = @"messages.markAsImportant";
 static NSString *const kVKMessagesGetLongPollServer = @"messages.getLongPollServer";
 static NSString *const kVKMessagesGetLongPollHistory = @"messages.getLongPollHistory";
 static NSString *const kVKMessagesGetChat = @"messages.getChat";
@@ -212,7 +213,9 @@ static NSString *const kVKMessagesSetActivity = @"messages.setActivity";
 static NSString *const kVKMessagesSearchDialogs = @"messages.searchDialogs";
 static NSString *const kVKMessagesAddChatUser = @"messages.addCharUser";
 static NSString *const kVKMessagesRemoveChatUser = @"messages.removeChatUser";
+static NSString *const kVKMessagesSetChatPhoto = @"messages.setChatPhoto";
 static NSString *const kVKMessagesGetLastActivity = @"messages.getLastActivity";
+static NSString *const kVKMessagesDeleteChatPhoto = @"messages.deleteChatPhoto";
 
 // -----------------------------------------------------------------------------
 // Newsfeed

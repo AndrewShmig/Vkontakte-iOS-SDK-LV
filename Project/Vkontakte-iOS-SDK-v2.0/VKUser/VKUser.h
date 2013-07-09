@@ -1111,3 +1111,184 @@ YES.
 - (VKRequest *)audioGetCount:(NSDictionary *)options;
 
 @end
+
+@interface VKUser (Messages)
+
+/**
+@name Сообщения
+*/
+/** Возвращает список входящих либо исходящих личных сообщений текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.get
+@return @see info
+*/
+- (VKRequest *)messagesGet:(NSDictionary *)options;
+
+/** Возвращает список диалогов текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.getDialogs
+@return @see info
+*/
+- (VKRequest *)messagesGetDialogs:(NSDictionary *)options;
+
+/** Возвращает сообщения по их id
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.getById
+@return @see info
+*/
+- (VKRequest *)messagesGetByID:(NSDictionary *)options;
+
+/** Возвращает список найденных личных сообщений текущего пользователя по введенной строке поиска
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.search
+@return @see info
+*/
+- (VKRequest *)messagesSearch:(NSDictionary *)options;
+
+/** Возвращает историю сообщений для указанного пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.getHistory
+@return @see info
+*/
+- (VKRequest *)messagesGetHistory:(NSDictionary *)options;
+
+/** Отправляет сообщение
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.send
+@return @see info
+*/
+- (VKRequest *)messagesSend:(NSDictionary *)options;
+
+/** Удаляет сообщение
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.delete
+@return @see info
+*/
+- (VKRequest *)messagesDelete:(NSDictionary *)options;
+
+/** Удаляет все личные сообщения в диалоге
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.deleteDialog
+@return @see info
+*/
+- (VKRequest *)messagesDeleteDialog:(NSDictionary *)options;
+
+/** Восстанавливает удаленное сообщение
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.restore
+@return @see info
+*/
+- (VKRequest *)messagesRestore:(NSDictionary *)options;
+
+/** Помечает сообщения как непрочитанные
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.markAsNew
+@return @see info
+*/
+- (VKRequest *)messagesMarkAsNew:(NSDictionary *)options;
+
+/** Помечает сообщения как прочитанные
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.markAsRead
+@return @see info
+*/
+- (VKRequest *)messagesMarkAsRead:(NSDictionary *)options;
+
+/** Помечает сообщения как важные либо снимает отметку
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.markAsImportant
+@return @see info
+*/
+- (VKRequest *)messagesMarkAsImportant:(NSDictionary *)options;
+
+/** Возвращает данные, необходимые для подключения к Long Poll серверу
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.getLongPollServer
+*/
+- (VKRequest *)messagesGetLongPollServer:(NSDictionary *)options;
+
+/** Возвращает обновления в личных сообщениях пользователя
+
+Для ускорения работы с личными сообщениями может быть полезно кешировать уже загруженные ранее сообщения на мобильном устройстве / ПК пользователя, чтобы не получать их повторно при каждом обращении. Этот метод помогает осуществить синхронизацию локальной копии списка сообщений с актуальной версией.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.getLongPollHistory
+@return @see info
+*/
+- (VKRequest *)messagesGetLongPollHistory:(NSDictionary *)options;
+
+/** Возвращает информацию о беседе
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.getChat
+@return @see info
+*/
+- (VKRequest *)messagesGetChat:(NSDictionary *)options;
+
+/** Создаёт беседу с несколькими участниками
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.createChat
+@return @see info
+*/
+- (VKRequest *)messagesCreateChat:(NSDictionary *)options;
+
+/** Изменяет название беседы
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.editChat
+@return @see info
+*/
+- (VKRequest *)messagesEditChat:(NSDictionary *)options;
+
+/** Позволяет получить список пользователей мультидиалога по его id
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.getChatUsers
+@return @see info
+*/
+- (VKRequest *)messagesGetChatUsers:(NSDictionary *)options;
+
+/** Изменяет статус набора текста пользователем в диалоге
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.setActivity
+@return @see info
+*/
+- (VKRequest *)messagesSetActivity:(NSDictionary *)options;
+
+/** Возвращает список найденных диалогов текущего пользователя по введенной строке поиска
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.searchDialogs
+@return @see info
+*/
+- (VKRequest *)messagesSearchDialogs:(NSDictionary *)options;
+
+/** Добавляет в мультидиалог нового пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.addChatUser
+*/
+- (VKRequest *)messagesAddChatUser:(NSDictionary *)options;
+
+/** Исключает из мультидиалога пользователя, если текущий пользователь был создателем беседы либо пригласил исключаемого пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.removeChatUser
+*/
+- (VKRequest *)messagesRemoveChatUser:(NSDictionary *)options;
+
+/** Возвращает текущий статус и дату последней активности указанного пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.getLastActivity
+@return @see info
+*/
+- (VKRequest *)messagesGetLastActivity:(NSDictionary *)options;
+
+/** Позволяет установить фотографию мультидиалога, загруженную с помощью метода photos.getChatUploadServer
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.setChatPhoto
+@return @see info
+*/
+- (VKRequest *)messagesSetChatPhoto:(NSDictionary *)options;
+
+/** Позволяет удалить фотографию мультидиалога
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/messages.deleteChatPhoto
+@return @see info
+*/
+- (VKRequest *)messagesDeleteChatPhoto:(NSDictionary *)options;
+
+@end
