@@ -1348,6 +1348,122 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Newsfeed
+
+- (VKRequest *)newsfeedGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)newsfeedGetRecommended:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedGetRecommended
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)newsfeedGetComments:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedGetComments
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)newsfeedGetMentions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedGetMentions
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)newsfeedGetBanned:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedGetBanned
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)newsfeedAddBan:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedAddBan
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)newsfeedDeleteBan:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedDeleteBan
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)newsfeedSearch:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedSearch
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)newsfeedGetLists:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedGetLists
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)newsfeedUnsubscribe:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNewsfeedUnsibscribe
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Likes
+
+- (VKRequest *)likesGetList:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKLikesGetList
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)likesAdd:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKLikesAdd
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)likesDelete:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKLikesDelete
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)likesIsLiked:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKLikesIsLiked
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken

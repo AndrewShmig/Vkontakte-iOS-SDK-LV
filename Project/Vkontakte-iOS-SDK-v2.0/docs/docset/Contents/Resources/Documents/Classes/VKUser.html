@@ -169,6 +169,14 @@
 	
 	<option value="//api/name/info:">&nbsp;&nbsp;&nbsp;&nbsp;- info:</option>
 	
+	<option value="//api/name/likesAdd:">&nbsp;&nbsp;&nbsp;&nbsp;- likesAdd:</option>
+	
+	<option value="//api/name/likesDelete:">&nbsp;&nbsp;&nbsp;&nbsp;- likesDelete:</option>
+	
+	<option value="//api/name/likesGetList:">&nbsp;&nbsp;&nbsp;&nbsp;- likesGetList:</option>
+	
+	<option value="//api/name/likesIsLiked:">&nbsp;&nbsp;&nbsp;&nbsp;- likesIsLiked:</option>
+	
 	<option value="//api/name/messagesAddChatUser:">&nbsp;&nbsp;&nbsp;&nbsp;- messagesAddChatUser:</option>
 	
 	<option value="//api/name/messagesCreateChat:">&nbsp;&nbsp;&nbsp;&nbsp;- messagesCreateChat:</option>
@@ -218,6 +226,26 @@
 	<option value="//api/name/messagesSetActivity:">&nbsp;&nbsp;&nbsp;&nbsp;- messagesSetActivity:</option>
 	
 	<option value="//api/name/messagesSetChatPhoto:">&nbsp;&nbsp;&nbsp;&nbsp;- messagesSetChatPhoto:</option>
+	
+	<option value="//api/name/newsfeedAddBan:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedAddBan:</option>
+	
+	<option value="//api/name/newsfeedDeleteBan:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedDeleteBan:</option>
+	
+	<option value="//api/name/newsfeedGet:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedGet:</option>
+	
+	<option value="//api/name/newsfeedGetBanned:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedGetBanned:</option>
+	
+	<option value="//api/name/newsfeedGetComments:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedGetComments:</option>
+	
+	<option value="//api/name/newsfeedGetLists:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedGetLists:</option>
+	
+	<option value="//api/name/newsfeedGetMentions:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedGetMentions:</option>
+	
+	<option value="//api/name/newsfeedGetRecommended:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedGetRecommended:</option>
+	
+	<option value="//api/name/newsfeedSearch:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedSearch:</option>
+	
+	<option value="//api/name/newsfeedUnsubscribe:">&nbsp;&nbsp;&nbsp;&nbsp;- newsfeedUnsubscribe:</option>
 	
 	<option value="//api/name/photosConfirmTagWithCusomOptions:">&nbsp;&nbsp;&nbsp;&nbsp;- photosConfirmTagWithCusomOptions:</option>
 	
@@ -393,19 +421,23 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Переопределенные методы">Переопределенные методы</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Friends Methods">Friends Methods</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Likes Methods">Likes Methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Video Methods">Video Methods</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Messages Methods">Messages Methods</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Audio Methods">Audio Methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Wall Methods">Wall Methods</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Friends Methods">Friends Methods</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Photos Methods">Photos Methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Groups Methods">Groups Methods</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Wall Methods">Wall Methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Messages Methods">Messages Methods</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Video Methods">Video Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Newsfeed Methods">Newsfeed Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Groups Methods">Groups Methods</a></span></li>
 	
 </ul></li>
 
@@ -547,6 +579,14 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/info:">info:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/likesAdd:">likesAdd:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/likesDelete:">likesDelete:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/likesGetList:">likesGetList:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/likesIsLiked:">likesIsLiked:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesAddChatUser:">messagesAddChatUser:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesCreateChat:">messagesCreateChat:</a></span></li>
@@ -596,6 +636,26 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesSetActivity:">messagesSetActivity:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/messagesSetChatPhoto:">messagesSetChatPhoto:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedAddBan:">newsfeedAddBan:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedDeleteBan:">newsfeedDeleteBan:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedGet:">newsfeedGet:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedGetBanned:">newsfeedGetBanned:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedGetComments:">newsfeedGetComments:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedGetLists:">newsfeedGetLists:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedGetMentions:">newsfeedGetMentions:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedGetRecommended:">newsfeedGetRecommended:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedSearch:">newsfeedSearch:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newsfeedUnsubscribe:">newsfeedUnsubscribe:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/photosConfirmTagWithCusomOptions:">photosConfirmTagWithCusomOptions:</a></span></li>
 	
@@ -931,126 +991,35 @@
 						</ul>
 						
 						
-						<a title="Friends Methods" name="task_Friends Methods"></a>
-						<h3 class="subsubtitle task-title">Friends Methods</h3>
+						<a title="Likes Methods" name="task_Likes Methods"></a>
+						<h3 class="subsubtitle task-title">Likes Methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/friendsGet:">&ndash;&nbsp;friendsGet:</a></code>
-		<span class="tooltip"><p>Возвращает список идентификаторов друзей пользователя или расширенную информацию о друзьях пользователя (при использовании параметра fields)</p></span>
+		<code><a href="#//api/name/likesGetList:">&ndash;&nbsp;likesGetList:</a></code>
+		<span class="tooltip"><p>Получает список идентификаторов пользователей, которые добавили заданный объект в свой список Мне нравится.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/friendsGetOnline:">&ndash;&nbsp;friendsGetOnline:</a></code>
-		<span class="tooltip"><p>Возвращает список идентификаторов друзей пользователя, находящихся на сайте</p></span>
+		<code><a href="#//api/name/likesAdd:">&ndash;&nbsp;likesAdd:</a></code>
+		<span class="tooltip"><p>Добавляет указанный объект в список Мне нравится текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/friendsGetMutual:">&ndash;&nbsp;friendsGetMutual:</a></code>
-		<span class="tooltip"><p>Возвращает список идентификаторов общих друзей между парой пользователей</p></span>
+		<code><a href="#//api/name/likesDelete:">&ndash;&nbsp;likesDelete:</a></code>
+		<span class="tooltip"><p>Удаляет указанный объект из списка Мне нравится текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/friendsGetRecent:">&ndash;&nbsp;friendsGetRecent:</a></code>
-		<span class="tooltip"><p>Возвращает список идентификаторов недавно добавленных друзей текущего пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsGetRequests:">&ndash;&nbsp;friendsGetRequests:</a></code>
-		<span class="tooltip"><p>Возвращает информацию о полученных или отправленных заявках на добавление в друзья для текущего пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsAdd:">&ndash;&nbsp;friendsAdd:</a></code>
-		<span class="tooltip"><p>Одобряет или создает заявку на добавление в друзья.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsEdit:">&ndash;&nbsp;friendsEdit:</a></code>
-		<span class="tooltip"><p>Редактирует списки друзей для выбранного друга</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsDelete:">&ndash;&nbsp;friendsDelete:</a></code>
-		<span class="tooltip"><p>Удаляет пользователя из списка друзей или отклоняет заявку в друзья</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsGetLists:">&ndash;&nbsp;friendsGetLists:</a></code>
-		<span class="tooltip"><p>Возвращает список меток друзей текущего пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsAddList:">&ndash;&nbsp;friendsAddList:</a></code>
-		<span class="tooltip"><p>Создает новый список друзей у текущего пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsEditList:">&ndash;&nbsp;friendsEditList:</a></code>
-		<span class="tooltip"><p>Редактирует существующий список друзей текущего пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsDeleteList:">&ndash;&nbsp;friendsDeleteList:</a></code>
-		<span class="tooltip"><p>Удаляет существующий список друзей текущего пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsGetAppUsers:">&ndash;&nbsp;friendsGetAppUsers:</a></code>
-		<span class="tooltip"><p>Возвращает список идентификаторов друзей текущего пользователя, которые установили данное приложение</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsGetByPhones:">&ndash;&nbsp;friendsGetByPhones:</a></code>
-		<span class="tooltip"><p>Возвращает список друзей пользователя, у которых завалидированные или указанные в профиле телефонные номера входят в заданный список.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsDeleteAllRequests:">&ndash;&nbsp;friendsDeleteAllRequests:</a></code>
-		<span class="tooltip"><p>Отмечает все входящие заявки на добавление в друзья как просмотренные</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsGetSuggestions:">&ndash;&nbsp;friendsGetSuggestions:</a></code>
-		<span class="tooltip"><p>Возвращает список профилей пользователей, которые могут быть друзьями текущего пользователя.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/friendsAreFriends:">&ndash;&nbsp;friendsAreFriends:</a></code>
-		<span class="tooltip"><p>Возвращает информацию о том, добавлен ли текущий пользователь в друзья у указанных пользователей.</p></span>
+		<code><a href="#//api/name/likesIsLiked:">&ndash;&nbsp;likesIsLiked:</a></code>
+		<span class="tooltip"><p>Проверяет, находится ли объект в списке Мне нравится заданного пользователя.</p></span>
 	</span>
 	
 	
@@ -1058,168 +1027,182 @@
 						</ul>
 						
 						
-						<a title="Video Methods" name="task_Video Methods"></a>
-						<h3 class="subsubtitle task-title">Video Methods</h3>
+						<a title="Messages Methods" name="task_Messages Methods"></a>
+						<h3 class="subsubtitle task-title">Messages Methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoGet:">&ndash;&nbsp;videoGet:</a></code>
-		<span class="tooltip"><p>Возвращает информацию о видеозаписях</p></span>
+		<code><a href="#//api/name/messagesGet:">&ndash;&nbsp;messagesGet:</a></code>
+		<span class="tooltip"><p>Возвращает список входящих либо исходящих личных сообщений текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoEdit:">&ndash;&nbsp;videoEdit:</a></code>
-		<span class="tooltip"><p>Редактирует данные видеозаписи на странице пользователя</p></span>
+		<code><a href="#//api/name/messagesGetDialogs:">&ndash;&nbsp;messagesGetDialogs:</a></code>
+		<span class="tooltip"><p>Возвращает список диалогов текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoAdd:">&ndash;&nbsp;videoAdd:</a></code>
-		<span class="tooltip"><p>Добавляет видеозапись в список пользователя</p></span>
+		<code><a href="#//api/name/messagesGetByID:">&ndash;&nbsp;messagesGetByID:</a></code>
+		<span class="tooltip"><p>Возвращает сообщения по их id</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoSave:">&ndash;&nbsp;videoSave:</a></code>
-		<span class="tooltip"><p>Возвращает адрес сервера (необходимый для загрузки) и данные видеозаписи.</p></span>
+		<code><a href="#//api/name/messagesSearch:">&ndash;&nbsp;messagesSearch:</a></code>
+		<span class="tooltip"><p>Возвращает список найденных личных сообщений текущего пользователя по введенной строке поиска</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoDelete:">&ndash;&nbsp;videoDelete:</a></code>
-		<span class="tooltip"><p>Удаляет видеозапись со страницы пользователя</p></span>
+		<code><a href="#//api/name/messagesGetHistory:">&ndash;&nbsp;messagesGetHistory:</a></code>
+		<span class="tooltip"><p>Возвращает историю сообщений для указанного пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoRestore:">&ndash;&nbsp;videoRestore:</a></code>
-		<span class="tooltip"><p>Восстанавливает удаленную видеозапись</p></span>
+		<code><a href="#//api/name/messagesSend:">&ndash;&nbsp;messagesSend:</a></code>
+		<span class="tooltip"><p>Отправляет сообщение</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoSearch:">&ndash;&nbsp;videoSearch:</a></code>
-		<span class="tooltip"><p>Возвращает список видеозаписей в соответствии с заданным критерием поиска</p></span>
+		<code><a href="#//api/name/messagesDelete:">&ndash;&nbsp;messagesDelete:</a></code>
+		<span class="tooltip"><p>Удаляет сообщение</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoGetUserVideos:">&ndash;&nbsp;videoGetUserVideos:</a></code>
-		<span class="tooltip"><p>Возвращает список видеозаписей, на которых отмечен пользователь</p></span>
+		<code><a href="#//api/name/messagesDeleteDialog:">&ndash;&nbsp;messagesDeleteDialog:</a></code>
+		<span class="tooltip"><p>Удаляет все личные сообщения в диалоге</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoGetAlbums:">&ndash;&nbsp;videoGetAlbums:</a></code>
-		<span class="tooltip"><p>Возвращает список альбомов видеозаписей пользователя или сообщества</p></span>
+		<code><a href="#//api/name/messagesRestore:">&ndash;&nbsp;messagesRestore:</a></code>
+		<span class="tooltip"><p>Восстанавливает удаленное сообщение</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoAddAlbum:">&ndash;&nbsp;videoAddAlbum:</a></code>
-		<span class="tooltip"><p>Создает пустой альбом видеозаписей</p></span>
+		<code><a href="#//api/name/messagesMarkAsNew:">&ndash;&nbsp;messagesMarkAsNew:</a></code>
+		<span class="tooltip"><p>Помечает сообщения как непрочитанные</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoEditAlbum:">&ndash;&nbsp;videoEditAlbum:</a></code>
-		<span class="tooltip"><p>Редактирует название альбома видеозаписей</p></span>
+		<code><a href="#//api/name/messagesMarkAsRead:">&ndash;&nbsp;messagesMarkAsRead:</a></code>
+		<span class="tooltip"><p>Помечает сообщения как прочитанные</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoDeleteAlbum:">&ndash;&nbsp;videoDeleteAlbum:</a></code>
-		<span class="tooltip"><p>Удаляет альбом видеозаписей</p></span>
+		<code><a href="#//api/name/messagesMarkAsImportant:">&ndash;&nbsp;messagesMarkAsImportant:</a></code>
+		<span class="tooltip"><p>Помечает сообщения как важные либо снимает отметку</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoMoveToAlbum:">&ndash;&nbsp;videoMoveToAlbum:</a></code>
-		<span class="tooltip"><p>Перемещает видеозаписи в альбом</p></span>
+		<code><a href="#//api/name/messagesGetLongPollServer:">&ndash;&nbsp;messagesGetLongPollServer:</a></code>
+		<span class="tooltip"><p>Возвращает данные, необходимые для подключения к Long Poll серверу</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoGetComments:">&ndash;&nbsp;videoGetComments:</a></code>
-		<span class="tooltip"><p>Возвращает список комментариев к видеозаписи</p></span>
+		<code><a href="#//api/name/messagesGetLongPollHistory:">&ndash;&nbsp;messagesGetLongPollHistory:</a></code>
+		<span class="tooltip"><p>Возвращает обновления в личных сообщениях пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoCreateComment:">&ndash;&nbsp;videoCreateComment:</a></code>
-		<span class="tooltip"><p>Cоздает новый комментарий к видеозаписи</p></span>
+		<code><a href="#//api/name/messagesGetChat:">&ndash;&nbsp;messagesGetChat:</a></code>
+		<span class="tooltip"><p>Возвращает информацию о беседе</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoDeleteComment:">&ndash;&nbsp;videoDeleteComment:</a></code>
-		<span class="tooltip"><p>Удаляет комментарий к видеозаписи.</p></span>
+		<code><a href="#//api/name/messagesCreateChat:">&ndash;&nbsp;messagesCreateChat:</a></code>
+		<span class="tooltip"><p>Создаёт беседу с несколькими участниками</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoRestoreComment:">&ndash;&nbsp;videoRestoreComment:</a></code>
-		<span class="tooltip"><p>Восстанавливает удаленный комментарий к видеозаписи</p></span>
+		<code><a href="#//api/name/messagesEditChat:">&ndash;&nbsp;messagesEditChat:</a></code>
+		<span class="tooltip"><p>Изменяет название беседы</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoEditComment:">&ndash;&nbsp;videoEditComment:</a></code>
-		<span class="tooltip"><p>Изменяет текст комментария к видеозаписи</p></span>
+		<code><a href="#//api/name/messagesGetChatUsers:">&ndash;&nbsp;messagesGetChatUsers:</a></code>
+		<span class="tooltip"><p>Позволяет получить список пользователей мультидиалога по его id</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoGetTags:">&ndash;&nbsp;videoGetTags:</a></code>
-		<span class="tooltip"><p>Возвращает список отметок на видеозаписи</p></span>
+		<code><a href="#//api/name/messagesSetActivity:">&ndash;&nbsp;messagesSetActivity:</a></code>
+		<span class="tooltip"><p>Изменяет статус набора текста пользователем в диалоге</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoPutTag:">&ndash;&nbsp;videoPutTag:</a></code>
-		<span class="tooltip"><p>Добавляет отметку на видеозапись</p></span>
+		<code><a href="#//api/name/messagesSearchDialogs:">&ndash;&nbsp;messagesSearchDialogs:</a></code>
+		<span class="tooltip"><p>Возвращает список найденных диалогов текущего пользователя по введенной строке поиска</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoRemoveTag:">&ndash;&nbsp;videoRemoveTag:</a></code>
-		<span class="tooltip"><p>Удаляет отметку с видеозаписи</p></span>
+		<code><a href="#//api/name/messagesAddChatUser:">&ndash;&nbsp;messagesAddChatUser:</a></code>
+		<span class="tooltip"><p>Добавляет в мультидиалог нового пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoGetNewTags:">&ndash;&nbsp;videoGetNewTags:</a></code>
-		<span class="tooltip"><p>Возвращает список видеозаписей, на которых есть непросмотренные отметки</p></span>
+		<code><a href="#//api/name/messagesRemoveChatUser:">&ndash;&nbsp;messagesRemoveChatUser:</a></code>
+		<span class="tooltip"><p>Исключает из мультидиалога пользователя, если текущий пользователь был создателем беседы либо пригласил исключаемого пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/videoReport:">&ndash;&nbsp;videoReport:</a></code>
-		<span class="tooltip"><p>Позволяет пожаловаться на видеозапись</p></span>
+		<code><a href="#//api/name/messagesGetLastActivity:">&ndash;&nbsp;messagesGetLastActivity:</a></code>
+		<span class="tooltip"><p>Возвращает текущий статус и дату последней активности указанного пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/messagesSetChatPhoto:">&ndash;&nbsp;messagesSetChatPhoto:</a></code>
+		<span class="tooltip"><p>Позволяет установить фотографию мультидиалога, загруженную с помощью метода photos.getChatUploadServer</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/messagesDeleteChatPhoto:">&ndash;&nbsp;messagesDeleteChatPhoto:</a></code>
+		<span class="tooltip"><p>Позволяет удалить фотографию мультидиалога</p></span>
 	</span>
 	
 	
@@ -1382,100 +1365,126 @@
 						</ul>
 						
 						
-						<a title="Wall Methods" name="task_Wall Methods"></a>
-						<h3 class="subsubtitle task-title">Wall Methods</h3>
+						<a title="Friends Methods" name="task_Friends Methods"></a>
+						<h3 class="subsubtitle task-title">Friends Methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallGet:">&ndash;&nbsp;wallGet:</a></code>
-		<span class="tooltip"><p>Возвращает список записей со стены пользователя или сообщества</p></span>
+		<code><a href="#//api/name/friendsGet:">&ndash;&nbsp;friendsGet:</a></code>
+		<span class="tooltip"><p>Возвращает список идентификаторов друзей пользователя или расширенную информацию о друзьях пользователя (при использовании параметра fields)</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallGetByID:">&ndash;&nbsp;wallGetByID:</a></code>
-		<span class="tooltip"><p>Возвращает список записей со стен пользователей по их идентификаторам</p></span>
+		<code><a href="#//api/name/friendsGetOnline:">&ndash;&nbsp;friendsGetOnline:</a></code>
+		<span class="tooltip"><p>Возвращает список идентификаторов друзей пользователя, находящихся на сайте</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallSavePost:">&ndash;&nbsp;wallSavePost:</a></code>
-		<span class="tooltip"><p>Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
-При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</p></span>
+		<code><a href="#//api/name/friendsGetMutual:">&ndash;&nbsp;friendsGetMutual:</a></code>
+		<span class="tooltip"><p>Возвращает список идентификаторов общих друзей между парой пользователей</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallPost:">&ndash;&nbsp;wallPost:</a></code>
-		<span class="tooltip"><p>Публикует новую запись на своей или чужой стене.
-Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</p></span>
+		<code><a href="#//api/name/friendsGetRecent:">&ndash;&nbsp;friendsGetRecent:</a></code>
+		<span class="tooltip"><p>Возвращает список идентификаторов недавно добавленных друзей текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallRepost:">&ndash;&nbsp;wallRepost:</a></code>
-		<span class="tooltip"><p>Копирует объект на стену пользователя или сообщества</p></span>
+		<code><a href="#//api/name/friendsGetRequests:">&ndash;&nbsp;friendsGetRequests:</a></code>
+		<span class="tooltip"><p>Возвращает информацию о полученных или отправленных заявках на добавление в друзья для текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallGetReposts:">&ndash;&nbsp;wallGetReposts:</a></code>
-		<span class="tooltip"><p>Позволяет получать список репостов заданной записи</p></span>
+		<code><a href="#//api/name/friendsAdd:">&ndash;&nbsp;friendsAdd:</a></code>
+		<span class="tooltip"><p>Одобряет или создает заявку на добавление в друзья.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallEdit:">&ndash;&nbsp;wallEdit:</a></code>
-		<span class="tooltip"><p>Редактирует запись на стене</p></span>
+		<code><a href="#//api/name/friendsEdit:">&ndash;&nbsp;friendsEdit:</a></code>
+		<span class="tooltip"><p>Редактирует списки друзей для выбранного друга</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallDelete:">&ndash;&nbsp;wallDelete:</a></code>
-		<span class="tooltip"><p>Удаляет запись со стены</p></span>
+		<code><a href="#//api/name/friendsDelete:">&ndash;&nbsp;friendsDelete:</a></code>
+		<span class="tooltip"><p>Удаляет пользователя из списка друзей или отклоняет заявку в друзья</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallRestore:">&ndash;&nbsp;wallRestore:</a></code>
-		<span class="tooltip"><p>Восстанавливает удаленную запись на стене пользователя</p></span>
+		<code><a href="#//api/name/friendsGetLists:">&ndash;&nbsp;friendsGetLists:</a></code>
+		<span class="tooltip"><p>Возвращает список меток друзей текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallGetComments:">&ndash;&nbsp;wallGetComments:</a></code>
-		<span class="tooltip"><p>Возвращает список комментариев к записи на стене пользователя</p></span>
+		<code><a href="#//api/name/friendsAddList:">&ndash;&nbsp;friendsAddList:</a></code>
+		<span class="tooltip"><p>Создает новый список друзей у текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallAddComment:">&ndash;&nbsp;wallAddComment:</a></code>
-		<span class="tooltip"><p>Добавляет комментарий к записи на стене пользователя или сообщества</p></span>
+		<code><a href="#//api/name/friendsEditList:">&ndash;&nbsp;friendsEditList:</a></code>
+		<span class="tooltip"><p>Редактирует существующий список друзей текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallDeleteComment:">&ndash;&nbsp;wallDeleteComment:</a></code>
-		<span class="tooltip"><p>Удаляет комментарий текущего пользователя к записи на своей или чужой стене</p></span>
+		<code><a href="#//api/name/friendsDeleteList:">&ndash;&nbsp;friendsDeleteList:</a></code>
+		<span class="tooltip"><p>Удаляет существующий список друзей текущего пользователя</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/wallRestoreComment:">&ndash;&nbsp;wallRestoreComment:</a></code>
-		<span class="tooltip"><p>Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</p></span>
+		<code><a href="#//api/name/friendsGetAppUsers:">&ndash;&nbsp;friendsGetAppUsers:</a></code>
+		<span class="tooltip"><p>Возвращает список идентификаторов друзей текущего пользователя, которые установили данное приложение</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/friendsGetByPhones:">&ndash;&nbsp;friendsGetByPhones:</a></code>
+		<span class="tooltip"><p>Возвращает список друзей пользователя, у которых завалидированные или указанные в профиле телефонные номера входят в заданный список.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/friendsDeleteAllRequests:">&ndash;&nbsp;friendsDeleteAllRequests:</a></code>
+		<span class="tooltip"><p>Отмечает все входящие заявки на добавление в друзья как просмотренные</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/friendsGetSuggestions:">&ndash;&nbsp;friendsGetSuggestions:</a></code>
+		<span class="tooltip"><p>Возвращает список профилей пользователей, которые могут быть друзьями текущего пользователя.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/friendsAreFriends:">&ndash;&nbsp;friendsAreFriends:</a></code>
+		<span class="tooltip"><p>Возвращает информацию о том, добавлен ли текущий пользователь в друзья у указанных пользователей.</p></span>
 	</span>
 	
 	
@@ -1750,6 +1759,354 @@
 						</ul>
 						
 						
+						<a title="Wall Methods" name="task_Wall Methods"></a>
+						<h3 class="subsubtitle task-title">Wall Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallGet:">&ndash;&nbsp;wallGet:</a></code>
+		<span class="tooltip"><p>Возвращает список записей со стены пользователя или сообщества</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallGetByID:">&ndash;&nbsp;wallGetByID:</a></code>
+		<span class="tooltip"><p>Возвращает список записей со стен пользователей по их идентификаторам</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallSavePost:">&ndash;&nbsp;wallSavePost:</a></code>
+		<span class="tooltip"><p>Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
+При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallPost:">&ndash;&nbsp;wallPost:</a></code>
+		<span class="tooltip"><p>Публикует новую запись на своей или чужой стене.
+Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallRepost:">&ndash;&nbsp;wallRepost:</a></code>
+		<span class="tooltip"><p>Копирует объект на стену пользователя или сообщества</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallGetReposts:">&ndash;&nbsp;wallGetReposts:</a></code>
+		<span class="tooltip"><p>Позволяет получать список репостов заданной записи</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallEdit:">&ndash;&nbsp;wallEdit:</a></code>
+		<span class="tooltip"><p>Редактирует запись на стене</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallDelete:">&ndash;&nbsp;wallDelete:</a></code>
+		<span class="tooltip"><p>Удаляет запись со стены</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallRestore:">&ndash;&nbsp;wallRestore:</a></code>
+		<span class="tooltip"><p>Восстанавливает удаленную запись на стене пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallGetComments:">&ndash;&nbsp;wallGetComments:</a></code>
+		<span class="tooltip"><p>Возвращает список комментариев к записи на стене пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallAddComment:">&ndash;&nbsp;wallAddComment:</a></code>
+		<span class="tooltip"><p>Добавляет комментарий к записи на стене пользователя или сообщества</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallDeleteComment:">&ndash;&nbsp;wallDeleteComment:</a></code>
+		<span class="tooltip"><p>Удаляет комментарий текущего пользователя к записи на своей или чужой стене</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wallRestoreComment:">&ndash;&nbsp;wallRestoreComment:</a></code>
+		<span class="tooltip"><p>Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Video Methods" name="task_Video Methods"></a>
+						<h3 class="subsubtitle task-title">Video Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoGet:">&ndash;&nbsp;videoGet:</a></code>
+		<span class="tooltip"><p>Возвращает информацию о видеозаписях</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoEdit:">&ndash;&nbsp;videoEdit:</a></code>
+		<span class="tooltip"><p>Редактирует данные видеозаписи на странице пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoAdd:">&ndash;&nbsp;videoAdd:</a></code>
+		<span class="tooltip"><p>Добавляет видеозапись в список пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoSave:">&ndash;&nbsp;videoSave:</a></code>
+		<span class="tooltip"><p>Возвращает адрес сервера (необходимый для загрузки) и данные видеозаписи.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoDelete:">&ndash;&nbsp;videoDelete:</a></code>
+		<span class="tooltip"><p>Удаляет видеозапись со страницы пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoRestore:">&ndash;&nbsp;videoRestore:</a></code>
+		<span class="tooltip"><p>Восстанавливает удаленную видеозапись</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoSearch:">&ndash;&nbsp;videoSearch:</a></code>
+		<span class="tooltip"><p>Возвращает список видеозаписей в соответствии с заданным критерием поиска</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoGetUserVideos:">&ndash;&nbsp;videoGetUserVideos:</a></code>
+		<span class="tooltip"><p>Возвращает список видеозаписей, на которых отмечен пользователь</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoGetAlbums:">&ndash;&nbsp;videoGetAlbums:</a></code>
+		<span class="tooltip"><p>Возвращает список альбомов видеозаписей пользователя или сообщества</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoAddAlbum:">&ndash;&nbsp;videoAddAlbum:</a></code>
+		<span class="tooltip"><p>Создает пустой альбом видеозаписей</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoEditAlbum:">&ndash;&nbsp;videoEditAlbum:</a></code>
+		<span class="tooltip"><p>Редактирует название альбома видеозаписей</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoDeleteAlbum:">&ndash;&nbsp;videoDeleteAlbum:</a></code>
+		<span class="tooltip"><p>Удаляет альбом видеозаписей</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoMoveToAlbum:">&ndash;&nbsp;videoMoveToAlbum:</a></code>
+		<span class="tooltip"><p>Перемещает видеозаписи в альбом</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoGetComments:">&ndash;&nbsp;videoGetComments:</a></code>
+		<span class="tooltip"><p>Возвращает список комментариев к видеозаписи</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoCreateComment:">&ndash;&nbsp;videoCreateComment:</a></code>
+		<span class="tooltip"><p>Cоздает новый комментарий к видеозаписи</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoDeleteComment:">&ndash;&nbsp;videoDeleteComment:</a></code>
+		<span class="tooltip"><p>Удаляет комментарий к видеозаписи.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoRestoreComment:">&ndash;&nbsp;videoRestoreComment:</a></code>
+		<span class="tooltip"><p>Восстанавливает удаленный комментарий к видеозаписи</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoEditComment:">&ndash;&nbsp;videoEditComment:</a></code>
+		<span class="tooltip"><p>Изменяет текст комментария к видеозаписи</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoGetTags:">&ndash;&nbsp;videoGetTags:</a></code>
+		<span class="tooltip"><p>Возвращает список отметок на видеозаписи</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoPutTag:">&ndash;&nbsp;videoPutTag:</a></code>
+		<span class="tooltip"><p>Добавляет отметку на видеозапись</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoRemoveTag:">&ndash;&nbsp;videoRemoveTag:</a></code>
+		<span class="tooltip"><p>Удаляет отметку с видеозаписи</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoGetNewTags:">&ndash;&nbsp;videoGetNewTags:</a></code>
+		<span class="tooltip"><p>Возвращает список видеозаписей, на которых есть непросмотренные отметки</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/videoReport:">&ndash;&nbsp;videoReport:</a></code>
+		<span class="tooltip"><p>Позволяет пожаловаться на видеозапись</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Newsfeed Methods" name="task_Newsfeed Methods"></a>
+						<h3 class="subsubtitle task-title">Newsfeed Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedGet:">&ndash;&nbsp;newsfeedGet:</a></code>
+		<span class="tooltip"><p>Возвращает данные, необходимые для показа списка новостей для текущего пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedGetRecommended:">&ndash;&nbsp;newsfeedGetRecommended:</a></code>
+		<span class="tooltip"><p>Получает список новостей, рекомендованных пользователю</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedGetComments:">&ndash;&nbsp;newsfeedGetComments:</a></code>
+		<span class="tooltip"><p>Возвращает данные, необходимые для показа раздела комментариев в новостях пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedGetMentions:">&ndash;&nbsp;newsfeedGetMentions:</a></code>
+		<span class="tooltip"><p>Возвращает список записей пользователей на своих стенах, в которых упоминается указанный пользователь</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedGetBanned:">&ndash;&nbsp;newsfeedGetBanned:</a></code>
+		<span class="tooltip"><p>Возвращает список пользователей и групп, которые текущий пользователь скрыл из ленты новостей</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedAddBan:">&ndash;&nbsp;newsfeedAddBan:</a></code>
+		<span class="tooltip"><p>Запрещает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedDeleteBan:">&ndash;&nbsp;newsfeedDeleteBan:</a></code>
+		<span class="tooltip"><p>Разрешает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedSearch:">&ndash;&nbsp;newsfeedSearch:</a></code>
+		<span class="tooltip"><p>Возвращает результаты поиска по статусам</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedGetLists:">&ndash;&nbsp;newsfeedGetLists:</a></code>
+		<span class="tooltip"><p>Возвращает пользовательские списки новостей</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newsfeedUnsubscribe:">&ndash;&nbsp;newsfeedUnsubscribe:</a></code>
+		<span class="tooltip"><p>Отписывает текущего пользователя от комментариев к заданному объекту</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
 						<a title="Groups Methods" name="task_Groups Methods"></a>
 						<h3 class="subsubtitle task-title">Groups Methods</h3>
 
@@ -1828,189 +2185,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/groupsGetBanned:">&ndash;&nbsp;groupsGetBanned:</a></code>
 		<span class="tooltip"><p>Возвращает список забаненных пользователей</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Messages Methods" name="task_Messages Methods"></a>
-						<h3 class="subsubtitle task-title">Messages Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGet:">&ndash;&nbsp;messagesGet:</a></code>
-		<span class="tooltip"><p>Возвращает список входящих либо исходящих личных сообщений текущего пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGetDialogs:">&ndash;&nbsp;messagesGetDialogs:</a></code>
-		<span class="tooltip"><p>Возвращает список диалогов текущего пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGetByID:">&ndash;&nbsp;messagesGetByID:</a></code>
-		<span class="tooltip"><p>Возвращает сообщения по их id</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesSearch:">&ndash;&nbsp;messagesSearch:</a></code>
-		<span class="tooltip"><p>Возвращает список найденных личных сообщений текущего пользователя по введенной строке поиска</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGetHistory:">&ndash;&nbsp;messagesGetHistory:</a></code>
-		<span class="tooltip"><p>Возвращает историю сообщений для указанного пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesSend:">&ndash;&nbsp;messagesSend:</a></code>
-		<span class="tooltip"><p>Отправляет сообщение</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesDelete:">&ndash;&nbsp;messagesDelete:</a></code>
-		<span class="tooltip"><p>Удаляет сообщение</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesDeleteDialog:">&ndash;&nbsp;messagesDeleteDialog:</a></code>
-		<span class="tooltip"><p>Удаляет все личные сообщения в диалоге</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesRestore:">&ndash;&nbsp;messagesRestore:</a></code>
-		<span class="tooltip"><p>Восстанавливает удаленное сообщение</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesMarkAsNew:">&ndash;&nbsp;messagesMarkAsNew:</a></code>
-		<span class="tooltip"><p>Помечает сообщения как непрочитанные</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesMarkAsRead:">&ndash;&nbsp;messagesMarkAsRead:</a></code>
-		<span class="tooltip"><p>Помечает сообщения как прочитанные</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesMarkAsImportant:">&ndash;&nbsp;messagesMarkAsImportant:</a></code>
-		<span class="tooltip"><p>Помечает сообщения как важные либо снимает отметку</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGetLongPollServer:">&ndash;&nbsp;messagesGetLongPollServer:</a></code>
-		<span class="tooltip"><p>Возвращает данные, необходимые для подключения к Long Poll серверу</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGetLongPollHistory:">&ndash;&nbsp;messagesGetLongPollHistory:</a></code>
-		<span class="tooltip"><p>Возвращает обновления в личных сообщениях пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGetChat:">&ndash;&nbsp;messagesGetChat:</a></code>
-		<span class="tooltip"><p>Возвращает информацию о беседе</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesCreateChat:">&ndash;&nbsp;messagesCreateChat:</a></code>
-		<span class="tooltip"><p>Создаёт беседу с несколькими участниками</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesEditChat:">&ndash;&nbsp;messagesEditChat:</a></code>
-		<span class="tooltip"><p>Изменяет название беседы</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGetChatUsers:">&ndash;&nbsp;messagesGetChatUsers:</a></code>
-		<span class="tooltip"><p>Позволяет получить список пользователей мультидиалога по его id</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesSetActivity:">&ndash;&nbsp;messagesSetActivity:</a></code>
-		<span class="tooltip"><p>Изменяет статус набора текста пользователем в диалоге</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesSearchDialogs:">&ndash;&nbsp;messagesSearchDialogs:</a></code>
-		<span class="tooltip"><p>Возвращает список найденных диалогов текущего пользователя по введенной строке поиска</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesAddChatUser:">&ndash;&nbsp;messagesAddChatUser:</a></code>
-		<span class="tooltip"><p>Добавляет в мультидиалог нового пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesRemoveChatUser:">&ndash;&nbsp;messagesRemoveChatUser:</a></code>
-		<span class="tooltip"><p>Исключает из мультидиалога пользователя, если текущий пользователь был создателем беседы либо пригласил исключаемого пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesGetLastActivity:">&ndash;&nbsp;messagesGetLastActivity:</a></code>
-		<span class="tooltip"><p>Возвращает текущий статус и дату последней активности указанного пользователя</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesSetChatPhoto:">&ndash;&nbsp;messagesSetChatPhoto:</a></code>
-		<span class="tooltip"><p>Позволяет установить фотографию мультидиалога, загруженную с помощью метода photos.getChatUploadServer</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/messagesDeleteChatPhoto:">&ndash;&nbsp;messagesDeleteChatPhoto:</a></code>
-		<span class="tooltip"><p>Позволяет удалить фотографию мультидиалога</p></span>
 	</span>
 	
 	
@@ -5097,6 +5271,210 @@ nil.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/likesAdd:" title="likesAdd:"></a>
+	<h3 class="subsubtitle method-title">likesAdd:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавляет указанный объект в список Мне нравится текущего пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)likesAdd:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/likes.add">https://vk.com/dev/likes.add</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/likesDelete:" title="likesDelete:"></a>
+	<h3 class="subsubtitle method-title">likesDelete:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Удаляет указанный объект из списка Мне нравится текущего пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)likesDelete:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/likes.delete">https://vk.com/dev/likes.delete</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/likesGetList:" title="likesGetList:"></a>
+	<h3 class="subsubtitle method-title">likesGetList:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Получает список идентификаторов пользователей, которые добавили заданный объект в свой список Мне нравится.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)likesGetList:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/likes.getList">https://vk.com/dev/likes.getList</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/likesIsLiked:" title="likesIsLiked:"></a>
+	<h3 class="subsubtitle method-title">likesIsLiked:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Проверяет, находится ли объект в списке Мне нравится заданного пользователя.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)likesIsLiked:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/likes.isLiked">https://vk.com/dev/likes.isLiked</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/messagesAddChatUser:" title="messagesAddChatUser:"></a>
 	<h3 class="subsubtitle method-title">messagesAddChatUser:</h3>
 	
@@ -6332,6 +6710,511 @@ nil.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>options</em></dt>
 			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/messages.setChatPhoto">https://vk.com/dev/messages.setChatPhoto</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedAddBan:" title="newsfeedAddBan:"></a>
+	<h3 class="subsubtitle method-title">newsfeedAddBan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Запрещает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedAddBan:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.addBan">https://vk.com/dev/newsfeed.addBan</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedDeleteBan:" title="newsfeedDeleteBan:"></a>
+	<h3 class="subsubtitle method-title">newsfeedDeleteBan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Разрешает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedDeleteBan:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.deleteBan">https://vk.com/dev/newsfeed.deleteBan</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedGet:" title="newsfeedGet:"></a>
+	<h3 class="subsubtitle method-title">newsfeedGet:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает данные, необходимые для показа списка новостей для текущего пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedGet:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.get">https://vk.com/dev/newsfeed.get</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedGetBanned:" title="newsfeedGetBanned:"></a>
+	<h3 class="subsubtitle method-title">newsfeedGetBanned:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает список пользователей и групп, которые текущий пользователь скрыл из ленты новостей</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedGetBanned:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.getBanned">https://vk.com/dev/newsfeed.getBanned</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedGetComments:" title="newsfeedGetComments:"></a>
+	<h3 class="subsubtitle method-title">newsfeedGetComments:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает данные, необходимые для показа раздела комментариев в новостях пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedGetComments:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.getComments">https://vk.com/dev/newsfeed.getComments</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedGetLists:" title="newsfeedGetLists:"></a>
+	<h3 class="subsubtitle method-title">newsfeedGetLists:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает пользовательские списки новостей</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedGetLists:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.getLists">https://vk.com/dev/newsfeed.getLists</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedGetMentions:" title="newsfeedGetMentions:"></a>
+	<h3 class="subsubtitle method-title">newsfeedGetMentions:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает список записей пользователей на своих стенах, в которых упоминается указанный пользователь</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedGetMentions:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.getMentions">https://vk.com/dev/newsfeed.getMentions</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedGetRecommended:" title="newsfeedGetRecommended:"></a>
+	<h3 class="subsubtitle method-title">newsfeedGetRecommended:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Получает список новостей, рекомендованных пользователю</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedGetRecommended:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.getRecommended">https://vk.com/dev/newsfeed.getRecommended</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedSearch:" title="newsfeedSearch:"></a>
+	<h3 class="subsubtitle method-title">newsfeedSearch:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Возвращает результаты поиска по статусам</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedSearch:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.search">https://vk.com/dev/newsfeed.search</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>@see <a href="#//api/name/info">info</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newsfeedUnsubscribe:" title="newsfeedUnsubscribe:"></a>
+	<h3 class="subsubtitle method-title">newsfeedUnsubscribe:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Отписывает текущего пользователя от комментариев к заданному объекту</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (VKRequest *)newsfeedUnsubscribe:(NSDictionary *)<em>options</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>ключи-значения, полный список здесь: <a href="https://vk.com/dev/newsfeed.unsubscribe">https://vk.com/dev/newsfeed.unsubscribe</a></p></dd>
 		</dl>
 		
 	</div>
@@ -10203,7 +11086,7 @@ nil.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-07-09)</span><br />
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-07-10)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

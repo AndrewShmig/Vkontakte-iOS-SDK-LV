@@ -1,158 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VKConnectorDelegate.html">
+	<File path="Categories/NSString+toBase64.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VKConnectorDelegate</TokenIdentifier>
-			<Abstract type="html">Протокол объявляет методы отслеживания изменения статуса токена доступа
-хранимого классом VKConnector.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString(toBase64)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSString+toBase64.h</DeclaredIn>
 			
 			<NodeRef refid="12"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:willShowModalView:</TokenIdentifier>
-			<Abstract type="html">Метод вызывается до того, как произойдет отображение модального окна авторизации</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/NSString(toBase64)/toBase64</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSString+toBase64.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector willShowModalView:(KGModal *)view</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
-				</Parameter><Parameter>
-					<Name>view</Name>
-					<Abstract type="html">модальное окно</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)toBase64</Declaration>
 			
-			<Anchor>//api/name/VKConnector:willShowModalView:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:willHideModalView:</TokenIdentifier>
-			<Abstract type="html">Метод вызывается до того, как произойдет скрытие модального окна авторизации</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector willHideModalView:(KGModal *)view</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
-				</Parameter><Parameter>
-					<Name>view</Name>
-					<Abstract type="html">модальное окно</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:willHideModalView:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:accessTokenInvalidated:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что токен стал недействительным,
-срок его действия истёк.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector accessTokenInvalidated:(VKAccessToken *)accessToken</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение.</Abstract>
-				</Parameter><Parameter>
-					<Name>accessToken</Name>
-					<Abstract type="html">токен доступа, срок действия которого истёк.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:accessTokenInvalidated:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:accessTokenRenewalSucceeded:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение.</Abstract>
-				</Parameter><Parameter>
-					<Name>accessToken</Name>
-					<Abstract type="html">новый токен доступа, который был получен.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:accessTokenRenewalSucceeded:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:accessTokenRenewalFailed:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что обновление токена доступа не
-удалось.
-Причиной ошибки может быть прерывание связи, либо пользователь отказался авторизовывать
-приложение.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector accessTokenRenewalFailed:(VKAccessToken *)accessToken</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющего сообщение.</Abstract>
-				</Parameter><Parameter>
-					<Name>accessToken</Name>
-					<Abstract type="html">токен доступа (равен nil)</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:accessTokenRenewalFailed:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:connectionErrorOccured:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что произошла ошибка соединения при попытке осуществить запрос</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющего сообщение</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">объект ошибки содержащий описание причины возникновения ошибки</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:connectionErrorOccured:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:parsingErrorOccured:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что произошла ошибка при парсинге JSON ответа сервера</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector parsingErrorOccured:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющего сообщение</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">объект ошибки содержащий описание причины возникновения ошибки</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:parsingErrorOccured:</Anchor>
+			<Anchor>//api/name/toBase64</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

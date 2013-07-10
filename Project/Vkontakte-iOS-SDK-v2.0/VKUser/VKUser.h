@@ -1292,3 +1292,114 @@ YES.
 - (VKRequest *)messagesDeleteChatPhoto:(NSDictionary *)options;
 
 @end
+
+@interface VKUser (Newsfeed)
+
+/**
+@name Новости
+*/
+/** Возвращает данные, необходимые для показа списка новостей для текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.get
+@return @see info
+*/
+- (VKRequest *)newsfeedGet:(NSDictionary *)options;
+
+/** Получает список новостей, рекомендованных пользователю
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getRecommended
+@return @see info
+*/
+- (VKRequest *)newsfeedGetRecommended:(NSDictionary *)options;
+
+/** Возвращает данные, необходимые для показа раздела комментариев в новостях пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getComments
+@return @see info
+*/
+- (VKRequest *)newsfeedGetComments:(NSDictionary *)options;
+
+/** Возвращает список записей пользователей на своих стенах, в которых упоминается указанный пользователь
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getMentions
+@return @see info
+*/
+- (VKRequest *)newsfeedGetMentions:(NSDictionary *)options;
+
+/** Возвращает список пользователей и групп, которые текущий пользователь скрыл из ленты новостей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getBanned
+@return @see info
+*/
+- (VKRequest *)newsfeedGetBanned:(NSDictionary *)options;
+
+/** Запрещает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.addBan
+@return @see info
+*/
+- (VKRequest *)newsfeedAddBan:(NSDictionary *)options;
+
+/** Разрешает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.deleteBan
+@return @see info
+*/
+- (VKRequest *)newsfeedDeleteBan:(NSDictionary *)options;
+
+/** Возвращает результаты поиска по статусам
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.search
+@return @see info
+*/
+- (VKRequest *)newsfeedSearch:(NSDictionary *)options;
+
+/** Возвращает пользовательские списки новостей
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getLists
+*/
+- (VKRequest *)newsfeedGetLists:(NSDictionary *)options;
+
+/** Отписывает текущего пользователя от комментариев к заданному объекту
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.unsubscribe
+@return @see info
+*/
+- (VKRequest *)newsfeedUnsubscribe:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Likes)
+
+/**
+@name Лайки
+*/
+/** Получает список идентификаторов пользователей, которые добавили заданный объект в свой список Мне нравится.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/likes.getList
+@return @see info
+*/
+- (VKRequest *)likesGetList:(NSDictionary *)options;
+
+/** Добавляет указанный объект в список Мне нравится текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/likes.add
+@return @see info
+*/
+- (VKRequest *)likesAdd:(NSDictionary *)options;
+
+/** Удаляет указанный объект из списка Мне нравится текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/likes.delete
+@return @see info
+*/
+- (VKRequest *)likesDelete:(NSDictionary *)options;
+
+/** Проверяет, находится ли объект в списке Мне нравится заданного пользователя.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/likes.isLiked
+@return @see info
+*/
+- (VKRequest *)likesIsLiked:(NSDictionary *)options;
+
+@end

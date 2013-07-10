@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/NSString+MD5.html">
+	<File path="Categories/NSData+toBase64.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/NSString(MD5)</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/cat/NSData(toBase64)</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>NSString+MD5.h</DeclaredIn>
+			<DeclaredIn>NSData+toBase64.h</DeclaredIn>
 			
 			<NodeRef refid="9"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/NSString(MD5)/md5</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSData(toBase64)/toBase64</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>NSString+MD5.h</DeclaredIn>			
+			<DeclaredIn>NSData+toBase64.h</DeclaredIn>			
 			
-			<Declaration>- (NSString *)md5</Declaration>
+			<Declaration>- (NSString *)toBase64</Declaration>
 			
 			
-			<Anchor>//api/name/md5</Anchor>
+			<Anchor>//api/name/toBase64</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

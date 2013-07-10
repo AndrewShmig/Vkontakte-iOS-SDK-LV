@@ -57,13 +57,6 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 - (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
-
-    [VKUser currentUser].delegate = self;
-    [[VKUser currentUser]
-             wallDeleteWithCustomOptions:@{
-                     @"owner_id": @1,
-                     @"post_id": @1
-             }];
 }
 
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error
