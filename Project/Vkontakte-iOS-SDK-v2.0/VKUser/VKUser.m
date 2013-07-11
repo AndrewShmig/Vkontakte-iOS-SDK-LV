@@ -1646,6 +1646,202 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Board
+
+- (VKRequest *)boardGetTopics:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardGetTopics
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardGetComments:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardGetComments
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)boardAddTopic:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardAddTopic
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardAddComment:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardAddComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardDeleteTopic:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardDeleteTopic
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardEditTopic:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardEditTopic
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardEditComment:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardEditComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardRestoreComment:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardRestoreComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardDeleteComment:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardDeleteComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardOpenTopic:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardOpenTopic
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardCloseTopic:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardCloseTopic
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardFixTopic:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardFixTopic
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)boardUnfixTopic:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKBoardUnfixTopic
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Notes
+
+- (VKRequest *)notesGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesGetByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesGetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesGetFriendsNotes:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesGetFriendsNotes
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesAdd:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesAdd
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesEdit:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesEdit
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesDelete:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesDelete
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesGetComments:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesGetComments
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesCreateComment:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesCreateComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesEditComment:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesEditComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesDeleteComment:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesDeleteComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notesRestoreComment:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotesRestoreComment
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken

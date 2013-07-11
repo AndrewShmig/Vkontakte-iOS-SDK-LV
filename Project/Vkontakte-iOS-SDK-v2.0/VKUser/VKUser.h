@@ -1569,3 +1569,179 @@ YES.
 - (VKRequest *)pagesParseWiki:(NSDictionary *)options;
 
 @end
+
+@interface VKUser (Board)
+
+/** Возвращает список тем в обсуждениях указанной группы.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.getTopics
+@return @see info
+*/
+- (VKRequest *)boardGetTopics:(NSDictionary *)options;
+
+/** Возвращает список сообщений в указанной теме.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.getComments
+@return @see info
+*/
+- (VKRequest *)boardGetComments:(NSDictionary *)options;
+
+/** Создает новую тему в списке обсуждений группы.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.addTopic
+@return @see info
+*/
+- (VKRequest *)boardAddTopic:(NSDictionary *)options;
+
+/** Добавляет новое сообщение в теме сообщества.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.addComment
+@return @see info
+*/
+- (VKRequest *)boardAddComment:(NSDictionary *)options;
+
+/** Удаляет тему в обсуждениях группы
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.deleteTopic
+@return @see info
+*/
+- (VKRequest *)boardDeleteTopic:(NSDictionary *)options;
+
+/** Изменяет заголовок темы в списке обсуждений группы
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.editTopic
+@return @see info
+*/
+- (VKRequest *)boardEditTopic:(NSDictionary *)options;
+
+/** Редактирует одно из сообщений в теме группы
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.editComment
+@return @see info
+*/
+- (VKRequest *)boardEditComment:(NSDictionary *)options;
+
+/** Восстанавливает удаленное сообщение темы в обсуждениях группы
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.restoreComment
+@return @see info
+*/
+- (VKRequest *)boardRestoreComment:(NSDictionary *)options;
+
+/** Удаляет сообщение темы в обсуждениях сообщества
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.deleteComment
+@return @see info
+*/
+- (VKRequest *)boardDeleteComment:(NSDictionary *)options;
+
+/** Открывает ранее закрытую тему (в ней станет возможно оставлять новые сообщения).
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.openTopic
+@return @see info
+*/
+- (VKRequest *)boardOpenTopic:(NSDictionary *)options;
+
+/** Закрывает тему в списке обсуждений группы (в такой теме невозможно оставлять новые сообщения)
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.closeTopic
+@return @see info
+*/
+- (VKRequest *)boardCloseTopic:(NSDictionary *)options;
+
+/** Закрепляет тему в списке обсуждений группы (такая тема при любой сортировке выводится выше остальных)
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.fixTopic
+@return @see info
+*/
+- (VKRequest *)boardFixTopic:(NSDictionary *)options;
+
+/** Отменяет прикрепление темы в списке обсуждений группы (тема будет выводиться согласно выбранной сортировке)
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/board.unfixTopic
+@return @see info
+*/
+- (VKRequest *)boardUnfixTopic:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Notes)
+
+/** Возвращает список заметок, созданных пользователем.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.get
+@return @see info
+*/
+- (VKRequest *)notesGet:(NSDictionary *)options;
+
+/** Возвращает заметку по её id
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.getById
+@return @see info
+*/
+- (VKRequest *)notesGetByID:(NSDictionary *)options;
+
+/** Возвращает список заметок друзей пользователя.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.getFriendsNotes
+@return @see info
+*/
+- (VKRequest *)notesGetFriendsNotes:(NSDictionary *)options;
+
+/** Создает новую заметку у текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.add
+@return @see info
+*/
+- (VKRequest *)notesAdd:(NSDictionary *)options;
+
+/** Редактирует заметку текущего пользователя.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.edit
+@return @see info
+*/
+- (VKRequest *)notesEdit:(NSDictionary *)options;
+
+/** Удаляет заметку текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.delete
+@return @see info
+*/
+- (VKRequest *)notesDelete:(NSDictionary *)options;
+
+/** Возвращает список комментариев к заметке
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.getComments
+@return @see info
+*/
+- (VKRequest *)notesGetComments:(NSDictionary *)options;
+
+/** Добавляет новый комментарий к заметке
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.createComment
+@return @see info
+*/
+- (VKRequest *)notesCreateComment:(NSDictionary *)options;
+
+/** Редактирует указанный комментарий у заметки
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.editComment
+@return @see info
+*/
+- (VKRequest *)notesEditComment:(NSDictionary *)options;
+
+/** Удаляет комментарий к заметке
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.deleteComment
+@return @see info
+*/
+- (VKRequest *)notesDeleteComment:(NSDictionary *)options;
+
+/** Восстанавливает удалённый комментарий
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notes.restoreComment
+@return @see info
+*/
+- (VKRequest *)notesRestoreComment:(NSDictionary *)options;
+
+@end
