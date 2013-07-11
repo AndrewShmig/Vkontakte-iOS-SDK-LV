@@ -1570,6 +1570,82 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Status
+
+- (VKRequest *)statusGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKStatsGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)statusSet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKStatusSet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Pages
+
+- (VKRequest *)pagesGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPagesGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pagesSave:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPagesSave
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pagesSaveAccess:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPagesSaveAccess
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pagesGetHistory:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPagesGetHistory
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pagesGetTitles:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPagesGetTitles
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pagesGetVersion:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPagesGetVersion
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pagesParseWiki:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPagesParseWiki
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken

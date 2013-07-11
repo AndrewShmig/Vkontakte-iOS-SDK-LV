@@ -1498,3 +1498,74 @@ YES.
 - (VKRequest *)accountGetBanned:(NSDictionary *)options;
 
 @end
+
+@interface VKUser (Status)
+
+/** Получает текст статуса пользователя или сообщества.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/status.get
+@return @see info
+*/
+- (VKRequest *)statusGet:(NSDictionary *)options;
+
+/** Устанавливает новый статус текущему пользователю.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/status.set
+@return @see info
+*/
+- (VKRequest *)statusSet:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Pages)
+
+/** Возвращает информацию о вики-странице.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/pages.get
+@return @see info
+*/
+- (VKRequest *)pagesGet:(NSDictionary *)options;
+
+/** Сохраняет текст вики-страницы.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/pages.save
+@return @see info
+*/
+- (VKRequest *)pagesSave:(NSDictionary *)options;
+
+/** Сохраняет новые настройки доступа на чтение и редактирование вики-страницы.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/pages.saveAccess
+@return @see info
+*/
+- (VKRequest *)pagesSaveAccess:(NSDictionary *)options;
+
+/** Возвращает список всех старых версий вики-страницы.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/pages.getHistory
+@return @see info
+*/
+- (VKRequest *)pagesGetHistory:(NSDictionary *)options;
+
+/** Возвращает список вики-страниц в группе.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/pages.getTitles
+@return @see info
+*/
+- (VKRequest *)pagesGetTitles:(NSDictionary *)options;
+
+/** Возвращает текст одной из старых версий страницы.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/pages.getVersion
+@return @see info
+*/
+- (VKRequest *)pagesGetVersion:(NSDictionary *)options;
+
+/** Возвращает html-представление вики-разметки
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/pages.parseWiki
+@return @see info
+*/
+- (VKRequest *)pagesParseWiki:(NSDictionary *)options;
+
+@end
