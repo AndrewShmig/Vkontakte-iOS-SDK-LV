@@ -1036,7 +1036,7 @@ YES.
 /** Восстанавливает аудиозапись после удаления
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/audio.restore
-@param @see info
+@return @see info
 */
 - (VKRequest *)audioRestore:(NSDictionary *)options;
 
@@ -1401,5 +1401,100 @@ YES.
 @return @see info
 */
 - (VKRequest *)likesIsLiked:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Account)
+
+/** Возвращает ненулевые значения счетчиков пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.getCounters
+@return @see info
+*/
+- (VKRequest *)accountGetCounters:(NSDictionary *)options;
+
+/** Устанавливает короткое название приложения (до 17 символов), которое выводится пользователю в левом меню.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.setNameInMenu
+@return @see info
+*/
+- (VKRequest *)accountSetNameInMenu:(NSDictionary *)options;
+
+/** Помечает текущего пользователя как online на 15 минут.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.setOnline
+@return @see info
+*/
+- (VKRequest *)accountSetOnline:(NSDictionary *)options;
+
+/** Принимает список контактов пользователя для поиска зарегистрированных во ВКонтакте пользователей методом friends.getSuggestions.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.importContacts
+@return @see info
+*/
+- (VKRequest *)accountImportContacts:(NSDictionary *)options;
+
+/** Подписывает устройство на базе iOS, Android иди Windows Phone на получение Push-уведомлений.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.registerDevice
+@return @see info
+*/
+- (VKRequest *)accountRegisterDevice:(NSDictionary *)options;
+
+/** Отписывает устройство от Push уведомлений.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.unregisterDevice
+@return @see info
+*/
+- (VKRequest *)accountUnregisterDevice:(NSDictionary *)options;
+
+/** Отключает push-уведомления на заданный промежуток времени.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.setSilenceMode
+@return @see info
+*/
+- (VKRequest *)accountSetSilenceMode:(NSDictionary *)options;
+
+/** Позволяет получать настройки Push уведомлений.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.getPushSettings
+@return @see info
+*/
+- (VKRequest *)accountGetPushSettings:(NSDictionary *)options;
+
+/** Получает настройки текущего пользователя в данном приложении.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.getAppPermissions
+@return @see info
+*/
+- (VKRequest *)accountGetAppPermissions:(NSDictionary *)options;
+
+/** Возвращает список активных рекламных предложений (офферов), выполнив которые пользователь сможет получить соответствующее количество голосов на свой счёт внутри приложения.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.getActiveOffers
+@return @see info
+*/
+- (VKRequest *)accountGetActiveOffers:(NSDictionary *)options;
+
+/** Добавляет пользователя в черный список.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.banUser
+@return @see info
+*/
+- (VKRequest *)accountBanUser:(NSDictionary *)options;
+
+/** Убирает пользователя из черного списка.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.unbanUser
+@return @see info
+*/
+- (VKRequest *)accountUnbanUser:(NSDictionary *)options;
+
+/** Возвращает список пользователей, находящихся в черном списке.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/account.getBanned
+@return @see info
+*/
+- (VKRequest *)accountGetBanned:(NSDictionary *)options;
 
 @end

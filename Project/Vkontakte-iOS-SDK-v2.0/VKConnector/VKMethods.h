@@ -252,6 +252,9 @@ static NSString *const kVKAccountSetSilenceMode = @"account.setSilenceMode";
 static NSString *const kVKAccountGetPushSettings = @"account.getPushSettings";
 static NSString *const kVKAccountGetAppPermissions = @"account.getAppPermissions";
 static NSString *const kVKAccountGetActiveOffers = @"account.getActiveOffers";
+static NSString *const kVKAccountBanUser = @"account.banUser";
+static NSString *const kVKAccountUnbanUser = @"account.unbanUser";
+static NSString *const kVKAccountGetBanned = @"account.getBanned";
 
 // -----------------------------------------------------------------------------
 // Status

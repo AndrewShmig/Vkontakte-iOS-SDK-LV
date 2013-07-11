@@ -1464,6 +1464,112 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Account
+
+- (VKRequest *)accountGetCounters:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountGetCounters
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountSetNameInMenu:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountSetNameInMenu
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountSetOnline:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountSetOnline
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountImportContacts:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountImportContacts
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountRegisterDevice:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountRegisterDevice
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountUnregisterDevice:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountUnregisterDevice
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountSetSilenceMode:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountSetSilenceMode
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountGetPushSettings:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountGetPushSettings
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountGetAppPermissions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountGetAppPermissions
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)accountGetActiveOffers:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountGetActiveOffers
+                                options:options
+                               selector:_cmd
+                         addAccessToken:NO];
+}
+
+- (VKRequest *)accountBanUser:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountBanUser
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountUnbanUser:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountUnbanUser
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)accountGetBanned:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAccountGetBanned
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken
