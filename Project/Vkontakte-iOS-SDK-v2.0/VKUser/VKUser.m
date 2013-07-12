@@ -1842,6 +1842,104 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Places
+
+- (VKRequest *)placesAdd:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesAdd
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesSearch:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesSearch
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesCheckIn:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesCheckin
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetCheckins:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetCheckins
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetTypes:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetTypes
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetContries:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetCountries
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetRegions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetRegions
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetStreetByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetStreetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetCountryByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetCountryById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetCities:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetCities
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)placesGetCityByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPlacesGetCityById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken

@@ -1745,3 +1745,91 @@ YES.
 - (VKRequest *)notesRestoreComment:(NSDictionary *)options;
 
 @end
+
+@interface VKUser (Places)
+
+/** Добавляет новое место в базу географических мест.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.add
+@return @see info
+*/
+- (VKRequest *)placesAdd:(NSDictionary *)options;
+
+/** Возвращает информацию о местах по их идентификаторам.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getById
+@return @see info
+*/
+- (VKRequest *)placesGetByID:(NSDictionary *)options;
+
+/** Возвращает список мест, найденных по заданным условиям поиска.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.search
+@return @see info
+*/
+- (VKRequest *)placesSearch:(NSDictionary *)options;
+
+/** Отмечает пользователя в указанном месте.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.checkin
+@return @see info
+*/
+- (VKRequest *)placesCheckIn:(NSDictionary *)options;
+
+/** Возвращает список отметок пользователей в местах согласно заданным параметрам.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getCheckins
+@return @see info
+*/
+- (VKRequest *)placesGetCheckins:(NSDictionary *)options;
+
+/** Возвращает список всех возможных типов мест.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getTypes
+@return @see info
+*/
+- (VKRequest *)placesGetTypes:(NSDictionary *)options;
+
+/** Возвращает список стран.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getCountries
+@return @see info
+*/
+- (VKRequest *)placesGetContries:(NSDictionary *)options;
+
+/** Возвращает список регионов.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getRegions
+@return @see info
+*/
+- (VKRequest *)placesGetRegions:(NSDictionary *)options;
+
+/** Возвращает информацию об улицах по их идентификаторам (id).
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getStreetById
+@return @see info
+*/
+- (VKRequest *)placesGetStreetByID:(NSDictionary *)options;
+
+/** Возвращает информацию о странах по их идентификаторам
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getCountryById
+@return @see info
+*/
+- (VKRequest *)placesGetCountryByID:(NSDictionary *)options;
+
+/** Возвращает список городов.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getCities
+@return @see info
+*/
+- (VKRequest *)placesGetCities:(NSDictionary *)options;
+
+/** Возвращает информацию о городах по их идентификаторам.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/places.getCityById
+@return @see info
+*/
+- (VKRequest *)placesGetCityByID:(NSDictionary *)options;
+
+@end
