@@ -104,20 +104,6 @@
     return [NSData dataWithData:tmp];
 }
 
-- (NSUInteger)contentLength
-{
-//    данные еще не были добавлены
-    if(_isEmpty)
-        return 0;
-
-//    какие-то файлы были добавлены
-    NSUInteger bodyLength = [_body length];
-    NSUInteger footerLength = [[_boundaryFooter dataUsingEncoding:NSUTF8StringEncoding]
-                                                length];
-
-    return (bodyLength + footerLength);
-}
-
 #pragma mark - Private methods
 
 - (void)appendFile:(NSData *)file
@@ -132,6 +118,9 @@
 
     NSString *contentDisposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n\r\n",name, field];
     [_body appendData:[contentDisposition dataUsingEncoding:NSUTF8StringEncoding]];
+
+//    TODO: здесь должно быть определение Content-Type по расширению файла
+//    добавить "Content-Type: ..... "
 
 //    file part
     [_body appendData:file];

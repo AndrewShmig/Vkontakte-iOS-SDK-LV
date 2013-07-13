@@ -53,10 +53,6 @@
 */
 @property (nonatomic, strong, readonly) NSString *boundary;
 
-/** Размер данных в байтах
-*/
-@property (nonatomic, assign, readonly) NSUInteger contentLength;
-
 /**
 @name Добавление объекта
 */

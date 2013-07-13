@@ -85,42 +85,6 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKHTTPBody/setContentLength:</TokenIdentifier>
-			<Abstract type="html">Размер данных в байтах</Abstract>
-			<DeclaredIn>VKHTTPBody.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSUInteger contentLength</Declaration>
-			
-			
-			<Anchor>//api/name/contentLength</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKHTTPBody/contentLength</TokenIdentifier>
-			<Abstract type="html">Размер данных в байтах</Abstract>
-			<DeclaredIn>VKHTTPBody.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSUInteger contentLength</Declaration>
-			
-			
-			<Anchor>//api/name/contentLength</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKHTTPBody/contentLength</TokenIdentifier>
-			<Abstract type="html">Размер данных в байтах</Abstract>
-			<DeclaredIn>VKHTTPBody.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign, readonly) NSUInteger contentLength</Declaration>
-			
-			
-			<Anchor>//api/name/contentLength</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKHTTPBody/appendAudioFile:name:field:</TokenIdentifier>
 			<Abstract type="html">Добавление данных аудио файла в содержимое тела HTTP запроса</Abstract>
 			<DeclaredIn>VKHTTPBody.h</DeclaredIn>			
