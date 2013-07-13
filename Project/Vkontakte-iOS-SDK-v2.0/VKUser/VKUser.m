@@ -1940,6 +1940,178 @@ static VKUser *_currentUser;
                          addAccessToken:YES];
 }
 
+#pragma mark - Polls
+
+- (VKRequest *)pollsGetByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPollsGetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pollsAddVote:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPollsAddVote
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pollsDeleteVote:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPollsDeleteVote
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)pollsGetVoters:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKPollsGetVotes
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Docs
+
+- (VKRequest *)docsGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDocsGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)docsGetByID:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDocsGetById
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)docsGetUploadServer:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDocsGetUploadServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)docsGetWallUploadServer:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDocsGetWallUloadServer
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)docsSave:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDocsSave
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)docsDelete:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDocsDelete
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)docsAdd:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDocsAdd
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Fave
+
+- (VKRequest *)faveGetUsers:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFaveGetUsers
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)faveGetPhotos:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFaveGetPhotos
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)faveGetPosts:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFaveGetPosts
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)faveGetVideos:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFaveGetVideos
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)faveGetLinks:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKFaveGetLinks
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Notifications
+
+- (VKRequest *)notificationsGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotificationsGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+- (VKRequest *)notificationsMarkeAsViewed:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKNotificationsMarkAsViewed
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Stats
+
+- (VKRequest *)statsGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKStatsGet
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
+#pragma mark - Search
+
+- (VKRequest *)searchGetHints:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKSearchGetHints
+                                options:options
+                               selector:_cmd
+                         addAccessToken:YES];
+}
+
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken

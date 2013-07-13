@@ -1833,3 +1833,167 @@ YES.
 - (VKRequest *)placesGetCityByID:(NSDictionary *)options;
 
 @end
+
+@interface VKUser (Polls)
+
+/** Возвращает детальную информацию об опросе по его идентификатору.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/polls.getById
+@return @see info
+*/
+- (VKRequest *)pollsGetByID:(NSDictionary *)options;
+
+/** Отдает голос текущего пользователя за выбранный вариант ответа в указанном опросе.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/polls.addVote
+@return @see info
+*/
+- (VKRequest *)pollsAddVote:(NSDictionary *)options;
+
+/** Снимает голос текущего пользователя с выбранного варианта ответа в указанном опросе.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/polls.deleteVote
+@return @see info
+*/
+- (VKRequest *)pollsDeleteVote:(NSDictionary *)options;
+
+/** Получает список идентификаторов пользователей, которые выбрали определенные варианты ответа в опросе.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/polls.getVoters
+@return @see info
+*/
+- (VKRequest *)pollsGetVoters:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Docs)
+
+/** Возвращает расширенную информацию о документах пользователя или сообщества.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/docs.get
+@return @see info
+*/
+- (VKRequest *)docsGet:(NSDictionary *)options;
+
+/** Возвращает информацию о документах по их идентификаторам.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/docs.getById
+@return @see info
+*/
+- (VKRequest *)docsGetByID:(NSDictionary *)options;
+
+/** Возвращает адрес сервера для загрузки документов.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/docs.getUploadServer
+@return @see info
+*/
+- (VKRequest *)docsGetUploadServer:(NSDictionary *)options;
+
+/** Возвращает адрес сервера для загрузки документов в папку Отправленные, для последующей отправки документа на стену или личным сообщением.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/docs.getWallUploadServer
+@return @see info
+*/
+- (VKRequest *)docsGetWallUploadServer:(NSDictionary *)options;
+
+/** Сохраняет документ после его успешной загрузки на сервер.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/docs.save
+@return @see info
+*/
+- (VKRequest *)docsSave:(NSDictionary *)options;
+
+/** Удаляет документ пользователя или группы
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/docs.delete
+@return @see info
+*/
+- (VKRequest *)docsDelete:(NSDictionary *)options;
+
+/** Копирует документ в документы текущего пользователя
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/docs.add
+@return @see info
+*/
+- (VKRequest *)docsAdd:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Fave)
+
+/** Возвращает список пользователей, добавленных текущим пользователем в закладки.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/fave.getUsers
+@return @see info
+*/
+- (VKRequest *)faveGetUsers:(NSDictionary *)options;
+
+/** Возвращает фотографии, на которых текущий пользователь поставил отметку "Мне нравится"
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/fave.getPhotos
+@return @see info
+*/
+- (VKRequest *)faveGetPhotos:(NSDictionary *)options;
+
+/** Возвращает записи, на которых текущий пользователь поставил отметку «Мне нравится»
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/fave.getPosts
+@return @see info
+*/
+- (VKRequest *)faveGetPosts:(NSDictionary *)options;
+
+/** Возвращает список видеозаписей, на которых текущий пользователь поставил отметку «Мне нравится»
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/fave.getVideos
+@return @see info
+*/
+- (VKRequest *)faveGetVideos:(NSDictionary *)options;
+
+/** Возвращает ссылки, добавленные в закладки текущим пользователем.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/fave.getLinks
+@return @see info
+*/
+- (VKRequest *)faveGetLinks:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Notifications)
+
+/** Возвращает список оповещений об ответах других пользователей на записи текущего пользователя.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notifications.get
+@return @see info
+*/
+- (VKRequest *)notificationsGet:(NSDictionary *)options;
+
+/** Сбрасывает счетчик непросмотренных оповещений об ответах других пользователей на записи текущего пользователя.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/notifications.markAsViewed
+@return @see info
+*/
+- (VKRequest *)notificationsMarkeAsViewed:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Stats)
+
+/** Возвращает статистику сообщества или приложения.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/stats.get
+@return @see info
+*/
+- (VKRequest *)statsGet:(NSDictionary *)options;
+
+@end
+
+@interface VKUser (Search)
+
+/** Метод позволяет получить результаты быстрого поиска по произвольной подстроке
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/search.getHints
+@return @see info
+*/
+- (VKRequest *)searchGetHints:(NSDictionary *)options;
+
+@end

@@ -307,6 +307,346 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о вики-странице.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pagesGet:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pagesGet:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesSave:</TokenIdentifier>
+			<Abstract type="html">Сохраняет текст вики-страницы.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pagesSave:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.save</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pagesSave:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesSaveAccess:</TokenIdentifier>
+			<Abstract type="html">Сохраняет новые настройки доступа на чтение и редактирование вики-страницы.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pagesSaveAccess:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.saveAccess</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pagesSaveAccess:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesGetHistory:</TokenIdentifier>
+			<Abstract type="html">Возвращает список всех старых версий вики-страницы.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pagesGetHistory:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.getHistory</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pagesGetHistory:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesGetTitles:</TokenIdentifier>
+			<Abstract type="html">Возвращает список вики-страниц в группе.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pagesGetTitles:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.getTitles</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pagesGetTitles:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesGetVersion:</TokenIdentifier>
+			<Abstract type="html">Возвращает текст одной из старых версий страницы.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pagesGetVersion:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.getVersion</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pagesGetVersion:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesParseWiki:</TokenIdentifier>
+			<Abstract type="html">Возвращает html-представление вики-разметки</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pagesParseWiki:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.parseWiki</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pagesParseWiki:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetCounters:</TokenIdentifier>
+			<Abstract type="html">Возвращает ненулевые значения счетчиков пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountGetCounters:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getCounters</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountGetCounters:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountSetNameInMenu:</TokenIdentifier>
+			<Abstract type="html">Устанавливает короткое название приложения (до 17 символов), которое выводится пользователю в левом меню.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountSetNameInMenu:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.setNameInMenu</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountSetNameInMenu:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountSetOnline:</TokenIdentifier>
+			<Abstract type="html">Помечает текущего пользователя как online на 15 минут.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountSetOnline:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.setOnline</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountSetOnline:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountImportContacts:</TokenIdentifier>
+			<Abstract type="html">Принимает список контактов пользователя для поиска зарегистрированных во ВКонтакте пользователей методом friends.getSuggestions.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountImportContacts:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.importContacts</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountImportContacts:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountRegisterDevice:</TokenIdentifier>
+			<Abstract type="html">Подписывает устройство на базе iOS, Android иди Windows Phone на получение Push-уведомлений.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountRegisterDevice:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.registerDevice</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountRegisterDevice:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountUnregisterDevice:</TokenIdentifier>
+			<Abstract type="html">Отписывает устройство от Push уведомлений.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountUnregisterDevice:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.unregisterDevice</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountUnregisterDevice:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountSetSilenceMode:</TokenIdentifier>
+			<Abstract type="html">Отключает push-уведомления на заданный промежуток времени.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountSetSilenceMode:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.setSilenceMode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountSetSilenceMode:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetPushSettings:</TokenIdentifier>
+			<Abstract type="html">Позволяет получать настройки Push уведомлений.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountGetPushSettings:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getPushSettings</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountGetPushSettings:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetAppPermissions:</TokenIdentifier>
+			<Abstract type="html">Получает настройки текущего пользователя в данном приложении.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountGetAppPermissions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getAppPermissions</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountGetAppPermissions:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetActiveOffers:</TokenIdentifier>
+			<Abstract type="html">Возвращает список активных рекламных предложений (офферов), выполнив которые пользователь сможет получить соответствующее количество голосов на свой счёт внутри приложения.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountGetActiveOffers:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getActiveOffers</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountGetActiveOffers:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountBanUser:</TokenIdentifier>
+			<Abstract type="html">Добавляет пользователя в черный список.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountBanUser:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.banUser</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountBanUser:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountUnbanUser:</TokenIdentifier>
+			<Abstract type="html">Убирает пользователя из черного списка.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountUnbanUser:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.unbanUser</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountUnbanUser:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetBanned:</TokenIdentifier>
+			<Abstract type="html">Возвращает список пользователей, находящихся в черном списке.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)accountGetBanned:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getBanned</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/accountGetBanned:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKUser/groupsIsMember:</TokenIdentifier>
 			<Abstract type="html">Возвращает информацию о том, является ли пользователь участником сообщества</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
@@ -490,6 +830,414 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
 			<Anchor>//api/name/groupsGetBanned:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает список заметок, созданных пользователем.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesGet:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesGet:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesGetByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает заметку по её id</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesGetByID:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.getById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesGetByID:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesGetFriendsNotes:</TokenIdentifier>
+			<Abstract type="html">Возвращает список заметок друзей пользователя.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesGetFriendsNotes:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.getFriendsNotes</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesGetFriendsNotes:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesAdd:</TokenIdentifier>
+			<Abstract type="html">Создает новую заметку у текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesAdd:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.add</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesAdd:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesEdit:</TokenIdentifier>
+			<Abstract type="html">Редактирует заметку текущего пользователя.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesEdit:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.edit</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesEdit:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesDelete:</TokenIdentifier>
+			<Abstract type="html">Удаляет заметку текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesDelete:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesDelete:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesGetComments:</TokenIdentifier>
+			<Abstract type="html">Возвращает список комментариев к заметке</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesGetComments:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.getComments</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesGetComments:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesCreateComment:</TokenIdentifier>
+			<Abstract type="html">Добавляет новый комментарий к заметке</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesCreateComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.createComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesCreateComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesEditComment:</TokenIdentifier>
+			<Abstract type="html">Редактирует указанный комментарий у заметки</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesEditComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.editComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesEditComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesDeleteComment:</TokenIdentifier>
+			<Abstract type="html">Удаляет комментарий к заметке</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesDeleteComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.deleteComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesDeleteComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesRestoreComment:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает удалённый комментарий</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notesRestoreComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.restoreComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notesRestoreComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardGetTopics:</TokenIdentifier>
+			<Abstract type="html">Возвращает список тем в обсуждениях указанной группы.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardGetTopics:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.getTopics</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardGetTopics:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardGetComments:</TokenIdentifier>
+			<Abstract type="html">Возвращает список сообщений в указанной теме.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardGetComments:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.getComments</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardGetComments:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardAddTopic:</TokenIdentifier>
+			<Abstract type="html">Создает новую тему в списке обсуждений группы.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardAddTopic:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.addTopic</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardAddTopic:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardAddComment:</TokenIdentifier>
+			<Abstract type="html">Добавляет новое сообщение в теме сообщества.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardAddComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.addComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardAddComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardDeleteTopic:</TokenIdentifier>
+			<Abstract type="html">Удаляет тему в обсуждениях группы</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardDeleteTopic:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.deleteTopic</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardDeleteTopic:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardEditTopic:</TokenIdentifier>
+			<Abstract type="html">Изменяет заголовок темы в списке обсуждений группы</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardEditTopic:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.editTopic</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardEditTopic:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardEditComment:</TokenIdentifier>
+			<Abstract type="html">Редактирует одно из сообщений в теме группы</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardEditComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.editComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardEditComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardRestoreComment:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает удаленное сообщение темы в обсуждениях группы</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardRestoreComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.restoreComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardRestoreComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardDeleteComment:</TokenIdentifier>
+			<Abstract type="html">Удаляет сообщение темы в обсуждениях сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardDeleteComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.deleteComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardDeleteComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardOpenTopic:</TokenIdentifier>
+			<Abstract type="html">Открывает ранее закрытую тему (в ней станет возможно оставлять новые сообщения).</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardOpenTopic:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.openTopic</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardOpenTopic:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardCloseTopic:</TokenIdentifier>
+			<Abstract type="html">Закрывает тему в списке обсуждений группы (в такой теме невозможно оставлять новые сообщения)</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardCloseTopic:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.closeTopic</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardCloseTopic:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardFixTopic:</TokenIdentifier>
+			<Abstract type="html">Закрепляет тему в списке обсуждений группы (такая тема при любой сортировке выводится выше остальных)</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardFixTopic:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.fixTopic</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardFixTopic:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardUnfixTopic:</TokenIdentifier>
+			<Abstract type="html">Отменяет прикрепление темы в списке обсуждений группы (тема будет выводиться согласно выбранной сортировке)</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)boardUnfixTopic:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.unfixTopic</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/boardUnfixTopic:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
@@ -1123,308 +1871,393 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/likesGetList:</TokenIdentifier>
-			<Abstract type="html">Получает список идентификаторов пользователей, которые добавили заданный объект в свой список Мне нравится.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/docsGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает расширенную информацию о документах пользователя или сообщества.</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)likesGetList:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)docsGet:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/likes.getList</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/docs.get</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/likesGetList:</Anchor>
+			<Anchor>//api/name/docsGet:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/likesAdd:</TokenIdentifier>
-			<Abstract type="html">Добавляет указанный объект в список Мне нравится текущего пользователя</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/docsGetByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о документах по их идентификаторам.</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)likesAdd:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)docsGetByID:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/likes.add</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/docs.getById</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/likesAdd:</Anchor>
+			<Anchor>//api/name/docsGetByID:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/likesDelete:</TokenIdentifier>
-			<Abstract type="html">Удаляет указанный объект из списка Мне нравится текущего пользователя</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/docsGetUploadServer:</TokenIdentifier>
+			<Abstract type="html">Возвращает адрес сервера для загрузки документов.</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)likesDelete:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)docsGetUploadServer:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/likes.delete</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/docs.getUploadServer</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/likesDelete:</Anchor>
+			<Anchor>//api/name/docsGetUploadServer:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/likesIsLiked:</TokenIdentifier>
-			<Abstract type="html">Проверяет, находится ли объект в списке Мне нравится заданного пользователя.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/docsGetWallUploadServer:</TokenIdentifier>
+			<Abstract type="html">Возвращает адрес сервера для загрузки документов в папку Отправленные, для последующей отправки документа на стену или личным сообщением.</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)likesIsLiked:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)docsGetWallUploadServer:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/likes.isLiked</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/docs.getWallUploadServer</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/likesIsLiked:</Anchor>
+			<Anchor>//api/name/docsGetWallUploadServer:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesAdd:</TokenIdentifier>
-			<Abstract type="html">Добавляет новое место в базу географических мест.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/docsSave:</TokenIdentifier>
+			<Abstract type="html">Сохраняет документ после его успешной загрузки на сервер.</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesAdd:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)docsSave:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.add</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/docs.save</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesAdd:</Anchor>
+			<Anchor>//api/name/docsSave:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetByID:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию о местах по их идентификаторам.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/docsDelete:</TokenIdentifier>
+			<Abstract type="html">Удаляет документ пользователя или группы</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetByID:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)docsDelete:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getById</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/docs.delete</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetByID:</Anchor>
+			<Anchor>//api/name/docsDelete:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesSearch:</TokenIdentifier>
-			<Abstract type="html">Возвращает список мест, найденных по заданным условиям поиска.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/docsAdd:</TokenIdentifier>
+			<Abstract type="html">Копирует документ в документы текущего пользователя</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesSearch:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)docsAdd:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.search</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/docs.add</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesSearch:</Anchor>
+			<Anchor>//api/name/docsAdd:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesCheckIn:</TokenIdentifier>
-			<Abstract type="html">Отмечает пользователя в указанном месте.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/statsGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает статистику сообщества или приложения.</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesCheckIn:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)statsGet:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.checkin</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/stats.get</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesCheckIn:</Anchor>
+			<Anchor>//api/name/statsGet:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetCheckins:</TokenIdentifier>
-			<Abstract type="html">Возвращает список отметок пользователей в местах согласно заданным параметрам.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/searchGetHints:</TokenIdentifier>
+			<Abstract type="html">Метод позволяет получить результаты быстрого поиска по произвольной подстроке</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetCheckins:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)searchGetHints:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCheckins</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/search.getHints</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetCheckins:</Anchor>
+			<Anchor>//api/name/searchGetHints:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetTypes:</TokenIdentifier>
-			<Abstract type="html">Возвращает список всех возможных типов мест.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает данные, необходимые для показа списка новостей для текущего пользователя</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetTypes:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedGet:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getTypes</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.get</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetTypes:</Anchor>
+			<Anchor>//api/name/newsfeedGet:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetContries:</TokenIdentifier>
-			<Abstract type="html">Возвращает список стран.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetRecommended:</TokenIdentifier>
+			<Abstract type="html">Получает список новостей, рекомендованных пользователю</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetContries:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedGetRecommended:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCountries</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getRecommended</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetContries:</Anchor>
+			<Anchor>//api/name/newsfeedGetRecommended:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetRegions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список регионов.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetComments:</TokenIdentifier>
+			<Abstract type="html">Возвращает данные, необходимые для показа раздела комментариев в новостях пользователя</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetRegions:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedGetComments:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getRegions</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getComments</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetRegions:</Anchor>
+			<Anchor>//api/name/newsfeedGetComments:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetStreetByID:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию об улицах по их идентификаторам (id).</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetMentions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список записей пользователей на своих стенах, в которых упоминается указанный пользователь</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetStreetByID:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedGetMentions:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getStreetById</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getMentions</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetStreetByID:</Anchor>
+			<Anchor>//api/name/newsfeedGetMentions:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetCountryByID:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию о странах по их идентификаторам</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetBanned:</TokenIdentifier>
+			<Abstract type="html">Возвращает список пользователей и групп, которые текущий пользователь скрыл из ленты новостей</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetCountryByID:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedGetBanned:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCountryById</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getBanned</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetCountryByID:</Anchor>
+			<Anchor>//api/name/newsfeedGetBanned:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetCities:</TokenIdentifier>
-			<Abstract type="html">Возвращает список городов.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedAddBan:</TokenIdentifier>
+			<Abstract type="html">Запрещает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetCities:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedAddBan:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCities</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.addBan</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetCities:</Anchor>
+			<Anchor>//api/name/newsfeedAddBan:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetCityByID:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию о городах по их идентификаторам.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedDeleteBan:</TokenIdentifier>
+			<Abstract type="html">Разрешает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)placesGetCityByID:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedDeleteBan:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCityById</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.deleteBan</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/placesGetCityByID:</Anchor>
+			<Anchor>//api/name/newsfeedDeleteBan:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/statusGet:</TokenIdentifier>
-			<Abstract type="html">Получает текст статуса пользователя или сообщества.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedSearch:</TokenIdentifier>
+			<Abstract type="html">Возвращает результаты поиска по статусам</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)statusGet:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedSearch:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/status.get</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.search</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/statusGet:</Anchor>
+			<Anchor>//api/name/newsfeedSearch:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/statusSet:</TokenIdentifier>
-			<Abstract type="html">Устанавливает новый статус текущему пользователю.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetLists:</TokenIdentifier>
+			<Abstract type="html">Возвращает пользовательские списки новостей</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (VKRequest *)statusSet:(NSDictionary *)options</Declaration>
+			<Declaration>- (VKRequest *)newsfeedGetLists:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/status.set</Abstract>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getLists</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/newsfeedGetLists:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedUnsubscribe:</TokenIdentifier>
+			<Abstract type="html">Отписывает текущего пользователя от комментариев к заданному объекту</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)newsfeedUnsubscribe:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.unsubscribe</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/statusSet:</Anchor>
+			<Anchor>//api/name/newsfeedUnsubscribe:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pollsGetByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает детальную информацию об опросе по его идентификатору.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pollsGetByID:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/polls.getById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pollsGetByID:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pollsAddVote:</TokenIdentifier>
+			<Abstract type="html">Отдает голос текущего пользователя за выбранный вариант ответа в указанном опросе.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pollsAddVote:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/polls.addVote</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pollsAddVote:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pollsDeleteVote:</TokenIdentifier>
+			<Abstract type="html">Снимает голос текущего пользователя с выбранного варианта ответа в указанном опросе.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pollsDeleteVote:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/polls.deleteVote</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pollsDeleteVote:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pollsGetVoters:</TokenIdentifier>
+			<Abstract type="html">Получает список идентификаторов пользователей, которые выбрали определенные варианты ответа в опросе.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)pollsGetVoters:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/polls.getVoters</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/pollsGetVoters:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
@@ -1816,6 +2649,1300 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
 			<Anchor>//api/name/videoReport:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/likesGetList:</TokenIdentifier>
+			<Abstract type="html">Получает список идентификаторов пользователей, которые добавили заданный объект в свой список Мне нравится.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)likesGetList:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/likes.getList</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/likesGetList:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/likesAdd:</TokenIdentifier>
+			<Abstract type="html">Добавляет указанный объект в список Мне нравится текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)likesAdd:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/likes.add</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/likesAdd:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/likesDelete:</TokenIdentifier>
+			<Abstract type="html">Удаляет указанный объект из списка Мне нравится текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)likesDelete:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/likes.delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/likesDelete:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/likesIsLiked:</TokenIdentifier>
+			<Abstract type="html">Проверяет, находится ли объект в списке Мне нравится заданного пользователя.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)likesIsLiked:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/likes.isLiked</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/likesIsLiked:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/faveGetUsers:</TokenIdentifier>
+			<Abstract type="html">Возвращает список пользователей, добавленных текущим пользователем в закладки.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)faveGetUsers:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/fave.getUsers</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/faveGetUsers:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/faveGetPhotos:</TokenIdentifier>
+			<Abstract type="html">Возвращает фотографии, на которых текущий пользователь поставил отметку &quot;Мне нравится&quot;</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)faveGetPhotos:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/fave.getPhotos</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/faveGetPhotos:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/faveGetPosts:</TokenIdentifier>
+			<Abstract type="html">Возвращает записи, на которых текущий пользователь поставил отметку «Мне нравится»</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)faveGetPosts:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/fave.getPosts</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/faveGetPosts:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/faveGetVideos:</TokenIdentifier>
+			<Abstract type="html">Возвращает список видеозаписей, на которых текущий пользователь поставил отметку «Мне нравится»</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)faveGetVideos:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/fave.getVideos</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/faveGetVideos:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/faveGetLinks:</TokenIdentifier>
+			<Abstract type="html">Возвращает ссылки, добавленные в закладки текущим пользователем.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)faveGetLinks:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/fave.getLinks</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/faveGetLinks:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает список записей со стены пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGet:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGet:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает список записей со стен пользователей по их идентификаторам</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetByID:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetByID:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallSavePost:</TokenIdentifier>
+			<Abstract type="html">Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
+При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallSavePost:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.savePost</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallSavePost:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallPost:</TokenIdentifier>
+			<Abstract type="html">Публикует новую запись на своей или чужой стене.
+Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallPost:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.post</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallPost:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRepost:</TokenIdentifier>
+			<Abstract type="html">Копирует объект на стену пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRepost:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.repost</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRepost:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetReposts:</TokenIdentifier>
+			<Abstract type="html">Позволяет получать список репостов заданной записи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetReposts:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getReposts</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetReposts:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallEdit:</TokenIdentifier>
+			<Abstract type="html">Редактирует запись на стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallEdit:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.edit</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallEdit:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDelete:</TokenIdentifier>
+			<Abstract type="html">Удаляет запись со стены</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallDelete:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallDelete:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestore:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает удаленную запись на стене пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRestore:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restore</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRestore:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetComments:</TokenIdentifier>
+			<Abstract type="html">Возвращает список комментариев к записи на стене пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallGetComments:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getComments</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallGetComments:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallAddComment:</TokenIdentifier>
+			<Abstract type="html">Добавляет комментарий к записи на стене пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallAddComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: http://vk.com/dev/wall.addComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallAddComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDeleteComment:</TokenIdentifier>
+			<Abstract type="html">Удаляет комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallDeleteComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.deleteComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallDeleteComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestoreComment:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)wallRestoreComment:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restoreComment</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/wallRestoreComment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает список идентификаторов друзей пользователя или расширенную информацию о друзьях пользователя (при использовании параметра fields)</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGet:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGet:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetOnline:</TokenIdentifier>
+			<Abstract type="html">Возвращает список идентификаторов друзей пользователя, находящихся на сайте</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGetOnline:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getOnline</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGetOnline:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetMutual:</TokenIdentifier>
+			<Abstract type="html">Возвращает список идентификаторов общих друзей между парой пользователей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGetMutual:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getMutual</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGetMutual:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetRecent:</TokenIdentifier>
+			<Abstract type="html">Возвращает список идентификаторов недавно добавленных друзей текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGetRecent:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getRecent</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGetRecent:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetRequests:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о полученных или отправленных заявках на добавление в друзья для текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGetRequests:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getRequests</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGetRequests:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsAdd:</TokenIdentifier>
+			<Abstract type="html">Одобряет или создает заявку на добавление в друзья.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsAdd:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.add</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsAdd:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsEdit:</TokenIdentifier>
+			<Abstract type="html">Редактирует списки друзей для выбранного друга</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsEdit:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.edit</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsEdit:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsDelete:</TokenIdentifier>
+			<Abstract type="html">Удаляет пользователя из списка друзей или отклоняет заявку в друзья</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsDelete:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsDelete:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetLists:</TokenIdentifier>
+			<Abstract type="html">Возвращает список меток друзей текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGetLists:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getLists</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGetLists:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsAddList:</TokenIdentifier>
+			<Abstract type="html">Создает новый список друзей у текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsAddList:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.addList</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsAddList:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsEditList:</TokenIdentifier>
+			<Abstract type="html">Редактирует существующий список друзей текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsEditList:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.editList</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsEditList:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsDeleteList:</TokenIdentifier>
+			<Abstract type="html">Удаляет существующий список друзей текущего пользователя</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsDeleteList:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.deleteList</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsDeleteList:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetAppUsers:</TokenIdentifier>
+			<Abstract type="html">Возвращает список идентификаторов друзей текущего пользователя, которые установили данное приложение</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGetAppUsers:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getAppUsers</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGetAppUsers:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetByPhones:</TokenIdentifier>
+			<Abstract type="html">Возвращает список друзей пользователя, у которых завалидированные или указанные в профиле телефонные номера входят в заданный список.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGetByPhones:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getByPhones</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGetByPhones:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsDeleteAllRequests:</TokenIdentifier>
+			<Abstract type="html">Отмечает все входящие заявки на добавление в друзья как просмотренные</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsDeleteAllRequests:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.deleteAllRequests</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsDeleteAllRequests:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetSuggestions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список профилей пользователей, которые могут быть друзьями текущего пользователя.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsGetSuggestions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getSuggestions</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsGetSuggestions:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsAreFriends:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о том, добавлен ли текущий пользователь в друзья у указанных пользователей.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)friendsAreFriends:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список по ссылке: https://vk.com/dev/friends.areFriends</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/friendsAreFriends:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/statusGet:</TokenIdentifier>
+			<Abstract type="html">Получает текст статуса пользователя или сообщества.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)statusGet:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/status.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/statusGet:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/statusSet:</TokenIdentifier>
+			<Abstract type="html">Устанавливает новый статус текущему пользователю.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)statusSet:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/status.set</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/statusSet:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesAdd:</TokenIdentifier>
+			<Abstract type="html">Добавляет новое место в базу географических мест.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesAdd:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.add</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesAdd:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о местах по их идентификаторам.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetByID:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetByID:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesSearch:</TokenIdentifier>
+			<Abstract type="html">Возвращает список мест, найденных по заданным условиям поиска.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesSearch:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.search</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesSearch:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesCheckIn:</TokenIdentifier>
+			<Abstract type="html">Отмечает пользователя в указанном месте.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesCheckIn:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.checkin</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesCheckIn:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetCheckins:</TokenIdentifier>
+			<Abstract type="html">Возвращает список отметок пользователей в местах согласно заданным параметрам.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetCheckins:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCheckins</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetCheckins:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetTypes:</TokenIdentifier>
+			<Abstract type="html">Возвращает список всех возможных типов мест.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetTypes:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getTypes</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetTypes:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetContries:</TokenIdentifier>
+			<Abstract type="html">Возвращает список стран.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetContries:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCountries</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetContries:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetRegions:</TokenIdentifier>
+			<Abstract type="html">Возвращает список регионов.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetRegions:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getRegions</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetRegions:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetStreetByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию об улицах по их идентификаторам (id).</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetStreetByID:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getStreetById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetStreetByID:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetCountryByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о странах по их идентификаторам</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetCountryByID:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCountryById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetCountryByID:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetCities:</TokenIdentifier>
+			<Abstract type="html">Возвращает список городов.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetCities:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCities</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetCities:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/placesGetCityByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию о городах по их идентификаторам.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)placesGetCityByID:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/places.getCityById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/placesGetCityByID:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notificationsGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает список оповещений об ответах других пользователей на записи текущего пользователя.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notificationsGet:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notifications.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notificationsGet:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notificationsMarkeAsViewed:</TokenIdentifier>
+			<Abstract type="html">Сбрасывает счетчик непросмотренных оповещений об ответах других пользователей на записи текущего пользователя.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)notificationsMarkeAsViewed:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notifications.markAsViewed</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/notificationsMarkeAsViewed:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGet:</TokenIdentifier>
+			<Abstract type="html">Возвращает список аудиозаписей пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGet:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.get</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGet:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetByID:</TokenIdentifier>
+			<Abstract type="html">Возвращает информацию об аудиозаписях</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGetByID:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getById</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGetByID:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetLyrics:</TokenIdentifier>
+			<Abstract type="html">Возвращает текст аудиозаписи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGetLyrics:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getLyrics</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGetLyrics:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioSearch:</TokenIdentifier>
+			<Abstract type="html">Возвращает список аудиозаписей в соответствии с заданным критерием поиска</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioSearch:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.search</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioSearch:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetUploadServer:</TokenIdentifier>
+			<Abstract type="html">Возвращает адрес сервера для загрузки аудиозаписей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGetUploadServer:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getUploadServer</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGetUploadServer:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioSave:</TokenIdentifier>
+			<Abstract type="html">Сохраняет аудиозаписи после успешной загрузки</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioSave:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.save</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioSave:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioAdd:</TokenIdentifier>
+			<Abstract type="html">Копирует аудиозапись на страницу пользователя или группы</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioAdd:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.add</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioAdd:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioDelete:</TokenIdentifier>
+			<Abstract type="html">Удаляет аудиозапись со страницы пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioDelete:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.delete</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioDelete:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioEdit:</TokenIdentifier>
+			<Abstract type="html">Редактирует данные аудиозаписи на странице пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioEdit:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.edit</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioEdit:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioReorder:</TokenIdentifier>
+			<Abstract type="html">Изменяет порядок аудиозаписи, перенося ее между аудиозаписями, идентификаторы которых переданы параметрами after и before</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioReorder:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.reorder</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioReorder:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioRestore:</TokenIdentifier>
+			<Abstract type="html">Восстанавливает аудиозапись после удаления</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioRestore:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.restore</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioRestore:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetAlbums:</TokenIdentifier>
+			<Abstract type="html">Возвращает список альбомов аудиозаписей пользователя или группы</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGetAlbums:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getAlbums</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGetAlbums:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioAddAlbum:</TokenIdentifier>
+			<Abstract type="html">Создает пустой альбом аудиозаписей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioAddAlbum:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.addAlbum</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioAddAlbum:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioEditAlbum:</TokenIdentifier>
+			<Abstract type="html">Редактирует название альбома аудиозаписей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioEditAlbum:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.editAlbum</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioEditAlbum:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioDeleteAlbum:</TokenIdentifier>
+			<Abstract type="html">Удаляет альбом аудиозаписей</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioDeleteAlbum:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.deleteAlbum</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioDeleteAlbum:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioMoveToAlbum:</TokenIdentifier>
+			<Abstract type="html">Перемещает аудиозаписи в альбом</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioMoveToAlbum:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.moveToAlbum</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioMoveToAlbum:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioSetBroadcast:</TokenIdentifier>
+			<Abstract type="html">Транслирует аудиозапись в статус пользователю или сообществу</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioSetBroadcast:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.setBroadcast</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioSetBroadcast:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetBroadcastList:</TokenIdentifier>
+			<Abstract type="html">Возвращает список друзей и сообществ пользователя, которые транслируют музыку в статус</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGetBroadcastList:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getBroadcastList</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGetBroadcastList:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetRecommendations:</TokenIdentifier>
+			<Abstract type="html">Возвращает список рекомендуемых аудиозаписей на основе списка воспроизведения заданного пользователя или на основе одной выбранной аудиозаписи</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGetRecommendations:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getRecommendations</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGetRecommendations:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetPopular:</TokenIdentifier>
+			<Abstract type="html">Возвращает список аудиозаписей из раздела &quot;Популярное&quot;</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGetPopular:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getPopular</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGetPopular:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetCount:</TokenIdentifier>
+			<Abstract type="html">Возвращает количество аудиозаписей пользователя или сообщества</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (VKRequest *)audioGetCount:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>options</Name>
+					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getCount</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
+			<Anchor>//api/name/audioGetCount:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
@@ -2241,1793 +4368,6 @@
 			</Parameters>
 			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
 			<Anchor>//api/name/messagesDeleteChatPhoto:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGet:</TokenIdentifier>
-			<Abstract type="html">Возвращает список идентификаторов друзей пользователя или расширенную информацию о друзьях пользователя (при использовании параметра fields)</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGet:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.get</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGet:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetOnline:</TokenIdentifier>
-			<Abstract type="html">Возвращает список идентификаторов друзей пользователя, находящихся на сайте</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGetOnline:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getOnline</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGetOnline:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetMutual:</TokenIdentifier>
-			<Abstract type="html">Возвращает список идентификаторов общих друзей между парой пользователей</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGetMutual:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getMutual</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGetMutual:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetRecent:</TokenIdentifier>
-			<Abstract type="html">Возвращает список идентификаторов недавно добавленных друзей текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGetRecent:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getRecent</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGetRecent:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetRequests:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию о полученных или отправленных заявках на добавление в друзья для текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGetRequests:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getRequests</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGetRequests:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsAdd:</TokenIdentifier>
-			<Abstract type="html">Одобряет или создает заявку на добавление в друзья.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsAdd:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.add</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsAdd:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsEdit:</TokenIdentifier>
-			<Abstract type="html">Редактирует списки друзей для выбранного друга</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsEdit:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.edit</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsEdit:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsDelete:</TokenIdentifier>
-			<Abstract type="html">Удаляет пользователя из списка друзей или отклоняет заявку в друзья</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsDelete:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.delete</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsDelete:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetLists:</TokenIdentifier>
-			<Abstract type="html">Возвращает список меток друзей текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGetLists:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getLists</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGetLists:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsAddList:</TokenIdentifier>
-			<Abstract type="html">Создает новый список друзей у текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsAddList:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.addList</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsAddList:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsEditList:</TokenIdentifier>
-			<Abstract type="html">Редактирует существующий список друзей текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsEditList:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.editList</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsEditList:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsDeleteList:</TokenIdentifier>
-			<Abstract type="html">Удаляет существующий список друзей текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsDeleteList:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.deleteList</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsDeleteList:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetAppUsers:</TokenIdentifier>
-			<Abstract type="html">Возвращает список идентификаторов друзей текущего пользователя, которые установили данное приложение</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGetAppUsers:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getAppUsers</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGetAppUsers:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetByPhones:</TokenIdentifier>
-			<Abstract type="html">Возвращает список друзей пользователя, у которых завалидированные или указанные в профиле телефонные номера входят в заданный список.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGetByPhones:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getByPhones</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGetByPhones:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsDeleteAllRequests:</TokenIdentifier>
-			<Abstract type="html">Отмечает все входящие заявки на добавление в друзья как просмотренные</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsDeleteAllRequests:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.deleteAllRequests</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsDeleteAllRequests:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsGetSuggestions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список профилей пользователей, которые могут быть друзьями текущего пользователя.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsGetSuggestions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по этой ссылке: https://vk.com/dev/friends.getSuggestions</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsGetSuggestions:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/friendsAreFriends:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию о том, добавлен ли текущий пользователь в друзья у указанных пользователей.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)friendsAreFriends:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список по ссылке: https://vk.com/dev/friends.areFriends</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/friendsAreFriends:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesGet:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию о вики-странице.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)pagesGet:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.get</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/pagesGet:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesSave:</TokenIdentifier>
-			<Abstract type="html">Сохраняет текст вики-страницы.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)pagesSave:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.save</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/pagesSave:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesSaveAccess:</TokenIdentifier>
-			<Abstract type="html">Сохраняет новые настройки доступа на чтение и редактирование вики-страницы.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)pagesSaveAccess:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.saveAccess</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/pagesSaveAccess:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesGetHistory:</TokenIdentifier>
-			<Abstract type="html">Возвращает список всех старых версий вики-страницы.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)pagesGetHistory:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.getHistory</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/pagesGetHistory:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesGetTitles:</TokenIdentifier>
-			<Abstract type="html">Возвращает список вики-страниц в группе.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)pagesGetTitles:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.getTitles</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/pagesGetTitles:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesGetVersion:</TokenIdentifier>
-			<Abstract type="html">Возвращает текст одной из старых версий страницы.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)pagesGetVersion:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.getVersion</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/pagesGetVersion:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/pagesParseWiki:</TokenIdentifier>
-			<Abstract type="html">Возвращает html-представление вики-разметки</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)pagesParseWiki:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/pages.parseWiki</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/pagesParseWiki:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesGet:</TokenIdentifier>
-			<Abstract type="html">Возвращает список заметок, созданных пользователем.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesGet:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.get</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesGet:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesGetByID:</TokenIdentifier>
-			<Abstract type="html">Возвращает заметку по её id</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesGetByID:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.getById</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesGetByID:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesGetFriendsNotes:</TokenIdentifier>
-			<Abstract type="html">Возвращает список заметок друзей пользователя.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesGetFriendsNotes:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.getFriendsNotes</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesGetFriendsNotes:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesAdd:</TokenIdentifier>
-			<Abstract type="html">Создает новую заметку у текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesAdd:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.add</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesAdd:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesEdit:</TokenIdentifier>
-			<Abstract type="html">Редактирует заметку текущего пользователя.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesEdit:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.edit</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesEdit:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesDelete:</TokenIdentifier>
-			<Abstract type="html">Удаляет заметку текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesDelete:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.delete</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesDelete:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesGetComments:</TokenIdentifier>
-			<Abstract type="html">Возвращает список комментариев к заметке</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesGetComments:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.getComments</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesGetComments:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesCreateComment:</TokenIdentifier>
-			<Abstract type="html">Добавляет новый комментарий к заметке</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesCreateComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.createComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesCreateComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesEditComment:</TokenIdentifier>
-			<Abstract type="html">Редактирует указанный комментарий у заметки</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesEditComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.editComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesEditComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesDeleteComment:</TokenIdentifier>
-			<Abstract type="html">Удаляет комментарий к заметке</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesDeleteComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.deleteComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesDeleteComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/notesRestoreComment:</TokenIdentifier>
-			<Abstract type="html">Восстанавливает удалённый комментарий</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)notesRestoreComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/notes.restoreComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/notesRestoreComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGet:</TokenIdentifier>
-			<Abstract type="html">Возвращает список записей со стены пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallGet:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.get</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallGet:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetByID:</TokenIdentifier>
-			<Abstract type="html">Возвращает список записей со стен пользователей по их идентификаторам</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallGetByID:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getById</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallGetByID:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallSavePost:</TokenIdentifier>
-			<Abstract type="html">Сохраняет запись на стене пользователя. Запись может содержать фотографию, ранее загруженную на сервер ВКонтакте, или любую доступную фотографию из альбома пользователя.
-При запуске со стены приложение открывается в окне размером 607x412 и ему передаются параметры, описанные здесь.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallSavePost:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.savePost</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallSavePost:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallPost:</TokenIdentifier>
-			<Abstract type="html">Публикует новую запись на своей или чужой стене.
-Данный метод позволяет создать новую запись на стене, а также опубликовать предложенную новость или отложенную запись.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallPost:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.post</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallPost:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRepost:</TokenIdentifier>
-			<Abstract type="html">Копирует объект на стену пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallRepost:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.repost</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallRepost:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetReposts:</TokenIdentifier>
-			<Abstract type="html">Позволяет получать список репостов заданной записи</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallGetReposts:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getReposts</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallGetReposts:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallEdit:</TokenIdentifier>
-			<Abstract type="html">Редактирует запись на стене</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallEdit:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.edit</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallEdit:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDelete:</TokenIdentifier>
-			<Abstract type="html">Удаляет запись со стены</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallDelete:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.delete</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallDelete:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestore:</TokenIdentifier>
-			<Abstract type="html">Восстанавливает удаленную запись на стене пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallRestore:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restore</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallRestore:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallGetComments:</TokenIdentifier>
-			<Abstract type="html">Возвращает список комментариев к записи на стене пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallGetComments:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.getComments</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallGetComments:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallAddComment:</TokenIdentifier>
-			<Abstract type="html">Добавляет комментарий к записи на стене пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallAddComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: http://vk.com/dev/wall.addComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallAddComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallDeleteComment:</TokenIdentifier>
-			<Abstract type="html">Удаляет комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallDeleteComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.deleteComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallDeleteComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/wallRestoreComment:</TokenIdentifier>
-			<Abstract type="html">Восстанавливает комментарий текущего пользователя к записи на своей или чужой стене</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)wallRestoreComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список в документации: https://vk.com/dev/wall.restoreComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/wallRestoreComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetCounters:</TokenIdentifier>
-			<Abstract type="html">Возвращает ненулевые значения счетчиков пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountGetCounters:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getCounters</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountGetCounters:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountSetNameInMenu:</TokenIdentifier>
-			<Abstract type="html">Устанавливает короткое название приложения (до 17 символов), которое выводится пользователю в левом меню.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountSetNameInMenu:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.setNameInMenu</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountSetNameInMenu:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountSetOnline:</TokenIdentifier>
-			<Abstract type="html">Помечает текущего пользователя как online на 15 минут.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountSetOnline:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.setOnline</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountSetOnline:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountImportContacts:</TokenIdentifier>
-			<Abstract type="html">Принимает список контактов пользователя для поиска зарегистрированных во ВКонтакте пользователей методом friends.getSuggestions.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountImportContacts:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.importContacts</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountImportContacts:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountRegisterDevice:</TokenIdentifier>
-			<Abstract type="html">Подписывает устройство на базе iOS, Android иди Windows Phone на получение Push-уведомлений.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountRegisterDevice:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.registerDevice</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountRegisterDevice:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountUnregisterDevice:</TokenIdentifier>
-			<Abstract type="html">Отписывает устройство от Push уведомлений.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountUnregisterDevice:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.unregisterDevice</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountUnregisterDevice:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountSetSilenceMode:</TokenIdentifier>
-			<Abstract type="html">Отключает push-уведомления на заданный промежуток времени.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountSetSilenceMode:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.setSilenceMode</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountSetSilenceMode:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetPushSettings:</TokenIdentifier>
-			<Abstract type="html">Позволяет получать настройки Push уведомлений.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountGetPushSettings:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getPushSettings</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountGetPushSettings:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetAppPermissions:</TokenIdentifier>
-			<Abstract type="html">Получает настройки текущего пользователя в данном приложении.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountGetAppPermissions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getAppPermissions</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountGetAppPermissions:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetActiveOffers:</TokenIdentifier>
-			<Abstract type="html">Возвращает список активных рекламных предложений (офферов), выполнив которые пользователь сможет получить соответствующее количество голосов на свой счёт внутри приложения.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountGetActiveOffers:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getActiveOffers</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountGetActiveOffers:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountBanUser:</TokenIdentifier>
-			<Abstract type="html">Добавляет пользователя в черный список.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountBanUser:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.banUser</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountBanUser:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountUnbanUser:</TokenIdentifier>
-			<Abstract type="html">Убирает пользователя из черного списка.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountUnbanUser:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.unbanUser</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountUnbanUser:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accountGetBanned:</TokenIdentifier>
-			<Abstract type="html">Возвращает список пользователей, находящихся в черном списке.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)accountGetBanned:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/account.getBanned</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/accountGetBanned:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGet:</TokenIdentifier>
-			<Abstract type="html">Возвращает данные, необходимые для показа списка новостей для текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedGet:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.get</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedGet:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetRecommended:</TokenIdentifier>
-			<Abstract type="html">Получает список новостей, рекомендованных пользователю</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedGetRecommended:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getRecommended</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedGetRecommended:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetComments:</TokenIdentifier>
-			<Abstract type="html">Возвращает данные, необходимые для показа раздела комментариев в новостях пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedGetComments:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getComments</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedGetComments:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetMentions:</TokenIdentifier>
-			<Abstract type="html">Возвращает список записей пользователей на своих стенах, в которых упоминается указанный пользователь</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedGetMentions:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getMentions</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedGetMentions:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetBanned:</TokenIdentifier>
-			<Abstract type="html">Возвращает список пользователей и групп, которые текущий пользователь скрыл из ленты новостей</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedGetBanned:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getBanned</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedGetBanned:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedAddBan:</TokenIdentifier>
-			<Abstract type="html">Запрещает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedAddBan:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.addBan</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedAddBan:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedDeleteBan:</TokenIdentifier>
-			<Abstract type="html">Разрешает показывать новости от заданных пользователей и групп в ленте новостей текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedDeleteBan:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.deleteBan</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedDeleteBan:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedSearch:</TokenIdentifier>
-			<Abstract type="html">Возвращает результаты поиска по статусам</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedSearch:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.search</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedSearch:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedGetLists:</TokenIdentifier>
-			<Abstract type="html">Возвращает пользовательские списки новостей</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedGetLists:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.getLists</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/newsfeedGetLists:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/newsfeedUnsubscribe:</TokenIdentifier>
-			<Abstract type="html">Отписывает текущего пользователя от комментариев к заданному объекту</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)newsfeedUnsubscribe:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/newsfeed.unsubscribe</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/newsfeedUnsubscribe:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGet:</TokenIdentifier>
-			<Abstract type="html">Возвращает список аудиозаписей пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGet:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.get</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGet:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetByID:</TokenIdentifier>
-			<Abstract type="html">Возвращает информацию об аудиозаписях</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGetByID:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getById</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGetByID:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetLyrics:</TokenIdentifier>
-			<Abstract type="html">Возвращает текст аудиозаписи</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGetLyrics:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getLyrics</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGetLyrics:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioSearch:</TokenIdentifier>
-			<Abstract type="html">Возвращает список аудиозаписей в соответствии с заданным критерием поиска</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioSearch:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.search</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioSearch:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetUploadServer:</TokenIdentifier>
-			<Abstract type="html">Возвращает адрес сервера для загрузки аудиозаписей</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGetUploadServer:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getUploadServer</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGetUploadServer:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioSave:</TokenIdentifier>
-			<Abstract type="html">Сохраняет аудиозаписи после успешной загрузки</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioSave:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.save</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioSave:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioAdd:</TokenIdentifier>
-			<Abstract type="html">Копирует аудиозапись на страницу пользователя или группы</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioAdd:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.add</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioAdd:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioDelete:</TokenIdentifier>
-			<Abstract type="html">Удаляет аудиозапись со страницы пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioDelete:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.delete</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioDelete:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioEdit:</TokenIdentifier>
-			<Abstract type="html">Редактирует данные аудиозаписи на странице пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioEdit:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.edit</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioEdit:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioReorder:</TokenIdentifier>
-			<Abstract type="html">Изменяет порядок аудиозаписи, перенося ее между аудиозаписями, идентификаторы которых переданы параметрами after и before</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioReorder:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.reorder</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioReorder:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioRestore:</TokenIdentifier>
-			<Abstract type="html">Восстанавливает аудиозапись после удаления</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioRestore:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.restore</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioRestore:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetAlbums:</TokenIdentifier>
-			<Abstract type="html">Возвращает список альбомов аудиозаписей пользователя или группы</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGetAlbums:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getAlbums</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGetAlbums:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioAddAlbum:</TokenIdentifier>
-			<Abstract type="html">Создает пустой альбом аудиозаписей</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioAddAlbum:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.addAlbum</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioAddAlbum:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioEditAlbum:</TokenIdentifier>
-			<Abstract type="html">Редактирует название альбома аудиозаписей</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioEditAlbum:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.editAlbum</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioEditAlbum:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioDeleteAlbum:</TokenIdentifier>
-			<Abstract type="html">Удаляет альбом аудиозаписей</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioDeleteAlbum:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.deleteAlbum</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioDeleteAlbum:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioMoveToAlbum:</TokenIdentifier>
-			<Abstract type="html">Перемещает аудиозаписи в альбом</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioMoveToAlbum:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.moveToAlbum</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioMoveToAlbum:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioSetBroadcast:</TokenIdentifier>
-			<Abstract type="html">Транслирует аудиозапись в статус пользователю или сообществу</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioSetBroadcast:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.setBroadcast</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioSetBroadcast:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetBroadcastList:</TokenIdentifier>
-			<Abstract type="html">Возвращает список друзей и сообществ пользователя, которые транслируют музыку в статус</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGetBroadcastList:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getBroadcastList</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGetBroadcastList:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetRecommendations:</TokenIdentifier>
-			<Abstract type="html">Возвращает список рекомендуемых аудиозаписей на основе списка воспроизведения заданного пользователя или на основе одной выбранной аудиозаписи</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGetRecommendations:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getRecommendations</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGetRecommendations:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetPopular:</TokenIdentifier>
-			<Abstract type="html">Возвращает список аудиозаписей из раздела &quot;Популярное&quot;</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGetPopular:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getPopular</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGetPopular:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/audioGetCount:</TokenIdentifier>
-			<Abstract type="html">Возвращает количество аудиозаписей пользователя или сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)audioGetCount:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/audio.getCount</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/audioGetCount:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardGetTopics:</TokenIdentifier>
-			<Abstract type="html">Возвращает список тем в обсуждениях указанной группы.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardGetTopics:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.getTopics</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardGetTopics:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardGetComments:</TokenIdentifier>
-			<Abstract type="html">Возвращает список сообщений в указанной теме.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardGetComments:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.getComments</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardGetComments:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardAddTopic:</TokenIdentifier>
-			<Abstract type="html">Создает новую тему в списке обсуждений группы.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardAddTopic:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.addTopic</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardAddTopic:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardAddComment:</TokenIdentifier>
-			<Abstract type="html">Добавляет новое сообщение в теме сообщества.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardAddComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.addComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardAddComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardDeleteTopic:</TokenIdentifier>
-			<Abstract type="html">Удаляет тему в обсуждениях группы</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardDeleteTopic:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.deleteTopic</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardDeleteTopic:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardEditTopic:</TokenIdentifier>
-			<Abstract type="html">Изменяет заголовок темы в списке обсуждений группы</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardEditTopic:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.editTopic</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardEditTopic:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardEditComment:</TokenIdentifier>
-			<Abstract type="html">Редактирует одно из сообщений в теме группы</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardEditComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.editComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardEditComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardRestoreComment:</TokenIdentifier>
-			<Abstract type="html">Восстанавливает удаленное сообщение темы в обсуждениях группы</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardRestoreComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.restoreComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardRestoreComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardDeleteComment:</TokenIdentifier>
-			<Abstract type="html">Удаляет сообщение темы в обсуждениях сообщества</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardDeleteComment:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.deleteComment</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardDeleteComment:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardOpenTopic:</TokenIdentifier>
-			<Abstract type="html">Открывает ранее закрытую тему (в ней станет возможно оставлять новые сообщения).</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardOpenTopic:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.openTopic</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardOpenTopic:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardCloseTopic:</TokenIdentifier>
-			<Abstract type="html">Закрывает тему в списке обсуждений группы (в такой теме невозможно оставлять новые сообщения)</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardCloseTopic:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.closeTopic</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardCloseTopic:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardFixTopic:</TokenIdentifier>
-			<Abstract type="html">Закрепляет тему в списке обсуждений группы (такая тема при любой сортировке выводится выше остальных)</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardFixTopic:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.fixTopic</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardFixTopic:</Anchor>
-            <NodeRef refid="8"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/boardUnfixTopic:</TokenIdentifier>
-			<Abstract type="html">Отменяет прикрепление темы в списке обсуждений группы (тема будет выводиться согласно выбранной сортировке)</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (VKRequest *)boardUnfixTopic:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">ключи-значения, полный список здесь: https://vk.com/dev/board.unfixTopic</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">@see info</Abstract></ReturnValue>
-			<Anchor>//api/name/boardUnfixTopic:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
