@@ -26,15 +26,39 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/boundary">&nbsp;&nbsp;&nbsp;&nbsp;boundary</option>
+	
+	<option value="//api/name/contentLength">&nbsp;&nbsp;&nbsp;&nbsp;contentLength</option>
+	
+	<option value="//api/name/data">&nbsp;&nbsp;&nbsp;&nbsp;data</option>
 	
 	
 	
 	
 	
 	
+	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/appendAudioFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendAudioFile:name:field:</option>
 	
+	<option value="//api/name/appendDocumentFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendDocumentFile:name:field:</option>
 	
+	<option value="//api/name/appendImageFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendImageFile:name:field:</option>
+	
+	<option value="//api/name/appendVideoFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendVideoFile:name:field:</option>
 	
 	
 	
@@ -45,16 +69,48 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Свойства">Свойства</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Добавление объекта">Добавление объекта</a></span></li>
+	
+</ul></li>
 
 
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/boundary">boundary</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/contentLength">contentLength</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/data">data</a></span></li>
+	
+</ul></li>
 
 
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendAudioFile:name:field:">appendAudioFile:name:field:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendDocumentFile:name:field:">appendDocumentFile:name:field:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendImageFile:name:field:">appendImageFile:name:field:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendVideoFile:name:field:">appendVideoFile:name:field:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
@@ -88,15 +144,452 @@
 					
 					
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Класс предназначен для создания тела запроса при отправке на сервер социальной
+сети ВКонтакте аудио, видео, изображений и документов.</p>
+
+<p>В частности класс предназначен для решения проблемы отправки нескольких файлов
+на сервера ВК.</p>
+
+<p>Дополнительная информация о формировании тела POST запроса может быть найдена по
+следующим ссылкам:</p>
+
+<ol>
+<li><a href="http://www.ietf.org/rfc/rfc1867.txt">http://www.ietf.org/rfc/rfc1867.txt</a></li>
+<li><a href="http://ru.wikipedia.org/wiki/HTTP">http://ru.wikipedia.org/wiki/HTTP</a> (Раздел: Множественное содержимое)</li>
+<li><a href="http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html">http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html</a></li>
+</ol>
+
+					</div>
 					
 					
 					
 					
 					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Свойства" name="task_Свойства"></a>
+						<h3 class="subsubtitle task-title">Свойства</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/data">&nbsp;&nbsp;data</a></code>
+		<span class="tooltip"><p>Байтовое представление данных</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/boundary">&nbsp;&nbsp;boundary</a></code>
+		<span class="tooltip"><p>Строка &ldquo;граница&rdquo; между данными</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/contentLength">&nbsp;&nbsp;contentLength</a></code>
+		<span class="tooltip"><p>Размер данных в байтах</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Добавление объекта" name="task_Добавление объекта"></a>
+						<h3 class="subsubtitle task-title">Добавление объекта</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendAudioFile:name:field:">&ndash;&nbsp;appendAudioFile:name:field:</a></code>
+		<span class="tooltip"><p>Добавление данных аудио файла в содержимое тела HTTP запроса</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendVideoFile:name:field:">&ndash;&nbsp;appendVideoFile:name:field:</a></code>
+		<span class="tooltip"><p>Добавление данных видео файла в содержимое тела HTTP запроса</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendDocumentFile:name:field:">&ndash;&nbsp;appendDocumentFile:name:field:</a></code>
+		<span class="tooltip"><p>Добавление данных документа в содержимое тела HTTP запроса</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendImageFile:name:field:">&ndash;&nbsp;appendImageFile:name:field:</a></code>
+		<span class="tooltip"><p>Добавление данных изображения в содержимое тела HTTP запроса</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
 					
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/boundary" title="boundary"></a>
+	<h3 class="subsubtitle method-title">boundary</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Строка &ldquo;граница&rdquo; между данными</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *boundary</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKHTTPBody.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/contentLength" title="contentLength"></a>
+	<h3 class="subsubtitle method-title">contentLength</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Размер данных в байтах</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) NSUInteger contentLength</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKHTTPBody.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/data" title="data"></a>
+	<h3 class="subsubtitle method-title">data</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Байтовое представление данных</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSData *data</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKHTTPBody.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/appendAudioFile:name:field:" title="appendAudioFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">appendAudioFile:name:field:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавление данных аудио файла в содержимое тела HTTP запроса</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)appendAudioFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>байтовое представление аудио файла</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>имя аудио файла</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>наименования HTML поля, которое использовалось для отправки файла</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKHTTPBody.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/appendDocumentFile:name:field:" title="appendDocumentFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">appendDocumentFile:name:field:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавление данных документа в содержимое тела HTTP запроса</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)appendDocumentFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>байтовое представление документа</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>имя файла документа</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>наименование HTML поля, которое использовалось для отправки файла</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKHTTPBody.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/appendImageFile:name:field:" title="appendImageFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">appendImageFile:name:field:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавление данных изображения в содержимое тела HTTP запроса</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)appendImageFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>байтовое представление изображения</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>имя файла изображения</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>наименование HTML поля, которое использовалось для отправки файла</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKHTTPBody.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/appendVideoFile:name:field:" title="appendVideoFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">appendVideoFile:name:field:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавление данных видео файла в содержимое тела HTTP запроса</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)appendVideoFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>байтовое представление видео файла</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>имя видео файла</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>наименование HTML поля, которое использовалось для отправки файла</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKHTTPBody.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 				</div>
