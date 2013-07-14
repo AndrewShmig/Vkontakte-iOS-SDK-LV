@@ -39,13 +39,15 @@
 
 - (instancetype)init
 {
-    if(self = [super init]){
+    if (self = [super init]) {
         _body = [[NSMutableData alloc] init];
         _isEmpty = YES;
 
         _boundary = [[NSProcessInfo processInfo] globallyUniqueString];
-        _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n", _boundary];
-        _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n", _boundary];
+        _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n",
+                                                     _boundary];
+        _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n",
+                                                     _boundary];
     }
 
     return self;
@@ -94,7 +96,7 @@
 - (NSData *)data
 {
 //    данные еще не добавлены
-    if(_isEmpty)
+    if (_isEmpty)
         return _body;
 
 //    какие-то файлы добавлены
@@ -111,19 +113,73 @@
              field:(NSString *)field
 {
 //    header part
-    if(_isEmpty)
+    if (_isEmpty)
         [_body appendData:[_boundary dataUsingEncoding:NSUTF8StringEncoding]];
     else
         [_body appendData:[_boundaryHeader dataUsingEncoding:NSUTF8StringEncoding]];
 
-    NSString *contentDisposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n\r\n",name, field];
+    NSString *contentDisposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",
+                                                              name,
+                                                              field];
     [_body appendData:[contentDisposition dataUsingEncoding:NSUTF8StringEncoding]];
 
-//    TODO: здесь должно быть определение Content-Type по расширению файла
-//    добавить "Content-Type: ..... "
+//    Content-Type
+    NSString *contentType = [self determineContentTypeFromExtension:[[name componentsSeparatedByString:@"."]
+                                                                           lastObject]];
+    if (nil != contentType) {
+        NSString *fullContentType = [NSString stringWithFormat:@"Content-Type: %@\r\n\r\n",
+                                                               contentType];
+        [_body appendData:[fullContentType dataUsingEncoding:NSUTF8StringEncoding]];
+    } else {
+        [_body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    }
 
 //    file part
     [_body appendData:file];
+}
+
+- (NSString *)determineContentTypeFromExtension:(NSString *)extension
+{
+    NSDictionary *contentTypes = @{
+
+//            audio
+            @"mid"  : @"audio/midi",
+            @"midi" : @"audio/midi",
+            @"mpg"  : @"audio/mpeg",
+            @"mp3"  : @"audio/mpeg3",
+            @"wav"  : @"audio/wav",
+
+//            video
+            @"avi"  : @"video/avi",
+            @"mpeg" : @"video/mpeg",
+            @"mpg"  : @"video/mpeg",
+            @"mov"  : @"video/quicktime",
+
+//            image
+            @"bmp"  : @"image/bmp",
+            @"gif"  : @"image/gif",
+            @"jpeg" : @"image/jpeg",
+            @"jpg"  : @"image/jpeg",
+            @"png"  : @"image/png",
+            @"tif"  : @"image/tiff",
+            @"tiff" : @"image/tiff",
+            @"ico"  : @"image/x-icon",
+
+//            documents
+            @"pdf"  : @"application/pdf",
+            @"xls"  : @"application/excel",
+            @"ppt"  : @"application/mspowerpoint",
+            @"pps"  : @"application/mspowerpoint",
+            @"doc"  : @"application/msword",
+            @"docx" : @"application/msword",
+            @"psd"  : @"application/octet-stream",
+            @"rtf"  : @"application/rtf",
+            @"gz"   : @"application/x-compressed",
+            @"tgz"  : @"application/x-compressed",
+            @"zip"  : @"application/x-compressed"
+    };
+
+    return contentTypes[[extension lowercaseString]];
 }
 
 @end
