@@ -10,6 +10,9 @@
 * [Как работать с капчей ВК?](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11)
 * [Базовый пример: установка и настройка ВКонтакте iOS SDK](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/16)
 
+Примеры:
+* [Проекты из описаний документации](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/tree/master/Project/Examples)
+
 Связанные статьи на Хабре:
 - [Вконтакте iOS SDK v1](http://habrahabr.ru/post/184560/)
 - [Вконтакте iOS SDK v2](http://habrahabr.ru/post/185766/)
