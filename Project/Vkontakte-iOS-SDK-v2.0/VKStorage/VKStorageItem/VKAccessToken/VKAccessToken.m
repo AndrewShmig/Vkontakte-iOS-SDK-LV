@@ -105,7 +105,7 @@
                     permissions:@[]];
 }
 
-#pragma mark - Overriden methods
+#pragma mark - Overridden methods
 
 - (NSString *)description
 {
