@@ -149,10 +149,13 @@
 {
     INFO_LOG();
 
-    VKAccessToken *copyToken = [[VKAccessToken alloc] initWithUserID:self.userID
-                                                         accessToken:self.token
-                                                            liveTime:self.liveTime
-                                                         permissions:self.permissions];
+    VKAccessToken *copyToken = [[VKAccessToken alloc] init];
+
+    copyToken->_userID = self.userID;
+    copyToken->_liveTime = self.liveTime;
+    copyToken->_creationTime = self.creationTime;
+    copyToken->_permissions = self.permissions;
+    copyToken->_token = self.token;
 
     return copyToken;
 }
