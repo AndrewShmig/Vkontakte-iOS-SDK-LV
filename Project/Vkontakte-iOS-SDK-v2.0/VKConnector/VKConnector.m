@@ -153,13 +153,13 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 //            пользователь одобрил наше приложение, парсим полученные данные
             NSString *accessToken = [parts[0] componentsSeparatedByString:@"="][1];
-            NSTimeInterval expirationTime = [[parts[1] componentsSeparatedByString:@"="][1] doubleValue];
+            NSTimeInterval liveTime = [[parts[1] componentsSeparatedByString:@"="][1] doubleValue];
             NSUInteger userID = [[parts[2] componentsSeparatedByString:@"="][1] unsignedIntValue];
 
             _accessToken = [[VKAccessToken alloc]
                                            initWithUserID:userID
                                               accessToken:accessToken
-                                                 liveTime:expirationTime
+                                                 liveTime:liveTime
                                               permissions:[_settings componentsSeparatedByString:@","]];
 
 //            сохраняем токен доступа в хранилище
