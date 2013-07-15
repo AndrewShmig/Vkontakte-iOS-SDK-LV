@@ -159,7 +159,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
             _accessToken = [[VKAccessToken alloc]
                                            initWithUserID:userID
                                               accessToken:accessToken
-                                           expirationTime:expirationTime
+                                                 liveTime:expirationTime
                                               permissions:[_settings componentsSeparatedByString:@","]];
 
 //            сохраняем токен доступа в хранилище

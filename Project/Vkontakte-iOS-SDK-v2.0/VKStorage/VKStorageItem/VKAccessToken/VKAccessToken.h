@@ -57,9 +57,9 @@
 @property (nonatomic, readonly) NSTimeInterval creationTime;
 
 /**
- Время истечения действия токена.
+ Время жизни токена доступа.
  */
-@property (nonatomic, readonly) NSTimeInterval expirationTime;
+@property (nonatomic, readonly) NSTimeInterval liveTime;
 
 /**
  Пользовательский идентификатор в социальной сети ВКонтакте.
@@ -98,13 +98,13 @@
 
  @param userID Пользовательский идентификатор в социальной сети ВКонтакте.
  @param token Токен доступа.
- @param expirationTime Время истечения действия токена доступа.
+ @param liveTime Время жизни токена доступа.
  @param permissions Список полученных приложением прав.
  @return Объект VKAccessToken класса.
  */
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
-                expirationTime:(NSTimeInterval)expirationTime
+                      liveTime:(NSTimeInterval)liveTime
                    permissions:(NSArray *)permissions;
 
 /**
@@ -112,25 +112,25 @@
 
  permissions принимает значение по умолчанию  @[].
 
- @see initWithUserID:accessToken:expirationTime:permissions:
+ @see initWithUserID:accessToken:liveTime:permissions:
 
  @param userID Пользовательский идентификатор в социальной сети ВКонтакте.
  @param token Токен доступа.
- @param expirationTime Время истечения действия токена доступа.
+ @param liveTime Время жизни токена доступа.
  @return Объект VKAccessToken класса.
  */
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
-                expirationTime:(NSTimeInterval)expirationTime;
+                      liveTime:(NSTimeInterval)liveTime;
 
 /**
 Вторичный метод инициализации класса.
 
  permissions принимает значение по умолчанию @[].
 
- expirationTime принимает значение по умолчанию 0.
+ liveTime принимает значение по умолчанию 0.
 
- @see initWithUserID:accessToken:expirationTime:permissions:
+ @see initWithUserID:accessToken:liveTime:permissions:
 
  @param userID Пользовательский идентификатор в социальной сети ВКонтакте
  @param token Токен доступа.

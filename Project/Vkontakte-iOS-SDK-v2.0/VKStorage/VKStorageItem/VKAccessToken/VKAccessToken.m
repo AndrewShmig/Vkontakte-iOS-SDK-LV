@@ -42,12 +42,12 @@
 
     self = [super init];
 
-    if(!self)
+    if (!self)
         return nil;
 
-    self->_userID = (NSUInteger)[aDecoder decodeIntegerForKey:@"userID"];
+    self->_userID = (NSUInteger) [aDecoder decodeIntegerForKey:@"userID"];
     self->_token = [aDecoder decodeObjectForKey:@"token"];
-    self->_expirationTime = [aDecoder decodeDoubleForKey:@"expirationTime"];
+    self->_liveTime = [aDecoder decodeDoubleForKey:@"liveTime"];
     self->_permissions = [aDecoder decodeObjectForKey:@"permissions"];
     self->_creationTime = [aDecoder decodeDoubleForKey:@"creationTime"];
 
@@ -56,7 +56,7 @@
 
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
-                expirationTime:(NSTimeInterval)expirationTime
+                      liveTime:(NSTimeInterval)liveTime
                    permissions:(NSArray *)permissions
 {
     INFO_LOG();
@@ -64,7 +64,7 @@
     if (self = [super init]) {
         _userID = userID;
         _token = [token copy];
-        _expirationTime = expirationTime;
+        _liveTime = liveTime;
         _permissions = [permissions copy];
         _creationTime = [[NSDate date] timeIntervalSince1970];
     }
@@ -74,13 +74,13 @@
 
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
-                expirationTime:(NSTimeInterval)expirationTime
+                      liveTime:(NSTimeInterval)liveTime
 {
     INFO_LOG();
 
     return [self initWithUserID:userID
                     accessToken:token
-                 expirationTime:expirationTime
+                       liveTime:liveTime
                     permissions:@[]];
 }
 
@@ -91,7 +91,7 @@
 
     return [self initWithUserID:userID
                     accessToken:token
-                 expirationTime:0
+                       liveTime:0
                     permissions:@[]];
 }
 
@@ -101,7 +101,7 @@
 
     return [self initWithUserID:0
                     accessToken:@""
-                 expirationTime:0
+                       liveTime:0
                     permissions:@[]];
 }
 
@@ -113,7 +113,7 @@
 
     NSDictionary *desc = @{
             @"User ID"         : @(self.userID),
-            @"Expiration time" : @(((NSUInteger) (self.creationTime + self.expirationTime))),
+            @"Expiration time" : @(((NSUInteger) (self.creationTime + self.liveTime))),
             @"Creation time"   : @(((NSUInteger) self.creationTime)),
             @"Permissions"     : self.permissions,
             @"Token"           : self.token
@@ -128,7 +128,7 @@
 
     [aCoder encodeInteger:_userID forKey:@"userID"];
     [aCoder encodeObject:_token forKey:@"token"];
-    [aCoder encodeDouble:_expirationTime forKey:@"expirationTime"];
+    [aCoder encodeDouble:_liveTime forKey:@"liveTime"];
     [aCoder encodeObject:_permissions forKey:@"permissions"];
     [aCoder encodeDouble:_creationTime forKey:@"creationTime"];
 }
@@ -151,7 +151,7 @@
 
     VKAccessToken *copyToken = [[VKAccessToken alloc] initWithUserID:self.userID
                                                          accessToken:self.token
-                                                      expirationTime:self.expirationTime
+                                                            liveTime:self.liveTime
                                                          permissions:self.permissions];
 
     return copyToken;
@@ -172,10 +172,10 @@
 
     NSTimeInterval currentTimestamp = [[NSDate date] timeIntervalSince1970];
 
-    if (self.expirationTime == 0 && [self hasPermission:@"offline"])
+    if (self.liveTime == 0 && [self hasPermission:@"offline"])
         return NO;
     else
-        return ((self.expirationTime + self.creationTime) < currentTimestamp);
+        return ((self.liveTime + self.creationTime) < currentTimestamp);
 }
 
 - (BOOL)isValid

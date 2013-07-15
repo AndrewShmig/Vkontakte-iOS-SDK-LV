@@ -84,38 +84,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setExpirationTime:</TokenIdentifier>
-			<Abstract type="html">Время истечения действия токена.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setLiveTime:</TokenIdentifier>
+			<Abstract type="html">Время жизни токена доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expirationTime</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval liveTime</Declaration>
 			
 			
-			<Anchor>//api/name/expirationTime</Anchor>
+			<Anchor>//api/name/liveTime</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/expirationTime</TokenIdentifier>
-			<Abstract type="html">Время истечения действия токена.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/liveTime</TokenIdentifier>
+			<Abstract type="html">Время жизни токена доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expirationTime</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval liveTime</Declaration>
 			
 			
-			<Anchor>//api/name/expirationTime</Anchor>
+			<Anchor>//api/name/liveTime</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/expirationTime</TokenIdentifier>
-			<Abstract type="html">Время истечения действия токена.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/liveTime</TokenIdentifier>
+			<Abstract type="html">Время жизни токена доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval expirationTime</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval liveTime</Declaration>
 			
 			
-			<Anchor>//api/name/expirationTime</Anchor>
+			<Anchor>//api/name/liveTime</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -267,11 +267,11 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:expirationTime:permissions:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:liveTime:permissions:</TokenIdentifier>
 			<Abstract type="html">Основной метод инициализации.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>- (instancetype)initWithUserID:(NSUInteger)userID accessToken:(NSString *)token expirationTime:(NSTimeInterval)expirationTime permissions:(NSArray *)permissions</Declaration>
+			<Declaration>- (instancetype)initWithUserID:(NSUInteger)userID accessToken:(NSString *)token liveTime:(NSTimeInterval)liveTime permissions:(NSArray *)permissions</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>userID</Name>
@@ -280,29 +280,29 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 					<Name>token</Name>
 					<Abstract type="html">Токен доступа.</Abstract>
 				</Parameter><Parameter>
-					<Name>expirationTime</Name>
-					<Abstract type="html">Время истечения действия токена доступа.</Abstract>
+					<Name>liveTime</Name>
+					<Abstract type="html">Время жизни токена доступа.</Abstract>
 				</Parameter><Parameter>
 					<Name>permissions</Name>
 					<Abstract type="html">Список полученных приложением прав.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Объект VKAccessToken класса.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithUserID:accessToken:expirationTime:permissions:</Anchor>
+			<Anchor>//api/name/initWithUserID:accessToken:liveTime:permissions:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:expirationTime:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:liveTime:</TokenIdentifier>
 			<Abstract type="html">Вторичный метод инициализации класса.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:expirationTime:permissions:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:liveTime:permissions:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
-			<Declaration>- (instancetype)initWithUserID:(NSUInteger)userID accessToken:(NSString *)token expirationTime:(NSTimeInterval)expirationTime</Declaration>
+			<Declaration>- (instancetype)initWithUserID:(NSUInteger)userID accessToken:(NSString *)token liveTime:(NSTimeInterval)liveTime</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>userID</Name>
@@ -311,12 +311,12 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 					<Name>token</Name>
 					<Abstract type="html">Токен доступа.</Abstract>
 				</Parameter><Parameter>
-					<Name>expirationTime</Name>
-					<Abstract type="html">Время истечения действия токена доступа.</Abstract>
+					<Name>liveTime</Name>
+					<Abstract type="html">Время жизни токена доступа.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">Объект VKAccessToken класса.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithUserID:accessToken:expirationTime:</Anchor>
+			<Anchor>//api/name/initWithUserID:accessToken:liveTime:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
@@ -326,7 +326,7 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:expirationTime:permissions:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:liveTime:permissions:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
