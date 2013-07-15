@@ -49,27 +49,27 @@
 /**
  Массив пользовательских разрешений к которым был получен доступ приложением
  */
-@property (nonatomic, readonly) NSArray *permissions;
+@property (nonatomic, copy, readonly) NSArray *permissions;
 
 /**
 Время создания токена
 */
-@property (nonatomic, readonly) NSTimeInterval creationTime;
+@property (nonatomic, assign, readonly) NSTimeInterval creationTime;
 
 /**
  Время жизни токена доступа.
  */
-@property (nonatomic, readonly) NSTimeInterval liveTime;
+@property (nonatomic, assign, readonly) NSTimeInterval liveTime;
 
 /**
  Пользовательский идентификатор в социальной сети ВКонтакте.
  */
-@property (nonatomic, readonly) NSUInteger userID;
+@property (nonatomic, assign, readonly) NSUInteger userID;
 
 /**
  Токен доступа.
  */
-@property (nonatomic, readonly) NSString *token;
+@property (nonatomic, copy, readonly) NSString *token;
 
 /**
  Истекло ли время действия текущего токена доступа или нет.
