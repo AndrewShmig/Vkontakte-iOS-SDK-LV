@@ -151,11 +151,11 @@
 
     VKAccessToken *copyToken = [[VKAccessToken alloc] init];
 
-    copyToken->_permissions = self.permissions;
-    copyToken->_creationTime = self.creationTime;
-    copyToken->_liveTime = self.liveTime;
-    copyToken->_userID = self.userID;
-    copyToken->_token = self.token;
+    copyToken->_permissions = [_permissions copy];
+    copyToken->_creationTime = _creationTime;
+    copyToken->_liveTime = _liveTime;
+    copyToken->_userID = _userID;
+    copyToken->_token = [_token copy];
 
     return copyToken;
 }
