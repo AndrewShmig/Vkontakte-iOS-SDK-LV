@@ -42,7 +42,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"token"
-                                           expirationTime:1
+                                           liveTime:1
                                               permissions:@[@"offline",
                                                             @"wall",
                                                             @"friends",
@@ -81,7 +81,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@""
-                                           expirationTime:0];
+                                           liveTime:0];
 
     STAssertTrue([token isExpired], @"Expired token.");
 }
@@ -91,7 +91,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@""
-                                           expirationTime:0
+                                           liveTime:0
                                               permissions:@[@"offline"]];
 
     STAssertFalse([token isExpired], @"Not expired token.");
@@ -103,7 +103,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@""
-                                           expirationTime:currentTimestamp + 80000
+                                           liveTime:currentTimestamp + 80000
                                               permissions:@[@"friends",
                                                             @"wall"]];
 
@@ -115,7 +115,7 @@
     VKAccessToken *token1 = [[VKAccessToken alloc]
                                             initWithUserID:1
                                                accessToken:@"1"
-                                            expirationTime:1
+                                            liveTime:1
                                                permissions:@[@"wall",
                                                              @"friends"]];
     VKAccessToken *token1Copy = [token1 copy];
@@ -174,13 +174,13 @@
     VKAccessToken *token1 = [[VKAccessToken alloc]
                                             initWithUserID:1
                                                accessToken:@"1"
-                                            expirationTime:0
+                                            liveTime:0
                                                permissions:@[@"offline",
                                                              @"friends"]];
     VKAccessToken *token2 = [[VKAccessToken alloc]
                                             initWithUserID:1
                                                accessToken:@"1"
-                                            expirationTime:0
+                                            liveTime:0
                                                permissions:@[@"offline",
                                                              @"friends"]];
 
@@ -192,13 +192,13 @@
     VKAccessToken *token1 = [[VKAccessToken alloc]
                                             initWithUserID:1
                                                accessToken:@"1"
-                                            expirationTime:0
+                                            liveTime:0
                                                permissions:@[@"friends",
                                                              @"offline"]];
     VKAccessToken *token2 = [[VKAccessToken alloc]
                                             initWithUserID:1
                                                accessToken:@"1"
-                                            expirationTime:0
+                                            liveTime:0
                                                permissions:@[@"offline",
                                                              @"friends"]];
 
@@ -210,13 +210,13 @@
     VKAccessToken *token1 = [[VKAccessToken alloc]
                                             initWithUserID:2
                                                accessToken:@"1"
-                                            expirationTime:0
+                                            liveTime:0
                                                permissions:@[@"friends",
                                                              @"offline"]];
     VKAccessToken *token2 = [[VKAccessToken alloc]
                                             initWithUserID:1
                                                accessToken:@"1"
-                                            expirationTime:0
+                                            liveTime:0
                                                permissions:@[@"offline",
                                                              @"friends"]];
 

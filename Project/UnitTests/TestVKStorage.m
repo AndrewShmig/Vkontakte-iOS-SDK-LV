@@ -30,7 +30,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                                 liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorage sharedStorage]
@@ -58,7 +58,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                                 liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorage sharedStorage]
@@ -74,12 +74,14 @@
 
 - (void)testFullStoragePath
 {
-    STAssertNotNil([[VKStorage sharedStorage] fullStoragePath], @"Full storage path equals nil");
+    STAssertNotNil([[VKStorage sharedStorage]
+                               fullStoragePath], @"Full storage path equals nil");
 }
 
 - (void)testFullCacheStoragePath
 {
-    STAssertNotNil([[VKStorage sharedStorage] fullCacheStoragePath], @"Full cache storage path equals nil");
+    STAssertNotNil([[VKStorage sharedStorage]
+                               fullCacheStoragePath], @"Full cache storage path equals nil");
 }
 
 - (void)testRemoveItem1
@@ -87,7 +89,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                           liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorage sharedStorage]
@@ -105,7 +107,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                           liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorage sharedStorage]
@@ -122,7 +124,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                           liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorage sharedStorage]
@@ -139,7 +141,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                           liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorage sharedStorage]
@@ -164,7 +166,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                           liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorage sharedStorage]
@@ -201,7 +203,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                           liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorage sharedStorage]

@@ -26,7 +26,7 @@
     VKAccessToken *token = [[VKAccessToken alloc]
                                            initWithUserID:1
                                               accessToken:@"1"
-                                           expirationTime:0
+                                                 liveTime:0
                                               permissions:@[@"offline",
                                                             @"friends"]];
     VKStorageItem *item = [[VKStorageItem alloc]
