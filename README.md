@@ -10,6 +10,7 @@
 * [Как работать с капчей ВК?](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11)
 * [Базовый пример: установка и настройка ВКонтакте iOS SDK](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/16)
 * [Получение и отображения списка друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/18)
+* [Использование кэша данных. Получение и отображение списка друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/19)
 
 Примеры:
 * [Проекты из описаний документации](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/tree/master/Project/Examples)
