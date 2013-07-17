@@ -44,9 +44,12 @@
     NSURLConnection *_connection;
 
     NSMutableData *_receivedData;
+    NSMutableData* _body;
+    NSString* _boundary, *_boundaryHeader, *_boundaryFooter;
     NSUInteger _expectedDataSize;
 
     BOOL _isDataFromCache;
+    BOOL _isBodyEmpty;
 }
 
 #pragma mark Visible VKRequest methods
@@ -111,6 +114,12 @@
 
     _request = [request mutableCopy];
     _receivedData = [[NSMutableData alloc] init];
+    _body = [[NSMutableData alloc] init];
+    _boundary = [[NSProcessInfo processInfo] globallyUniqueString];
+    _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n",
+                                                 _boundary];
+    _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n",
+                                                 _boundary];
     _connection = [[NSURLConnection alloc]
                                     initWithRequest:_request
                                            delegate:self
@@ -119,6 +128,7 @@
     _cacheLiveTime = VKCachedDataLiveTimeOneHour;
     _offlineMode = NO;
     _isDataFromCache = NO;
+    _isBodyEmpty = YES;
 
     return self;
 }
@@ -204,6 +214,18 @@
         return;
     }
 
+//    если тело запроса установлено, то внесем кое-какие завершающие штрихи
+    if(!_isBodyEmpty){
+        [_request setValue:[NSString stringWithFormat:@"%d", [_body length]]
+        forHTTPHeaderField:@"Content-Length"];
+        [_request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=\"%@\"", _boundary]
+        forHTTPHeaderField:@"Content-Type"];
+
+//        "закроем" тело
+        [_body appendData:[_boundaryFooter dataUsingEncoding:NSUTF8StringEncoding]];
+        [_request setHTTPBody:_body];
+    }
+
     [_connection start];
 }
 
@@ -214,6 +236,45 @@
     _receivedData = nil;
     _expectedDataSize = NSURLResponseUnknownContentLength;
     [_connection cancel];
+}
+
+#pragma mark - Request body manipulations
+
+
+- (void)appendAudioFile:(NSData *)file
+                   name:(NSString *)name
+                  field:(NSString *)field
+{
+    [self appendFile:file
+                name:name
+               field:field];
+}
+
+- (void)appendDocumentFile:(NSData *)file
+                      name:(NSString *)name
+                     field:(NSString *)field
+{
+    [self appendFile:file
+                name:name
+               field:field];
+}
+
+- (void)appendImageFile:(NSData *)file
+                   name:(NSString *)name
+                  field:(NSString *)field
+{
+    [self appendFile:file
+                name:name
+               field:field];
+}
+
+- (void)appendVideoFile:(NSData *)file
+                   name:(NSString *)name
+                  field:(NSString *)field
+{
+    [self appendFile:file
+                name:name
+               field:field];
 }
 
 #pragma mark - Overridden methods
@@ -424,6 +485,79 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     NSURL *newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", part1, part2]];
 
     return newURL;
+}
+
+- (void)appendFile:(NSData *)file
+              name:(NSString *)name
+             field:(NSString *)field
+{
+//    header part
+    [_body appendData:[_boundaryHeader dataUsingEncoding:NSUTF8StringEncoding]];
+
+    NSString *contentDisposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",
+                                                              field,
+                                                              name];
+    [_body appendData:[contentDisposition dataUsingEncoding:NSUTF8StringEncoding]];
+
+//    Content-Type
+    NSString *contentType = [self determineContentTypeFromExtension:[[name componentsSeparatedByString:@"."]
+                                                                           lastObject]];
+    if (nil != contentType) {
+        NSString *fullContentType = [NSString stringWithFormat:@"Content-Type: %@\r\n\r\n",
+                                                               contentType];
+        [_body appendData:[fullContentType dataUsingEncoding:NSUTF8StringEncoding]];
+    } else {
+        [_body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+
+//    file part
+    [_body appendData:file];
+
+    _isBodyEmpty = NO;
+}
+
+- (NSString *)determineContentTypeFromExtension:(NSString *)extension
+{
+    NSDictionary *contentTypes = @{
+
+//            audio
+            @"mid"  : @"audio/midi",
+            @"midi" : @"audio/midi",
+            @"mpg"  : @"audio/mpeg",
+            @"mp3"  : @"audio/mpeg3",
+            @"wav"  : @"audio/wav",
+
+//            video
+            @"avi"  : @"video/avi",
+            @"mpeg" : @"video/mpeg",
+            @"mpg"  : @"video/mpeg",
+            @"mov"  : @"video/quicktime",
+
+//            image
+            @"bmp"  : @"image/bmp",
+            @"gif"  : @"image/gif",
+            @"jpeg" : @"image/jpeg",
+            @"jpg"  : @"image/jpeg",
+            @"png"  : @"image/png",
+            @"tif"  : @"image/tiff",
+            @"tiff" : @"image/tiff",
+            @"ico"  : @"image/x-icon",
+
+//            documents
+            @"pdf"  : @"application/pdf",
+            @"xls"  : @"application/excel",
+            @"ppt"  : @"application/mspowerpoint",
+            @"pps"  : @"application/mspowerpoint",
+            @"doc"  : @"application/msword",
+            @"docx" : @"application/msword",
+            @"psd"  : @"application/octet-stream",
+            @"rtf"  : @"application/rtf",
+            @"gz"   : @"application/x-compressed",
+            @"tgz"  : @"application/x-compressed",
+            @"zip"  : @"application/x-compressed"
+    };
+
+    return contentTypes[[extension lowercaseString]];
 }
 
 @end

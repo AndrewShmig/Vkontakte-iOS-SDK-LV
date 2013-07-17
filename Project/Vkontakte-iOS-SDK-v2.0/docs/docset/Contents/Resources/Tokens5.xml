@@ -326,5 +326,97 @@
             <NodeRef refid="5"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendAudioFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Добавление данных аудио файла в содержимое тела HTTP запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendAudioFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">байтовое представление аудио файла</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">имя аудио файла</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">наименования HTML поля, которое использовалось для отправки файла</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendAudioFile:name:field:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendVideoFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Добавление данных видео файла в содержимое тела HTTP запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendVideoFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">байтовое представление видео файла</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">имя видео файла</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendVideoFile:name:field:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendDocumentFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Добавление данных документа в содержимое тела HTTP запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendDocumentFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">байтовое представление документа</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">имя файла документа</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendDocumentFile:name:field:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendImageFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Добавление данных изображения в содержимое тела HTTP запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendImageFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">байтовое представление изображения</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">имя файла изображения</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendImageFile:name:field:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
 	</File>
 </Tokens>

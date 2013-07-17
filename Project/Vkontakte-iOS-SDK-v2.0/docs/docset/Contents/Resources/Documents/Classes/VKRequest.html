@@ -63,6 +63,14 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/appendAudioFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendAudioFile:name:field:</option>
+	
+	<option value="//api/name/appendDocumentFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendDocumentFile:name:field:</option>
+	
+	<option value="//api/name/appendImageFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendImageFile:name:field:</option>
+	
+	<option value="//api/name/appendVideoFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendVideoFile:name:field:</option>
+	
 	<option value="//api/name/cancel">&nbsp;&nbsp;&nbsp;&nbsp;- cancel</option>
 	
 	<option value="//api/name/initWithHTTPMethod:URL:headers:body:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithHTTPMethod:URL:headers:body:</option>
@@ -94,6 +102,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы класса">Методы класса</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы экземпляра">Методы экземпляра</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Добавление файлов в тело запроса">Добавление файлов в тело запроса</a></span></li>
 	
 </ul></li>
 
@@ -128,6 +138,14 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendAudioFile:name:field:">appendAudioFile:name:field:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendDocumentFile:name:field:">appendDocumentFile:name:field:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendImageFile:name:field:">appendImageFile:name:field:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendVideoFile:name:field:">appendVideoFile:name:field:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancel">cancel</a></span></li>
 	
@@ -295,6 +313,42 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/cancel">&ndash;&nbsp;cancel</a></code>
 		<span class="tooltip"><p>Отмена запроса</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Добавление файлов в тело запроса" name="task_Добавление файлов в тело запроса"></a>
+						<h3 class="subsubtitle task-title">Добавление файлов в тело запроса</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendAudioFile:name:field:">&ndash;&nbsp;appendAudioFile:name:field:</a></code>
+		<span class="tooltip"><p>Добавление данных аудио файла в содержимое тела HTTP запроса</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendVideoFile:name:field:">&ndash;&nbsp;appendVideoFile:name:field:</a></code>
+		<span class="tooltip"><p>Добавление данных видео файла в содержимое тела HTTP запроса</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendDocumentFile:name:field:">&ndash;&nbsp;appendDocumentFile:name:field:</a></code>
+		<span class="tooltip"><p>Добавление данных документа в содержимое тела HTTP запроса</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendImageFile:name:field:">&ndash;&nbsp;appendImageFile:name:field:</a></code>
+		<span class="tooltip"><p>Добавление данных изображения в содержимое тела HTTP запроса</p></span>
 	</span>
 	
 	
@@ -666,6 +720,230 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/appendAudioFile:name:field:" title="appendAudioFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">appendAudioFile:name:field:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавление данных аудио файла в содержимое тела HTTP запроса</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)appendAudioFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>байтовое представление аудио файла</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>имя аудио файла</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>наименования HTML поля, которое использовалось для отправки файла</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/appendDocumentFile:name:field:" title="appendDocumentFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">appendDocumentFile:name:field:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавление данных документа в содержимое тела HTTP запроса</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)appendDocumentFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>байтовое представление документа</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>имя файла документа</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>наименование HTML поля, которое использовалось для отправки файла</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/appendImageFile:name:field:" title="appendImageFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">appendImageFile:name:field:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавление данных изображения в содержимое тела HTTP запроса</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)appendImageFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>байтовое представление изображения</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>имя файла изображения</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>наименование HTML поля, которое использовалось для отправки файла</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/appendVideoFile:name:field:" title="appendVideoFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">appendVideoFile:name:field:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Добавление данных видео файла в содержимое тела HTTP запроса</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)appendVideoFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>байтовое представление видео файла</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>имя видео файла</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>наименование HTML поля, которое использовалось для отправки файла</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/cancel" title="cancel"></a>
 	<h3 class="subsubtitle method-title">cancel</h3>
 	
@@ -936,7 +1214,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-07-15)</span><br />
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-07-17)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

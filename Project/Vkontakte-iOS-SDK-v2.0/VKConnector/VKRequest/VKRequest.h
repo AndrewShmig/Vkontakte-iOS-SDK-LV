@@ -251,4 +251,46 @@ responseErrorOccured:(id)error;
 */
 - (void)cancel;
 
+/**
+@name Добавление файлов в тело запроса
+*/
+/** Добавление данных аудио файла в содержимое тела HTTP запроса
+
+@param file байтовое представление аудио файла
+@param name имя аудио файла
+@param field наименования HTML поля, которое использовалось для отправки файла
+*/
+- (void)appendAudioFile:(NSData *)file
+                   name:(NSString *)name
+                  field:(NSString *)field;
+
+/** Добавление данных видео файла в содержимое тела HTTP запроса
+
+@param file байтовое представление видео файла
+@param name имя видео файла
+@param field наименование HTML поля, которое использовалось для отправки файла
+*/
+- (void)appendVideoFile:(NSData *)file
+                   name:(NSString *)name
+                  field:(NSString *)field;
+
+/** Добавление данных документа в содержимое тела HTTP запроса
+
+@param file байтовое представление документа
+@param name имя файла документа
+@param field наименование HTML поля, которое использовалось для отправки файла
+*/
+- (void)appendDocumentFile:(NSData *)file
+                      name:(NSString *)name
+                     field:(NSString *)field;
+
+/** Добавление данных изображения в содержимое тела HTTP запроса
+
+@param file байтовое представление изображения
+@param name имя файла изображения
+@param field наименование HTML поля, которое использовалось для отправки файла
+*/
+- (void)appendImageFile:(NSData *)file
+                   name:(NSString *)name
+                  field:(NSString *)field;
 @end

@@ -16,7 +16,7 @@
 			<Abstract type="html">Массив пользовательских разрешений к которым был получен доступ приложением</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *permissions</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray *permissions</Declaration>
 			
 			
 			<Anchor>//api/name/permissions</Anchor>
@@ -28,7 +28,7 @@
 			<Abstract type="html">Массив пользовательских разрешений к которым был получен доступ приложением</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *permissions</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray *permissions</Declaration>
 			
 			
 			<Anchor>//api/name/permissions</Anchor>
@@ -40,7 +40,7 @@
 			<Abstract type="html">Массив пользовательских разрешений к которым был получен доступ приложением</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *permissions</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray *permissions</Declaration>
 			
 			
 			<Anchor>//api/name/permissions</Anchor>
@@ -52,7 +52,7 @@
 			<Abstract type="html">Время создания токена</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval creationTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval creationTime</Declaration>
 			
 			
 			<Anchor>//api/name/creationTime</Anchor>
@@ -64,7 +64,7 @@
 			<Abstract type="html">Время создания токена</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval creationTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval creationTime</Declaration>
 			
 			
 			<Anchor>//api/name/creationTime</Anchor>
@@ -76,7 +76,7 @@
 			<Abstract type="html">Время создания токена</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval creationTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval creationTime</Declaration>
 			
 			
 			<Anchor>//api/name/creationTime</Anchor>
@@ -88,7 +88,7 @@
 			<Abstract type="html">Время жизни токена доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval liveTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval liveTime</Declaration>
 			
 			
 			<Anchor>//api/name/liveTime</Anchor>
@@ -100,7 +100,7 @@
 			<Abstract type="html">Время жизни токена доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval liveTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval liveTime</Declaration>
 			
 			
 			<Anchor>//api/name/liveTime</Anchor>
@@ -112,7 +112,7 @@
 			<Abstract type="html">Время жизни токена доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval liveTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval liveTime</Declaration>
 			
 			
 			<Anchor>//api/name/liveTime</Anchor>
@@ -124,7 +124,7 @@
 			<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger userID</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSUInteger userID</Declaration>
 			
 			
 			<Anchor>//api/name/userID</Anchor>
@@ -136,7 +136,7 @@
 			<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger userID</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSUInteger userID</Declaration>
 			
 			
 			<Anchor>//api/name/userID</Anchor>
@@ -148,7 +148,7 @@
 			<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger userID</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) NSUInteger userID</Declaration>
 			
 			
 			<Anchor>//api/name/userID</Anchor>
@@ -160,7 +160,7 @@
 			<Abstract type="html">Токен доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *token</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *token</Declaration>
 			
 			
 			<Anchor>//api/name/token</Anchor>
@@ -172,7 +172,7 @@
 			<Abstract type="html">Токен доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *token</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *token</Declaration>
 			
 			
 			<Anchor>//api/name/token</Anchor>
@@ -184,7 +184,7 @@
 			<Abstract type="html">Токен доступа.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *token</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSString *token</Declaration>
 			
 			
 			<Anchor>//api/name/token</Anchor>
