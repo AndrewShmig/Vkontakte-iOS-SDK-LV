@@ -552,26 +552,35 @@ static VKUser *_currentUser;
 
 - (VKRequest *)photosGetUploadServer:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKPhotosGetUploadServer
+    VKRequest *request = [self configureRequestMethod:kVKPhotosGetUploadServer
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+    return request;
 }
 
 - (VKRequest *)photosGetProfileUploadServer:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKPhotosGetProfileUploadServer
+    VKRequest *request = [self configureRequestMethod:kVKPhotosGetProfileUploadServer
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+    return request;
 }
 
 - (VKRequest *)photosGetChatUploadServer:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKPhotosGetChatUploadServer
+    VKRequest *request = [self configureRequestMethod:kVKPhotosGetChatUploadServer
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+    return request;
 }
 
 - (VKRequest *)photosSaveProfilePhoto:(NSDictionary *)options
@@ -592,18 +601,24 @@ static VKUser *_currentUser;
 
 - (VKRequest *)photosGetWallUploadServer:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKPhotosGetWallUploadServer
+    VKRequest *request = [self configureRequestMethod:kVKPhotosGetWallUploadServer
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+    return request;
 }
 
 - (VKRequest *)photosGetMessagesUploadServer:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKPhotosGetMessagesUploadServer
+    VKRequest *request = [self configureRequestMethod:kVKPhotosGetMessagesUploadServer
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+    return request;
 }
 
 - (VKRequest *)photosSaveMessagesPhoto:(NSDictionary *)options
@@ -1012,10 +1027,13 @@ static VKUser *_currentUser;
 
 - (VKRequest *)audioGetUploadServer:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKAudioGetUploadServer
+    VKRequest *request = [self configureRequestMethod:kVKAudioGetUploadServer
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+    return request;
 }
 
 - (VKRequest *)audioSave:(NSDictionary *)options
@@ -1994,18 +2012,24 @@ static VKUser *_currentUser;
 
 - (VKRequest *)docsGetUploadServer:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKDocsGetUploadServer
+    VKRequest *request = [self configureRequestMethod:kVKDocsGetUploadServer
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+    return request;
 }
 
 - (VKRequest *)docsGetWallUploadServer:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKDocsGetWallUloadServer
+    VKRequest *request = [self configureRequestMethod:kVKDocsGetWallUloadServer
                                 options:options
                                selector:_cmd
                          addAccessToken:YES];
+    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+    return request;
 }
 
 - (VKRequest *)docsSave:(NSDictionary *)options
