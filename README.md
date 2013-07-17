@@ -11,6 +11,7 @@
 * [Базовый пример: установка и настройка ВКонтакте iOS SDK](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/16)
 * [Получение и отображения списка друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/18)
 * [Использование кэша данных. Получение и отображение списка друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/19)
+* [Загрузка аудио файла. Пример.](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/20)
 
 Примеры:
 * [Проекты из описаний документации](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/tree/master/Project/Examples)
