@@ -120,10 +120,6 @@
                                                  _boundary];
     _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n",
                                                  _boundary];
-    _connection = [[NSURLConnection alloc]
-                                    initWithRequest:_request
-                                           delegate:self
-                                   startImmediately:NO];
     _expectedDataSize = NSURLResponseUnknownContentLength;
     _cacheLiveTime = VKCachedDataLiveTimeOneHour;
     _offlineMode = NO;
@@ -226,7 +222,10 @@
         [_request setHTTPBody:_body];
     }
 
-    [_connection start];
+    _connection = [[NSURLConnection alloc]
+                                    initWithRequest:_request
+                                           delegate:self
+                                   startImmediately:YES];
 }
 
 - (void)cancel
