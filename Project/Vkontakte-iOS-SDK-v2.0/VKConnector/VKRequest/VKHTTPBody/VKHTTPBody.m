@@ -113,14 +113,11 @@
              field:(NSString *)field
 {
 //    header part
-    if (_isEmpty)
-        [_body appendData:[_boundary dataUsingEncoding:NSUTF8StringEncoding]];
-    else
-        [_body appendData:[_boundaryHeader dataUsingEncoding:NSUTF8StringEncoding]];
+    [_body appendData:[_boundaryHeader dataUsingEncoding:NSUTF8StringEncoding]];
 
     NSString *contentDisposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",
-                                                              name,
-                                                              field];
+                                                              field,
+                                                              name];
     [_body appendData:[contentDisposition dataUsingEncoding:NSUTF8StringEncoding]];
 
 //    Content-Type
@@ -136,6 +133,8 @@
 
 //    file part
     [_body appendData:file];
+
+    _isEmpty = NO;
 }
 
 - (NSString *)determineContentTypeFromExtension:(NSString *)extension
