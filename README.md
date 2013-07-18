@@ -12,6 +12,7 @@
 * [Получение и отображения списка друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/18)
 * [Использование кэша данных. Получение и отображение списка друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/19)
 * [Загрузка аудио файла. Пример.](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/20)
+* [Принципы работы с VKConnector, VKUser и VKAccessToken (обсуждение)](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/21)
 
 Примеры:
 * [Проекты из описаний документации](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/tree/master/Project/Examples)
