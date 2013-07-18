@@ -18,7 +18,6 @@
 						<NodeRef refid="5"/>
 						<NodeRef refid="6"/>
 						<NodeRef refid="7"/>
-						<NodeRef refid="8"/>
 						
 					</Subnodes>
 				</Node>
@@ -28,10 +27,10 @@
 					<Name>Categories</Name>
 					<Path>index.html</Path>
 					<Subnodes>
+						<NodeRef refid="8"/>
 						<NodeRef refid="9"/>
 						<NodeRef refid="10"/>
 						<NodeRef refid="11"/>
-						<NodeRef refid="12"/>
 						
 					</Subnodes>
 				</Node>
@@ -41,8 +40,8 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
+						<NodeRef refid="12"/>
 						<NodeRef refid="13"/>
-						<NodeRef refid="14"/>
 						
 					</Subnodes>
 				</Node>
@@ -65,48 +64,44 @@
 			<Path>Classes/VKConnector.html</Path>
 		</Node>
 		<Node id="4">
-			<Name>VKHTTPBody</Name>
-			<Path>Classes/VKHTTPBody.html</Path>
-		</Node>
-		<Node id="5">
 			<Name>VKRequest</Name>
 			<Path>Classes/VKRequest.html</Path>
 		</Node>
-		<Node id="6">
+		<Node id="5">
 			<Name>VKStorage</Name>
 			<Path>Classes/VKStorage.html</Path>
 		</Node>
-		<Node id="7">
+		<Node id="6">
 			<Name>VKStorageItem</Name>
 			<Path>Classes/VKStorageItem.html</Path>
 		</Node>
-		<Node id="8">
+		<Node id="7">
 			<Name>VKUser</Name>
 			<Path>Classes/VKUser.html</Path>
 		</Node>
 		
-		<Node id="9">
+		<Node id="8">
 			<Name>NSData(toBase64)</Name>
 			<Path>Categories/NSData+toBase64.html</Path>
 		</Node>
-		<Node id="10">
+		<Node id="9">
 			<Name>NSString(MD5)</Name>
 			<Path>Categories/NSString+MD5.html</Path>
 		</Node>
-		<Node id="11">
+		<Node id="10">
 			<Name>NSString(encodeURL)</Name>
 			<Path>Categories/NSString+encodeURL.html</Path>
 		</Node>
-		<Node id="12">
+		<Node id="11">
 			<Name>NSString(toBase64)</Name>
 			<Path>Categories/NSString+toBase64.html</Path>
 		</Node>
 		
-		<Node id="13">
+		<Node id="12">
 			<Name>VKConnectorDelegate</Name>
 			<Path>Protocols/VKConnectorDelegate.html</Path>
 		</Node>
-		<Node id="14">
+		<Node id="13">
 			<Name>VKRequestDelegate</Name>
 			<Path>Protocols/VKRequestDelegate.html</Path>
 		</Node>

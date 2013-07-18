@@ -373,7 +373,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
 
             [self.delegate VKRequest:self
-                          totalBytes:(NSUInteger) totalBytesExpectedToWrite
+                          totalBytes:[_body length]
                        uploadedBytes:(NSUInteger) totalBytesWritten];
         }
     }

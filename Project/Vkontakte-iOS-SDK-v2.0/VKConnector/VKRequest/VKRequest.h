@@ -35,7 +35,7 @@
 
 /** Префикс URL на который производятся запросы к API социальной сети
 */
-static NSString *const kVKAPIURLPrefix = @"https://api.vk.com/method/";
+static NSString *const kVKAPIURLPrefix = @"http://api.vk.com/method/";
 
 
 @class VKRequest;

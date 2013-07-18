@@ -57,9 +57,9 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 - (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
-    NSLog(@"accessTOken: %@", accessToken);
-    NSLog(@"isValid: %@", [accessToken isValid] ? @"YES": @"NO");
-    NSLog(@"isExpired: %@", [accessToken isExpired] ? @"YES" : @"NO");
+
+    [[VKUser currentUser] setDelegate:self];
+    [[VKUser currentUser] info];
 }
 
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error
