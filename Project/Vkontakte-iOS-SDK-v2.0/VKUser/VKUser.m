@@ -117,7 +117,7 @@ static VKUser *_currentUser;
 {
     NSDictionary *options = @{
             @"uids"   : @(self.accessToken.userID),
-            @"fields" : @"nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo100"
+            @"fields" : @"nickname,screen_name,sex,bdate,has_mobile,online,last_seen,status,photo_100"
     };
 
     return [self configureRequestMethod:kVKUsersGet
