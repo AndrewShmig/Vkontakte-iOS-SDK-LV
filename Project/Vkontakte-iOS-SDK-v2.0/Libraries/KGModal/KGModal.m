@@ -85,6 +85,10 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 }
 
 - (void)showWithContentView:(UIView *)contentView andAnimated:(BOOL)animated {
+    if([self.delegate respondsToSelector:@selector(KGModalWillAppear:)]){
+        [self.delegate KGModalWillAppear:self];
+    }
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.window.opaque = NO;
@@ -169,6 +173,10 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 }
 
 - (void)hideAnimated:(BOOL)animated withCompletionBlock:(void(^)())completion{
+    if([self.delegate respondsToSelector:@selector(KGModalWillDisappear:)]){
+        [self.delegate KGModalWillDisappear:self];
+    }
+
     if(!animated){
         [self cleanup];
         return;

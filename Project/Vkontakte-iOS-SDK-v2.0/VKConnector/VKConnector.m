@@ -128,10 +128,7 @@
 //    отображаем попап
     [_innerWebView loadRequest:request];
 
-    if ([self.delegate respondsToSelector:@selector(VKConnector:willShowModalView:)])
-        [self.delegate VKConnector:self
-                 willShowModalView:[KGModal sharedInstance]];
-
+    [[KGModal sharedInstance] setDelegate:self];
     [[KGModal sharedInstance] showWithContentView:_mainView
                                       andAnimated:YES];
 }
@@ -182,10 +179,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
 
     if ([url hasPrefix:@"https://oauth.vk.com/blank.html"]) {
-        if ([self.delegate respondsToSelector:@selector(VKConnector:willHideModalView:)])
-            [self.delegate VKConnector:self
-                     willHideModalView:[KGModal sharedInstance]];
-
         [[KGModal sharedInstance] hideAnimated:YES];
     }
 
@@ -200,6 +193,22 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [_activityIndicator startAnimating];
+}
+
+#pragma mark - KGModal delegate
+
+- (void)KGModalWillAppear:(KGModal *)kgModal
+{
+    if ([self.delegate respondsToSelector:@selector(VKConnector:willShowModalView:)])
+        [self.delegate VKConnector:self
+                 willShowModalView:[KGModal sharedInstance]];
+}
+
+- (void)KGModalWillDisappear:(KGModal *)kgModal
+{
+    if ([self.delegate respondsToSelector:@selector(VKConnector:willHideModalView:)])
+        [self.delegate VKConnector:self
+                 willHideModalView:[KGModal sharedInstance]];
 }
 
 #pragma mark - Cookies manipulation methods

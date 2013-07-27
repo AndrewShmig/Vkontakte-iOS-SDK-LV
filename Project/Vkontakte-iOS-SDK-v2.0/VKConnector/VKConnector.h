@@ -30,6 +30,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VKMethods.h"
+#import "KGModal.h"
 
 
 @class VKAccessToken;
@@ -126,7 +127,7 @@ parsingErrorOccured:(NSError *)error;
     }
 
  */
-@interface VKConnector : NSObject <UIWebViewDelegate>
+@interface VKConnector : NSObject <UIWebViewDelegate, KGModalDelegate>
 
 /**
 @name Свойства

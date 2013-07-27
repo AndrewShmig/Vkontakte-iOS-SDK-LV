@@ -8,12 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@class KGModal;
+
 typedef NS_ENUM(NSUInteger, KGModalBackgroundDisplayStyle){
     KGModalBackgroundDisplayStyleGradient,
     KGModalBackgroundDisplayStyleSolid
 };
 
+
+@protocol KGModalDelegate <NSObject>
+@optional
+- (void)KGModalWillAppear:(KGModal *)kgModal;
+- (void)KGModalWillDisappear:(KGModal *)kgModal;
+@end
+
+
 @interface KGModal : NSObject
+
+// Delegate
+@property (nonatomic, weak) id<KGModalDelegate> delegate;
 
 // Determines if the modal should dismiss if the user taps outside of the modal view
 // Defaults to YES
