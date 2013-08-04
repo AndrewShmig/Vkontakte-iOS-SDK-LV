@@ -21,7 +21,7 @@
 Связанные статьи на Хабре:
 - [Вконтакте iOS SDK v1](http://habrahabr.ru/post/184560/)
 - [Вконтакте iOS SDK v2](http://habrahabr.ru/post/185766/)
-- 
+
 Приложения, которые используют VKontakte iOS SDK v1/v2:
 - ...
 - ...
