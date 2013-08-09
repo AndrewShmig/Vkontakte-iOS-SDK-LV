@@ -10,12 +10,12 @@
 #import "ASAViewController.h"
 #import "VKAccessToken.h"
 #import "VKUser.h"
-#import "VKStorageItem.h"
-#import "VKStorage.h"
+
 
 
 static NSString *const kVKAppID = @"3541027";
 static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages";
+
 
 @implementation ASAAppDelegate
 

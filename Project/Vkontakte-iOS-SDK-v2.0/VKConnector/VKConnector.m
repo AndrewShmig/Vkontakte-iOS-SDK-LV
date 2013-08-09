@@ -110,7 +110,7 @@
                              @"redirect_uri"  : _redirectURL,
                              @"scope"         : _settings,
                              @"response_type" : @"token",
-                             @"display"       : @"touch"};
+                             @"display"       : @"mobile"};
     NSMutableString *urlAsString = [[NSMutableString alloc] init];
     NSMutableArray *urlParams = [[NSMutableArray alloc] init];
 
@@ -180,6 +180,12 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
     if ([url hasPrefix:@"https://oauth.vk.com/blank.html"]) {
         [[KGModal sharedInstance] hideAnimated:YES];
+    }
+
+//    разрешаем пользователю только сменить язык в окне авторизации, ничего более
+    if([url hasPrefix:@"https://vk.com"] || [url hasPrefix:@"http://vk.com"] ||
+            ([url hasPrefix:@"https://m.vk.com"] && ![url hasPrefix:@"https://m.vk.com/settings"])){
+        return NO;
     }
 
     return YES;
