@@ -1,18 +1,18 @@
 <?xml version="1.0" standalone="no"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
-    <id>http://cocoanetics.github.com/DTFoundation/DTFoundation.atom/20130727200518</id>
+    <id>http://cocoanetics.github.com/DTFoundation/DTFoundation.atom/20130813214457</id>
     <title type="text">Vkontakte-iOS-SDK-v2.0 Documentation</title>
     <rights>Copyright © 2013 AndrewShmig. All rights reserved.</rights>
     <link rel="self" href="http://cocoanetics.github.com/DTFoundation/DTFoundation.atom"></link>
     <docset:publisherName>AndrewShmig</docset:publisherName>
     <docset:publisherID>com.andrewshmig.documentation</docset:publisherID>
-    <updated>2013-07-27T20:05:18+04:00</updated>
+    <updated>2013-08-13T21:44:57+04:00</updated>
     <entry>
-        <id>tag:cocoanetics.github.com,2013-07-27:com.andrewshmig.Vkontakte-iOS-SDK-v2.0/1.0.0</id>
+        <id>tag:cocoanetics.github.com,2013-08-13:com.andrewshmig.Vkontakte-iOS-SDK-v2.0/1.0.0</id>
         <title type="text">Vkontakte-iOS-SDK-v2.0 Documentation</title>
-        <updated>2013-07-27T20:05:18+04:00</updated>
+        <updated>2013-08-13T21:44:57+04:00</updated>
         <content type="text">Vkontakte-iOS-SDK-v2.0 Documentation (v1.0.0)</content>
-        <link rel="enclosure" type="application/octet-stream" href="http:/cocoanetics.github.com/DTFoundation/com.andrewshmig.Vkontakte-iOS-SDK-v2.0-1.0.xar" length="230771"></link>
+        <link rel="enclosure" type="application/octet-stream" href="http:/cocoanetics.github.com/DTFoundation/com.andrewshmig.Vkontakte-iOS-SDK-v2.0-1.0.xar" length="230268"></link>
         <docset:identifier>com.andrewshmig.Vkontakte-iOS-SDK-v2.0</docset:identifier>
         <docset:version>1.0.0</docset:version>
         <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>

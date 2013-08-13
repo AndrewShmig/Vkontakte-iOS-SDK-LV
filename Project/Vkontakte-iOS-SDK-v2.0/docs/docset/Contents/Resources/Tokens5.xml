@@ -223,7 +223,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/clean</TokenIdentifier>
-			<Abstract type="html">Удаляет все данные из хранилище.</Abstract>
+			<Abstract type="html">Удаляет все данные из хранилища.</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>- (void)clean</Declaration>

@@ -219,7 +219,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 #pragma mark - Cookies manipulation methods
 
-- (void)logout
+- (void)clearCookies
 {
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
 

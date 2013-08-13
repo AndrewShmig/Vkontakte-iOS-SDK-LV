@@ -105,7 +105,7 @@ static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-v2.0-Storage/C
 */
 - (void)removeItem:(VKStorageItem *)item;
 
-/** Удаляет все данные из хранилище.
+/** Удаляет все данные из хранилища.
 */
 - (void)clean;
 

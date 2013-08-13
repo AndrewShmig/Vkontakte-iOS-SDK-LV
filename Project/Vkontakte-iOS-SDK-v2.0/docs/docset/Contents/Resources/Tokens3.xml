@@ -154,16 +154,16 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/logout</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/clearCookies</TokenIdentifier>
 			<Abstract type="html">Удаляет куки, которые были получены при авторизации последним пользователем приложения.
 Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
 несколько своих учетных записей социальной сети или для авторизации другого пользователя.</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (void)logout</Declaration>
+			<Declaration>- (void)clearCookies</Declaration>
 			
 			
-			<Anchor>//api/name/logout</Anchor>
+			<Anchor>//api/name/clearCookies</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
