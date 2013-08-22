@@ -48,7 +48,6 @@
     NSString* _boundary, *_boundaryHeader, *_boundaryFooter;
     NSUInteger _expectedDataSize;
 
-    BOOL _isDataFromCache;
     BOOL _isBodyEmpty;
 }
 
@@ -123,7 +122,6 @@
     _expectedDataSize = NSURLResponseUnknownContentLength;
     _cacheLiveTime = VKCachedDataLiveTimeOneHour;
     _offlineMode = NO;
-    _isDataFromCache = NO;
     _isBodyEmpty = YES;
 
     return self;
@@ -199,15 +197,15 @@
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
 
-    NSData *cachedResponseData = [item.cachedData cachedDataForURL:[self removeAccessTokenFromURL:_connection.currentRequest.URL]
+    NSData *cachedResponseData = [item.cachedData cachedDataForURL:[self removeAccessTokenFromURL:_request.URL]
                                                        offlineMode:_offlineMode];
     if (nil != cachedResponseData) {
         _receivedData = [cachedResponseData mutableCopy];
-        _isDataFromCache = YES;
-
         [self connectionDidFinishLoading:_connection];
 
-        return;
+//        нет надобности следить за состоянием "обновляющего" запроса
+//        только при удачном исходе данные в кэше будут обновлены
+        self.delegate = nil;
     }
 
 //    если тело запроса установлено, то внесем кое-какие завершающие штрихи
@@ -436,17 +434,15 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 //    1. данные запроса не из кэша
 //    2. время жизни кэша не установлено в "никогда"
 //    3. метод запроса GET
-    if (!_isDataFromCache && VKCachedDataLiveTimeNever != self.cacheLiveTime && ![@"POST" isEqualToString:connection.currentRequest.HTTPMethod]) {
+    if (VKCachedDataLiveTimeNever != self.cacheLiveTime && ![@"POST" isEqualToString:_request.HTTPMethod]) {
 
         NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];
         VKStorageItem *item = [[VKStorage sharedStorage]
                                           storageItemForUserID:currentUserID];
 
         [item.cachedData addCachedData:_receivedData
-                                forURL:[self removeAccessTokenFromURL:connection.currentRequest.URL]
+                                forURL:[self removeAccessTokenFromURL:_request.URL]
                               liveTime:self.cacheLiveTime];
-
-        _isDataFromCache = NO;
     }
 
 //    возвращаем Foundation объект

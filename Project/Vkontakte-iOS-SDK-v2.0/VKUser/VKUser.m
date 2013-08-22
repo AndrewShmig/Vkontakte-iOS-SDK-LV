@@ -123,7 +123,7 @@ static VKUser *_currentUser;
     return [self configureRequestMethod:kVKUsersGet
                                 options:options
                                selector:_cmd
-                         addAccessToken:NO];
+                         addAccessToken:YES];
 }
 
 - (VKRequest *)info:(NSDictionary *)options
