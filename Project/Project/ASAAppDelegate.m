@@ -68,7 +68,7 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
-    NSLog(@"error: %@", error);
+    NSLog(@"CONNECTION error: %@", error);
 }
 
 - (void)VKConnector:(VKConnector *)connector parsingErrorOccured:(NSError *)error

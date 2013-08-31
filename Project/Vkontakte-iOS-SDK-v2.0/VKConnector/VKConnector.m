@@ -201,6 +201,14 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     [_activityIndicator startAnimating];
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    if([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]){
+        [self.delegate VKConnector:self
+            connectionErrorOccured:error];
+    }
+}
+
 #pragma mark - KGModal delegate
 
 - (void)KGModalWillAppear:(KGModal *)kgModal
