@@ -206,6 +206,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     if([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]){
         [self.delegate VKConnector:self
             connectionErrorOccured:error];
+
+        [[KGModal sharedInstance] hideAnimated:YES];
     }
 }
 
