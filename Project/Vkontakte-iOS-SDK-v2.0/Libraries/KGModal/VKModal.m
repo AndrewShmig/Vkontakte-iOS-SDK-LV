@@ -1,12 +1,12 @@
 //
-//  KGModal.m
-//  KGModal
+//  VKModal.m
+//  VKModal
 //
 //  Created by David Keegan on 10/5/12.
 //  Copyright (c) 2012 David Keegan. All rights reserved.
 //
 
-#import "KGModal.h"
+#import "VKModal.h"
 #import <QuartzCore/QuartzCore.h>
 
 CGFloat const kFadeInAnimationDuration = 0.3;
@@ -29,7 +29,7 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 @property (weak, nonatomic) KGModalGradientView *styleView;
 @end
 
-@interface KGModal()
+@interface VKModal ()
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIViewController *contentViewController;
 @property (weak, nonatomic) KGModalViewController *viewController;
@@ -39,7 +39,7 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 
 @end
 
-@implementation KGModal
+@implementation VKModal
 
 + (instancetype)sharedInstance{
     static id sharedInstance;
@@ -246,7 +246,7 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
-    return [[KGModal sharedInstance] shouldRotate];
+    return [[VKModal sharedInstance] shouldRotate];
 }
 
 @end
@@ -289,7 +289,7 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 
 - (void)drawRect:(CGRect)rect{
     CGContextRef context = UIGraphicsGetCurrentContext();
-    if([[KGModal sharedInstance] backgroundDisplayStyle] == KGModalBackgroundDisplayStyleSolid){
+    if([[VKModal sharedInstance] backgroundDisplayStyle] == KGModalBackgroundDisplayStyleSolid){
         [[UIColor colorWithWhite:0 alpha:0.55] set];
         CGContextFillRect(context, self.bounds);
     }else{

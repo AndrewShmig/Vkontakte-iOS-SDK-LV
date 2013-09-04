@@ -30,7 +30,7 @@
 
 #import "VKConnector.h"
 #import "VKAccessToken.h"
-#import "KGModal.h"
+#import "VKModal.h"
 #import "VKStorage.h"
 #import "VKStorageItem.h"
 
@@ -128,8 +128,8 @@
 //    отображаем попап
     [_innerWebView loadRequest:request];
 
-    [[KGModal sharedInstance] setDelegate:self];
-    [[KGModal sharedInstance] showWithContentView:_mainView
+    [[VKModal sharedInstance] setDelegate:self];
+    [[VKModal sharedInstance] showWithContentView:_mainView
                                       andAnimated:YES];
 }
 
@@ -179,7 +179,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
 
     if ([url hasPrefix:@"https://oauth.vk.com/blank.html"]) {
-        [[KGModal sharedInstance] hideAnimated:YES];
+        [[VKModal sharedInstance] hideAnimated:YES];
     }
 
 //    разрешаем пользователю только сменить язык в окне авторизации, ничего более
@@ -207,24 +207,24 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         [self.delegate VKConnector:self
             connectionErrorOccured:error];
 
-        [[KGModal sharedInstance] hideAnimated:YES];
+        [[VKModal sharedInstance] hideAnimated:YES];
     }
 }
 
 #pragma mark - KGModal delegate
 
-- (void)KGModalWillAppear:(KGModal *)kgModal
+- (void)KGModalWillAppear:(VKModal *)kgModal
 {
     if ([self.delegate respondsToSelector:@selector(VKConnector:willShowModalView:)])
         [self.delegate VKConnector:self
-                 willShowModalView:[KGModal sharedInstance]];
+                 willShowModalView:[VKModal sharedInstance]];
 }
 
-- (void)KGModalWillDisappear:(KGModal *)kgModal
+- (void)KGModalWillDisappear:(VKModal *)kgModal
 {
     if ([self.delegate respondsToSelector:@selector(VKConnector:willHideModalView:)])
         [self.delegate VKConnector:self
-                 willHideModalView:[KGModal sharedInstance]];
+                 willHideModalView:[VKModal sharedInstance]];
 }
 
 #pragma mark - Cookies manipulation methods

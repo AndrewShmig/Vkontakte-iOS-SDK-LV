@@ -1,6 +1,6 @@
 //
-//  KGModal.h
-//  KGModal
+//  VKModal.h
+//  VKModal
 //
 //  Created by David Keegan on 10/5/12.
 //  Copyright (c) 2012 David Keegan. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class KGModal;
+@class VKModal;
 
 typedef NS_ENUM(NSUInteger, KGModalBackgroundDisplayStyle){
     KGModalBackgroundDisplayStyleGradient,
@@ -18,12 +18,12 @@ typedef NS_ENUM(NSUInteger, KGModalBackgroundDisplayStyle){
 
 @protocol KGModalDelegate <NSObject>
 @optional
-- (void)KGModalWillAppear:(KGModal *)kgModal;
-- (void)KGModalWillDisappear:(KGModal *)kgModal;
+- (void)KGModalWillAppear:(VKModal *)kgModal;
+- (void)KGModalWillDisappear:(VKModal *)kgModal;
 @end
 
 
-@interface KGModal : NSObject
+@interface VKModal : NSObject
 
 // Delegate
 @property (nonatomic, weak) id<KGModalDelegate> delegate;

@@ -34,12 +34,12 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
     return YES;
 }
 
-- (void)VKConnector:(VKConnector *)connector willShowModalView:(KGModal *)view
+- (void)VKConnector:(VKConnector *)connector willShowModalView:(VKModal *)view
 {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)VKConnector:(VKConnector *)connector willHideModalView:(KGModal *)view
+- (void)VKConnector:(VKConnector *)connector willHideModalView:(VKModal *)view
 {
     NSLog(@"%s", __FUNCTION__);
 }

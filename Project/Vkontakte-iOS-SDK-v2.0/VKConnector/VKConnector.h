@@ -30,12 +30,12 @@
 
 #import <Foundation/Foundation.h>
 #import "VKMethods.h"
-#import "KGModal.h"
+#import "VKModal.h"
 
 
 @class VKAccessToken;
 @class VKConnector;
-@class KGModal;
+@class VKModal;
 @class VKStorageItem;
 
 
@@ -54,7 +54,7 @@
  @param view модальное окно
  */
 - (void)VKConnector:(VKConnector *)connector
-  willShowModalView:(KGModal *)view;
+  willShowModalView:(VKModal *)view;
 
 /** Метод вызывается до того, как произойдет скрытие модального окна авторизации
  
@@ -62,7 +62,7 @@
  @param view модальное окно
  */
 - (void)VKConnector:(VKConnector *)connector
-  willHideModalView:(KGModal *)view;
+  willHideModalView:(VKModal *)view;
 
 /**
  @name Access token

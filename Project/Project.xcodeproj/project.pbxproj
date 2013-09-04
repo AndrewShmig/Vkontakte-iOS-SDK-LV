@@ -40,7 +40,7 @@
 		1A9A0D1D50A7272663B5CC7E /* TestVKStorageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A02958D9F6402A11822A1 /* TestVKStorageItem.m */; };
 		1A9A0D5EAE2CE21BC15FFBF7 /* ASAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A01D617DF81896B8D4019 /* ASAViewController.m */; };
 		1A9A0DB10B41CF64A4C1D9BF /* NSString+encodeURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0D81099D4EA4D9E7F018 /* NSString+encodeURL.m */; };
-		1A9A0DD47515F95ADAEF3A8C /* KGModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A06EE15EF6ED3A67FF340 /* KGModal.m */; };
+		1A9A0DD47515F95ADAEF3A8C /* VKModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A06EE15EF6ED3A67FF340 /* VKModal.m */; };
 		1A9A0DECA8CD7142178AB79C /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A01A646C80EBAB91B47DC /* NSString+MD5.m */; };
 		1A9A0ED27FA326205D40FB0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A004BA1AEEDFB323F1BF1 /* Default-568h@2x.png */; };
 		1A9A0F1A3CFAD1E514FB7238 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A09C122E5CF36FD9674B8 /* main.m */; };
@@ -83,9 +83,9 @@
 		1A9A04A8D58F872181133C3A /* VKAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAccessToken.m; sourceTree = "<group>"; };
 		1A9A04BCFA39A5A8BC40DAFD /* VKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKUser.m; sourceTree = "<group>"; };
 		1A9A055705F2429D59037715 /* VKStorageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKStorageItem.h; sourceTree = "<group>"; };
-		1A9A057E985BF3AD5EFB823E /* KGModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGModal.h; sourceTree = "<group>"; };
+		1A9A057E985BF3AD5EFB823E /* VKModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKModal.h; sourceTree = "<group>"; };
 		1A9A06044CE209AFCCB60357 /* ASAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAAppDelegate.h; sourceTree = "<group>"; };
-		1A9A06EE15EF6ED3A67FF340 /* KGModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGModal.m; sourceTree = "<group>"; };
+		1A9A06EE15EF6ED3A67FF340 /* VKModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKModal.m; sourceTree = "<group>"; };
 		1A9A07C45F1C8D8BC821FB52 /* Project-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-Prefix.pch"; sourceTree = "<group>"; };
 		1A9A07D8CDD07F73FC5F8543 /* VKConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKConnector.m; sourceTree = "<group>"; };
 		1A9A086C5F5EEDC2CBB27DE4 /* ASAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASAAppDelegate.m; sourceTree = "<group>"; };
@@ -236,8 +236,8 @@
 		1A9A040E3BCC9082079CFFE6 /* KGModal */ = {
 			isa = PBXGroup;
 			children = (
-				1A9A057E985BF3AD5EFB823E /* KGModal.h */,
-				1A9A06EE15EF6ED3A67FF340 /* KGModal.m */,
+				1A9A057E985BF3AD5EFB823E /* VKModal.h */,
+				1A9A06EE15EF6ED3A67FF340 /* VKModal.m */,
 			);
 			path = KGModal;
 			sourceTree = "<group>";
@@ -552,7 +552,7 @@
 				1A9A0D5EAE2CE21BC15FFBF7 /* ASAViewController.m in Sources */,
 				1A9A011E8C185DA69EC94598 /* VKConnector.m in Sources */,
 				1A9A025ECA97FABED01E422B /* VKRequest.m in Sources */,
-				1A9A0DD47515F95ADAEF3A8C /* KGModal.m in Sources */,
+				1A9A0DD47515F95ADAEF3A8C /* VKModal.m in Sources */,
 				1A9A03BCFC95A21B0D4FD1D1 /* NSData+toBase64.m in Sources */,
 				1A9A0DB10B41CF64A4C1D9BF /* NSString+encodeURL.m in Sources */,
 				1A9A09A00CEB8B8E324E1FC2 /* NSString+toBase64.m in Sources */,
