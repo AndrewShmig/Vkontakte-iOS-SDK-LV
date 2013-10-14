@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		72F0049E180316150048F691 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 72F0049F180316150048F691 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				72F004A21803161A0048F691 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1A9A0024B9B75236BAB9CB97 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A01FAEB437DA940BE21D3 /* Default.png */; };
 		1A9A00C730EE4ED0A8DB6525 /* VKCachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0D112F6CAF510A9ADBB8 /* VKCachedData.m */; };
@@ -45,15 +59,7 @@
 		1A9A0ED27FA326205D40FB0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A004BA1AEEDFB323F1BF1 /* Default-568h@2x.png */; };
 		1A9A0F1A3CFAD1E514FB7238 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A09C122E5CF36FD9674B8 /* main.m */; };
 		1A9A0FE389977F4F8BD62717 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0B261588ADDCB3B78A56 /* CoreGraphics.framework */; };
-		D574AC77177DF3D900DC36F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0D576F77FB86579EDC64 /* UIKit.framework */; };
-		D574AC78177DF3D900DC36F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A096027F402AF6A3D38C1 /* Foundation.framework */; };
-		D574AC79177DF3D900DC36F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0B261588ADDCB3B78A56 /* CoreGraphics.framework */; };
-		D574AC7F177DF3D900DC36F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D574AC7D177DF3D900DC36F9 /* InfoPlist.strings */; };
-		D574AC81177DF3D900DC36F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D574AC80177DF3D900DC36F9 /* main.m */; };
-		D574AC85177DF3D900DC36F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D574AC84177DF3D900DC36F9 /* AppDelegate.m */; };
-		D574AC87177DF3D900DC36F9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D574AC86177DF3D900DC36F9 /* Default.png */; };
-		D574AC89177DF3D900DC36F9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D574AC88177DF3D900DC36F9 /* Default@2x.png */; };
-		D574AC8B177DF3D900DC36F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D574AC8A177DF3D900DC36F9 /* Default-568h@2x.png */; };
+		72F004A8180353ED0048F691 /* VKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F004A7180353ED0048F691 /* VKRequestManager.m */; };
 		D5F19C61177EDF8E005C49F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52DDC8E177EDDAF00E05B30 /* SenTestingKit.framework */; };
 		D5F19C62177EDF8E005C49F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0D576F77FB86579EDC64 /* UIKit.framework */; };
 		D5F19C63177EDF8E005C49F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A096027F402AF6A3D38C1 /* Foundation.framework */; };
@@ -111,18 +117,10 @@
 		1A9A0EA586AA8FE6205669CB /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		1A9A0ED960905FE7D74CEFF7 /* VKStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKStorage.m; sourceTree = "<group>"; };
 		1A9A0F527EF608191560F646 /* ASAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAViewController.h; sourceTree = "<group>"; };
+		72F004A6180353ED0048F691 /* VKRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRequestManager.h; sourceTree = "<group>"; };
+		72F004A7180353ED0048F691 /* VKRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKRequestManager.m; sourceTree = "<group>"; };
 		D52DDC8E177EDDAF00E05B30 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D574AC57177DF1DF00DC36F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		D574AC76177DF3D900DC36F9 /* AppleDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D574AC7C177DF3D900DC36F9 /* AppleDoc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppleDoc-Info.plist"; sourceTree = "<group>"; };
-		D574AC7E177DF3D900DC36F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D574AC80177DF3D900DC36F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D574AC82177DF3D900DC36F9 /* AppleDoc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppleDoc-Prefix.pch"; sourceTree = "<group>"; };
-		D574AC83177DF3D900DC36F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D574AC84177DF3D900DC36F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D574AC86177DF3D900DC36F9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D574AC88177DF3D900DC36F9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D574AC8A177DF3D900DC36F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D5F19C60177EDF8E005C49F7 /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F19C66177EDF8E005C49F7 /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		D5F19C68177EDF8E005C49F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -138,16 +136,6 @@
 				1A9A0BCA16D4DA5C0D2EC755 /* Foundation.framework in Frameworks */,
 				1A9A0FE389977F4F8BD62717 /* CoreGraphics.framework in Frameworks */,
 				1A9A0356CF04E23A19A1C5C7 /* QuartzCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D574AC73177DF3D900DC36F9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D574AC77177DF3D900DC36F9 /* UIKit.framework in Frameworks */,
-				D574AC78177DF3D900DC36F9 /* Foundation.framework in Frameworks */,
-				D574AC79177DF3D900DC36F9 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				1A9A0872BA5F01364902C76C /* Project.app */,
-				D574AC76177DF3D900DC36F9 /* AppleDoc.app */,
 				D5F19C60177EDF8E005C49F7 /* UnitTests.octest */,
 			);
 			name = Products;
@@ -303,7 +290,6 @@
 		1A9A0A45A52FEE8C137A374B = {
 			isa = PBXGroup;
 			children = (
-				D574AC7A177DF3D900DC36F9 /* AppleDoc */,
 				D5F19C64177EDF8E005C49F7 /* UnitTests */,
 				1A9A021843E1B91E8D61CA0A /* Products */,
 				1A9A08D92DB1EF47C34EDC87 /* Frameworks */,
@@ -342,32 +328,18 @@
 				1A9A03F37447CDE95F6109F2 /* VKConnector */,
 				1A9A0B4F27FB161C816F1022 /* VKStorage */,
 				1A9A0802291A0ABB48F837E4 /* VKUser */,
+				A51638965A1479444E32DECF /* VKRequestManager */,
 			);
 			path = "Vkontakte-iOS-SDK-v2.0";
 			sourceTree = "<group>";
 		};
-		D574AC7A177DF3D900DC36F9 /* AppleDoc */ = {
+		A51638965A1479444E32DECF /* VKRequestManager */ = {
 			isa = PBXGroup;
 			children = (
-				D574AC83177DF3D900DC36F9 /* AppDelegate.h */,
-				D574AC84177DF3D900DC36F9 /* AppDelegate.m */,
-				D574AC7B177DF3D900DC36F9 /* Supporting Files */,
+				72F004A6180353ED0048F691 /* VKRequestManager.h */,
+				72F004A7180353ED0048F691 /* VKRequestManager.m */,
 			);
-			path = AppleDoc;
-			sourceTree = "<group>";
-		};
-		D574AC7B177DF3D900DC36F9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D574AC7C177DF3D900DC36F9 /* AppleDoc-Info.plist */,
-				D574AC7D177DF3D900DC36F9 /* InfoPlist.strings */,
-				D574AC80177DF3D900DC36F9 /* main.m */,
-				D574AC82177DF3D900DC36F9 /* AppleDoc-Prefix.pch */,
-				D574AC86177DF3D900DC36F9 /* Default.png */,
-				D574AC88177DF3D900DC36F9 /* Default@2x.png */,
-				D574AC8A177DF3D900DC36F9 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
+			path = VKRequestManager;
 			sourceTree = "<group>";
 		};
 		D5F19C64177EDF8E005C49F7 /* UnitTests */ = {
@@ -416,24 +388,6 @@
 			productReference = 1A9A0872BA5F01364902C76C /* Project.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D574AC75177DF3D900DC36F9 /* AppleDoc */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D574AC8C177DF3D900DC36F9 /* Build configuration list for PBXNativeTarget "AppleDoc" */;
-			buildPhases = (
-				D574AC72177DF3D900DC36F9 /* Sources */,
-				D574AC73177DF3D900DC36F9 /* Frameworks */,
-				D574AC74177DF3D900DC36F9 /* Resources */,
-				D574AC8F177DF3DF00DC36F9 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AppleDoc;
-			productName = AppleDoc;
-			productReference = D574AC76177DF3D900DC36F9 /* AppleDoc.app */;
-			productType = "com.apple.product-type.application";
-		};
 		D5F19C5F177EDF8E005C49F7 /* UnitTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5F19C70177EDF8E005C49F7 /* Build configuration list for PBXNativeTarget "UnitTests" */;
@@ -473,8 +427,8 @@
 			projectRoot = "";
 			targets = (
 				1A9A0EABB17090BD9F6AF610 /* Project */,
-				D574AC75177DF3D900DC36F9 /* AppleDoc */,
 				D5F19C5F177EDF8E005C49F7 /* UnitTests */,
+				72F0049E180316150048F691 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -492,17 +446,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D574AC74177DF3D900DC36F9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D574AC7F177DF3D900DC36F9 /* InfoPlist.strings in Resources */,
-				D574AC87177DF3D900DC36F9 /* Default.png in Resources */,
-				D574AC89177DF3D900DC36F9 /* Default@2x.png in Resources */,
-				D574AC8B177DF3D900DC36F9 /* Default-568h@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D5F19C5D177EDF8E005C49F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -514,7 +457,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D574AC8F177DF3DF00DC36F9 /* ShellScript */ = {
+		72F004A21803161A0048F691 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -525,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"Vkontakte-iOS-SDK-v2.0\" \\\n--project-company \"AndrewShmig\" \\\n--company-id \"com.andrewshmig\" \\\n--docset-atom-filename \"DTFoundation.atom\" \\\n--docset-feed-url \"http://cocoanetics.github.com/DTFoundation/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"http://cocoanetics.github.com/DTFoundation/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"http://cocoanetics.github.com/DTFoundation/\" \\\n--output \"${PROJECT_DIR}/Vkontakte-iOS-SDK-v2.0/docs\" \\\n--publish-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"ASAAppDelegate.h\" \\\n--ignore \"ASAViewController.h\" \\\n--ignore \"AppDelegate.h\" \\\n--ignore \"TestVKAccessToken.h\" \\\n--ignore \"TestVKCachedData.h\" \\\n--ignore \"TestVKStorage.h\" \\\n--ignore \"TestVKStorageItem.h\" \\\n--ignore \"KGModal.h\" \\\n--ignore \"LoadableCategory.h\" \\\n\"${PROJECT_DIR}\"";
+			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"Vkontakte-iOS-SDK-v2.0\" \\\n--project-company \"AndrewShmig\" \\\n--company-id \"com.andrewshmig\" \\\n--output \"${PROJECT_DIR}/Vkontakte-iOS-SDK-v2.0/docs\" \\\n--create-docset \\\n--install-docset \\\n--logformat xcode \\\n--keep-undocumented-objects \\\n--keep-undocumented-members \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--ignore \"ASAAppDelegate.h\" \\\n--ignore \"ASAViewController.h\" \\\n--ignore \"AppDelegate.h\" \\\n--ignore \"TestVKAccessToken.h\" \\\n--ignore \"TestVKCachedData.h\" \\\n--ignore \"TestVKStorage.h\" \\\n--ignore \"TestVKStorageItem.h\" \\\n--ignore \"KGModal.h\" \\\n--ignore \"LoadableCategory.h\" \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
 		};
 		D5F19C5E177EDF8E005C49F7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -549,6 +492,7 @@
 			files = (
 				1A9A0F1A3CFAD1E514FB7238 /* main.m in Sources */,
 				1A9A09B3B79A22F26C2ACB6D /* ASAAppDelegate.m in Sources */,
+				72F004A8180353ED0048F691 /* VKRequestManager.m in Sources */,
 				1A9A0D5EAE2CE21BC15FFBF7 /* ASAViewController.m in Sources */,
 				1A9A011E8C185DA69EC94598 /* VKConnector.m in Sources */,
 				1A9A025ECA97FABED01E422B /* VKRequest.m in Sources */,
@@ -562,15 +506,6 @@
 				1A9A035C982044EF0B44E60E /* VKStorageItem.m in Sources */,
 				1A9A092DB24511CF6627EA72 /* VKUser.m in Sources */,
 				1A9A0DECA8CD7142178AB79C /* NSString+MD5.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D574AC72177DF3D900DC36F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D574AC81177DF3D900DC36F9 /* main.m in Sources */,
-				D574AC85177DF3D900DC36F9 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,14 +545,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				1A9A029513763795734C257E /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D574AC7D177DF3D900DC36F9 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D574AC7E177DF3D900DC36F9 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -711,27 +638,17 @@
 			};
 			name = Release;
 		};
-		D574AC8D177DF3D900DC36F9 /* Release */ = {
+		72F004A0180316150048F691 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AppleDoc/AppleDoc-Prefix.pch";
-				INFOPLIST_FILE = "AppleDoc/AppleDoc-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		D574AC8E177DF3D900DC36F9 /* Debug */ = {
+		72F004A1180316150048F691 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AppleDoc/AppleDoc-Prefix.pch";
-				INFOPLIST_FILE = "AppleDoc/AppleDoc-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
@@ -786,11 +703,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D574AC8C177DF3D900DC36F9 /* Build configuration list for PBXNativeTarget "AppleDoc" */ = {
+		72F0049F180316150048F691 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D574AC8D177DF3D900DC36F9 /* Release */,
-				D574AC8E177DF3D900DC36F9 /* Debug */,
+				72F004A0180316150048F691 /* Release */,
+				72F004A1180316150048F691 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
