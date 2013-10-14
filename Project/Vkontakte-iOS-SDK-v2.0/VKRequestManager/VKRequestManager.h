@@ -32,7 +32,7 @@
 @warning возможно в будущем изменится обработка момента присвоения делегату
 значения nil, как вариант, все запущенные запросы будут отменены.
 */
-@property (nonatomic, strong, readwrite) id<VKRequestDelegate> delegate;
+@property (nonatomic, weak, readwrite) id<VKRequestDelegate> delegate;
 
 /** Начинать ли выполнение запросов немедленно или предоставить программисту
 самому выбирать момент запуска запроса.
