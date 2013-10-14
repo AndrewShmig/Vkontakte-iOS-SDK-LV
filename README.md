@@ -1,7 +1,3 @@
-#Все дальнейшие обновления будут вноситься только в английскую версию
-
-[Vkontakte iOS SDK v2 English Edition](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0-English-Edition)
-
 #Vkontakte-iOS-SDK-v2
 
 Свои пожелания/идеи/багрепорты оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
