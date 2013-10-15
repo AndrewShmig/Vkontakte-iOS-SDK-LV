@@ -350,9 +350,12 @@ didReceiveResponse:(NSURLResponse *)response
 
     if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:downloadedBytes:)]) {
 
-        [self.delegate VKRequest:self
-                      totalBytes:_expectedDataSize
-                 downloadedBytes:[_receivedData length]];
+        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:downloadedBytes:)]) {
+
+            [self.delegate VKRequest:self
+                          totalBytes:_expectedDataSize
+                     downloadedBytes:[_receivedData length]];
+        }
     }
 }
 
@@ -365,9 +368,12 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
     if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
 
-        [self.delegate VKRequest:self
-                      totalBytes:[_body length]
-                   uploadedBytes:(NSUInteger) totalBytesWritten];
+        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
+
+            [self.delegate VKRequest:self
+                          totalBytes:[_body length]
+                       uploadedBytes:(NSUInteger) totalBytesWritten];
+        }
     }
 }
 

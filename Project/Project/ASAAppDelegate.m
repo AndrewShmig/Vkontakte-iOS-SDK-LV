@@ -9,12 +9,11 @@
 #import "ASAAppDelegate.h"
 #import "ASAViewController.h"
 #import "VKAccessToken.h"
-#import "VKRequestManager.h"
 #import "VKUser.h"
 
 
 
-static NSString *const kVKAppID = @"3541027";
+static NSString *const kVKAppID = @"3899649";
 static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages";
 
 
@@ -59,11 +58,9 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 {
     NSLog(@"%s", __FUNCTION__);
 
-    VKRequestManager *rm = [[VKRequestManager alloc] initWithDelegate:self user:[VKUser currentUser]];
-    [rm friendsGet:@{
-            @"user_id": @"58487857",
-            @"fields": @"nickname,screen_name,sex,bdate,city,country,timezone,photo_50,photo_100,photo_200_orig,has_mobile,contacts,education,online,relation,last_seen,status,can_write_private_message,can_see_all_posts,can_post,universities"
-    }];
+    [[VKUser currentUser] setDelegate:self];
+    [[VKUser currentUser] wallPost:@{@"owner_id" : @([VKUser currentUser].accessToken.userID),
+                                     @"message" : @"test"}];
 }
 
 - (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error
