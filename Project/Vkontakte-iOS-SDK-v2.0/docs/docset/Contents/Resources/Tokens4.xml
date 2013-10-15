@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKRequest.html">
+	<File path="Classes/VKModal.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKRequest</TokenIdentifier>
-			<Abstract type="html">Оболочка для осуществления запросов к социальной сети ВКонтакте</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VKModal</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>
 			
 			<NodeRef refid="4"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setDelegate:</TokenIdentifier>
-			<Abstract type="html">Делегат</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="4"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/delegate</TokenIdentifier>
-			<Abstract type="html">Делегат</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;KGModalDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -36,11 +24,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/delegate</TokenIdentifier>
-			<Abstract type="html">Делегат</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;KGModalDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -48,373 +36,338 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setSignature:</TokenIdentifier>
-			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
-один делегат осуществляет обработку нескольких запросов.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;KGModalDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/signature</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/signature</TokenIdentifier>
-			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
-один делегат осуществляет обработку нескольких запросов.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setTapOutsideToDismiss:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
+			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
 			
 			
-			<Anchor>//api/name/signature</Anchor>
+			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/signature</TokenIdentifier>
-			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
-один делегат осуществляет обработку нескольких запросов.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/tapOutsideToDismiss</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
+			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
 			
 			
-			<Anchor>//api/name/signature</Anchor>
+			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setCacheLiveTime:</TokenIdentifier>
-			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/tapOutsideToDismiss</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
 			
 			
-			<Anchor>//api/name/cacheLiveTime</Anchor>
+			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cacheLiveTime</TokenIdentifier>
-			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setAnimateWhenDismissed:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
 			
 			
-			<Anchor>//api/name/cacheLiveTime</Anchor>
+			<Anchor>//api/name/animateWhenDismissed</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/cacheLiveTime</TokenIdentifier>
-			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/animateWhenDismissed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
 			
 			
-			<Anchor>//api/name/cacheLiveTime</Anchor>
+			<Anchor>//api/name/animateWhenDismissed</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setOfflineMode:</TokenIdentifier>
-			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
-даже в случае истечения срока их действия (удаления не произойдет).
-По умолчанию режим выключен.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/animateWhenDismissed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
 			
 			
-			<Anchor>//api/name/offlineMode</Anchor>
+			<Anchor>//api/name/animateWhenDismissed</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/offlineMode</TokenIdentifier>
-			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
-даже в случае истечения срока их действия (удаления не произойдет).
-По умолчанию режим выключен.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setShowCloseButton:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
 			
 			
-			<Anchor>//api/name/offlineMode</Anchor>
+			<Anchor>//api/name/showCloseButton</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/offlineMode</TokenIdentifier>
-			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
-даже в случае истечения срока их действия (удаления не произойдет).
-По умолчанию режим выключен.</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showCloseButton</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
 			
 			
-			<Anchor>//api/name/offlineMode</Anchor>
+			<Anchor>//api/name/showCloseButton</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/request:delegate:</TokenIdentifier>
-			<Abstract type="html">Создает и возвращает запроса</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/showCloseButton</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>+ (instancetype)request:(NSURLRequest *)request delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>request</Name>
-					<Abstract type="html">запрос, который будет использован в качестве основы</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
-			<Anchor>//api/name/request:delegate:</Anchor>
+			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
+			
+			
+			<Anchor>//api/name/showCloseButton</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestHTTPMethod:URL:headers:body:delegate:</TokenIdentifier>
-			<Abstract type="html">Создает и возвращает запрос</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setModalBackgroundColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>+ (instancetype)requestHTTPMethod:(NSString *)httpMethod URL:(NSURL *)url headers:(NSDictionary *)headers body:(NSData *)body delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>httpMethod</Name>
-					<Abstract type="html">GET или POST</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL на который будет осуществлен запрос</Abstract>
-				</Parameter><Parameter>
-					<Name>headers</Name>
-					<Abstract type="html">заголовки запроса</Abstract>
-				</Parameter><Parameter>
-					<Name>body</Name>
-					<Abstract type="html">тело запроса</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
-			<Anchor>//api/name/requestHTTPMethod:URL:headers:body:delegate:</Anchor>
+			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/modalBackgroundColor</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestMethod:options:delegate:</TokenIdentifier>
-			<Abstract type="html">Создает и возвращает запрос</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/modalBackgroundColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>+ (instancetype)requestMethod:(NSString *)methodName options:(NSDictionary *)options delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>methodName</Name>
-					<Abstract type="html">наименование метода API (users.get, groups.join etc)</Abstract>
-				</Parameter><Parameter>
-					<Name>options</Name>
-					<Abstract type="html">словарь передаваемых параметров этому методу</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
-			<Anchor>//api/name/requestMethod:options:delegate:</Anchor>
+			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/modalBackgroundColor</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithRequest:</TokenIdentifier>
-			<Abstract type="html">Основной методы инициализации объекта</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/modalBackgroundColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (instancetype)initWithRequest:(NSURLRequest *)request</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>request</Name>
-					<Abstract type="html">запрос, который будет использован в качестве основы</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">объект типа VKRequest</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithRequest:</Anchor>
+			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/modalBackgroundColor</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithHTTPMethod:URL:headers:body:</TokenIdentifier>
-			<Abstract type="html">Метод инициализации объекта</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setBackgroundDisplayStyle:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (instancetype)initWithHTTPMethod:(NSString *)httpMethod URL:(NSURL *)url headers:(NSDictionary *)headers body:(NSData *)body</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>httpMethod</Name>
-					<Abstract type="html">GET или POST</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL на который будет осуществлен запрос</Abstract>
-				</Parameter><Parameter>
-					<Name>headers</Name>
-					<Abstract type="html">заголовки запроса</Abstract>
-				</Parameter><Parameter>
-					<Name>body</Name>
-					<Abstract type="html">тело запроса</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">объекта типа VKRequest</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithHTTPMethod:URL:headers:body:</Anchor>
+			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithMethod:options:</TokenIdentifier>
-			<Abstract type="html">Метод инициализации объекта</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/backgroundDisplayStyle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (instancetype)initWithMethod:(NSString *)methodName options:(NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>methodName</Name>
-					<Abstract type="html">наименования метода API (users.get, groups.join etc)</Abstract>
-				</Parameter><Parameter>
-					<Name>options</Name>
-					<Abstract type="html">словарь передаваемых параметров этому методу</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">объекта класса VKRequest</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithMethod:options:</Anchor>
+			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/start</TokenIdentifier>
-			<Abstract type="html">Старт запроса</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/backgroundDisplayStyle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (void)start</Declaration>
+			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
 			
 			
-			<Anchor>//api/name/start</Anchor>
+			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cancel</TokenIdentifier>
-			<Abstract type="html">Отмена запроса</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setShouldRotate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (void)cancel</Declaration>
+			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
 			
 			
-			<Anchor>//api/name/cancel</Anchor>
+			<Anchor>//api/name/shouldRotate</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendAudioFile:name:field:</TokenIdentifier>
-			<Abstract type="html">Добавление данных аудио файла в содержимое тела HTTP запроса</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/shouldRotate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (void)appendAudioFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>file</Name>
-					<Abstract type="html">байтовое представление аудио файла</Abstract>
-				</Parameter><Parameter>
-					<Name>name</Name>
-					<Abstract type="html">имя аудио файла</Abstract>
-				</Parameter><Parameter>
-					<Name>field</Name>
-					<Abstract type="html">наименования HTML поля, которое использовалось для отправки файла</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
 			
-			<Anchor>//api/name/appendAudioFile:name:field:</Anchor>
+			
+			<Anchor>//api/name/shouldRotate</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendVideoFile:name:field:</TokenIdentifier>
-			<Abstract type="html">Добавление данных видео файла в содержимое тела HTTP запроса</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/shouldRotate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (void)appendVideoFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>file</Name>
-					<Abstract type="html">байтовое представление видео файла</Abstract>
-				</Parameter><Parameter>
-					<Name>name</Name>
-					<Abstract type="html">имя видео файла</Abstract>
-				</Parameter><Parameter>
-					<Name>field</Name>
-					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
 			
-			<Anchor>//api/name/appendVideoFile:name:field:</Anchor>
+			
+			<Anchor>//api/name/shouldRotate</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendDocumentFile:name:field:</TokenIdentifier>
-			<Abstract type="html">Добавление данных документа в содержимое тела HTTP запроса</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/VKModal/sharedInstance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (void)appendDocumentFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>file</Name>
-					<Abstract type="html">байтовое представление документа</Abstract>
-				</Parameter><Parameter>
-					<Name>name</Name>
-					<Abstract type="html">имя файла документа</Abstract>
-				</Parameter><Parameter>
-					<Name>field</Name>
-					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
 			
-			<Anchor>//api/name/appendDocumentFile:name:field:</Anchor>
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendImageFile:name:field:</TokenIdentifier>
-			<Abstract type="html">Добавление данных изображения в содержимое тела HTTP запроса</Abstract>
-			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showWithContentView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
 			
-			<Declaration>- (void)appendImageFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>file</Name>
-					<Abstract type="html">байтовое представление изображения</Abstract>
-				</Parameter><Parameter>
-					<Name>name</Name>
-					<Abstract type="html">имя файла изображения</Abstract>
-				</Parameter><Parameter>
-					<Name>field</Name>
-					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)showWithContentView:(UIView *)contentView</Declaration>
 			
-			<Anchor>//api/name/appendImageFile:name:field:</Anchor>
+			
+			<Anchor>//api/name/showWithContentView:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showWithContentView:andAnimated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)showWithContentView:(UIView *)contentView andAnimated:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/showWithContentView:andAnimated:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showWithContentViewController:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)showWithContentViewController:(UIViewController *)contentViewController</Declaration>
+			
+			
+			<Anchor>//api/name/showWithContentViewController:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showWithContentViewController:andAnimated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)showWithContentViewController:(UIViewController *)contentViewController andAnimated:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/showWithContentViewController:andAnimated:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/hide</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)hide</Declaration>
+			
+			
+			<Anchor>//api/name/hide</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/hideWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)hideWithCompletionBlock:(void ( ^ ) ( ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/hideWithCompletionBlock:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/hideAnimated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)hideAnimated:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/hideAnimated:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/hideAnimated:withCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)hideAnimated:(BOOL)animated withCompletionBlock:(void ( ^ ) ( ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/hideAnimated:withCompletionBlock:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		

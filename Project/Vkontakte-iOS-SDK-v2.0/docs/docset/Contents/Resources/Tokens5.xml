@@ -1,276 +1,420 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKStorage.html">
+	<File path="Classes/VKRequest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKStorage</TokenIdentifier>
-			<Abstract type="html">Класс представляет собой хранилище для пользовательских токенов доступа и
-закэшированных данных.
-Основным хранимым элементом является элемент типа VKStorageItem, который содержит
-пользовательский токен доступа и связанную с ним директорию для кэша.</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/VKRequest</TokenIdentifier>
+			<Abstract type="html">Оболочка для осуществления запросов к социальной сети ВКонтакте</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>
 			
 			<NodeRef refid="5"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setIsEmpty:</TokenIdentifier>
-			<Abstract type="html">Является ли хранилище пустым</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Делегат</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/isEmpty</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/isEmpty</TokenIdentifier>
-			<Abstract type="html">Является ли хранилище пустым</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/delegate</TokenIdentifier>
+			<Abstract type="html">Делегат</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/isEmpty</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/isEmpty</TokenIdentifier>
-			<Abstract type="html">Является ли хранилище пустым</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/delegate</TokenIdentifier>
+			<Abstract type="html">Делегат</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/isEmpty</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setCount:</TokenIdentifier>
-			<Abstract type="html">Кол-во элементов находящихся в хранилище</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setSignature:</TokenIdentifier>
+			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
+один делегат осуществляет обработку нескольких запросов.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
 			
 			
-			<Anchor>//api/name/count</Anchor>
+			<Anchor>//api/name/signature</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/count</TokenIdentifier>
-			<Abstract type="html">Кол-во элементов находящихся в хранилище</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/signature</TokenIdentifier>
+			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
+один делегат осуществляет обработку нескольких запросов.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
 			
 			
-			<Anchor>//api/name/count</Anchor>
+			<Anchor>//api/name/signature</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/count</TokenIdentifier>
-			<Abstract type="html">Кол-во элементов находящихся в хранилище</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/signature</TokenIdentifier>
+			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
+один делегат осуществляет обработку нескольких запросов.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
 			
 			
-			<Anchor>//api/name/count</Anchor>
+			<Anchor>//api/name/signature</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setFullStoragePath:</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории хранилища</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setCacheLiveTime:</TokenIdentifier>
+			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *fullStoragePath</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
 			
 			
-			<Anchor>//api/name/fullStoragePath</Anchor>
+			<Anchor>//api/name/cacheLiveTime</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/fullStoragePath</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории хранилища</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cacheLiveTime</TokenIdentifier>
+			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *fullStoragePath</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
 			
 			
-			<Anchor>//api/name/fullStoragePath</Anchor>
+			<Anchor>//api/name/cacheLiveTime</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/fullStoragePath</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории хранилища</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/cacheLiveTime</TokenIdentifier>
+			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *fullStoragePath</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
 			
 			
-			<Anchor>//api/name/fullStoragePath</Anchor>
+			<Anchor>//api/name/cacheLiveTime</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setFullCacheStoragePath:</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории кэша хранилища</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setOfflineMode:</TokenIdentifier>
+			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *fullCacheStoragePath</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
 			
 			
-			<Anchor>//api/name/fullCacheStoragePath</Anchor>
+			<Anchor>//api/name/offlineMode</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/fullCacheStoragePath</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории кэша хранилища</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/offlineMode</TokenIdentifier>
+			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *fullCacheStoragePath</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
 			
 			
-			<Anchor>//api/name/fullCacheStoragePath</Anchor>
+			<Anchor>//api/name/offlineMode</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/fullCacheStoragePath</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории кэша хранилища</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/offlineMode</TokenIdentifier>
+			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
+даже в случае истечения срока их действия (удаления не произойдет).
+По умолчанию режим выключен.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSString *fullCacheStoragePath</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
 			
 			
-			<Anchor>//api/name/fullCacheStoragePath</Anchor>
+			<Anchor>//api/name/offlineMode</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKStorage/sharedStorage</TokenIdentifier>
-			<Abstract type="html">Общее хранилище</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/request:delegate:</TokenIdentifier>
+			<Abstract type="html">Создает и возвращает запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>+ (instancetype)sharedStorage</Declaration>
-			
-			<ReturnValue><Abstract type="html">экземпляр класс VKStorage</Abstract></ReturnValue>
-			<Anchor>//api/name/sharedStorage</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/createStorageItemForAccessToken:</TokenIdentifier>
-			<Abstract type="html">Создаёт элемент хранилища</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
-			
-			<Declaration>- (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)token</Declaration>
+			<Declaration>+ (instancetype)request:(NSURLRequest *)request delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>token</Name>
-					<Abstract type="html">пользовательский токен доступа для которого будет создан элемент хранилища</Abstract>
+					<Name>request</Name>
+					<Abstract type="html">запрос, который будет использован в качестве основы</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
+состояния объекта и данных</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класс VKStorageItem</Abstract></ReturnValue>
-			<Anchor>//api/name/createStorageItemForAccessToken:</Anchor>
+			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
+			<Anchor>//api/name/request:delegate:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/addItem:</TokenIdentifier>
-			<Abstract type="html">Добавляет в хранилище новый элемент</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestHTTPMethod:URL:headers:body:delegate:</TokenIdentifier>
+			<Abstract type="html">Создает и возвращает запрос</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)addItem:(VKStorageItem *)item</Declaration>
+			<Declaration>+ (instancetype)requestHTTPMethod:(NSString *)httpMethod URL:(NSURL *)url headers:(NSDictionary *)headers body:(NSData *)body delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>item</Name>
-					<Abstract type="html">элемент хранилища</Abstract>
+					<Name>httpMethod</Name>
+					<Abstract type="html">GET или POST</Abstract>
+				</Parameter><Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL на который будет осуществлен запрос</Abstract>
+				</Parameter><Parameter>
+					<Name>headers</Name>
+					<Abstract type="html">заголовки запроса</Abstract>
+				</Parameter><Parameter>
+					<Name>body</Name>
+					<Abstract type="html">тело запроса</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
+состояния объекта и данных</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/addItem:</Anchor>
+			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
+			<Anchor>//api/name/requestHTTPMethod:URL:headers:body:delegate:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/removeItem:</TokenIdentifier>
-			<Abstract type="html">Удаляет из хранилища указанный элемент</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestMethod:options:delegate:</TokenIdentifier>
+			<Abstract type="html">Создает и возвращает запрос</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)removeItem:(VKStorageItem *)item</Declaration>
+			<Declaration>+ (instancetype)requestMethod:(NSString *)methodName options:(NSDictionary *)options delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>item</Name>
-					<Abstract type="html">элемент хранилища</Abstract>
+					<Name>methodName</Name>
+					<Abstract type="html">наименование метода API (users.get, groups.join etc)</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">словарь передаваемых параметров этому методу</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
+состояния объекта и данных</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/removeItem:</Anchor>
+			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
+			<Anchor>//api/name/requestMethod:options:delegate:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/clean</TokenIdentifier>
-			<Abstract type="html">Удаляет все данные из хранилища.</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithRequest:</TokenIdentifier>
+			<Abstract type="html">Основной методы инициализации объекта</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)clean</Declaration>
-			
-			
-			<Anchor>//api/name/clean</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/cleanCachedData</TokenIdentifier>
-			<Abstract type="html">Удаляет все данные кэша в хранилище</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
-			
-			<Declaration>- (void)cleanCachedData</Declaration>
-			
-			
-			<Anchor>//api/name/cleanCachedData</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storageItemForUserID:</TokenIdentifier>
-			<Abstract type="html">Получение элемента хранилища по пользовательскому идентификатору</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
-			
-			<Declaration>- (VKStorageItem *)storageItemForUserID:(NSUInteger)userID</Declaration>
+			<Declaration>- (instancetype)initWithRequest:(NSURLRequest *)request</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>userID</Name>
-					<Abstract type="html">пользовательский идентификатор</Abstract>
+					<Name>request</Name>
+					<Abstract type="html">запрос, который будет использован в качестве основы</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKStorageItem, либо nil, если элемента в хранилище</Abstract></ReturnValue>
-			<Anchor>//api/name/storageItemForUserID:</Anchor>
+			<ReturnValue><Abstract type="html">объект типа VKRequest</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithRequest:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storageItems</TokenIdentifier>
-			<Abstract type="html">Список всех элементов хранилища</Abstract>
-			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithHTTPMethod:URL:headers:body:</TokenIdentifier>
+			<Abstract type="html">Метод инициализации объекта</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (NSArray *)storageItems</Declaration>
+			<Declaration>- (instancetype)initWithHTTPMethod:(NSString *)httpMethod URL:(NSURL *)url headers:(NSDictionary *)headers body:(NSData *)body</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>httpMethod</Name>
+					<Abstract type="html">GET или POST</Abstract>
+				</Parameter><Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL на который будет осуществлен запрос</Abstract>
+				</Parameter><Parameter>
+					<Name>headers</Name>
+					<Abstract type="html">заголовки запроса</Abstract>
+				</Parameter><Parameter>
+					<Name>body</Name>
+					<Abstract type="html">тело запроса</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">объекта типа VKRequest</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithHTTPMethod:URL:headers:body:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithMethod:options:</TokenIdentifier>
+			<Abstract type="html">Метод инициализации объекта</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<ReturnValue><Abstract type="html">массив со всеми элементами хранилища типа VKStorageItem</Abstract></ReturnValue>
-			<Anchor>//api/name/storageItems</Anchor>
+			<Declaration>- (instancetype)initWithMethod:(NSString *)methodName options:(NSDictionary *)options</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">наименования метода API (users.get, groups.join etc)</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">словарь передаваемых параметров этому методу</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">объекта класса VKRequest</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithMethod:options:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/start</TokenIdentifier>
+			<Abstract type="html">Старт запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cancel</TokenIdentifier>
+			<Abstract type="html">Отмена запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)cancel</Declaration>
+			
+			
+			<Anchor>//api/name/cancel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendAudioFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Добавление данных аудио файла в содержимое тела HTTP запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendAudioFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">байтовое представление аудио файла</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">имя аудио файла</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">наименования HTML поля, которое использовалось для отправки файла</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendAudioFile:name:field:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendVideoFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Добавление данных видео файла в содержимое тела HTTP запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendVideoFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">байтовое представление видео файла</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">имя видео файла</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendVideoFile:name:field:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendDocumentFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Добавление данных документа в содержимое тела HTTP запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendDocumentFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">байтовое представление документа</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">имя файла документа</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendDocumentFile:name:field:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendImageFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Добавление данных изображения в содержимое тела HTTP запроса</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendImageFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">байтовое представление изображения</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">имя файла изображения</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendImageFile:name:field:</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

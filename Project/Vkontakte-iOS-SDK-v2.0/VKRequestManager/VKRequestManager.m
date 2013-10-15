@@ -22,7 +22,7 @@
     if (self) {
         _delegate = delegate;
         _user = user;
-        _startAllRequestsImmediately = @YES;
+        _startAllRequestsImmediately = YES;
     }
 
     return self;
