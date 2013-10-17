@@ -1,103 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/VKUser.html">
+	<File path="Categories/NSString+MD5.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/VKUser</TokenIdentifier>
-			<Abstract type="html">Класс представляет пользователя социальной сети, который может осуществлять ряд
-действий с объектами вроде групп, друзей, музыкой, видео и тд.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString(MD5)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSString+MD5.h</DeclaredIn>
 			
 			<NodeRef refid="9"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/setAccessToken:</TokenIdentifier>
-			<Abstract type="html">Пользовательски токен доступа текущего активного пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/NSString(MD5)/md5</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSString+MD5.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
-			
-			
-			<Anchor>//api/name/accessToken</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accessToken</TokenIdentifier>
-			<Abstract type="html">Пользовательски токен доступа текущего активного пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
+			<Declaration>- (NSString *)md5</Declaration>
 			
 			
-			<Anchor>//api/name/accessToken</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKUser/accessToken</TokenIdentifier>
-			<Abstract type="html">Пользовательски токен доступа текущего активного пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
-			
-			
-			<Anchor>//api/name/accessToken</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKUser/currentUser</TokenIdentifier>
-			<Abstract type="html">Текущий активный пользователь.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>+ (instancetype)currentUser</Declaration>
-			
-			
-			<Anchor>//api/name/currentUser</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKUser/activateUserWithID:</TokenIdentifier>
-			<Abstract type="html">Делает активным пользователя с идентификатором userID.</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>+ (BOOL)activateUserWithID:(NSUInteger)userID</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>userID</Name>
-					<Abstract type="html">идентификатор пользователя, которого необходимо активировать</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">булево значение, удалось ли активировать указанного пользователя или нет</Abstract></ReturnValue>
-			<Anchor>//api/name/activateUserWithID:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/VKUser/localUsers</TokenIdentifier>
-			<Abstract type="html">Получение списка пользователей находящихся в хранилище</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>+ (NSArray *)localUsers</Declaration>
-			
-			<ReturnValue><Abstract type="html">массив пользовательских идентификаторов</Abstract></ReturnValue>
-			<Anchor>//api/name/localUsers</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/description</TokenIdentifier>
-			<Abstract type="html">Описание текущего пользователя</Abstract>
-			<DeclaredIn>VKUser.h</DeclaredIn>			
-			
-			<Declaration>- (NSString *)description</Declaration>
-			
-			
-			<Anchor>//api/name/description</Anchor>
+			<Anchor>//api/name/md5</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

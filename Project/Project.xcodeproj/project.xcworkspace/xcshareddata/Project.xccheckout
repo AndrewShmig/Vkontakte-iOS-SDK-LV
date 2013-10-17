@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>74902B83-EECF-4174-A1FA-FD15771A1D30</string>
+	<string>48235996-2899-4064-B270-CF515E889FAB</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>651A5FC5-0B02-4AED-B6B4-339D6AE7ADB8</key>
+		<key>8ED34CC6-ADA1-4764-ABE2-33387C671794</key>
 		<string>https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Project/Project.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>651A5FC5-0B02-4AED-B6B4-339D6AE7ADB8</key>
+		<key>8ED34CC6-ADA1-4764-ABE2-33387C671794</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>651A5FC5-0B02-4AED-B6B4-339D6AE7ADB8</string>
+	<string>8ED34CC6-ADA1-4764-ABE2-33387C671794</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>651A5FC5-0B02-4AED-B6B4-339D6AE7ADB8</string>
+			<string>8ED34CC6-ADA1-4764-ABE2-33387C671794</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Vkontakte-iOS-SDK-v2</string>
 		</dict>
