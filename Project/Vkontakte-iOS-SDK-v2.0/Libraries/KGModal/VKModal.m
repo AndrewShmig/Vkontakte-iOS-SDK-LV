@@ -85,8 +85,8 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 }
 
 - (void)showWithContentView:(UIView *)contentView andAnimated:(BOOL)animated {
-    if([self.delegate respondsToSelector:@selector(KGModalWillAppear:)]){
-        [self.delegate KGModalWillAppear:self];
+    if([self.delegate respondsToSelector:@selector(VKModalWillAppear:)]){
+        [self.delegate VKModalWillAppear:self];
     }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -173,8 +173,8 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 }
 
 - (void)hideAnimated:(BOOL)animated withCompletionBlock:(void(^)())completion{
-    if([self.delegate respondsToSelector:@selector(KGModalWillDisappear:)]){
-        [self.delegate KGModalWillDisappear:self];
+    if([self.delegate respondsToSelector:@selector(VKModalWillDisappear:)]){
+        [self.delegate VKModalWillDisappear:self];
     }
 
     if(!animated){
@@ -289,7 +289,7 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
 
 - (void)drawRect:(CGRect)rect{
     CGContextRef context = UIGraphicsGetCurrentContext();
-    if([[VKModal sharedInstance] backgroundDisplayStyle] == KGModalBackgroundDisplayStyleSolid){
+    if([[VKModal sharedInstance] backgroundDisplayStyle] == VKModalBackgroundDisplayStyleSolid){
         [[UIColor colorWithWhite:0 alpha:0.55] set];
         CGContextFillRect(context, self.bounds);
     }else{

@@ -70,9 +70,11 @@
 
 - (void)startWithAppID:(NSString *)appID
             permissons:(NSArray *)permissions
+              delegate:(id<VKConnectorDelegate>)delegate
 {
     _permissions = permissions;
     _appID = appID;
+    _delegate = delegate;
 
     _settings = [self.permissions componentsJoinedByString:@","];
     _redirectURL = @"https://oauth.vk.com/blank.html";
@@ -183,8 +185,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
 
 //    разрешаем пользователю только сменить язык в окне авторизации, ничего более
-    if([url hasPrefix:@"https://vk.com"] || [url hasPrefix:@"http://vk.com"] ||
-            ([url hasPrefix:@"https://m.vk.com"] && ![url hasPrefix:@"https://m.vk.com/settings"])){
+    if ([[[NSURL URLWithString:url] host] isEqualToString:@"vk.com"]) {
         return NO;
     }
 
@@ -211,20 +212,22 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
 }
 
-#pragma mark - KGModal delegate
+#pragma mark - VKModal delegate
 
-- (void)KGModalWillAppear:(VKModal *)kgModal
+- (void)VKModalWillAppear:(VKModal *)vkModal
 {
-    if ([self.delegate respondsToSelector:@selector(VKConnector:willShowModalView:)])
+    if ([self.delegate respondsToSelector:@selector(VKConnector:willShowModalView:)]) {
         [self.delegate VKConnector:self
                  willShowModalView:[VKModal sharedInstance]];
+    }
 }
 
-- (void)KGModalWillDisappear:(VKModal *)kgModal
+- (void)VKModalWillDisappear:(VKModal *)vkModal
 {
-    if ([self.delegate respondsToSelector:@selector(VKConnector:willHideModalView:)])
+    if ([self.delegate respondsToSelector:@selector(VKConnector:willHideModalView:)]) {
         [self.delegate VKConnector:self
                  willHideModalView:[VKModal sharedInstance]];
+    }
 }
 
 #pragma mark - Cookies manipulation methods

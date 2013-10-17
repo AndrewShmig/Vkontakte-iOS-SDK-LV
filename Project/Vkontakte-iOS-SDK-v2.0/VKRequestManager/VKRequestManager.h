@@ -8,29 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
+
 @class VKAccessToken;
 @class VKRequest;
 @class  VKUser;
 @protocol VKRequestDelegate;
 
+
 @interface VKRequestManager : NSObject
 
-@property(nonatomic, strong) VKUser *user;
 /**
 @name Свойства
 */
+/**Пользователь от лица которого осуществляются запросы.
+
+В случае, если ползовательский объект равен nil запрос будет осуществлен без
+передачи токена доступа.
+*/
+@property(nonatomic, strong, readwrite) VKUser *user;
+
 /** Делегат
-
-Решение использовать сильную ссылку на объект делегата в классе VKUser возникает
-при рассмотрении детально принципа работы запросов VKRequest.
-В VKRequest ссылка на делегат является слабой, а значит, если и в VKUser будет
-слабой, то вполне может случиться неприятность, когда будут запущено несколько
-запросов, а делегат в некоторый момент времени установлен в nil (случайно или
-намеренно), тогда получим пустые запросы результаты которых не нужны будут и не
-будут использованы.
-
-@warning возможно в будущем изменится обработка момента присвоения делегату
-значения nil, как вариант, все запущенные запросы будут отменены.
 */
 @property (nonatomic, weak, readwrite) id<VKRequestDelegate> delegate;
 
@@ -41,8 +38,9 @@
 Предположим, что вы хотите осуществить запрос пользовательской информации, но
 начало хотите инициировать сами. Вот, как это может выглядеть:
 
-    [VKUser currentUser].startAllRequestsImmediately = NO;
-    VKRequest *userInfo = [[VKUser currentUser] info];
+    VKRequestManager *rm = [[VKRequestManager alloc] init...];
+    rm.startAllRequestsImmediately = NO;
+    VKRequest *userInfo = [rm info];
 
     // пользователь нажал какую-то кнопку, после чего вы стартуете запрос
     [userInfo start];
@@ -50,7 +48,7 @@
 Если нет необходимоти выполнять отложенный запуск, то можно делать следующим образом:
 
     // запрос стартует немедленно
-    [[VKUser currentUser] info];
+    [rm info];
 
 */
 @property (nonatomic, assign, readwrite) BOOL startAllRequestsImmediately;
@@ -61,7 +59,16 @@
 */
 @property (nonatomic, assign, readwrite) BOOL offlineMode;
 
-- (instancetype)initWithDelegate:(id <VKRequestDelegate>)delegate user:(VKUser *)user;
+/**
+@name Методы инициализации
+*/
+/** Инициализация менеджера запросов
+
+@param delegate делегат
+@param user пользователь от лица которого будут осуществляться запросы
+ */
+- (instancetype)initWithDelegate:(id <VKRequestDelegate>)delegate
+                            user:(VKUser *)user;
 
 @end
 

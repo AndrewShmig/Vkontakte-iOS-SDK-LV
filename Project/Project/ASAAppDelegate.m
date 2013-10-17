@@ -13,66 +13,77 @@
 #import "VKUser.h"
 
 
-
 static NSString *const kVKAppID = @"3541027";
 static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages";
 
 
 @implementation ASAAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)          application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[UIWindow alloc]
+                             initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [[VKConnector sharedInstance] setDelegate:self];
     [[VKConnector sharedInstance] startWithAppID:kVKAppID
-                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]];
+                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+                                        delegate:self];
 
     // Override point for customization after application launch.
-    self.viewController = [[ASAViewController alloc] initWithNibName:@"ASAViewController" bundle:nil];
+    self.viewController = [[ASAViewController alloc]
+                                              initWithNibName:@"ASAViewController"
+                                                       bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-- (void)VKConnector:(VKConnector *)connector willShowModalView:(VKModal *)view
+- (void)VKConnector:(VKConnector *)connector
+  willShowModalView:(VKModal *)view
 {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)VKConnector:(VKConnector *)connector willHideModalView:(VKModal *)view
+- (void)VKConnector:(VKConnector *)connector
+  willHideModalView:(VKModal *)view
 {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)VKConnector:(VKConnector *)connector accessTokenInvalidated:(VKAccessToken *)accessToken
+- (void)   VKConnector:(VKConnector *)connector
+accessTokenInvalidated:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)VKConnector:(VKConnector *)connector accessTokenRenewalFailed:(VKAccessToken *)accessToken
+- (void)     VKConnector:(VKConnector *)connector
+accessTokenRenewalFailed:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+- (void)        VKConnector:(VKConnector *)connector
+accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
 
-    VKRequestManager *rm = [[VKRequestManager alloc] initWithDelegate:self user:[VKUser currentUser]];
+    VKRequestManager *rm = [[VKRequestManager alloc] initWithDelegate:self
+                                                                 user:[VKUser currentUser]];
     [rm friendsGet:@{
-            @"user_id": @"58487857",
-            @"fields": @"nickname,screen_name,sex,bdate,city,country,timezone,photo_50,photo_100,photo_200_orig,has_mobile,contacts,education,online,relation,last_seen,status,can_write_private_message,can_see_all_posts,can_post,universities"
+            @"user_id" : @"58487857",
+            @"fields"  : @"nickname,screen_name,sex,bdate,city,country,timezone,photo_50,photo_100,photo_200_orig,has_mobile,contacts,education,online,relation,last_seen,status,can_write_private_message,can_see_all_posts,can_post,universities"
     }];
 }
 
-- (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error
+- (void)   VKConnector:(VKConnector *)connector
+connectionErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"CONNECTION error: %@", error);
 }
 
-- (void)VKConnector:(VKConnector *)connector parsingErrorOccured:(NSError *)error
+- (void)VKConnector:(VKConnector *)connector
+parsingErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"error: %@", error);
@@ -84,7 +95,8 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
     NSLog(@"response: %@", response);
 }
 
-- (void)VKRequest:(VKRequest *)request responseErrorOccured:(id)error
+- (void)VKRequest:(VKRequest *)request
+        responseErrorOccured:(id)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"error: %@", error);
@@ -99,13 +111,15 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
     NSLog(@"captchaImage: %@", captchaImage);
 }
 
-- (void)VKRequest:(VKRequest *)request parsingErrorOccured:(NSError *)error
+- (void)VKRequest:(VKRequest *)request
+        parsingErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", error);
 }
 
-- (void)VKRequest:(VKRequest *)request connectionErrorOccured:(NSError *)error
+- (void)VKRequest:(VKRequest *)request
+        connectionErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", error);

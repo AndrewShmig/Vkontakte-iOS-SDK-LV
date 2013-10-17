@@ -11,22 +11,22 @@
 @class VKModal;
 
 typedef NS_ENUM(NSUInteger, KGModalBackgroundDisplayStyle){
-    KGModalBackgroundDisplayStyleGradient,
-    KGModalBackgroundDisplayStyleSolid
+    VKModalBackgroundDisplayStyleGradient,
+    VKModalBackgroundDisplayStyleSolid
 };
 
 
-@protocol KGModalDelegate <NSObject>
+@protocol VKModalDelegate <NSObject>
 @optional
-- (void)KGModalWillAppear:(VKModal *)kgModal;
-- (void)KGModalWillDisappear:(VKModal *)kgModal;
+- (void)VKModalWillAppear:(VKModal *)vkModal;
+- (void)VKModalWillDisappear:(VKModal *)vkModal;
 @end
 
 
 @interface VKModal : NSObject
 
 // Delegate
-@property (nonatomic, weak) id<KGModalDelegate> delegate;
+@property (nonatomic, weak) id<VKModalDelegate> delegate;
 
 // Determines if the modal should dismiss if the user taps outside of the modal view
 // Defaults to YES

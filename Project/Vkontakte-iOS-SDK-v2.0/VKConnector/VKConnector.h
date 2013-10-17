@@ -127,14 +127,14 @@ parsingErrorOccured:(NSError *)error;
     }
 
  */
-@interface VKConnector : NSObject <UIWebViewDelegate, KGModalDelegate>
+@interface VKConnector : NSObject <UIWebViewDelegate, VKModalDelegate>
 
 /**
 @name Свойства
 */
-/** Делегат VKConnector
+/** Делегат
  */
-@property (nonatomic, weak, readwrite) id <VKConnectorDelegate> delegate;
+@property (nonatomic, weak, readonly) id <VKConnectorDelegate> delegate;
 
 /** Идентификатор приложения Вконтакте
  */
@@ -159,9 +159,11 @@ parsingErrorOccured:(NSError *)error;
 
  @param appID Идентификатор приложения полученный при регистрации.
  @param permissions Массив доступов (разрешений), которые необходимо получить приложению.
+ @param delegate делегат
  */
 - (void)startWithAppID:(NSString *)appID
-            permissons:(NSArray *)permissions;
+            permissons:(NSArray *)permissions
+              delegate:(id<VKConnectorDelegate>)delegate;
 
 /**
 @name Манипулирование куками авторизации
