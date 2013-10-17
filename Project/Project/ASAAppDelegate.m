@@ -9,8 +9,6 @@
 #import "ASAAppDelegate.h"
 #import "ASAViewController.h"
 #import "VKAccessToken.h"
-#import "VKRequestManager.h"
-#import "VKUser.h"
 
 
 static NSString *const kVKAppID = @"3541027";
@@ -66,13 +64,6 @@ accessTokenRenewalFailed:(VKAccessToken *)accessToken
 accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
-
-    VKRequestManager *rm = [[VKRequestManager alloc] initWithDelegate:self
-                                                                 user:[VKUser currentUser]];
-
-    [rm friendsGet:@{
-            @"fields"  : @"nickname,screen_name,sex,bdate,city,country,timezone,photo_50,photo_100,photo_200_orig,has_mobile,contacts,education,online,relation,last_seen,status,can_write_private_message,can_see_all_posts,can_post,universities"
-    }];
 }
 
 - (void)   VKConnector:(VKConnector *)connector
