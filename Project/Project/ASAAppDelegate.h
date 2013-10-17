@@ -17,7 +17,6 @@
 @interface ASAAppDelegate : UIResponder <UIApplicationDelegate, VKConnectorDelegate, VKRequestDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) ASAViewController *viewController;
 
 @end
