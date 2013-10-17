@@ -1,4 +1,4 @@
-#Vkontakte-iOS-SDK-v2
+#Vkontakte iOS SDK
 
 Свои пожелания/идеи/багрепорты оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
 
