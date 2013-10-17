@@ -2,29 +2,10 @@
 
 Свои пожелания/идеи/багрепорты оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
 
+Список всех версий и связанной документации Вы можете найти по [этой](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases) ссылке.
+
 **Автор будет благодарен, если используя Vkontakte iOS SDK v1/v2 в своих приложениях, Вы напишете ему и укажете наименование
 (ссылку) приложения.**
-
-Документация:
-* [Вики страницы](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/wiki/_pages)
-* [Как работать с капчей ВК?](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11)
-* [Базовый пример: установка и настройка ВКонтакте iOS SDK](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/16)
-* [Получение и отображения списка друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/18)
-* [Использование кэша данных. Получение и отображение списка друзей](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/19)
-* [Загрузка аудио файла. Пример.](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/20)
-* [Загрузка нескольких изображений в альбом](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/22)
-* [Принципы работы с VKConnector, VKUser и VKAccessToken (обсуждение)](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/21)
-
-Примеры:
-* [Проекты из описаний документации](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/tree/master/Project/Examples)
-
-Связанные статьи на Хабре:
-- [Вконтакте iOS SDK v1](http://habrahabr.ru/post/184560/)
-- [Вконтакте iOS SDK v2](http://habrahabr.ru/post/185766/)
-
-Приложения, которые используют VKontakte iOS SDK v1/v2:
-- ...
-- ...
 
 #License
 Copyright (c) 2013 Andrew Shmig
