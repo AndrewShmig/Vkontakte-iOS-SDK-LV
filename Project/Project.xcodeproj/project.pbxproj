@@ -228,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				1A9A0352D2BB8AD518687940 /* Helpers */,
-				1A9A070D80EAC40E9E4A750B /* KGModal */,
+				1A9A070D80EAC40E9E4A750B /* VKModal */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -252,13 +252,13 @@
 			path = VKStorage;
 			sourceTree = "<group>";
 		};
-		1A9A070D80EAC40E9E4A750B /* KGModal */ = {
+		1A9A070D80EAC40E9E4A750B /* VKModal */ = {
 			isa = PBXGroup;
 			children = (
 				1A9A090B7B5805684A779471 /* VKModal.h */,
 				1A9A0FF8478F9EEE6C08F710 /* VKModal.m */,
 			);
-			path = KGModal;
+			path = VKModal;
 			sourceTree = "<group>";
 		};
 		1A9A08D92DB1EF47C34EDC87 /* Frameworks */ = {
