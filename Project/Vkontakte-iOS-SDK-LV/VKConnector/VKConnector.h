@@ -148,7 +148,7 @@ parsingErrorOccured:(NSError *)error;
 @name Методы класса
 */
 /** Метод класса для получения экземпляра сиглтона.
-* Если объект отсутствует, то он будет создан. Не может быть равен nil или NULL.
+Если объект отсутствует, то он будет создан. Не может быть равен nil или NULL.
 */
 + (id)sharedInstance;
 
@@ -160,10 +160,10 @@ parsingErrorOccured:(NSError *)error;
  @param appID Идентификатор приложения полученный при регистрации.
  @param permissions Массив доступов (разрешений), которые необходимо получить приложению.
  @param delegate делегат
- */
+*/
 - (void)startWithAppID:(NSString *)appID
             permissons:(NSArray *)permissions
-              delegate:(id<VKConnectorDelegate>)delegate;
+              delegate:(id <VKConnectorDelegate>)delegate;
 
 /**
 @name Манипулирование куками авторизации
