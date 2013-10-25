@@ -58,7 +58,7 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
     self.shouldRotate = YES;
     self.tapOutsideToDismiss = YES;
     self.animateWhenDismissed = YES;
-    self.showCloseButton = YES;
+    self.showCloseButton = NO;
     self.modalBackgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     
     return self;
@@ -100,8 +100,8 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
     CGFloat padding = 17;
     CGRect containerViewRect = CGRectInset(contentView.bounds, -padding, -padding);
     containerViewRect.origin.x = containerViewRect.origin.y = 0;
-    containerViewRect.origin.x = round(CGRectGetMidX(self.window.bounds)-CGRectGetMidX(containerViewRect));
-    containerViewRect.origin.y = round(CGRectGetMidY(self.window.bounds)-CGRectGetMidY(containerViewRect));
+    containerViewRect.origin.x = round(CGRectGetMidX(self.window.bounds) - CGRectGetMidX(containerViewRect));
+    containerViewRect.origin.y = round(CGRectGetMidY(self.window.bounds) - CGRectGetMidY(containerViewRect));
     KGModalContainerView *containerView = [[KGModalContainerView alloc] initWithFrame:containerViewRect];
     containerView.modalBackgroundColor = self.modalBackgroundColor;
     containerView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|

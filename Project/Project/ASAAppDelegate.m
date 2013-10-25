@@ -12,7 +12,7 @@
 
 
 static NSString *const kVKAppID = @"3541027";
-static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages";
+static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages,notes";
 
 
 @implementation ASAAppDelegate

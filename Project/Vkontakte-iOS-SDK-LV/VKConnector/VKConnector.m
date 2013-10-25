@@ -35,8 +35,8 @@
 #import "VKStorageItem.h"
 
 
-#define MARGIN_WIDTH 25.0 // ширина отступа от границ экрана
-#define MARGIN_HEIGHT 50.0 // высота отступа
+#define WIDTH_PADDING 25.0 // отступ по ширине всплывающего окна
+#define HEIGHT_PADDING 255.0 // отступ по высоте всплывающего окна
 
 
 @implementation VKConnector
@@ -56,12 +56,12 @@
 + (instancetype)sharedInstance
 {
     static VKConnector *instanceVKConnector = nil;
+    static dispatch_once_t once;
 
-    @synchronized (self) {
-        if (instanceVKConnector == nil) {
-            instanceVKConnector = [[self alloc] init];
-        }
-    }
+    dispatch_once(&once, ^
+    {
+        instanceVKConnector = [[self alloc] init];
+    });
 
     return instanceVKConnector;
 }
@@ -81,9 +81,7 @@
 
     if (nil == _mainView) {
         // настраиваем попап окно для отображения UIWebView
-        CGRect frame = [[UIScreen mainScreen] bounds];
-        frame.size.height -= MARGIN_HEIGHT;
-        frame.size.width -= MARGIN_WIDTH;
+        CGRect frame = [self makeFrameAccordingToOrientation];
         _mainView = [[UIView alloc] initWithFrame:frame];
 
         if (nil == _innerWebView) {
@@ -242,6 +240,27 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                   deleteCookie:cookie];
         }
     }
+}
+
+#pragma mark - Device orientation
+
+- (CGRect)makeFrameAccordingToOrientation
+{
+    CGRect frame;
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication]
+                                                         statusBarOrientation];
+
+    frame.origin = screenBounds.origin;
+    frame.size.width = screenBounds.size.width - WIDTH_PADDING;
+
+    if(UIInterfaceOrientationIsPortrait(orientation)) { // portrait
+        frame.size.height = screenBounds.size.height - HEIGHT_PADDING;
+    } else { // landscape
+        frame.size.height = screenBounds.size.width - WIDTH_PADDING;
+    }
+
+    return frame;
 }
 
 @end
