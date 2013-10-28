@@ -1811,7 +1811,14 @@
 
 - (NSDictionary *)addAccessTokenKey:(NSDictionary *)options
 {
-    NSMutableDictionary *ops = [options mutableCopy];
+    NSMutableDictionary *ops;
+
+    if(nil == options) {
+        ops = [[NSMutableDictionary alloc] init];
+    } else {
+        ops = [options mutableCopy];
+    }
+
     ops[@"access_token"] = self.user.accessToken.token;
 
     return ops;
