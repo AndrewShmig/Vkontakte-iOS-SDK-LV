@@ -2,7 +2,7 @@
 
 Свои пожелания/идеи/багрепорты оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
 
-Список всех версий и связанной документации Вы можете найти по [этой](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases) ссылке.
+Список всех версий и связаной документации Вы можете найти по [этой](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases) ссылке.
 
 **Автор будет благодарен, если используя Vkontakte iOS SDK v1/v2/v3 в своих приложениях, Вы напишете ему и укажете наименование
 (ссылку) приложения.**
