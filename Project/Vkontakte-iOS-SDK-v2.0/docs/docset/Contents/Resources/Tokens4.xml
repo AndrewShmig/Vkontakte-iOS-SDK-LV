@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VKModal.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VKModal</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak) id&lt;VKModalDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak) id&lt;VKModalDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak) id&lt;VKModalDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setTapOutsideToDismiss:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
+			
+			
+			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/tapOutsideToDismiss</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
+			
+			
+			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/tapOutsideToDismiss</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL tapOutsideToDismiss</Declaration>
+			
+			
+			<Anchor>//api/name/tapOutsideToDismiss</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setAnimateWhenDismissed:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
+			
+			
+			<Anchor>//api/name/animateWhenDismissed</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/animateWhenDismissed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
+			
+			
+			<Anchor>//api/name/animateWhenDismissed</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/animateWhenDismissed</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL animateWhenDismissed</Declaration>
+			
+			
+			<Anchor>//api/name/animateWhenDismissed</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setShowCloseButton:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
+			
+			
+			<Anchor>//api/name/showCloseButton</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showCloseButton</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
+			
+			
+			<Anchor>//api/name/showCloseButton</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/showCloseButton</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL showCloseButton</Declaration>
+			
+			
+			<Anchor>//api/name/showCloseButton</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setModalBackgroundColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/modalBackgroundColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/modalBackgroundColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/modalBackgroundColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/modalBackgroundColor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) UIColor *modalBackgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/modalBackgroundColor</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setBackgroundDisplayStyle:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/backgroundDisplayStyle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/backgroundDisplayStyle</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) KGModalBackgroundDisplayStyle backgroundDisplayStyle</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundDisplayStyle</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setShouldRotate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
+			
+			
+			<Anchor>//api/name/shouldRotate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/shouldRotate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
+			
+			
+			<Anchor>//api/name/shouldRotate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/shouldRotate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL shouldRotate</Declaration>
+			
+			
+			<Anchor>//api/name/shouldRotate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKModal/sharedInstance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showWithContentView:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)showWithContentView:(UIView *)contentView</Declaration>
+			
+			
+			<Anchor>//api/name/showWithContentView:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showWithContentView:andAnimated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)showWithContentView:(UIView *)contentView andAnimated:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/showWithContentView:andAnimated:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showWithContentViewController:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)showWithContentViewController:(UIViewController *)contentViewController</Declaration>
+			
+			
+			<Anchor>//api/name/showWithContentViewController:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/showWithContentViewController:andAnimated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)showWithContentViewController:(UIViewController *)contentViewController andAnimated:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/showWithContentViewController:andAnimated:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/hide</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)hide</Declaration>
+			
+			
+			<Anchor>//api/name/hide</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/hideWithCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)hideWithCompletionBlock:(void ( ^ ) ( ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/hideWithCompletionBlock:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/hideAnimated:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)hideAnimated:(BOOL)animated</Declaration>
+			
+			
+			<Anchor>//api/name/hideAnimated:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/hideAnimated:withCompletionBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>- (void)hideAnimated:(BOOL)animated withCompletionBlock:(void ( ^ ) ( ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/hideAnimated:withCompletionBlock:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+	</File>
+</Tokens>

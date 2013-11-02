@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VKCachedData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VKCachedData</TokenIdentifier>
+			<Abstract type="html">Класс предназначен для хранения, получения, удаления кэша запросов.
+Хранение кэша осуществляется на диске и в директории указанной при инициализации
+класса.</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/initWithCacheDirectory:</TokenIdentifier>
+			<Abstract type="html">Инициализация объекта для кэширования запросов</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithCacheDirectory:(NSString *)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract type="html">директория в которой должны будут храниться кэшируемые данные.
+Если директория не существует, то будет создана.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">объект типа VKCachedData</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithCacheDirectory:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:</TokenIdentifier>
+			<Abstract type="html">Добавляет данные в кэш</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cache</Name>
+					<Abstract type="html">данные, которые необходимо закэшировать</Abstract>
+				</Parameter><Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL который соответствует кешируемым данным</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addCachedData:forURL:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/addCachedData:forURL:liveTime:</TokenIdentifier>
+			<Abstract type="html">Добавляет данные в кэш</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url liveTime:(VKCachedDataLiveTime)cacheLiveTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cache</Name>
+					<Abstract type="html">данные, которые необходимо закэшировать</Abstract>
+				</Parameter><Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL который соответствует кешируемым данным</Abstract>
+				</Parameter><Parameter>
+					<Name>cacheLiveTime</Name>
+					<Abstract type="html">время жизни кэша. Возможные варианты перечислены в VKCachedDataLiveTime
+(VKCachedDataLiveTimeOneHour, VKCachedDataLiveTimeOneDay, VKCachedDataLiveTimeForever etc)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addCachedData:forURL:liveTime:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/removeCachedDataForURL:</TokenIdentifier>
+			<Abstract type="html">Удаление кэша указанного URL</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeCachedDataForURL:(NSURL *)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL, закэшированные данные которого необходимо удалить</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeCachedDataForURL:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/clearCachedData</TokenIdentifier>
+			<Abstract type="html">Удаление всех закэшированных данных в директории, которой был инициализирован
+данный объект</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (void)clearCachedData</Declaration>
+			
+			
+			<Anchor>//api/name/clearCachedData</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/removeCachedDataDirectory</TokenIdentifier>
+			<Abstract type="html">Удаление директории с данными кэша</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeCachedDataDirectory</Declaration>
+			
+			
+			<Anchor>//api/name/removeCachedDataDirectory</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/cachedDataForURL:</TokenIdentifier>
+			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если время действия
+кэша истекло или его нет.</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (NSData *)cachedDataForURL:(NSURL *)url</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
+			<Anchor>//api/name/cachedDataForURL:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKCachedData/cachedDataForURL:offlineMode:</TokenIdentifier>
+			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если для данного
+запроса нет кэша.</Abstract>
+			<DeclaredIn>VKCachedData.h</DeclaredIn>			
+			
+			<Declaration>- (NSData *)cachedDataForURL:(NSURL *)url offlineMode:(BOOL)offlineMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
+				</Parameter><Parameter>
+					<Name>offlineMode</Name>
+					<Abstract type="html">оффлайн режим запроса кэша (как работает описано в Обсуждении)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
+			<Anchor>//api/name/cachedDataForURL:offlineMode:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+	</File>
+</Tokens>

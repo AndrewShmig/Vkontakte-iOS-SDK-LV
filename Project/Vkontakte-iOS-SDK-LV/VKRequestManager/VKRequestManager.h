@@ -1913,4 +1913,280 @@
 
 @end
 
+@interface VKRequestManager (Ads)
+
+/** Возвращает список рекламных кабинетов.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getAccounts
+@return @see info
+*/
+- (VKRequest *)adsGetAccounts:(NSDictionary *)options;
+
+/** Возвращает список клиентов рекламного агентства.
+
+Доступно только для рекламных агентств.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getClients
+@return @see info
+*/
+- (VKRequest *)adsGetClients:(NSDictionary *)options;
+
+/** Создает клиентов рекламного агентства.
+
+Доступно только для рекламных агентств.
+
+Внимание! Допустимое количество создаваемых клиентов с помощью одного запроса — 50.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.createClients
+@return @see info
+*/
+- (VKRequest *)adsCreateClients:(NSDictionary *)options;
+
+/** Редактирует клиентов рекламного агентства.
+Доступно только для рекламных агентств.
+
+Внимание!Максимальное допустимое количество клиентов, редактируемых с помощью одного запроса — 50.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.updateClients
+@return @see info
+*/
+- (VKRequest *)adsUpdateClients:(NSDictionary *)options;
+
+/** Архивирует клиентов рекламного агентства.
+
+Доступно только для рекламных агентств.
+
+Внимание! Максимальное допустимое количество клиентов, редактируемых с помощью одного запроса — 10.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.deleteClients
+@return @see info
+*/
+- (VKRequest *)adsDeleteClients:(NSDictionary *)options;
+
+/** Возвращает список кампаний рекламного кабинета.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getCampaigns
+@return @see info
+*/
+- (VKRequest *)adsGetCampaigns:(NSDictionary *)options;
+
+/** Создает рекламные кампании.
+Внимание! Допустимое количество кампаний, создаваемых с помощью одного запроса — 50.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.createCampaigns
+@return @see info
+*/
+- (VKRequest *)adsCreateCampaigns:(NSDictionary *)options;
+
+/** Редактирует рекламные кампании.
+
+Внимание!Максимальное допустимое количество кампаний, редактируемых с помощью одного запроса — 50.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.updateCampaigns
+@return @see info
+*/
+- (VKRequest *)adsUpdateCampaings:(NSDictionary *)options;
+
+/** Архивирует рекламные кампании.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.deleteCampaigns
+@return @see info
+*/
+- (VKRequest *)adsDeleteCampaings:(NSDictionary *)options;
+
+/** Возвращает список рекламных объявлений.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getAds
+@return @see info
+*/
+- (VKRequest *)adsGet:(NSDictionary *)options;
+
+/** Возвращает описания внешнего вида рекламных объявлений.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getAdsLayout
+@return @see info
+*/
+- (VKRequest *)adsGetLayout:(NSDictionary *)options;
+
+/** Возвращает параметры таргетинга рекламных объявлений
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getAdsTargeting
+@return @see info
+*/
+- (VKRequest *)adsGetTargeting:(NSDictionary *)options;
+
+/** Создает рекламные объявления.
+
+Внимание! Максимальное допустимое количество объявлений, создаваемых с помощью
+одного запроса — 20. Минимальный размер аудитории объявления — 50 человек.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.createAds
+@return @see info
+*/
+- (VKRequest *)adsCreate:(NSDictionary *)options;
+
+/** Редактирует рекламные объявления.
+
+Внимание!Максимальное допустимое количество объявлений, редактируемых с помощью
+одного запроса — 20. Минимальный размер аудитории объявления — 50 человек.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.updateAds
+@return @see info
+*/
+- (VKRequest *)adsUpdate:(NSDictionary *)options;
+
+/** Архивирует рекламные объявления.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.deleteAds
+@return @see info
+*/
+- (VKRequest *)adsDelete:(NSDictionary *)options;
+
+/** Возвращает статистику показателей эффективности по рекламным объявлениям,
+кампаниям, клиентам или всему кабинету.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getStatistics
+@return @see info
+*/
+- (VKRequest *)adsGetStatistics:(NSDictionary *)options;
+
+/** Возвращает демографическую статистику по рекламным объявлениям или кампаниям.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getDemographics
+@return @see info
+*/
+- (VKRequest *)adsGetDemographics:(NSDictionary *)options;
+
+/** Возвращает текущий бюджет рекламного кабинета.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getBudget
+@return @see info
+*/
+- (VKRequest *)adsGetBudget:(NSDictionary *)options;
+
+/** Возвращает список администраторов и наблюдателей рекламного кабинета.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getOfficeUsers
+@return @see info
+*/
+- (VKRequest *)adsGetOfficeUsers:(NSDictionary *)options;
+
+/** Добавляет администраторов и/или наблюдателей в рекламный кабинет.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.addOfficeUsers
+@return @see info
+*/
+- (VKRequest *)adsAddOfficeUsers:(NSDictionary *)options;
+
+/** Удаляет администраторов и/или наблюдателей из рекламного кабинета.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.removeOfficeUsers
+@return @see info
+*/
+- (VKRequest *)adsRemoveOfficeUsers:(NSDictionary *)options;
+
+/** Возвращает размер целевой аудитории таргетинга, а также рекомендованные
+значения CPC и CPM.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getTargetingStats
+@return @see info
+*/
+- (VKRequest *)adsGetTargetingStats:(NSDictionary *)options;
+
+/** Возвращает набор подсказок автодополнения для различных параметров таргетинга.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getSuggestions
+@return @see info
+*/
+- (VKRequest *)adsGetSuggestions:(NSDictionary *)options;
+
+/** Получение тематик объявлений.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getCategories
+@return @see info
+*/
+- (VKRequest *)adsGetCategories:(NSDictionary *)options;
+
+/** Возвращает URL-адрес для загрузки фотографии рекламного объявления.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getUploadURL
+@return @see info
+*/
+- (VKRequest *)adsGetUploadURL:(NSDictionary *)options;
+
+/** Возвращает URL-адрес для загрузки видеозаписи рекламного объявления.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getVideoUploadURL
+@return @see info
+*/
+- (VKRequest *)adsGetVideoUploadURL:(NSDictionary *)options;
+
+/** Возвращает информацию о текущем состоянии счетчика — количество оставшихся
+запусков методов и время до следующего обнуления счетчика в секундах.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getFloodStats
+@return @see info
+*/
+- (VKRequest *)adsGetFloodStats:(NSDictionary *)options;
+
+/** Возвращает причину, по которой указанному объявлению было отказано в
+прохождении премодерации.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getRejectionReason
+@return @see info
+*/
+- (VKRequest *)adsGetRejectionReason:(NSDictionary *)options;
+
+/** Создает группу для ретаргетинга рекламных объявлений на пользователей,
+которые посетили сайт рекламодателя (просмотрели информации о товаре, зарегистрировались и т.д.).
+
+В результате выполнения метода возвращается код для учета пользователей на сайте
+рекламодателя. Код необходимо разместить на странице сайта, при посещении которой
+пользователи, авторизованные во ВКонтакте, будут добавлены в создаваемую группу
+таргетирования.
+
+Для импорта в группу уже имеющихся контактов пользователей необходимо
+воспользоваться методом ads.importTargetContacts.
+
+Внимание! Максимально допустимое количество групп на рекламный кабинет — 10.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.createTargetGroup
+@return @see info
+*/
+- (VKRequest *)adsCreateTargetGroup:(NSDictionary *)options;
+
+/** Редактирует группу ретаргетинга.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.updateTargetGroup
+@return @see info
+*/
+- (VKRequest *)adsUpdateTargetGroup:(NSDictionary *)options;
+
+/** Удаляет группу ретаргетинга.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.deleteTargetGroup
+@return @see info
+*/
+- (VKRequest *)adsDeleteTargetGroup:(NSDictionary *)options;
+
+/** Возвращает список групп таргетирования.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getTargetGroups
+@return @see info
+*/
+- (VKRequest *)adsGetTargetGroups:(NSDictionary *)options;
+
+/** Импортирует список контактов рекламодателя для учета зарегистрированных во
+ВКонтакте пользователей в срезе группы таргетирования.
+
+Внимание! Максимально допустимое количество контактов, импортируемых с помощью
+одного запроса — 1000.
+
+@param options ключи-значения, полный список здесь: https://vk.com/dev/ads.importTargetContacts
+@return @see info
+*/
+- (VKRequest *)adsImportTargetContacts:(NSDictionary *)options;
+
+@end
+
 
