@@ -31,7 +31,7 @@ static NSString *const kVkontakteAPIURL = @"https://api.vk.com/method/";
 
 
 // -----------------------------------------------------------------------------
-// Users
+#pragma mark - Users
 // -----------------------------------------------------------------------------
 static NSString *const kVKUsersGet = @"users.get";
 static NSString *const kVKUsersSearch = @"users.search";
@@ -40,10 +40,10 @@ static NSString *const kVKUsersGetSubscriptions = @"users.getSubscriptions";
 static NSString *const kVKUsersGetFollowers = @"users.getFollowers";
 
 // -----------------------------------------------------------------------------
-// Groups
+#pragma mark - Groups
 // -----------------------------------------------------------------------------
 static NSString *const kVKGroupsIsMember = @"groups.isMember";
-static NSString *const kVKGroupsGetById = @"groupd.getById";
+static NSString *const kVKGroupsGetById = @"group.getById";
 static NSString *const kVKGroupsGet = @"groups.get";
 static NSString *const kVKGroupsGetMembers = @"groups.getMembers";
 static NSString *const kVKGroupsJoin = @"groups.join";
@@ -55,7 +55,7 @@ static NSString *const kVKGroupsUnbanUser = @"groups.unbanUser";
 static NSString *const kVKGroupsGetBanned = @"groups.getBanned";
 
 // -----------------------------------------------------------------------------
-// Friends
+#pragma mark - Friends
 // -----------------------------------------------------------------------------
 static NSString *const kVKFriendsGet = @"friends.get";
 static NSString *const kVKFriendsGetOnline = @"friends.getOnline";
@@ -76,13 +76,13 @@ static NSString *const kVKFriendsGetSuggestions = @"friends.getSuggestions";
 static NSString *const kVKFriendsAreFriends = @"friends.areFriends";
 
 // -----------------------------------------------------------------------------
-// Wall
+#pragma mark - Wall
 // -----------------------------------------------------------------------------
 static NSString *const kVKWallGet = @"wall.get";
 static NSString *const kVKWallGetById = @"wall.getById";
 static NSString *const kVKWallSavePost = @"wall.savePost";
 static NSString *const kVKWallPost = @"wall.post";
-static NSString *const kVKWallRepost = @"wall.respost";
+static NSString *const kVKWallRepost = @"wall.repost";
 static NSString *const kVKWallGetReposts = @"wall.getReposts";
 static NSString *const kVKWallEdit = @"wall.edit";
 static NSString *const kVKWallDelete = @"wall.delete";
@@ -96,7 +96,7 @@ static NSString *const kVKWallAddLike = @"wall.addLike";
 static NSString *const kVKWallDeleteLike = @"wall.deleteLike";
 
 // -----------------------------------------------------------------------------
-// Photos
+#pragma mark - Photos
 // -----------------------------------------------------------------------------
 static NSString *const kVKPhotosCreateAlbum = @"photos.createAlbum";
 static NSString *const kVKPhotosEditAlbum = @"photos.editAlbum";
@@ -137,7 +137,7 @@ static NSString *const kVKPhotosRemoveTag = @"photos.removeTag";
 static NSString *const kVKPhotosGetNewTags = @"photos.getNewTags";
 
 // -----------------------------------------------------------------------------
-// Video
+#pragma mark - Video
 // -----------------------------------------------------------------------------
 static NSString *const kVKVideoGet = @"video.get";
 static NSString *const kVKVideoEdit = @"video.edit";
@@ -164,7 +164,7 @@ static NSString *const kVKVideoGetNewTags = @"video.getNewTags";
 static NSString *const kVKVideoReport = @"video.report";
 
 // -----------------------------------------------------------------------------
-// Audio
+#pragma mark - Audio
 // -----------------------------------------------------------------------------
 static NSString *const kVKAudioGet = @"audio.get";
 static NSString *const kVKAudioGetById = @"audio.getById";
@@ -189,7 +189,7 @@ static NSString *const kVKAudioGetPopular = @"audio.getPopular";
 static NSString *const kVKAudioGetCount = @"audio.getCount";
 
 // -----------------------------------------------------------------------------
-// Messages
+#pragma mark - Messages
 // -----------------------------------------------------------------------------
 static NSString *const kVKMessagesGet = @"messages.get";
 static NSString *const kVKMessagesGetDialogs = @"messages.getDialogs";
@@ -218,7 +218,7 @@ static NSString *const kVKMessagesGetLastActivity = @"messages.getLastActivity";
 static NSString *const kVKMessagesDeleteChatPhoto = @"messages.deleteChatPhoto";
 
 // -----------------------------------------------------------------------------
-// Newsfeed
+#pragma mark - Newsfeed
 // -----------------------------------------------------------------------------
 static NSString *const kVKNewsfeedGet = @"newsfeed.get";
 static NSString *const kVKNewsfeedGetRecommended = @"newsfeed.getRecommended";
@@ -232,7 +232,7 @@ static NSString *const kVKNewsfeedGetLists = @"newsfeed.getLists";
 static NSString *const kVKNewsfeedUnsibscribe = @"newsfeed.unsibscribe";
 
 // -----------------------------------------------------------------------------
-// Likes
+#pragma mark - Likes
 // -----------------------------------------------------------------------------
 static NSString *const kVKLikesGetList = @"likes.getList";
 static NSString *const kVKLikesAdd = @"likes.add";
@@ -240,7 +240,7 @@ static NSString *const kVKLikesDelete = @"likes.delete";
 static NSString *const kVKLikesIsLiked = @"likes.isLiked";
 
 // -----------------------------------------------------------------------------
-// Account
+#pragma mark - Account
 // -----------------------------------------------------------------------------
 static NSString *const kVKAccountGetCounters = @"account.getCounters";
 static NSString *const kVKAccountSetNameInMenu = @"account.setNameInMenu";
@@ -257,13 +257,13 @@ static NSString *const kVKAccountUnbanUser = @"account.unbanUser";
 static NSString *const kVKAccountGetBanned = @"account.getBanned";
 
 // -----------------------------------------------------------------------------
-// Status
+#pragma mark - Status
 // -----------------------------------------------------------------------------
 static NSString *const kVKStatusGet = @"status.get";
 static NSString *const kVKStatusSet = @"status.set";
 
 // -----------------------------------------------------------------------------
-// Pages
+#pragma mark - Pages
 // -----------------------------------------------------------------------------
 static NSString *const kVKPagesGet = @"pages.get";
 static NSString *const kVKPagesSave = @"pages.save";
@@ -274,7 +274,7 @@ static NSString *const kVKPagesGetVersion = @"pages.getVersion";
 static NSString *const kVKPagesParseWiki = @"pages.parseWiki";
 
 // -----------------------------------------------------------------------------
-// Board
+#pragma mark - Board
 // -----------------------------------------------------------------------------
 static NSString *const kVKBoardGetTopics = @"board.getTopics";
 static NSString *const kVKBoardGetComments = @"board.getComments";
@@ -291,7 +291,7 @@ static NSString *const kVKBoardFixTopic = @"board.fixTopic";
 static NSString *const kVKBoardUnfixTopic = @"board.unfixTopic";
 
 // -----------------------------------------------------------------------------
-// Notes
+#pragma mark - Notes
 // -----------------------------------------------------------------------------
 static NSString *const kVKNotesGet = @"notes.get";
 static NSString *const kVKNotesGetById = @"notes.getById";
@@ -306,7 +306,7 @@ static NSString *const kVKNotesDeleteComment = @"notes.deleteComment";
 static NSString *const kVKNotesRestoreComment = @"notes.restoreComment";
 
 // -----------------------------------------------------------------------------
-// Places
+#pragma mark - Places
 // -----------------------------------------------------------------------------
 static NSString *const kVKPlacesAdd = @"places.add";
 static NSString *const kVKPlacesGetById = @"places.getById";
@@ -322,7 +322,7 @@ static NSString *const kVKPlacesGetCities = @"places.getCities";
 static NSString *const kVKPlacesGetCityById = @"places.getCityById";
 
 // -----------------------------------------------------------------------------
-// Polls
+#pragma mark - Polls
 // -----------------------------------------------------------------------------
 static NSString *const kVKPollsGetById = @"polls.getById";
 static NSString *const kVKPollsAddVote = @"polls.addVote";
@@ -330,7 +330,7 @@ static NSString *const kVKPollsDeleteVote = @"polls.deleteVote";
 static NSString *const kVKPollsGetVotes = @"polls.getVotes";
 
 // -----------------------------------------------------------------------------
-// Docs
+#pragma mark - Docs
 // -----------------------------------------------------------------------------
 static NSString *const kVKDocsGet = @"docs.get";
 static NSString *const kVKDocsGetById = @"docs.getById";
@@ -341,7 +341,7 @@ static NSString *const kVKDocsDelete = @"docs.delete";
 static NSString *const kVKDocsAdd = @"docs.add";
 
 // -----------------------------------------------------------------------------
-// Fave
+#pragma mark - Fave
 // -----------------------------------------------------------------------------
 static NSString *const kVKFaveGetUsers = @"fave.getUsers";
 static NSString *const kVKFaveGetPhotos = @"fave.getPhotos";
@@ -350,22 +350,59 @@ static NSString *const kVKFaveGetVideos = @"fave.getVideos";
 static NSString *const kVKFaveGetLinks = @"fave.getLinks";
 
 // -----------------------------------------------------------------------------
-// Notifications
+#pragma mark - Notifications
 // -----------------------------------------------------------------------------
 static NSString *const kVKNotificationsGet = @"notifications.get";
 static NSString *const kVKNotificationsMarkAsViewed = @"notifications.markAsViewed";
 
 // -----------------------------------------------------------------------------
-// Stats
+#pragma mark - Stats
 // -----------------------------------------------------------------------------
 static NSString *const kVKStatsGet = @"stats.get";
 
 // -----------------------------------------------------------------------------
-// Search
+#pragma mark - Search
 // -----------------------------------------------------------------------------
 static NSString *const kVKSearchGetHints = @"search.getHints";
 
 // -----------------------------------------------------------------------------
-// Apps
+#pragma mark  - Apps
 // -----------------------------------------------------------------------------
 static NSString *const kVKAppsGetCatalog = @"apps.getCatalog";
+
+// -----------------------------------------------------------------------------
+#pragma mark  - Ads
+// -----------------------------------------------------------------------------
+static NSString *const kVKAdsGetAccounts = @"ads.getAccounts";
+static NSString *const kVKAdsGetClients = @"ads.getClients";
+static NSString *const kVKAdsCreateClients = @"ads.createClients";
+static NSString *const kVKAdsUpdateClients = @"ads.updateClients";
+static NSString *const kVKAdsDeleteClients = @"ads.deleteClients";
+static NSString *const kVKAdsGetCampaigns = @"ads.getCampaigns";
+static NSString *const kVKAdsCreateCampaigns = @"ads.createCampaigns";
+static NSString *const kVKAdsUpdateCampaigns = @"ads.updateCampaigns";
+static NSString *const kVKAdsDeleteCampaigns = @"ads.deleteCampaigns";
+static NSString *const kVKAdsGetAds = @"ads.getAds";
+static NSString *const kVKAdsGetAdsLayout = @"ads.getAdsLayout";
+static NSString *const kVKAdsGetAdsTargeting = @"ads.getAdsTargeting";
+static NSString *const kVKAdsCreateAds = @"ads.createAds";
+static NSString *const kVKAdsUpdateAds = @"ads.updateAds";
+static NSString *const kVKAdsDeleteAds = @"ads.deleteAds";
+static NSString *const kVKAdsGetStatistics = @"ads.getStatistics";
+static NSString *const kVKAdsGetDemographics = @"ads.getDemographics";
+static NSString *const kVKAdsGetBudget = @"ads.getBudget";
+static NSString *const kVKAdsGetOfficeUsers = @"ads.getOfficeUsers";
+static NSString *const kVKAdsAddOfficeUsers = @"ads.addOfficeUsers";
+static NSString *const kVKAdsRemoveOfficeUsers = @"ads.removeOfficeUsers";
+static NSString *const kVKAdsGetTargetingStats = @"ads.getTargetingStats";
+static NSString *const kVKAdsGetSuggestions = @"ads.getSuggestions";
+static NSString *const kVKAdsGetCategories = @"ads.getCategories";
+static NSString *const kVKAdsGetUploadURL = @"ads.getUploadURL";
+static NSString *const kVKAdsGetVideoUploadURL = @"ads.getVideoUploadURL";
+static NSString *const kVKAdsGetFloodStats = @"ads.getFloodStats";
+static NSString *const kVKAdsGetRejectionReason = @"ads.getRejectionReason";
+static NSString *const kVKAdsCreateTargetGroup = @"ads.createTargetGroup";
+static NSString *const kVKAdsUpdateTargetGroup = @"ads.updateTargetGroup";
+static NSString *const kVKAdsDeleteTargetGroup = @"ads.deleteTargetGroup";
+static NSString *const kVKAdsGetTargetGroups = @"ads.getTargetGroups";
+static NSString *const kVKAdsImportTargetContacts = @"ads.importTargetContacts";

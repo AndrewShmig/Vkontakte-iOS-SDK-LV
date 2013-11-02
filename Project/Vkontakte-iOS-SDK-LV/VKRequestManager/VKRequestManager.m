@@ -1813,6 +1813,239 @@
                                selector:_cmd];
 }
 
+#pragma mark - Ads
+
+- (VKRequest *)adsGetAccounts:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetAccounts
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetClients:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetClients
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsCreateClients:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsCreateClients
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsUpdateClients:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsUpdateClients
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsDeleteClients:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsDeleteClients
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetCampaigns:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetCampaigns
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsCreateCampaigns:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsCreateCampaigns
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsUpdateCampaings:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsUpdateCampaigns
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsDeleteCampaings:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsDeleteCampaigns
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGet:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetAds
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetLayout:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetAdsLayout
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetTargeting:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetAdsTargeting
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsCreate:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsCreateAds
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsUpdate:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsUpdateAds
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsDelete:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsDeleteAds
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetStatistics:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetStatistics
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetDemographics:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetDemographics
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetBudget:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetBudget
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetOfficeUsers:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsAddOfficeUsers
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsAddOfficeUsers:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsAddOfficeUsers
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsRemoveOfficeUsers:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsRemoveOfficeUsers
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetTargetingStats:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetTargetingStats
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetSuggestions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetSuggestions
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetCategories:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetCategories
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetUploadURL:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetUploadURL
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetVideoUploadURL:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetVideoUploadURL
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetFloodStats:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetFloodStats
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetRejectionReason:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetRejectionReason
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsCreateTargetGroup:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsCreateTargetGroup
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsUpdateTargetGroup:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsUpdateTargetGroup
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsDeleteTargetGroup:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsDeleteTargetGroup
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsGetTargetGroups:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsGetTargetGroups
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)adsImportTargetContacts:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAdsImportTargetContacts
+                                options:options
+                               selector:_cmd];
+}
+
 #pragma mark - Private methods
 
 - (NSDictionary *)addAccessTokenKey:(NSDictionary *)options
