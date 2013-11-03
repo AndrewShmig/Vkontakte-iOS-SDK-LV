@@ -29,17 +29,17 @@
 /** Основной ключ используемый для хранения информации о токенах доступа содержащихся
 в хранилище.
 */
-static NSString *const kVKStorageUserDefaultsKey = @"Vkontakte-iOS-SDK-v2.0-Storage";
+static NSString *const kVKStorageUserDefaultsKey = @"Vkontakte-iOS-SDK-Storage";
 
 /** Основная директория для хранения файловых данных используемая в SDK (полный путь представляет
 собой конкатенацию директории NSCachesDirectory и этой константы)
 */
-static NSString *const kVKStoragePath = @"/Vkontakte-iOS-SDK-v2.0-Storage/";
+static NSString *const kVKStoragePath = @"/Vkontakte-iOS-SDK-Storage/";
 
 /** Основная директория для хранения кэша данных используемая в SDK (полный путь представляет
 собой конкатенацию директории NSCachesDirectory и этой констаны)
 */
-static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-v2.0-Storage/Cache/";
+static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-Storage/Cache/";
 
 
 @class VKStorageItem;
