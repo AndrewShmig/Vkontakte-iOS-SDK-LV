@@ -230,7 +230,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     NSDictionary *headers = [request allHTTPHeaderFields];
     if (nil == headers[@"Accept-Encoding"] || nil == headers[@"Accept-Language"]) {
 
-        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKConnector:applicationWasDeleted:)]) {
+        if ([self.delegate respondsToSelector:@selector(VKConnector:applicationWasDeleted:)]) {
 
             NSError *error = [NSError errorWithDomain:kVKErrorDomain
                                                  code:kVKApplicationWasDeletedErrorCode
