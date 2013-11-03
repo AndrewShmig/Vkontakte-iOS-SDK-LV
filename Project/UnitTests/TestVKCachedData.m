@@ -8,7 +8,7 @@
 
 #import "TestVKCachedData.h"
 #import "VKCachedData.h"
-#import "NSString+toBase64.h"
+#import "NSString+Utilities.h"
 
 
 @implementation TestVKCachedData

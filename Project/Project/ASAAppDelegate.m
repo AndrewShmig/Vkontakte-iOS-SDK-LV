@@ -9,6 +9,8 @@
 #import "ASAAppDelegate.h"
 #import "ASAViewController.h"
 #import "VKAccessToken.h"
+#import "VKRequestManager.h"
+#import "VKUser.h"
 
 
 static NSString *const kVKAppID = @"3541027";
@@ -64,6 +66,14 @@ accessTokenRenewalFailed:(VKAccessToken *)accessToken
 accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
     NSLog(@"%s", __FUNCTION__);
+
+    NSLog(@"Access token: %@", accessToken);
+
+    VKRequestManager *rm = [[VKRequestManager alloc]
+            initWithDelegate:self
+                        user:[VKUser currentUser]];
+
+    [rm friendsGet:nil];
 }
 
 - (void)   VKConnector:(VKConnector *)connector
@@ -130,6 +140,13 @@ parsingErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%d %d", totalBytes, downloadedBytes);
+}
+
+- (void)  VKConnector:(VKConnector *)connector
+applicationWasDeleted:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"Error: %@", error);
 }
 
 @end

@@ -26,10 +26,11 @@
 //
 #import "VKRequest.h"
 #import "VKUser.h"
-#import "NSString+encodeURL.h"
+#import "NSString+Utilities.h"
 #import "VKStorage.h"
 #import "VKStorageItem.h"
 #import "VKAccessToken.h"
+#import "VKMethods.h"
 
 
 #define INFO_LOG() NSLog(@"%s", __FUNCTION__)
@@ -150,7 +151,7 @@
     INFO_LOG();
 
     NSMutableString *fullURL = [NSMutableString string];
-    [fullURL appendFormat:@"%@%@", kVKAPIURLPrefix, methodName];
+    [fullURL appendFormat:@"%@%@", kVkontakteAPIURL, methodName];
 
 //    нет надобности добавлять "?", если параметров нет
     if (0 != [options count])

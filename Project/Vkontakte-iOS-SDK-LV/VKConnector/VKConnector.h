@@ -39,6 +39,13 @@
 @class VKStorageItem;
 
 
+static NSString *const kVKErrorDomain = @"kVkontakteErrorDomain";
+
+typedef enum {
+    kVKApplicationWasDeletedErrorCode
+} kVkontakteErrorCode;
+
+
 /** Протокол объявляет методы отслеживания изменения статуса токена доступа
  хранимого классом VKConnector.
  */
@@ -108,11 +115,20 @@ connectionErrorOccured:(NSError *)error;
 
 /** Метод, вызов которого сигнализирует о том, что произошла ошибка при парсинге JSON ответа сервера
  
- @param connector объект класса VKConnector отправляющего сообщение
+ @param connector объект класса VKConnector отправляющий сообщение
  @param error объект ошибки содержащий описание причины возникновения ошибки
  */
 - (void)VKConnector:(VKConnector *)connector
 parsingErrorOccured:(NSError *)error;
+
+/** Метод, вызов которого сигнализирует о том, что приложение в ВК, которое
+используется для авторизации пользователя, было удалено.
+
+@param connector объект класса VKConnector отправляющий сообщение
+@param error объект ошибки содержащий описание причины возникшей ошибки
+*/
+- (void)  VKConnector:(VKConnector *)connector
+applicationWasDeleted:(NSError *)error;
 
 @end
 

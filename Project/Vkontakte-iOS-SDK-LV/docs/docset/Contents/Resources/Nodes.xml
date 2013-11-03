@@ -31,8 +31,6 @@
 					<Subnodes>
 						<NodeRef refid="10"/>
 						<NodeRef refid="11"/>
-						<NodeRef refid="12"/>
-						<NodeRef refid="13"/>
 						
 					</Subnodes>
 				</Node>
@@ -42,9 +40,9 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
 						<NodeRef refid="14"/>
-						<NodeRef refid="15"/>
-						<NodeRef refid="16"/>
 						
 					</Subnodes>
 				</Node>
@@ -96,27 +94,19 @@
 			<Path>Categories/NSData+toBase64.html</Path>
 		</Node>
 		<Node id="11">
-			<Name>NSString(MD5)</Name>
-			<Path>Categories/NSString+MD5.html</Path>
-		</Node>
-		<Node id="12">
-			<Name>NSString(encodeURL)</Name>
-			<Path>Categories/NSString+encodeURL.html</Path>
-		</Node>
-		<Node id="13">
-			<Name>NSString(toBase64)</Name>
-			<Path>Categories/NSString+toBase64.html</Path>
+			<Name>NSString(Utilities)</Name>
+			<Path>Categories/NSString+Utilities.html</Path>
 		</Node>
 		
-		<Node id="14">
+		<Node id="12">
 			<Name>VKConnectorDelegate</Name>
 			<Path>Protocols/VKConnectorDelegate.html</Path>
 		</Node>
-		<Node id="15">
+		<Node id="13">
 			<Name>VKModalDelegate</Name>
 			<Path>Protocols/VKModalDelegate.html</Path>
 		</Node>
-		<Node id="16">
+		<Node id="14">
 			<Name>VKRequestDelegate</Name>
 			<Path>Protocols/VKRequestDelegate.html</Path>
 		</Node>

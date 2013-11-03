@@ -32,6 +32,9 @@ typedef NS_ENUM(NSUInteger, KGModalBackgroundDisplayStyle){
 // Defaults to YES
 @property (nonatomic) BOOL tapOutsideToDismiss;
 
+// Determines if modal window is currently displayed
+@property (nonatomic) BOOL isVisible;
+
 // Determins if the close button or tapping outside the modal should animate the dismissal
 // Defaults to YES
 @property (nonatomic) BOOL animateWhenDismissed;

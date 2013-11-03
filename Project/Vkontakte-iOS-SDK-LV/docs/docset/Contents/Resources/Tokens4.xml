@@ -84,6 +84,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setIsVisible:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL isVisible</Declaration>
+			
+			
+			<Anchor>//api/name/isVisible</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKModal/isVisible</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL isVisible</Declaration>
+			
+			
+			<Anchor>//api/name/isVisible</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKModal/isVisible</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>VKModal.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic) BOOL isVisible</Declaration>
+			
+			
+			<Anchor>//api/name/isVisible</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKModal/setAnimateWhenDismissed:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>VKModal.h</DeclaredIn>			

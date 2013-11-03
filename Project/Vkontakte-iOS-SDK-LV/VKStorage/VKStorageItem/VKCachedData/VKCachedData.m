@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 //
 #import "VKCachedData.h"
-#import "NSString+MD5.h"
+#import "NSString+Utilities.h"
 
 
 #define INFO_LOG() NSLog(@"%s", __FUNCTION__)

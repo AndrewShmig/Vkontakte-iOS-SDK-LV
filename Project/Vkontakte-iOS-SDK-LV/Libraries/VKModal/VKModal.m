@@ -59,6 +59,7 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
     self.tapOutsideToDismiss = YES;
     self.animateWhenDismissed = YES;
     self.showCloseButton = NO;
+    self.isVisible = NO;
     self.modalBackgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     
     return self;
@@ -92,7 +93,8 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.window.opaque = NO;
-    
+    self.isVisible = YES;
+
     KGModalViewController *viewController = [[KGModalViewController alloc] init];
     self.window.rootViewController = viewController;
     self.viewController = viewController;
@@ -176,6 +178,8 @@ NSString *const KGModalGradientViewTapped = @"KGModalGradientViewTapped";
     if([self.delegate respondsToSelector:@selector(VKModalWillDisappear:)]){
         [self.delegate VKModalWillDisappear:self];
     }
+
+    self.isVisible = NO;
 
     if(!animated){
         [self cleanup];

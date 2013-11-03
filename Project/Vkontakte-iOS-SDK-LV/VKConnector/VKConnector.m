@@ -33,6 +33,7 @@
 #import "VKModal.h"
 #import "VKStorage.h"
 #import "VKStorageItem.h"
+#import "NSString+Utilities.h"
 
 
 #define WIDTH_PADDING 25.0 // отступ по ширине всплывающего окна
@@ -70,14 +71,14 @@
 
 - (void)startWithAppID:(NSString *)appID
             permissons:(NSArray *)permissions
-              delegate:(id<VKConnectorDelegate>)delegate
+              delegate:(id <VKConnectorDelegate>)delegate
 {
     _permissions = permissions;
     _appID = appID;
     _delegate = delegate;
 
     _settings = [self.permissions componentsJoinedByString:@","];
-    _redirectURL = @"https://oauth.vk.com/blank.html";
+    _redirectURL = kVkontakteBlankURL;
 
     if (nil == _mainView) {
         // настраиваем попап окно для отображения UIWebView
@@ -114,7 +115,7 @@
     NSMutableString *urlAsString = [[NSMutableString alloc] init];
     NSMutableArray *urlParams = [[NSMutableArray alloc] init];
 
-    [urlAsString appendString:@"https://oauth.vk.com/authorize?"];
+    [urlAsString appendFormat:@"%@?", kVkontakteAuthorizationURL];
     [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
     {
         [urlParams addObject:[NSString stringWithFormat:@"%@=%@", key, obj]];
@@ -127,10 +128,6 @@
 
 //    отображаем попап
     [_innerWebView loadRequest:request];
-
-    [[VKModal sharedInstance] setDelegate:self];
-    [[VKModal sharedInstance] showWithContentView:_mainView
-                                      andAnimated:YES];
 }
 
 #pragma mark - WebView delegate methods
@@ -140,6 +137,22 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
             navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString *url = [[request URL] absoluteString];
+
+//    разрешаем пользователю только сменить язык в окне авторизации, ничего более
+    if ([[[NSURL URLWithString:url] host] isEqualToString:@"vk.com"]) {
+        return NO;
+    }
+
+    return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+//    останавливаем анимацию спинера
+    [_activityIndicator stopAnimating];
+
+//    обрабатываем запрос
+    NSString *url = [[[webView request] URL] absoluteString];
 
     if ([url hasPrefix:_redirectURL]) {
         NSString *queryString = [url componentsSeparatedByString:@"#"][1];
@@ -178,36 +191,69 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         }
     }
 
-    if ([url hasPrefix:@"https://oauth.vk.com/blank.html"]) {
-        [[VKModal sharedInstance] hideAnimated:YES];
+//    показываем пользователю окно только в том случае, если от него требуются
+//    какие-то действия - ввод пароля, ввод капчи и тд
+    if (![[VKModal sharedInstance] isVisible] &&
+            [self showVKModalViewForURL:[webView request]]) {
+
+        [[VKModal sharedInstance] setDelegate:self];
+        [[VKModal sharedInstance] showWithContentView:_mainView
+                                          andAnimated:YES];
     }
 
-//    разрешаем пользователю только сменить язык в окне авторизации, ничего более
-    if ([[[NSURL URLWithString:url] host] isEqualToString:@"vk.com"]) {
-        return NO;
+//    прячем окно, если обработали либо авторизацию, либо отказ от авторизации
+    if ([url hasPrefix:kVkontakteBlankURL]) {
+        [[VKModal sharedInstance] hideAnimated:NO];
     }
-
-    return YES;
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [_activityIndicator stopAnimating];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+//    запускаем анимацию спинера
     [_activityIndicator startAnimating];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    if([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]){
+    if ([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]) {
         [self.delegate VKConnector:self
             connectionErrorOccured:error];
 
-        [[VKModal sharedInstance] hideAnimated:YES];
+        [[VKModal sharedInstance] hideAnimated:NO];
     }
+}
+
+- (BOOL)showVKModalViewForURL:(NSURLRequest *)request
+{
+//    обработка случае, если приложение было удалено... хак грязный, иначе
+//    никак не определить. Парсить HTML через JS не вариант.
+    NSDictionary *headers = [request allHTTPHeaderFields];
+    if (nil == headers[@"Accept-Encoding"] || nil == headers[@"Accept-Language"]) {
+
+        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKConnector:applicationWasDeleted:)]) {
+
+            NSError *error = [NSError errorWithDomain:kVKErrorDomain
+                                                 code:kVKApplicationWasDeletedErrorCode
+                                             userInfo:nil];
+
+            [self.delegate VKConnector:self
+                 applicationWasDeleted:error];
+        }
+
+        return NO;
+    }
+
+//    ввод пароля или при смене айпишника - номера телефона
+    NSString *urlAsString = [[request URL] absoluteString];
+    NSArray *actionPrefixes = @[kVkontakteAuthorizationURL];
+
+    for (NSString *prefix in actionPrefixes) {
+        if ([urlAsString startsWithString:prefix]) {
+            return YES;
+        }
+    }
+
+    return NO;
 }
 
 #pragma mark - VKModal delegate
@@ -254,7 +300,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     frame.origin = screenBounds.origin;
     frame.size.width = screenBounds.size.width - WIDTH_PADDING;
 
-    if(UIInterfaceOrientationIsPortrait(orientation)) { // portrait
+    if (UIInterfaceOrientationIsPortrait(orientation)) { // portrait
         frame.size.height = screenBounds.size.height - HEIGHT_PADDING;
     } else { // landscape
         frame.size.height = screenBounds.size.width - WIDTH_PADDING;

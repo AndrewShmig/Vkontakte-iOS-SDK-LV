@@ -1,5 +1,5 @@
 //
-// Created by AndrewShmig on 7/4/13.
+// Created by AndrewShmig on 11/3/13.
 //
 // Copyright (c) 2013 Andrew Shmig
 // 
@@ -24,11 +24,18 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
-
 #import <Foundation/Foundation.h>
 
-@interface NSString (MD5)
+@interface NSString (Utilities)
+
+- (NSString *)toBase64;
+
+- (NSString *)encodeURL;
 
 - (NSString *)md5;
+
+- (BOOL)startsWithString:(NSString *)string;
+
+- (BOOL)endsWithString:(NSString *)string;
 
 @end
