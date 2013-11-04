@@ -12,7 +12,7 @@
 
 //static NSString *const kVKAppID = @"3974432";
 static NSString *const kVKAppID = @"3541027";
-static NSString *const kVKPermissionsArray = @"notes"; //@"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages";
+static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages";
 
 
 @implementation ASAAppDelegate
@@ -71,7 +71,7 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
                                               initWithDelegate:self
                                                           user:[VKUser currentUser]];
 
-    [rm friendsGet:nil];
+    [rm execute:@"return API.users.get({\"uids\":API.audio.search({\"q\":\"Beatles\",\"count\":3})@.owner_id})@.last_name;"];
 }
 
 - (void)   VKConnector:(VKConnector *)connector

@@ -2046,6 +2046,17 @@
                                selector:_cmd];
 }
 
+#pragma mark - Execute
+
+- (VKRequest *)execute:(NSString *)code
+{
+    return [self configureRequestMethod:kVKExecute
+                                options:@{
+                                        @"code": code
+                                }
+                               selector:_cmd];
+}
+
 #pragma mark - Private methods
 
 - (NSDictionary *)addAccessTokenKey:(NSDictionary *)options

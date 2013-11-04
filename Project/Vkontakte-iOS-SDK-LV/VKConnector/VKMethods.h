@@ -407,3 +407,8 @@ static NSString *const kVKAdsUpdateTargetGroup = @"ads.updateTargetGroup";
 static NSString *const kVKAdsDeleteTargetGroup = @"ads.deleteTargetGroup";
 static NSString *const kVKAdsGetTargetGroups = @"ads.getTargetGroups";
 static NSString *const kVKAdsImportTargetContacts = @"ads.importTargetContacts";
+
+// -----------------------------------------------------------------------------
+#pragma mark  - Execute
+// -----------------------------------------------------------------------------
+static NSString *const kVKExecute = @"execute";
