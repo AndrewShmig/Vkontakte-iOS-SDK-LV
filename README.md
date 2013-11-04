@@ -7,6 +7,9 @@
 **Автор будет благодарен, если используя Vkontakte iOS SDK v1/v2/v3 в своих приложениях, Вы напишете ему и укажете наименование
 (ссылку) приложения.**
 
+#Build status
+[![Build Status](https://travis-ci.org/AndrewShmig/Vkontakte-iOS-SDK-LV.png?branch=master)](https://travis-ci.org/AndrewShmig/Vkontakte-iOS-SDK-LV)
+
 #License
 Copyright (c) 2013 Andrew Shmig
 
