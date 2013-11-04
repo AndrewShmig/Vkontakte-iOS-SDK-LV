@@ -2,16 +2,13 @@
 [![Build Status](https://travis-ci.org/AndrewShmig/Vkontakte-iOS-SDK-LV.png?branch=master)](https://travis-ci.org/AndrewShmig/Vkontakte-iOS-SDK-LV)
 
 #Documentation & Examples & Etc
-Дополнительную информацию (документация, трюки, возможности, хаки) по Vkontakte iOS SDK можете найти по [этой](http://andrewshmig.github.io/Vkontakte-iOS-SDK-LV) ссылке. 
+Additional and latest documentation, hacks and features you can find [here](http://andrewshmig.github.io/Vkontakte-iOS-SDK-LV).
 
 #Vkontakte iOS SDK
+Feature requests can be left [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
+List of all versions can be found [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases).
 
-Свои пожелания/идеи/багрепорты оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
-
-Список всех версий и связаной документации Вы можете найти по [этой](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases) ссылке.
-
-**Автор будет благодарен, если используя Vkontakte iOS SDK v1/v2/v3 в своих приложениях, Вы напишете ему и укажете наименование
-(ссылку) приложения.**
+Author is really appreciated to those who will send him links on Apps or just Apps names which use any version of Vkontakte iOS SDK. Cheers!
 
 #License
 Copyright (c) 2013 Andrew Shmig
