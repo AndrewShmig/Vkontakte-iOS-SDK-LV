@@ -1,6 +1,9 @@
 #Build status
 [![Build Status](https://travis-ci.org/AndrewShmig/Vkontakte-iOS-SDK-LV.png?branch=master)](https://travis-ci.org/AndrewShmig/Vkontakte-iOS-SDK-LV)
 
+#Documentation & Examples & Etc
+Дополнительную информацию (документация, трюки, возможности, хаки) по Vkontakte iOS SDK можете найти по [этой](http://andrewshmig.github.io/Vkontakte-iOS-SDK-LV) ссылке. 
+
 #Vkontakte iOS SDK
 
 Свои пожелания/идеи/багрепорты оставляйте [здесь](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
