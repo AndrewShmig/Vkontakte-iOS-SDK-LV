@@ -1,4 +1,5 @@
 //
+// Created by AndrewShmig on 11/4/13.
 //
 // Copyright (c) 2013 Andrew Shmig
 //
@@ -23,10 +24,22 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
-//
 
-#import <SenTestingKit/SenTestingKit.h>
+#ifndef Project_VkontakteSDK____FILEEXTENSION___
+#define Project_VkontakteSDK____FILEEXTENSION___
 
-@interface TestVKAccessToken : SenTestCase
+#import "VKUser.h"
+#import "VKAccessToken.h"
+#import "VKCachedData.h"
+#import "VKStorage.h"
+#import "VKStorageItem.h"
+#import "VKRequestManager.h"
+#import "VKRequest.h"
+#import "VKConnector.h"
+#import "VKMethods.h"
+#import "VKModal.h"
 
-@end
+#import "NSData+toBase64.h"
+#import "NSString+Utilities.h"
+
+#endif

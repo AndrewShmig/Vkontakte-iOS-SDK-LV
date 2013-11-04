@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VKConnector.h"
-#import "VKRequest.h"
+#import "VkontakteSDK.h"
 
 
 @class ASAViewController;
