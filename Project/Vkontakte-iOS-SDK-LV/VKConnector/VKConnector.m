@@ -29,11 +29,6 @@
 //
 
 #import "VKConnector.h"
-#import "VKAccessToken.h"
-#import "VKModal.h"
-#import "VKStorage.h"
-#import "VKStorageItem.h"
-#import "NSString+Utilities.h"
 
 
 #define WIDTH_PADDING 25.0 // отступ по ширине всплывающего окна
@@ -245,7 +240,18 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         return NO;
     }
 
-    return YES;
+//    ввод пароля или при смене айпишника - номера телефона
+    NSURLRequest *request = [webView request];
+    NSString * urlAsString = [[request URL] absoluteString];
+    NSArray * actionPrefixes = @[kVkontakteAuthorizationURL];
+
+    for (NSString *prefix in actionPrefixes) {
+        if ([urlAsString startsWithString:prefix]) {
+            return YES;
+        }
+    }
+
+    return NO;
 }
 
 #pragma mark - VKModal delegate

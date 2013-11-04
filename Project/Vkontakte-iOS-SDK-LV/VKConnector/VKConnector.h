@@ -29,8 +29,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VKMethods.h"
 #import "VKModal.h"
+#import "VKMethods.h"
+#import "VKAccessToken.h"
+#import "VKStorage.h"
+#import "NSString+Utilities.h"
 
 
 @class VKAccessToken;
