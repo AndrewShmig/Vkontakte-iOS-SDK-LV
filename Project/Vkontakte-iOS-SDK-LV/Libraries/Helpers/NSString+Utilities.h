@@ -38,4 +38,6 @@
 
 - (BOOL)endsWithString:(NSString *)string;
 
+- (BOOL)isEmpty;
+
 @end

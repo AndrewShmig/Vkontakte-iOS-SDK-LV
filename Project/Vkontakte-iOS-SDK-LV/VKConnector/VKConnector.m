@@ -194,7 +194,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 //    показываем пользователю окно только в том случае, если от него требуются
 //    какие-то действия - ввод пароля, ввод капчи и тд
     if (![[VKModal sharedInstance] isVisible] &&
-            [self showVKModalViewForURL:[webView request]]) {
+            [self showVKModalViewForWebView:webView]) {
 
         [[VKModal sharedInstance] setDelegate:self];
         [[VKModal sharedInstance] showWithContentView:_mainView
@@ -223,12 +223,14 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
 }
 
-- (BOOL)showVKModalViewForURL:(NSURLRequest *)request
+- (BOOL)showVKModalViewForWebView:(UIWebView *)webView
 {
-//    обработка случае, если приложение было удалено... хак грязный, иначе
-//    никак не определить. Парсить HTML через JS не вариант.
-    NSDictionary *headers = [request allHTTPHeaderFields];
-    if (nil == headers[@"Accept-Encoding"] || nil == headers[@"Accept-Language"]) {
+//    получаем содержимое тега head
+    NSString *html = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('head')[0].innerHTML"];
+
+//    если содержимое пустое значит загрузилась страница сообщающая об ошибке
+//    удаления приложения
+    if (nil == html || [html isEmpty]) {
 
         if ([self.delegate respondsToSelector:@selector(VKConnector:applicationWasDeleted:)]) {
 
@@ -243,17 +245,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         return NO;
     }
 
-//    ввод пароля или при смене айпишника - номера телефона
-    NSString *urlAsString = [[request URL] absoluteString];
-    NSArray *actionPrefixes = @[kVkontakteAuthorizationURL];
-
-    for (NSString *prefix in actionPrefixes) {
-        if ([urlAsString startsWithString:prefix]) {
-            return YES;
-        }
-    }
-
-    return NO;
+    return YES;
 }
 
 #pragma mark - VKModal delegate

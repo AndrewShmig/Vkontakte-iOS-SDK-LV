@@ -13,8 +13,9 @@
 #import "VKUser.h"
 
 
+//static NSString *const kVKAppID = @"3974432";
 static NSString *const kVKAppID = @"3541027";
-static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages,notes";
+static NSString *const kVKPermissionsArray = @"notes"; //@"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages";
 
 
 @implementation ASAAppDelegate
@@ -70,8 +71,8 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
     NSLog(@"Access token: %@", accessToken);
 
     VKRequestManager *rm = [[VKRequestManager alloc]
-            initWithDelegate:self
-                        user:[VKUser currentUser]];
+                                              initWithDelegate:self
+                                                          user:[VKUser currentUser]];
 
     [rm friendsGet:nil];
 }
@@ -90,14 +91,15 @@ parsingErrorOccured:(NSError *)error
     NSLog(@"error: %@", error);
 }
 
-- (void)VKRequest:(VKRequest *)request response:(id)response
+- (void)VKRequest:(VKRequest *)request
+         response:(id)response
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"response: %@", response);
 }
 
-- (void)VKRequest:(VKRequest *)request
-        responseErrorOccured:(id)error
+- (void)   VKRequest:(VKRequest *)request
+responseErrorOccured:(id)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"error: %@", error);
@@ -112,15 +114,15 @@ parsingErrorOccured:(NSError *)error
     NSLog(@"captchaImage: %@", captchaImage);
 }
 
-- (void)VKRequest:(VKRequest *)request
-        parsingErrorOccured:(NSError *)error
+- (void)  VKRequest:(VKRequest *)request
+parsingErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", error);
 }
 
-- (void)VKRequest:(VKRequest *)request
-        connectionErrorOccured:(NSError *)error
+- (void)     VKRequest:(VKRequest *)request
+connectionErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", error);

@@ -117,6 +117,13 @@
     return YES;
 }
 
+- (BOOL)isEmpty
+{
+    NSString *filtered = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+    return (0 == [filtered length]);
+}
+
 #pragma mark - Methods for internal usage
 
 - (BOOL)possibleToCompareStrings:(NSString *)string
