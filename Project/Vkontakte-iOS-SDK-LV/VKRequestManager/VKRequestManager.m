@@ -2052,8 +2052,19 @@
 {
     return [self configureRequestMethod:kVKExecute
                                 options:@{
-                                        @"code": code
+                                        @"code" : code
                                 }
+                               selector:_cmd];
+}
+
+- (VKRequest *)executePredefinedProcedureWithName:(NSString *)procedureName
+                                           option:(NSDictionary *)options
+{
+    NSString *methodName = [NSString stringWithFormat:@"%@.%@",
+                                                      kVKExecute,
+                                                      procedureName];
+    return [self configureRequestMethod:methodName
+                                options:options
                                selector:_cmd];
 }
 
@@ -2063,7 +2074,7 @@
 {
     NSMutableDictionary *ops;
 
-    if(nil == options) {
+    if (nil == options) {
         ops = [[NSMutableDictionary alloc] init];
     } else {
         ops = [options mutableCopy];

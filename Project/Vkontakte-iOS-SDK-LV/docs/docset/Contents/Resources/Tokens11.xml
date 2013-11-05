@@ -71,5 +71,17 @@
             <NodeRef refid="11"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSString(Utilities)/isEmpty</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>NSString+Utilities.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isEmpty</Declaration>
+			
+			
+			<Anchor>//api/name/isEmpty</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
 	</File>
 </Tokens>
