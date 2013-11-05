@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C5F19A05-CA1C-4E8E-AF4E-8F7BC414E172</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Vkontakte-iOS-SDK-LV-Workspace</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FEF363B2-D767-4753-9273-649578F31BFA</key>
+		<string>https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Vkontakte-iOS-SDK-LV-Workspace.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FEF363B2-D767-4753-9273-649578F31BFA</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FEF363B2-D767-4753-9273-649578F31BFA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FEF363B2-D767-4753-9273-649578F31BFA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Vkontakte-iOS-SDK-LV</string>
+		</dict>
+	</array>
+</dict>
+</plist>
