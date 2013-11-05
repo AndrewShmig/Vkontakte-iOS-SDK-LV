@@ -1,1 +1,5 @@
 language: objective-c
+env:
+  global:
+    - REPO="myuser/Project"
+    - CI_HOME=`pwd`/$REPO
