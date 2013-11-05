@@ -7,6 +7,7 @@ Additional and latest documentation, hacks and features you can find [here](http
 #Vkontakte iOS SDK
 Feature requests can be left [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
 List of all versions can be found [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases).
+
 You can also use CocoaPods to add Vkontakte iOS SDK as a dependency to your project.
 
 Author is really appreciated to those who will send him links on Apps or just Apps names which use any version of Vkontakte iOS SDK. Cheers!
