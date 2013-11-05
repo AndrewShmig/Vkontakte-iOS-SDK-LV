@@ -10,7 +10,7 @@ List of all versions can be found [here](https://github.com/AndrewShmig/Vkontakt
 
 You can also use CocoaPods to add Vkontakte iOS SDK as a dependency to your project.
 
-Author is really appreciated to those who will send him links on Apps or just Apps names which use any version of Vkontakte iOS SDK. Cheers!
+Author will be really appreciated to those who'll send him links on Apps or just Apps names which use any version of Vkontakte iOS SDK. Cheers!
 
 #License
 Copyright (c) 2013 Andrew Shmig
