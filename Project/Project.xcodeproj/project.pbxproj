@@ -151,19 +151,19 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		1A9A035FE186AE3019CB5A13 /* VKCachedData */ = {
+		1A9A035FE186AE3019CB5A13 /* VKCache */ = {
 			isa = PBXGroup;
 			children = (
 				1A9A0E625578BA5A5C096866 /* VKCache.h */,
 				1A9A0B7A0E64F8BE4D8A0C17 /* VKCache.m */,
 			);
-			path = VKCachedData;
+			path = VKCache;
 			sourceTree = "<group>";
 		};
 		1A9A04B6E6558AB177E8853C /* VKStorageItem */ = {
 			isa = PBXGroup;
 			children = (
-				1A9A035FE186AE3019CB5A13 /* VKCachedData */,
+				1A9A035FE186AE3019CB5A13 /* VKCache */,
 				1A9A0944578D48024962CADB /* VKAccessToken */,
 				1A9A09D9FB923256448F1D88 /* VKStorageItem */,
 			);
