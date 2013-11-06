@@ -26,6 +26,7 @@
 //
 #import <Foundation/Foundation.h>
 
+
 /** Основной ключ используемый для хранения информации о токенах доступа содержащихся
 в хранилище.
 */
@@ -44,6 +45,7 @@ static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-Storage/Cache/
 
 @class VKStorageItem;
 @class VKAccessToken;
+
 
 /** Класс представляет собой хранилище для пользовательских токенов доступа и
 закэшированных данных.
@@ -97,7 +99,7 @@ static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-Storage/Cache/
 
 @param item элемент хранилища
 */
-- (void)addItem:(VKStorageItem *)item;
+- (void)storeItem:(VKStorageItem *)item;
 
 /** Удаляет из хранилища указанный элемент
 

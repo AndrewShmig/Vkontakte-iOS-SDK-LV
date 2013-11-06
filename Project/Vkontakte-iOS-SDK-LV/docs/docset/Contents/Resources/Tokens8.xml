@@ -48,38 +48,38 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/setCachedData:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/setCache:</TokenIdentifier>
 			<Abstract type="html">Кэш запросов</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKCache *cache</Declaration>
 			
 			
-			<Anchor>//api/name/cachedData</Anchor>
+			<Anchor>//api/name/cache</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/cachedData</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/cache</TokenIdentifier>
 			<Abstract type="html">Кэш запросов</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKCache *cache</Declaration>
 			
 			
-			<Anchor>//api/name/cachedData</Anchor>
+			<Anchor>//api/name/cache</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/VKStorageItem/cachedData</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/VKStorageItem/cache</TokenIdentifier>
 			<Abstract type="html">Кэш запросов</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readonly) VKCachedData *cachedData</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) VKCache *cache</Declaration>
 			
 			
-			<Anchor>//api/name/cachedData</Anchor>
+			<Anchor>//api/name/cache</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

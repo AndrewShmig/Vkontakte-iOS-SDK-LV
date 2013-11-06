@@ -24,27 +24,22 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
-#import "VKCachedData.h"
+#import "VKCache.h"
 #import "NSString+Utilities.h"
 
 
-#define INFO_LOG() NSLog(@"%s", __FUNCTION__)
-
-
-@implementation VKCachedData
+@implementation VKCache
 {
     NSString *_cacheDirectoryPath;
 
     dispatch_queue_t _backgroundQueue;
 }
 
-#pragma mark Visible VKCachedData methods
+#pragma mark Visible VKCache methods
 #pragma mark - init methods
 
 - (instancetype)initWithCacheDirectory:(NSString *)path
 {
-    INFO_LOG();
-
     self = [super init];
 
     if (self) {
@@ -59,23 +54,20 @@
 
 #pragma mark - cache manipulation
 
-- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url
+- (void)addCache:(NSData *)cache
+          forURL:(NSURL *)url
 {
-    INFO_LOG();
-
-    [self addCachedData:cache
-                 forURL:url
-               liveTime:VKCachedDataLiveTimeOneHour];
+    [self addCache:cache
+            forURL:url
+          liveTime:VKCacheLiveTimeOneHour];
 }
 
-- (void)addCachedData:(NSData *)cache
-               forURL:(NSURL *)url
-             liveTime:(VKCachedDataLiveTime)cacheLiveTime
+- (void)addCache:(NSData *)cache
+          forURL:(NSURL *)url
+        liveTime:(VKCacheLiveTime)cacheLiveTime
 {
-    INFO_LOG();
-
 //    нет надобности сохранять в кэше запрос с таким временем жизни
-    if(VKCachedDataLiveTimeNever == cacheLiveTime)
+    if(VKCacheLiveTimeNever == cacheLiveTime)
         return;
 
 //    сохраняем данные запроса в кэше
@@ -96,10 +88,8 @@
     });
 }
 
-- (void)removeCachedDataForURL:(NSURL *)url
+- (void)removeCacheForURL:(NSURL *)url
 {
-    INFO_LOG();
-
     NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
@@ -111,10 +101,8 @@
     });
 }
 
-- (void)clearCachedData
+- (void)clear
 {
-    INFO_LOG();
-
     dispatch_async(_backgroundQueue, ^{
 
         [[NSFileManager defaultManager]
@@ -130,10 +118,8 @@
     });
 }
 
-- (void)removeCachedDataDirectory
+- (void)removeCacheDirectory
 {
-    INFO_LOG();
-
     dispatch_async(_backgroundQueue, ^{
 
         [[NSFileManager defaultManager] removeItemAtPath:_cacheDirectoryPath
@@ -142,18 +128,15 @@
     });
 }
 
-- (NSData *)cachedDataForURL:(NSURL *)url
+- (NSData *)cacheForURL:(NSURL *)url
 {
-    INFO_LOG();
-
-    return [self cachedDataForURL:url
-                      offlineMode:NO];
+    return [self cacheForURL:url
+                 offlineMode:NO];
 }
 
-- (NSData *)cachedDataForURL:(NSURL *)url offlineMode:(BOOL)offlineMode
+- (NSData *)cacheForURL:(NSURL *)url
+            offlineMode:(BOOL)offlineMode
 {
-    INFO_LOG();
-
     NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
@@ -164,7 +147,7 @@
 //    загружаем файл, получаем свойства
     NSDictionary *cachedFile = [NSDictionary dictionaryWithContentsOfFile:filePath];
 
-    VKCachedDataLiveTime liveTime = (VKCachedDataLiveTime) [cachedFile[@"liveTime"] integerValue];
+    VKCacheLiveTime liveTime = (VKCacheLiveTime) [cachedFile[@"liveTime"] integerValue];
     NSData *cachedData = cachedFile[@"data"];
     NSUInteger creationTimestamp = [cachedFile[@"creationTimestamp"] unsignedIntegerValue];
 
@@ -172,7 +155,7 @@
     NSUInteger currentTimestamp = ((NSUInteger) [[NSDate date]
                                                          timeIntervalSince1970]);
     if (!offlineMode && (creationTimestamp + liveTime) < currentTimestamp) {
-        [self removeCachedDataForURL:url];
+        [self removeCacheForURL:url];
         return nil;
     }
 
@@ -184,8 +167,6 @@
 
 - (void)createDirectoryIfNotExists:(NSString *)path
 {
-    INFO_LOG();
-
     if (![[NSFileManager defaultManager]
                          fileExistsAtPath:path]) {
 

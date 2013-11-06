@@ -22,7 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		1A9A0024B9B75236BAB9CB97 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A01FAEB437DA940BE21D3 /* Default.png */; };
-		1A9A009F972265ECFA06DBB1 /* VKCachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0B7A0E64F8BE4D8A0C17 /* VKCachedData.m */; };
+		1A9A009F972265ECFA06DBB1 /* VKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0B7A0E64F8BE4D8A0C17 /* VKCache.m */; };
 		1A9A0141877511985424A31F /* VKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0A89F1869B86FF4640F2 /* VKRequestManager.m */; };
 		1A9A02598E50190CB66C637D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A0C59427298DCF6A6DD29 /* Default@2x.png */; };
 		1A9A0356CF04E23A19A1C5C7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0019D60C4FB08AA755A3 /* QuartzCore.framework */; };
@@ -78,14 +78,14 @@
 		1A9A0A9070FD7D7A034D312F /* VKAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAccessToken.h; sourceTree = "<group>"; };
 		1A9A0B07ACAE493077A264A9 /* NSData+toBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+toBase64.h"; sourceTree = "<group>"; };
 		1A9A0B261588ADDCB3B78A56 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1A9A0B7A0E64F8BE4D8A0C17 /* VKCachedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCachedData.m; sourceTree = "<group>"; };
+		1A9A0B7A0E64F8BE4D8A0C17 /* VKCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCache.m; sourceTree = "<group>"; };
 		1A9A0B9F3B3C51A19D3727F6 /* VKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRequest.h; sourceTree = "<group>"; };
 		1A9A0C00454650FD4A2C32F0 /* NSString+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utilities.m"; sourceTree = "<group>"; };
 		1A9A0C59427298DCF6A6DD29 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1A9A0D2B0C5E6960CFDB212D /* VKRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKRequest.m; sourceTree = "<group>"; };
 		1A9A0D576F77FB86579EDC64 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A9A0E3881B757A6D652A67C /* VKAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAccessToken.m; sourceTree = "<group>"; };
-		1A9A0E625578BA5A5C096866 /* VKCachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCachedData.h; sourceTree = "<group>"; };
+		1A9A0E625578BA5A5C096866 /* VKCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCache.h; sourceTree = "<group>"; };
 		1A9A0F527EF608191560F646 /* ASAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAViewController.h; sourceTree = "<group>"; };
 		1A9A0F7A97BF3D11E889C3DC /* VKStorageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKStorageItem.m; sourceTree = "<group>"; };
 		1A9A0FD641D02F238227222D /* VkontakteSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VkontakteSDK.h; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 		1A9A035FE186AE3019CB5A13 /* VKCachedData */ = {
 			isa = PBXGroup;
 			children = (
-				1A9A0E625578BA5A5C096866 /* VKCachedData.h */,
-				1A9A0B7A0E64F8BE4D8A0C17 /* VKCachedData.m */,
+				1A9A0E625578BA5A5C096866 /* VKCache.h */,
+				1A9A0B7A0E64F8BE4D8A0C17 /* VKCache.m */,
 			);
 			path = VKCachedData;
 			sourceTree = "<group>";
@@ -385,7 +385,7 @@
 				1A9A0655CAB1BE059EB54EAA /* NSData+toBase64.m in Sources */,
 				1A9A0700D56ABF555C95A5F3 /* VKModal.m in Sources */,
 				1A9A0BD63651CF1DB9B2057E /* VKStorage.m in Sources */,
-				1A9A009F972265ECFA06DBB1 /* VKCachedData.m in Sources */,
+				1A9A009F972265ECFA06DBB1 /* VKCache.m in Sources */,
 				1A9A064E814D0BAA7166BFAD /* VKAccessToken.m in Sources */,
 				1A9A095500275C6F1380D8CA /* VKStorageItem.m in Sources */,
 				1A9A057EACA72C736359407B /* VKRequest.m in Sources */,

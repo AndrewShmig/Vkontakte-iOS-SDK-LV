@@ -29,17 +29,12 @@
 #import "VKAccessToken.h"
 
 
-#define INFO_LOG() NSLog(@"%s", __FUNCTION__)
-
-
 @implementation VKAccessToken
 
 #pragma mark - Init methods
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    INFO_LOG();
-
     self = [super init];
 
     if (!self)
@@ -59,8 +54,6 @@
                       liveTime:(NSTimeInterval)liveTime
                    permissions:(NSArray *)permissions
 {
-    INFO_LOG();
-
     if (self = [super init]) {
         _userID = userID;
         _token = [token copy];
@@ -76,8 +69,6 @@
                    accessToken:(NSString *)token
                       liveTime:(NSTimeInterval)liveTime
 {
-    INFO_LOG();
-
     return [self initWithUserID:userID
                     accessToken:token
                        liveTime:liveTime
@@ -87,8 +78,6 @@
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
 {
-    INFO_LOG();
-
     return [self initWithUserID:userID
                     accessToken:token
                        liveTime:0
@@ -97,8 +86,6 @@
 
 - (instancetype)init
 {
-    INFO_LOG();
-
     return [self initWithUserID:0
                     accessToken:@""
                        liveTime:0
@@ -109,8 +96,6 @@
 
 - (NSString *)description
 {
-    INFO_LOG();
-
     NSDictionary *desc = @{
             @"User ID"         : @(self.userID),
             @"Expiration time" : @(((NSUInteger) (self.creationTime + self.liveTime))),
@@ -124,8 +109,6 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    INFO_LOG();
-
     [aCoder encodeInteger:_userID forKey:@"userID"];
     [aCoder encodeObject:_token forKey:@"token"];
     [aCoder encodeDouble:_liveTime forKey:@"liveTime"];
@@ -135,8 +118,6 @@
 
 - (BOOL)isEqual:(VKAccessToken *)token
 {
-    INFO_LOG();
-
     NSSet *currentSet = [NSSet setWithArray:self.permissions];
     NSSet *otherSet = [NSSet setWithArray:token.permissions];
 
@@ -147,8 +128,6 @@
 
 - (VKAccessToken *)copyWithZone:(NSZone *)zone
 {
-    INFO_LOG();
-
     VKAccessToken *copyToken = [[VKAccessToken alloc] init];
 
     copyToken->_permissions = [_permissions copy];
@@ -164,15 +143,11 @@
 
 - (BOOL)hasPermission:(NSString *)permission
 {
-    INFO_LOG();
-
     return [self.permissions containsObject:permission];
 }
 
 - (BOOL)isExpired
 {
-    INFO_LOG();
-
     NSTimeInterval currentTimestamp = [[NSDate date] timeIntervalSince1970];
 
     if (self.liveTime == 0 && [self hasPermission:@"offline"])
@@ -183,8 +158,6 @@
 
 - (BOOL)isValid
 {
-    INFO_LOG();
-
     return (nil != self.token && ![self isExpired]);
 }
 

@@ -170,7 +170,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 //            сохраняем токен доступа в хранилище
             VKStorageItem *storageItem = [[VKStorage sharedStorage]
                                                      createStorageItemForAccessToken:_accessToken];
-            [[VKStorage sharedStorage] addItem:storageItem];
+            [[VKStorage sharedStorage] storeItem:storageItem];
 
 //            уведомляем программиста, что токен был обновлён
             if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalSucceeded:)])

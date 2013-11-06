@@ -51,7 +51,6 @@
 */
 @property (nonatomic, readonly) VKAccessToken *accessToken;
 
-
 /**
 @name Методы класса
 */

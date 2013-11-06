@@ -30,7 +30,7 @@
 
 #import "VKUser.h"
 #import "VKAccessToken.h"
-#import "VKCachedData.h"
+#import "VKCache.h"
 #import "VKStorage.h"
 #import "VKStorageItem.h"
 #import "VKRequestManager.h"

@@ -71,8 +71,7 @@ static VKUser *_currentUser;
     }
 
 //    пользователь установлен, но в хранилище его записи нет (возможно была удалена), а этого нельзя так оставлять - сбрасываем
-    if (nil == [[VKStorage sharedStorage]
-                           storageItemForUserID:_currentUser.accessToken.userID]) {
+    if (nil == [[VKStorage sharedStorage] storageItemForUserID:_currentUser.accessToken.userID]) {
         _currentUser = nil;
     }
 

@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 //
 #import <Foundation/Foundation.h>
-#import "VKCachedData.h"
+#import "VKCache.h"
 
 
 /** Неизвестный размер передаваемых сервером данных
@@ -142,7 +142,7 @@ responseErrorOccured:(id)error;
 
 /** Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.
 */
-@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime;
+@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime;
 
 /** Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
 даже в случае истечения срока их действия (удаления не произойдет).

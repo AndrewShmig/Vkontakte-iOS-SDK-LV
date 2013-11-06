@@ -423,7 +423,7 @@
     VKRequest *request = [self configureRequestMethod:kVKPhotosGetUploadServer
                                               options:options
                                              selector:_cmd];
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCacheLiveTimeNever;
 
     return request;
 }
@@ -433,7 +433,7 @@
     VKRequest *request = [self configureRequestMethod:kVKPhotosGetProfileUploadServer
                                               options:options
                                              selector:_cmd];
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCacheLiveTimeNever;
 
     return request;
 }
@@ -443,7 +443,7 @@
     VKRequest *request = [self configureRequestMethod:kVKPhotosGetChatUploadServer
                                               options:options
                                              selector:_cmd];
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCacheLiveTimeNever;
 
     return request;
 }
@@ -467,7 +467,7 @@
     VKRequest *request = [self configureRequestMethod:kVKPhotosGetWallUploadServer
                                               options:options
                                              selector:_cmd];
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCacheLiveTimeNever;
 
     return request;
 }
@@ -477,7 +477,7 @@
     VKRequest *request = [self configureRequestMethod:kVKPhotosGetMessagesUploadServer
                                               options:options
                                              selector:_cmd];
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCacheLiveTimeNever;
 
     return request;
 }
@@ -841,7 +841,7 @@
     VKRequest *request = [self configureRequestMethod:kVKAudioGetUploadServer
                                               options:options
                                              selector:_cmd];
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCacheLiveTimeNever;
 
     return request;
 }
@@ -1706,7 +1706,7 @@
     VKRequest *request = [self configureRequestMethod:kVKDocsGetUploadServer
                                               options:options
                                              selector:_cmd];
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCacheLiveTimeNever;
 
     return request;
 }
@@ -1716,7 +1716,7 @@
     VKRequest *request = [self configureRequestMethod:kVKDocsGetWallUloadServer
                                               options:options
                                              selector:_cmd];
-    request.cacheLiveTime = VKCachedDataLiveTimeNever;
+    request.cacheLiveTime = VKCacheLiveTimeNever;
 
     return request;
 }

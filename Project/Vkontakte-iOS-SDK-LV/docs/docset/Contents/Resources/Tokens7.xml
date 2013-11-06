@@ -188,11 +188,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/addItem:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storeItem:</TokenIdentifier>
 			<Abstract type="html">Добавляет в хранилище новый элемент</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
-			<Declaration>- (void)addItem:(VKStorageItem *)item</Declaration>
+			<Declaration>- (void)storeItem:(VKStorageItem *)item</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>item</Name>
@@ -200,7 +200,7 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/addItem:</Anchor>
+			<Anchor>//api/name/storeItem:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

@@ -57,8 +57,8 @@
 			<Path>Classes/VKAccessToken.html</Path>
 		</Node>
 		<Node id="2">
-			<Name>VKCachedData</Name>
-			<Path>Classes/VKCachedData.html</Path>
+			<Name>VKCache</Name>
+			<Path>Classes/VKCache.html</Path>
 		</Node>
 		<Node id="3">
 			<Name>VKConnector</Name>

@@ -26,10 +26,7 @@
 //
 #import "VKStorageItem.h"
 #import "VKAccessToken.h"
-#import "VKCachedData.h"
-
-
-#define INFO_LOG() NSLog(@"%s", __FUNCTION__);
+#import "VKCache.h"
 
 
 @implementation VKStorageItem
@@ -40,16 +37,14 @@
 - (instancetype)initWithAccessToken:(VKAccessToken *)token
                mainCacheStoragePath:(NSString *)path
 {
-    INFO_LOG();
-
     self = [super init];
 
-    if (self && nil != token && nil != path) {
+    if (nil != self && nil != token && nil != path) {
         NSString *cache;
         _accessToken = [token copy];
 
         cache = [path stringByAppendingFormat:@"%@/", @(_accessToken.userID)];
-        _cachedData = [[VKCachedData alloc] initWithCacheDirectory:cache];
+        _cache = [[VKCache alloc] initWithCacheDirectory:cache];
 
         return self;
     }

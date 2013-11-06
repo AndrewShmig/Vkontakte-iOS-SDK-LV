@@ -39,7 +39,6 @@
  - пользовательский идентификатор в социальной сети ВКонтакте
  - токен доступа
  */
-
 @interface VKAccessToken : NSObject <NSCopying, NSCoding>
 
 /**

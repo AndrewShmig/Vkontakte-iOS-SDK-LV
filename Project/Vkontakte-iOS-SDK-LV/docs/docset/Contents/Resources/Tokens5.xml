@@ -91,7 +91,7 @@
 			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
 			
 			
 			<Anchor>//api/name/cacheLiveTime</Anchor>
@@ -103,7 +103,7 @@
 			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
 			
 			
 			<Anchor>//api/name/cacheLiveTime</Anchor>
@@ -115,7 +115,7 @@
 			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readwrite) VKCachedDataLiveTime cacheLiveTime</Declaration>
+			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
 			
 			
 			<Anchor>//api/name/cacheLiveTime</Anchor>

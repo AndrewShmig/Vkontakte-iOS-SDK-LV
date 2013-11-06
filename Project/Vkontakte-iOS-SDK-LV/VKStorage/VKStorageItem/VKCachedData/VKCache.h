@@ -26,29 +26,31 @@
 //
 #import <Foundation/Foundation.h>
 
+
 /** Перечисление возможных сроков действия кэша.
 */
 typedef enum
 {
 
-    VKCachedDataLiveTimeNever = 0,
-    VKCachedDataLiveTimeOneMinute = 60,
-    VKCachedDataLiveTimeThreeMinutes = 3 * 60,
-    VKCachedDataLiveTimeFiveMinutes = 5 * 60,
-    VKCachedDataLiveTimeOneHour = 1 * 60 * 60,
-    VKCachedDataLiveTimeFiveHours = 5 * 60 * 60,
-    VKCachedDataLiveTimeOneDay = 24 * 60 * 60,
-    VKCachedDataLiveTimeOneWeek = 7 * 24 * 60 * 60,
-    VKCachedDataLiveTimeOneMonth = 30 * 24 * 60 * 60,
-    VKCachedDataLiveTimeOneYear = 365 * 24 * 60 * 60,
+    VKCacheLiveTimeNever = 0,
+    VKCacheLiveTimeOneMinute = 60,
+    VKCacheLiveTimeThreeMinutes = 3 * 60,
+    VKCacheLiveTimeFiveMinutes = 5 * 60,
+    VKCacheLiveTimeOneHour = 1 * 60 * 60,
+    VKCacheLiveTimeFiveHours = 5 * 60 * 60,
+    VKCacheLiveTimeOneDay = 24 * 60 * 60,
+    VKCacheLiveTimeOneWeek = 7 * 24 * 60 * 60,
+    VKCacheLiveTimeOneMonth = 30 * 24 * 60 * 60,
+    VKCacheLiveTimeOneYear = 365 * 24 * 60 * 60,
 
-} VKCachedDataLiveTime;
+} VKCacheLiveTime;
+
 
 /** Класс предназначен для хранения, получения, удаления кэша запросов.
 Хранение кэша осуществляется на диске и в директории указанной при инициализации
 класса.
 */
-@interface VKCachedData : NSObject
+@interface VKCache : NSObject
 
 /**
 @name Методы инициализации
@@ -57,7 +59,7 @@ typedef enum
 
 @param path директория в которой должны будут храниться кэшируемые данные.
 Если директория не существует, то будет создана.
-@return объект типа VKCachedData
+@return объект типа VKCache
 */
 - (instancetype)initWithCacheDirectory:(NSString *)path;
 
@@ -71,33 +73,34 @@ typedef enum
 @param cache данные, которые необходимо закэшировать
 @param url URL который соответствует кешируемым данным
 */
-- (void)addCachedData:(NSData *)cache forURL:(NSURL *)url;
+- (void)addCache:(NSData *)cache
+          forURL:(NSURL *)url;
 
 /** Добавляет данные в кэш
 
 @param cache данные, которые необходимо закэшировать
 @param url URL который соответствует кешируемым данным
-@param cacheLiveTime время жизни кэша. Возможные варианты перечислены в VKCachedDataLiveTime
-(VKCachedDataLiveTimeOneHour, VKCachedDataLiveTimeOneDay, VKCachedDataLiveTimeForever etc)
+@param cacheLiveTime время жизни кэша. Возможные варианты перечислены в VKCacheLiveTime
+(VKCacheLiveTimeOneHour, VKCacheLiveTimeOneDay, VKCacheLiveTimeForever etc)
 */
-- (void)addCachedData:(NSData *)cache
-               forURL:(NSURL *)url
-             liveTime:(VKCachedDataLiveTime)cacheLiveTime;
+- (void)addCache:(NSData *)cache
+          forURL:(NSURL *)url
+        liveTime:(VKCacheLiveTime)cacheLiveTime;
 
 /** Удаление кэша указанного URL
 
 @param url URL, закэшированные данные которого необходимо удалить
 */
-- (void)removeCachedDataForURL:(NSURL *)url;
+- (void)removeCacheForURL:(NSURL *)url;
 
 /** Удаление всех закэшированных данных в директории, которой был инициализирован
 данный объект
 */
-- (void)clearCachedData;
+- (void)clear;
 
 /** Удаление директории с данными кэша
 */
-- (void)removeCachedDataDirectory;
+- (void)removeCacheDirectory;
 
 /**
 @name Получение закэшированных данных
@@ -108,7 +111,7 @@ typedef enum
 @param url URL, закэшированные данные по которому необходимо получить
 @return экземпляр класса NSData, закэшированные данные указанного URL
 */
-- (NSData *)cachedDataForURL:(NSURL *)url;
+- (NSData *)cacheForURL:(NSURL *)url;
 
 /** Возвращает закэшированные данные по указанному URL, либо nil, если для данного
 запроса нет кэша.
@@ -126,7 +129,7 @@ YES и в кэше есть данные для этого URL, но срок и
 @param offlineMode оффлайн режим запроса кэша (как работает описано в Обсуждении)
 @return экземпляр класса NSData, закэшированные данные указанного URL
 */
-- (NSData *)cachedDataForURL:(NSURL *)url
-                 offlineMode:(BOOL)offlineMode;
+- (NSData *)cacheForURL:(NSURL *)url
+            offlineMode:(BOOL)offlineMode;
 
 @end

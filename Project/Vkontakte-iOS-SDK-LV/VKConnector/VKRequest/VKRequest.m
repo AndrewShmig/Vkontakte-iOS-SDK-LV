@@ -121,7 +121,7 @@
     _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n",
                                                  _boundary];
     _expectedDataSize = NSURLResponseUnknownContentLength;
-    _cacheLiveTime = VKCachedDataLiveTimeOneHour;
+    _cacheLiveTime = VKCacheLiveTimeOneHour;
     _offlineMode = NO;
     _isBodyEmpty = YES;
 
@@ -198,8 +198,8 @@
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
 
-    NSData *cachedResponseData = [item.cachedData cachedDataForURL:[self removeAccessTokenFromURL:_request.URL]
-                                                       offlineMode:_offlineMode];
+    NSData *cachedResponseData = [item.cache cacheForURL:[self removeAccessTokenFromURL:_request.URL]
+                                             offlineMode:_offlineMode];
     if (nil != cachedResponseData) {
         _receivedData = [cachedResponseData mutableCopy];
         [self connectionDidFinishLoading:_connection];
@@ -429,15 +429,15 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 //    1. данные запроса не из кэша
 //    2. время жизни кэша не установлено в "никогда"
 //    3. метод запроса GET
-    if (VKCachedDataLiveTimeNever != self.cacheLiveTime && ![@"POST" isEqualToString:_request.HTTPMethod]) {
+    if (VKCacheLiveTimeNever != self.cacheLiveTime && ![@"POST" isEqualToString:_request.HTTPMethod]) {
 
         NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];
         VKStorageItem *item = [[VKStorage sharedStorage]
                                           storageItemForUserID:currentUserID];
 
-        [item.cachedData addCachedData:_receivedData
-                                forURL:[self removeAccessTokenFromURL:_request.URL]
-                              liveTime:self.cacheLiveTime];
+        [item.cache addCache:_receivedData
+                      forURL:[self removeAccessTokenFromURL:_request.URL]
+                    liveTime:self.cacheLiveTime];
     }
 
 //    возвращаем Foundation объект

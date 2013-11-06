@@ -27,7 +27,7 @@
 #import "VKStorage.h"
 #import "VKStorageItem.h"
 #import "VKAccessToken.h"
-#import "VKCachedData.h"
+#import "VKCache.h"
 
 
 #define INFO_LOG() NSLog(@"%s", __FUNCTION__)
@@ -123,11 +123,11 @@
 
 #pragma mark - Storage manipulation methods
 
-- (void)addItem:(VKStorageItem *)item
+- (void)storeItem:(VKStorageItem *)item
 {
     INFO_LOG();
 
-    if (nil == item || nil == item.accessToken || nil == item.cachedData)
+    if (nil == item || nil == item.accessToken || nil == item.cache)
         return;
 
     id storageKey = @(item.accessToken.userID);
@@ -142,7 +142,7 @@
 
     id storageKey = @(item.accessToken.userID);
 
-    [item.cachedData removeCachedDataDirectory];
+    [item.cache removeCacheDirectory];
     [_storageItems removeObjectForKey:storageKey];
 
     [self saveStorage];
