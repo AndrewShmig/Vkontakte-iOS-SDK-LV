@@ -72,7 +72,7 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
                                                           user:[VKUser currentUser]];
 
     [rm executePredefinedProcedureWithName:@"somemethod"
-                                    option:nil];
+                                   options:nil];
 }
 
 - (void)   VKConnector:(VKConnector *)connector

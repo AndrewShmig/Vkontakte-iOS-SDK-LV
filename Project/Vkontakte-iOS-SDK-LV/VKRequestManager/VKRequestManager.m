@@ -74,6 +74,13 @@
                                selector:_cmd];
 }
 
+- (VKRequest *)isAppUser:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKUsersIsAppUser
+                                options:options
+                               selector:_cmd];
+}
+
 #pragma mark - Wall
 
 - (VKRequest *)wallGet:(NSDictionary *)options
@@ -1334,7 +1341,7 @@
 
 - (VKRequest *)statusGet:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKStatsGet
+    return [self configureRequestMethod:kVKStatusGet
                                 options:options
                                selector:_cmd];
 }
@@ -1943,7 +1950,7 @@
 
 - (VKRequest *)adsGetOfficeUsers:(NSDictionary *)options
 {
-    return [self configureRequestMethod:kVKAdsAddOfficeUsers
+    return [self configureRequestMethod:kVKAdsGetOfficeUsers
                                 options:options
                                selector:_cmd];
 }
@@ -2058,12 +2065,109 @@
 }
 
 - (VKRequest *)executePredefinedProcedureWithName:(NSString *)procedureName
-                                           option:(NSDictionary *)options
+                                          options:(NSDictionary *)options
 {
     NSString *methodName = [NSString stringWithFormat:@"%@.%@",
                                                       kVKExecute,
                                                       procedureName];
     return [self configureRequestMethod:methodName
+                                options:options
+                               selector:_cmd];
+}
+
+#pragma mark - Apps
+
+- (VKRequest *)appsGetCatalog:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKAppsGetCatalog
+                                options:options
+                               selector:_cmd];
+}
+
+#pragma mark - Utils
+
+- (VKRequest *)utilsCheckLink:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKUtilsCheckLink
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)utilsResolveScreenName:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKUtilsResolveScreenName
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)utilsGetServerTime:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKUtilsGetServerTime
+                                options:options
+                               selector:_cmd];
+}
+
+#pragma mark - Database
+
+- (VKRequest *)databaseGetCountries:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetCountries
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)databaseGetRegions:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetRegions
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)databaseGetCities:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetCities
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)databaseGetCitiesById:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetCitiesById
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)databaseGetCountriesById:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetCountriesById
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)databaseGetFaculties:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetFaculties
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)databaseGetSchools:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetSchools
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)databaseGetStreetsById:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetStreetsById
+                                options:options
+                               selector:_cmd];
+}
+
+- (VKRequest *)databaseGetUniversities:(NSDictionary *)options
+{
+    return [self configureRequestMethod:kVKDatabaseGetUniversities
                                 options:options
                                selector:_cmd];
 }

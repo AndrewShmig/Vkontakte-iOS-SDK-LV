@@ -11,7 +11,7 @@
 
 @class VKAccessToken;
 @class VKRequest;
-@class  VKUser;
+@class VKUser;
 @protocol VKRequestDelegate;
 
 
@@ -29,11 +29,11 @@
 В случае, если ползовательский объект равен nil запрос будет осуществлен без
 передачи токена доступа.
 */
-@property(nonatomic, strong, readwrite) VKUser *user;
+@property (nonatomic, strong, readwrite) VKUser *user;
 
 /** Делегат
 */
-@property (nonatomic, weak, readwrite) id<VKRequestDelegate> delegate;
+@property (nonatomic, weak, readwrite) id <VKRequestDelegate> delegate;
 
 /** Начинать ли выполнение запросов немедленно или предоставить программисту
 самому выбирать момент запуска запроса.
@@ -124,6 +124,13 @@
 @return @see info
 */
 - (VKRequest *)followers:(NSDictionary *)options;
+
+/** Возвращает информацию о том, установил ли пользователь приложение.
+
+@param options ключи-значения, подробнее https://vk.com/dev/users.isAppUser
+@return @see info
+*/
+- (VKRequest *)isAppUser:(NSDictionary *)options;
 
 @end
 
@@ -2224,6 +2231,116 @@ Args, например, если Вы передали ?user=123, то знач�
 @param options словарь передаваемых параметров хранимой процедуре
 */
 - (VKRequest *)executePredefinedProcedureWithName:(NSString *)procedureName
-                                           option:(NSDictionary *)options;
+                                          options:(NSDictionary *)options;
+
+@end
+
+@interface VKRequestManager (Apps)
+
+/** Возвращает список приложений, доступных для пользователей сайта через каталог приложений.
+
+@param options ключь-значение, подробнее по этой ссылке https://vk.com/dev/apps.getCatalog
+@return @see info
+*/
+- (VKRequest *)appsGetCatalog:(NSDictionary *)options;
+
+@end
+
+@interface VKRequestManager (Utils)
+
+/** Возвращает информацию о том, является ли ссылка заблокированной на сайте ВКонтакте.
+
+@param options ключи-значения, подробнее https://vk.com/dev/utils.checkLink
+@return @see info
+*/
+- (VKRequest *)utilsCheckLink:(NSDictionary *)options;
+
+/** Определяет тип объекта (пользователь, сообщество, приложение) и его
+идентификатор по короткому имени screen_name.
+
+@param options ключи-значения, подробнее https://vk.com/dev/utils.resolveScreenName
+@return @see info
+*/
+- (VKRequest *)utilsResolveScreenName:(NSDictionary *)options;
+
+/** Возвращает текущее время на сервере ВКонтакте в unixtime.
+
+@param options ключи-значения, подробнее https://vk.com/dev/utils.getServerTime
+@return @see info
+*/
+- (VKRequest *)utilsGetServerTime:(NSDictionary *)options;
+
+@end
+
+@interface VKRequestManager (Database)
+
+/** Возвращает список стран.
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getCountries
+@return @see info
+*/
+- (VKRequest *)databaseGetCountries:(NSDictionary *)options;
+
+/** Возвращает список регионов.
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getRegions
+@return @see info
+*/
+- (VKRequest *)databaseGetRegions:(NSDictionary *)options;
+
+/** Возвращает информацию об улицах по их идентификаторам (id).
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getStreetsById
+@return @see info
+*/
+- (VKRequest *)databaseGetStreetsById:(NSDictionary *)options;
+
+/** Возвращает информацию о странах по их идентификаторам
+
+Идентификаторы (id) могут быть получены с помощью методов users.get,
+places.getById, places.search, places.getCheckins.
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getCountriesById
+@return @see info
+*/
+- (VKRequest *)databaseGetCountriesById:(NSDictionary *)options;
+
+/** Возвращает список городов.
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getCities
+@return @see info
+*/
+- (VKRequest *)databaseGetCities:(NSDictionary *)options;
+
+/** Возвращает информацию о городах по их идентификаторам.
+
+Идентификаторы (id) могут быть получены с помощью методов users.get,
+places.getById, places.search, places.getCheckins.
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getCitiesById
+@return @see info
+*/
+- (VKRequest *)databaseGetCitiesById:(NSDictionary *)options;
+
+/** Возвращает список высших учебных заведений.
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getUniversities
+@return @see info
+*/
+- (VKRequest *)databaseGetUniversities:(NSDictionary *)options;
+
+/** Возвращает список школ.
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getSchools
+@return @see info
+*/
+- (VKRequest *)databaseGetSchools:(NSDictionary *)options;
+
+/** Возвращает список факультетов.
+
+@param options ключи-значения, подробнее https://vk.com/dev/database.getFaculties
+@return @see info
+*/
+- (VKRequest *)databaseGetFaculties:(NSDictionary *)options;
 
 @end

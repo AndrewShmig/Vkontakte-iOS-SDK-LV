@@ -92,9 +92,6 @@ static NSString *const kVKWallGetComments = @"wall.getComments";
 static NSString *const kVKWallAddComment = @"wall.addComment";
 static NSString *const kVKWallDeleteComment = @"wall.deleteComment";
 static NSString *const kVKWallRestoreComment = @"wall.restoreComment";
-static NSString *const kVKWallGetLikes = @"wall.getLikes";
-static NSString *const kVKWallAddLike = @"wall.addLike";
-static NSString *const kVKWallDeleteLike = @"wall.deleteLike";
 
 // -----------------------------------------------------------------------------
 #pragma mark - Photos
@@ -412,3 +409,23 @@ static NSString *const kVKAdsImportTargetContacts = @"ads.importTargetContacts";
 #pragma mark  - Execute
 // -----------------------------------------------------------------------------
 static NSString *const kVKExecute = @"execute";
+
+// -----------------------------------------------------------------------------
+#pragma mark  - Utils
+// -----------------------------------------------------------------------------
+static NSString *const kVKUtilsCheckLink = @"utils.checkLink";
+static NSString *const kVKUtilsResolveScreenName = @"utils.resolveScreenName";
+static NSString *const kVKUtilsGetServerTime = @"utils.getServerTime";
+
+// -----------------------------------------------------------------------------
+#pragma mark  - Database
+// -----------------------------------------------------------------------------
+static NSString *const kVKDatabaseGetCountries = @"database.getCountries";
+static NSString *const kVKDatabaseGetRegions = @"database.getRegions";
+static NSString *const kVKDatabaseGetStreetsById = @"database.getStreetsById";
+static NSString *const kVKDatabaseGetCountriesById = @"database.getCountriesById";
+static NSString *const kVKDatabaseGetCities = @"database.getCities";
+static NSString *const kVKDatabaseGetCitiesById = @"database.getCitiesById";
+static NSString *const kVKDatabaseGetUniversities = @"database.getUniversities";
+static NSString *const kVKDatabaseGetSchools = @"database.getSchools";
+static NSString *const kVKDatabaseGetFaculties = @"database.getFaculties";
