@@ -97,7 +97,8 @@
         [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
         {
             NSString *param = [NSString stringWithFormat:@"%@=%@",
-                                                         [key description],
+                                                         [[key description]
+                                                               lowercaseString],
                                                          [[obj description]
                                                                encodeURL]];
 
@@ -108,7 +109,9 @@
         NSData *body = [[params componentsJoinedByString:@"&"]
                                 dataUsingEncoding:NSUTF8StringEncoding];
 
-        NSString *urlAsString = [NSString stringWithFormat:@"%@%@", kVkontakteAPIURL, methodName];
+        NSString *urlAsString = [NSString stringWithFormat:@"%@%@",
+                                                           kVkontakteAPIURL,
+                                                           methodName];
         NSURL *url = [NSURL URLWithString:urlAsString];
 
         return [VKRequest requestHTTPMethod:@"POST"
