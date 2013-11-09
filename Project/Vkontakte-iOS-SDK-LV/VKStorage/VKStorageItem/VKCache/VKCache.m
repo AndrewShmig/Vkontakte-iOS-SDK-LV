@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 //
 #import "VKCache.h"
-#import "NSString+Utilities.h"
+#import "VkontakteSDK_Logger.h"
 
 
 @implementation VKCache
@@ -40,6 +40,8 @@
 
 - (instancetype)initWithCacheDirectory:(NSString *)path
 {
+    LOG();
+
     self = [super init];
 
     if (self) {
@@ -57,6 +59,8 @@
 - (void)addCache:(NSData *)cache
           forURL:(NSURL *)url
 {
+    LOG();
+
     [self addCache:cache
             forURL:url
           liveTime:VKCacheLiveTimeOneHour];
@@ -66,6 +70,8 @@
           forURL:(NSURL *)url
         liveTime:(VKCacheLiveTime)cacheLiveTime
 {
+    LOG();
+
 //    нет надобности сохранять в кэше запрос с таким временем жизни
     if(VKCacheLiveTimeNever == cacheLiveTime)
         return;
@@ -90,6 +96,8 @@
 
 - (void)removeCacheForURL:(NSURL *)url
 {
+    LOG();
+
     NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
@@ -103,6 +111,8 @@
 
 - (void)clear
 {
+    LOG();
+
     dispatch_async(_backgroundQueue, ^{
 
         [[NSFileManager defaultManager]
@@ -120,6 +130,8 @@
 
 - (void)removeCacheDirectory
 {
+    LOG();
+
     dispatch_async(_backgroundQueue, ^{
 
         [[NSFileManager defaultManager] removeItemAtPath:_cacheDirectoryPath
@@ -130,6 +142,8 @@
 
 - (NSData *)cacheForURL:(NSURL *)url
 {
+    LOG();
+
     return [self cacheForURL:url
                  offlineMode:NO];
 }
@@ -137,6 +151,8 @@
 - (NSData *)cacheForURL:(NSURL *)url
             offlineMode:(BOOL)offlineMode
 {
+    LOG();
+
     NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
                                                                       encodedCachedURL];
@@ -167,6 +183,8 @@
 
 - (void)createDirectoryIfNotExists:(NSString *)path
 {
+    LOG();
+
     if (![[NSFileManager defaultManager]
                          fileExistsAtPath:path]) {
 

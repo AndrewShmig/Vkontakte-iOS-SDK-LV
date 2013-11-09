@@ -29,10 +29,7 @@
 //
 
 #import "VKConnector.h"
-
-
-#define WIDTH_PADDING 25.0 // отступ по ширине всплывающего окна
-#define HEIGHT_PADDING 255.0 // отступ по высоте всплывающего окна
+#import "VkontakteSDK_Logger.h"
 
 
 @implementation VKConnector
@@ -40,17 +37,19 @@
     NSString *_settings;
     NSString *_redirectURL;
 
-    UIWebView *_innerWebView;
     UIActivityIndicatorView *_activityIndicator;
-    UIView *_mainView;
 
     VKAccessToken *_accessToken;
+
+    BOOL _webViewIsShown;
 }
 
 #pragma mark - Init methods & Class methods
 
 + (instancetype)sharedInstance
 {
+    LOG();
+
     static VKConnector *instanceVKConnector = nil;
     static dispatch_once_t once;
 
@@ -66,40 +65,34 @@
 
 - (void)startWithAppID:(NSString *)appID
             permissons:(NSArray *)permissions
+               webView:(UIWebView *)webView
               delegate:(id <VKConnectorDelegate>)delegate
 {
+    LOG();
+
     _permissions = permissions;
     _appID = appID;
     _delegate = delegate;
+    _webViewIsShown = NO;
 
     _settings = [self.permissions componentsJoinedByString:@","];
     _redirectURL = kVkontakteBlankURL;
 
-    if (nil == _mainView) {
-        // настраиваем попап окно для отображения UIWebView
-        CGRect frame = [self makeFrameAccordingToOrientation];
-        _mainView = [[UIView alloc] initWithFrame:frame];
+    [webView setDelegate:self];
 
-        if (nil == _innerWebView) {
-            _innerWebView = [[UIWebView alloc] initWithFrame:_mainView.frame];
-            [_innerWebView setDelegate:self];
-        }
+    CGPoint centerPoint = [webView center];
+    CGRect activityIndicatorFrame = CGRectMake(centerPoint.x - 20, centerPoint.y - 50, 30, 30);
 
-        CGPoint centerPoint = [_innerWebView center];
-        CGRect activityIndicatorFrame = CGRectMake(centerPoint.x - 20, centerPoint.y - 50, 30, 30);
-
-        if (nil == _activityIndicator) {
-            _activityIndicator = [[UIActivityIndicatorView alloc]
-                                                           initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-            [_activityIndicator setColor:[UIColor darkGrayColor]];
-            [_activityIndicator setFrame:activityIndicatorFrame];
-            [_activityIndicator setHidesWhenStopped:YES];
-            [_activityIndicator startAnimating];
-        }
-
-        [_innerWebView addSubview:_activityIndicator];
-        [_mainView addSubview:_innerWebView];
+    if (nil == _activityIndicator) {
+        _activityIndicator = [[UIActivityIndicatorView alloc]
+                                                       initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [_activityIndicator setColor:[UIColor darkGrayColor]];
+        [_activityIndicator setFrame:activityIndicatorFrame];
+        [_activityIndicator setHidesWhenStopped:YES];
+        [_activityIndicator startAnimating];
     }
+
+    [webView addSubview:_activityIndicator];
 
 //    преобразование словаря параметров в строку параметров
     NSDictionary *params = @{@"client_id"     : self.appID,
@@ -122,7 +115,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
 //    отображаем попап
-    [_innerWebView loadRequest:request];
+    [webView loadRequest:request];
 }
 
 #pragma mark - WebView delegate methods
@@ -131,18 +124,22 @@
 shouldStartLoadWithRequest:(NSURLRequest *)request
             navigationType:(UIWebViewNavigationType)navigationType
 {
+    LOG();
+
     NSString *url = [[request URL] absoluteString];
 
 //    разрешаем пользователю только сменить язык в окне авторизации, ничего более
-    if ([[[NSURL URLWithString:url] host] isEqualToString:@"vk.com"]) {
-        return NO;
+    if ([[[NSURL URLWithString:url] host] endsWithString:@"vk.com"]) {
+        return YES;
     }
 
-    return YES;
+    return NO;
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    LOG();
+
 //    останавливаем анимацию спинера
     [_activityIndicator stopAnimating];
 
@@ -173,53 +170,78 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
             [[VKStorage sharedStorage] storeItem:storageItem];
 
 //            уведомляем программиста, что токен был обновлён
-            if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalSucceeded:)])
+            if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalSucceeded:)]) {
+
                 [self.delegate VKConnector:self
                accessTokenRenewalSucceeded:_accessToken];
+            }
 
         } else {
 //            пользователь отказался авторизовать приложение
 //            не удалось обновить/получить токен доступа
-            if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalFailed:)])
+            if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalFailed:)]) {
+
                 [self.delegate VKConnector:self
                   accessTokenRenewalFailed:nil];
+            }
         }
     }
 
 //    показываем пользователю окно только в том случае, если от него требуются
 //    какие-то действия - ввод пароля, ввод капчи и тд
-    if (![[VKModal sharedInstance] isVisible] &&
-            [self showVKModalViewForWebView:webView]) {
+    if ([self showVKModalViewForWebView:webView]) {
+        if (!_webViewIsShown && [self.delegate respondsToSelector:@selector(VKConnector:shouldShowWebView:)]) {
 
-        [[VKModal sharedInstance] setDelegate:self];
-        [[VKModal sharedInstance] showWithContentView:_mainView
-                                          andAnimated:YES];
+            _webViewIsShown = YES;
+
+            [self.delegate VKConnector:self
+                     shouldShowWebView:webView];
+        }
     }
 
 //    прячем окно, если обработали либо авторизацию, либо отказ от авторизации
     if ([url hasPrefix:kVkontakteBlankURL]) {
-        [[VKModal sharedInstance] hideAnimated:NO];
+        if (_webViewIsShown && [self.delegate respondsToSelector:@selector(VKConnector:shouldHideWebView:)]) {
+
+            _webViewIsShown = NO;
+
+            [self.delegate VKConnector:self
+                     shouldHideWebView:webView];
+        }
     }
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
+    LOG();
+
 //    запускаем анимацию спинера
     [_activityIndicator startAnimating];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void)     webView:(UIWebView *)webView
+didFailLoadWithError:(NSError *)error
 {
+    LOG();
+
     if ([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]) {
+
+        if (_webViewIsShown) {
+            _webViewIsShown = NO;
+
+            [self.delegate VKConnector:self
+                     shouldHideWebView:webView];
+        }
+
         [self.delegate VKConnector:self
             connectionErrorOccured:error];
-
-        [[VKModal sharedInstance] hideAnimated:NO];
     }
 }
 
 - (BOOL)showVKModalViewForWebView:(UIWebView *)webView
 {
+    LOG();
+
 //    получаем содержимое тега head
     NSString *html = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('head')[0].innerHTML"];
 
@@ -242,8 +264,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 //    ввод пароля или при смене айпишника - номера телефона
     NSURLRequest *request = [webView request];
-    NSString * urlAsString = [[request URL] absoluteString];
-    NSArray * actionPrefixes = @[kVkontakteAuthorizationURL];
+    NSString *urlAsString = [[request URL] absoluteString];
+    NSArray *actionPrefixes = @[kVkontakteAuthorizationURL];
 
     for (NSString *prefix in actionPrefixes) {
         if ([urlAsString startsWithString:prefix]) {
@@ -254,28 +276,12 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     return NO;
 }
 
-#pragma mark - VKModal delegate
-
-- (void)VKModalWillAppear:(VKModal *)vkModal
-{
-    if ([self.delegate respondsToSelector:@selector(VKConnector:willShowModalView:)]) {
-        [self.delegate VKConnector:self
-                 willShowModalView:[VKModal sharedInstance]];
-    }
-}
-
-- (void)VKModalWillDisappear:(VKModal *)vkModal
-{
-    if ([self.delegate respondsToSelector:@selector(VKConnector:willHideModalView:)]) {
-        [self.delegate VKConnector:self
-                 willHideModalView:[VKModal sharedInstance]];
-    }
-}
-
 #pragma mark - Cookies manipulation methods
 
 - (void)clearCookies
 {
+    LOG();
+
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
 
     for (NSHTTPCookie *cookie in cookies) {
@@ -284,27 +290,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                                   deleteCookie:cookie];
         }
     }
-}
-
-#pragma mark - Device orientation
-
-- (CGRect)makeFrameAccordingToOrientation
-{
-    CGRect frame;
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication]
-                                                         statusBarOrientation];
-
-    frame.origin = screenBounds.origin;
-    frame.size.width = screenBounds.size.width - WIDTH_PADDING;
-
-    if (UIInterfaceOrientationIsPortrait(orientation)) { // portrait
-        frame.size.height = screenBounds.size.height - HEIGHT_PADDING;
-    } else { // landscape
-        frame.size.height = screenBounds.size.width - WIDTH_PADDING;
-    }
-
-    return frame;
 }
 
 @end

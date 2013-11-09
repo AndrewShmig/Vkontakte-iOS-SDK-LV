@@ -5,12 +5,8 @@
 //  Created by SD on 10/7/13.
 //  Copyright (c) 2013 AndrewShmig. All rights reserved.
 //
-
-#import "VKUser.h"
-#import "VKRequest.h"
-#import "VKMethods.h"
-#import "VKAccessToken.h"
 #import "VKRequestManager.h"
+#import "VkontakteSDK_Logger.h"
 
 
 @implementation VKRequestManager

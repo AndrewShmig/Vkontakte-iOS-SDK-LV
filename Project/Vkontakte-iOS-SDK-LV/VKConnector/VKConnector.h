@@ -29,17 +29,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VKModal.h"
 #import "VKMethods.h"
 #import "VKAccessToken.h"
 #import "VKStorage.h"
 #import "NSString+Utilities.h"
+#import "VKStorageItem.h"
 
 
-@class VKAccessToken;
 @class VKConnector;
-@class VKModal;
-@class VKStorageItem;
 
 
 static NSString *const kVKErrorDomain = @"kVkontakteErrorDomain";
@@ -56,36 +53,30 @@ typedef enum {
 
 @optional
 /**
- @name Modal view
+ @name Show/hide web view
  */
-/** Метод вызывается до того, как произойдет отображение модального окна авторизации
+/** Метод вызывается в случае, если необходимо отобразить UIWebView для выполнения
+пользователем некоторых действий (ввода пароля, ввод капчи, ввод телефна и тд)
  
  @param connector объект класса VKConnector отправляющий сообщение
- @param view модальное окно
+ @param webView UIWebView отображающий страницу авторизации
  */
 - (void)VKConnector:(VKConnector *)connector
-  willShowModalView:(VKModal *)view;
+  shouldShowWebView:(UIWebView *)webView;
 
-/** Метод вызывается до того, как произойдет скрытие модального окна авторизации
+/** Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
+пользователь авторизовался, либо отказался авторизовываться, либо произошла
+какая-то ошибка.
  
  @param connector объект класса VKConnector отправляющий сообщение
- @param view модальное окно
+ @param webView UIWebView отображающий страницу авторизации
  */
 - (void)VKConnector:(VKConnector *)connector
-  willHideModalView:(VKModal *)view;
+  shouldHideWebView:(UIWebView *)webView;
 
 /**
  @name Access token
  */
-/** Метод, вызов которого сигнализирует о том, что токен стал недействительным,
- срок его действия истёк.
- 
- @param connector объект класса VKConnector отправляющий сообщение.
- @param accessToken токен доступа, срок действия которого истёк.
- */
-- (void)   VKConnector:(VKConnector *)connector
-accessTokenInvalidated:(VKAccessToken *)accessToken;
-
 /** Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.
  
  @param connector объект класса VKConnector отправляющий сообщение.
@@ -116,14 +107,6 @@ accessTokenRenewalFailed:(VKAccessToken *)accessToken;
 - (void)   VKConnector:(VKConnector *)connector
 connectionErrorOccured:(NSError *)error;
 
-/** Метод, вызов которого сигнализирует о том, что произошла ошибка при парсинге JSON ответа сервера
- 
- @param connector объект класса VKConnector отправляющий сообщение
- @param error объект ошибки содержащий описание причины возникновения ошибки
- */
-- (void)VKConnector:(VKConnector *)connector
-parsingErrorOccured:(NSError *)error;
-
 /** Метод, вызов которого сигнализирует о том, что приложение в ВК, которое
 используется для авторизации пользователя, было удалено.
 
@@ -146,7 +129,7 @@ applicationWasDeleted:(NSError *)error;
     }
 
  */
-@interface VKConnector : NSObject <UIWebViewDelegate, VKModalDelegate>
+@interface VKConnector : NSObject <UIWebViewDelegate>
 
 /**
 @name Свойства
@@ -178,10 +161,12 @@ applicationWasDeleted:(NSError *)error;
 
  @param appID Идентификатор приложения полученный при регистрации.
  @param permissions Массив доступов (разрешений), которые необходимо получить приложению.
+ @param webView UIWebView в котором необходимо отображать страницу авторизации приложения ВК
  @param delegate делегат
 */
 - (void)startWithAppID:(NSString *)appID
             permissons:(NSArray *)permissions
+               webView:(UIWebView *)webView
               delegate:(id <VKConnectorDelegate>)delegate;
 
 /**

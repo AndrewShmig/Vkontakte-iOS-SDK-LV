@@ -25,9 +25,9 @@
 // THE SOFTWARE.
 //
 #import <Foundation/Foundation.h>
-
-
-@class VKAccessToken;
+#import "VKAccessToken.h"
+#import "VKStorageItem.h"
+#import "VKStorage.h"
 
 
 /**

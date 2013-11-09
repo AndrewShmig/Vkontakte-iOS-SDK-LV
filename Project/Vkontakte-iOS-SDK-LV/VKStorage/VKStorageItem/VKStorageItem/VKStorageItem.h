@@ -25,10 +25,9 @@
 // THE SOFTWARE.
 //
 #import <Foundation/Foundation.h>
-
-
-@class VKAccessToken;
-@class VKCache;
+#import "VKAccessToken.h"
+#import "NSString+Utilities.h"
+#import "VKCache.h"
 
 
 /** Класс представляет собой элемент хранилища VKStorage.

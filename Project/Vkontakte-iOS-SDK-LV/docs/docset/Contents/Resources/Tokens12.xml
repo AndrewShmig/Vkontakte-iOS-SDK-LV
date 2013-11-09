@@ -1,179 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/VKConnectorDelegate.html">
+	<File path="Protocols/VKRequestDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/VKConnectorDelegate</TokenIdentifier>
-			<Abstract type="html">Протокол объявляет методы отслеживания изменения статуса токена доступа
-хранимого классом VKConnector.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/VKRequestDelegate</TokenIdentifier>
+			<Abstract type="html">Протокол инкапсулирует в себе основные методы для отслеживания состояния
+осуществляемого запроса.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>
 			
 			<NodeRef refid="12"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:willShowModalView:</TokenIdentifier>
-			<Abstract type="html">Метод вызывается до того, как произойдет отображение модального окна авторизации</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:response:</TokenIdentifier>
+			<Abstract type="html">Возвращает ответ сервера в виде Foundation объекта</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector willShowModalView:(VKModal *)view</Declaration>
+			<Declaration>- (void)VKRequest:(VKRequest *)request response:(id)response</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
 				</Parameter><Parameter>
-					<Name>view</Name>
-					<Abstract type="html">модальное окно</Abstract>
+					<Name>response</Name>
+					<Abstract type="html">ответ сервера в виде Foundation объекта</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/VKConnector:willShowModalView:</Anchor>
+			<Anchor>//api/name/VKRequest:response:</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:willHideModalView:</TokenIdentifier>
-			<Abstract type="html">Метод вызывается до того, как произойдет скрытие модального окна авторизации</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:connectionErrorOccured:</TokenIdentifier>
+			<Abstract type="html">Вызывается в случае, если произошла ошибка соединения</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector willHideModalView:(VKModal *)view</Declaration>
+			<Declaration>- (void)VKRequest:(VKRequest *)request connectionErrorOccured:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
-				</Parameter><Parameter>
-					<Name>view</Name>
-					<Abstract type="html">модальное окно</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:willHideModalView:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:accessTokenInvalidated:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что токен стал недействительным,
-срок его действия истёк.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector accessTokenInvalidated:(VKAccessToken *)accessToken</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение.</Abstract>
-				</Parameter><Parameter>
-					<Name>accessToken</Name>
-					<Abstract type="html">токен доступа, срок действия которого истёк.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:accessTokenInvalidated:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:accessTokenRenewalSucceeded:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение.</Abstract>
-				</Parameter><Parameter>
-					<Name>accessToken</Name>
-					<Abstract type="html">новый токен доступа, который был получен.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:accessTokenRenewalSucceeded:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:accessTokenRenewalFailed:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что обновление токена доступа не
-удалось.
-Причиной ошибки может быть прерывание связи, либо пользователь отказался авторизовывать
-приложение.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector accessTokenRenewalFailed:(VKAccessToken *)accessToken</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющего сообщение.</Abstract>
-				</Parameter><Parameter>
-					<Name>accessToken</Name>
-					<Abstract type="html">токен доступа (равен nil)</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/VKConnector:accessTokenRenewalFailed:</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:connectionErrorOccured:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что произошла ошибка соединения при попытке осуществить запрос</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
-			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющего сообщение</Abstract>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">объект ошибки содержащий описание причины возникновения ошибки</Abstract>
+					<Abstract type="html">ошибка с описанием причины сбоя при осуществлении запроса</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/VKConnector:connectionErrorOccured:</Anchor>
+			<Anchor>//api/name/VKRequest:connectionErrorOccured:</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:parsingErrorOccured:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что произошла ошибка при парсинге JSON ответа сервера</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:parsingErrorOccured:</TokenIdentifier>
+			<Abstract type="html">Вызывается в случае, если произошла ошибка парсинга ответа сервера</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector parsingErrorOccured:(NSError *)error</Declaration>
+			<Declaration>- (void)VKRequest:(VKRequest *)request parsingErrorOccured:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">объект ошибки содержащий описание причины возникновения ошибки</Abstract>
+					<Abstract type="html">ошибка с описанием причины сбоя при осуществлении парсинга данных</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/VKConnector:parsingErrorOccured:</Anchor>
+			<Anchor>//api/name/VKRequest:parsingErrorOccured:</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:applicationWasDeleted:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что приложение в ВК, которое
-используется для авторизации пользователя, было удалено.</Abstract>
-			<DeclaredIn>VKConnector.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:responseErrorOccured:</TokenIdentifier>
+			<Abstract type="html">Вызывается в случае, если в ответе есть ошибка</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector applicationWasDeleted:(NSError *)error</Declaration>
+			<Declaration>- (void)VKRequest:(VKRequest *)request responseErrorOccured:(id)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">объект ошибки содержащий описание причины возникшей ошибки</Abstract>
+					<Abstract type="html">ответ сервера с описанием ошибки</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/VKConnector:applicationWasDeleted:</Anchor>
+			<Anchor>//api/name/VKRequest:responseErrorOccured:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:captchaSid:captchaImage:</TokenIdentifier>
+			<Abstract type="html">Вызывается в случае, если требуется ввести капчу</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request captchaSid:(NSString *)captchaSid captchaImage:(NSString *)captchaImage</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+				</Parameter><Parameter>
+					<Name>captchaSid</Name>
+					<Abstract type="html">идентификатор captcha</Abstract>
+				</Parameter><Parameter>
+					<Name>captchaImage</Name>
+					<Abstract type="html">ссылка на изображение, которое нужно показать пользователю, чтобы он ввел текст с этого изображения</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/VKRequest:captchaSid:captchaImage:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:totalBytes:downloadedBytes:</TokenIdentifier>
+			<Abstract type="html">Вызывается каждый раз, когда получена новая порция данных (метод удобно
+использовать для отображения статуса загрузки данных)</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request totalBytes:(NSUInteger)totalBytes downloadedBytes:(NSUInteger)downloadedBytes</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+				</Parameter><Parameter>
+					<Name>totalBytes</Name>
+					<Abstract type="html">суммарное кол-во байт, которые необходимо получить. Если по каким-то
+причинам не удаётся определить это кол-во, то будет передаваться 0</Abstract>
+				</Parameter><Parameter>
+					<Name>downloadedBytes</Name>
+					<Abstract type="html">кол-во уже загруженных байт</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/VKRequest:totalBytes:downloadedBytes:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:totalBytes:uploadedBytes:</TokenIdentifier>
+			<Abstract type="html">Вызывается каждый раз, когда отправлена очередная порция данных (метод удобно
+использовать для отображения статуса отправки данных, будь то загрузка аудио файла,
+видео файла или документа)</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request totalBytes:(NSUInteger)totalBytes uploadedBytes:(NSUInteger)uploadedBytes</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">запрос к которому отновится вызов метода делегата</Abstract>
+				</Parameter><Parameter>
+					<Name>totalBytes</Name>
+					<Abstract type="html">суммарное кол-во байт, которые необходимо получить. Если по каким-то
+причинам не удаётся определить это кол-во, от будет передаваться 0</Abstract>
+				</Parameter><Parameter>
+					<Name>uploadedBytes</Name>
+					<Abstract type="html">кол-во уже загруженных байт</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/VKRequest:totalBytes:uploadedBytes:</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

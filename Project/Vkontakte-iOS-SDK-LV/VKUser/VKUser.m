@@ -25,9 +25,7 @@
 // THE SOFTWARE.
 //
 #import "VKUser.h"
-#import "VKStorage.h"
-#import "VKStorageItem.h"
-#import "VKAccessToken.h"
+#import "VkontakteSDK_Logger.h"
 
 
 @implementation VKUser
@@ -40,6 +38,8 @@
 
 - (instancetype)initWithStorageItem:(VKStorageItem *)storageItem
 {
+    LOG();
+
     self = [super init];
 
     if (self) {
@@ -55,6 +55,8 @@ static VKUser *_currentUser;
 
 + (instancetype)currentUser
 {
+    LOG();
+
     if (nil == _currentUser) {
 //        пользователь еще не был запрошен и не был установлен активным
         if (![[VKStorage sharedStorage] isEmpty]) {
@@ -80,6 +82,8 @@ static VKUser *_currentUser;
 
 + (BOOL)activateUserWithID:(NSUInteger)userID
 {
+    LOG();
+
     VKStorageItem *storageItem = [[VKStorage sharedStorage]
                                              storageItemForUserID:userID];
 
@@ -93,6 +97,8 @@ static VKUser *_currentUser;
 
 + (NSArray *)localUsers
 {
+    LOG();
+
     NSMutableArray *localUsers = [[NSMutableArray alloc] init];
 
     [[[VKStorage sharedStorage] storageItems]
@@ -112,6 +118,8 @@ static VKUser *_currentUser;
 
 - (VKAccessToken *)accessToken
 {
+    LOG();
+
     return _storageItem.accessToken;
 }
 
@@ -119,6 +127,8 @@ static VKUser *_currentUser;
 
 - (NSString *)description
 {
+    LOG();
+
     return [_storageItem.accessToken description];
 }
 

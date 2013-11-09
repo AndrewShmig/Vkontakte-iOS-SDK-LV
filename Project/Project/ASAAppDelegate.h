@@ -18,4 +18,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ASAViewController *viewController;
 
+@property (nonatomic, strong) UIWebView *webView;
+
 @end

@@ -25,8 +25,7 @@
 // THE SOFTWARE.
 //
 #import "VKStorageItem.h"
-#import "VKAccessToken.h"
-#import "VKCache.h"
+#import "VkontakteSDK_Logger.h"
 
 
 @implementation VKStorageItem
@@ -37,6 +36,8 @@
 - (instancetype)initWithAccessToken:(VKAccessToken *)token
                mainCacheStoragePath:(NSString *)path
 {
+    LOG();
+
     self = [super init];
 
     if (nil != self && nil != token && nil != path) {

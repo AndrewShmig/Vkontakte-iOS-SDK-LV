@@ -27,6 +27,7 @@
 //
 //
 #import "VKAccessToken.h"
+#import "VkontakteSDK_Logger.h"
 
 
 @implementation VKAccessToken
@@ -35,6 +36,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
+    LOG();
+
     self = [super init];
 
     if (!self)
@@ -54,6 +57,8 @@
                       liveTime:(NSTimeInterval)liveTime
                    permissions:(NSArray *)permissions
 {
+    LOG();
+
     if (self = [super init]) {
         _userID = userID;
         _token = [token copy];
@@ -69,6 +74,8 @@
                    accessToken:(NSString *)token
                       liveTime:(NSTimeInterval)liveTime
 {
+    LOG();
+
     return [self initWithUserID:userID
                     accessToken:token
                        liveTime:liveTime
@@ -78,6 +85,8 @@
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
 {
+    LOG();
+
     return [self initWithUserID:userID
                     accessToken:token
                        liveTime:0
@@ -86,6 +95,8 @@
 
 - (instancetype)init
 {
+    LOG();
+
     return [self initWithUserID:0
                     accessToken:@""
                        liveTime:0
@@ -96,6 +107,8 @@
 
 - (NSString *)description
 {
+    LOG();
+
     NSDictionary *desc = @{
             @"User ID"         : @(self.userID),
             @"Expiration time" : @(((NSUInteger) (self.creationTime + self.liveTime))),
@@ -109,6 +122,8 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+    LOG();
+
     [aCoder encodeInteger:_userID forKey:@"userID"];
     [aCoder encodeObject:_token forKey:@"token"];
     [aCoder encodeDouble:_liveTime forKey:@"liveTime"];
@@ -118,6 +133,8 @@
 
 - (BOOL)isEqual:(VKAccessToken *)token
 {
+    LOG();
+
     NSSet *currentSet = [NSSet setWithArray:self.permissions];
     NSSet *otherSet = [NSSet setWithArray:token.permissions];
 
@@ -128,6 +145,8 @@
 
 - (VKAccessToken *)copyWithZone:(NSZone *)zone
 {
+    LOG();
+
     VKAccessToken *copyToken = [[VKAccessToken alloc] init];
 
     copyToken->_permissions = [_permissions copy];
@@ -143,11 +162,15 @@
 
 - (BOOL)hasPermission:(NSString *)permission
 {
+    LOG();
+
     return [self.permissions containsObject:permission];
 }
 
 - (BOOL)isExpired
 {
+    LOG();
+
     NSTimeInterval currentTimestamp = [[NSDate date] timeIntervalSince1970];
 
     if (self.liveTime == 0 && [self hasPermission:@"offline"])
@@ -158,6 +181,8 @@
 
 - (BOOL)isValid
 {
+    LOG();
+
     return (nil != self.token && ![self isExpired]);
 }
 

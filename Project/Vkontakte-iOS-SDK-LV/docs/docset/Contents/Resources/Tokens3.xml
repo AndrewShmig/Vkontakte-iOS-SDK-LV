@@ -134,11 +134,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/startWithAppID:permissons:delegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/VKConnector/startWithAppID:permissons:webView:delegate:</TokenIdentifier>
 			<Abstract type="html">Инициализирует запуск коннектора с заданными параметрами</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (void)startWithAppID:(NSString *)appID permissons:(NSArray *)permissions delegate:(id&lt;VKConnectorDelegate&gt;)delegate</Declaration>
+			<Declaration>- (void)startWithAppID:(NSString *)appID permissons:(NSArray *)permissions webView:(UIWebView *)webView delegate:(id&lt;VKConnectorDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>appID</Name>
@@ -147,12 +147,15 @@
 					<Name>permissions</Name>
 					<Abstract type="html">Массив доступов (разрешений), которые необходимо получить приложению.</Abstract>
 				</Parameter><Parameter>
+					<Name>webView</Name>
+					<Abstract type="html">UIWebView в котором необходимо отображать страницу авторизации приложения ВК</Abstract>
+				</Parameter><Parameter>
 					<Name>delegate</Name>
 					<Abstract type="html">делегат</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startWithAppID:permissons:delegate:</Anchor>
+			<Anchor>//api/name/startWithAppID:permissons:webView:delegate:</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

@@ -23,33 +23,33 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     self.window = [[UIWindow alloc]
                              initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    self.webView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen]
+                                                               bounds]];
+
     [[VKConnector sharedInstance] startWithAppID:kVKAppID
                                       permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+                                         webView:self.webView
                                         delegate:self];
 
     // Override point for customization after application launch.
     self.viewController = [[ASAViewController alloc]
                                               initWithNibName:@"ASAViewController"
                                                        bundle:nil];
+    [self.viewController.view addSubview:self.webView];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
 
 - (void)VKConnector:(VKConnector *)connector
-  willShowModalView:(VKModal *)view
+  shouldHideWebView:(UIWebView *)webView
 {
     NSLog(@"%s", __FUNCTION__);
+    self.webView.hidden = YES;
 }
 
 - (void)VKConnector:(VKConnector *)connector
-  willHideModalView:(VKModal *)view
-{
-    NSLog(@"%s", __FUNCTION__);
-}
-
-- (void)   VKConnector:(VKConnector *)connector
-accessTokenInvalidated:(VKAccessToken *)accessToken
+  shouldShowWebView:(UIWebView *)webView
 {
     NSLog(@"%s", __FUNCTION__);
 }
@@ -82,13 +82,6 @@ connectionErrorOccured:(NSError *)error
     NSLog(@"CONNECTION error: %@", error);
 }
 
-- (void)VKConnector:(VKConnector *)connector
-parsingErrorOccured:(NSError *)error
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"error: %@", error);
-}
-
 - (void)VKRequest:(VKRequest *)request
          response:(id)response
 {
@@ -114,13 +107,6 @@ responseErrorOccured:(id)error
 
 - (void)  VKRequest:(VKRequest *)request
 parsingErrorOccured:(NSError *)error
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"%@", error);
-}
-
-- (void)     VKRequest:(VKRequest *)request
-connectionErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", error);

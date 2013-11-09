@@ -33,7 +33,6 @@
 		1A9A062B8A116C05DA895214 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0C00454650FD4A2C32F0 /* NSString+Utilities.m */; };
 		1A9A064E814D0BAA7166BFAD /* VKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0E3881B757A6D652A67C /* VKAccessToken.m */; };
 		1A9A0655CAB1BE059EB54EAA /* NSData+toBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A054B0C2775EB317A3731 /* NSData+toBase64.m */; };
-		1A9A0700D56ABF555C95A5F3 /* VKModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0FF8478F9EEE6C08F710 /* VKModal.m */; };
 		1A9A095500275C6F1380D8CA /* VKStorageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0F7A97BF3D11E889C3DC /* VKStorageItem.m */; };
 		1A9A097D690011CE4A2E4E3B /* ASAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A00094B3E2A8AD54E023E /* ASAViewController.xib */; };
 		1A9A09B3B79A22F26C2ACB6D /* ASAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A086C5F5EEDC2CBB27DE4 /* ASAAppDelegate.m */; };
@@ -64,11 +63,11 @@
 		1A9A06044CE209AFCCB60357 /* ASAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAAppDelegate.h; sourceTree = "<group>"; };
 		1A9A064D45F3D050F1E4676D /* VKConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKConnector.m; sourceTree = "<group>"; };
 		1A9A07C45F1C8D8BC821FB52 /* Project-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-Prefix.pch"; sourceTree = "<group>"; };
+		1A9A080971F576B0558849EF /* VkontakteSDK_Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VkontakteSDK_Logger.h; sourceTree = "<group>"; };
 		1A9A08407A52A831D277B6E5 /* VKStorageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKStorageItem.h; sourceTree = "<group>"; };
 		1A9A086C5F5EEDC2CBB27DE4 /* ASAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASAAppDelegate.m; sourceTree = "<group>"; };
 		1A9A0872BA5F01364902C76C /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A9A089F1EF53EA45E95ABEB /* VKConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKConnector.h; sourceTree = "<group>"; };
-		1A9A090B7B5805684A779471 /* VKModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKModal.h; sourceTree = "<group>"; };
 		1A9A096027F402AF6A3D38C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1A9A09A82B1F7ED280ED56BA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		1A9A09C122E5CF36FD9674B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,7 +88,6 @@
 		1A9A0F527EF608191560F646 /* ASAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAViewController.h; sourceTree = "<group>"; };
 		1A9A0F7A97BF3D11E889C3DC /* VKStorageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKStorageItem.m; sourceTree = "<group>"; };
 		1A9A0FD641D02F238227222D /* VkontakteSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VkontakteSDK.h; sourceTree = "<group>"; };
-		1A9A0FF8478F9EEE6C08F710 /* VKModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKModal.m; sourceTree = "<group>"; };
 		D52DDC8E177EDDAF00E05B30 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D574AC57177DF1DF00DC36F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -174,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				1A9A0352D2BB8AD518687940 /* Helpers */,
-				1A9A070D80EAC40E9E4A750B /* VKModal */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -196,15 +193,6 @@
 				1A9A04B6E6558AB177E8853C /* VKStorageItem */,
 			);
 			path = VKStorage;
-			sourceTree = "<group>";
-		};
-		1A9A070D80EAC40E9E4A750B /* VKModal */ = {
-			isa = PBXGroup;
-			children = (
-				1A9A090B7B5805684A779471 /* VKModal.h */,
-				1A9A0FF8478F9EEE6C08F710 /* VKModal.m */,
-			);
-			path = VKModal;
 			sourceTree = "<group>";
 		};
 		1A9A08D92DB1EF47C34EDC87 /* Frameworks */ = {
@@ -230,6 +218,7 @@
 				1A9A0A9897FE707B97F58CA5 /* VKConnector */,
 				1A9A031CDAA14FAA5F7EEEAF /* VKRequestManager */,
 				1A9A0FD641D02F238227222D /* VkontakteSDK.h */,
+				1A9A080971F576B0558849EF /* VkontakteSDK_Logger.h */,
 			);
 			path = "Vkontakte-iOS-SDK-LV";
 			sourceTree = "<group>";
@@ -383,7 +372,6 @@
 				1A9A0D5EAE2CE21BC15FFBF7 /* ASAViewController.m in Sources */,
 				1A9A0DD70CD818135DBFD171 /* VKUser.m in Sources */,
 				1A9A0655CAB1BE059EB54EAA /* NSData+toBase64.m in Sources */,
-				1A9A0700D56ABF555C95A5F3 /* VKModal.m in Sources */,
 				1A9A0BD63651CF1DB9B2057E /* VKStorage.m in Sources */,
 				1A9A009F972265ECFA06DBB1 /* VKCache.m in Sources */,
 				1A9A064E814D0BAA7166BFAD /* VKAccessToken.m in Sources */,

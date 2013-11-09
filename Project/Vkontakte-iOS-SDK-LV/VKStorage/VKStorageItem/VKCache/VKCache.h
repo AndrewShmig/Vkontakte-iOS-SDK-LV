@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 //
 #import <Foundation/Foundation.h>
+#import "NSString+Utilities.h"
 
 
 /** Перечисление возможных сроков действия кэша.

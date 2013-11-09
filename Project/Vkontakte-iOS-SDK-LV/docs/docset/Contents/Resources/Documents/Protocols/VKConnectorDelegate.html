@@ -43,8 +43,6 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/VKConnector:accessTokenInvalidated:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:accessTokenInvalidated:</option>
-	
 	<option value="//api/name/VKConnector:accessTokenRenewalFailed:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:accessTokenRenewalFailed:</option>
 	
 	<option value="//api/name/VKConnector:accessTokenRenewalSucceeded:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:accessTokenRenewalSucceeded:</option>
@@ -53,11 +51,9 @@
 	
 	<option value="//api/name/VKConnector:connectionErrorOccured:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:connectionErrorOccured:</option>
 	
-	<option value="//api/name/VKConnector:parsingErrorOccured:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:parsingErrorOccured:</option>
+	<option value="//api/name/VKConnector:shouldHideWebView:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:shouldHideWebView:</option>
 	
-	<option value="//api/name/VKConnector:willHideModalView:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:willHideModalView:</option>
-	
-	<option value="//api/name/VKConnector:willShowModalView:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:willShowModalView:</option>
+	<option value="//api/name/VKConnector:shouldShowWebView:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:shouldShowWebView:</option>
 	
 	
 	
@@ -75,7 +71,7 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Modal view">Modal view</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Show/hide web view">Show/hide web view</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Access token">Access token</a></span></li>
 	
@@ -93,8 +89,6 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:accessTokenInvalidated:">VKConnector:accessTokenInvalidated:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:accessTokenRenewalFailed:">VKConnector:accessTokenRenewalFailed:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:accessTokenRenewalSucceeded:">VKConnector:accessTokenRenewalSucceeded:</a></span></li>
@@ -103,11 +97,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:connectionErrorOccured:">VKConnector:connectionErrorOccured:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:parsingErrorOccured:">VKConnector:parsingErrorOccured:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:shouldHideWebView:">VKConnector:shouldHideWebView:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:willHideModalView:">VKConnector:willHideModalView:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:willShowModalView:">VKConnector:willShowModalView:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:shouldShowWebView:">VKConnector:shouldShowWebView:</a></span></li>
 	
 </ul></li>
 
@@ -159,21 +151,24 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						<a title="Modal view" name="task_Modal view"></a>
-						<h3 class="subsubtitle task-title">Modal view</h3>
+						<a title="Show/hide web view" name="task_Show/hide web view"></a>
+						<h3 class="subsubtitle task-title">Show/hide web view</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/VKConnector:willShowModalView:">&ndash;&nbsp;VKConnector:willShowModalView:</a></code>
-		<span class="tooltip"><p>Метод вызывается до того, как произойдет отображение модального окна авторизации</p></span>
+		<code><a href="#//api/name/VKConnector:shouldShowWebView:">&ndash;&nbsp;VKConnector:shouldShowWebView:</a></code>
+		<span class="tooltip"><p>Метод вызывается в случае, если необходимо отобразить UIWebView для выполнения
+пользователем некоторых действий (ввода пароля, ввод капчи, ввод телефна и тд)</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/VKConnector:willHideModalView:">&ndash;&nbsp;VKConnector:willHideModalView:</a></code>
-		<span class="tooltip"><p>Метод вызывается до того, как произойдет скрытие модального окна авторизации</p></span>
+		<code><a href="#//api/name/VKConnector:shouldHideWebView:">&ndash;&nbsp;VKConnector:shouldHideWebView:</a></code>
+		<span class="tooltip"><p>Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
+пользователь авторизовался, либо отказался авторизовываться, либо произошла
+какая-то ошибка.</p></span>
 	</span>
 	
 	
@@ -186,14 +181,6 @@
 
 						<ul class="task-list">
 							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/VKConnector:accessTokenInvalidated:">&ndash;&nbsp;VKConnector:accessTokenInvalidated:</a></code>
-		<span class="tooltip"><p>Метод, вызов которого сигнализирует о том, что токен стал недействительным,
-срок его действия истёк.</p></span>
-	</span>
-	
-	
-</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKConnector:accessTokenRenewalSucceeded:">&ndash;&nbsp;VKConnector:accessTokenRenewalSucceeded:</a></code>
 		<span class="tooltip"><p>Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.</p></span>
@@ -227,13 +214,6 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/VKConnector:parsingErrorOccured:">&ndash;&nbsp;VKConnector:parsingErrorOccured:</a></code>
-		<span class="tooltip"><p>Метод, вызов которого сигнализирует о том, что произошла ошибка при парсинге JSON ответа сервера</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/VKConnector:applicationWasDeleted:">&ndash;&nbsp;VKConnector:applicationWasDeleted:</a></code>
 		<span class="tooltip"><p>Метод, вызов которого сигнализирует о том, что приложение в ВК, которое
 используется для авторизации пользователя, было удалено.</p></span>
@@ -256,58 +236,6 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/VKConnector:accessTokenInvalidated:" title="VKConnector:accessTokenInvalidated:"></a>
-	<h3 class="subsubtitle method-title">VKConnector:accessTokenInvalidated:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Метод, вызов которого сигнализирует о том, что токен стал недействительным,
-срок его действия истёк.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)VKConnector:(VKConnector *)<em>connector</em> accessTokenInvalidated:(VKAccessToken *)<em>accessToken</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>connector</em></dt>
-			<dd><p>объект класса <a href="../Classes/VKConnector.html">VKConnector</a> отправляющий сообщение.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>accessToken</em></dt>
-			<dd><p>токен доступа, срок действия которого истёк.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKConnector.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/VKConnector:accessTokenRenewalFailed:" title="VKConnector:accessTokenRenewalFailed:"></a>
@@ -518,18 +446,20 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/VKConnector:parsingErrorOccured:" title="VKConnector:parsingErrorOccured:"></a>
-	<h3 class="subsubtitle method-title">VKConnector:parsingErrorOccured:</h3>
+	<a name="//api/name/VKConnector:shouldHideWebView:" title="VKConnector:shouldHideWebView:"></a>
+	<h3 class="subsubtitle method-title">VKConnector:shouldHideWebView:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Метод, вызов которого сигнализирует о том, что произошла ошибка при парсинге JSON ответа сервера</p>
+		<p>Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
+пользователь авторизовался, либо отказался авторизовываться, либо произошла
+какая-то ошибка.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKConnector:(VKConnector *)<em>connector</em> parsingErrorOccured:(NSError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKConnector:(VKConnector *)<em>connector</em> shouldHideWebView:(UIWebView *)<em>webView</em></code></div>
 
     
 	
@@ -542,8 +472,8 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>объект ошибки содержащий описание причины возникновения ошибки</p></dd>
+			<dt><em>webView</em></dt>
+			<dd><p>UIWebView отображающий страницу авторизации</p></dd>
 		</dl>
 		
 	</div>
@@ -569,18 +499,19 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/VKConnector:willHideModalView:" title="VKConnector:willHideModalView:"></a>
-	<h3 class="subsubtitle method-title">VKConnector:willHideModalView:</h3>
+	<a name="//api/name/VKConnector:shouldShowWebView:" title="VKConnector:shouldShowWebView:"></a>
+	<h3 class="subsubtitle method-title">VKConnector:shouldShowWebView:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Метод вызывается до того, как произойдет скрытие модального окна авторизации</p>
+		<p>Метод вызывается в случае, если необходимо отобразить UIWebView для выполнения
+пользователем некоторых действий (ввода пароля, ввод капчи, ввод телефна и тд)</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKConnector:(VKConnector *)<em>connector</em> willHideModalView:(VKModal *)<em>view</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKConnector:(VKConnector *)<em>connector</em> shouldShowWebView:(UIWebView *)<em>webView</em></code></div>
 
     
 	
@@ -593,59 +524,8 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>view</em></dt>
-			<dd><p>модальное окно</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKConnector.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/VKConnector:willShowModalView:" title="VKConnector:willShowModalView:"></a>
-	<h3 class="subsubtitle method-title">VKConnector:willShowModalView:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Метод вызывается до того, как произойдет отображение модального окна авторизации</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)VKConnector:(VKConnector *)<em>connector</em> willShowModalView:(VKModal *)<em>view</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>connector</em></dt>
-			<dd><p>объект класса <a href="../Classes/VKConnector.html">VKConnector</a> отправляющий сообщение</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>view</em></dt>
-			<dd><p>модальное окно</p></dd>
+			<dt><em>webView</em></dt>
+			<dd><p>UIWebView отображающий страницу авторизации</p></dd>
 		</dl>
 		
 	</div>
@@ -683,7 +563,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-08)</span><br />
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-09)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

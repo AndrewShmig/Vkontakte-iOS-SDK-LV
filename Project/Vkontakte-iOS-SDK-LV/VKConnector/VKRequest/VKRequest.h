@@ -26,6 +26,12 @@
 //
 #import <Foundation/Foundation.h>
 #import "VKCache.h"
+#import "VKMethods.h"
+#import "NSString+Utilities.h"
+#import "VKStorage.h"
+#import "VKStorageItem.h"
+#import "VKUser.h"
+#import "VKAccessToken.h"
 
 
 /** Неизвестный размер передаваемых сервером данных

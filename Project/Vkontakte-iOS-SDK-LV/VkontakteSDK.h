@@ -37,7 +37,6 @@
 #import "VKRequest.h"
 #import "VKConnector.h"
 #import "VKMethods.h"
-#import "VKModal.h"
 
 #import "NSData+toBase64.h"
 #import "NSString+Utilities.h"

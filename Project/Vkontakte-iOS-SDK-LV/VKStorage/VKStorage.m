@@ -25,12 +25,7 @@
 // THE SOFTWARE.
 //
 #import "VKStorage.h"
-#import "VKStorageItem.h"
-#import "VKAccessToken.h"
-#import "VKCache.h"
-
-
-#define INFO_LOG() NSLog(@"%s", __FUNCTION__)
+#import "VkontakteSDK_Logger.h"
 
 
 @implementation VKStorage
@@ -43,7 +38,7 @@
 
 - (instancetype)init
 {
-    INFO_LOG();
+    LOG();
 
     self = [super init];
 
@@ -60,7 +55,7 @@
 
 + (instancetype)sharedStorage
 {
-    INFO_LOG();
+    LOG();
 
     static VKStorage *sharedStorage;
     static dispatch_once_t predicate;
@@ -91,21 +86,21 @@
 
 - (BOOL)isEmpty
 {
-    INFO_LOG();
+    LOG();
 
     return ([_storageItems count] == 0);
 }
 
 - (NSUInteger)count
 {
-    INFO_LOG();
+    LOG();
 
     return [_storageItems count];
 }
 
 - (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)token
 {
-    INFO_LOG();
+    LOG();
 
     VKStorageItem *storageItem = [[VKStorageItem alloc]
                                                  initWithAccessToken:token
@@ -116,7 +111,7 @@
 
 - (NSArray *)storageItems
 {
-    INFO_LOG();
+    LOG();
 
     return [_storageItems allValues];
 }
@@ -125,7 +120,7 @@
 
 - (void)storeItem:(VKStorageItem *)item
 {
-    INFO_LOG();
+    LOG();
 
     if (nil == item || nil == item.accessToken || nil == item.cache)
         return;
@@ -138,7 +133,7 @@
 
 - (void)removeItem:(VKStorageItem *)item
 {
-    INFO_LOG();
+    LOG();
 
     id storageKey = @(item.accessToken.userID);
 
@@ -150,7 +145,7 @@
 
 - (void)clean
 {
-    INFO_LOG();
+    LOG();
 
     [_storageItems removeAllObjects];
     [self cleanCachedData];
@@ -160,7 +155,7 @@
 
 - (void)cleanCachedData
 {
-    INFO_LOG();
+    LOG();
 
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
 
@@ -181,7 +176,7 @@
 
 - (VKStorageItem *)storageItemForUserID:(NSUInteger)userID
 {
-    INFO_LOG();
+    LOG();
 
     id storageKey = @(userID);
     return _storageItems[storageKey];
@@ -191,7 +186,7 @@
 
 - (NSString *)fullStoragePath
 {
-    INFO_LOG();
+    LOG();
 
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     return [cachePath stringByAppendingFormat:@"%@", kVKStoragePath];
@@ -199,7 +194,7 @@
 
 - (NSString *)fullCacheStoragePath
 {
-    INFO_LOG();
+    LOG();
 
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     return [cachePath stringByAppendingFormat:@"%@", kVKStorageCachePath];
@@ -209,7 +204,7 @@
 
 - (void)loadStorage
 {
-    INFO_LOG();
+    LOG();
 
     NSDictionary *storageDefaults = [[NSUserDefaults standardUserDefaults]
                                                      objectForKey:kVKStorageUserDefaultsKey];
@@ -239,7 +234,7 @@
 
 - (void)saveStorage
 {
-    INFO_LOG();
+    LOG();
 
 //    сохраняем только данные токенов доступов
 //    данные кэшев мы сможем потом просто восстановить

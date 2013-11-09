@@ -25,15 +25,7 @@
 // THE SOFTWARE.
 //
 #import "VKRequest.h"
-#import "VKUser.h"
-#import "NSString+Utilities.h"
-#import "VKStorage.h"
-#import "VKStorageItem.h"
-#import "VKAccessToken.h"
-#import "VKMethods.h"
-
-
-#define INFO_LOG() NSLog(@"%s", __FUNCTION__)
+#import "VkontakteSDK_Logger.h"
 
 
 #define kCaptchaErrorCode 14
@@ -58,7 +50,7 @@
 + (instancetype)request:(NSURLRequest *)request
                delegate:(id <VKRequestDelegate>)delegate
 {
-    INFO_LOG();
+    LOG();
 
     VKRequest *returnRequest = [[VKRequest alloc]
                                            initWithRequest:request];
@@ -73,7 +65,7 @@
                              body:(NSData *)body
                          delegate:(id <VKRequestDelegate>)delegate
 {
-    INFO_LOG();
+    LOG();
 
     VKRequest *request = [[VKRequest alloc]
                                      initWithHTTPMethod:httpMethod
@@ -90,7 +82,7 @@
                       options:(NSDictionary *)options
                      delegate:(id <VKRequestDelegate>)delegate
 {
-    INFO_LOG();
+    LOG();
 
     VKRequest *request = [[VKRequest alloc]
                                      initWithMethod:methodName
@@ -105,7 +97,7 @@
 
 - (instancetype)initWithRequest:(NSURLRequest *)request
 {
-    INFO_LOG();
+    LOG();
 
     self = [super init];
 
@@ -133,7 +125,7 @@
                            headers:(NSDictionary *)headers
                               body:(NSData *)body
 {
-    INFO_LOG();
+    LOG();
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
@@ -148,7 +140,7 @@
 - (instancetype)initWithMethod:(NSString *)methodName
                        options:(NSDictionary *)options
 {
-    INFO_LOG();
+    LOG();
 
     NSMutableString *fullURL = [NSMutableString string];
     [fullURL appendFormat:@"%@%@", kVkontakteAPIURL, methodName];
@@ -187,7 +179,7 @@
 
 - (void)start
 {
-    INFO_LOG();
+    LOG();
 
 //    установлен ли делегат? если нет, то и запрос выполнять нет смысла
     if (nil == self.delegate)
@@ -229,7 +221,7 @@
 
 - (void)cancel
 {
-    INFO_LOG();
+    LOG();
 
     _receivedData = nil;
     _expectedDataSize = NSURLResponseUnknownContentLength;
@@ -243,6 +235,8 @@
                    name:(NSString *)name
                   field:(NSString *)field
 {
+    LOG();
+
     [self appendFile:file
                 name:name
                field:field];
@@ -252,6 +246,8 @@
                       name:(NSString *)name
                      field:(NSString *)field
 {
+    LOG();
+
     [self appendFile:file
                 name:name
                field:field];
@@ -261,6 +257,8 @@
                    name:(NSString *)name
                   field:(NSString *)field
 {
+    LOG();
+
     [self appendFile:file
                 name:name
                field:field];
@@ -270,6 +268,8 @@
                    name:(NSString *)name
                   field:(NSString *)field
 {
+    LOG();
+
     [self appendFile:file
                 name:name
                field:field];
@@ -279,6 +279,8 @@
 
 - (NSString *)description
 {
+    LOG();
+
     NSDictionary *description = @{
             @"delegate"      : self.delegate,
             @"signature"     : self.signature,
@@ -292,6 +294,8 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
+    LOG();
+
     VKRequest *copy = [[VKRequest alloc]
                                   initWithRequest:_request];
 
@@ -307,7 +311,7 @@
 - (void)connection:(NSURLConnection *)connection
 didReceiveResponse:(NSURLResponse *)response
 {
-    INFO_LOG();
+    LOG();
 
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
@@ -345,7 +349,7 @@ didReceiveResponse:(NSURLResponse *)response
 - (void)connection:(NSURLConnection *)connection
     didReceiveData:(NSData *)data
 {
-    INFO_LOG();
+    LOG();
 
     [_receivedData appendData:data];
 
@@ -362,7 +366,7 @@ didReceiveResponse:(NSURLResponse *)response
         totalBytesWritten:(NSInteger)totalBytesWritten
 totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
-    INFO_LOG();
+    LOG();
 
     if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
 
@@ -374,7 +378,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    INFO_LOG();
+    LOG();
 
 //    обработка полного ответа сервера
     NSJSONReadingOptions mask = NSJSONReadingAllowFragments |
@@ -448,7 +452,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 - (void)connection:(NSURLConnection *)connection
   didFailWithError:(NSError *)error
 {
-    INFO_LOG();
+    LOG();
 
     if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:connectionErrorOccured:)]) {
         [self.delegate VKRequest:self
@@ -460,6 +464,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 - (NSURL *)removeAccessTokenFromURL:(NSURL *)url
 {
+    LOG();
+
 //    уберем токен доступа из строки запроса
 //    токен доступа может меняться при каждом обновлении (повторном входе пользователя),
 //    но создавать каждый раз новый кэш для одинаковых запросов с всего лишь разными
@@ -481,6 +487,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
               name:(NSString *)name
              field:(NSString *)field
 {
+    LOG();
+
 //    header part
     [_body appendData:[_boundaryHeader dataUsingEncoding:NSUTF8StringEncoding]];
 
@@ -508,6 +516,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 - (NSString *)determineContentTypeFromExtension:(NSString *)extension
 {
+    LOG();
+
     NSDictionary *contentTypes = @{
 
 //            audio

@@ -7,12 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
-@class VKAccessToken;
-@class VKRequest;
-@class VKUser;
-@protocol VKRequestDelegate;
+#import "VKRequest.h"
+#import "VKUser.h"
+#import "VKAccessToken.h"
 
 
 /** Класс предназначен для управления запросами к серверу ВК.
