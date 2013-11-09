@@ -41,6 +41,7 @@
 
 static NSString *const kVKErrorDomain = @"kVkontakteErrorDomain";
 
+
 typedef enum {
     kVKApplicationWasDeletedErrorCode
 } kVkontakteErrorCode;
