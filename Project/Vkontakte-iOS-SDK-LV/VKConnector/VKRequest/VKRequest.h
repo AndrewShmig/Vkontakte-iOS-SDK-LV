@@ -189,6 +189,19 @@ responseErrorOccured:(id)error;
 
 /** Создает и возвращает запрос
 
+@param httpMethod GET или POST
+@param methodName наименование вызываемого метода (users.get, wall.post)
+@param options словарь передаваемых параметров (ключ-значение)
+@param delegate делегат, который будет получать уведомления/сообщения об изменении
+состояния объекта и данных
+*/
++ (instancetype)requestHTTPMethod:(NSString *)httpMethod
+                       methodName:(NSString *)methodName
+                          options:(NSDictionary *)options
+                         delegate:(id <VKRequestDelegate>)delegate;
+
+/** Создает и возвращает запрос
+
 @param methodName наименование метода API (users.get, groups.join etc)
 @param options словарь передаваемых параметров этому методу
 @param delegate делегат, который будет получать уведомления/сообщения об изменении

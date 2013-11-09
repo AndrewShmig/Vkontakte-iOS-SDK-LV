@@ -37,8 +37,8 @@
     NSURLConnection *_connection;
 
     NSMutableData *_receivedData;
-    NSMutableData* _body;
-    NSString* _boundary, *_boundaryHeader, *_boundaryFooter;
+    NSMutableData *_body;
+    NSString *_boundary, *_boundaryHeader, *_boundaryFooter;
     NSUInteger _expectedDataSize;
 
     BOOL _isBodyEmpty;
@@ -76,6 +76,49 @@
     request.delegate = delegate;
 
     return request;
+}
+
++ (instancetype)requestHTTPMethod:(NSString *)httpMethod
+                       methodName:(NSString *)methodName
+                          options:(NSDictionary *)options
+                         delegate:(id <VKRequestDelegate>)delegate
+{
+    NSString *lowercaseHTTPMethodName = [httpMethod lowercaseString];
+
+    if ([lowercaseHTTPMethodName isEqualToString:@"get"]) {
+        return [VKRequest requestMethod:methodName
+                                options:options
+                               delegate:delegate];
+    } else if ([lowercaseHTTPMethodName isEqualToString:@"post"]) {
+//        преобразуем передаваемые параметры в одну строку, закодируем её и
+//        добавим в тело запроса
+        NSMutableArray *params = [[NSMutableArray alloc] init];
+
+        [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+        {
+            NSString *param = [NSString stringWithFormat:@"%@=%@",
+                                                         [key description],
+                                                         [[obj description]
+                                                               encodeURL]];
+
+            [params addObject:param];
+        }];
+
+//        формируем запрос
+        NSData *body = [[params componentsJoinedByString:@"&"]
+                                dataUsingEncoding:NSUTF8StringEncoding];
+
+        NSString *urlAsString = [NSString stringWithFormat:@"%@%@", kVkontakteAPIURL, methodName];
+        NSURL *url = [NSURL URLWithString:urlAsString];
+
+        return [VKRequest requestHTTPMethod:@"POST"
+                                        URL:url
+                                    headers:@{}
+                                       body:body
+                                   delegate:delegate];
+    }
+
+    return nil;
 }
 
 + (instancetype)requestMethod:(NSString *)methodName
@@ -202,10 +245,11 @@
     }
 
 //    если тело запроса установлено, то внесем кое-какие завершающие штрихи
-    if(!_isBodyEmpty){
+    if (!_isBodyEmpty) {
         [_request setValue:[NSString stringWithFormat:@"%d", [_body length]]
         forHTTPHeaderField:@"Content-Length"];
-        [_request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=\"%@\"", _boundary]
+        [_request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=\"%@\"",
+                                                      _boundary]
         forHTTPHeaderField:@"Content-Type"];
 
 //        "закроем" тело
@@ -399,12 +443,12 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     }
 
 //    проверим, если в ответе содержится ошибка
-    if(nil != json[@"error"]){
+    if (nil != json[@"error"]) {
 
 //      капча ли?
-        if(kCaptchaErrorCode == [json[@"error"][@"error_code"] integerValue]){
+        if (kCaptchaErrorCode == [json[@"error"][@"error_code"] integerValue]) {
 
-            if(nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:captchaSid:captchaImage:)]){
+            if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:captchaSid:captchaImage:)]) {
                 NSString *captchaSid = json[@"error"][@"captcha_sid"];
                 NSString *captchaImage = json[@"error"][@"captcha_img"];
 
@@ -419,7 +463,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         }
 
 //        другая ошибка
-        if(nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:responseErrorOccured:)]){
+        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:responseErrorOccured:)]) {
             [self.delegate VKRequest:self
                 responseErrorOccured:json[@"error"]];
         }
@@ -476,9 +520,12 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF BEGINSWITH \"access_token\")"];
     NSArray *newParams = [params filteredArrayUsingPredicate:predicate];
 
-    NSString *part1 = [[url absoluteString] componentsSeparatedByString:@"?"][0];
+    NSString *part1 = [[url absoluteString]
+                            componentsSeparatedByString:@"?"][0];
     NSString *part2 = [newParams componentsJoinedByString:@"&"];
-    NSURL *newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", part1, part2]];
+    NSURL *newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@",
+                                                                    part1,
+                                                                    part2]];
 
     return newURL;
 }

@@ -2193,13 +2193,13 @@
         options = [self addAccessTokenKey:options];
     }
 
-    VKRequest *req = [[VKRequest alloc]
-                                 initWithMethod:methodName
-                                        options:options];
+    VKRequest *req = [VKRequest requestHTTPMethod:@"POST"
+                                       methodName:methodName
+                                          options:options
+                                         delegate:self.delegate];
 
     req.signature = NSStringFromSelector(selector);
     req.offlineMode = self.offlineMode;
-    req.delegate = self.delegate;
 
     if (self.startAllRequestsImmediately)
         [req start];
