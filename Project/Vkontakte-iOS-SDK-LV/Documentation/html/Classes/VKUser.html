@@ -1,0 +1,604 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>VKUser Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Vkontakte iOS SDK LV </a></h1>
+				<a id="developerHome" href="../index.html">AndrewShmig</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">VKUser Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/accessToken">&nbsp;&nbsp;&nbsp;&nbsp;accessToken</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/activateUserWithID:">&nbsp;&nbsp;&nbsp;&nbsp;+ activateUserWithID:</option>
+	
+	<option value="//api/name/currentUser">&nbsp;&nbsp;&nbsp;&nbsp;+ currentUser</option>
+	
+	<option value="//api/name/localUsers">&nbsp;&nbsp;&nbsp;&nbsp;+ localUsers</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/description">&nbsp;&nbsp;&nbsp;&nbsp;- description</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы класса">Методы класса</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Переопределенные методы">Переопределенные методы</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accessToken">accessToken</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activateUserWithID:">activateUserWithID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentUser">currentUser</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localUsers">localUsers</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/description">description</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="VKUser Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">VKUser Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">VKUser.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Класс представляет пользователя социальной сети, который может осуществлять ряд
+действий с объектами вроде групп, друзей, музыкой, видео и тд.</p>
+
+<p>Класс так же позволяет изменить текущего активного пользователя на одного из
+пользователей находящихся в хранилище (ранее авторизованных). Получить список
+пользователей, которые авторизовывались можно используя метод <a href="#//api/name/localUsers">localUsers</a>.</p><div class="warning"><p><strong>Warning:</strong> методы, которые требуют наличия access_token в запросе <em>перезаписывают</em>
+токен доступа, если таковой был указан при передаче словаря ключей-значений, на
+значение токена доступа текущего пользователя - self.<a href="#//api/name/accessToken">accessToken</a>.token.</p></div><div class="warning"><p><strong>Warning:</strong> по умолчанию у каждого запроса из класса VKUser подпись (signature)
+является строкой селектора инициировавшего/создавшего объекта запроса</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/accessToken">&nbsp;&nbsp;accessToken</a></code>
+		<span class="tooltip"><p>Пользовательски токен доступа текущего активного пользователя</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Методы класса" name="task_Методы класса"></a>
+						<h3 class="subsubtitle task-title">Методы класса</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentUser">+&nbsp;currentUser</a></code>
+		<span class="tooltip"><p>Текущий активный пользователь.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activateUserWithID:">+&nbsp;activateUserWithID:</a></code>
+		<span class="tooltip"><p>Делает активным пользователя с идентификатором userID.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localUsers">+&nbsp;localUsers</a></code>
+		<span class="tooltip"><p>Получение списка пользователей находящихся в хранилище</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Переопределенные методы" name="task_Переопределенные методы"></a>
+						<h3 class="subsubtitle task-title">Переопределенные методы</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
+		<span class="tooltip"><p>Описание текущего пользователя</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/accessToken" title="accessToken"></a>
+	<h3 class="subsubtitle method-title">accessToken</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Пользовательски токен доступа текущего активного пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) VKAccessToken *accessToken</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/activateUserWithID:" title="activateUserWithID:"></a>
+	<h3 class="subsubtitle method-title">activateUserWithID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Делает активным пользователя с идентификатором userID.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)activateUserWithID:(NSUInteger)<em>userID</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userID</em></dt>
+			<dd><p>идентификатор пользователя, которого необходимо активировать</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>булево значение, удалось ли активировать указанного пользователя или нет</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Если пользователя с таким идентификатором нет в хранилище, то метод вернет NO, иначе
+YES.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentUser" title="currentUser"></a>
+	<h3 class="subsubtitle method-title">currentUser</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Текущий активный пользователь.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)currentUser</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Если хранилище не содержит авторизованных пользователей, то возвращено будет значение
+nil.</p>
+
+<p>В случае, если активным не был установлен какой-то определенный пользователь, то
+при вызове данного метода активируется произвольный пользователь из хранилища (если
+в хранилище будет находится лишь один пользователь, то именно он будет активирован
+и от его лица будут осуществляться дальнейшие запросы).</p>
+
+<p><em>Вопрос:</em> Когда может произойти подобная ситуация?</p>
+
+<p><em>Ответ:</em> Представим, что два и более пользователей подряд авторизовались и, во время
+авторизаций не было вызовов метода currentUser.</p>
+
+<p>Рассмотрим на примере:</p>
+
+<pre><code>// авторизовался пользователь А
+// авторизовался пользователь Б
+// авторизовался пользователь В
+[VKUser currentUser] // будет активирован произвольный пользователь, либо А, либо Б, либо В
+</code></pre>
+
+<p>Второй пример:</p>
+
+<pre><code>// авторизовался пользователь А
+[VKUser currentUser] // активным устанавливается пользователь А
+// авторизовался пользователь Б, но А по прежнему активный
+// авторизовался пользователь В, но А по прежнему активный
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localUsers" title="localUsers"></a>
+	<h3 class="subsubtitle method-title">localUsers</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Получение списка пользователей находящихся в хранилище</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)localUsers</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>массив пользовательских идентификаторов</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/description" title="description"></a>
+	<h3 class="subsubtitle method-title">description</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Описание текущего пользователя</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)description</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-09)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
