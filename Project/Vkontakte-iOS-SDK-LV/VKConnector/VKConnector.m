@@ -190,23 +190,23 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 //    показываем пользователю окно только в том случае, если от него требуются
 //    какие-то действия - ввод пароля, ввод капчи и тд
     if ([self showVKModalViewForWebView:webView]) {
-        if (!_webViewIsShown && [self.delegate respondsToSelector:@selector(VKConnector:shouldShowWebView:)]) {
+        if (!_webViewIsShown && [self.delegate respondsToSelector:@selector(VKConnector:willShowWebView:)]) {
 
             _webViewIsShown = YES;
 
             [self.delegate VKConnector:self
-                     shouldShowWebView:webView];
+                       willShowWebView:webView];
         }
     }
 
 //    прячем окно, если обработали либо авторизацию, либо отказ от авторизации
     if ([url hasPrefix:kVkontakteBlankURL]) {
-        if (_webViewIsShown && [self.delegate respondsToSelector:@selector(VKConnector:shouldHideWebView:)]) {
+        if (_webViewIsShown && [self.delegate respondsToSelector:@selector(VKConnector:willHideWebView:)]) {
 
             _webViewIsShown = NO;
 
             [self.delegate VKConnector:self
-                     shouldHideWebView:webView];
+                       willHideWebView:webView];
         }
     }
 }
@@ -230,7 +230,7 @@ didFailLoadWithError:(NSError *)error
             _webViewIsShown = NO;
 
             [self.delegate VKConnector:self
-                     shouldHideWebView:webView];
+                       willHideWebView:webView];
         }
 
         [self.delegate VKConnector:self

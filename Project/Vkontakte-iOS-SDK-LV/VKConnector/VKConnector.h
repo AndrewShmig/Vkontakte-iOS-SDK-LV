@@ -42,7 +42,8 @@
 static NSString *const kVKErrorDomain = @"kVkontakteErrorDomain";
 
 
-typedef enum {
+typedef enum
+{
     kVKApplicationWasDeletedErrorCode
 } kVkontakteErrorCode;
 
@@ -63,7 +64,7 @@ typedef enum {
  @param webView UIWebView отображающий страницу авторизации
  */
 - (void)VKConnector:(VKConnector *)connector
-  shouldShowWebView:(UIWebView *)webView;
+    willShowWebView:(UIWebView *)webView;
 
 /** Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
 пользователь авторизовался, либо отказался авторизовываться, либо произошла
@@ -73,7 +74,7 @@ typedef enum {
  @param webView UIWebView отображающий страницу авторизации
  */
 - (void)VKConnector:(VKConnector *)connector
-  shouldHideWebView:(UIWebView *)webView;
+    willHideWebView:(UIWebView *)webView;
 
 /**
  @name Access token

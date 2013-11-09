@@ -42,14 +42,14 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 }
 
 - (void)VKConnector:(VKConnector *)connector
-  shouldHideWebView:(UIWebView *)webView
+    willHideWebView:(UIWebView *)webView
 {
     NSLog(@"%s", __FUNCTION__);
     self.webView.hidden = YES;
 }
 
 - (void)VKConnector:(VKConnector *)connector
-  shouldShowWebView:(UIWebView *)webView
+    willShowWebView:(UIWebView *)webView
 {
     NSLog(@"%s", __FUNCTION__);
 }
