@@ -189,7 +189,7 @@ responseErrorOccured:(id)error;
 
 /** Создает и возвращает запрос
 
-@param httpMethod GET или POST
+@param httpMethod GET или POST, PUT или DELETE тд
 @param methodName наименование вызываемого метода (users.get, wall.post)
 @param options словарь передаваемых параметров (ключ-значение)
 @param delegate делегат, который будет получать уведомления/сообщения об изменении
