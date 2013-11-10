@@ -642,7 +642,7 @@
                                        selector:_cmd];
 }
 
-- (VKRequest *)photosConfirmTagWithCusomOptions:(NSDictionary *)options
+- (VKRequest *)photosConfirmTagWithCustomOptions:(NSDictionary *)options
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosConfirmTag

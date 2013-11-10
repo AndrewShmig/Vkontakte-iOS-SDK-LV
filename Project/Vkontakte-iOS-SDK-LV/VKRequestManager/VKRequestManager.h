@@ -423,7 +423,7 @@
 @param options ключи-значения, полный список здесь: https://vk.com/dev/photos.confirmTag
 @return @see info
 */
-- (VKRequest *)photosConfirmTagWithCusomOptions:(NSDictionary *)options;
+- (VKRequest *)photosConfirmTagWithCustomOptions:(NSDictionary *)options;
 
 /** Возвращает список комментариев к фотографии
 
