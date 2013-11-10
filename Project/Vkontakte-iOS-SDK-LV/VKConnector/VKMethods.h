@@ -227,7 +227,7 @@ static NSString *const kVKNewsfeedAddBan = @"newsfeed.addBan";
 static NSString *const kVKNewsfeedDeleteBan = @"newsfeed.deleteBan";
 static NSString *const kVKNewsfeedSearch = @"newsfeed.search";
 static NSString *const kVKNewsfeedGetLists = @"newsfeed.getLists";
-static NSString *const kVKNewsfeedUnsibscribe = @"newsfeed.unsibscribe";
+static NSString *const kVKNewsfeedUnsubscribe = @"newsfeed.unsubscribe";
 
 // -----------------------------------------------------------------------------
 #pragma mark - Likes
