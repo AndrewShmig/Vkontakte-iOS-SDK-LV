@@ -141,7 +141,7 @@
 
 - (VKRequest *)wallDelete:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallDelete
                                          option:options
                                        selector:_cmd];
@@ -149,7 +149,7 @@
 
 - (VKRequest *)wallRestore:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallRestore
                                          option:options
                                        selector:_cmd];
@@ -173,7 +173,7 @@
 
 - (VKRequest *)wallDeleteComment:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallDeleteComment
                                          option:options
                                        selector:_cmd];
@@ -181,7 +181,7 @@
 
 - (VKRequest *)wallRestoreComment:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallRestoreComment
                                          option:options
                                        selector:_cmd];
@@ -255,7 +255,7 @@
 
 - (VKRequest *)groupsBanUser:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKGroupsBanUser
                                          option:options
                                        selector:_cmd];
@@ -263,7 +263,7 @@
 
 - (VKRequest *)groupsUnbanUser:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKGroupsUnbanUser
                                          option:options
                                        selector:_cmd];
@@ -321,7 +321,7 @@
 
 - (VKRequest *)friendsAdd:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsAdd
                                          option:options
                                        selector:_cmd];
@@ -329,7 +329,7 @@
 
 - (VKRequest *)friendsEdit:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsEdit
                                          option:options
                                        selector:_cmd];
@@ -337,7 +337,7 @@
 
 - (VKRequest *)friendsDelete:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsDelete
                                          option:options
                                        selector:_cmd];
@@ -353,7 +353,7 @@
 
 - (VKRequest *)friendsAddList:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsAddList
                                          option:options
                                        selector:_cmd];
@@ -361,7 +361,7 @@
 
 - (VKRequest *)friendsEditList:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsEditList
                                          option:options
                                        selector:_cmd];
@@ -369,7 +369,7 @@
 
 - (VKRequest *)friendsDeleteList:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsDeleteList
                                          option:options
                                        selector:_cmd];
@@ -393,7 +393,7 @@
 
 - (VKRequest *)friendsDeleteAllRequests:(NSDictionary *)options
 {
-    return [self configureRequestWithHTTPMethod:@"GET"
+    return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsDeleteAllRequests
                                          option:options
                                        selector:_cmd];
