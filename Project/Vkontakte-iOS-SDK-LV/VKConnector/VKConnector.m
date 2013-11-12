@@ -219,7 +219,7 @@ didFailLoadWithError:(NSError *)error
 
     if ([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]) {
 
-        if (webView.hidden) {
+        if (!webView.hidden) {
             [self.delegate VKConnector:self
                        willHideWebView:webView];
         }
