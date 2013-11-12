@@ -73,7 +73,7 @@
     _permissions = permissions;
     _appID = appID;
     _delegate = delegate;
-    _webViewIsShown = NO;
+    _webViewIsShown = webView.hidden; // should default to NO
 
     _settings = [self.permissions componentsJoinedByString:@","];
     _redirectURL = kVkontakteBlankURL;

@@ -25,6 +25,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
     self.webView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen]
                                                                bounds]];
+    self.webView.hidden = NO;
 
     [[VKConnector sharedInstance] startWithAppID:kVKAppID
                                       permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
