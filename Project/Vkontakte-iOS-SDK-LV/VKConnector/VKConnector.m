@@ -40,8 +40,6 @@
     UIActivityIndicatorView *_activityIndicator;
 
     VKAccessToken *_accessToken;
-
-    BOOL _webViewIsShown;
 }
 
 #pragma mark - Init methods & Class methods
@@ -73,7 +71,6 @@
     _permissions = permissions;
     _appID = appID;
     _delegate = delegate;
-    _webViewIsShown = webView.hidden; // should default to NO
 
     _settings = [self.permissions componentsJoinedByString:@","];
     _redirectURL = kVkontakteBlankURL;
@@ -190,9 +187,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 //    показываем пользователю окно только в том случае, если от него требуются
 //    какие-то действия - ввод пароля, ввод капчи и тд
     if ([self showVKModalViewForWebView:webView]) {
-        if (!_webViewIsShown && [self.delegate respondsToSelector:@selector(VKConnector:willShowWebView:)]) {
-
-            _webViewIsShown = YES;
+        if (webView.hidden && [self.delegate respondsToSelector:@selector(VKConnector:willShowWebView:)]) {
 
             [self.delegate VKConnector:self
                        willShowWebView:webView];
@@ -201,9 +196,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 //    прячем окно, если обработали либо авторизацию, либо отказ от авторизации
     if ([url hasPrefix:kVkontakteBlankURL]) {
-        if (_webViewIsShown && [self.delegate respondsToSelector:@selector(VKConnector:willHideWebView:)]) {
-
-            _webViewIsShown = NO;
+        if (!webView.hidden && [self.delegate respondsToSelector:@selector(VKConnector:willHideWebView:)]) {
 
             [self.delegate VKConnector:self
                        willHideWebView:webView];
@@ -226,9 +219,7 @@ didFailLoadWithError:(NSError *)error
 
     if ([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]) {
 
-        if (_webViewIsShown) {
-            _webViewIsShown = NO;
-
+        if (webView.hidden) {
             [self.delegate VKConnector:self
                        willHideWebView:webView];
         }
