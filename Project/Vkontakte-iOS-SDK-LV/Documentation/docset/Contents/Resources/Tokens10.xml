@@ -4,8 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/VKRequestDelegate</TokenIdentifier>
-			<Abstract type="html">Протокол инкапсулирует в себе основные методы для отслеживания состояния
-осуществляемого запроса.</Abstract>
+			<Abstract type="html">Current protocol describes basic methods which report states of a running request.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>
 			
 			<NodeRef refid="10"/>
@@ -14,17 +13,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:response:</TokenIdentifier>
-			<Abstract type="html">Возвращает ответ сервера в виде Foundation объекта</Abstract>
+			<Abstract type="html">Returns server response as Foundation object</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKRequest:(VKRequest *)request response:(id)response</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+					<Abstract type="html">request that changed its state</Abstract>
 				</Parameter><Parameter>
 					<Name>response</Name>
-					<Abstract type="html">ответ сервера в виде Foundation объекта</Abstract>
+					<Abstract type="html">server response as Foundation object</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -34,17 +33,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:connectionErrorOccured:</TokenIdentifier>
-			<Abstract type="html">Вызывается в случае, если произошла ошибка соединения</Abstract>
+			<Abstract type="html">Method is called when connection error occurs</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKRequest:(VKRequest *)request connectionErrorOccured:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+					<Abstract type="html">request that changed its state</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">ошибка с описанием причины сбоя при осуществлении запроса</Abstract>
+					<Abstract type="html">error description</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -54,17 +53,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:parsingErrorOccured:</TokenIdentifier>
-			<Abstract type="html">Вызывается в случае, если произошла ошибка парсинга ответа сервера</Abstract>
+			<Abstract type="html">Method is called if any error occurs during server response parsing</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKRequest:(VKRequest *)request parsingErrorOccured:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+					<Abstract type="html">request that changed its state</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">ошибка с описанием причины сбоя при осуществлении парсинга данных</Abstract>
+					<Abstract type="html">error description</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -74,17 +73,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:responseErrorOccured:</TokenIdentifier>
-			<Abstract type="html">Вызывается в случае, если в ответе есть ошибка</Abstract>
+			<Abstract type="html">Method is called if server response contains any error message</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKRequest:(VKRequest *)request responseErrorOccured:(id)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+					<Abstract type="html">request that changed its state</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">ответ сервера с описанием ошибки</Abstract>
+					<Abstract type="html">error description as Foundation object obtained from server response</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -94,20 +93,20 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:captchaSid:captchaImage:</TokenIdentifier>
-			<Abstract type="html">Вызывается в случае, если требуется ввести капчу</Abstract>
+			<Abstract type="html">Method is called if user needs to enter captcha</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKRequest:(VKRequest *)request captchaSid:(NSString *)captchaSid captchaImage:(NSString *)captchaImage</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+					<Abstract type="html">request that changed its state</Abstract>
 				</Parameter><Parameter>
 					<Name>captchaSid</Name>
-					<Abstract type="html">идентификатор captcha</Abstract>
+					<Abstract type="html">unique captcha identifier</Abstract>
 				</Parameter><Parameter>
 					<Name>captchaImage</Name>
-					<Abstract type="html">ссылка на изображение, которое нужно показать пользователю, чтобы он ввел текст с этого изображения</Abstract>
+					<Abstract type="html">link to captcha (an image that should be shown to end user)</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -117,22 +116,21 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:totalBytes:downloadedBytes:</TokenIdentifier>
-			<Abstract type="html">Вызывается каждый раз, когда получена новая порция данных (метод удобно
-использовать для отображения статуса загрузки данных)</Abstract>
+			<Abstract type="html">Method is called each time new portion of data is received</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKRequest:(VKRequest *)request totalBytes:(NSUInteger)totalBytes downloadedBytes:(NSUInteger)downloadedBytes</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос к которому относится вызов метода делегата</Abstract>
+					<Abstract type="html">request that changed its state</Abstract>
 				</Parameter><Parameter>
 					<Name>totalBytes</Name>
-					<Abstract type="html">суммарное кол-во байт, которые необходимо получить. Если по каким-то
-причинам не удаётся определить это кол-во, то будет передаваться 0</Abstract>
+					<Abstract type="html">total bytes to be transfered, if this value can not be determined
+than 0 is used</Abstract>
 				</Parameter><Parameter>
 					<Name>downloadedBytes</Name>
-					<Abstract type="html">кол-во уже загруженных байт</Abstract>
+					<Abstract type="html">bytes already downloaded</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -142,23 +140,22 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:totalBytes:uploadedBytes:</TokenIdentifier>
-			<Abstract type="html">Вызывается каждый раз, когда отправлена очередная порция данных (метод удобно
-использовать для отображения статуса отправки данных, будь то загрузка аудио файла,
-видео файла или документа)</Abstract>
+			<Abstract type="html">Method is called each time new portion of data is sent (its recommended to use
+this method while uploading images, audio, video files)</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKRequest:(VKRequest *)request totalBytes:(NSUInteger)totalBytes uploadedBytes:(NSUInteger)uploadedBytes</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос к которому отновится вызов метода делегата</Abstract>
+					<Abstract type="html">request that changed its state</Abstract>
 				</Parameter><Parameter>
 					<Name>totalBytes</Name>
-					<Abstract type="html">суммарное кол-во байт, которые необходимо получить. Если по каким-то
-причинам не удаётся определить это кол-во, от будет передаваться 0</Abstract>
+					<Abstract type="html">total bytes to be received. If this value can not be determined
+than 0 is used.</Abstract>
 				</Parameter><Parameter>
 					<Name>uploadedBytes</Name>
-					<Abstract type="html">кол-во уже загруженных байт</Abstract>
+					<Abstract type="html">bytes already uploaded</Abstract>
 				</Parameter>
 			</Parameters>
 			

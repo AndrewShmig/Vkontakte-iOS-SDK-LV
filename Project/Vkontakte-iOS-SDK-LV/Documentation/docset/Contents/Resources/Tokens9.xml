@@ -13,12 +13,12 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:shouldShowWebView:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:willShowWebView:</TokenIdentifier>
 			<Abstract type="html">Метод вызывается в случае, если необходимо отобразить UIWebView для выполнения
 пользователем некоторых действий (ввода пароля, ввод капчи, ввод телефна и тд)</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector shouldShowWebView:(UIWebView *)webView</Declaration>
+			<Declaration>- (void)VKConnector:(VKConnector *)connector willShowWebView:(UIWebView *)webView</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
@@ -29,18 +29,18 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/VKConnector:shouldShowWebView:</Anchor>
+			<Anchor>//api/name/VKConnector:willShowWebView:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:shouldHideWebView:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:willHideWebView:</TokenIdentifier>
 			<Abstract type="html">Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
 пользователь авторизовался, либо отказался авторизовываться, либо произошла
 какая-то ошибка.</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector shouldHideWebView:(UIWebView *)webView</Declaration>
+			<Declaration>- (void)VKConnector:(VKConnector *)connector willHideWebView:(UIWebView *)webView</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
@@ -51,7 +51,7 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/VKConnector:shouldHideWebView:</Anchor>
+			<Anchor>//api/name/VKConnector:willHideWebView:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

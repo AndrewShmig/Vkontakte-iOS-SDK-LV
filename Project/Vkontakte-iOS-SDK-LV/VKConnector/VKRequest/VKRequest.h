@@ -34,7 +34,7 @@
 #import "VKAccessToken.h"
 
 
-/** Неизвестный размер передаваемых сервером данных
+/** Unknown content length of server response
 */
 #define NSURLResponseUnknownContentLength 0
 
@@ -42,86 +42,84 @@
 @class VKRequest;
 
 
-/** Протокол инкапсулирует в себе основные методы для отслеживания состояния
-осуществляемого запроса.
+/** Current protocol describes basic methods which report states of a running request.
 
-Обязательным является лишь один метод - метод, который возвращает ответ, остальные
-являются опциональными.
+There is only one required method - method that is getting an answer from VK server.
 */
 @protocol VKRequestDelegate <NSObject>
 
 @required
 /**
-@name Обязательные
+@name Required methods
 */
-/** Возвращает ответ сервера в виде Foundation объекта
+/** Returns server response as Foundation object
 
-@param request запрос к которому относится вызов метода делегата
-@param response ответ сервера в виде Foundation объекта
+@param request request that changed its state
+@param response server response as Foundation object
 */
 - (void)VKRequest:(VKRequest *)request
          response:(id)response;
 
 @optional
 /**
-@name Опциональные
+@name Optional
 */
-/** Вызывается в случае, если произошла ошибка соединения
+/** Method is called when connection error occurs
 
-@param request запрос к которому относится вызов метода делегата
-@param error ошибка с описанием причины сбоя при осуществлении запроса
+@param request request that changed its state
+@param error error description
 */
 - (void)     VKRequest:(VKRequest *)request
 connectionErrorOccured:(NSError *)error;
 
-/** Вызывается в случае, если произошла ошибка парсинга ответа сервера
+/** Method is called if any error occurs during server response parsing
 
-@param request запрос к которому относится вызов метода делегата
-@param error ошибка с описанием причины сбоя при осуществлении парсинга данных
+@param request request that changed its state
+@param error error description
 */
 - (void)  VKRequest:(VKRequest *)request
 parsingErrorOccured:(NSError *)error;
 
-/** Вызывается в случае, если в ответе есть ошибка
+/** Method is called if server response contains any error message
 
-@param request запрос к которому относится вызов метода делегата
-@param error ответ сервера с описанием ошибки
+@param request request that changed its state
+@param error error description as Foundation object obtained from server response
 */
 - (void)   VKRequest:(VKRequest *)request
 responseErrorOccured:(id)error;
 
-/** Вызывается в случае, если требуется ввести капчу
+/** Method is called if user needs to enter captcha
 
-Дополнительная информация по обработке капчи: https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11
+More info about how to work with captcha you can find here:
+https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11
 
-@param request запрос к которому относится вызов метода делегата
-@param captchaSid идентификатор captcha
+@param request request that changed its state
+@param captchaSid unique captcha identifier
 @param captchaImage ссылка на изображение, которое нужно показать пользователю, чтобы он ввел текст с этого изображения
+@param captchaImage link to captcha (an image that should be shown to end user)
 */
 - (void)VKRequest:(VKRequest *)request
        captchaSid:(NSString *)captchaSid
      captchaImage:(NSString *)captchaImage;
 
-/** Вызывается каждый раз, когда получена новая порция данных (метод удобно
-использовать для отображения статуса загрузки данных)
+/** Method is called each time new portion of data is received
 
-@param request запрос к которому относится вызов метода делегата
-@param totalBytes суммарное кол-во байт, которые необходимо получить. Если по каким-то
-причинам не удаётся определить это кол-во, то будет передаваться 0
-@param downloadedBytes кол-во уже загруженных байт
+@param request request that changed its state
+@param totalBytes total bytes to be transfered, if this value can not be determined
+than 0 is used
+@param downloadedBytes bytes already downloaded
 */
 - (void)VKRequest:(VKRequest *)request
        totalBytes:(NSUInteger)totalBytes
   downloadedBytes:(NSUInteger)downloadedBytes;
 
-/** Вызывается каждый раз, когда отправлена очередная порция данных (метод удобно
-использовать для отображения статуса отправки данных, будь то загрузка аудио файла,
-видео файла или документа)
+/** Method is called each time new portion of data is sent (its recommended to use
+this method while uploading images, audio, video files)
 
-@param request запрос к которому отновится вызов метода делегата
-@param totalBytes суммарное кол-во байт, которые необходимо получить. Если по каким-то
-причинам не удаётся определить это кол-во, от будет передаваться 0
-@param uploadedBytes кол-во уже загруженных байт
+@param request request that changed its state
+@param totalBytes total bytes to be received. If this value can not be determined
+than 0 is used.
+@param uploadedBytes bytes already uploaded
 */
 - (void)VKRequest:(VKRequest *)request
        totalBytes:(NSUInteger)totalBytes
@@ -130,56 +128,56 @@ responseErrorOccured:(id)error;
 @end
 
 
-/** Оболочка для осуществления запросов к социальной сети ВКонтакте
+/** Current class allows to perform different kind of requests to VK servers.
 */
 @interface VKRequest : NSObject <NSURLConnectionDataDelegate, NSCopying>
 
 /**
-@name Свойства
+@name Properties
 */
-/** Делегат
+/** Delegate
 */
 @property (nonatomic, weak, readwrite) id <VKRequestDelegate> delegate;
 
-/** Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
-один делегат осуществляет обработку нескольких запросов.
+/** Request signature. Can be used as identifier for each request object.
 */
 @property (nonatomic, strong, readwrite) id signature;
 
-/** Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.
+/** Cache lifetime for current request. Defaults to one hour.
 */
 @property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime;
 
-/** Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
-даже в случае истечения срока их действия (удаления не произойдет).
-По умолчанию режим выключен.
+/** Offline mode for current request. Current mode is used to return cache data even
+if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).
+
+Defaults to NO.
 */
 @property (nonatomic, assign, readwrite) BOOL offlineMode;
 
 /**
-@name Методы класса
+@name Class methods
 */
-/** Создает и возвращает запроса
+/** Creates a VKRequest request
 
-@param request запрос, который будет использован в качестве основы
-@param delegate делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных
+@param request NSURLRequest which will be used as base for VKRequest
+@param delegate delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)
 
-@return экземпляр класса VKRequest
+@return VKRequest instance
 */
 + (instancetype)request:(NSURLRequest *)request
                delegate:(id <VKRequestDelegate>)delegate;
 
-/** Создает и возвращает запрос
+/** Creates a VKRequest request
 
-@param httpMethod GET или POST
-@param url URL на который будет осуществлен запрос
-@param headers заголовки запроса
-@param body тело запроса
-@param delegate делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных
+@param httpMethod GET/POST/PUT/DELETE
+@param url NSURL on which a request will be performed
+@param headers request headers
+@param body request body
+@param delegate delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)
 
-@return экземпляр класса VKRequest
+@return VKRequest instance
 */
 + (instancetype)requestHTTPMethod:(NSString *)httpMethod
                               URL:(NSURL *)url
@@ -187,122 +185,120 @@ responseErrorOccured:(id)error;
                              body:(NSData *)body
                          delegate:(id <VKRequestDelegate>)delegate;
 
-/** Создает и возвращает запрос
+/** Creates a VKRequest request
 
-@param httpMethod GET или POST, PUT или DELETE тд
-@param methodName наименование вызываемого метода (users.get, wall.post)
-@param options словарь передаваемых параметров (ключ-значение)
-@param delegate делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных
+@param httpMethod GET/POST/PUT/DELETE
+@param methodName VK method name (users.get, wall.post etc)
+@param options params which should be sent (key = value)
+@param delegate delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)
+
+@return VKRequest instance
 */
 + (instancetype)requestHTTPMethod:(NSString *)httpMethod
                        methodName:(NSString *)methodName
                           options:(NSDictionary *)options
                          delegate:(id <VKRequestDelegate>)delegate;
 
-/** Создает и возвращает запрос
+/** Creates a VKRequest request
 
-@param methodName наименование метода API (users.get, groups.join etc)
-@param options словарь передаваемых параметров этому методу
-@param delegate делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных
+@param methodName VK method name (user.get, wall.post etc)
+@param options params which should be sent (key = value)
+@param delegate delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)
 
-@return экземпляр класса VKRequest
+@return VKRequest instance
 */
 + (instancetype)requestMethod:(NSString *)methodName
                       options:(NSDictionary *)options
                      delegate:(id <VKRequestDelegate>)delegate;
 
 /**
-@name Методы экземпляра
+@name Instance methods
 */
-/** Основной методы инициализации объекта
+/** Main method for VKRequest initialization
 
-@param request запрос, который будет использован в качестве основы
+@param request NSURLRequest which will be used as a base request for VKRequest
 
-@return объект типа VKRequest
+@return VKRequest instance
 */
 - (instancetype)initWithRequest:(NSURLRequest *)request;
 
-/** Метод инициализации объекта
+/** Method for VKRequest initialization
 
-@param httpMethod GET или POST
-@param url URL на который будет осуществлен запрос
-@param headers заголовки запроса
-@param body тело запроса
+@param httpMethod GET/POST/PUT/DELETE
+@param url NSURL on which a request will be performed
+@param headers request headers
+@param body request body
 
-@return объекта типа VKRequest
+@return VKRequest instance
 */
 - (instancetype)initWithHTTPMethod:(NSString *)httpMethod
                                URL:(NSURL *)url
                            headers:(NSDictionary *)headers
                               body:(NSData *)body;
 
-/** Метод инициализации объекта
+/** Method for VKRequest initialization
 
-Рассмотрим пример:
+Example:
 
     VKRequest *request = [[VKRequest alloc] initWithMethod:@"users.get"
                                         options:@{@"fields": @"nickname,bdate,status"}];
 
-Будет создан объект VKRequest и в последующем осуществлен вызов метода users.get
-социальной сети. Параметр fields будет равен "nickname,bdate,status", а значит
-социальная сеть вернет ник, дату рождения и статус текущего пользователя.
+@param methodName VK method name (users.get, wall.post etc)
+@param options params that should be transmitted to VK method
 
-@param methodName наименования метода API (users.get, groups.join etc)
-@param options словарь передаваемых параметров этому методу
-
-@return объекта класса VKRequest
+@return VKRequest instance
 */
 - (instancetype)initWithMethod:(NSString *)methodName
                        options:(NSDictionary *)options;
 
-/** Старт запроса
+/** Starts request
 */
 - (void)start;
 
-/** Отмена запроса
+/** Cancels request
 */
 - (void)cancel;
 
 /**
-@name Добавление файлов в тело запроса
+@name Appending files
 */
-/** Добавление данных аудио файла в содержимое тела HTTP запроса
+/** Content of an audio file is added
 
-@param file байтовое представление аудио файла
-@param name имя аудио файла
-@param field наименования HTML поля, которое использовалось для отправки файла
+@param file audio file in byte representation
+@param name audio file name
+@param field HTML field name, which will be used to send (wrap) data
 */
 - (void)appendAudioFile:(NSData *)file
                    name:(NSString *)name
                   field:(NSString *)field;
 
-/** Добавление данных видео файла в содержимое тела HTTP запроса
+/** Content of a video file is added
 
-@param file байтовое представление видео файла
-@param name имя видео файла
-@param field наименование HTML поля, которое использовалось для отправки файла
+@param file video file in byte representation
+@param name video file name
+@param field HTML field name, which will be used to send (wrap) data
 */
 - (void)appendVideoFile:(NSData *)file
                    name:(NSString *)name
                   field:(NSString *)field;
 
-/** Добавление данных документа в содержимое тела HTTP запроса
+/** Content of a document file is added
 
-@param file байтовое представление документа
-@param name имя файла документа
-@param field наименование HTML поля, которое использовалось для отправки файла
+@param file document file in byte representation
+@param name document file name
+@param field HTML field name, which will be used to send (wrap) data
 */
 - (void)appendDocumentFile:(NSData *)file
                       name:(NSString *)name
                      field:(NSString *)field;
 
-/** Добавление данных изображения в содержимое тела HTTP запроса
+/** Content of an image file is added
 
-@param file байтовое представление изображения
-@param name имя файла изображения
-@param field наименование HTML поля, которое использовалось для отправки файла
+@param file image file in byte representation
+@param name image file name
+@param field HTML field name, which will be used to send (wrap) data
 */
 - (void)appendImageFile:(NSData *)file
                    name:(NSString *)name

@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VKRequest</TokenIdentifier>
-			<Abstract type="html">Оболочка для осуществления запросов к социальной сети ВКонтакте</Abstract>
+			<Abstract type="html">Current class allows to perform different kind of requests to VK servers.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>
 			
 			<NodeRef refid="4"/>
@@ -13,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setDelegate:</TokenIdentifier>
-			<Abstract type="html">Делегат</Abstract>
+			<Abstract type="html">Delegate</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
@@ -25,7 +25,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/delegate</TokenIdentifier>
-			<Abstract type="html">Делегат</Abstract>
+			<Abstract type="html">Delegate</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
@@ -37,7 +37,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/delegate</TokenIdentifier>
-			<Abstract type="html">Делегат</Abstract>
+			<Abstract type="html">Delegate</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
@@ -49,8 +49,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setSignature:</TokenIdentifier>
-			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
-один делегат осуществляет обработку нескольких запросов.</Abstract>
+			<Abstract type="html">Request signature. Can be used as identifier for each request object.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
@@ -62,8 +61,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/signature</TokenIdentifier>
-			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
-один делегат осуществляет обработку нескольких запросов.</Abstract>
+			<Abstract type="html">Request signature. Can be used as identifier for each request object.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
@@ -75,8 +73,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/signature</TokenIdentifier>
-			<Abstract type="html">Произвольная подпись запроса. Позволит идентифицировать запрос в случае, если
-один делегат осуществляет обработку нескольких запросов.</Abstract>
+			<Abstract type="html">Request signature. Can be used as identifier for each request object.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
@@ -88,7 +85,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setCacheLiveTime:</TokenIdentifier>
-			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
+			<Abstract type="html">Cache lifetime for current request. Defaults to one hour.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
@@ -100,7 +97,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cacheLiveTime</TokenIdentifier>
-			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
+			<Abstract type="html">Cache lifetime for current request. Defaults to one hour.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
@@ -112,7 +109,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/cacheLiveTime</TokenIdentifier>
-			<Abstract type="html">Время жизни кэша текущего запроса. По умолчанию время жизни кэша один час.</Abstract>
+			<Abstract type="html">Cache lifetime for current request. Defaults to one hour.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
@@ -124,9 +121,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setOfflineMode:</TokenIdentifier>
-			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
-даже в случае истечения срока их действия (удаления не произойдет).
-По умолчанию режим выключен.</Abstract>
+			<Abstract type="html">Offline mode for current request. Current mode is used to return cache data even
+if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
@@ -138,9 +134,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/offlineMode</TokenIdentifier>
-			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
-даже в случае истечения срока их действия (удаления не произойдет).
-По умолчанию режим выключен.</Abstract>
+			<Abstract type="html">Offline mode for current request. Current mode is used to return cache data even
+if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
@@ -152,9 +147,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/offlineMode</TokenIdentifier>
-			<Abstract type="html">Оффлайн режим запроса. В данном режиме данные будут запрошены из кэша и возвращены
-даже в случае истечения срока их действия (удаления не произойдет).
-По умолчанию режим выключен.</Abstract>
+			<Abstract type="html">Offline mode for current request. Current mode is used to return cache data even
+if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
@@ -166,145 +160,172 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/request:delegate:</TokenIdentifier>
-			<Abstract type="html">Создает и возвращает запроса</Abstract>
+			<Abstract type="html">Creates a VKRequest request</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>+ (instancetype)request:(NSURLRequest *)request delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос, который будет использован в качестве основы</Abstract>
+					<Abstract type="html">NSURLRequest which will be used as base for VKRequest</Abstract>
 				</Parameter><Parameter>
 					<Name>delegate</Name>
-					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных</Abstract>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
 			<Anchor>//api/name/request:delegate:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestHTTPMethod:URL:headers:body:delegate:</TokenIdentifier>
-			<Abstract type="html">Создает и возвращает запрос</Abstract>
+			<Abstract type="html">Creates a VKRequest request</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>+ (instancetype)requestHTTPMethod:(NSString *)httpMethod URL:(NSURL *)url headers:(NSDictionary *)headers body:(NSData *)body delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>httpMethod</Name>
-					<Abstract type="html">GET или POST</Abstract>
+					<Abstract type="html">GET/POST/PUT/DELETE</Abstract>
 				</Parameter><Parameter>
 					<Name>url</Name>
-					<Abstract type="html">URL на который будет осуществлен запрос</Abstract>
+					<Abstract type="html">NSURL on which a request will be performed</Abstract>
 				</Parameter><Parameter>
 					<Name>headers</Name>
-					<Abstract type="html">заголовки запроса</Abstract>
+					<Abstract type="html">request headers</Abstract>
 				</Parameter><Parameter>
 					<Name>body</Name>
-					<Abstract type="html">тело запроса</Abstract>
+					<Abstract type="html">request body</Abstract>
 				</Parameter><Parameter>
 					<Name>delegate</Name>
-					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных</Abstract>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
 			<Anchor>//api/name/requestHTTPMethod:URL:headers:body:delegate:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestHTTPMethod:methodName:options:delegate:</TokenIdentifier>
+			<Abstract type="html">Creates a VKRequest request</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)requestHTTPMethod:(NSString *)httpMethod methodName:(NSString *)methodName options:(NSDictionary *)options delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>httpMethod</Name>
+					<Abstract type="html">GET/POST/PUT/DELETE</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">VK method name (users.get, wall.post etc)</Abstract>
+				</Parameter><Parameter>
+					<Name>options</Name>
+					<Abstract type="html">params which should be sent (key = value)</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/requestHTTPMethod:methodName:options:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestMethod:options:delegate:</TokenIdentifier>
-			<Abstract type="html">Создает и возвращает запрос</Abstract>
+			<Abstract type="html">Creates a VKRequest request</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>+ (instancetype)requestMethod:(NSString *)methodName options:(NSDictionary *)options delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>methodName</Name>
-					<Abstract type="html">наименование метода API (users.get, groups.join etc)</Abstract>
+					<Abstract type="html">VK method name (user.get, wall.post etc)</Abstract>
 				</Parameter><Parameter>
 					<Name>options</Name>
-					<Abstract type="html">словарь передаваемых параметров этому методу</Abstract>
+					<Abstract type="html">params which should be sent (key = value)</Abstract>
 				</Parameter><Parameter>
 					<Name>delegate</Name>
-					<Abstract type="html">делегат, который будет получать уведомления/сообщения об изменении
-состояния объекта и данных</Abstract>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKRequest</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
 			<Anchor>//api/name/requestMethod:options:delegate:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithRequest:</TokenIdentifier>
-			<Abstract type="html">Основной методы инициализации объекта</Abstract>
+			<Abstract type="html">Main method for VKRequest initialization</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (instancetype)initWithRequest:(NSURLRequest *)request</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
-					<Abstract type="html">запрос, который будет использован в качестве основы</Abstract>
+					<Abstract type="html">NSURLRequest which will be used as a base request for VKRequest</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">объект типа VKRequest</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithRequest:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithHTTPMethod:URL:headers:body:</TokenIdentifier>
-			<Abstract type="html">Метод инициализации объекта</Abstract>
+			<Abstract type="html">Method for VKRequest initialization</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (instancetype)initWithHTTPMethod:(NSString *)httpMethod URL:(NSURL *)url headers:(NSDictionary *)headers body:(NSData *)body</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>httpMethod</Name>
-					<Abstract type="html">GET или POST</Abstract>
+					<Abstract type="html">GET/POST/PUT/DELETE</Abstract>
 				</Parameter><Parameter>
 					<Name>url</Name>
-					<Abstract type="html">URL на который будет осуществлен запрос</Abstract>
+					<Abstract type="html">NSURL on which a request will be performed</Abstract>
 				</Parameter><Parameter>
 					<Name>headers</Name>
-					<Abstract type="html">заголовки запроса</Abstract>
+					<Abstract type="html">request headers</Abstract>
 				</Parameter><Parameter>
 					<Name>body</Name>
-					<Abstract type="html">тело запроса</Abstract>
+					<Abstract type="html">request body</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">объекта типа VKRequest</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithHTTPMethod:URL:headers:body:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithMethod:options:</TokenIdentifier>
-			<Abstract type="html">Метод инициализации объекта</Abstract>
+			<Abstract type="html">Method for VKRequest initialization</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (instancetype)initWithMethod:(NSString *)methodName options:(NSDictionary *)options</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>methodName</Name>
-					<Abstract type="html">наименования метода API (users.get, groups.join etc)</Abstract>
+					<Abstract type="html">VK method name (users.get, wall.post etc)</Abstract>
 				</Parameter><Parameter>
 					<Name>options</Name>
-					<Abstract type="html">словарь передаваемых параметров этому методу</Abstract>
+					<Abstract type="html">params that should be transmitted to VK method</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">объекта класса VKRequest</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithMethod:options:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/start</TokenIdentifier>
-			<Abstract type="html">Старт запроса</Abstract>
+			<Abstract type="html">Starts request</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)start</Declaration>
@@ -316,7 +337,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cancel</TokenIdentifier>
-			<Abstract type="html">Отмена запроса</Abstract>
+			<Abstract type="html">Cancels request</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)cancel</Declaration>
@@ -328,20 +349,20 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendAudioFile:name:field:</TokenIdentifier>
-			<Abstract type="html">Добавление данных аудио файла в содержимое тела HTTP запроса</Abstract>
+			<Abstract type="html">Content of an audio file is added</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)appendAudioFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>file</Name>
-					<Abstract type="html">байтовое представление аудио файла</Abstract>
+					<Abstract type="html">audio file in byte representation</Abstract>
 				</Parameter><Parameter>
 					<Name>name</Name>
-					<Abstract type="html">имя аудио файла</Abstract>
+					<Abstract type="html">audio file name</Abstract>
 				</Parameter><Parameter>
 					<Name>field</Name>
-					<Abstract type="html">наименования HTML поля, которое использовалось для отправки файла</Abstract>
+					<Abstract type="html">HTML field name, which will be used to send (wrap) data</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -351,20 +372,20 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendVideoFile:name:field:</TokenIdentifier>
-			<Abstract type="html">Добавление данных видео файла в содержимое тела HTTP запроса</Abstract>
+			<Abstract type="html">Content of a video file is added</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)appendVideoFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>file</Name>
-					<Abstract type="html">байтовое представление видео файла</Abstract>
+					<Abstract type="html">video file in byte representation</Abstract>
 				</Parameter><Parameter>
 					<Name>name</Name>
-					<Abstract type="html">имя видео файла</Abstract>
+					<Abstract type="html">video file name</Abstract>
 				</Parameter><Parameter>
 					<Name>field</Name>
-					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+					<Abstract type="html">HTML field name, which will be used to send (wrap) data</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -374,20 +395,20 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendDocumentFile:name:field:</TokenIdentifier>
-			<Abstract type="html">Добавление данных документа в содержимое тела HTTP запроса</Abstract>
+			<Abstract type="html">Content of a document file is added</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)appendDocumentFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>file</Name>
-					<Abstract type="html">байтовое представление документа</Abstract>
+					<Abstract type="html">document file in byte representation</Abstract>
 				</Parameter><Parameter>
 					<Name>name</Name>
-					<Abstract type="html">имя файла документа</Abstract>
+					<Abstract type="html">document file name</Abstract>
 				</Parameter><Parameter>
 					<Name>field</Name>
-					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+					<Abstract type="html">HTML field name, which will be used to send (wrap) data</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -397,20 +418,20 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendImageFile:name:field:</TokenIdentifier>
-			<Abstract type="html">Добавление данных изображения в содержимое тела HTTP запроса</Abstract>
+			<Abstract type="html">Content of an image file is added</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>- (void)appendImageFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>file</Name>
-					<Abstract type="html">байтовое представление изображения</Abstract>
+					<Abstract type="html">image file in byte representation</Abstract>
 				</Parameter><Parameter>
 					<Name>name</Name>
-					<Abstract type="html">имя файла изображения</Abstract>
+					<Abstract type="html">image file name</Abstract>
 				</Parameter><Parameter>
 					<Name>field</Name>
-					<Abstract type="html">наименование HTML поля, которое использовалось для отправки файла</Abstract>
+					<Abstract type="html">HTML field name, which will be used to send (wrap) data</Abstract>
 				</Parameter>
 			</Parameters>
 			
