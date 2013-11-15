@@ -1,9 +1,4 @@
 //
-//  VKConnector.h
-//
-//  Created by Andrew Shmig on 18.12.12.
-//
-//
 // Copyright (c) 2013 Andrew Shmig
 //
 // Permission is hereby granted, free of charge, to any person
@@ -48,8 +43,8 @@ typedef enum
 } kVkontakteErrorCode;
 
 
-/** Протокол объявляет методы отслеживания изменения статуса токена доступа
- хранимого классом VKConnector.
+/** Protocol incapsulates methods that are triggered during user authorization
+ process or access token status changes.
  */
 @protocol VKConnectorDelegate <NSObject>
 
@@ -57,63 +52,60 @@ typedef enum
 /**
  @name Show/hide web view
  */
-/** Метод вызывается в случае, если необходимо отобразить UIWebView для выполнения
-пользователем некоторых действий (ввода пароля, ввод капчи, ввод телефна и тд)
- 
- @param connector объект класса VKConnector отправляющий сообщение
- @param webView UIWebView отображающий страницу авторизации
- */
+/** Method is called when user needs to perform some action (enter login and
+password, authorize your application etc)
+
+@param connector VKConnector instance that sends notifications
+@param webView UIWebView that displays authorization page
+*/
 - (void)VKConnector:(VKConnector *)connector
     willShowWebView:(UIWebView *)webView;
 
-/** Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
-пользователь авторизовался, либо отказался авторизовываться, либо произошла
-какая-то ошибка.
- 
- @param connector объект класса VKConnector отправляющий сообщение
- @param webView UIWebView отображающий страницу авторизации
- */
+/** Method is called when UIWebView should be hidden, this method is called after
+user has entered login+password or has authorized an application (or pressed
+cancel button etc).
+
+@param connector VKConnector instance that sends notifications
+@param webView UIWebView that displays authorization page and needs to be hidden
+*/
 - (void)VKConnector:(VKConnector *)connector
     willHideWebView:(UIWebView *)webView;
 
 /**
  @name Access token
  */
-/** Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.
- 
- @param connector объект класса VKConnector отправляющий сообщение.
- @param accessToken новый токен доступа, который был получен.
- */
+/** Method is called when access token is successfully updated
+
+@param connector VKConnector instance that sends notifications
+@param accessToken updated access token
+*/
 - (void)        VKConnector:(VKConnector *)connector
 accessTokenRenewalSucceeded:(VKAccessToken *)accessToken;
 
-/** Метод, вызов которого сигнализирует о том, что обновление токена доступа не
- удалось.
- Причиной ошибки может быть прерывание связи, либо пользователь отказался авторизовывать
- приложение.
- 
- @param connector объект класса VKConnector отправляющего сообщение.
- @param accessToken токен доступа (равен nil)
- */
+/** Method is called when access token failed to be updated. The main reason
+could be that user denied/canceled to authorize your application.
+
+@param connector VKConnector instance that sends notifications
+@param accessToken access token (equals to nil)
+*/
 - (void)     VKConnector:(VKConnector *)connector
 accessTokenRenewalFailed:(VKAccessToken *)accessToken;
 
 /**
  @name Connection & Parsing
  */
-/** Метод, вызов которого сигнализирует о том, что произошла ошибка соединения при попытке осуществить запрос
- 
- @param connector объект класса VKConnector отправляющего сообщение
- @param error объект ошибки содержащий описание причины возникновения ошибки
- */
+/** Method is called when connection error occurred during authorization process.
+
+@param connector VKConnector instance that sends notifications
+@param error error description
+*/
 - (void)   VKConnector:(VKConnector *)connector
 connectionErrorOccured:(NSError *)error;
 
-/** Метод, вызов которого сигнализирует о том, что приложение в ВК, которое
-используется для авторизации пользователя, было удалено.
+/** Method is called if VK application was deleted.
 
-@param connector объект класса VKConnector отправляющий сообщение
-@param error объект ошибки содержащий описание причины возникшей ошибки
+@param connector VKConnector instance that sends notifications
+@param error error description
 */
 - (void)  VKConnector:(VKConnector *)connector
 applicationWasDeleted:(NSError *)error;
@@ -121,50 +113,51 @@ applicationWasDeleted:(NSError *)error;
 @end
 
 
-/** Класс предназначен для получения приложением доступа к пользовательской учетной
- записи и осуществления запросов к API сервиса методами GET/POST.
+/** The main purpose of this class is to process user authorization and obtain
+access token which then will be used to perform requests from behalf of current
+user.
 
-    - (void)applicationDidFinishLaunching:(UIApplication *)application
-    {
-        [[VKConnector sharedInstance] startWithAppID:@"YOUR_APP_ID"
-                                          permissons:@[@"friends",@"wall"]];
-    }
+Example:
 
- */
+    [[VKConnector sharedInstance] startWithAppID:@"12345567"
+                                  permissions:@[@"wall"]
+                                  webView:webView
+                                  delegate:self];
+
+*/
 @interface VKConnector : NSObject <UIWebViewDelegate>
 
 /**
-@name Свойства
+@name Properties
 */
-/** Делегат
+/** Delegate
  */
 @property (nonatomic, weak, readonly) id <VKConnectorDelegate> delegate;
 
-/** Идентификатор приложения Вконтакте
- */
+/** Application's unique identifier
+*/
 @property (nonatomic, strong, readonly) NSString *appID;
 
-/** Список разрешений
- */
+/** Permissions
+*/
 @property (nonatomic, strong, readonly) NSArray *permissions;
 
 /**
-@name Методы класса
+@name Class methods
 */
-/** Метод класса для получения экземпляра сиглтона.
-Если объект отсутствует, то он будет создан. Не может быть равен nil или NULL.
+/** Returns shared instances of VKConnector class.
 */
 + (id)sharedInstance;
 
 /**
-@name Авторизация пользователем приложения
+@name User authorization
 */
-/** Инициализирует запуск коннектора с заданными параметрами
+/** Starts user authorization process.
 
- @param appID Идентификатор приложения полученный при регистрации.
- @param permissions Массив доступов (разрешений), которые необходимо получить приложению.
- @param webView UIWebView в котором необходимо отображать страницу авторизации приложения ВК
- @param delegate делегат
+@param appID application's unique identifier
+@param permissions array of permissions (wall, friends, audio, video etc)
+@param webView UIWebView which will be used to display VK authorization page
+@param delegate delegate which will receive notifications
 */
 - (void)startWithAppID:(NSString *)appID
             permissons:(NSArray *)permissions
@@ -172,11 +165,10 @@ applicationWasDeleted:(NSError *)error;
               delegate:(id <VKConnectorDelegate>)delegate;
 
 /**
-@name Манипулирование куками авторизации
+@name Cookies
 */
-/** Удаляет куки, которые были получены при авторизации последним пользователем приложения.
-Может понадобиться в случае, если вы хотите, чтобы пользователь мог использовать
-несколько своих учетных записей социальной сети или для авторизации другого пользователя.
+/** Removes all cookies which were obtained after user has authorized VK
+application. This method is used to log out current user.
 */
 - (void)clearCookies;
 
