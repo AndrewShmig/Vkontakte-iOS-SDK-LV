@@ -4,8 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/VKConnectorDelegate</TokenIdentifier>
-			<Abstract type="html">Протокол объявляет методы отслеживания изменения статуса токена доступа
-хранимого классом VKConnector.</Abstract>
+			<Abstract type="html">Protocol incapsulates methods that are triggered during user authorization
+process or access token status changes.</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>
 			
 			<NodeRef refid="9"/>
@@ -14,18 +14,18 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:willShowWebView:</TokenIdentifier>
-			<Abstract type="html">Метод вызывается в случае, если необходимо отобразить UIWebView для выполнения
-пользователем некоторых действий (ввода пароля, ввод капчи, ввод телефна и тд)</Abstract>
+			<Abstract type="html">Method is called when user needs to perform some action (enter login and
+password, authorize your application etc)</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKConnector:(VKConnector *)connector willShowWebView:(UIWebView *)webView</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
+					<Abstract type="html">VKConnector instance that sends notifications</Abstract>
 				</Parameter><Parameter>
 					<Name>webView</Name>
-					<Abstract type="html">UIWebView отображающий страницу авторизации</Abstract>
+					<Abstract type="html">UIWebView that displays authorization page</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -35,19 +35,19 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:willHideWebView:</TokenIdentifier>
-			<Abstract type="html">Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
-пользователь авторизовался, либо отказался авторизовываться, либо произошла
-какая-то ошибка.</Abstract>
+			<Abstract type="html">Method is called when UIWebView should be hidden, this method is called after
+user has entered login+password or has authorized an application (or pressed
+cancel button etc).</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKConnector:(VKConnector *)connector willHideWebView:(UIWebView *)webView</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
+					<Abstract type="html">VKConnector instance that sends notifications</Abstract>
 				</Parameter><Parameter>
 					<Name>webView</Name>
-					<Abstract type="html">UIWebView отображающий страницу авторизации</Abstract>
+					<Abstract type="html">UIWebView that displays authorization page and needs to be hidden</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -57,17 +57,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:accessTokenRenewalSucceeded:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.</Abstract>
+			<Abstract type="html">Method is called when access token is successfully updated</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKConnector:(VKConnector *)connector accessTokenRenewalSucceeded:(VKAccessToken *)accessToken</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение.</Abstract>
+					<Abstract type="html">VKConnector instance that sends notifications</Abstract>
 				</Parameter><Parameter>
 					<Name>accessToken</Name>
-					<Abstract type="html">новый токен доступа, который был получен.</Abstract>
+					<Abstract type="html">updated access token</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -77,20 +77,18 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:accessTokenRenewalFailed:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что обновление токена доступа не
-удалось.
-Причиной ошибки может быть прерывание связи, либо пользователь отказался авторизовывать
-приложение.</Abstract>
+			<Abstract type="html">Method is called when access token failed to be updated. The main reason
+could be that user denied/canceled to authorize your application.</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKConnector:(VKConnector *)connector accessTokenRenewalFailed:(VKAccessToken *)accessToken</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющего сообщение.</Abstract>
+					<Abstract type="html">VKConnector instance that sends notifications</Abstract>
 				</Parameter><Parameter>
 					<Name>accessToken</Name>
-					<Abstract type="html">токен доступа (равен nil)</Abstract>
+					<Abstract type="html">access token (equals to nil)</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -100,17 +98,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:connectionErrorOccured:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что произошла ошибка соединения при попытке осуществить запрос</Abstract>
+			<Abstract type="html">Method is called when connection error occurred during authorization process.</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющего сообщение</Abstract>
+					<Abstract type="html">VKConnector instance that sends notifications</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">объект ошибки содержащий описание причины возникновения ошибки</Abstract>
+					<Abstract type="html">error description</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -120,18 +118,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:applicationWasDeleted:</TokenIdentifier>
-			<Abstract type="html">Метод, вызов которого сигнализирует о том, что приложение в ВК, которое
-используется для авторизации пользователя, было удалено.</Abstract>
+			<Abstract type="html">Method is called if VK application was deleted.</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
 			<Declaration>- (void)VKConnector:(VKConnector *)connector applicationWasDeleted:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
-					<Abstract type="html">объект класса VKConnector отправляющий сообщение</Abstract>
+					<Abstract type="html">VKConnector instance that sends notifications</Abstract>
 				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">объект ошибки содержащий описание причины возникшей ошибки</Abstract>
+					<Abstract type="html">error description</Abstract>
 				</Parameter>
 			</Parameters>
 			

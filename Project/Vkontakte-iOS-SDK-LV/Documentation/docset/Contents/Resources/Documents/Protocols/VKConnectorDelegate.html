@@ -138,8 +138,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Протокол объявляет методы отслеживания изменения статуса токена доступа
-хранимого классом <a href="../Classes/VKConnector.html">VKConnector</a>.</p>
+						<p>Protocol incapsulates methods that are triggered during user authorization
+process or access token status changes.</p>
 					</div>
 					
 					
@@ -158,17 +158,17 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKConnector:willShowWebView:">&ndash;&nbsp;VKConnector:willShowWebView:</a></code>
-		<span class="tooltip"><p>Метод вызывается в случае, если необходимо отобразить UIWebView для выполнения
-пользователем некоторых действий (ввода пароля, ввод капчи, ввод телефна и тд)</p></span>
+		<span class="tooltip"><p>Method is called when user needs to perform some action (enter login and
+password, authorize your application etc)</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKConnector:willHideWebView:">&ndash;&nbsp;VKConnector:willHideWebView:</a></code>
-		<span class="tooltip"><p>Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
-пользователь авторизовался, либо отказался авторизовываться, либо произошла
-какая-то ошибка.</p></span>
+		<span class="tooltip"><p>Method is called when UIWebView should be hidden, this method is called after
+user has entered login+password or has authorized an application (or pressed
+cancel button etc).</p></span>
 	</span>
 	
 	
@@ -183,17 +183,15 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKConnector:accessTokenRenewalSucceeded:">&ndash;&nbsp;VKConnector:accessTokenRenewalSucceeded:</a></code>
-		<span class="tooltip"><p>Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.</p></span>
+		<span class="tooltip"><p>Method is called when access token is successfully updated</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKConnector:accessTokenRenewalFailed:">&ndash;&nbsp;VKConnector:accessTokenRenewalFailed:</a></code>
-		<span class="tooltip"><p>Метод, вызов которого сигнализирует о том, что обновление токена доступа не
-удалось.
-Причиной ошибки может быть прерывание связи, либо пользователь отказался авторизовывать
-приложение.</p></span>
+		<span class="tooltip"><p>Method is called when access token failed to be updated. The main reason
+could be that user denied/canceled to authorize your application.</p></span>
 	</span>
 	
 	
@@ -208,15 +206,14 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKConnector:connectionErrorOccured:">&ndash;&nbsp;VKConnector:connectionErrorOccured:</a></code>
-		<span class="tooltip"><p>Метод, вызов которого сигнализирует о том, что произошла ошибка соединения при попытке осуществить запрос</p></span>
+		<span class="tooltip"><p>Method is called when connection error occurred during authorization process.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/VKConnector:applicationWasDeleted:">&ndash;&nbsp;VKConnector:applicationWasDeleted:</a></code>
-		<span class="tooltip"><p>Метод, вызов которого сигнализирует о том, что приложение в ВК, которое
-используется для авторизации пользователя, было удалено.</p></span>
+		<span class="tooltip"><p>Method is called if VK application was deleted.</p></span>
 	</span>
 	
 	
@@ -244,10 +241,8 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Метод, вызов которого сигнализирует о том, что обновление токена доступа не
-удалось.
-Причиной ошибки может быть прерывание связи, либо пользователь отказался авторизовывать
-приложение.</p>
+		<p>Method is called when access token failed to be updated. The main reason
+could be that user denied/canceled to authorize your application.</p>
 	</div>		
 	
     
@@ -261,12 +256,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>connector</em></dt>
-			<dd><p>объект класса <a href="../Classes/VKConnector.html">VKConnector</a> отправляющего сообщение.</p></dd>
+			<dd><p><a href="../Classes/VKConnector.html">VKConnector</a> instance that sends notifications</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>accessToken</em></dt>
-			<dd><p>токен доступа (равен nil)</p></dd>
+			<dd><p>access token (equals to nil)</p></dd>
 		</dl>
 		
 	</div>
@@ -298,7 +293,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Метод, вызов которого сигнализирует о том, что токен доступа успешно обновлён.</p>
+		<p>Method is called when access token is successfully updated</p>
 	</div>		
 	
     
@@ -312,12 +307,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>connector</em></dt>
-			<dd><p>объект класса <a href="../Classes/VKConnector.html">VKConnector</a> отправляющий сообщение.</p></dd>
+			<dd><p><a href="../Classes/VKConnector.html">VKConnector</a> instance that sends notifications</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>accessToken</em></dt>
-			<dd><p>новый токен доступа, который был получен.</p></dd>
+			<dd><p>updated access token</p></dd>
 		</dl>
 		
 	</div>
@@ -349,8 +344,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Метод, вызов которого сигнализирует о том, что приложение в ВК, которое
-используется для авторизации пользователя, было удалено.</p>
+		<p>Method is called if VK application was deleted.</p>
 	</div>		
 	
     
@@ -364,12 +358,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>connector</em></dt>
-			<dd><p>объект класса <a href="../Classes/VKConnector.html">VKConnector</a> отправляющий сообщение</p></dd>
+			<dd><p><a href="../Classes/VKConnector.html">VKConnector</a> instance that sends notifications</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>error</em></dt>
-			<dd><p>объект ошибки содержащий описание причины возникшей ошибки</p></dd>
+			<dd><p>error description</p></dd>
 		</dl>
 		
 	</div>
@@ -401,7 +395,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Метод, вызов которого сигнализирует о том, что произошла ошибка соединения при попытке осуществить запрос</p>
+		<p>Method is called when connection error occurred during authorization process.</p>
 	</div>		
 	
     
@@ -415,12 +409,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>connector</em></dt>
-			<dd><p>объект класса <a href="../Classes/VKConnector.html">VKConnector</a> отправляющего сообщение</p></dd>
+			<dd><p><a href="../Classes/VKConnector.html">VKConnector</a> instance that sends notifications</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>error</em></dt>
-			<dd><p>объект ошибки содержащий описание причины возникновения ошибки</p></dd>
+			<dd><p>error description</p></dd>
 		</dl>
 		
 	</div>
@@ -452,9 +446,9 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Метод вызывается в случае, если необходимо скрыть UIWebView, после того, как
-пользователь авторизовался, либо отказался авторизовываться, либо произошла
-какая-то ошибка.</p>
+		<p>Method is called when UIWebView should be hidden, this method is called after
+user has entered login+password or has authorized an application (or pressed
+cancel button etc).</p>
 	</div>		
 	
     
@@ -468,12 +462,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>connector</em></dt>
-			<dd><p>объект класса <a href="../Classes/VKConnector.html">VKConnector</a> отправляющий сообщение</p></dd>
+			<dd><p><a href="../Classes/VKConnector.html">VKConnector</a> instance that sends notifications</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>webView</em></dt>
-			<dd><p>UIWebView отображающий страницу авторизации</p></dd>
+			<dd><p>UIWebView that displays authorization page and needs to be hidden</p></dd>
 		</dl>
 		
 	</div>
@@ -505,8 +499,8 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Метод вызывается в случае, если необходимо отобразить UIWebView для выполнения
-пользователем некоторых действий (ввода пароля, ввод капчи, ввод телефна и тд)</p>
+		<p>Method is called when user needs to perform some action (enter login and
+password, authorize your application etc)</p>
 	</div>		
 	
     
@@ -520,12 +514,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>connector</em></dt>
-			<dd><p>объект класса <a href="../Classes/VKConnector.html">VKConnector</a> отправляющий сообщение</p></dd>
+			<dd><p><a href="../Classes/VKConnector.html">VKConnector</a> instance that sends notifications</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>webView</em></dt>
-			<dd><p>UIWebView отображающий страницу авторизации</p></dd>
+			<dd><p>UIWebView that displays authorization page</p></dd>
 		</dl>
 		
 	</div>
@@ -563,7 +557,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-13)</span><br />
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-15)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
