@@ -4,10 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VKStorage</TokenIdentifier>
-			<Abstract type="html">Класс представляет собой хранилище для пользовательских токенов доступа и
-закэшированных данных.
-Основным хранимым элементом является элемент типа VKStorageItem, который содержит
-пользовательский токен доступа и связанную с ним директорию для кэша.</Abstract>
+			<Abstract type="html">Class manages user access tokens and corresponding cached data.</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>
 			
 			<NodeRef refid="6"/>
@@ -16,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setIsEmpty:</TokenIdentifier>
-			<Abstract type="html">Является ли хранилище пустым</Abstract>
+			<Abstract type="html">Is current storage empty?</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
@@ -28,7 +25,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/isEmpty</TokenIdentifier>
-			<Abstract type="html">Является ли хранилище пустым</Abstract>
+			<Abstract type="html">Is current storage empty?</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
@@ -40,7 +37,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/isEmpty</TokenIdentifier>
-			<Abstract type="html">Является ли хранилище пустым</Abstract>
+			<Abstract type="html">Is current storage empty?</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isEmpty</Declaration>
@@ -52,7 +49,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setCount:</TokenIdentifier>
-			<Abstract type="html">Кол-во элементов находящихся в хранилище</Abstract>
+			<Abstract type="html">Size of VKStorage storage (number of objects in it)</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
@@ -64,7 +61,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/count</TokenIdentifier>
-			<Abstract type="html">Кол-во элементов находящихся в хранилище</Abstract>
+			<Abstract type="html">Size of VKStorage storage (number of objects in it)</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
@@ -76,7 +73,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/count</TokenIdentifier>
-			<Abstract type="html">Кол-во элементов находящихся в хранилище</Abstract>
+			<Abstract type="html">Size of VKStorage storage (number of objects in it)</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSUInteger count</Declaration>
@@ -88,7 +85,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setFullStoragePath:</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории хранилища</Abstract>
+			<Abstract type="html">Full path to main storage directory</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSString *fullStoragePath</Declaration>
@@ -100,7 +97,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/fullStoragePath</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории хранилища</Abstract>
+			<Abstract type="html">Full path to main storage directory</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSString *fullStoragePath</Declaration>
@@ -112,7 +109,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/fullStoragePath</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории хранилища</Abstract>
+			<Abstract type="html">Full path to main storage directory</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSString *fullStoragePath</Declaration>
@@ -124,7 +121,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/setFullCacheStoragePath:</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории кэша хранилища</Abstract>
+			<Abstract type="html">Full path to main cache directory</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSString *fullCacheStoragePath</Declaration>
@@ -136,7 +133,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/fullCacheStoragePath</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории кэша хранилища</Abstract>
+			<Abstract type="html">Full path to main cache directory</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSString *fullCacheStoragePath</Declaration>
@@ -148,7 +145,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKStorage/fullCacheStoragePath</TokenIdentifier>
-			<Abstract type="html">Полный путь к основной директории кэша хранилища</Abstract>
+			<Abstract type="html">Full path to main cache directory</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSString *fullCacheStoragePath</Declaration>
@@ -160,43 +157,43 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKStorage/sharedStorage</TokenIdentifier>
-			<Abstract type="html">Общее хранилище</Abstract>
+			<Abstract type="html">Shared storage</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>+ (instancetype)sharedStorage</Declaration>
 			
-			<ReturnValue><Abstract type="html">экземпляр класс VKStorage</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">shared instance of VKStorage class</Abstract></ReturnValue>
 			<Anchor>//api/name/sharedStorage</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/createStorageItemForAccessToken:</TokenIdentifier>
-			<Abstract type="html">Создаёт элемент хранилища</Abstract>
+			<Abstract type="html">Creates new VKStorageItem</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>- (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)token</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>token</Name>
-					<Abstract type="html">пользовательский токен доступа для которого будет создан элемент хранилища</Abstract>
+					<Abstract type="html">VKAccessToken for which new storage item will be created</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класс VKStorageItem</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of VKStorageItem</Abstract></ReturnValue>
 			<Anchor>//api/name/createStorageItemForAccessToken:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storeItem:</TokenIdentifier>
-			<Abstract type="html">Добавляет в хранилище новый элемент</Abstract>
+			<Abstract type="html">Adds new element to VKStorage</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>- (void)storeItem:(VKStorageItem *)item</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>item</Name>
-					<Abstract type="html">элемент хранилища</Abstract>
+					<Abstract type="html">new item to be added</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -206,14 +203,14 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/removeItem:</TokenIdentifier>
-			<Abstract type="html">Удаляет из хранилища указанный элемент</Abstract>
+			<Abstract type="html">Removes VKStorageItem from VKStorage.</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>- (void)removeItem:(VKStorageItem *)item</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>item</Name>
-					<Abstract type="html">элемент хранилища</Abstract>
+					<Abstract type="html">item to remove from VKStorage</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -223,7 +220,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/clean</TokenIdentifier>
-			<Abstract type="html">Удаляет все данные из хранилища.</Abstract>
+			<Abstract type="html">Clears storage.</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>- (void)clean</Declaration>
@@ -235,7 +232,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/cleanCachedData</TokenIdentifier>
-			<Abstract type="html">Удаляет все данные кэша в хранилище</Abstract>
+			<Abstract type="html">Removes all cached data for all users.</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>- (void)cleanCachedData</Declaration>
@@ -247,29 +244,29 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storageItemForUserID:</TokenIdentifier>
-			<Abstract type="html">Получение элемента хранилища по пользовательскому идентификатору</Abstract>
+			<Abstract type="html">Returns user&apos;s corresponding VKStorageItem by unique user identifier</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>- (VKStorageItem *)storageItemForUserID:(NSUInteger)userID</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>userID</Name>
-					<Abstract type="html">пользовательский идентификатор</Abstract>
+					<Abstract type="html">unique user identifier</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса VKStorageItem, либо nil, если элемента в хранилище</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of VKStorageItem, or nil, if there is no such.</Abstract></ReturnValue>
 			<Anchor>//api/name/storageItemForUserID:</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storageItems</TokenIdentifier>
-			<Abstract type="html">Список всех элементов хранилища</Abstract>
+			<Abstract type="html">List of all items in current storage</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
 			
 			<Declaration>- (NSArray *)storageItems</Declaration>
 			
-			<ReturnValue><Abstract type="html">массив со всеми элементами хранилища типа VKStorageItem</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">array of VKStorageItems</Abstract></ReturnValue>
 			<Anchor>//api/name/storageItems</Anchor>
             <NodeRef refid="6"/>
 		</Token>

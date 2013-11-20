@@ -75,9 +75,9 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы класса">Методы класса</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Class methods">Class methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Переопределенные методы">Переопределенные методы</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Overridden methods">Overridden methods</a></span></li>
 	
 </ul></li>
 
@@ -146,15 +146,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Класс представляет пользователя социальной сети, который может осуществлять ряд
-действий с объектами вроде групп, друзей, музыкой, видео и тд.</p>
-
-<p>Класс так же позволяет изменить текущего активного пользователя на одного из
-пользователей находящихся в хранилище (ранее авторизованных). Получить список
-пользователей, которые авторизовывались можно используя метод <a href="#//api/name/localUsers">localUsers</a>.</p><div class="warning"><p><strong>Warning:</strong> методы, которые требуют наличия access_token в запросе <em>перезаписывают</em>
-токен доступа, если таковой был указан при передаче словаря ключей-значений, на
-значение токена доступа текущего пользователя - self.<a href="#//api/name/accessToken">accessToken</a>.token.</p></div><div class="warning"><p><strong>Warning:</strong> по умолчанию у каждого запроса из класса VKUser подпись (signature)
-является строкой селектора инициировавшего/создавшего объекта запроса</p></div>
+						<p>Manages users</p>
 					</div>
 					
 					
@@ -173,7 +165,7 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/accessToken">&nbsp;&nbsp;accessToken</a></code>
-		<span class="tooltip"><p>Пользовательски токен доступа текущего активного пользователя</p></span>
+		<span class="tooltip"><p>User&rsquo;s access token</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -181,28 +173,28 @@
 						</ul>
 						
 						
-						<a title="Методы класса" name="task_Методы класса"></a>
-						<h3 class="subsubtitle task-title">Методы класса</h3>
+						<a title="Class methods" name="task_Class methods"></a>
+						<h3 class="subsubtitle task-title">Class methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/currentUser">+&nbsp;currentUser</a></code>
-		<span class="tooltip"><p>Текущий активный пользователь.</p></span>
+		<span class="tooltip"><p>Current activated user</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/activateUserWithID:">+&nbsp;activateUserWithID:</a></code>
-		<span class="tooltip"><p>Делает активным пользователя с идентификатором userID.</p></span>
+		<span class="tooltip"><p>Activates user with passed unique user identifier</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/localUsers">+&nbsp;localUsers</a></code>
-		<span class="tooltip"><p>Получение списка пользователей находящихся в хранилище</p></span>
+		<span class="tooltip"><p>List of users which were saved in <a href="../Classes/VKStorage.html">VKStorage</a></p></span>
 	</span>
 	
 	
@@ -210,14 +202,14 @@
 						</ul>
 						
 						
-						<a title="Переопределенные методы" name="task_Переопределенные методы"></a>
-						<h3 class="subsubtitle task-title">Переопределенные методы</h3>
+						<a title="Overridden methods" name="task_Overridden methods"></a>
+						<h3 class="subsubtitle task-title">Overridden methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/description">&ndash;&nbsp;description</a></code>
-		<span class="tooltip"><p>Описание текущего пользователя</p></span>
+		<span class="tooltip"><p>Description of current user</p></span>
 	</span>
 	
 	
@@ -241,7 +233,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Пользовательски токен доступа текущего активного пользователя</p>
+		<p>User&rsquo;s access token</p>
 	</div>		
 	
     
@@ -285,7 +277,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Делает активным пользователя с идентификатором userID.</p>
+		<p>Activates user with passed unique user identifier</p>
 	</div>		
 	
     
@@ -299,7 +291,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>userID</em></dt>
-			<dd><p>идентификатор пользователя, которого необходимо активировать</p></dd>
+			<dd><p>unique user identifier, user which should be activated</p></dd>
 		</dl>
 		
 	</div>
@@ -308,7 +300,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>булево значение, удалось ли активировать указанного пользователя или нет</p>
+		<p>YES - if user was activated, NO - otherwise</p>
 	</div>
 	
 	
@@ -317,8 +309,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Если пользователя с таким идентификатором нет в хранилище, то метод вернет NO, иначе
-YES.</p>
+		<p>If there is no such user then NO will be returned, otherwise - YES.</p>
 	</div>
 	
 	
@@ -342,7 +333,7 @@ YES.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Текущий активный пользователь.</p>
+		<p>Current activated user</p>
 	</div>		
 	
     
@@ -359,33 +350,24 @@ YES.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Если хранилище не содержит авторизованных пользователей, то возвращено будет значение
-nil.</p>
+		<p>If there is no users in VKStorage then nil will be returned.
+If no user was activated, then random user will be activated.</p>
 
-<p>В случае, если активным не был установлен какой-то определенный пользователь, то
-при вызове данного метода активируется произвольный пользователь из хранилища (если
-в хранилище будет находится лишь один пользователь, то именно он будет активирован
-и от его лица будут осуществляться дальнейшие запросы).</p>
+<p>Lets assume we have such situation:</p>
 
-<p><em>Вопрос:</em> Когда может произойти подобная ситуация?</p>
-
-<p><em>Ответ:</em> Представим, что два и более пользователей подряд авторизовались и, во время
-авторизаций не было вызовов метода currentUser.</p>
-
-<p>Рассмотрим на примере:</p>
-
-<pre><code>// авторизовался пользователь А
-// авторизовался пользователь Б
-// авторизовался пользователь В
-[VKUser currentUser] // будет активирован произвольный пользователь, либо А, либо Б, либо В
+<pre><code>// user A authorized
+// user B authorized
+// user C authorized
+[VKUser currentUser] // random user will be activated - A or B or C
 </code></pre>
 
-<p>Второй пример:</p>
+<p>Second example:</p>
 
-<pre><code>// авторизовался пользователь А
-[VKUser currentUser] // активным устанавливается пользователь А
-// авторизовался пользователь Б, но А по прежнему активный
-// авторизовался пользователь В, но А по прежнему активный
+<pre><code>// user A authorized
+[VKUser currentUser] // user A becomes active user
+// user B authorized, but A is still active
+// user C authorized, but A is still active
+// so on.
 </code></pre>
 	</div>
 	
@@ -410,7 +392,7 @@ nil.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Получение списка пользователей находящихся в хранилище</p>
+		<p>List of users which were saved in <a href="../Classes/VKStorage.html">VKStorage</a></p>
 	</div>		
 	
     
@@ -423,7 +405,7 @@ nil.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>массив пользовательских идентификаторов</p>
+		<p>list of users (@(NSUInteger) objects - user unique identifiers)</p>
 	</div>
 	
 	
@@ -459,7 +441,7 @@ nil.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Описание текущего пользователя</p>
+		<p>Description of current user</p>
 	</div>		
 	
     
@@ -501,7 +483,7 @@ nil.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-15)</span><br />
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

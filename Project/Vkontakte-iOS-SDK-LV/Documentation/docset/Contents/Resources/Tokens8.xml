@@ -4,8 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VKUser</TokenIdentifier>
-			<Abstract type="html">Класс представляет пользователя социальной сети, который может осуществлять ряд
-действий с объектами вроде групп, друзей, музыкой, видео и тд.</Abstract>
+			<Abstract type="html">Manages users</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>
 			
 			<NodeRef refid="8"/>
@@ -14,7 +13,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKUser/setAccessToken:</TokenIdentifier>
-			<Abstract type="html">Пользовательски токен доступа текущего активного пользователя</Abstract>
+			<Abstract type="html">User&apos;s access token</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
@@ -26,7 +25,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKUser/accessToken</TokenIdentifier>
-			<Abstract type="html">Пользовательски токен доступа текущего активного пользователя</Abstract>
+			<Abstract type="html">User&apos;s access token</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
@@ -38,7 +37,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKUser/accessToken</TokenIdentifier>
-			<Abstract type="html">Пользовательски токен доступа текущего активного пользователя</Abstract>
+			<Abstract type="html">User&apos;s access token</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
@@ -50,7 +49,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKUser/currentUser</TokenIdentifier>
-			<Abstract type="html">Текущий активный пользователь.</Abstract>
+			<Abstract type="html">Current activated user</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
 			<Declaration>+ (instancetype)currentUser</Declaration>
@@ -62,36 +61,36 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKUser/activateUserWithID:</TokenIdentifier>
-			<Abstract type="html">Делает активным пользователя с идентификатором userID.</Abstract>
+			<Abstract type="html">Activates user with passed unique user identifier</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
 			<Declaration>+ (BOOL)activateUserWithID:(NSUInteger)userID</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>userID</Name>
-					<Abstract type="html">идентификатор пользователя, которого необходимо активировать</Abstract>
+					<Abstract type="html">unique user identifier, user which should be activated</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">булево значение, удалось ли активировать указанного пользователя или нет</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">YES - if user was activated, NO - otherwise</Abstract></ReturnValue>
 			<Anchor>//api/name/activateUserWithID:</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/VKUser/localUsers</TokenIdentifier>
-			<Abstract type="html">Получение списка пользователей находящихся в хранилище</Abstract>
+			<Abstract type="html">List of users which were saved in VKStorage</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
 			<Declaration>+ (NSArray *)localUsers</Declaration>
 			
-			<ReturnValue><Abstract type="html">массив пользовательских идентификаторов</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">list of users (@(NSUInteger) objects - user unique identifiers)</Abstract></ReturnValue>
 			<Anchor>//api/name/localUsers</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKUser/description</TokenIdentifier>
-			<Abstract type="html">Описание текущего пользователя</Abstract>
+			<Abstract type="html">Description of current user</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
 			<Declaration>- (NSString *)description</Declaration>

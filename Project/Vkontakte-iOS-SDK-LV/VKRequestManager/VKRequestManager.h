@@ -1,10 +1,27 @@
+// Copyright (c) 2013 Andrew Shmig
 //
-//  VKRequestManager.h
-//  Project
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the "Software"), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
 //
-//  Created by SD on 10/7/13.
-//  Copyright (c) 2013 AndrewShmig. All rights reserved.
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
 //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
+
 
 #import <Foundation/Foundation.h>
 #import "VKRequest.h"
@@ -12,62 +29,71 @@
 #import "VKAccessToken.h"
 
 
-/** Класс предназначен для управления запросами к серверу ВК.
+/** Current class gives possibility to perform requests to VK servers.
 
-Процент покрываемых методов: 100%
+The most updated information and documentation on methods you can get
+from official VK Developers page: https://vk.com/dev/main
+
+Methods which are documented in Russian (in current file) won't be translated
+in English, so please refer to VK official English documentation.
+
+Methods covered: 100%.
 */
 @interface VKRequestManager : NSObject
 
 /**
-@name Свойства
+@name Properties
 */
-/**Пользователь от лица которого осуществляются запросы.
+/** User from whose face requests are made.
 
-В случае, если ползовательский объект равен nil запрос будет осуществлен без
-передачи токена доступа.
+If the user property equals nil than no access token is added.
 */
 @property (nonatomic, strong, readwrite) VKUser *user;
 
-/** Делегат
+/** Delegate
 */
 @property (nonatomic, weak, readwrite) id <VKRequestDelegate> delegate;
 
-/** Начинать ли выполнение запросов немедленно или предоставить программисту
-самому выбирать момент запуска запроса.
-По умолчанию принимает значение YES.
 
-Предположим, что вы хотите осуществить запрос пользовательской информации, но
-начало хотите инициировать сами. Вот, как это может выглядеть:
+/** Allows developer to initiate immediate request start after its being created.
+Defaults to YES.
+
+For instance, you want to request user's information and initiate request when
+user taps a button. Here is how it can be implemented:
 
     VKRequestManager *rm = [[VKRequestManager alloc] init...];
     rm.startAllRequestsImmediately = NO;
     VKRequest *userInfo = [rm info];
 
-    // пользователь нажал какую-то кнопку, после чего вы стартуете запрос
+User taps a button and this method is called:
+
     [userInfo start];
 
-Если нет необходимоти выполнять отложенный запуск, то можно делать следующим образом:
+If there is not need to perform delayed requests than you should just call needed
+method and don't bother about something else. Looks like:
 
-    // запрос стартует немедленно
+    VKRequestManager *rm = [[VKRequestManager alloc] init...];
     [rm info];
 
 */
 @property (nonatomic, assign, readwrite) BOOL startAllRequestsImmediately;
 
-/** Оффлайн режим. В данном режиме данные будут запрошены из кэша и возвращены
-даже в случае истечения срока их действия (удаления не произойдет).
-По умолчанию режим выключен.
+
+/** Offline mode, works for all requests. Current mode is used to return cache data even
+if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).
+
+Defaults to NO.
 */
 @property (nonatomic, assign, readwrite) BOOL offlineMode;
 
 /**
-@name Методы инициализации
+@name Initialization methods
 */
-/** Инициализация менеджера запросов
+/** Designated initialization method.
 
-@param delegate делегат
-@param user пользователь от лица которого будут осуществляться запросы
- */
+@param delegate delegate, should conform to VKRequestDelegate
+@param user user from whose face requests are made
+*/
 - (instancetype)initWithDelegate:(id <VKRequestDelegate>)delegate
                             user:(VKUser *)user;
 
@@ -75,7 +101,7 @@
 
 @interface VKRequestManager (User)
 /**
-@name Пользователи
+@name Users
 */
 /** Информация о текущем пользователе.
 
@@ -134,7 +160,7 @@
 @interface VKRequestManager (Wall)
 
 /**
-@name Стена
+@name Wall
 */
 /** Возвращает список записей со стены пользователя или сообщества
 
@@ -234,7 +260,7 @@
 @interface VKRequestManager (Photos)
 
 /**
-@name Фотографии
+@name Photos
 */
 /** Создает пустой альбом для фотографий
 
@@ -500,7 +526,7 @@
 @interface VKRequestManager (Friends)
 
 /**
-@name Друзья
+@name Friends
 */
 /** Возвращает список идентификаторов друзей пользователя или расширенную информацию о друзьях пользователя (при использовании параметра fields)
 
@@ -632,7 +658,7 @@
 @interface VKRequestManager (Groups)
 
 /**
-@name Группы
+@name Groups
 */
 /** Возвращает информацию о том, является ли пользователь участником сообщества
 
@@ -884,7 +910,7 @@
 @interface VKRequestManager (Audio)
 
 /**
-@name Аудио
+@name Audio
 */
 /** Возвращает список аудиозаписей пользователя или сообщества
 
@@ -1038,7 +1064,7 @@
 @interface VKRequestManager (Messages)
 
 /**
-@name Сообщения
+@name Messages
 */
 /** Возвращает список входящих либо исходящих личных сообщений текущего пользователя
 
@@ -1219,7 +1245,7 @@
 @interface VKRequestManager (Newsfeed)
 
 /**
-@name Новости
+@name Newsfeed
 */
 /** Возвращает данные, необходимые для показа списка новостей для текущего пользователя
 
@@ -1295,7 +1321,7 @@
 @interface VKRequestManager (Likes)
 
 /**
-@name Лайки
+@name Likes
 */
 /** Получает список идентификаторов пользователей, которые добавили заданный объект в свой список Мне нравится.
 
@@ -1329,6 +1355,9 @@
 
 @interface VKRequestManager (Account)
 
+/**
+@name Account
+*/
 /** Возвращает ненулевые значения счетчиков пользователя
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/account.getCounters
@@ -1424,6 +1453,9 @@
 
 @interface VKRequestManager (Status)
 
+/**
+@name Status
+*/
 /** Получает текст статуса пользователя или сообщества.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/status.get
@@ -1442,6 +1474,9 @@
 
 @interface VKRequestManager (Pages)
 
+/**
+@name Pages
+*/
 /** Возвращает информацию о вики-странице.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/pages.get
@@ -1495,6 +1530,9 @@
 
 @interface VKRequestManager (Board)
 
+/**
+@name Board
+*/
 /** Возвращает список тем в обсуждениях указанной группы.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/board.getTopics
@@ -1590,6 +1628,9 @@
 
 @interface VKRequestManager (Notes)
 
+/**
+@name Notes
+*/
 /** Возвращает список заметок, созданных пользователем.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/notes.get
@@ -1671,6 +1712,9 @@
 
 @interface VKRequestManager (Places)
 
+/**
+@name Places
+*/
 /** Добавляет новое место в базу географических мест.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/places.add
@@ -1759,6 +1803,9 @@
 
 @interface VKRequestManager (Polls)
 
+/**
+@name Polls
+*/
 /** Возвращает детальную информацию об опросе по его идентификатору.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/polls.getById
@@ -1791,6 +1838,9 @@
 
 @interface VKRequestManager (Docs)
 
+/**
+@name Docs
+*/
 /** Возвращает расширенную информацию о документах пользователя или сообщества.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/docs.get
@@ -1844,6 +1894,9 @@
 
 @interface VKRequestManager (Fave)
 
+/**
+@name Fave
+*/
 /** Возвращает список пользователей, добавленных текущим пользователем в закладки.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/fave.getUsers
@@ -1883,6 +1936,9 @@
 
 @interface VKRequestManager (Notifications)
 
+/**
+@name Notifications
+*/
 /** Возвращает список оповещений об ответах других пользователей на записи текущего пользователя.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/notifications.get
@@ -1901,6 +1957,9 @@
 
 @interface VKRequestManager (Stats)
 
+/**
+@name Stats
+*/
 /** Возвращает статистику сообщества или приложения.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/stats.get
@@ -1912,6 +1971,9 @@
 
 @interface VKRequestManager (Search)
 
+/**
+@name Search
+*/
 /** Метод позволяет получить результаты быстрого поиска по произвольной подстроке
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/search.getHints
@@ -1923,6 +1985,9 @@
 
 @interface VKRequestManager (Ads)
 
+/**
+@name Ads
+*/
 /** Возвращает список рекламных кабинетов.
 
 @param options ключи-значения, полный список здесь: https://vk.com/dev/ads.getAccounts
@@ -2199,6 +2264,9 @@
 
 @interface VKRequestManager (Execute)
 
+/**
+@name Execute
+*/
 /** Универсальный метод, который позволяет запускать последовательность других
 методов, сохраняя и фильтруя промежуточные результаты.
 
@@ -2234,6 +2302,9 @@ Args, например, если Вы передали ?user=123, то знач�
 
 @interface VKRequestManager (Apps)
 
+/**
+@name Apps
+*/
 /** Возвращает список приложений, доступных для пользователей сайта через каталог приложений.
 
 @param options ключь-значение, подробнее по этой ссылке https://vk.com/dev/apps.getCatalog
@@ -2245,6 +2316,9 @@ Args, например, если Вы передали ?user=123, то знач�
 
 @interface VKRequestManager (Utils)
 
+/**
+@name Utils
+*/
 /** Возвращает информацию о том, является ли ссылка заблокированной на сайте ВКонтакте.
 
 @param options ключи-значения, подробнее https://vk.com/dev/utils.checkLink
@@ -2271,6 +2345,9 @@ Args, например, если Вы передали ?user=123, то знач�
 
 @interface VKRequestManager (Database)
 
+/**
+@name Database
+*/
 /** Возвращает список стран.
 
 @param options ключи-значения, подробнее https://vk.com/dev/database.getCountries

@@ -4,7 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VKAccessToken</TokenIdentifier>
-			<Abstract type="html">Класс содержит информацию о пользовательском токене доступа.</Abstract>
+			<Abstract type="html">Current class works with user access token and stores information about
+it:</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>
 			
 			<NodeRef refid="1"/>
@@ -13,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setPermissions:</TokenIdentifier>
-			<Abstract type="html">Массив пользовательских разрешений к которым был получен доступ приложением</Abstract>
+			<Abstract type="html">Array of permissions which were granted to current application</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSArray *permissions</Declaration>
@@ -25,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/permissions</TokenIdentifier>
-			<Abstract type="html">Массив пользовательских разрешений к которым был получен доступ приложением</Abstract>
+			<Abstract type="html">Array of permissions which were granted to current application</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSArray *permissions</Declaration>
@@ -37,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/permissions</TokenIdentifier>
-			<Abstract type="html">Массив пользовательских разрешений к которым был получен доступ приложением</Abstract>
+			<Abstract type="html">Array of permissions which were granted to current application</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSArray *permissions</Declaration>
@@ -49,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setCreationTime:</TokenIdentifier>
-			<Abstract type="html">Время создания токена</Abstract>
+			<Abstract type="html">Access token creation time</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval creationTime</Declaration>
@@ -61,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/creationTime</TokenIdentifier>
-			<Abstract type="html">Время создания токена</Abstract>
+			<Abstract type="html">Access token creation time</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval creationTime</Declaration>
@@ -73,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/creationTime</TokenIdentifier>
-			<Abstract type="html">Время создания токена</Abstract>
+			<Abstract type="html">Access token creation time</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval creationTime</Declaration>
@@ -85,7 +86,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setLiveTime:</TokenIdentifier>
-			<Abstract type="html">Время жизни токена доступа.</Abstract>
+			<Abstract type="html">Access token life time.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval liveTime</Declaration>
@@ -97,7 +98,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/liveTime</TokenIdentifier>
-			<Abstract type="html">Время жизни токена доступа.</Abstract>
+			<Abstract type="html">Access token life time.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval liveTime</Declaration>
@@ -109,7 +110,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/liveTime</TokenIdentifier>
-			<Abstract type="html">Время жизни токена доступа.</Abstract>
+			<Abstract type="html">Access token life time.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSTimeInterval liveTime</Declaration>
@@ -121,7 +122,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setUserID:</TokenIdentifier>
-			<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте.</Abstract>
+			<Abstract type="html">Unique user identifier</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSUInteger userID</Declaration>
@@ -133,7 +134,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/userID</TokenIdentifier>
-			<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте.</Abstract>
+			<Abstract type="html">Unique user identifier</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSUInteger userID</Declaration>
@@ -145,7 +146,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/userID</TokenIdentifier>
-			<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте.</Abstract>
+			<Abstract type="html">Unique user identifier</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readonly) NSUInteger userID</Declaration>
@@ -157,7 +158,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setToken:</TokenIdentifier>
-			<Abstract type="html">Токен доступа.</Abstract>
+			<Abstract type="html">Token (access token)</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSString *token</Declaration>
@@ -169,7 +170,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/token</TokenIdentifier>
-			<Abstract type="html">Токен доступа.</Abstract>
+			<Abstract type="html">Token (access token)</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSString *token</Declaration>
@@ -181,7 +182,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/token</TokenIdentifier>
-			<Abstract type="html">Токен доступа.</Abstract>
+			<Abstract type="html">Token (access token)</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSString *token</Declaration>
@@ -193,8 +194,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setIsExpired:</TokenIdentifier>
-			<Abstract type="html">Истекло ли время действия текущего токена доступа или нет.
-NO - если токен всё еще действует, иначе - YES.</Abstract>
+			<Abstract type="html">Is current access token expired?</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isExpired</Declaration>
@@ -206,8 +206,7 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/isExpired</TokenIdentifier>
-			<Abstract type="html">Истекло ли время действия текущего токена доступа или нет.
-NO - если токен всё еще действует, иначе - YES.</Abstract>
+			<Abstract type="html">Is current access token expired?</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isExpired</Declaration>
@@ -219,8 +218,7 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/isExpired</TokenIdentifier>
-			<Abstract type="html">Истекло ли время действия текущего токена доступа или нет.
-NO - если токен всё еще действует, иначе - YES.</Abstract>
+			<Abstract type="html">Is current access token expired?</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isExpired</Declaration>
@@ -232,7 +230,7 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/setIsValid:</TokenIdentifier>
-			<Abstract type="html">Действителен ли токен.</Abstract>
+			<Abstract type="html">Is current access token valid?</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
@@ -244,7 +242,7 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/isValid</TokenIdentifier>
-			<Abstract type="html">Действителен ли токен.</Abstract>
+			<Abstract type="html">Is current access token valid?</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
@@ -256,7 +254,7 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKAccessToken/isValid</TokenIdentifier>
-			<Abstract type="html">Действителен ли токен.</Abstract>
+			<Abstract type="html">Is current access token valid?</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
@@ -268,33 +266,33 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:liveTime:permissions:</TokenIdentifier>
-			<Abstract type="html">Основной метод инициализации.</Abstract>
+			<Abstract type="html">Designated initialization method</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>- (instancetype)initWithUserID:(NSUInteger)userID accessToken:(NSString *)token liveTime:(NSTimeInterval)liveTime permissions:(NSArray *)permissions</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>userID</Name>
-					<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте.</Abstract>
+					<Abstract type="html">unique user identifier</Abstract>
 				</Parameter><Parameter>
 					<Name>token</Name>
-					<Abstract type="html">Токен доступа.</Abstract>
+					<Abstract type="html">access token</Abstract>
 				</Parameter><Parameter>
 					<Name>liveTime</Name>
-					<Abstract type="html">Время жизни токена доступа.</Abstract>
+					<Abstract type="html">access token life time</Abstract>
 				</Parameter><Parameter>
 					<Name>permissions</Name>
-					<Abstract type="html">Список полученных приложением прав.</Abstract>
+					<Abstract type="html">list of all granted permissions</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Объект VKAccessToken класса.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of VKAccessToken class</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithUserID:accessToken:liveTime:permissions:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:liveTime:</TokenIdentifier>
-			<Abstract type="html">Вторичный метод инициализации класса.</Abstract>
+			<Abstract type="html">Initialization method</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 	<RelatedTokens>
@@ -306,23 +304,23 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 			<Parameters>
 				<Parameter>
 					<Name>userID</Name>
-					<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте.</Abstract>
+					<Abstract type="html">unique user identifier</Abstract>
 				</Parameter><Parameter>
 					<Name>token</Name>
-					<Abstract type="html">Токен доступа.</Abstract>
+					<Abstract type="html">access token</Abstract>
 				</Parameter><Parameter>
 					<Name>liveTime</Name>
-					<Abstract type="html">Время жизни токена доступа.</Abstract>
+					<Abstract type="html">access token life time</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Объект VKAccessToken класса.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of VKAccessToken class</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithUserID:accessToken:liveTime:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/initWithUserID:accessToken:</TokenIdentifier>
-			<Abstract type="html">Вторичный метод инициализации класса.</Abstract>
+			<Abstract type="html">Initialization method</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 	<RelatedTokens>
@@ -334,61 +332,62 @@ NO - если токен всё еще действует, иначе - YES.</Ab
 			<Parameters>
 				<Parameter>
 					<Name>userID</Name>
-					<Abstract type="html">Пользовательский идентификатор в социальной сети ВКонтакте</Abstract>
+					<Abstract type="html">unique user identifier</Abstract>
 				</Parameter><Parameter>
 					<Name>token</Name>
-					<Abstract type="html">Токен доступа.</Abstract>
+					<Abstract type="html">access token</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Объект VKAccessToken класса.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of VKAccessToken class</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithUserID:accessToken:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/description</TokenIdentifier>
-			<Abstract type="html">Описание состояния класса VKAccessToken.</Abstract>
+			<Abstract type="html">Access token description.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>- (NSString *)description</Declaration>
 			
-			<ReturnValue><Abstract type="html">Строковое представление текущего класса.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">String representation.</Abstract></ReturnValue>
 			<Anchor>//api/name/description</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/isEqual:</TokenIdentifier>
-			<Abstract type="html">Проверяет токены доступов на равенство</Abstract>
+			<Abstract type="html">Checks if two access tokens are equal.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>- (BOOL)isEqual:(VKAccessToken *)token</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>token</Name>
-					<Abstract type="html">токен доступа с которым необходимо сравнить</Abstract>
+					<Abstract type="html">another access token</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">YES - если токены доступа равны (на результат сравнения влияет только сам
-токен доступа, список пользовательских разрешений и идентификатор пользователя, которому
-принадлежит данный токен)</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">YES - if two access tokens are equal (tokens are equal if and only if their
+corresponding tokens, list of permissions and userIDs are equal), otherwise NO
+is returned.</Abstract></ReturnValue>
 			<Anchor>//api/name/isEqual:</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKAccessToken/hasPermission:</TokenIdentifier>
-			<Abstract type="html">Метод проверяет наличие определенного доступа в общем списке доступов данного токена.</Abstract>
+			<Abstract type="html">Method checks if list of permissions contains a permission.</Abstract>
 			<DeclaredIn>VKAccessToken.h</DeclaredIn>			
 			
 			<Declaration>- (BOOL)hasPermission:(NSString *)permission</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>permission</Name>
-					<Abstract type="html">Наименование доступа.</Abstract>
+					<Abstract type="html">permissions name (wall, offline, friends etc)</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">YES - если такое право присутствует в общем списке, иначе - NO.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">YES - if list of permissions contains current permission, otherwise NO
+is returned.</Abstract></ReturnValue>
 			<Anchor>//api/name/hasPermission:</Anchor>
             <NodeRef refid="1"/>
 		</Token>

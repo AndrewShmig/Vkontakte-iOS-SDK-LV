@@ -24,108 +24,96 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
+
+
 #import <Foundation/Foundation.h>
 #import "VKStorageItem.h"
 #import "VKAccessToken.h"
 
 
-/** Основной ключ используемый для хранения информации о токенах доступа содержащихся
-в хранилище.
-*/
 static NSString *const kVKStorageUserDefaultsKey = @"Vkontakte-iOS-SDK-Storage";
-
-/** Основная директория для хранения файловых данных используемая в SDK (полный путь представляет
-собой конкатенацию директории NSCachesDirectory и этой константы)
-*/
 static NSString *const kVKStoragePath = @"/Vkontakte-iOS-SDK-Storage/";
-
-/** Основная директория для хранения кэша данных используемая в SDK (полный путь представляет
-собой конкатенацию директории NSCachesDirectory и этой констаны)
-*/
 static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-Storage/Cache/";
 
 
-/** Класс представляет собой хранилище для пользовательских токенов доступа и
-закэшированных данных.
-Основным хранимым элементом является элемент типа VKStorageItem, который содержит
-пользовательский токен доступа и связанную с ним директорию для кэша.
+/** Class manages user access tokens and corresponding cached data.
 */
 @interface VKStorage : NSObject
 
 /**
-@name Свойства
+@name Properties
 */
-/** Является ли хранилище пустым
+/** Is current storage empty?
 */
 @property (nonatomic, readonly) BOOL isEmpty;
 
-/** Кол-во элементов находящихся в хранилище
+/** Size of VKStorage storage (number of objects in it)
 */
 @property (nonatomic, readonly) NSUInteger count;
 
-/** Полный путь к основной директории хранилища
+/** Full path to main storage directory
 */
 @property (nonatomic, readonly) NSString *fullStoragePath;
 
-/** Полный путь к основной директории кэша хранилища
+/** Full path to main cache directory
 */
 @property (nonatomic, readonly) NSString *fullCacheStoragePath;
 
 /**
-@name Инициализация
+@name Initialization
 */
-/** Общее хранилище
+/** Shared storage
 
-@return экземпляр класс VKStorage
+@return shared instance of VKStorage class
 */
 + (instancetype)sharedStorage;
 
 /**
-@name Создание элементов хранилища
+@name VKStorageItem creation
 */
-/** Создаёт элемент хранилища
+/** Creates new VKStorageItem
 
-@param token пользовательский токен доступа для которого будет создан элемент хранилища
-@return экземпляр класс VKStorageItem
+@param token VKAccessToken for which new storage item will be created
+@return instance of VKStorageItem
 */
 - (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)token;
 
 /**
-@name Манипулирование данными хранилища
+@name Managing VKStorage items
 */
-/** Добавляет в хранилище новый элемент
+/** Adds new element to VKStorage
 
-@param item элемент хранилища
+@param item new item to be added
 */
 - (void)storeItem:(VKStorageItem *)item;
 
-/** Удаляет из хранилища указанный элемент
+/** Removes VKStorageItem from VKStorage.
 
-@param item элемент хранилища
+@param item item to remove from VKStorage
 */
 - (void)removeItem:(VKStorageItem *)item;
 
-/** Удаляет все данные из хранилища.
+/** Clears storage.
 */
 - (void)clean;
 
-/** Удаляет все данные кэша в хранилище
+/** Removes all cached data for all users.
 */
 - (void)cleanCachedData;
 
 /**
-@name Чтение элементов хранилища
+@name Obtaining VKStorageItems
 */
-/** Получение элемента хранилища по пользовательскому идентификатору
+/** Returns user's corresponding VKStorageItem by unique user identifier
 
-@param userID пользовательский идентификатор
-@return экземпляр класса VKStorageItem, либо nil, если элемента в хранилище
+@param userID unique user identifier
+@return instance of VKStorageItem, or nil, if there is no such.
 */
 - (VKStorageItem *)storageItemForUserID:(NSUInteger)userID;
 
-/** Список всех элементов хранилища
+/** List of all items in current storage
 
-@return массив со всеми элементами хранилища типа VKStorageItem
+@return array of VKStorageItems
 */
 - (NSArray *)storageItems;
 

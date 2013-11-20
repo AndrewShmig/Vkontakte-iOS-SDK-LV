@@ -26,145 +26,131 @@
 // THE SOFTWARE.
 //
 //
+
+
 #import <Foundation/Foundation.h>
 
 
-/**
- Класс содержит информацию о пользовательском токене доступа.
+/** Current class works with user access token and stores information about
+it:
 
- Кроме самого токена доступа хранится следующая информация:
-
- - список прав к которым есть доступ приложения (offline, photo, docs, friends, ex и др)
- - срок истечения действия токена
- - пользовательский идентификатор в социальной сети ВКонтакте
- - токен доступа
- */
+- list of permissions
+- expiration time
+- user unique identifier
+- token
+*/
 @interface VKAccessToken : NSObject <NSCopying, NSCoding>
 
 /**
- @name Свойства
+ @name Properties
  */
-
-/**
- Массив пользовательских разрешений к которым был получен доступ приложением
- */
+/** Array of permissions which were granted to current application
+*/
 @property (nonatomic, copy, readonly) NSArray *permissions;
 
-/**
-Время создания токена
+/** Access token creation time
 */
 @property (nonatomic, assign, readonly) NSTimeInterval creationTime;
 
-/**
- Время жизни токена доступа.
- */
+/** Access token life time.
+*/
 @property (nonatomic, assign, readonly) NSTimeInterval liveTime;
 
-/**
- Пользовательский идентификатор в социальной сети ВКонтакте.
- */
+/** Unique user identifier
+*/
 @property (nonatomic, assign, readonly) NSUInteger userID;
 
-/**
- Токен доступа.
- */
+/** Token (access token)
+*/
 @property (nonatomic, copy, readonly) NSString *token;
 
-/**
- Истекло ли время действия текущего токена доступа или нет.
- NO - если токен всё еще действует, иначе - YES.
+/** Is current access token expired?
 
- NO в следующих случаях:
+Current token is not expired if:
 
- - Время истечения токена больше нуля и больше текущего времени.
- - Время истечения токена равно нулю и в списке доступов присутствует "offline" доступ
-
- */
+- Token expiration time is greater then zero and greater then current time (timestamp)
+- Token expiration time equals zero and list of permissions contains "offline" permission
+*/
 @property (nonatomic, readonly) BOOL isExpired;
 
-/** Действителен ли токен.
+/** Is current access token valid?
 
- Возвращает YES, если токен неравен nil и срок его действия не истек.
- */
+Returns YES if current access token is not nil and its not expired.
+*/
 @property (nonatomic, readonly) BOOL isValid;
 
 /**
- @name Методы инициализации
+ @name Initialization methods
  */
+/** Designated initialization method
 
-/**
- Основной метод инициализации.
-
- @param userID Пользовательский идентификатор в социальной сети ВКонтакте.
- @param token Токен доступа.
- @param liveTime Время жизни токена доступа.
- @param permissions Список полученных приложением прав.
- @return Объект VKAccessToken класса.
- */
+@param userID unique user identifier
+@param token access token
+@param liveTime access token life time
+@param permissions list of all granted permissions
+@return instance of VKAccessToken class
+*/
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
                       liveTime:(NSTimeInterval)liveTime
                    permissions:(NSArray *)permissions;
 
-/**
- Вторичный метод инициализации класса.
+/** Initialization method
 
- permissions принимает значение по умолчанию  @[].
+List of permissions defaults to an empty list (@[]).
 
- @see initWithUserID:accessToken:liveTime:permissions:
+@see initWithUserID:accessToken:liveTime:permissions:
 
- @param userID Пользовательский идентификатор в социальной сети ВКонтакте.
- @param token Токен доступа.
- @param liveTime Время жизни токена доступа.
- @return Объект VKAccessToken класса.
- */
+@param userID unique user identifier
+@param token access token
+@param liveTime access token life time
+@return instance of VKAccessToken class
+*/
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
                       liveTime:(NSTimeInterval)liveTime;
 
-/**
-Вторичный метод инициализации класса.
+/** Initialization method
 
- permissions принимает значение по умолчанию @[].
+List of permissions defaults to an empty list (@[]).
+liveTime defaults to 0 (zero).
 
- liveTime принимает значение по умолчанию 0.
+@see initWithUserID:accessToken:liveTime:permissions:
 
- @see initWithUserID:accessToken:liveTime:permissions:
-
- @param userID Пользовательский идентификатор в социальной сети ВКонтакте
- @param token Токен доступа.
- @return Объект VKAccessToken класса.
+@param userID unique user identifier
+@param token access token
+@return instance of VKAccessToken class
  */
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token;
 
 /**
- @name Перегруженные методы
+ @name Overridden methods
  */
-/**
- Описание состояния класса VKAccessToken.
+/** Access token description.
 
- @return Строковое представление текущего класса.
- */
+@return String representation.
+*/
 - (NSString *)description;
 
-/** Проверяет токены доступов на равенство
-@param token токен доступа с которым необходимо сравнить
-@return YES - если токены доступа равны (на результат сравнения влияет только сам
-токен доступа, список пользовательских разрешений и идентификатор пользователя, которому
-принадлежит данный токен)
+/** Checks if two access tokens are equal.
+
+@param token another access token
+@return YES - if two access tokens are equal (tokens are equal if and only if their
+corresponding tokens, list of permissions and userIDs are equal), otherwise NO
+is returned.
 */
 - (BOOL)isEqual:(VKAccessToken *)token;
 
 /**
- @name Публичные методы
+ @name Public methods
  */
-/**
- Метод проверяет наличие определенного доступа в общем списке доступов данного токена.
+/** Method checks if list of permissions contains a permission.
 
- @param permission Наименование доступа.
- @return YES - если такое право присутствует в общем списке, иначе - NO.
- */
+@param permission permissions name (wall, offline, friends etc)
+@return YES - if list of permissions contains current permission, otherwise NO
+is returned.
+*/
 - (BOOL)hasPermission:(NSString *)permission;
 
 @end

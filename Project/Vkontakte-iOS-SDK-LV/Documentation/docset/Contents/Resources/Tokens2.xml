@@ -4,9 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VKCache</TokenIdentifier>
-			<Abstract type="html">Класс предназначен для хранения, получения, удаления кэша запросов.
-Хранение кэша осуществляется на диске и в директории указанной при инициализации
-класса.</Abstract>
+			<Abstract type="html">Current class manages cached responses&apos; data. Cached data are saved in
+directory which was selected during initialization process.</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>
 			
 			<NodeRef refid="2"/>
@@ -15,35 +14,35 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCache/initWithCacheDirectory:</TokenIdentifier>
-			<Abstract type="html">Инициализация объекта для кэширования запросов</Abstract>
+			<Abstract type="html">Initialization methods</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>			
 			
 			<Declaration>- (instancetype)initWithCacheDirectory:(NSString *)path</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>path</Name>
-					<Abstract type="html">директория в которой должны будут храниться кэшируемые данные.
-Если директория не существует, то будет создана.</Abstract>
+					<Abstract type="html">directory where would be saved cached data. If there is no such
+directory then it&apos;s going to be created.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">объект типа VKCache</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of VKCache</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithCacheDirectory:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCache/addCache:forURL:</TokenIdentifier>
-			<Abstract type="html">Добавляет данные в кэш</Abstract>
+			<Abstract type="html">Current method adds new data to cached data directory</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>			
 			
 			<Declaration>- (void)addCache:(NSData *)cache forURL:(NSURL *)url</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>cache</Name>
-					<Abstract type="html">данные, которые необходимо закэшировать</Abstract>
+					<Abstract type="html">data which should be cached</Abstract>
 				</Parameter><Parameter>
 					<Name>url</Name>
-					<Abstract type="html">URL который соответствует кешируемым данным</Abstract>
+					<Abstract type="html">URL that corresponds to cached data</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -53,21 +52,21 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCache/addCache:forURL:liveTime:</TokenIdentifier>
-			<Abstract type="html">Добавляет данные в кэш</Abstract>
+			<Abstract type="html">Current method adds new data to cached data directory</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>			
 			
 			<Declaration>- (void)addCache:(NSData *)cache forURL:(NSURL *)url liveTime:(VKCacheLiveTime)cacheLiveTime</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>cache</Name>
-					<Abstract type="html">данные, которые необходимо закэшировать</Abstract>
+					<Abstract type="html">data which should be cached</Abstract>
 				</Parameter><Parameter>
 					<Name>url</Name>
-					<Abstract type="html">URL который соответствует кешируемым данным</Abstract>
+					<Abstract type="html">URL that corresponds to cached data</Abstract>
 				</Parameter><Parameter>
 					<Name>cacheLiveTime</Name>
-					<Abstract type="html">время жизни кэша. Возможные варианты перечислены в VKCacheLiveTime
-(VKCacheLiveTimeOneHour, VKCacheLiveTimeOneDay, VKCacheLiveTimeForever etc)</Abstract>
+					<Abstract type="html">life time of current cached data (possible values: VKCacheLiveTimeOneHour,
+VKCacheLiveTimeOneDay, VKCacheLiveTimeForever etc).</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -77,14 +76,14 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCache/removeCacheForURL:</TokenIdentifier>
-			<Abstract type="html">Удаление кэша указанного URL</Abstract>
+			<Abstract type="html">Removes cached data by its URL</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>			
 			
 			<Declaration>- (void)removeCacheForURL:(NSURL *)url</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные которого необходимо удалить</Abstract>
+					<Abstract type="html">URL that corresponds to cached data which needs to be removed</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -94,8 +93,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCache/clear</TokenIdentifier>
-			<Abstract type="html">Удаление всех закэшированных данных в директории, которой был инициализирован
-данный объект</Abstract>
+			<Abstract type="html">Removes all cached data in a directory which were used for initialization.</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>			
 			
 			<Declaration>- (void)clear</Declaration>
@@ -107,7 +105,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCache/removeCacheDirectory</TokenIdentifier>
-			<Abstract type="html">Удаление директории с данными кэша</Abstract>
+			<Abstract type="html">Removes directory with all cached data.</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>			
 			
 			<Declaration>- (void)removeCacheDirectory</Declaration>
@@ -119,39 +117,38 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCache/cacheForURL:</TokenIdentifier>
-			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если время действия
-кэша истекло или его нет.</Abstract>
+			<Abstract type="html">Returns cached data by its URL, or nil, if life time of cached data has expired.</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>			
 			
 			<Declaration>- (NSData *)cacheForURL:(NSURL *)url</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
+					<Abstract type="html">URL that corresponds to cached data</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of NSData class, cached data</Abstract></ReturnValue>
 			<Anchor>//api/name/cacheForURL:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKCache/cacheForURL:offlineMode:</TokenIdentifier>
-			<Abstract type="html">Возвращает закэшированные данные по указанному URL, либо nil, если для данного
-запроса нет кэша.</Abstract>
+			<Abstract type="html">Returns cached data by its URL, or nil, if life time of cached data has
+expired or there is no data for current URL.</Abstract>
 			<DeclaredIn>VKCache.h</DeclaredIn>			
 			
 			<Declaration>- (NSData *)cacheForURL:(NSURL *)url offlineMode:(BOOL)offlineMode</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>url</Name>
-					<Abstract type="html">URL, закэшированные данные по которому необходимо получить</Abstract>
+					<Abstract type="html">URL that corresponds to cached data</Abstract>
 				</Parameter><Parameter>
 					<Name>offlineMode</Name>
-					<Abstract type="html">оффлайн режим запроса кэша (как работает описано в Обсуждении)</Abstract>
+					<Abstract type="html">offline mode</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класса NSData, закэшированные данные указанного URL</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of NSData class, cached data which corresponds to received URL</Abstract></ReturnValue>
 			<Anchor>//api/name/cacheForURL:offlineMode:</Anchor>
             <NodeRef refid="2"/>
 		</Token>

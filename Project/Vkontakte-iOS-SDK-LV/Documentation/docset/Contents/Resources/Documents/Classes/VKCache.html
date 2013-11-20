@@ -75,11 +75,11 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы инициализации">Методы инициализации</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialization methods">Initialization methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Методы манипуляции с кэшем">Методы манипуляции с кэшем</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Methods to manage cached data">Methods to manage cached data</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Получение закэшированных данных">Получение закэшированных данных</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting cached data">Getting cached data</a></span></li>
 	
 </ul></li>
 
@@ -146,9 +146,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Класс предназначен для хранения, получения, удаления кэша запросов.
-Хранение кэша осуществляется на диске и в директории указанной при инициализации
-класса.</p>
+						<p>Current class manages cached responses' data. Cached data are saved in
+directory which was selected during initialization process.</p>
 					</div>
 					
 					
@@ -160,14 +159,14 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						<a title="Методы инициализации" name="task_Методы инициализации"></a>
-						<h3 class="subsubtitle task-title">Методы инициализации</h3>
+						<a title="Initialization methods" name="task_Initialization methods"></a>
+						<h3 class="subsubtitle task-title">Initialization methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/initWithCacheDirectory:">&ndash;&nbsp;initWithCacheDirectory:</a></code>
-		<span class="tooltip"><p>Инициализация объекта для кэширования запросов</p></span>
+		<span class="tooltip"><p>Initialization methods</p></span>
 	</span>
 	
 	
@@ -175,43 +174,42 @@
 						</ul>
 						
 						
-						<a title="Методы манипуляции с кэшем" name="task_Методы манипуляции с кэшем"></a>
-						<h3 class="subsubtitle task-title">Методы манипуляции с кэшем</h3>
+						<a title="Methods to manage cached data" name="task_Methods to manage cached data"></a>
+						<h3 class="subsubtitle task-title">Methods to manage cached data</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addCache:forURL:">&ndash;&nbsp;addCache:forURL:</a></code>
-		<span class="tooltip"><p>Добавляет данные в кэш</p></span>
+		<span class="tooltip"><p>Current method adds new data to cached data directory</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addCache:forURL:liveTime:">&ndash;&nbsp;addCache:forURL:liveTime:</a></code>
-		<span class="tooltip"><p>Добавляет данные в кэш</p></span>
+		<span class="tooltip"><p>Current method adds new data to cached data directory</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeCacheForURL:">&ndash;&nbsp;removeCacheForURL:</a></code>
-		<span class="tooltip"><p>Удаление кэша указанного URL</p></span>
+		<span class="tooltip"><p>Removes cached data by its URL</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/clear">&ndash;&nbsp;clear</a></code>
-		<span class="tooltip"><p>Удаление всех закэшированных данных в директории, которой был инициализирован
-данный объект</p></span>
+		<span class="tooltip"><p>Removes all cached data in a directory which were used for initialization.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeCacheDirectory">&ndash;&nbsp;removeCacheDirectory</a></code>
-		<span class="tooltip"><p>Удаление директории с данными кэша</p></span>
+		<span class="tooltip"><p>Removes directory with all cached data.</p></span>
 	</span>
 	
 	
@@ -219,23 +217,22 @@
 						</ul>
 						
 						
-						<a title="Получение закэшированных данных" name="task_Получение закэшированных данных"></a>
-						<h3 class="subsubtitle task-title">Получение закэшированных данных</h3>
+						<a title="Getting cached data" name="task_Getting cached data"></a>
+						<h3 class="subsubtitle task-title">Getting cached data</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/cacheForURL:">&ndash;&nbsp;cacheForURL:</a></code>
-		<span class="tooltip"><p>Возвращает закэшированные данные по указанному URL, либо nil, если время действия
-кэша истекло или его нет.</p></span>
+		<span class="tooltip"><p>Returns cached data by its URL, or nil, if life time of cached data has expired.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/cacheForURL:offlineMode:">&ndash;&nbsp;cacheForURL:offlineMode:</a></code>
-		<span class="tooltip"><p>Возвращает закэшированные данные по указанному URL, либо nil, если для данного
-запроса нет кэша.</p></span>
+		<span class="tooltip"><p>Returns cached data by its URL, or nil, if life time of cached data has
+expired or there is no data for current URL.</p></span>
 	</span>
 	
 	
@@ -263,7 +260,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Добавляет данные в кэш</p>
+		<p>Current method adds new data to cached data directory</p>
 	</div>		
 	
     
@@ -277,12 +274,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>cache</em></dt>
-			<dd><p>данные, которые необходимо закэшировать</p></dd>
+			<dd><p>data which should be cached</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>url</em></dt>
-			<dd><p>URL который соответствует кешируемым данным</p></dd>
+			<dd><p>URL that corresponds to cached data</p></dd>
 		</dl>
 		
 	</div>
@@ -295,7 +292,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>По умолчанию время жизни кэша устанавливается равным одному часу.</p>
+		<p>Life time of current cached data defaults to one hour.</p>
 	</div>
 	
 	
@@ -319,7 +316,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Добавляет данные в кэш</p>
+		<p>Current method adds new data to cached data directory</p>
 	</div>		
 	
     
@@ -333,18 +330,18 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>cache</em></dt>
-			<dd><p>данные, которые необходимо закэшировать</p></dd>
+			<dd><p>data which should be cached</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>url</em></dt>
-			<dd><p>URL который соответствует кешируемым данным</p></dd>
+			<dd><p>URL that corresponds to cached data</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>cacheLiveTime</em></dt>
-			<dd><p>время жизни кэша. Возможные варианты перечислены в VKCacheLiveTime
-(VKCacheLiveTimeOneHour, VKCacheLiveTimeOneDay, VKCacheLiveTimeForever etc)</p></dd>
+			<dd><p>life time of current cached data (possible values: VKCacheLiveTimeOneHour,
+VKCacheLiveTimeOneDay, VKCacheLiveTimeForever etc).</p></dd>
 		</dl>
 		
 	</div>
@@ -376,8 +373,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Возвращает закэшированные данные по указанному URL, либо nil, если время действия
-кэша истекло или его нет.</p>
+		<p>Returns cached data by its URL, or nil, if life time of cached data has expired.</p>
 	</div>		
 	
     
@@ -391,7 +387,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>url</em></dt>
-			<dd><p>URL, закэшированные данные по которому необходимо получить</p></dd>
+			<dd><p>URL that corresponds to cached data</p></dd>
 		</dl>
 		
 	</div>
@@ -400,7 +396,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>экземпляр класса NSData, закэшированные данные указанного URL</p>
+		<p>instance of NSData class, cached data</p>
 	</div>
 	
 	
@@ -428,8 +424,8 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Возвращает закэшированные данные по указанному URL, либо nil, если для данного
-запроса нет кэша.</p>
+		<p>Returns cached data by its URL, or nil, if life time of cached data has
+expired or there is no data for current URL.</p>
 	</div>		
 	
     
@@ -443,12 +439,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>url</em></dt>
-			<dd><p>URL, закэшированные данные по которому необходимо получить</p></dd>
+			<dd><p>URL that corresponds to cached data</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>offlineMode</em></dt>
-			<dd><p>оффлайн режим запроса кэша (как работает описано в Обсуждении)</p></dd>
+			<dd><p>offline mode</p></dd>
 		</dl>
 		
 	</div>
@@ -457,7 +453,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>экземпляр класса NSData, закэшированные данные указанного URL</p>
+		<p>instance of NSData class, cached data which corresponds to received URL</p>
 	</div>
 	
 	
@@ -466,14 +462,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Параметр offlineMode влияет на возвращаемые данные следующим образом: если передается
-YES и в кэше есть данные для этого URL, но срок их жизни истек, то они всё равно
-будут возвращены (без удаления, до последующего обновления).
-Если параметр offlineMode равен NO, то при запросе данных из кэша, они будут
-удалены в случае, если время жизни данных истекло.</p>
-
-<p>Использование данного метода с передачей значения YES в параметре offlineMode
-полезно при отсутствии интернет соединения.</p>
+		<p>As you know, offlineMode can make current method return cached data even if its
+life time expired. You should use offlineMode (YES) if there is no internet
+connection.</p>
 	</div>
 	
 	
@@ -497,8 +488,7 @@ YES и в кэше есть данные для этого URL, но срок и
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Удаление всех закэшированных данных в директории, которой был инициализирован
-данный объект</p>
+		<p>Removes all cached data in a directory which were used for initialization.</p>
 	</div>		
 	
     
@@ -534,7 +524,7 @@ YES и в кэше есть данные для этого URL, но срок и
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Инициализация объекта для кэширования запросов</p>
+		<p>Initialization methods</p>
 	</div>		
 	
     
@@ -548,8 +538,8 @@ YES и в кэше есть данные для этого URL, но срок и
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>path</em></dt>
-			<dd><p>директория в которой должны будут храниться кэшируемые данные.
-Если директория не существует, то будет создана.</p></dd>
+			<dd><p>directory where would be saved cached data. If there is no such
+directory then it&rsquo;s going to be created.</p></dd>
 		</dl>
 		
 	</div>
@@ -558,7 +548,7 @@ YES и в кэше есть данные для этого URL, но срок и
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>объект типа VKCache</p>
+		<p>instance of VKCache</p>
 	</div>
 	
 	
@@ -586,7 +576,7 @@ YES и в кэше есть данные для этого URL, но срок и
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Удаление директории с данными кэша</p>
+		<p>Removes directory with all cached data.</p>
 	</div>		
 	
     
@@ -622,7 +612,7 @@ YES и в кэше есть данные для этого URL, но срок и
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Удаление кэша указанного URL</p>
+		<p>Removes cached data by its URL</p>
 	</div>		
 	
     
@@ -636,7 +626,7 @@ YES и в кэше есть данные для этого URL, но срок и
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>url</em></dt>
-			<dd><p>URL, закэшированные данные которого необходимо удалить</p></dd>
+			<dd><p>URL that corresponds to cached data which needs to be removed</p></dd>
 		</dl>
 		
 	</div>
@@ -674,7 +664,7 @@ YES и в кэше есть данные для этого URL, но срок и
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-15)</span><br />
+						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-11-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

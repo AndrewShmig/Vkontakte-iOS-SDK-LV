@@ -24,15 +24,16 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
+
+
 #import <Foundation/Foundation.h>
 #import "NSString+Utilities.h"
 
 
-/** Перечисление возможных сроков действия кэша.
+/** Possible lifetimes of cached data.
 */
 typedef enum
 {
-
     VKCacheLiveTimeNever = 0,
     VKCacheLiveTimeOneMinute = 60,
     VKCacheLiveTimeThreeMinutes = 3 * 60,
@@ -43,92 +44,83 @@ typedef enum
     VKCacheLiveTimeOneWeek = 7 * 24 * 60 * 60,
     VKCacheLiveTimeOneMonth = 30 * 24 * 60 * 60,
     VKCacheLiveTimeOneYear = 365 * 24 * 60 * 60,
-
 } VKCacheLiveTime;
 
 
-/** Класс предназначен для хранения, получения, удаления кэша запросов.
-Хранение кэша осуществляется на диске и в директории указанной при инициализации
-класса.
+/** Current class manages cached responses' data. Cached data are saved in
+directory which was selected during initialization process.
 */
 @interface VKCache : NSObject
 
 /**
-@name Методы инициализации
+@name Initialization methods
 */
-/** Инициализация объекта для кэширования запросов
+/** Initialization methods
 
-@param path директория в которой должны будут храниться кэшируемые данные.
-Если директория не существует, то будет создана.
-@return объект типа VKCache
+@param path directory where would be saved cached data. If there is no such
+directory then it's going to be created.
+@return instance of VKCache
 */
 - (instancetype)initWithCacheDirectory:(NSString *)path;
 
 /**
-@name Методы манипуляции с кэшем
+@name Methods to manage cached data
 */
-/** Добавляет данные в кэш
+/** Current method adds new data to cached data directory
 
-По умолчанию время жизни кэша устанавливается равным одному часу.
+Life time of current cached data defaults to one hour.
 
-@param cache данные, которые необходимо закэшировать
-@param url URL который соответствует кешируемым данным
+@param cache data which should be cached
+@param url URL that corresponds to cached data
 */
 - (void)addCache:(NSData *)cache
           forURL:(NSURL *)url;
 
-/** Добавляет данные в кэш
+/** Current method adds new data to cached data directory
 
-@param cache данные, которые необходимо закэшировать
-@param url URL который соответствует кешируемым данным
-@param cacheLiveTime время жизни кэша. Возможные варианты перечислены в VKCacheLiveTime
-(VKCacheLiveTimeOneHour, VKCacheLiveTimeOneDay, VKCacheLiveTimeForever etc)
+@param cache data which should be cached
+@param url URL that corresponds to cached data
+@param cacheLiveTime life time of current cached data (possible values: VKCacheLiveTimeOneHour,
+VKCacheLiveTimeOneDay, VKCacheLiveTimeForever etc).
 */
 - (void)addCache:(NSData *)cache
           forURL:(NSURL *)url
         liveTime:(VKCacheLiveTime)cacheLiveTime;
 
-/** Удаление кэша указанного URL
+/** Removes cached data by its URL
 
-@param url URL, закэшированные данные которого необходимо удалить
+@param url URL that corresponds to cached data which needs to be removed
 */
 - (void)removeCacheForURL:(NSURL *)url;
 
-/** Удаление всех закэшированных данных в директории, которой был инициализирован
-данный объект
+/** Removes all cached data in a directory which were used for initialization.
 */
 - (void)clear;
 
-/** Удаление директории с данными кэша
+/** Removes directory with all cached data.
 */
 - (void)removeCacheDirectory;
 
 /**
-@name Получение закэшированных данных
+@name Getting cached data
 */
-/** Возвращает закэшированные данные по указанному URL, либо nil, если время действия
-кэша истекло или его нет.
+/** Returns cached data by its URL, or nil, if life time of cached data has expired.
 
-@param url URL, закэшированные данные по которому необходимо получить
-@return экземпляр класса NSData, закэшированные данные указанного URL
+@param url URL that corresponds to cached data
+@return instance of NSData class, cached data
 */
 - (NSData *)cacheForURL:(NSURL *)url;
 
-/** Возвращает закэшированные данные по указанному URL, либо nil, если для данного
-запроса нет кэша.
+/** Returns cached data by its URL, or nil, if life time of cached data has
+expired or there is no data for current URL.
 
-Параметр offlineMode влияет на возвращаемые данные следующим образом: если передается
-YES и в кэше есть данные для этого URL, но срок их жизни истек, то они всё равно
-будут возвращены (без удаления, до последующего обновления).
-Если параметр offlineMode равен NO, то при запросе данных из кэша, они будут
-удалены в случае, если время жизни данных истекло.
+As you know, offlineMode can make current method return cached data even if its
+life time expired. You should use offlineMode (YES) if there is no internet
+connection.
 
-Использование данного метода с передачей значения YES в параметре offlineMode
-полезно при отсутствии интернет соединения.
-
-@param url URL, закэшированные данные по которому необходимо получить
-@param offlineMode оффлайн режим запроса кэша (как работает описано в Обсуждении)
-@return экземпляр класса NSData, закэшированные данные указанного URL
+@param url URL that corresponds to cached data
+@param offlineMode offline mode
+@return instance of NSData class, cached data which corresponds to received URL
 */
 - (NSData *)cacheForURL:(NSURL *)url
             offlineMode:(BOOL)offlineMode;

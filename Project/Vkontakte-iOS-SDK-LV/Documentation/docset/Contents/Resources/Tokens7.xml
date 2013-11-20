@@ -4,7 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/VKStorageItem</TokenIdentifier>
-			<Abstract type="html">Класс представляет собой элемент хранилища VKStorage.</Abstract>
+			<Abstract type="html">Current class is used as an item of main VKStorage storage, which
+persists data such as access tokens and cache.</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>
 			
 			<NodeRef refid="7"/>
@@ -13,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/setAccessToken:</TokenIdentifier>
-			<Abstract type="html">Токен доступа</Abstract>
+			<Abstract type="html">Access token</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
@@ -25,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/accessToken</TokenIdentifier>
-			<Abstract type="html">Токен доступа</Abstract>
+			<Abstract type="html">Access token</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
@@ -37,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKStorageItem/accessToken</TokenIdentifier>
-			<Abstract type="html">Токен доступа</Abstract>
+			<Abstract type="html">Access token</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readonly) VKAccessToken *accessToken</Declaration>
@@ -49,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/setCache:</TokenIdentifier>
-			<Abstract type="html">Кэш запросов</Abstract>
+			<Abstract type="html">Cache</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readonly) VKCache *cache</Declaration>
@@ -61,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/cache</TokenIdentifier>
-			<Abstract type="html">Кэш запросов</Abstract>
+			<Abstract type="html">Cache</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readonly) VKCache *cache</Declaration>
@@ -73,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKStorageItem/cache</TokenIdentifier>
-			<Abstract type="html">Кэш запросов</Abstract>
+			<Abstract type="html">Cache</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, strong, readonly) VKCache *cache</Declaration>
@@ -85,20 +86,20 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorageItem/initWithAccessToken:mainCacheStoragePath:</TokenIdentifier>
-			<Abstract type="html">Инициализация элемента хранилища токеном доступа и директорией кэша</Abstract>
+			<Abstract type="html">Initialization method</Abstract>
 			<DeclaredIn>VKStorageItem.h</DeclaredIn>			
 			
 			<Declaration>- (instancetype)initWithAccessToken:(VKAccessToken *)token mainCacheStoragePath:(NSString *)path</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>token</Name>
-					<Abstract type="html">токен доступа с которым будет ассоциироваться элемент хранилища</Abstract>
+					<Abstract type="html">access token which will be used as key in VKStorage storage</Abstract>
 				</Parameter><Parameter>
 					<Name>path</Name>
-					<Abstract type="html">путь к директории в которой необходимо хранить кэш запросов</Abstract>
+					<Abstract type="html">directory which will be used for cached data</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">экземпляр класс VKStorageItem</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">instance of VKStorageItem class</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithAccessToken:mainCacheStoragePath:</Anchor>
             <NodeRef refid="7"/>
 		</Token>

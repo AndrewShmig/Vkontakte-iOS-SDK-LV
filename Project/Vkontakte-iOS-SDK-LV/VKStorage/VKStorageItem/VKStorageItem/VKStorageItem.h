@@ -24,34 +24,38 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
+
+
 #import <Foundation/Foundation.h>
 #import "VKAccessToken.h"
 #import "NSString+Utilities.h"
 #import "VKCache.h"
 
 
-/** Класс представляет собой элемент хранилища VKStorage.
+/** Current class is used as an item of main VKStorage storage, which
+persists data such as access tokens and cache.
 */
 @interface VKStorageItem : NSObject
 
 /**
-@name Свойства
+@name Properties
 */
-/** Токен доступа
+/** Access token
 */
 @property (nonatomic, strong, readonly) VKAccessToken *accessToken;
 
-/** Кэш запросов
+/** Cache
 */
 @property (nonatomic, strong, readonly) VKCache *cache;
 
 /**
-@name Методы инициализации
+@name Initialization methods
 */
-/** Инициализация элемента хранилища токеном доступа и директорией кэша
-@param token токен доступа с которым будет ассоциироваться элемент хранилища
-@param path путь к директории в которой необходимо хранить кэш запросов
-@return экземпляр класс VKStorageItem
+/** Initialization method
+
+@param token access token which will be used as key in VKStorage storage
+@param path directory which will be used for cached data
+@return instance of VKStorageItem class
 */
 - (instancetype)initWithAccessToken:(VKAccessToken *)token
                mainCacheStoragePath:(NSString *)path;

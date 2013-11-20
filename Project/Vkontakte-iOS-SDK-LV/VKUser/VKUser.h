@@ -24,89 +24,67 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
+
+
 #import <Foundation/Foundation.h>
 #import "VKAccessToken.h"
 #import "VKStorageItem.h"
 #import "VKStorage.h"
 
 
-/**
- Класс представляет пользователя социальной сети, который может осуществлять ряд
- действий с объектами вроде групп, друзей, музыкой, видео и тд.
-
- Класс так же позволяет изменить текущего активного пользователя на одного из
- пользователей находящихся в хранилище (ранее авторизованных). Получить список
- пользователей, которые авторизовывались можно используя метод localUsers.
-
- @warning методы, которые требуют наличия access_token в запросе _перезаписывают_
- токен доступа, если таковой был указан при передаче словаря ключей-значений, на
- значение токена доступа текущего пользователя - self.accessToken.token.
-
- @warning по умолчанию у каждого запроса из класса VKUser подпись (signature)
- является строкой селектора инициировавшего/создавшего объекта запроса
- */
+/** Manages users
+*/
 @interface VKUser : NSObject
 
-/** Пользовательски токен доступа текущего активного пользователя
+/** User's access token
 */
 @property (nonatomic, readonly) VKAccessToken *accessToken;
 
 /**
-@name Методы класса
+@name Class methods
 */
-/** Текущий активный пользователь.
+/** Current activated user
 
-Если хранилище не содержит авторизованных пользователей, то возвращено будет значение
-nil.
+If there is no users in VKStorage then nil will be returned.
+If no user was activated, then random user will be activated.
 
-В случае, если активным не был установлен какой-то определенный пользователь, то
-при вызове данного метода активируется произвольный пользователь из хранилища (если
-в хранилище будет находится лишь один пользователь, то именно он будет активирован
-и от его лица будут осуществляться дальнейшие запросы).
+Lets assume we have such situation:
 
-_Вопрос:_ Когда может произойти подобная ситуация?
+    // user A authorized
+    // user B authorized
+    // user C authorized
+    [VKUser currentUser] // random user will be activated - A or B or C
 
-_Ответ:_ Представим, что два и более пользователей подряд авторизовались и, во время
-авторизаций не было вызовов метода currentUser.
+Second example:
 
-Рассмотрим на примере:
-
-    // авторизовался пользователь А
-    // авторизовался пользователь Б
-    // авторизовался пользователь В
-    [VKUser currentUser] // будет активирован произвольный пользователь, либо А, либо Б, либо В
-
-Второй пример:
-
-    // авторизовался пользователь А
-    [VKUser currentUser] // активным устанавливается пользователь А
-    // авторизовался пользователь Б, но А по прежнему активный
-    // авторизовался пользователь В, но А по прежнему активный
+    // user A authorized
+    [VKUser currentUser] // user A becomes active user
+    // user B authorized, but A is still active
+    // user C authorized, but A is still active
+    // so on.
 
 */
 + (instancetype)currentUser;
 
-/** Делает активным пользователя с идентификатором userID.
+/** Activates user with passed unique user identifier
 
-Если пользователя с таким идентификатором нет в хранилище, то метод вернет NO, иначе
-YES.
+If there is no such user then NO will be returned, otherwise - YES.
 
-@param userID идентификатор пользователя, которого необходимо активировать
-
-@return булево значение, удалось ли активировать указанного пользователя или нет
+@param userID unique user identifier, user which should be activated
+@return YES - if user was activated, NO - otherwise
 */
 + (BOOL)activateUserWithID:(NSUInteger)userID;
 
-/** Получение списка пользователей находящихся в хранилище
+/** List of users which were saved in VKStorage
 
-@return массив пользовательских идентификаторов
+@return list of users (@(NSUInteger) objects - user unique identifiers)
 */
 + (NSArray *)localUsers;
 
 /**
-@name Переопределенные методы
+@name Overridden methods
  */
-/** Описание текущего пользователя
+/** Description of current user
 */
 - (NSString *)description;
 
