@@ -40,7 +40,9 @@
 
 - (instancetype)initWithCacheDirectory:(NSString *)path
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"path": path
+    });
 
     self = [super init];
 
@@ -59,7 +61,10 @@
 - (void)addCache:(NSData *)cache
           forURL:(NSURL *)url
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"cache": cache,
+            @"url": url
+    });
 
     [self addCache:cache
             forURL:url
@@ -70,7 +75,11 @@
           forURL:(NSURL *)url
         liveTime:(VKCacheLiveTime)cacheLiveTime
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"cache": cache,
+            @"url": url,
+            @"cacheLiveTime": @(cacheLiveTime)
+    });
 
 //    нет надобности сохранять в кэше запрос с таким временем жизни
     if(VKCacheLiveTimeNever == cacheLiveTime)
@@ -96,7 +105,9 @@
 
 - (void)removeCacheForURL:(NSURL *)url
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"url": url
+    });
 
     NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
@@ -111,7 +122,7 @@
 
 - (void)clear
 {
-    LOG();
+    MV_LOG();
 
     dispatch_async(_backgroundQueue, ^{
 
@@ -130,7 +141,7 @@
 
 - (void)removeCacheDirectory
 {
-    LOG();
+    MV_LOG();
 
     dispatch_async(_backgroundQueue, ^{
 
@@ -142,7 +153,9 @@
 
 - (NSData *)cacheForURL:(NSURL *)url
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"url": url
+    });
 
     return [self cacheForURL:url
                  offlineMode:NO];
@@ -151,7 +164,10 @@
 - (NSData *)cacheForURL:(NSURL *)url
             offlineMode:(BOOL)offlineMode
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"url": url,
+            @"offlineMode": @(offlineMode)
+    });
 
     NSString *encodedCachedURL = [[url absoluteString] md5];
     NSString *filePath = [_cacheDirectoryPath stringByAppendingFormat:@"%@",
@@ -179,11 +195,24 @@
     return cachedData;
 }
 
+#pragma mark - description
+
+- (NSString *)description
+{
+    NSDictionary *desc = @{
+            @"cacheDirectory": _cacheDirectoryPath
+    };
+
+    return [desc description];
+}
+
 #pragma mark - private methods
 
 - (void)createDirectoryIfNotExists:(NSString *)path
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"path": path
+    });
 
     if (![[NSFileManager defaultManager]
                          fileExistsAtPath:path]) {

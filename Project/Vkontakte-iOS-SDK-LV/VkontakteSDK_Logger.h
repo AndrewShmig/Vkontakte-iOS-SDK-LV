@@ -28,12 +28,12 @@
 #ifndef Project_VkontakteSDK_Logger____FILEEXTENSION___
 #define Project_VkontakteSDK_Logger____FILEEXTENSION___
 
-#define VKONTAKTE_DEBUG_MODE 1
+#define VKONTAKTE_MEGA_VERBOSE_MODE 1 // ON
 
-#if VKONTAKTE_DEBUG_MODE
-#define LOG() NSLog(@"%s", __FUNCTION__)
+#ifdef VKONTAKTE_MEGA_VERBOSE_MODE
+#define MV_LOG(format, ...) NSLog(@"[%d: %@, %@] " format, __LINE__, [self class], NSStringFromSelector(_cmd), ##__VA_ARGS__)
 #else
-#define LOG() /**/
+#define MV_LOG(format, ...) NSLog(@"(%s, %d)(%s)",  __FILE__, __LINE__, __FUNCTION__)
 #endif
 
 #endif

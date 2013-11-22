@@ -1,5 +1,5 @@
 //
-// Created by AndrewShmig on 6/28/13.
+// Created by AndrewShmig on 11/22/13.
 //
 // Copyright (c) 2013 Andrew Shmig
 // 
@@ -24,46 +24,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 // THE SOFTWARE.
 //
-#import "VKStorageItem.h"
-#import "VkontakteSDK_Logger.h"
+#import <Foundation/Foundation.h>
 
-
-@implementation VKStorageItem
-
-#pragma mark Visible VKStorageItem methods
-#pragma mark - Init methods
-
-- (instancetype)initWithAccessToken:(VKAccessToken *)token
-               mainCacheStoragePath:(NSString *)path
-{
-    MV_LOG(@"%@", @{
-            @"token": token,
-            @"path": path
-    });
-
-    self = [super init];
-
-    if (nil != self && nil != token && nil != path) {
-        NSString *cache;
-        _accessToken = [token copy];
-
-        cache = [path stringByAppendingFormat:@"%@/", @(_accessToken.userID)];
-        _cache = [[VKCache alloc] initWithCacheDirectory:cache];
-
-        return self;
-    }
-
-    return nil;
-}
-
-- (NSString *)description
-{
-    NSDictionary *desc = @{
-            @"token": self.accessToken,
-            @"cache": self.cache
-    };
-
-    return [desc description];
-}
-
+@interface UIWebView (Description)
 @end

@@ -50,7 +50,10 @@
 + (instancetype)request:(NSURLRequest *)request
                delegate:(id <VKRequestDelegate>)delegate
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"request": request,
+            @"delegate": delegate
+    });
 
     VKRequest *returnRequest = [[VKRequest alloc]
                                            initWithRequest:request];
@@ -65,7 +68,12 @@
                              body:(NSData *)body
                          delegate:(id <VKRequestDelegate>)delegate
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"httpMethod": httpMethod,
+            @"url": url,
+            @"body": body,
+            @"delegate": delegate
+    });
 
     VKRequest *request = [[VKRequest alloc]
                                      initWithHTTPMethod:httpMethod
@@ -83,6 +91,13 @@
                           options:(NSDictionary *)options
                          delegate:(id <VKRequestDelegate>)delegate
 {
+    MV_LOG(@"%@", @{
+            @"httpMethod": httpMethod,
+            @"methodName": methodName,
+            @"options": options,
+            @"delegate": delegate
+    });
+
     NSString *lowercaseHTTPMethodName = [httpMethod lowercaseString];
 
     if ([lowercaseHTTPMethodName isEqualToString:@"get"]) {
@@ -128,7 +143,11 @@
                       options:(NSDictionary *)options
                      delegate:(id <VKRequestDelegate>)delegate
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"methodName": methodName,
+            @"options": options,
+            @"delegate": delegate
+    });
 
     VKRequest *request = [[VKRequest alloc]
                                      initWithMethod:methodName
@@ -143,7 +162,9 @@
 
 - (instancetype)initWithRequest:(NSURLRequest *)request
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"request": request
+    });
 
     self = [super init];
 
@@ -154,10 +175,8 @@
     _receivedData = [[NSMutableData alloc] init];
     _body = [[NSMutableData alloc] init];
     _boundary = [[NSProcessInfo processInfo] globallyUniqueString];
-    _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n",
-                                                 _boundary];
-    _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n",
-                                                 _boundary];
+    _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n", _boundary];
+    _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n", _boundary];
     _expectedDataSize = NSURLResponseUnknownContentLength;
     _cacheLiveTime = VKCacheLiveTimeOneHour;
     _offlineMode = NO;
@@ -171,7 +190,12 @@
                            headers:(NSDictionary *)headers
                               body:(NSData *)body
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"httpMethod": httpMethod,
+            @"url": url,
+            @"headers": headers,
+            @"body": body
+    });
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
@@ -186,7 +210,10 @@
 - (instancetype)initWithMethod:(NSString *)methodName
                        options:(NSDictionary *)options
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"methodName": methodName,
+            @"options": options
+    });
 
     NSMutableString *fullURL = [NSMutableString string];
     [fullURL appendFormat:@"%@%@", kVkontakteAPIURL, methodName];
@@ -225,7 +252,7 @@
 
 - (void)start
 {
-    LOG();
+    MV_LOG();
 
 //    установлен ли делегат? если нет, то и запрос выполнять нет смысла
     if (nil == self.delegate)
@@ -235,7 +262,6 @@
     NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
-
     NSData *cachedResponseData = [item.cache cacheForURL:[self removeAccessTokenFromURL:_request.URL]
                                              offlineMode:_offlineMode];
     if (nil != cachedResponseData) {
@@ -268,7 +294,7 @@
 
 - (void)cancel
 {
-    LOG();
+    MV_LOG();
 
     _receivedData = nil;
     _expectedDataSize = NSURLResponseUnknownContentLength;
@@ -282,7 +308,11 @@
                    name:(NSString *)name
                   field:(NSString *)field
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"file": file,
+            @"name": name,
+            @"field": field
+    });
 
     [self appendFile:file
                 name:name
@@ -293,7 +323,11 @@
                       name:(NSString *)name
                      field:(NSString *)field
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"file": file,
+            @"name": name,
+            @"field": field
+    });
 
     [self appendFile:file
                 name:name
@@ -304,7 +338,11 @@
                    name:(NSString *)name
                   field:(NSString *)field
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"file": file,
+            @"name": name,
+            @"field": field
+    });
 
     [self appendFile:file
                 name:name
@@ -315,7 +353,11 @@
                    name:(NSString *)name
                   field:(NSString *)field
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"file": file,
+            @"name": name,
+            @"field": field
+    });
 
     [self appendFile:file
                 name:name
@@ -326,7 +368,7 @@
 
 - (NSString *)description
 {
-    LOG();
+    MV_LOG();
 
     NSDictionary *description = @{
             @"delegate"      : self.delegate,
@@ -341,7 +383,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    LOG();
+    MV_LOG();
 
     VKRequest *copy = [[VKRequest alloc]
                                   initWithRequest:_request];
@@ -358,7 +400,10 @@
 - (void)connection:(NSURLConnection *)connection
 didReceiveResponse:(NSURLResponse *)response
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"connection": connection,
+            @"response": response
+    });
 
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
@@ -396,7 +441,10 @@ didReceiveResponse:(NSURLResponse *)response
 - (void)connection:(NSURLConnection *)connection
     didReceiveData:(NSData *)data
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"connection": connection,
+            @"data": data
+    });
 
     [_receivedData appendData:data];
 
@@ -413,7 +461,12 @@ didReceiveResponse:(NSURLResponse *)response
         totalBytesWritten:(NSInteger)totalBytesWritten
 totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"connection": connection,
+            @"bytesWritten": @(bytesWritten),
+            @"totalBytesWritten": @(totalBytesWritten),
+            @"totalBytesExpectedToWrite": @(totalBytesExpectedToWrite)
+    });
 
     if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
 
@@ -425,7 +478,9 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"connection": connection
+    });
 
 //    обработка полного ответа сервера
     NSJSONReadingOptions mask = NSJSONReadingAllowFragments |
@@ -435,7 +490,6 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     id json = [NSJSONSerialization JSONObjectWithData:_receivedData
                                               options:mask
                                                 error:&error];
-
     if (nil != error) {
         if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:parsingErrorOccured:)]) {
             [self.delegate VKRequest:self
@@ -499,7 +553,9 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 - (void)connection:(NSURLConnection *)connection
   didFailWithError:(NSError *)error
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"connection": connection
+    });
 
     if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:connectionErrorOccured:)]) {
         [self.delegate VKRequest:self
@@ -511,7 +567,9 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 - (NSURL *)removeAccessTokenFromURL:(NSURL *)url
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"url": url
+    });
 
 //    уберем токен доступа из строки запроса
 //    токен доступа может меняться при каждом обновлении (повторном входе пользователя),
@@ -526,9 +584,15 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     NSString *part1 = [[url absoluteString]
                             componentsSeparatedByString:@"?"][0];
     NSString *part2 = [newParams componentsJoinedByString:@"&"];
-    NSURL *newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@",
-                                                                    part1,
-                                                                    part2]];
+    NSURL *newURL;
+
+    if (0 != [part2 length]) {
+        newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@",
+                                                                        part1,
+                                                                        part2]];
+    } else {
+        newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@", part1]];
+    }
 
     return newURL;
 }
@@ -537,7 +601,11 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
               name:(NSString *)name
              field:(NSString *)field
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"file": file,
+            @"name": name,
+            @"field": field
+    });
 
 //    header part
     [_body appendData:[_boundaryHeader dataUsingEncoding:NSUTF8StringEncoding]];
@@ -566,7 +634,9 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 - (NSString *)determineContentTypeFromExtension:(NSString *)extension
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"extension": extension
+    });
 
     NSDictionary *contentTypes = @{
 

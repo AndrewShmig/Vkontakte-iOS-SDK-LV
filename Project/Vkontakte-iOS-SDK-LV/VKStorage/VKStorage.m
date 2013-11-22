@@ -38,7 +38,7 @@
 
 - (instancetype)init
 {
-    LOG();
+    MV_LOG();
 
     self = [super init];
 
@@ -55,7 +55,7 @@
 
 + (instancetype)sharedStorage
 {
-    LOG();
+    MV_LOG();
 
     static VKStorage *sharedStorage;
     static dispatch_once_t predicate;
@@ -86,21 +86,23 @@
 
 - (BOOL)isEmpty
 {
-    LOG();
+    MV_LOG();
 
     return ([_storageItems count] == 0);
 }
 
 - (NSUInteger)count
 {
-    LOG();
+    MV_LOG();
 
     return [_storageItems count];
 }
 
 - (VKStorageItem *)createStorageItemForAccessToken:(VKAccessToken *)token
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"token": token
+    });
 
     VKStorageItem *storageItem = [[VKStorageItem alloc]
                                                  initWithAccessToken:token
@@ -111,16 +113,30 @@
 
 - (NSArray *)storageItems
 {
-    LOG();
+    MV_LOG();
 
     return [_storageItems allValues];
+}
+
+- (NSString *)description
+{
+    NSDictionary *desc = @{
+            @"count": @(self.count),
+            @"fullStoragePath": self.fullStoragePath,
+            @"fullCacheStoragePath": self.fullCacheStoragePath,
+            @"users": [self storageItems]
+    };
+
+    return [desc description];
 }
 
 #pragma mark - Storage manipulation methods
 
 - (void)storeItem:(VKStorageItem *)item
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"item": item
+    });
 
     if (nil == item || nil == item.accessToken || nil == item.cache)
         return;
@@ -133,7 +149,9 @@
 
 - (void)removeItem:(VKStorageItem *)item
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"item": item
+    });
 
     id storageKey = @(item.accessToken.userID);
 
@@ -145,7 +163,7 @@
 
 - (void)clean
 {
-    LOG();
+    MV_LOG();
 
     [_storageItems removeAllObjects];
     [self cleanCachedData];
@@ -155,7 +173,7 @@
 
 - (void)cleanCachedData
 {
-    LOG();
+    MV_LOG();
 
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
 
@@ -176,7 +194,9 @@
 
 - (VKStorageItem *)storageItemForUserID:(NSUInteger)userID
 {
-    LOG();
+    MV_LOG(@"%@", @{
+            @"userID": @(userID)
+    });
 
     id storageKey = @(userID);
     return _storageItems[storageKey];
@@ -186,7 +206,7 @@
 
 - (NSString *)fullStoragePath
 {
-    LOG();
+    MV_LOG();
 
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     return [cachePath stringByAppendingFormat:@"%@", kVKStoragePath];
@@ -194,7 +214,7 @@
 
 - (NSString *)fullCacheStoragePath
 {
-    LOG();
+    MV_LOG();
 
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     return [cachePath stringByAppendingFormat:@"%@", kVKStorageCachePath];
@@ -204,7 +224,7 @@
 
 - (void)loadStorage
 {
-    LOG();
+    MV_LOG();
 
     NSDictionary *storageDefaults = [[NSUserDefaults standardUserDefaults]
                                                      objectForKey:kVKStorageUserDefaultsKey];
@@ -234,7 +254,7 @@
 
 - (void)saveStorage
 {
-    LOG();
+    MV_LOG();
 
 //    сохраняем только данные токенов доступов
 //    данные кэшев мы сможем потом просто восстановить

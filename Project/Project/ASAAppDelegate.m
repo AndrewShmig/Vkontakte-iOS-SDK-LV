@@ -16,6 +16,9 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 
 
 @implementation ASAAppDelegate
+{
+    VKRequestManager *rm;
+}
 
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -68,11 +71,11 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 
     NSLog(@"Access token: %@", accessToken);
 
-    VKRequestManager *rm = [[VKRequestManager alloc]
-                                              initWithDelegate:self
-                                                          user:[VKUser currentUser]];
+    rm = [[VKRequestManager alloc]
+                            initWithDelegate:self
+                                        user:[VKUser currentUser]];
 
-    [rm friendsGet:nil];
+    [rm friendsGet:@{}]; // BUG HERE
 }
 
 - (void)   VKConnector:(VKConnector *)connector
