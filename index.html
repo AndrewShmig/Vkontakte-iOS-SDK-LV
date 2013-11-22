@@ -66,8 +66,82 @@
 	  		
 			  After adding VK iOS SDK:
 			  <a href="http://habrastorage.org/storage3/342/534/04e/34253404e9fa7befc1ec318b3fe53149.png"><img src="http://habrastorage.org/storage3/55a/f61/5de/55af615deeace42f0ade354a72f18b23.png"/></a>
+			  
+			  Make your ViewController.h file look like:
+			  <pre>
+				  <code>
+					  #import <UIKit/UIKit.h>
+					  #import "VkontakteSDK.h"
+
+					  @interface ViewController : UIViewController <VKConnectorDelegate>
+
+					  @end
+				  </code>
+			  </pre>
+			  
+			  and ViewController.m file:
+			  <pre>
+				  <code>
+					  #import "ViewController.h"
+
+
+					  @implementation ViewController
+					  {
+					      UIWebView *_webView;
+					  }
+
+					  - (void)viewDidLoad
+					  {
+					      [super viewDidLoad];
+					  	// Do any additional setup after loading the view, typically from a nib.
+
+					      CGRect frame = [[UIScreen mainScreen] bounds];
+					      _webView = [[UIWebView alloc] initWithFrame:frame];
+					      [self.view addSubview:_webView];
+
+					      [[VKConnector sharedInstance] startWithAppID:@"3899649"
+					                                        permissons:@[@"wall"]
+					                                           webView:_webView
+					                                          delegate:self];
+					  }
+
+					  #pragma mark - VKConnectorDelegate
+
+					  - (void)        VKConnector:(VKConnector *)connector
+					  accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+					  {
+					      NSLog(@"OK: %@", accessToken);
+					  }
+
+					  - (void)     VKConnector:(VKConnector *)connector
+					  accessTokenRenewalFailed:(VKAccessToken *)accessToken
+					  {
+					      NSLog(@"User denied to authorize app.");
+					  }
+
+					  @end
+				  </code>
+			  </pre>
+			  
+			  Now, you can Build & Run your application. It should work just fine and after some time you should see this:
+			  <img src="http://habrastorage.org/storage3/529/92c/d86/52992cd86a355a172a9bc0487dd3cae7.png"/>
+			  
+			  After entering login and password and tapping "Log in" button you should receive access token information in console, it should look something like:
+			  <pre>
+				  <code>
+					  2013-11-22 20:45:53.732 VKUserAuthorization[7591:80b] OK: {
+					      "Creation time" = 1385138753;
+					      "Expiration time" = 1385225153;
+					      Permissions =     (
+					          wall
+					      );
+					      Token = 15f9365721d7d09099c2dca98407e92798c750b79cce7dac066aa803d633b4507cf93aeeaeb3aabfe45a3;
+					      "User ID" = 58487857;
+					  }
+				  </code>
+			  </pre>
 			</p>
-		  
+		 
           <h3>How to work with several users?</h3>
           <h3>How to make requests?</h3>
           <h3>How to work with VKRequestManager?</h3>
