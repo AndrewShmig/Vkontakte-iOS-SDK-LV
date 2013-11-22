@@ -23,7 +23,6 @@
 /* Begin PBXBuildFile section */
 		1A9A0024B9B75236BAB9CB97 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A01FAEB437DA940BE21D3 /* Default.png */; };
 		1A9A009F972265ECFA06DBB1 /* VKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0B7A0E64F8BE4D8A0C17 /* VKCache.m */; };
-		1A9A00B4D3AF676FD257DC78 /* UIWebView+Description.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0FE7C75FAFEA8CED3174 /* UIWebView+Description.m */; };
 		1A9A0141877511985424A31F /* VKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A0A89F1869B86FF4640F2 /* VKRequestManager.m */; };
 		1A9A02598E50190CB66C637D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A0C59427298DCF6A6DD29 /* Default@2x.png */; };
 		1A9A0356CF04E23A19A1C5C7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A0019D60C4FB08AA755A3 /* QuartzCore.framework */; };
@@ -60,7 +59,6 @@
 		1A9A029513763795734C257E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A9A03157252B971B6A162BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ASAViewController.xib; sourceTree = "<group>"; };
 		1A9A03B4B1B88B26D8772CA6 /* Project-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Project-Info.plist"; sourceTree = "<group>"; };
-		1A9A054A5A644AF014035538 /* UIWebView+Description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Description.h"; sourceTree = "<group>"; };
 		1A9A05FAE44D3C71D6613B6C /* VKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKUser.h; sourceTree = "<group>"; };
 		1A9A06044CE209AFCCB60357 /* ASAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAAppDelegate.h; sourceTree = "<group>"; };
 		1A9A064D45F3D050F1E4676D /* VKConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKConnector.m; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		1A9A0F7A97BF3D11E889C3DC /* VKStorageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKStorageItem.m; sourceTree = "<group>"; };
 		1A9A0F9EF162FA387C05FFA8 /* NSData+toBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+toBase64.h"; sourceTree = "<group>"; };
 		1A9A0FD641D02F238227222D /* VkontakteSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VkontakteSDK.h; sourceTree = "<group>"; };
-		1A9A0FE7C75FAFEA8CED3174 /* UIWebView+Description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Description.m"; sourceTree = "<group>"; };
 		D52DDC8E177EDDAF00E05B30 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D574AC57177DF1DF00DC36F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -158,8 +155,6 @@
 				1A9A00236C8F24A0E44CB5F5 /* NSData+toBase64.m */,
 				1A9A094ECB23864C9B4C8771 /* NSString+Utilities.m */,
 				1A9A00308D41BA3CFDCC958F /* NSString+Utilities.h */,
-				1A9A0FE7C75FAFEA8CED3174 /* UIWebView+Description.m */,
-				1A9A054A5A644AF014035538 /* UIWebView+Description.h */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -377,7 +372,6 @@
 				1A9A0F6126B57B03E0E0BC28 /* NSData+toBase64.m in Sources */,
 				1A9A0B4BB43792CCEAD9BD1F /* NSString+Utilities.m in Sources */,
 				1A9A047816D5F74AE920291A /* VKRequest.m in Sources */,
-				1A9A00B4D3AF676FD257DC78 /* UIWebView+Description.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +433,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -474,7 +468,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

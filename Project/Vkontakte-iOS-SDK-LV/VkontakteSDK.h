@@ -40,6 +40,5 @@
 
 #import "NSData+toBase64.h"
 #import "NSString+Utilities.h"
-#import "UIWebView+Description.h"
 
 #endif

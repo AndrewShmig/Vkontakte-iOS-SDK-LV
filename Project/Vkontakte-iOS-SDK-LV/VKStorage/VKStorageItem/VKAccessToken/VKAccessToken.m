@@ -36,9 +36,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    MV_LOG(@"%@", @{
-            @"aDecoder": aDecoder
-    });
+    LOG();
 
     self = [super init];
 
@@ -59,12 +57,7 @@
                       liveTime:(NSTimeInterval)liveTime
                    permissions:(NSArray *)permissions
 {
-    MV_LOG(@"%@", @{
-            @"userID": @(userID),
-            @"token": token,
-            @"liveTime": @(liveTime),
-            @"permissions": permissions
-    });
+    LOG();
 
     if (self = [super init]) {
         _userID = userID;
@@ -81,11 +74,7 @@
                    accessToken:(NSString *)token
                       liveTime:(NSTimeInterval)liveTime
 {
-    MV_LOG(@"%@", @{
-            @"userID": @(userID),
-            @"token": token,
-            @"liveTime": @(liveTime),
-    });
+    LOG();
 
     return [self initWithUserID:userID
                     accessToken:token
@@ -96,10 +85,7 @@
 - (instancetype)initWithUserID:(NSUInteger)userID
                    accessToken:(NSString *)token
 {
-    MV_LOG(@"%@", @{
-            @"userID": @(userID),
-            @"token": token,
-    });
+    LOG();
 
     return [self initWithUserID:userID
                     accessToken:token
@@ -109,7 +95,7 @@
 
 - (instancetype)init
 {
-    MV_LOG();
+    LOG();
 
     return [self initWithUserID:0
                     accessToken:@""
@@ -121,7 +107,7 @@
 
 - (NSString *)description
 {
-    MV_LOG();
+    LOG();
 
     NSDictionary *desc = @{
             @"User ID"         : @(self.userID),
@@ -136,9 +122,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    MV_LOG(@"%@", @{
-            @"aCoder": aCoder
-    });
+    LOG();
 
     [aCoder encodeInteger:_userID forKey:@"userID"];
     [aCoder encodeObject:_token forKey:@"token"];
@@ -149,9 +133,7 @@
 
 - (BOOL)isEqual:(VKAccessToken *)token
 {
-    MV_LOG(@"%@", @{
-            @"token": token
-    });
+    LOG();
 
     NSSet *currentSet = [NSSet setWithArray:self.permissions];
     NSSet *otherSet = [NSSet setWithArray:token.permissions];
@@ -163,7 +145,7 @@
 
 - (VKAccessToken *)copyWithZone:(NSZone *)zone
 {
-    MV_LOG();
+    LOG();
 
     VKAccessToken *copyToken = [[VKAccessToken alloc] init];
 
@@ -180,16 +162,14 @@
 
 - (BOOL)hasPermission:(NSString *)permission
 {
-    MV_LOG(@"%@", @{
-            @"permission": permission
-    });
+    LOG();
 
     return [self.permissions containsObject:permission];
 }
 
 - (BOOL)isExpired
 {
-    MV_LOG();
+    LOG();
 
     NSTimeInterval currentTimestamp = [[NSDate date] timeIntervalSince1970];
 
@@ -201,7 +181,7 @@
 
 - (BOOL)isValid
 {
-    MV_LOG();
+    LOG();
 
     return (nil != self.token && ![self isExpired]);
 }

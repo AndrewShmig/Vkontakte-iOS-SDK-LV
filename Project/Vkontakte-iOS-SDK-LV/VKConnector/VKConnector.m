@@ -46,7 +46,7 @@
 
 + (instancetype)sharedInstance
 {
-    
+    LOG();
 
     static VKConnector *instanceVKConnector = nil;
     static dispatch_once_t once;
@@ -66,7 +66,7 @@
                webView:(UIWebView *)webView
               delegate:(id <VKConnectorDelegate>)delegate
 {
-    
+    LOG();
 
     _permissions = permissions;
     _appID = appID;
@@ -121,7 +121,7 @@
 shouldStartLoadWithRequest:(NSURLRequest *)request
             navigationType:(UIWebViewNavigationType)navigationType
 {
-    
+    LOG();
 
     NSString *url = [[request URL] absoluteString];
 
@@ -135,7 +135,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    
+    LOG();
 
 //    останавливаем анимацию спинера
     [_activityIndicator stopAnimating];
@@ -206,7 +206,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    
+    LOG();
 
 //    запускаем анимацию спинера
     [_activityIndicator startAnimating];
@@ -215,7 +215,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)     webView:(UIWebView *)webView
 didFailLoadWithError:(NSError *)error
 {
-    
+    LOG();
 
     if ([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]) {
 
@@ -231,7 +231,7 @@ didFailLoadWithError:(NSError *)error
 
 - (BOOL)showVKModalViewForWebView:(UIWebView *)webView
 {
-    
+    LOG();
 
 //    получаем содержимое тега head
     NSString *html = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('head')[0].innerHTML"];
@@ -271,7 +271,7 @@ didFailLoadWithError:(NSError *)error
 
 - (void)clearCookies
 {
-    
+    LOG();
 
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
 

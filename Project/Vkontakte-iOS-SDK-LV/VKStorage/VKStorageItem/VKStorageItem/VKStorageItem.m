@@ -36,10 +36,7 @@
 - (instancetype)initWithAccessToken:(VKAccessToken *)token
                mainCacheStoragePath:(NSString *)path
 {
-    MV_LOG(@"%@", @{
-            @"token": token,
-            @"path": path
-    });
+    LOG();
 
     self = [super init];
 
@@ -54,16 +51,6 @@
     }
 
     return nil;
-}
-
-- (NSString *)description
-{
-    NSDictionary *desc = @{
-            @"token": self.accessToken,
-            @"cache": self.cache
-    };
-
-    return [desc description];
 }
 
 @end
