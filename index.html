@@ -30,6 +30,35 @@
         <section id="main-content">
 
           <h3>How to install?</h3>
+		  There are two ways to install Vkontakte iOS SDK: <a href="https://github.com/CocoaPods/Specs/tree/master/Vkontakte-iOS-SDK-LV">CocoaPods</a> and manually.<br/>
+		  Lets assume you know <a href="http://cocoapods.org">how to install</a> VK SDK using <a href="https://github.com/CocoaPods/Specs/tree/master/Vkontakte-iOS-SDK-LV">CocoaPods</a>.<br/>
+		  <br/>
+		  Installing Vkontakte iOS SDK is just simple as creating Podfile and running a command in terminal.<br/>
+		  1. Create Podfile in your project's directory and enter following lines:<br/>
+		  ````objective-c
+			  platform :ios, '5.0'
+			  pod 'Vkontakte-iOS-SDK-LV', '~> 4.1.16'
+		  ````  <br/><br/>
+		  2. Now you can install the dependencies in your project:<br/>
+		  <code>
+			  $ pod install
+		  </code></br><br/>
+		  Make sure to always open the Xcode workspace instead of the project file when building your project:
+		  <code>
+			  $ open App.xcworkspace
+		  </code><br/><br/>
+		  Now you can import your dependencies e.g.:<br/>
+		  <code>
+			  #import "VkontakteSDK.h"
+		  </code><br/></br>
+		  <br/>
+		  To install manually you need to follow these steps:<br/>
+		  1. Open your XCode project<br/>
+		  <img src="http://habrastorage.org/storage3/803/b37/c92/803b37c925f7ed9a2587b9932bd7a658.png"/><br/>
+		  2. Add Vkontakte iOS SDK to your project by draging&dropping Vkontakte-iOS-SDK-LV directory.<br/>
+		  <a href="http://habrastorage.org/storage3/e42/012/007/e420120078ae09b85d19740ba6d0a47c.png"><img src="http://habrastorage.org/storage3/e42/012/007/e420120078ae09b85d19740ba6d0a47c.png"/></a><br/>
+		  3. Profit!!!<br/>
+		  
           <h3>How to authorize user?</h3>
           <h3>How to work with several users?</h3>
           <h3>How to make requests?</h3>
