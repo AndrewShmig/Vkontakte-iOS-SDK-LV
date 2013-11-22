@@ -68,47 +68,47 @@
 			  <a href="http://habrastorage.org/storage3/342/534/04e/34253404e9fa7befc1ec318b3fe53149.png"><img src="http://habrastorage.org/storage3/55a/f61/5de/55af615deeace42f0ade354a72f18b23.png"/></a>
 			  
 			  Make your ViewController.h file look like:
-			  <pre>
-				  <code>
-					  #import <UIKit/UIKit.h>
-					  #import "VkontakteSDK.h"
+<pre>
+<code>
+#import <UIKit/UIKit.h>
+#import "VkontakteSDK.h"
 
-					  @interface ViewController : UIViewController <VKConnectorDelegate>
+@interface ViewController : UIViewController <VKConnectorDelegate>
 
-					  @end
-				  </code>
-			  </pre>
+@end
+</code>
+</pre>   	   	   	  
 			  
 			  and ViewController.m file:
-			  <pre>
-				  <code>
-					  #import "ViewController.h"
+<pre>
+<code>
+#import "ViewController.h"
 
 
-					  @implementation ViewController
-					  {
-					      UIWebView *_webView;
-					  }
+@implementation ViewController
+{
+UIWebView *_webView;
+}
 
-					  - (void)viewDidLoad
-					  {
-					      [super viewDidLoad];
-					  	// Do any additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad
+{
+[super viewDidLoad];
+// Do any additional setup after loading the view, typically from a nib.
 
-					      CGRect frame = [[UIScreen mainScreen] bounds];
-					      _webView = [[UIWebView alloc] initWithFrame:frame];
-					      [self.view addSubview:_webView];
+CGRect frame = [[UIScreen mainScreen] bounds];
+_webView = [[UIWebView alloc] initWithFrame:frame];
+[self.view addSubview:_webView];
 
-					      [[VKConnector sharedInstance] startWithAppID:@"3899649"
-					                                        permissons:@[@"wall"]
-					                                           webView:_webView
-					                                          delegate:self];
-					  }
+[[VKConnector sharedInstance] startWithAppID:@"3899649"
+      permissons:@[@"wall"]
+     webView:_webView
+    delegate:self];
+}
 
-					  #pragma mark - VKConnectorDelegate
+#pragma mark - VKConnectorDelegate
 
-					  - (void)        VKConnector:(VKConnector *)connector
-					  accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+- (void)        VKConnector:(VKConnector *)connector
+accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 					  {
 					      NSLog(@"OK: %@", accessToken);
 					  }
@@ -127,7 +127,7 @@
 			  <img src="http://habrastorage.org/storage3/529/92c/d86/52992cd86a355a172a9bc0487dd3cae7.png"/>
 			  
 			  After entering login and password and tapping "Log in" button you should receive access token information in console, it should look something like:
-			  <pre>
+<pre>
 				  <code>
 					  2013-11-22 20:45:53.732 VKUserAuthorization[7591:80b] OK: {
 					      "Creation time" = 1385138753;
