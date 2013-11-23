@@ -71,8 +71,12 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
     VKRequestManager *rm = [[VKRequestManager alloc]
                                               initWithDelegate:self
                                                           user:[VKUser currentUser]];
+    rm.startAllRequestsImmediately = NO;
+    VKRequest *r = [rm friendsGet:nil];
+    r.cacheLiveTime = VKCacheLiveTimeNever;
+    r.signature = @"Hello world!";
 
-    [rm friendsGet:nil];
+    [r start];
 }
 
 - (void)   VKConnector:(VKConnector *)connector
@@ -86,6 +90,7 @@ connectionErrorOccured:(NSError *)error
          response:(id)response
 {
     NSLog(@"%s", __FUNCTION__);
+    NSLog(@"request: %@", request);
     NSLog(@"response: %@", response);
 }
 

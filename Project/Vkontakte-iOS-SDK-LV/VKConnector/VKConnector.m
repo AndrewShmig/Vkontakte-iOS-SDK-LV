@@ -46,7 +46,7 @@
 
 + (instancetype)sharedInstance
 {
-    LOG();
+    VK_LOG();
 
     static VKConnector *instanceVKConnector = nil;
     static dispatch_once_t once;
@@ -66,7 +66,12 @@
                webView:(UIWebView *)webView
               delegate:(id <VKConnectorDelegate>)delegate
 {
-    LOG();
+    VK_LOG(@"%@", @{
+            @"webView": webView,
+            @"appID": appID,
+            @"permissions": permissions,
+            @"delegate": delegate
+    });
 
     _permissions = permissions;
     _appID = appID;
@@ -121,7 +126,11 @@
 shouldStartLoadWithRequest:(NSURLRequest *)request
             navigationType:(UIWebViewNavigationType)navigationType
 {
-    LOG();
+    VK_LOG(@"%@", @{
+            @"webView": webView,
+            @"request": request,
+            @"navigationType": @(navigationType)
+    });
 
     NSString *url = [[request URL] absoluteString];
 
@@ -135,7 +144,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    LOG();
+    VK_LOG();
 
 //    останавливаем анимацию спинера
     [_activityIndicator stopAnimating];
@@ -206,7 +215,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    LOG();
+    VK_LOG();
 
 //    запускаем анимацию спинера
     [_activityIndicator startAnimating];
@@ -215,7 +224,10 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)     webView:(UIWebView *)webView
 didFailLoadWithError:(NSError *)error
 {
-    LOG();
+    VK_LOG(@"%@", @{
+            @"webView": webView,
+            @"error": error
+    });
 
     if ([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]) {
 
@@ -231,7 +243,9 @@ didFailLoadWithError:(NSError *)error
 
 - (BOOL)showVKModalViewForWebView:(UIWebView *)webView
 {
-    LOG();
+    VK_LOG(@"%@", @{
+            @"webView": webView
+    });
 
 //    получаем содержимое тега head
     NSString *html = [webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('head')[0].innerHTML"];
@@ -271,7 +285,7 @@ didFailLoadWithError:(NSError *)error
 
 - (void)clearCookies
 {
-    LOG();
+    VK_LOG();
 
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
 

@@ -28,12 +28,23 @@
 #ifndef Project_VkontakteSDK_Logger____FILEEXTENSION___
 #define Project_VkontakteSDK_Logger____FILEEXTENSION___
 
-#define VKONTAKTE_DEBUG_MODE 1
+#define VK_SILENT_LOGS 0
+#define VK_VERBOSE_LOGS 1
+#define VK_MEGA_VERBOSE_LOGS 2
 
-#if VKONTAKTE_DEBUG_MODE
-#define LOG() NSLog(@"%s", __FUNCTION__)
-#else
-#define LOG() /**/
+#define VK_LOG_MODE VK_MEGA_VERBOSE_LOGS // Current log level
+
+#if VK_LOG_MODE == VK_MEGA_VERBOSE_LOGS
+#   define VK_LOG(format, ...)\
+    @try {\
+        NSLog(@"(%d, %@, %@) " format, __LINE__, [self class], NSStringFromSelector(_cmd), ##__VA_ARGS__);\
+    } @catch (NSException *e) {\
+        NSLog(@"!!!EXCEPTION OCCURED!!! (%d, %@, %@): %@", __LINE__, [self class], NSStringFromSelector(_cmd), e);\
+    }
+#elif VK_LOG_MODE == VK_VERBOSE_LOGS
+#   define VK_LOG(format, ...) NSLog(@"(%d, %@, %@)", __LINE__, [self class], NSStringFromSelector(_cmd))
+#elif VK_LOG_MODE == VK_SILENT_LOGS
+#   define VK_LOG(format, ...) /**/
 #endif
 
 #endif

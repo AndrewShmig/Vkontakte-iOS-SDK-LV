@@ -1,9 +1,28 @@
 //
-//  VKRequestManager.m
-//  Project
+// Created by AndrewShmig on 6/28/13.
 //
-//  Created by SD on 10/7/13.
-//  Copyright (c) 2013 AndrewShmig. All rights reserved.
+// Copyright (c) 2013 Andrew Shmig
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the "Software"), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or
+// sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 //
 #import "VKRequestManager.h"
 #import "VkontakteSDK_Logger.h"
@@ -16,6 +35,11 @@
 - (instancetype)initWithDelegate:(id <VKRequestDelegate>)delegate
                             user:(VKUser *)user
 {
+    VK_LOG(@"%@", @{
+            @"delegate": delegate,
+            @"user": user
+    });
+
     self = [super init];
 
     if (self) {
@@ -31,7 +55,9 @@
 
 - (VKRequest *)info
 {
-    if (!self.user) return nil;
+    if (!self.user) {
+        return nil;
+    }
 
     NSDictionary *options = @{
             @"uids"   : @(self.user.accessToken.userID),
@@ -2466,13 +2492,12 @@
 
 - (NSDictionary *)addAccessTokenKey:(NSDictionary *)options
 {
-    NSMutableDictionary *ops;
+    VK_LOG(@"%@", @{
+            @"options": options
+    });
 
-    if (nil == options) {
-        ops = [[NSMutableDictionary alloc] init];
-    } else {
-        ops = [options mutableCopy];
-    }
+    NSMutableDictionary *ops;
+    ops = [options mutableCopy];
 
     ops[@"access_token"] = self.user.accessToken.token;
 
@@ -2484,6 +2509,20 @@
                                        option:(NSDictionary *)options
                                      selector:(SEL)selector
 {
+    //    logging
+    VK_LOG(@"%@", @{
+            @"httpMethod": httpMethod,
+            @"methodName": methodName,
+            @"options": options,
+            @"selector": NSStringFromSelector(selector)
+    });
+
+//    lets not work with nil values
+    if(nil == options) {
+        options = [[NSMutableDictionary alloc] init];
+    }
+
+//    adding access token if needed
     if (nil != self.user) {
         options = [self addAccessTokenKey:options];
     }

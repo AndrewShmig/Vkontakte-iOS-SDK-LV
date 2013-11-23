@@ -38,7 +38,9 @@
 
 - (instancetype)initWithStorageItem:(VKStorageItem *)storageItem
 {
-    LOG();
+    VK_LOG(@"%@", @{
+            @"storageItem": storageItem
+    });
 
     self = [super init];
 
@@ -55,7 +57,7 @@ static VKUser *_currentUser;
 
 + (instancetype)currentUser
 {
-    LOG();
+    VK_LOG();
 
     if (nil == _currentUser) {
 //        пользователь еще не был запрошен и не был установлен активным
@@ -82,7 +84,9 @@ static VKUser *_currentUser;
 
 + (BOOL)activateUserWithID:(NSUInteger)userID
 {
-    LOG();
+    VK_LOG(@"%@", @{
+            @"userID": @(userID)
+    });
 
     VKStorageItem *storageItem = [[VKStorage sharedStorage]
                                              storageItemForUserID:userID];
@@ -97,7 +101,7 @@ static VKUser *_currentUser;
 
 + (NSArray *)localUsers
 {
-    LOG();
+    VK_LOG();
 
     NSMutableArray *localUsers = [[NSMutableArray alloc] init];
 
@@ -112,13 +116,11 @@ static VKUser *_currentUser;
     return localUsers;
 }
 
-
-
 #pragma mark - Setters & Getters
 
 - (VKAccessToken *)accessToken
 {
-    LOG();
+    VK_LOG();
 
     return _storageItem.accessToken;
 }
@@ -127,7 +129,7 @@ static VKUser *_currentUser;
 
 - (NSString *)description
 {
-    LOG();
+    VK_LOG();
 
     return [_storageItem.accessToken description];
 }
