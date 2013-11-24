@@ -1,4 +1,5 @@
 #Vkontakte
+Can be found here: https://vk.com
 VK (Originally VKontakte, Russian: ВКонтакте, literally "in contact") is the second biggest social network service in Europe after Facebook. It is available in several languages but popular particularly among Russian-speaking users around the world, especially in Russia, Ukraine, Azerbaijan, Kazakhstan, Moldova, Belarus, and Israel.
 
 #Build status
@@ -7,7 +8,7 @@ VK (Originally VKontakte, Russian: ВКонтакте, literally "in contact") i
 #Documentation & Examples & Etc
 Additional and latest documentation, hacks and features you can find [here](http://andrewshmig.github.io/Vkontakte-iOS-SDK-LV).
 
-#Vkontakte iOS SDK
+#Vkontakte SDK
 Feature requests can be left [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
 List of all versions can be found [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases).
 
