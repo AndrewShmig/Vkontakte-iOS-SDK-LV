@@ -144,6 +144,42 @@ from now on you can make requests from user's behalf.
 			</p>
 		 
           <h3>How to work with several users?</h3>
+		  <p>There are four methods you should know how to use.
+		  3 of these methods are VKUser's and one VKConnector's.</p>
+		  
+		  <p>Lets start from basic example: your app should allow two or more users to log in, perform some action (like, repost, send private message etc) and log out.
+		  When first user logs in, a record is made in VKStorage and his access token is saved + UIWebView saves cookies (thats what exactly prevents user to
+		  enter his login and password each time he enters your app). To remove cookies which were stored by UIWebView after first user has logged in you should call
+		  VKConnector's clearCookies method. After removing these cookies second user can log in and use your app (while first user's access token is still stored in 
+		  VKStorage and can be activated at any time). And so on and so forth.</p>
+		  
+		  <p>VKUser class has 3 useful method. Lets talk about them.
+		  First one is "+ (NSArray *)localUsers" which will return a list of all user IDs, users who authorized your app. 
+		  Currently there is no way to remove saved access tokens (it may change sometime, but there is no point in it: don't need - don't use).</p>
+		  
+		  <p>Second one is "+ (BOOL)activateUserWithID:", which will return YES/NO if passed ID is valid and belongs to a valid (existing) user.
+		  You can easily switch between active users and perform requests from their behalf.</p>
+		  
+		  <p>Third one is "+ (instancetype)currentUser" which returns currently active user. To understand this method lets describe two examples (these situations
+		  are also described in documentation, so its just a copy-paste):</p>
+
+<pre><code>
+// user A authorized
+// user B authorized
+// user C authorized
+[VKUser currentUser] // random user will be activated - A or B or C
+</pre></code>
+
+		  <p>Second example:</p>
+<pre><code>
+// user A authorized
+[VKUser currentUser] // user A becomes active user
+// user B authorized, but A is still active
+// user C authorized, but A is still active
+// so on.
+</pre></code>		  
+	      <p>So its really important to understand when to call "+ (instancetype)currentUser" method.</p>
+		  
           <h3>How to make requests?</h3>
           <h3>How to work with VKRequestManager?</h3>
           <h3>How to work with VKConnector and VKConnectorDelegate?</h3>
