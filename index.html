@@ -181,11 +181,459 @@ from now on you can make requests from user's behalf.
 	      <p>So its really important to understand when to call "+ (instancetype)currentUser" method.</p>
 		  
           <h3>How to make requests?</h3>
-          <h3>How to work with VKRequestManager?</h3>
-          <h3>How to work with VKConnector and VKConnectorDelegate?</h3>
-          <h3>How to work with VKRequest and VKRequestDelegate?</h3>
-          <h3>How to cache data? Cache life time, offline mode. Basic.</h3>
-          <h3>How to cache data? Cache mp3, video, etc. Advanced.</h3>
+		  There are two ways of making a request:<br/>
+		  1. Using VKRequestManager<br/>
+		  2. Using VKRequest<br/><br/>
+		  
+		  <p>Lets start from first one.</p>
+		  <p>
+			  We need to create an instance of VKRequestManager class, and thats how we do it:
+<pre>
+<code>
+    VKRequestManager *rm = [[VKRequestManager alloc]
+                                              initWithDelegate:self
+                                                          user:[VKUser currentUser]];
+</code>
+</pre>
+
+Self must conform to VKRequestDelegate protocol. 
+After creating VKRequestManager instance variable, we can perform predefined requests as showed here:
+<pre>
+<code>
+[rm info];	
+</code>
+</pre>
+or here:
+<pre>
+<code>
+	[rm friendsGet:@{
+	            @"limit": @(10),
+	            @"offset": @(10),
+	            @"fields": @"nickname,email,photo_big"
+	    }];
+</code>
+</pre>
+or here:
+<pre>
+<code>
+[rm friendsGet:nil];
+</code>
+</pre>
+and so on.
+
+To obtain a response (server respons) we need to add (implement) an additional method:
+<pre>
+<code>
+	- (void)VKRequest:(VKRequest *)request response:(id)response
+	{
+		// code here
+	}
+</code>
+</pre>
+
+So your bare code (we are getting a list of friends of currently logged user) could look something like this:
+<pre>
+<code>
+	#import "ViewController.h"
+
+
+	@implementation ViewController
+	{
+	    UIWebView *_webView;
+	}
+
+	- (void)viewDidLoad
+	{
+	    [super viewDidLoad];
+		// Do any additional setup after loading the view, typically from a nib.
+
+	    CGRect frame = [[UIScreen mainScreen] bounds];
+	    _webView = [[UIWebView alloc] initWithFrame:frame];
+	    [self.view addSubview:_webView];
+
+	    [[VKConnector sharedInstance] startWithAppID:@"3899649"
+	                                      permissons:@[@"wall"]
+	                                         webView:_webView
+	                                        delegate:self];
+	}
+
+	#pragma mark - VKConnectorDelegate
+
+	- (void)        VKConnector:(VKConnector *)connector
+	accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+	{
+	    NSLog(@"OK: %@", accessToken);
+
+	    VKRequestManager *rm = [[VKRequestManager alloc]
+	                                              initWithDelegate:self
+	                                                          user:[VKUser currentUser]];
+
+	    [rm friendsGet:nil];
+	}
+
+	- (void)VKRequest:(VKRequest *)request response:(id)response
+	{
+	    NSLog(@"response: %@", response);
+	}
+
+	- (void)     VKConnector:(VKConnector *)connector
+	accessTokenRenewalFailed:(VKAccessToken *)accessToken
+	{
+	    NSLog(@"User denied to authorize app.");
+	}
+
+	- (void)   VKConnector:(VKConnector *)connector
+	connectionErrorOccured:(NSError *)error
+	{
+	    NSLog(@"Connection error!");
+	}
+
+	@end
+</code>
+</pre>
+
+And after building and running your application you should receive something like this in console window:
+<pre>
+<code>
+	2013-11-28 20:43:48.720 VKUserAuthorization[33459:80b] +[VKConnector sharedInstance]
+	2013-11-28 20:43:48.723 VKUserAuthorization[33459:80b] -[VKConnector startWithAppID:permissons:webView:delegate:]
+	2013-11-28 20:43:48.874 VKUserAuthorization[33459:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 20:43:48.877 VKUserAuthorization[33459:80b] -[VKConnector webViewDidStartLoad:]
+	2013-11-28 20:43:49.707 VKUserAuthorization[33459:80b] -[VKConnector webViewDidFinishLoad:]
+	2013-11-28 20:43:49.707 VKUserAuthorization[33459:80b] -[VKConnector showVKModalViewForWebView:]
+	2013-11-28 20:43:49.712 VKUserAuthorization[33459:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 20:43:49.713 VKUserAuthorization[33459:80b] -[VKConnector webViewDidStartLoad:]
+	2013-11-28 20:43:50.331 VKUserAuthorization[33459:80b] -[VKConnector webViewDidFinishLoad:]
+	2013-11-28 20:43:50.332 VKUserAuthorization[33459:80b] -[VKConnector showVKModalViewForWebView:]
+	2013-11-28 20:44:09.832 VKUserAuthorization[33459:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 20:44:09.840 VKUserAuthorization[33459:80b] -[VKConnector webViewDidStartLoad:]
+	2013-11-28 20:44:11.547 VKUserAuthorization[33459:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 20:44:12.467 VKUserAuthorization[33459:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 20:44:13.343 VKUserAuthorization[33459:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 20:44:13.389 VKUserAuthorization[33459:80b] -[VKConnector webViewDidFinishLoad:]
+	2013-11-28 20:44:13.391 VKUserAuthorization[33459:80b] -[VKAccessToken initWithUserID:accessToken:liveTime:permissions:]
+	2013-11-28 20:44:13.391 VKUserAuthorization[33459:80b] +[VKStorage sharedStorage]
+	2013-11-28 20:44:13.391 VKUserAuthorization[33459:80b] -[VKStorage init]
+	2013-11-28 20:44:13.392 VKUserAuthorization[33459:80b] -[VKStorage loadStorage]
+	2013-11-28 20:44:13.392 VKUserAuthorization[33459:80b] -[VKStorage fullCacheStoragePath]
+	2013-11-28 20:44:13.393 VKUserAuthorization[33459:80b] -[VKStorage createStorageItemForAccessToken:]
+	2013-11-28 20:44:13.393 VKUserAuthorization[33459:80b] -[VKStorage fullCacheStoragePath]
+	2013-11-28 20:44:13.393 VKUserAuthorization[33459:80b] -[VKStorageItem initWithAccessToken:mainCacheStoragePath:]
+	2013-11-28 20:44:13.394 VKUserAuthorization[33459:80b] -[VKAccessToken copyWithZone:]
+	2013-11-28 20:44:13.394 VKUserAuthorization[33459:80b] -[VKAccessToken init]
+	2013-11-28 20:44:13.394 VKUserAuthorization[33459:80b] -[VKAccessToken initWithUserID:accessToken:liveTime:permissions:]
+	2013-11-28 20:44:13.394 VKUserAuthorization[33459:80b] -[VKCache initWithCacheDirectory:]
+	2013-11-28 20:44:13.395 VKUserAuthorization[33459:80b] -[VKCache createDirectoryIfNotExists:]
+	2013-11-28 20:44:13.395 VKUserAuthorization[33459:80b] +[VKStorage sharedStorage]
+	2013-11-28 20:44:13.395 VKUserAuthorization[33459:80b] -[VKStorage storeItem:]
+	2013-11-28 20:44:13.396 VKUserAuthorization[33459:80b] -[VKStorage saveStorage]
+	2013-11-28 20:44:13.396 VKUserAuthorization[33459:80b] -[VKAccessToken encodeWithCoder:]
+	2013-11-28 20:44:13.396 VKUserAuthorization[33459:80b] -[VKAccessToken description]
+	2013-11-28 20:44:13.397 VKUserAuthorization[33459:80b] OK: {
+	    "Creation time" = 1385657053;
+	    "Expiration time" = 1385743453;
+	    Permissions =     (
+	        wall
+	    );
+	    Token = fe3cbb2d27a3acf0be326bfe5557bdc8bd1d94d7bb723454c9a94ef83e19254f1ed80766c281ac0059d1f;
+	    "User ID" = 58487857;
+	}
+	2013-11-28 20:44:13.398 VKUserAuthorization[33459:80b] +[VKUser currentUser]
+	2013-11-28 20:44:13.398 VKUserAuthorization[33459:80b] +[VKStorage sharedStorage]
+	2013-11-28 20:44:13.399 VKUserAuthorization[33459:80b] -[VKStorage isEmpty]
+	2013-11-28 20:44:13.399 VKUserAuthorization[33459:80b] +[VKStorage sharedStorage]
+	2013-11-28 20:44:13.399 VKUserAuthorization[33459:80b] -[VKStorage storageItems]
+	2013-11-28 20:44:13.399 VKUserAuthorization[33459:80b] -[VKUser initWithStorageItem:]
+	2013-11-28 20:44:13.401 VKUserAuthorization[33459:80b] -[VKUser accessToken]
+	2013-11-28 20:44:13.401 VKUserAuthorization[33459:80b] +[VKRequest requestMethod:options:delegate:]
+	2013-11-28 20:44:13.402 VKUserAuthorization[33459:80b] -[VKRequest initWithMethod:options:]
+	2013-11-28 20:44:13.402 VKUserAuthorization[33459:80b] -[VKRequest initWithRequest:]
+	2013-11-28 20:44:13.402 VKUserAuthorization[33459:80b] -[VKRequest start]
+	2013-11-28 20:44:13.402 VKUserAuthorization[33459:80b] +[VKUser currentUser]
+	2013-11-28 20:44:13.403 VKUserAuthorization[33459:80b] +[VKStorage sharedStorage]
+	2013-11-28 20:44:13.403 VKUserAuthorization[33459:80b] -[VKUser accessToken]
+	2013-11-28 20:44:13.403 VKUserAuthorization[33459:80b] -[VKStorage storageItemForUserID:]
+	2013-11-28 20:44:13.404 VKUserAuthorization[33459:80b] -[VKUser accessToken]
+	2013-11-28 20:44:13.404 VKUserAuthorization[33459:80b] +[VKStorage sharedStorage]
+	2013-11-28 20:44:13.404 VKUserAuthorization[33459:80b] -[VKStorage storageItemForUserID:]
+	2013-11-28 20:44:13.405 VKUserAuthorization[33459:80b] -[VKRequest removeAccessTokenFromURL:]
+	2013-11-28 20:44:13.406 VKUserAuthorization[33459:80b] -[VKCache cacheForURL:offlineMode:]
+	2013-11-28 20:44:13.406 VKUserAuthorization[33459:80b] -[VKConnector showVKModalViewForWebView:]
+	2013-11-28 20:44:14.327 VKUserAuthorization[33459:80b] -[VKRequest connection:didReceiveResponse:]
+	2013-11-28 20:44:14.328 VKUserAuthorization[33459:80b] -[VKRequest connection:didReceiveData:]
+	2013-11-28 20:44:14.328 VKUserAuthorization[33459:80b] -[VKRequest connectionDidFinishLoading:]
+	2013-11-28 20:44:14.329 VKUserAuthorization[33459:80b] +[VKUser currentUser]
+	2013-11-28 20:44:14.329 VKUserAuthorization[33459:80b] +[VKStorage sharedStorage]
+	2013-11-28 20:44:14.330 VKUserAuthorization[33459:80b] -[VKUser accessToken]
+	2013-11-28 20:44:14.330 VKUserAuthorization[33459:80b] -[VKStorage storageItemForUserID:]
+	2013-11-28 20:44:14.330 VKUserAuthorization[33459:80b] -[VKUser accessToken]
+	2013-11-28 20:44:14.330 VKUserAuthorization[33459:80b] +[VKStorage sharedStorage]
+	2013-11-28 20:44:14.331 VKUserAuthorization[33459:80b] -[VKStorage storageItemForUserID:]
+	2013-11-28 20:44:14.331 VKUserAuthorization[33459:80b] -[VKRequest removeAccessTokenFromURL:]
+	2013-11-28 20:44:14.331 VKUserAuthorization[33459:80b] -[VKCache addCache:forURL:liveTime:]
+	2013-11-28 20:44:14.332 VKUserAuthorization[33459:80b] response: {
+	    response =     (
+	        322848,
+	        376212,
+	        507272,
+	        2327520,
+	        2548347,
+	        2624137,
+	        2750905,
+	        2856088,
+	        3164123,
+	        3206773,
+	        4010380,
+	        4297107,
+	        5084302,
+	        7081866,
+	        7577135,
+	        8243206,
+	        8920508,
+	        9178255,
+	        10031739,
+	        10838645,
+	        10911476,
+	        11778800,
+	        11947792,
+	        15149272,
+	        15573132,
+	        15921003,
+	        16792312,
+	        16851968,
+	        17184966,
+	        17782253,
+	        20532993,
+	        21771478,
+	        22173558,
+	        22785589,
+	        23609851,
+	        23784153,
+	        24143236,
+	        24475069,
+	        25430545,
+	        27118751,
+	        31346972,
+	        31629215,
+	        37274850,
+	        48453399,
+	        49281108,
+	        50390804,
+	        52147797,
+	        56670089,
+	        61571061,
+	        63189055,
+	        64326042,
+	        67370461,
+	        67751325,
+	        67880040,
+	        68315214,
+	        69291907,
+	        69506454,
+	        69737976,
+	        72789367,
+	        75139819,
+	        78713631,
+	        81204560,
+	        85885949,
+	        91488429,
+	        97016184,
+	        97424793,
+	        99572341,
+	        100102831,
+	        102780044,
+	        104404576,
+	        104785356,
+	        121626998,
+	        129106536,
+	        129632702,
+	        131750913,
+	        132658283,
+	        136505118,
+	        136520130,
+	        137183887,
+	        139039565,
+	        146236822,
+	        146504369,
+	        151785025,
+	        154571733,
+	        166317564,
+	        176343194,
+	        177420079,
+	        186012269,
+	        193168637,
+	        193806348,
+	        194385523,
+	        198632468,
+	        215372017,
+	        227357584
+	    );
+	}
+</code>
+</pre>
+
+You can also set some request properties to have more control over your requests.
+For example you can set "startAllRequestsImmediately" property to NO and start a request when user presses a button or makes another action.
+Simple example:
+<pre>
+<code>
+	- (void)        VKConnector:(VKConnector *)connector
+	accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+	{
+	    NSLog(@"OK: %@", accessToken);
+
+	    VKRequestManager *rm = [[VKRequestManager alloc]
+	                                              initWithDelegate:self
+	                                                          user:[VKUser currentUser]];
+
+	    rm.startAllRequestsImmediately = NO;
+
+	    VKRequest *friends = [rm friendsGet:nil];
+	    [friends start];
+	}
+</code>
+</pre>
+If you need to control what requests should be cached more aggressivly you can write something like this:
+<pre>
+<code>
+	- (void)        VKConnector:(VKConnector *)connector
+	accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+	{
+	    NSLog(@"OK: %@", accessToken);
+
+	    VKRequestManager *rm = [[VKRequestManager alloc]
+	                                              initWithDelegate:self
+	                                                          user:[VKUser currentUser]];
+
+	    rm.startAllRequestsImmediately = NO;
+
+	    VKRequest *friends = [rm friendsGet:nil];
+    
+	    friends.cacheLiveTime = VKCacheLiveTimeOneDay;
+	    friends.signature = @"blah-blah-blah";
+	    friends.offlineMode = YES;
+
+	    [friends start];
+	}
+</code>
+</pre>
+In code above I have demonstrated that its also possible to set a signature and offlineMode.</p>
+
+<h1>Important</h1>
+<p>Please, note that BEFORE actual request is made, SDK looks for early cached data for this request and if it finds it then this data is returned, and just AFTER 
+that the request is performed to UPDATE cached data (if any error occures during update proccess then data is not updated, it remains still).
+Note also, that this only works if you DON'T use VKCacheLiveTimeNever option for cacheLiveTime property.</p>
+
+<p>
+	Lets now move on to our second method of making requests.
+
+	Here is an example of using a VKRequest class:
+<pre>
+<code>
+	- (void)        VKConnector:(VKConnector *)connector
+	accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+	{
+	    NSLog(@"OK: %@", accessToken);
+
+	    VKRequest *request = [[VKRequest alloc]
+	            initWithMethod:@"users.get"
+	                   options:@{
+	                           @"access_token": [VKUser currentUser].accessToken.token
+	                   }];
+
+	    request.delegate = self;
+	    request.signature = @"blah-blah-blah";
+	    request.cacheLiveTime = VKCacheLiveTimeNever;
+
+	    [request start];
+	}
+</code>
+</pre>
+
+After running your app you should receive something like this:
+<pre>
+<code>
+	2013-11-28 21:10:35.987 VKUserAuthorization[33910:80b] +[VKConnector sharedInstance]
+	2013-11-28 21:10:36.005 VKUserAuthorization[33910:80b] -[VKConnector startWithAppID:permissons:webView:delegate:]
+	2013-11-28 21:10:36.312 VKUserAuthorization[33910:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 21:10:36.314 VKUserAuthorization[33910:80b] -[VKConnector webViewDidStartLoad:]
+	2013-11-28 21:10:36.849 VKUserAuthorization[33910:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 21:10:37.329 VKUserAuthorization[33910:80b] -[VKConnector webView:shouldStartLoadWithRequest:navigationType:]
+	2013-11-28 21:10:38.192 VKUserAuthorization[33910:80b] -[VKConnector webViewDidFinishLoad:]
+	2013-11-28 21:10:38.193 VKUserAuthorization[33910:80b] -[VKAccessToken initWithUserID:accessToken:liveTime:permissions:]
+	2013-11-28 21:10:38.193 VKUserAuthorization[33910:80b] +[VKStorage sharedStorage]
+	2013-11-28 21:10:38.194 VKUserAuthorization[33910:80b] -[VKStorage init]
+	2013-11-28 21:10:38.194 VKUserAuthorization[33910:80b] -[VKStorage loadStorage]
+	2013-11-28 21:10:38.194 VKUserAuthorization[33910:80b] -[VKAccessToken initWithCoder:]
+	2013-11-28 21:10:38.195 VKUserAuthorization[33910:80b] -[VKStorage fullCacheStoragePath]
+	2013-11-28 21:10:38.195 VKUserAuthorization[33910:80b] -[VKStorageItem initWithAccessToken:mainCacheStoragePath:]
+	2013-11-28 21:10:38.195 VKUserAuthorization[33910:80b] -[VKAccessToken copyWithZone:]
+	2013-11-28 21:10:38.196 VKUserAuthorization[33910:80b] -[VKAccessToken init]
+	2013-11-28 21:10:38.196 VKUserAuthorization[33910:80b] -[VKAccessToken initWithUserID:accessToken:liveTime:permissions:]
+	2013-11-28 21:10:38.196 VKUserAuthorization[33910:80b] -[VKCache initWithCacheDirectory:]
+	2013-11-28 21:10:38.197 VKUserAuthorization[33910:80b] -[VKCache createDirectoryIfNotExists:]
+	2013-11-28 21:10:38.197 VKUserAuthorization[33910:80b] -[VKStorage fullCacheStoragePath]
+	2013-11-28 21:10:38.197 VKUserAuthorization[33910:80b] -[VKStorage createStorageItemForAccessToken:]
+	2013-11-28 21:10:38.198 VKUserAuthorization[33910:80b] -[VKStorage fullCacheStoragePath]
+	2013-11-28 21:10:38.198 VKUserAuthorization[33910:80b] -[VKStorageItem initWithAccessToken:mainCacheStoragePath:]
+	2013-11-28 21:10:38.198 VKUserAuthorization[33910:80b] -[VKAccessToken copyWithZone:]
+	2013-11-28 21:10:38.199 VKUserAuthorization[33910:80b] -[VKAccessToken init]
+	2013-11-28 21:10:38.199 VKUserAuthorization[33910:80b] -[VKAccessToken initWithUserID:accessToken:liveTime:permissions:]
+	2013-11-28 21:10:38.199 VKUserAuthorization[33910:80b] -[VKCache initWithCacheDirectory:]
+	2013-11-28 21:10:38.199 VKUserAuthorization[33910:80b] -[VKCache createDirectoryIfNotExists:]
+	2013-11-28 21:10:38.199 VKUserAuthorization[33910:80b] +[VKStorage sharedStorage]
+	2013-11-28 21:10:38.200 VKUserAuthorization[33910:80b] -[VKStorage storeItem:]
+	2013-11-28 21:10:38.200 VKUserAuthorization[33910:80b] -[VKStorage saveStorage]
+	2013-11-28 21:10:38.200 VKUserAuthorization[33910:80b] -[VKAccessToken encodeWithCoder:]
+	2013-11-28 21:10:38.201 VKUserAuthorization[33910:80b] -[VKAccessToken description]
+	2013-11-28 21:10:38.201 VKUserAuthorization[33910:80b] OK: {
+	    "Creation time" = 1385658638;
+	    "Expiration time" = 1385745038;
+	    Permissions =     (
+	        wall
+	    );
+	    Token = 0ac7158dd3bdc65d4b003aa48b613ea900751523a74f4ba5f66be00bb584e043a9a1f4bf511e495ffd766;
+	    "User ID" = 58487857;
+	}
+	2013-11-28 21:10:38.201 VKUserAuthorization[33910:80b] +[VKUser currentUser]
+	2013-11-28 21:10:38.202 VKUserAuthorization[33910:80b] +[VKStorage sharedStorage]
+	2013-11-28 21:10:38.202 VKUserAuthorization[33910:80b] -[VKStorage isEmpty]
+	2013-11-28 21:10:38.202 VKUserAuthorization[33910:80b] +[VKStorage sharedStorage]
+	2013-11-28 21:10:38.202 VKUserAuthorization[33910:80b] -[VKStorage storageItems]
+	2013-11-28 21:10:38.202 VKUserAuthorization[33910:80b] -[VKUser initWithStorageItem:]
+	2013-11-28 21:10:38.203 VKUserAuthorization[33910:80b] -[VKUser accessToken]
+	2013-11-28 21:10:38.203 VKUserAuthorization[33910:80b] -[VKRequest initWithMethod:options:]
+	2013-11-28 21:10:38.203 VKUserAuthorization[33910:80b] -[VKRequest initWithRequest:]
+	2013-11-28 21:10:38.203 VKUserAuthorization[33910:80b] -[VKRequest start]
+	2013-11-28 21:10:38.204 VKUserAuthorization[33910:80b] +[VKUser currentUser]
+	2013-11-28 21:10:38.204 VKUserAuthorization[33910:80b] +[VKStorage sharedStorage]
+	2013-11-28 21:10:38.204 VKUserAuthorization[33910:80b] -[VKUser accessToken]
+	2013-11-28 21:10:38.204 VKUserAuthorization[33910:80b] -[VKStorage storageItemForUserID:]
+	2013-11-28 21:10:38.205 VKUserAuthorization[33910:80b] -[VKUser accessToken]
+	2013-11-28 21:10:38.205 VKUserAuthorization[33910:80b] +[VKStorage sharedStorage]
+	2013-11-28 21:10:38.205 VKUserAuthorization[33910:80b] -[VKStorage storageItemForUserID:]
+	2013-11-28 21:10:38.205 VKUserAuthorization[33910:80b] -[VKRequest removeAccessTokenFromURL:]
+	2013-11-28 21:10:38.206 VKUserAuthorization[33910:80b] -[VKCache cacheForURL:offlineMode:]
+	2013-11-28 21:10:38.206 VKUserAuthorization[33910:80b] -[VKConnector showVKModalViewForWebView:]
+	2013-11-28 21:10:38.521 VKUserAuthorization[33910:80b] -[VKRequest connection:didReceiveResponse:]
+	2013-11-28 21:10:38.521 VKUserAuthorization[33910:80b] -[VKRequest connection:didReceiveData:]
+	2013-11-28 21:10:38.522 VKUserAuthorization[33910:80b] -[VKRequest connectionDidFinishLoading:]
+	2013-11-28 21:10:38.522 VKUserAuthorization[33910:80b] response: {
+	    response =     (
+	                {
+	            "first_name" = "\U0410\U043d\U0434\U0440\U0435\U0439";
+	            "last_name" = "\U0428\U043c\U0438\U0433";
+	            uid = 58487857;
+	        }
+	    );
+	}
+</code>
+</pre>
+
+To learn more about VKRequests read documentation or check impelementation file.
+</p>
+		  
+          <h3>How to cache data? Cache life time, offline mode.</h3>
 		  <h3>How to upload files?</h3>
 
         </section>
