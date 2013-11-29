@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 //
 #import "VKStorage.h"
+#import "VKUser.h"
 #import "VkontakteSDK_Logger.h"
 
 
@@ -186,6 +187,11 @@
 
     id storageKey = @(userID);
     return _storageItems[storageKey];
+}
+
+- (VKStorageItem *)storageItemForUser:(VKUser *)user
+{
+    return [self storageItemForUserID:user.accessToken.userID];
 }
 
 #pragma mark - Storage paths

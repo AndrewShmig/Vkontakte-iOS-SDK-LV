@@ -31,6 +31,9 @@
 #import "VKAccessToken.h"
 
 
+@class VKUser;
+
+
 static NSString *const kVKStorageUserDefaultsKey = @"Vkontakte-iOS-SDK-Storage";
 static NSString *const kVKStoragePath = @"/Vkontakte-iOS-SDK-Storage/";
 static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-Storage/Cache/";
@@ -110,6 +113,13 @@ static NSString *const kVKStorageCachePath = @"/Vkontakte-iOS-SDK-Storage/Cache/
 @return instance of VKStorageItem, or nil, if there is no such.
 */
 - (VKStorageItem *)storageItemForUserID:(NSUInteger)userID;
+
+/** Returns user's corresponding VKStorageItem
+
+@param user user object
+@return instance of VKStorageItem, or nil, if there is no such.
+*/
+- (VKStorageItem *)storageItemForUser:(VKUser *)user;
 
 /** List of all items in current storage
 

@@ -260,6 +260,23 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storageItemForUser:</TokenIdentifier>
+			<Abstract type="html">Returns user&apos;s corresponding VKStorageItem</Abstract>
+			<DeclaredIn>VKStorage.h</DeclaredIn>			
+			
+			<Declaration>- (VKStorageItem *)storageItemForUser:(VKUser *)user</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>user</Name>
+					<Abstract type="html">user object</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">instance of VKStorageItem, or nil, if there is no such.</Abstract></ReturnValue>
+			<Anchor>//api/name/storageItemForUser:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKStorage/storageItems</TokenIdentifier>
 			<Abstract type="html">List of all items in current storage</Abstract>
 			<DeclaredIn>VKStorage.h</DeclaredIn>			
