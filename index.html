@@ -181,6 +181,8 @@ from now on you can make requests from user's behalf.
 	      <p>So its really important to understand when to call "+ (instancetype)currentUser" method.</p>
 		  
           <h3>How to make requests?</h3>
+		  <p>Please, before making requests see <a href="https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/issues/64">this</a> table.</p>
+		  
 		  There are two ways of making a request:<br/>
 		  1. Using VKRequestManager<br/>
 		  2. Using VKRequest<br/><br/>
@@ -633,8 +635,177 @@ After running your app you should receive something like this:
 To learn more about VKRequests read documentation or check impelementation file.
 </p>
 		  
-          <h3>How to cache data? Cache life time, offline mode.</h3>
+          <h3>How to cache data?</h3>
+<p>As we aready know all caching is done automatically, but you can manage it using three classes: VKStorage, VKStorageItem, VKCache.
+	In this section we will not describe how to set cache lifetime or how disallow caching, we will show an example of adding an audio/video/document file to cache.
+<pre>
+<code>
+    NSUInteger currentUserID = [VKUser currentUser].accessToken.userID;
+       VKStorageItem *item = [[VKStorage sharedStorage]
+                                         storageItemForUserID:currentUserID];
+
+       NSString *mp3Link = @"https://mp3.vk.com/music/pop/j-lo.mp3";
+       NSURL *mp3URL = [NSURL URLWithString:mp3Link];
+       NSData *mp3Data = //mp3 data from request
+
+       [item.cache addCache:mp3Data
+                               forURL:mp3URL
+                             liveTime:VKCachedDataLiveTimeOneMonth];
+</code>
+</pre>
+Cached file will live until the system deletes it (if cache data folder is deleted) or until you delete it by your own.
+</p>
+
+<p>
+	Thats it! Nothing complicated.
+</p>
 		  <h3>How to upload files?</h3>
+<p>
+	Here is an <a href="https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/issues/20">example</a>. Lets create a simple empty project.
+	Thats how should AppDelegate.h file look like:
+<pre>
+<code>
+	#import "UIKit/UIKit.h"
+	#import "VKConnector.h"
+	#import "VKRequest.h"
+
+	@class ASAViewController;
+
+
+	@interface ASAAppDelegate : UIResponder &lt; UIApplicationDelegate, VKConnectorDelegate, VKRequestDelegate &gt;
+
+	@property (strong, nonatomic) UIWindow *window;
+	@property (strong, nonatomic) ASAViewController *viewController;
+
+	@end
+</code>
+</pre>
+
+And here is AppDelegate.m file:
+<pre>
+<code>
+	#import "ASAAppDelegate.h"
+	#import "ASAViewController.h"
+	#import "VKUser.h"
+
+
+	@implementation ASAAppDelegate
+
+	- (BOOL)application:(UIApplication *)application
+	        didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+	{
+	    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	    // Override point for customization after application launch.
+	    self.viewController = [[ASAViewController alloc] initWithNibName:@"ASAViewController" bundle:nil];
+	    self.window.rootViewController = self.viewController;
+	    [self.window makeKeyAndVisible];
+
+
+	    CGRect frame = [[UIScreen mainScreen] bounds];
+	    _webView = [[UIWebView alloc] initWithFrame:frame];
+	    [self.view addSubview:_webView];
+		
+	//    CODE BEGIN
+    [[VKConnector sharedInstance] startWithAppID:@"3899649"
+                                      permissons:@[@"audio"]
+                                         webView:_webView
+                                        delegate:self];
+	//    CODE END
+
+
+	    return YES;
+	}
+
+	#pragma mark - VKConnectorDelegate
+
+	- (void)        VKConnector:(VKConnector *)connector
+	accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+	{
+
+		VKRequestManager *rm = [[VKRequestManager alloc] initWithUser:[VKUser currentUser] delegate:self];
+		rm.startAllRequestsImmediatly = NO;
+
+
+	    VKRequest *firstStep = [rm audioGetUploadServer:@{}];
+	    firstStep.signature = @"firstStep";
+	    firstStep.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+
+	    [firstStep start];
+	}
+
+	#pragma mark - VKRequestDelegate
+
+	- (void)VKRequest:(VKRequest *)request
+	         response:(id)response
+	{
+	    if([request.signature isEqualToString:@"firstStep"]){
+
+	        NSString* uploadURL = response[@"response"][@"upload_url"];
+
+
+	        NSString *audioPath = [[NSBundle mainBundle]
+	                                         pathForResource:@"Crashdiet - Armagedon"
+	                                                  ofType:@"mp3"];
+
+
+	        VKRequest *secondStep = [VKRequest requestHTTPMethod:@"POST"
+	                                                         URL:[NSURL URLWithString:uploadURL]
+	                                                     headers:@{}
+	                                                        body:nil
+	                                                    delegate:self];
+	        [secondStep appendAudioFile:[NSData dataWithContentsOfFile:audioPath]
+	                               name:@"Crashdiet - Armagedon.mp3"
+	                              field:@"file"];
+	        secondStep.signature = @"secondStep";
+	        secondStep.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+
+	        [secondStep start];
+	    }
+
+
+	    if([request.signature isEqualToString:@"secondStep"]){
+	        VKRequest *thirdStep = [[VKUser currentUser]
+	                                        audioSave:@{
+	                                                @"server": response[@"server"],
+	                                                @"hash": response[@"hash"],
+	                                                @"audio": response[@"audio"]
+	                                        }];
+
+	        thirdStep.signature = @"thirdStep";
+	        thirdStep.delegate = self;
+
+
+	        thirdStep.cacheLiveTime = VKCachedDataLiveTimeNever;
+
+	        [thirdStep start];
+	    }
+
+	    if ([request.signature isEqualToString:@"thirdStep"]) {
+	        NSLog(@"Audio file was uploaded successful!");
+	    }
+	}
+
+	- (void)VKRequest:(VKRequest *)request
+	       totalBytes:(NSUInteger)totalBytes
+	    uploadedBytes:(NSUInteger)uploadedBytes
+	{
+	    NSLog(@"%zu [%zu]", (unsigned long)totalBytes, (unsigned long)uploadedBytes);
+	}
+
+	@end
+</code>	
+</pre>
+
+What we are doing here is:<br/>
+1. Obtaining upload URL<br/>
+2. Uploading our audio file<br/>
+3. Saving audio file<br/></p>
+
+<p>There is also another <a href="https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/issues/22">example</a> how to upload images.
+All examples can be found <a href="https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases/tag/v2.7.5">here</a> 
+(dont worry that the version of SDK is 2.7.5, there are not so many changes not to understand how to do things).</p>
 
         </section>
 
