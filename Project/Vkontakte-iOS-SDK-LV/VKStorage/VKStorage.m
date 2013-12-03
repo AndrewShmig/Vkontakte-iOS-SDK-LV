@@ -45,8 +45,6 @@
 
     if (self) {
         _storageItems = [[NSMutableDictionary alloc] init];
-
-        [self loadStorage];
     }
 
     return self;
@@ -79,6 +77,8 @@
                                             error:nil];
         }
     });
+
+    [sharedStorage loadStorage];
 
     return sharedStorage;
 }
@@ -265,6 +265,8 @@
 
     [myDefaults setObject:newStorage
                    forKey:kVKStorageUserDefaultsKey];
+
+    [myDefaults synchronize];
 }
 
 @end

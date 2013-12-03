@@ -73,7 +73,6 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
                                                           user:[VKUser currentUser]];
     rm.startAllRequestsImmediately = NO;
     VKRequest *r = [rm groupsGet:nil];
-    r.cacheLiveTime = VKCacheLiveTimeNever;
 
     [r start];
 }

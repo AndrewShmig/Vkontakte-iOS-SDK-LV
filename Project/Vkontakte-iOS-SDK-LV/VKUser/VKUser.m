@@ -39,7 +39,7 @@
 - (instancetype)initWithStorageItem:(VKStorageItem *)storageItem
 {
     VK_LOG(@"%@", @{
-            @"storageItem": storageItem
+            @"storageItem" : storageItem
     });
 
     self = [super init];
@@ -59,8 +59,13 @@ static VKUser *_currentUser;
 {
     VK_LOG();
 
-    if (nil == _currentUser) {
-//        пользователь еще не был запрошен и не был установлен активным
+//    пользователь установлен, но в хранилище его записи нет (возможно была удалена), а этого нельзя так оставлять - сбрасываем
+    VKStorageItem *item = [[VKStorage sharedStorage]
+                                      storageItemForUserID:_currentUser.accessToken.userID];
+
+    if (nil == item) {
+//        пользователь еще не был запрошен и не был установлен активным, либо
+//        пользователь был удалён
         if (![[VKStorage sharedStorage] isEmpty]) {
 
 //            хранилище содержит некоторые данные
@@ -70,13 +75,10 @@ static VKUser *_currentUser;
             _currentUser = [[VKUser alloc] initWithStorageItem:storageItem];
 
         }
-
-        return _currentUser;
-    }
-
-//    пользователь установлен, но в хранилище его записи нет (возможно была удалена), а этого нельзя так оставлять - сбрасываем
-    if (nil == [[VKStorage sharedStorage] storageItemForUserID:_currentUser.accessToken.userID]) {
-        _currentUser = nil;
+    } else {
+//        обновление токена доступа текущего пользователя для случаев, когда до
+//        этого имело место повторная авторизация пользователем приложения ВК
+        _currentUser.accessToken = item.accessToken;
     }
 
     return _currentUser;
@@ -85,7 +87,7 @@ static VKUser *_currentUser;
 + (BOOL)activateUserWithID:(NSUInteger)userID
 {
     VK_LOG(@"%@", @{
-            @"userID": @(userID)
+            @"userID" : @(userID)
     });
 
     VKStorageItem *storageItem = [[VKStorage sharedStorage]

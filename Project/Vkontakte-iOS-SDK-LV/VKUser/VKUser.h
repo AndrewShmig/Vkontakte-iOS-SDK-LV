@@ -38,7 +38,7 @@
 
 /** User's access token
 */
-@property (nonatomic, readonly) VKAccessToken *accessToken;
+@property (nonatomic, readwrite) VKAccessToken *accessToken;
 
 /**
 @name Class methods
