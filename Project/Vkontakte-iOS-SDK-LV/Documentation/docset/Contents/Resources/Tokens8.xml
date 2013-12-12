@@ -16,7 +16,7 @@
 			<Abstract type="html">User&apos;s access token</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
+			<Declaration>@property (nonatomic, readwrite) VKAccessToken *accessToken</Declaration>
 			
 			
 			<Anchor>//api/name/accessToken</Anchor>
@@ -28,7 +28,7 @@
 			<Abstract type="html">User&apos;s access token</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
+			<Declaration>@property (nonatomic, readwrite) VKAccessToken *accessToken</Declaration>
 			
 			
 			<Anchor>//api/name/accessToken</Anchor>
@@ -40,7 +40,7 @@
 			<Abstract type="html">User&apos;s access token</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) VKAccessToken *accessToken</Declaration>
+			<Declaration>@property (nonatomic, readwrite) VKAccessToken *accessToken</Declaration>
 			
 			
 			<Anchor>//api/name/accessToken</Anchor>
@@ -85,6 +85,19 @@
 			
 			<ReturnValue><Abstract type="html">list of users (@(NSUInteger) objects - user unique identifiers)</Abstract></ReturnValue>
 			<Anchor>//api/name/localUsers</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/deactivate</TokenIdentifier>
+			<Abstract type="html">Deactivates current active user.
+After calling this method, [VKUser currentUser] will return nil.</Abstract>
+			<DeclaredIn>VKUser.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)deactivate</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if user is deactivated, NO - otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/deactivate</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

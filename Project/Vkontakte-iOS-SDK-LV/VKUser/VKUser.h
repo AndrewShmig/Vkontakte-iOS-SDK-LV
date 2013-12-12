@@ -81,6 +81,16 @@ If there is no such user then NO will be returned, otherwise - YES.
 */
 + (NSArray *)localUsers;
 
+/*
+@name Instance methods
+*/
+/** Deactivates current active user.
+After calling this method, [VKUser currentUser] will return nil.
+
+@return YES if user is deactivated, NO - otherwise.
+*/
+- (BOOL)deactivate;
+
 /**
 @name Overridden methods
  */

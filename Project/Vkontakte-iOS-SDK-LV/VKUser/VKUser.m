@@ -101,6 +101,18 @@ static VKUser *_currentUser;
     return YES;
 }
 
+- (BOOL)deactivate
+{
+    VK_LOG();
+
+    if(nil == _currentUser)
+        return NO;
+
+    _currentUser = nil;
+
+    return YES;
+}
+
 + (NSArray *)localUsers
 {
     VK_LOG();
