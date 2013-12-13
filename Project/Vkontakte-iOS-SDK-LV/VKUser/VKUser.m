@@ -26,6 +26,7 @@
 //
 #import "VKUser.h"
 #import "VkontakteSDK_Logger.h"
+#import "VKConnector.h"
 
 
 @implementation VKUser
@@ -101,16 +102,23 @@ static VKUser *_currentUser;
     return YES;
 }
 
-- (BOOL)deactivate
+- (void)logout
 {
     VK_LOG();
 
     if(nil == _currentUser)
-        return NO;
+        return;
 
+//    чистим куки
+    [[VKConnector sharedInstance] clearCookies];
+
+//    находим нужную запись и удаляем из хранилища
+    VKStorageItem *item = [[VKStorage sharedStorage]
+                                      storageItemForUserID:_currentUser.accessToken.userID];
+    [[VKStorage sharedStorage] removeItem:item];
+
+//    обнуляем текущего пользователя
     _currentUser = nil;
-
-    return YES;
 }
 
 + (NSArray *)localUsers

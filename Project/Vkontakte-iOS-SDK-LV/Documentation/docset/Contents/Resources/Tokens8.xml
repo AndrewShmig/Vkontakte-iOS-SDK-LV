@@ -89,15 +89,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/VKUser/deactivate</TokenIdentifier>
-			<Abstract type="html">Deactivates current active user.
-After calling this method, [VKUser currentUser] will return nil.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/VKUser/logout</TokenIdentifier>
+			<Abstract type="html">Logs out current active user.</Abstract>
 			<DeclaredIn>VKUser.h</DeclaredIn>			
 			
-			<Declaration>- (BOOL)deactivate</Declaration>
+			<Declaration>- (void)logout</Declaration>
 			
-			<ReturnValue><Abstract type="html">YES if user is deactivated, NO - otherwise.</Abstract></ReturnValue>
-			<Anchor>//api/name/deactivate</Anchor>
+			
+			<Anchor>//api/name/logout</Anchor>
             <NodeRef refid="8"/>
 		</Token>
 		

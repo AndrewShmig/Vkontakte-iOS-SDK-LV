@@ -84,12 +84,13 @@ If there is no such user then NO will be returned, otherwise - YES.
 /*
 @name Instance methods
 */
-/** Deactivates current active user.
-After calling this method, [VKUser currentUser] will return nil.
+/** Logs out current active user.
 
-@return YES if user is deactivated, NO - otherwise.
+After calling this method, [VKUser currentUser] will return random user from
+VKStorage if there was more than 2 users in VKStorage before current user
+logged out, or nil, if there are no users.
 */
-- (BOOL)deactivate;
+- (void)logout;
 
 /**
 @name Overridden methods

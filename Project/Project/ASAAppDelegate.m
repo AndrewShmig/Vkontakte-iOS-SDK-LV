@@ -90,6 +90,10 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"request: %@", request);
     NSLog(@"response: %@", response);
+
+    [[VKUser currentUser] logout];
+
+    NSLog(@"users: %@", @([[VKStorage sharedStorage] count]));
 }
 
 //- (void)   VKRequest:(VKRequest *)request
