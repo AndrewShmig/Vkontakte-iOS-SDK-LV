@@ -55,11 +55,23 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     NSLog(@"%s", __FUNCTION__);
 }
 
-//- (void)     VKConnector:(VKConnector *)connector
-//accessTokenRenewalFailed:(VKAccessToken *)accessToken
-//{
-//    NSLog(@"%s", __FUNCTION__);
-//}
+- (void)     VKConnector:(VKConnector *)connector
+accessTokenRenewalFailed:(VKAccessToken *)accessToken
+{
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void) VKConnector:(VKConnector *)connector
+webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)VKConnector:(VKConnector *)connector
+webViewDidStartLoad:(UIWebView *)webView
+{
+    NSLog(@"%s", __FUNCTION__);
+}
 
 - (void)        VKConnector:(VKConnector *)connector
 accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
@@ -77,12 +89,12 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
     [r start];
 }
 
-//- (void)   VKConnector:(VKConnector *)connector
-//connectionErrorOccured:(NSError *)error
-//{
-//    NSLog(@"%s", __FUNCTION__);
-//    NSLog(@"CONNECTION error: %@", error);
-//}
+- (void)   VKConnector:(VKConnector *)connector
+connectionErrorOccured:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"CONNECTION error: %@", error);
+}
 
 - (void)VKRequest:(VKRequest *)request
          response:(id)response
@@ -96,36 +108,36 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
     NSLog(@"users: %@", @([[VKStorage sharedStorage] count]));
 }
 
-//- (void)   VKRequest:(VKRequest *)request
-//responseErrorOccured:(id)error
-//{
-//    NSLog(@"%s", __FUNCTION__);
-//    NSLog(@"error: %@", error);
-//}
+- (void)   VKRequest:(VKRequest *)request
+responseErrorOccured:(id)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"error: %@", error);
+}
 
-//- (void)VKRequest:(VKRequest *)request
-//       captchaSid:(NSString *)captchaSid
-//     captchaImage:(NSString *)captchaImage
-//{
-//    NSLog(@"%s", __FUNCTION__);
-//    NSLog(@"captchaSid: %@", captchaSid);
-//    NSLog(@"captchaImage: %@", captchaImage);
-//}
+- (void)VKRequest:(VKRequest *)request
+       captchaSid:(NSString *)captchaSid
+     captchaImage:(NSString *)captchaImage
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"captchaSid: %@", captchaSid);
+    NSLog(@"captchaImage: %@", captchaImage);
+}
 
-//- (void)  VKRequest:(VKRequest *)request
-//parsingErrorOccured:(NSError *)error
-//{
-//    NSLog(@"%s", __FUNCTION__);
-//    NSLog(@"%@", error);
-//}
+- (void)  VKRequest:(VKRequest *)request
+parsingErrorOccured:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%@", error);
+}
 
-//- (void)VKRequest:(VKRequest *)request
-//       totalBytes:(NSUInteger)totalBytes
-//    uploadedBytes:(NSUInteger)uploadedBytes
-//{
-//    NSLog(@"%s", __FUNCTION__);
-//    NSLog(@"%d %d", totalBytes, uploadedBytes);
-//}
+- (void)VKRequest:(VKRequest *)request
+       totalBytes:(NSUInteger)totalBytes
+    uploadedBytes:(NSUInteger)uploadedBytes
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%d %d", totalBytes, uploadedBytes);
+}
 
 - (void)VKRequest:(VKRequest *)request
        totalBytes:(NSUInteger)totalBytes
@@ -135,11 +147,11 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
     NSLog(@"%d %d", totalBytes, downloadedBytes);
 }
 
-//- (void)  VKConnector:(VKConnector *)connector
-//applicationWasDeleted:(NSError *)error
-//{
-//    NSLog(@"%s", __FUNCTION__);
-//    NSLog(@"Error: %@", error);
-//}
+- (void)  VKConnector:(VKConnector *)connector
+applicationWasDeleted:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"Error: %@", error);
+}
 
 @end

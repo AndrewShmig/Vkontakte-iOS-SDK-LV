@@ -97,7 +97,6 @@ https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11
 
 @param request request that changed its state
 @param captchaSid unique captcha identifier
-@param captchaImage ссылка на изображение, которое нужно показать пользователю, чтобы он ввел текст с этого изображения
 @param captchaImage link to captcha (an image that should be shown to end user)
 */
 - (void)VKRequest:(VKRequest *)request

@@ -51,6 +51,10 @@
 	
 	<option value="//api/name/VKConnector:connectionErrorOccured:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:connectionErrorOccured:</option>
 	
+	<option value="//api/name/VKConnector:webViewDidFinishLoad:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:webViewDidFinishLoad:</option>
+	
+	<option value="//api/name/VKConnector:webViewDidStartLoad:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:webViewDidStartLoad:</option>
+	
 	<option value="//api/name/VKConnector:willHideWebView:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:willHideWebView:</option>
 	
 	<option value="//api/name/VKConnector:willShowWebView:">&nbsp;&nbsp;&nbsp;&nbsp;- VKConnector:willShowWebView:</option>
@@ -72,6 +76,8 @@
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Show/hide web view">Show/hide web view</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_UIWebView started/finished loading a frame">UIWebView started/finished loading a frame</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Access token">Access token</a></span></li>
 	
@@ -96,6 +102,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:applicationWasDeleted:">VKConnector:applicationWasDeleted:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:connectionErrorOccured:">VKConnector:connectionErrorOccured:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:webViewDidFinishLoad:">VKConnector:webViewDidFinishLoad:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:webViewDidStartLoad:">VKConnector:webViewDidStartLoad:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKConnector:willHideWebView:">VKConnector:willHideWebView:</a></span></li>
 	
@@ -169,6 +179,28 @@ password, authorize your application etc)</p></span>
 		<span class="tooltip"><p>Method is called when UIWebView should be hidden, this method is called after
 user has entered login+password or has authorized an application (or pressed
 cancel button etc).</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="UIWebView started/finished loading a frame" name="task_UIWebView started/finished loading a frame"></a>
+						<h3 class="subsubtitle task-title">UIWebView started/finished loading a frame</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/VKConnector:webViewDidStartLoad:">&ndash;&nbsp;VKConnector:webViewDidStartLoad:</a></code>
+		<span class="tooltip"><p>Method is called when UIWebView starts loading a frame</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/VKConnector:webViewDidFinishLoad:">&ndash;&nbsp;VKConnector:webViewDidFinishLoad:</a></code>
+		<span class="tooltip"><p>Method is called when UIWebView finishes loading a frame</p></span>
 	</span>
 	
 	
@@ -440,6 +472,108 @@ could be that user denied/canceled to authorize your application.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/VKConnector:webViewDidFinishLoad:" title="VKConnector:webViewDidFinishLoad:"></a>
+	<h3 class="subsubtitle method-title">VKConnector:webViewDidFinishLoad:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method is called when UIWebView finishes loading a frame</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)VKConnector:(VKConnector *)<em>connector</em> webViewDidFinishLoad:(UIWebView *)<em>webView</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>connector</em></dt>
+			<dd><p><a href="../Classes/VKConnector.html">VKConnector</a> instance that sends notifications</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>webView</em></dt>
+			<dd><p>UIWebView that displays authorization page</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKConnector.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/VKConnector:webViewDidStartLoad:" title="VKConnector:webViewDidStartLoad:"></a>
+	<h3 class="subsubtitle method-title">VKConnector:webViewDidStartLoad:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method is called when UIWebView starts loading a frame</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)VKConnector:(VKConnector *)<em>connector</em> webViewDidStartLoad:(UIWebView *)<em>webView</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>connector</em></dt>
+			<dd><p><a href="../Classes/VKConnector.html">VKConnector</a> instance that sends notifications</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>webView</em></dt>
+			<dd><p>UIWebView that displays authorization page</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKConnector.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/VKConnector:willHideWebView:" title="VKConnector:willHideWebView:"></a>
 	<h3 class="subsubtitle method-title">VKConnector:willHideWebView:</h3>
 	
@@ -557,7 +691,7 @@ password, authorize your application etc)</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 AndrewShmig. All rights reserved. (Last updated: 2013-12-13)</span><br />
+						<p><span class="copyright">&copy; 2014 AndrewShmig. All rights reserved. (Last updated: 2014-03-10)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

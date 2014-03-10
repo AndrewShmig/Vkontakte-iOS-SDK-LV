@@ -72,6 +72,25 @@ cancel button etc).
     willHideWebView:(UIWebView *)webView;
 
 /**
+@name UIWebView started/finished loading a frame
+*/
+/** Method is called when UIWebView starts loading a frame
+
+@param connector VKConnector instance that sends notifications
+@param webView UIWebView that displays authorization page
+*/
+- (void)VKConnector:(VKConnector *)connector
+webViewDidStartLoad:(UIWebView *)webView;
+
+/** Method is called when UIWebView finishes loading a frame
+
+@param connector VKConnector instance that sends notifications
+@param webView UIWebView that displays authorization page
+*/
+- (void) VKConnector:(VKConnector *)connector
+webViewDidFinishLoad:(UIWebView *)webView;
+
+/**
  @name Access token
  */
 /** Method is called when access token is successfully updated

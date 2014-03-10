@@ -146,6 +146,12 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 {
     VK_LOG();
 
+//    вызываем метод делегата, который уведомляет о завершении загрузки
+    if([self.delegate respondsToSelector:@selector(VKConnector:webViewDidFinishLoad:)]) {
+        [self.delegate VKConnector:self
+              webViewDidFinishLoad:webView];
+    }
+
 //    останавливаем анимацию спинера
     [_activityIndicator stopAnimating];
 
@@ -216,6 +222,12 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     VK_LOG();
+
+//    вызываем метод делегата, который уведомляет о завершении загрузки
+    if([self.delegate respondsToSelector:@selector(VKConnector:webViewDidStartLoad:)]) {
+        [self.delegate VKConnector:self
+              webViewDidStartLoad:webView];
+    }
 
 //    запускаем анимацию спинера
     [_activityIndicator startAnimating];
