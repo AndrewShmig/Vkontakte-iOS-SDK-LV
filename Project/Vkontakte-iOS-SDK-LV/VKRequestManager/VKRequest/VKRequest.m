@@ -176,10 +176,8 @@
     _receivedData = [[NSMutableData alloc] init];
     _body = [[NSMutableData alloc] init];
     _boundary = [[NSProcessInfo processInfo] globallyUniqueString];
-    _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n",
-                                                 _boundary];
-    _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n",
-                                                 _boundary];
+    _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n", _boundary];
+    _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n", _boundary];
     _expectedDataSize = NSURLResponseUnknownContentLength;
     _cacheLiveTime = VKCacheLiveTimeOneHour;
     _offlineMode = NO;

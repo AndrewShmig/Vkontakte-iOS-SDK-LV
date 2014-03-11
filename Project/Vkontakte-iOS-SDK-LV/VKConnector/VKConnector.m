@@ -37,8 +37,6 @@
     NSString *_settings;
     NSString *_redirectURL;
 
-    UIActivityIndicatorView *_activityIndicator;
-
     VKAccessToken *_accessToken;
 }
 
@@ -84,17 +82,6 @@
 
     CGPoint centerPoint = [webView center];
     CGRect activityIndicatorFrame = CGRectMake(centerPoint.x - 20, centerPoint.y - 50, 30, 30);
-
-    if (nil == _activityIndicator) {
-        _activityIndicator = [[UIActivityIndicatorView alloc]
-                                                       initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        [_activityIndicator setColor:[UIColor darkGrayColor]];
-        [_activityIndicator setFrame:activityIndicatorFrame];
-        [_activityIndicator setHidesWhenStopped:YES];
-        [_activityIndicator startAnimating];
-    }
-
-    [webView addSubview:_activityIndicator];
 
 //    преобразование словаря параметров в строку параметров
     NSDictionary *params = @{@"client_id"     : self.appID,
@@ -151,9 +138,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         [self.delegate VKConnector:self
               webViewDidFinishLoad:webView];
     }
-
-//    останавливаем анимацию спинера
-    [_activityIndicator stopAnimating];
 
 //    обрабатываем запрос
     NSString *url = [[[webView request] URL] absoluteString];
@@ -228,9 +212,6 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         [self.delegate VKConnector:self
               webViewDidStartLoad:webView];
     }
-
-//    запускаем анимацию спинера
-    [_activityIndicator startAnimating];
 }
 
 - (void)     webView:(UIWebView *)webView
