@@ -80,9 +80,6 @@
 
     [webView setDelegate:self];
 
-    CGPoint centerPoint = [webView center];
-    CGRect activityIndicatorFrame = CGRectMake(centerPoint.x - 20, centerPoint.y - 50, 30, 30);
-
 //    преобразование словаря параметров в строку параметров
     NSDictionary *params = @{@"client_id"     : self.appID,
                              @"redirect_uri"  : _redirectURL,
