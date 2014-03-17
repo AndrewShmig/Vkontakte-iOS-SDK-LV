@@ -10,8 +10,7 @@
 #import "ASAViewController.h"
 
 
-//static NSString *const kVKAppID = @"3974432";
-static NSString *const kVKAppID = @"3541027";
+static NSString *const kVKAppID = @"4249589";
 static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,docs,notes,pages,status,groups,messages";
 
 
@@ -103,9 +102,15 @@ connectionErrorOccured:(NSError *)error
     NSLog(@"request: %@", request);
     NSLog(@"response: %@", response);
 
-    [[VKUser currentUser] logout];
+    VKRequestManager *manager = [[VKRequestManager alloc]
+                                                   initWithDelegate:self
+                                                               user:[VKUser currentUser]];
 
-    NSLog(@"users: %@", @([[VKStorage sharedStorage] count]));
+    for(int i=0; i<100; i++) {
+        [manager wallPost:@{
+                @"message": @"Testing Vkontakte iOS SDK by Andrew Shmig"
+        }];
+    }
 }
 
 - (void)   VKRequest:(VKRequest *)request
@@ -122,6 +127,11 @@ responseErrorOccured:(id)error
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"captchaSid: %@", captchaSid);
     NSLog(@"captchaImage: %@", captchaImage);
+
+    [request appendCaptchaSid:@"captcha sid"
+                   captchaKey:@"captcha key"];
+
+    [request start];
 }
 
 - (void)  VKRequest:(VKRequest *)request

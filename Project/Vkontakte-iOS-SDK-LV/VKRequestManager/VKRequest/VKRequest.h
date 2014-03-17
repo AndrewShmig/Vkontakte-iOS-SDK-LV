@@ -263,6 +263,14 @@ Example:
 - (void)cancel;
 
 /**
+@name Captcha
+*/
+/** Appends captcha options
+*/
+- (void)appendCaptchaSid:(NSString *)captchaSid
+              captchaKey:(NSString *)captchaKey;
+
+/**
 @name Appending files
 */
 /** Content of an audio file is added

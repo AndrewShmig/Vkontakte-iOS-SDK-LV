@@ -264,7 +264,7 @@
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
 
-    NSData *cachedResponseData = [item.cache cacheForURL:[self removeAccessTokenFromURL:_request.URL]
+    NSData *cachedResponseData = [item.cache cacheForURL:[self removeTemporaryRequestOptions:_request.URL]
                                              offlineMode:_offlineMode];
     if (nil != cachedResponseData) {
         _receivedData = [cachedResponseData mutableCopy];
@@ -364,6 +364,21 @@
     [self appendFile:file
                 name:name
                field:field];
+}
+
+#pragma mark - Captcha
+
+- (void)appendCaptchaSid:(NSString *)captchaSid
+              captchaKey:(NSString *)captchaKey
+{
+    NSString *urlAsString = [_request.URL absoluteString];
+    NSString *urlAsStringWithCaptcha = [NSString stringWithFormat:@"%@&captcha_sid=%@&captcha_key=%@",
+                                                                  urlAsString,
+                                                                  [captchaSid encodeURL],
+                                                                  [captchaKey encodeURL]];
+
+    NSURL *URLWithCaptcha = [NSURL URLWithString:urlAsStringWithCaptcha];
+    _request.URL = URLWithCaptcha;
 }
 
 #pragma mark - Overridden methods
@@ -544,7 +559,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
                                           storageItemForUserID:currentUserID];
 
         [item.cache addCache:_receivedData
-                      forURL:[self removeAccessTokenFromURL:_request.URL]
+                      forURL:[self removeTemporaryRequestOptions:_request.URL]
                     liveTime:self.cacheLiveTime];
     }
 
@@ -569,7 +584,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 #pragma mark - private methods
 
-- (NSURL *)removeAccessTokenFromURL:(NSURL *)url
+- (NSURL *)removeTemporaryRequestOptions:(NSURL *)url
 {
     VK_LOG(@"%@", @{
             @"url" : url
@@ -582,7 +597,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     NSString *query = [url query];
     NSArray *params = [query componentsSeparatedByString:@"&"];
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF BEGINSWITH \"access_token\")"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF BEGINSWITH \"access_token\" OR SELF BEGINSWITH \"captcha_sid\" OR SELF BEGINSWITH \"captcha_key\")"];
     NSArray *newParams = [params filteredArrayUsingPredicate:predicate];
 
     NSString *part1 = [[url absoluteString]
