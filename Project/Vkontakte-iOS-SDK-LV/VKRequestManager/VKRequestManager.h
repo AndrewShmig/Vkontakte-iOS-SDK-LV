@@ -1449,6 +1449,12 @@ Defaults to NO.
 */
 - (VKRequest *)accountGetBanned:(NSDictionary *)options;
 
+/** Метод для валидации пользователя (страница security check, документация: https://vk.com/dev/need_validation )
+
+@param options ключи-значения, метод отсутствует в документации (спец.метод)
+*/
+- (VKRequest *)accountTestValidation:(NSDictionary *)options;
+
 @end
 
 @interface VKRequestManager (Status)

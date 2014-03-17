@@ -65,10 +65,10 @@
               delegate:(id <VKConnectorDelegate>)delegate
 {
     VK_LOG(@"%@", @{
-            @"webView": webView,
-            @"appID": appID,
-            @"permissions": permissions,
-            @"delegate": delegate
+            @"webView"     : webView,
+            @"appID"       : appID,
+            @"permissions" : permissions,
+            @"delegate"    : delegate
     });
 
     _permissions = permissions;
@@ -111,9 +111,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
             navigationType:(UIWebViewNavigationType)navigationType
 {
     VK_LOG(@"%@", @{
-            @"webView": webView,
-            @"request": request,
-            @"navigationType": @(navigationType)
+            @"webView"        : webView,
+            @"request"        : request,
+            @"navigationType" : @(navigationType)
     });
 
     NSString *url = [[request URL] absoluteString];
@@ -131,7 +131,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     VK_LOG();
 
 //    вызываем метод делегата, который уведомляет о завершении загрузки
-    if([self.delegate respondsToSelector:@selector(VKConnector:webViewDidFinishLoad:)]) {
+    if ([self.delegate respondsToSelector:@selector(VKConnector:webViewDidFinishLoad:)]) {
         [self.delegate VKConnector:self
               webViewDidFinishLoad:webView];
     }
@@ -141,15 +141,28 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
     if ([url hasPrefix:_redirectURL]) {
         NSString *queryString = [url componentsSeparatedByString:@"#"][1];
+        NSArray *parts = [queryString componentsSeparatedByString:@"&"];
 
-//        проверяем одобрил ли пользователь наше приложение или нет
-        if ([queryString hasPrefix:@"access_token"]) {
-            NSArray *parts = [queryString componentsSeparatedByString:@"&"];
+//        проверим, если мы пришли сюда после процесса валидации пользователя (security check)
+//        или это обычная авторизация пользователя приложения
+        if (([queryString hasPrefix:@"success"] && [parts count] >= 2) || [queryString hasPrefix:@"access_token"]) {
+            NSString *accessToken;
+            NSUInteger userID;
+            NSUInteger liveTime;
 
+            if ([queryString hasPrefix:@"success"]) {
+//                проверим, пришел ли _только_ success параметр
+//                если пришел, значит ничего не будем делать, а воспользуемся старым токеном доступа
+//             парсим данные
+                accessToken = [parts[1] componentsSeparatedByString:@"="][1];
+                userID = [[parts[2] componentsSeparatedByString:@"="][1] unsignedIntValue];
+                liveTime = 0;
+            } else {
 //            пользователь одобрил наше приложение, парсим полученные данные
-            NSString *accessToken = [parts[0] componentsSeparatedByString:@"="][1];
-            NSTimeInterval liveTime = [[parts[1] componentsSeparatedByString:@"="][1] doubleValue];
-            NSUInteger userID = [[parts[2] componentsSeparatedByString:@"="][1] unsignedIntValue];
+                accessToken = [parts[0] componentsSeparatedByString:@"="][1];
+                liveTime = [[parts[1] componentsSeparatedByString:@"="][1] unsignedIntValue];
+                userID = [[parts[2] componentsSeparatedByString:@"="][1] unsignedIntValue];
+            }
 
             _accessToken = [[VKAccessToken alloc]
                                            initWithUserID:userID
@@ -169,7 +182,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                accessTokenRenewalSucceeded:_accessToken];
             }
 
-        } else {
+        } else if ([queryString hasPrefix:@"success"]) { // всё прошло успешно, но токена не получили - хз, что делать дальше
+//            никаких методов делегата не вызываем, потому что не знаю, что вызывать
+        }  else {
 //            пользователь отказался авторизовать приложение
 //            не удалось обновить/получить токен доступа
             if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalFailed:)]) {
@@ -205,9 +220,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     VK_LOG();
 
 //    вызываем метод делегата, который уведомляет о завершении загрузки
-    if([self.delegate respondsToSelector:@selector(VKConnector:webViewDidStartLoad:)]) {
+    if ([self.delegate respondsToSelector:@selector(VKConnector:webViewDidStartLoad:)]) {
         [self.delegate VKConnector:self
-              webViewDidStartLoad:webView];
+               webViewDidStartLoad:webView];
     }
 }
 
@@ -215,8 +230,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 didFailLoadWithError:(NSError *)error
 {
     VK_LOG(@"%@", @{
-            @"webView": webView,
-            @"error": error
+            @"webView" : webView,
+            @"error"   : error
     });
 
     if ([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]) {
@@ -234,7 +249,7 @@ didFailLoadWithError:(NSError *)error
 - (BOOL)showVKModalViewForWebView:(UIWebView *)webView
 {
     VK_LOG(@"%@", @{
-            @"webView": webView
+            @"webView" : webView
     });
 
 //    получаем содержимое тега head

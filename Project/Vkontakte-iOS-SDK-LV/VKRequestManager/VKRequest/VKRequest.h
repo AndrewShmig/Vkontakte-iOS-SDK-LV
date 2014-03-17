@@ -103,6 +103,14 @@ https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11
        captchaSid:(NSString *)captchaSid
      captchaImage:(NSString *)captchaImage;
 
+/** Method is called if user needs to pass security validation (used _only_ for testing purposes)
+
+@param request request that changed its state
+@param redirectURI URI that user should open in any browser
+*/
+- (void)    VKRequest:(VKRequest *)request
+validationRedirectURI:(NSString *)redirectURI;
+
 /** Method is called each time new portion of data is received
 
 @param request request that changed its state

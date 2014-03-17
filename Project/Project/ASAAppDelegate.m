@@ -64,6 +64,7 @@ accessTokenRenewalFailed:(VKAccessToken *)accessToken
 webViewDidFinishLoad:(UIWebView *)webView
 {
     NSLog(@"%s", __FUNCTION__);
+    NSLog(@"URL: %@", [webView.request.URL absoluteString]);
 }
 
 - (void)VKConnector:(VKConnector *)connector
@@ -82,10 +83,8 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
     VKRequestManager *rm = [[VKRequestManager alloc]
                                               initWithDelegate:self
                                                           user:[VKUser currentUser]];
-    rm.startAllRequestsImmediately = NO;
-    VKRequest *r = [rm groupsGet:nil];
 
-    [r start];
+    [rm accountTestValidation:nil];
 }
 
 - (void)   VKConnector:(VKConnector *)connector
@@ -101,16 +100,6 @@ connectionErrorOccured:(NSError *)error
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"request: %@", request);
     NSLog(@"response: %@", response);
-
-    VKRequestManager *manager = [[VKRequestManager alloc]
-                                                   initWithDelegate:self
-                                                               user:[VKUser currentUser]];
-
-    for(int i=0; i<100; i++) {
-        [manager wallPost:@{
-                @"message": @"Testing Vkontakte iOS SDK by Andrew Shmig"
-        }];
-    }
 }
 
 - (void)   VKRequest:(VKRequest *)request
@@ -118,6 +107,16 @@ responseErrorOccured:(id)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"error: %@", error);
+}
+
+- (void)    VKRequest:(VKRequest *)request
+validationRedirectURI:(NSString *)redirectURI
+{
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"redirectURI: %@", redirectURI);
+
+    self.webView.hidden = NO;
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:redirectURI]]];
 }
 
 - (void)VKRequest:(VKRequest *)request

@@ -57,6 +57,8 @@
 	
 	<option value="//api/name/VKRequest:totalBytes:uploadedBytes:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:totalBytes:uploadedBytes:</option>
 	
+	<option value="//api/name/VKRequest:validationRedirectURI:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:validationRedirectURI:</option>
+	
 	
 	
 </select>
@@ -102,6 +104,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:totalBytes:downloadedBytes:">VKRequest:totalBytes:downloadedBytes:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:totalBytes:uploadedBytes:">VKRequest:totalBytes:uploadedBytes:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:validationRedirectURI:">VKRequest:validationRedirectURI:</a></span></li>
 	
 </ul></li>
 
@@ -198,6 +202,13 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/VKRequest:captchaSid:captchaImage:">&ndash;&nbsp;VKRequest:captchaSid:captchaImage:</a></code>
 		<span class="tooltip"><p>Method is called if user needs to enter captcha</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/VKRequest:validationRedirectURI:">&ndash;&nbsp;VKRequest:validationRedirectURI:</a></code>
+		<span class="tooltip"><p>Method is called if user needs to pass security validation (used <em>only</em> for testing purposes)</p></span>
 	</span>
 	
 	
@@ -590,6 +601,57 @@ than 0 is used.</p></dd>
 		<dl class="argument-def parameter-def">
 			<dt><em>uploadedBytes</em></dt>
 			<dd><p>bytes already uploaded</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/VKRequest:validationRedirectURI:" title="VKRequest:validationRedirectURI:"></a>
+	<h3 class="subsubtitle method-title">VKRequest:validationRedirectURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method is called if user needs to pass security validation (used <em>only</em> for testing purposes)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> validationRedirectURI:(NSString *)<em>redirectURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>request that changed its state</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>redirectURI</em></dt>
+			<dd><p>URI that user should open in any browser</p></dd>
 		</dl>
 		
 	</div>

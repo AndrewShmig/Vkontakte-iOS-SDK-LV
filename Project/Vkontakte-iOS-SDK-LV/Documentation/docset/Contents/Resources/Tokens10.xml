@@ -115,6 +115,26 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:validationRedirectURI:</TokenIdentifier>
+			<Abstract type="html">Method is called if user needs to pass security validation (used only for testing purposes)</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)VKRequest:(VKRequest *)request validationRedirectURI:(NSString *)redirectURI</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">request that changed its state</Abstract>
+				</Parameter><Parameter>
+					<Name>redirectURI</Name>
+					<Abstract type="html">URI that user should open in any browser</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/VKRequest:validationRedirectURI:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/intfm/VKRequestDelegate/VKRequest:totalBytes:downloadedBytes:</TokenIdentifier>
 			<Abstract type="html">Method is called each time new portion of data is received</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			

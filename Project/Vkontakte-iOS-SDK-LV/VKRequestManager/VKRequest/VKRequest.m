@@ -29,6 +29,7 @@
 
 
 #define kCaptchaErrorCode 14
+#define kValidationRequired 17
 
 
 @implementation VKRequest
@@ -534,6 +535,19 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 //        прекращаем дальнейшую обработку
 //        кэшировать ошибки не будем
+            return;
+        }
+
+//        ошибка валидации пользователя? (security check)
+        if(kValidationRequired == [json[@"error"][@"error_code"] integerValue]) {
+
+            if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:validationRedirectURI:)]) {
+                NSString *validationURI = json[@"error"][@"redirect_uri"];
+
+                [self.delegate VKRequest:self
+                   validationRedirectURI:validationURI];
+            }
+
             return;
         }
 

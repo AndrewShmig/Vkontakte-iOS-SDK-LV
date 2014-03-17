@@ -253,6 +253,7 @@ static NSString *const kVKAccountGetActiveOffers = @"account.getActiveOffers";
 static NSString *const kVKAccountBanUser = @"account.banUser";
 static NSString *const kVKAccountUnbanUser = @"account.unbanUser";
 static NSString *const kVKAccountGetBanned = @"account.getBanned";
+static NSString *const kVKAccountTestValidation = @"account.testValidation";
 
 // -----------------------------------------------------------------------------
 #pragma mark - Status

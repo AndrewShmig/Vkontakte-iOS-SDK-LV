@@ -1539,6 +1539,14 @@
                                        selector:_cmd];
 }
 
+- (VKRequest *)accountTestValidation:(NSDictionary *)options
+{
+    return [self configureRequestWithHTTPMethod:@"GET"
+                                     methodName:kVKAccountTestValidation
+                                         option:options
+                                       selector:_cmd];
+}
+
 #pragma mark - Status
 
 - (VKRequest *)statusGet:(NSDictionary *)options
