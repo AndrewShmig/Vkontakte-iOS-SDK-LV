@@ -266,6 +266,9 @@ Example:
 @name Captcha
 */
 /** Appends captcha options
+
+@param captchaSid unique captcha identifier
+@param captchaKey text that user entered
 */
 - (void)appendCaptchaSid:(NSString *)captchaSid
               captchaKey:(NSString *)captchaKey;

@@ -348,6 +348,26 @@ VKRequestDelegate protocol)</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendCaptchaSid:captchaKey:</TokenIdentifier>
+			<Abstract type="html">Appends captcha options</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)appendCaptchaSid:(NSString *)captchaSid captchaKey:(NSString *)captchaKey</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>captchaSid</Name>
+					<Abstract type="html">unique captcha identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>captchaKey</Name>
+					<Abstract type="html">text that user entered</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/appendCaptchaSid:captchaKey:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/appendAudioFile:name:field:</TokenIdentifier>
 			<Abstract type="html">Content of an audio file is added</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
