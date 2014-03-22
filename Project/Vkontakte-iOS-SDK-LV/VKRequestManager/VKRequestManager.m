@@ -2527,7 +2527,7 @@
 
 //    lets not work with nil values
     if(nil == options) {
-        options = [[NSMutableDictionary alloc] init];
+        options = [NSMutableDictionary new];
     }
 
 //    adding access token if needed

@@ -84,7 +84,7 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
                                               initWithDelegate:self
                                                           user:[VKUser currentUser]];
 
-    [rm accountTestValidation:nil];
+    [rm info];
 }
 
 - (void)   VKConnector:(VKConnector *)connector
@@ -127,8 +127,8 @@ validationRedirectURI:(NSString *)redirectURI
     NSLog(@"captchaSid: %@", captchaSid);
     NSLog(@"captchaImage: %@", captchaImage);
 
-    [request appendCaptchaSid:@"captcha sid"
-                   captchaKey:@"captcha key"];
+    [request appendCaptchaSid:@"439824420775"
+                   captchaKey:@"spnuod"];
 
     [request start];
 }
@@ -138,22 +138,6 @@ parsingErrorOccured:(NSError *)error
 {
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@", error);
-}
-
-- (void)VKRequest:(VKRequest *)request
-       totalBytes:(NSUInteger)totalBytes
-    uploadedBytes:(NSUInteger)uploadedBytes
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"%d %d", totalBytes, uploadedBytes);
-}
-
-- (void)VKRequest:(VKRequest *)request
-       totalBytes:(NSUInteger)totalBytes
-  downloadedBytes:(NSUInteger)downloadedBytes
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"%d %d", totalBytes, downloadedBytes);
 }
 
 - (void)  VKConnector:(VKConnector *)connector
