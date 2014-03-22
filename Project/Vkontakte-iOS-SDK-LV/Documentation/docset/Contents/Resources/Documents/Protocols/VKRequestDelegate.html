@@ -45,19 +45,19 @@
 	
 	<option value="//api/name/VKRequest:captchaSid:captchaImage:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:captchaSid:captchaImage:</option>
 	
-	<option value="//api/name/VKRequest:connectionErrorOccured:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:connectionErrorOccured:</option>
+	<option value="//api/name/VKRequest:connectionError:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:connectionError:</option>
 	
-	<option value="//api/name/VKRequest:parsingErrorOccured:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:parsingErrorOccured:</option>
+	<option value="//api/name/VKRequest:parsingError:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:parsingError:</option>
 	
 	<option value="//api/name/VKRequest:response:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:response:</option>
 	
-	<option value="//api/name/VKRequest:responseErrorOccured:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:responseErrorOccured:</option>
+	<option value="//api/name/VKRequest:responseError:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:responseError:</option>
 	
 	<option value="//api/name/VKRequest:totalBytes:downloadedBytes:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:totalBytes:downloadedBytes:</option>
 	
 	<option value="//api/name/VKRequest:totalBytes:uploadedBytes:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:totalBytes:uploadedBytes:</option>
 	
-	<option value="//api/name/VKRequest:validationRedirectURI:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:validationRedirectURI:</option>
+	<option value="//api/name/VKRequest:validationRedirectURL:">&nbsp;&nbsp;&nbsp;&nbsp;- VKRequest:validationRedirectURL:</option>
 	
 	
 	
@@ -93,19 +93,19 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:captchaSid:captchaImage:">VKRequest:captchaSid:captchaImage:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:connectionErrorOccured:">VKRequest:connectionErrorOccured:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:connectionError:">VKRequest:connectionError:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:parsingErrorOccured:">VKRequest:parsingErrorOccured:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:parsingError:">VKRequest:parsingError:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:response:">VKRequest:response:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:responseErrorOccured:">VKRequest:responseErrorOccured:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:responseError:">VKRequest:responseError:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:totalBytes:downloadedBytes:">VKRequest:totalBytes:downloadedBytes:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:totalBytes:uploadedBytes:">VKRequest:totalBytes:uploadedBytes:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:validationRedirectURI:">VKRequest:validationRedirectURI:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/VKRequest:validationRedirectURL:">VKRequest:validationRedirectURL:</a></span></li>
 	
 </ul></li>
 
@@ -179,21 +179,21 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/VKRequest:connectionErrorOccured:">&ndash;&nbsp;VKRequest:connectionErrorOccured:</a></code>
+		<code><a href="#//api/name/VKRequest:connectionError:">&ndash;&nbsp;VKRequest:connectionError:</a></code>
 		<span class="tooltip"><p>Method is called when connection error occurs</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/VKRequest:parsingErrorOccured:">&ndash;&nbsp;VKRequest:parsingErrorOccured:</a></code>
+		<code><a href="#//api/name/VKRequest:parsingError:">&ndash;&nbsp;VKRequest:parsingError:</a></code>
 		<span class="tooltip"><p>Method is called if any error occurs during server response parsing</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/VKRequest:responseErrorOccured:">&ndash;&nbsp;VKRequest:responseErrorOccured:</a></code>
+		<code><a href="#//api/name/VKRequest:responseError:">&ndash;&nbsp;VKRequest:responseError:</a></code>
 		<span class="tooltip"><p>Method is called if server response contains any error message</p></span>
 	</span>
 	
@@ -207,7 +207,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/VKRequest:validationRedirectURI:">&ndash;&nbsp;VKRequest:validationRedirectURI:</a></code>
+		<code><a href="#//api/name/VKRequest:validationRedirectURL:">&ndash;&nbsp;VKRequest:validationRedirectURL:</a></code>
 		<span class="tooltip"><p>Method is called if user needs to pass security validation (used <em>only</em> for testing purposes)</p></span>
 	</span>
 	
@@ -256,7 +256,7 @@ this method while uploading images, audio, video files)</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> captchaSid:(NSString *)<em>captchaSid</em> captchaImage:(NSString *)<em>captchaImage</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> captchaSid:(NSString *)<em>captchaSid</em> captchaImage:(NSURL *)<em>captchaImage</em></code></div>
 
     
 	
@@ -307,8 +307,8 @@ this method while uploading images, audio, video files)</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/VKRequest:connectionErrorOccured:" title="VKRequest:connectionErrorOccured:"></a>
-	<h3 class="subsubtitle method-title">VKRequest:connectionErrorOccured:</h3>
+	<a name="//api/name/VKRequest:connectionError:" title="VKRequest:connectionError:"></a>
+	<h3 class="subsubtitle method-title">VKRequest:connectionError:</h3>
 	
 	
 	
@@ -318,7 +318,7 @@ this method while uploading images, audio, video files)</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> connectionErrorOccured:(NSError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> connectionError:(NSError *)<em>error</em></code></div>
 
     
 	
@@ -358,8 +358,8 @@ this method while uploading images, audio, video files)</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/VKRequest:parsingErrorOccured:" title="VKRequest:parsingErrorOccured:"></a>
-	<h3 class="subsubtitle method-title">VKRequest:parsingErrorOccured:</h3>
+	<a name="//api/name/VKRequest:parsingError:" title="VKRequest:parsingError:"></a>
+	<h3 class="subsubtitle method-title">VKRequest:parsingError:</h3>
 	
 	
 	
@@ -369,7 +369,7 @@ this method while uploading images, audio, video files)</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> parsingErrorOccured:(NSError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> parsingError:(NSError *)<em>error</em></code></div>
 
     
 	
@@ -460,8 +460,8 @@ this method while uploading images, audio, video files)</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/VKRequest:responseErrorOccured:" title="VKRequest:responseErrorOccured:"></a>
-	<h3 class="subsubtitle method-title">VKRequest:responseErrorOccured:</h3>
+	<a name="//api/name/VKRequest:responseError:" title="VKRequest:responseError:"></a>
+	<h3 class="subsubtitle method-title">VKRequest:responseError:</h3>
 	
 	
 	
@@ -471,7 +471,7 @@ this method while uploading images, audio, video files)</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> responseErrorOccured:(id)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> responseError:(NSError *)<em>error</em></code></div>
 
     
 	
@@ -522,7 +522,7 @@ this method while uploading images, audio, video files)</p></span>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> totalBytes:(NSUInteger)<em>totalBytes</em> downloadedBytes:(NSUInteger)<em>downloadedBytes</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> totalBytes:(NSInteger)<em>totalBytes</em> downloadedBytes:(NSInteger)<em>downloadedBytes</em></code></div>
 
     
 	
@@ -580,7 +580,7 @@ this method while uploading images, audio, video files)</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> totalBytes:(NSUInteger)<em>totalBytes</em> uploadedBytes:(NSUInteger)<em>uploadedBytes</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> totalBytes:(NSInteger)<em>totalBytes</em> uploadedBytes:(NSInteger)<em>uploadedBytes</em></code></div>
 
     
 	
@@ -626,8 +626,8 @@ than 0 is used.</p></dd>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/VKRequest:validationRedirectURI:" title="VKRequest:validationRedirectURI:"></a>
-	<h3 class="subsubtitle method-title">VKRequest:validationRedirectURI:</h3>
+	<a name="//api/name/VKRequest:validationRedirectURL:" title="VKRequest:validationRedirectURL:"></a>
+	<h3 class="subsubtitle method-title">VKRequest:validationRedirectURL:</h3>
 	
 	
 	
@@ -637,7 +637,7 @@ than 0 is used.</p></dd>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> validationRedirectURI:(NSString *)<em>redirectURI</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)VKRequest:(VKRequest *)<em>request</em> validationRedirectURL:(NSURL *)<em>redirectURL</em></code></div>
 
     
 	
@@ -650,7 +650,7 @@ than 0 is used.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>redirectURI</em></dt>
+			<dt><em>redirectURL</em></dt>
 			<dd><p>URI that user should open in any browser</p></dd>
 		</dl>
 		
@@ -689,7 +689,7 @@ than 0 is used.</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 AndrewShmig. All rights reserved. (Last updated: 2014-03-17)</span><br />
+						<p><span class="copyright">&copy; 2014 AndrewShmig. All rights reserved. (Last updated: 2014-03-22)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

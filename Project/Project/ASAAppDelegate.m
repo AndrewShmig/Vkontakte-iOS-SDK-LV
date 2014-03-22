@@ -15,6 +15,9 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 
 
 @implementation ASAAppDelegate
+{
+    VKRequestManager *_rm;
+}
 
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -38,39 +41,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [self.viewController.view addSubview:self.webView];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
     return YES;
-}
-
-- (void)VKConnector:(VKConnector *)connector
-    willHideWebView:(UIWebView *)webView
-{
-    NSLog(@"%s", __FUNCTION__);
-    self.webView.hidden = YES;
-}
-
-- (void)VKConnector:(VKConnector *)connector
-    willShowWebView:(UIWebView *)webView
-{
-    NSLog(@"%s", __FUNCTION__);
-}
-
-- (void)     VKConnector:(VKConnector *)connector
-accessTokenRenewalFailed:(VKAccessToken *)accessToken
-{
-    NSLog(@"%s", __FUNCTION__);
-}
-
-- (void) VKConnector:(VKConnector *)connector
-webViewDidFinishLoad:(UIWebView *)webView
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"URL: %@", [webView.request.URL absoluteString]);
-}
-
-- (void)VKConnector:(VKConnector *)connector
-webViewDidStartLoad:(UIWebView *)webView
-{
-    NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)        VKConnector:(VKConnector *)connector
@@ -80,18 +52,11 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 
     NSLog(@"Access token: %@", accessToken);
 
-    VKRequestManager *rm = [[VKRequestManager alloc]
-                                              initWithDelegate:self
-                                                          user:[VKUser currentUser]];
+    _rm = [[VKRequestManager alloc]
+                             initWithDelegate:self
+                                         user:[VKUser currentUser]];
 
-    [rm info];
-}
-
-- (void)   VKConnector:(VKConnector *)connector
-connectionErrorOccured:(NSError *)error
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"CONNECTION error: %@", error);
+    [_rm info];
 }
 
 - (void)VKRequest:(VKRequest *)request
@@ -100,51 +65,6 @@ connectionErrorOccured:(NSError *)error
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"request: %@", request);
     NSLog(@"response: %@", response);
-}
-
-- (void)   VKRequest:(VKRequest *)request
-responseErrorOccured:(id)error
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"error: %@", error);
-}
-
-- (void)    VKRequest:(VKRequest *)request
-validationRedirectURI:(NSString *)redirectURI
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"redirectURI: %@", redirectURI);
-
-    self.webView.hidden = NO;
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:redirectURI]]];
-}
-
-- (void)VKRequest:(VKRequest *)request
-       captchaSid:(NSString *)captchaSid
-     captchaImage:(NSString *)captchaImage
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"captchaSid: %@", captchaSid);
-    NSLog(@"captchaImage: %@", captchaImage);
-
-    [request appendCaptchaSid:@"439824420775"
-                   captchaKey:@"spnuod"];
-
-    [request start];
-}
-
-- (void)  VKRequest:(VKRequest *)request
-parsingErrorOccured:(NSError *)error
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"%@", error);
-}
-
-- (void)  VKConnector:(VKConnector *)connector
-applicationWasDeleted:(NSError *)error
-{
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"Error: %@", error);
 }
 
 @end
