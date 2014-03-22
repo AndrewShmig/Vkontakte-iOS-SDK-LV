@@ -26,6 +26,7 @@
 //
 #import "VKRequestManager.h"
 #import "VkontakteSDK_Logger.h"
+#import "VKMethods.h"
 
 
 @implementation VKRequestManager
@@ -36,8 +37,8 @@
                             user:(VKUser *)user
 {
     VK_LOG(@"%@", @{
-            @"delegate": delegate,
-            @"user": user
+            @"delegate" : delegate,
+            @"user"     : user
     });
 
     self = [super init];
@@ -55,7 +56,7 @@
 
 - (VKRequest *)info
 {
-    if (!self.user) {
+    if (nil == self.user) {
         return nil;
     }
 
@@ -71,7 +72,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKUsersGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -79,7 +80,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKUsersSearch
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -87,7 +88,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKUsersGetSubscriptions
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -95,7 +96,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKUsersGetFollowers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -103,7 +104,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKUsersIsAppUser
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -113,7 +114,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKWallGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -121,7 +122,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKWallGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -129,7 +130,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallSavePost
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -137,7 +138,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallPost
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -145,7 +146,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallRepost
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -153,7 +154,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKWallGetReposts
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -161,7 +162,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallEdit
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -169,7 +170,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -177,7 +178,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallRestore
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -185,7 +186,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKWallGetComments
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -193,7 +194,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallAddComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -201,7 +202,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallDeleteComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -209,7 +210,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKWallRestoreComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -219,7 +220,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsIsMember
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -227,7 +228,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -235,7 +236,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -243,7 +244,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsGetMembers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -251,7 +252,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsJoin
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -259,7 +260,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsLeave
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -267,7 +268,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsSearch
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -275,7 +276,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsGetInvites
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -283,7 +284,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKGroupsBanUser
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -291,7 +292,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKGroupsUnbanUser
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -299,7 +300,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKGroupsGetBanned
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -309,7 +310,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -317,7 +318,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGetOnline
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -325,7 +326,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGetMutual
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -333,7 +334,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGetRecent
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -341,7 +342,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGetRequests
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -349,7 +350,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsAdd
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -357,7 +358,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsEdit
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -365,7 +366,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -373,7 +374,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGetLists
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -381,7 +382,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsAddList
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -389,7 +390,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsEditList
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -397,7 +398,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsDeleteList
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -405,7 +406,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGetAppUsers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -413,7 +414,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGetByPhones
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -421,7 +422,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKFriendsDeleteAllRequests
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -429,7 +430,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsGetSuggestions
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -437,7 +438,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFriendsAreFriends
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -447,7 +448,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosCreateAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -455,7 +456,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosEditAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -463,7 +464,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetAlbums
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -471,7 +472,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -479,7 +480,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetAlbumsCount
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -487,7 +488,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetProfile
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -495,7 +496,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -503,7 +504,7 @@
 {
     VKRequest *request = [self configureRequestWithHTTPMethod:@"GET"
                                                    methodName:kVKPhotosGetUploadServer
-                                                       option:options
+                                              queryParameters:options
                                                      selector:_cmd];
     request.cacheLiveTime = VKCacheLiveTimeNever;
 
@@ -514,7 +515,7 @@
 {
     VKRequest *request = [self configureRequestWithHTTPMethod:@"GET"
                                                    methodName:kVKPhotosGetProfileUploadServer
-                                                       option:options
+                                              queryParameters:options
                                                      selector:_cmd];
 
     request.cacheLiveTime = VKCacheLiveTimeNever;
@@ -526,7 +527,7 @@
 {
     VKRequest *request = [self configureRequestWithHTTPMethod:@"GET"
                                                    methodName:kVKPhotosGetChatUploadServer
-                                                       option:options
+                                              queryParameters:options
                                                      selector:_cmd];
 
     request.cacheLiveTime = VKCacheLiveTimeNever;
@@ -538,7 +539,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosSaveProfilePhoto
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -546,7 +547,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosSaveWallPhoto
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -554,7 +555,7 @@
 {
     VKRequest *request = [self configureRequestWithHTTPMethod:@"GET"
                                                    methodName:kVKPhotosGetWallUploadServer
-                                                       option:options
+                                              queryParameters:options
                                                      selector:_cmd];
     request.cacheLiveTime = VKCacheLiveTimeNever;
 
@@ -565,7 +566,7 @@
 {
     VKRequest *request = [self configureRequestWithHTTPMethod:@"GET"
                                                    methodName:kVKPhotosGetMessagesUploadServer
-                                                       option:options
+                                              queryParameters:options
                                                      selector:_cmd];
     request.cacheLiveTime = VKCacheLiveTimeNever;
 
@@ -576,7 +577,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosSaveMessagesPhoto
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -584,7 +585,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosSearch
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -592,7 +593,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosSave
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -600,7 +601,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosEdit
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -608,7 +609,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosMove
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -616,7 +617,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosMakeCover
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -624,7 +625,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosReorderAlbums
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -632,7 +633,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosReorderPhotos
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -640,7 +641,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetAll
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -648,7 +649,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetUserPhotos
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -656,7 +657,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosDeleteAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -664,7 +665,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -672,7 +673,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosConfirmTag
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -680,7 +681,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetComments
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -688,7 +689,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetAllComments
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -696,7 +697,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosCreateComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -704,7 +705,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosDeleteComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -712,7 +713,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosRestoreComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -720,7 +721,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosEditComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -728,7 +729,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetTags
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -736,7 +737,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosPutTag
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -744,7 +745,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPhotosRemoveTag
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -752,7 +753,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPhotosGetNewTags
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -762,7 +763,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKVideoGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -770,7 +771,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoEdit
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -778,7 +779,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoAdd
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -786,7 +787,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoSave
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -794,7 +795,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -802,7 +803,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoRestore
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -810,7 +811,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKVideoSearch
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -818,7 +819,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKVideoGetUserVideos
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -826,7 +827,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKVideoGetAlbums
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -834,7 +835,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoAddAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -842,7 +843,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoEditAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -850,7 +851,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoDeleteAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -858,7 +859,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoMoveToAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -866,7 +867,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKVideoGetComments
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -874,7 +875,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoCreateComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -882,7 +883,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoDeleteComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -890,7 +891,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoRestoreComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -898,7 +899,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoEditComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -906,7 +907,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKVideoGetTags
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -914,7 +915,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoPutTag
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -922,7 +923,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoRemoveTag
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -930,7 +931,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKVideoGetNewTags
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -938,7 +939,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKVideoReport
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -948,7 +949,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -956,7 +957,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -964,7 +965,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioGetLyrics
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -972,7 +973,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioSearch
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -980,7 +981,7 @@
 {
     VKRequest *request = [self configureRequestWithHTTPMethod:@"GET"
                                                    methodName:kVKAudioGetUploadServer
-                                                       option:options
+                                              queryParameters:options
                                                      selector:_cmd];
     request.cacheLiveTime = VKCacheLiveTimeNever;
 
@@ -991,7 +992,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioSave
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -999,7 +1000,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioAdd
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1007,7 +1008,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1015,7 +1016,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioEdit
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1023,7 +1024,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioReorder
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1031,7 +1032,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioRestore
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1039,7 +1040,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioGetAlbums
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1047,7 +1048,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioAddAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1055,7 +1056,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioEditAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1063,7 +1064,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioDeleteAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1071,7 +1072,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioMoveToAlbum
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1079,7 +1080,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAudioSetBroadcast
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1087,7 +1088,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioGetBroadcast
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1095,7 +1096,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioGetRecommendations
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1103,7 +1104,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioGetPopular
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1111,7 +1112,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAudioGetCount
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1121,7 +1122,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1129,7 +1130,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGetDialogs
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1137,7 +1138,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1145,7 +1146,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesSearch
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1153,7 +1154,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGetHistory
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1161,7 +1162,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesSend
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1169,7 +1170,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1177,7 +1178,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesDeleteDialog
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1185,7 +1186,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesRestore
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1193,7 +1194,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesMarkAsNew
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1201,7 +1202,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesMarkAsRead
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1209,7 +1210,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesMarkAsImportant
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1217,7 +1218,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGetLongPollServer
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1225,7 +1226,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGetLongPollHistory
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1233,7 +1234,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGetChat
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1241,7 +1242,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesCreateChat
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1249,7 +1250,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesEditChat
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1257,7 +1258,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGetChatUsers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1265,7 +1266,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesSetActivity
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1273,7 +1274,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesSearchDialogs
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1281,7 +1282,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesAddChatUser
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1289,7 +1290,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesRemoveChatUser
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1297,7 +1298,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKMessagesGetLastActivity
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1305,7 +1306,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesSetChatPhoto
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1313,7 +1314,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKMessagesDeleteChatPhoto
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1323,7 +1324,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNewsfeedGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1331,7 +1332,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNewsfeedGetRecommended
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1339,7 +1340,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNewsfeedGetComments
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1347,7 +1348,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNewsfeedGetMentions
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1355,7 +1356,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNewsfeedGetBanned
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1363,7 +1364,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNewsfeedAddBan
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1371,7 +1372,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNewsfeedDeleteBan
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1379,7 +1380,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNewsfeedSearch
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1387,7 +1388,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNewsfeedGetLists
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1395,7 +1396,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNewsfeedUnsubscribe
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1405,7 +1406,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKLikesGetList
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1413,7 +1414,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKLikesAdd
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1421,7 +1422,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKLikesDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1429,7 +1430,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKLikesIsLiked
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1439,7 +1440,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAccountGetCounters
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1447,7 +1448,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAccountSetNameInMenu
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1455,7 +1456,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAccountSetOnline
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1463,7 +1464,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAccountImportContacts
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1471,7 +1472,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAccountRegisterDevice
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1479,7 +1480,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAccountUnregisterDevice
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1487,7 +1488,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAccountSetSilenceMode
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1495,7 +1496,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAccountGetPushSettings
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1503,7 +1504,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAccountGetAppPermissions
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1511,7 +1512,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAccountGetActiveOffers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1519,7 +1520,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAccountBanUser
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1527,7 +1528,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAccountUnbanUser
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1535,7 +1536,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAccountGetBanned
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1543,7 +1544,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAccountTestValidation
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1553,7 +1554,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKStatusGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1561,7 +1562,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKStatusSet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1571,7 +1572,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPagesGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1579,7 +1580,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPagesSave
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1587,7 +1588,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPagesSaveAccess
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1595,7 +1596,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPagesGetHistory
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1603,7 +1604,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPagesGetTitles
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1611,7 +1612,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPagesGetVersion
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1619,7 +1620,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPagesParseWiki
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1629,7 +1630,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKBoardGetTopics
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1637,7 +1638,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKBoardGetComments
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1645,7 +1646,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardAddTopic
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1653,7 +1654,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardAddComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1661,7 +1662,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardDeleteTopic
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1669,7 +1670,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardEditTopic
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1677,7 +1678,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardEditComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1685,7 +1686,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardRestoreComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1693,7 +1694,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardDeleteComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1701,7 +1702,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardOpenTopic
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1709,7 +1710,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardCloseTopic
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1717,7 +1718,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardFixTopic
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1725,7 +1726,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKBoardUnfixTopic
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1735,7 +1736,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNotesGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1743,7 +1744,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNotesGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1751,7 +1752,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNotesGetFriendsNotes
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1759,7 +1760,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNotesAdd
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1767,7 +1768,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNotesEdit
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1775,7 +1776,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNotesDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1783,7 +1784,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNotesGetComments
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1791,7 +1792,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNotesCreateComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1799,7 +1800,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNotesEditComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1807,7 +1808,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNotesDeleteComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1815,7 +1816,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNotesRestoreComment
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1825,7 +1826,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPlacesAdd
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1833,7 +1834,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1841,7 +1842,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesSearch
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1849,7 +1850,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPlacesCheckin
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1857,7 +1858,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetCheckins
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1865,7 +1866,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetTypes
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1873,7 +1874,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetCountries
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1881,7 +1882,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetRegions
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1889,7 +1890,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetStreetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1897,7 +1898,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetCountryById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1905,7 +1906,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetCities
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1913,7 +1914,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPlacesGetCityById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1923,7 +1924,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPollsGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1931,7 +1932,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPollsAddVote
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1939,7 +1940,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKPollsDeleteVote
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1947,7 +1948,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKPollsGetVotes
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1957,7 +1958,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDocsGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1965,7 +1966,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDocsGetById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -1973,7 +1974,7 @@
 {
     VKRequest *request = [self configureRequestWithHTTPMethod:@"GET"
                                                    methodName:kVKDocsGetUploadServer
-                                                       option:options
+                                              queryParameters:options
                                                      selector:_cmd];
     request.cacheLiveTime = VKCacheLiveTimeNever;
 
@@ -1984,7 +1985,7 @@
 {
     VKRequest *request = [self configureRequestWithHTTPMethod:@"GET"
                                                    methodName:kVKDocsGetWallUloadServer
-                                                       option:options
+                                              queryParameters:options
                                                      selector:_cmd];
     request.cacheLiveTime = VKCacheLiveTimeNever;
 
@@ -1995,7 +1996,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKDocsSave
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2003,7 +2004,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKDocsDelete
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2011,7 +2012,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKDocsAdd
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2021,7 +2022,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFaveGetUsers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2029,7 +2030,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFaveGetPhotos
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2037,7 +2038,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFaveGetPosts
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2045,7 +2046,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFaveGetVideos
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2053,7 +2054,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKFaveGetLinks
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2063,7 +2064,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKNotificationsGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2071,7 +2072,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKNotificationsMarkAsViewed
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2081,7 +2082,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKStatsGet
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2091,7 +2092,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKSearchGetHints
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2101,7 +2102,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetAccounts
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2109,7 +2110,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetClients
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2117,7 +2118,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsCreateClients
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2125,7 +2126,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsUpdateClients
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2133,7 +2134,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsDeleteClients
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2141,7 +2142,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetCampaigns
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2149,7 +2150,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsCreateCampaigns
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2157,7 +2158,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsUpdateCampaigns
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2165,7 +2166,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsDeleteCampaigns
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2173,7 +2174,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetAds
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2181,7 +2182,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetAdsLayout
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2189,7 +2190,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetAdsTargeting
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2197,7 +2198,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsCreateAds
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2205,7 +2206,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsUpdateAds
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2213,7 +2214,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsDeleteAds
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2221,7 +2222,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetStatistics
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2229,7 +2230,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetDemographics
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2237,7 +2238,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetBudget
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2245,7 +2246,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetOfficeUsers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2253,7 +2254,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsAddOfficeUsers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2261,7 +2262,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsRemoveOfficeUsers
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2269,7 +2270,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetTargetingStats
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2277,7 +2278,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetSuggestions
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2285,7 +2286,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetCategories
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2293,7 +2294,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetUploadURL
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2301,7 +2302,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetVideoUploadURL
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2309,7 +2310,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetFloodStats
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2317,7 +2318,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetRejectionReason
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2325,7 +2326,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsCreateTargetGroup
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2333,7 +2334,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsUpdateTargetGroup
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2341,7 +2342,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsDeleteTargetGroup
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2349,7 +2350,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAdsGetTargetGroups
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2357,7 +2358,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKAdsImportTargetContacts
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2367,9 +2368,9 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKExecute
-                                         option:@{
-                                                 @"code": code
-                                         }
+                                queryParameters:@{
+                                        @"code" : code
+                                }
                                        selector:_cmd];
 }
 
@@ -2382,7 +2383,7 @@
 
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:methodName
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2392,7 +2393,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKAppsGetCatalog
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2402,7 +2403,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"POST"
                                      methodName:kVKUtilsCheckLink
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2410,7 +2411,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKUtilsResolveScreenName
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2418,7 +2419,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKUtilsGetServerTime
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2428,7 +2429,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetCountries
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2436,7 +2437,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetRegions
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2444,7 +2445,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetCities
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2452,7 +2453,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetCitiesById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2460,7 +2461,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetCountriesById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2468,7 +2469,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetFaculties
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2476,7 +2477,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetSchools
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2484,7 +2485,7 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetStreetsById
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
@@ -2492,52 +2493,40 @@
 {
     return [self configureRequestWithHTTPMethod:@"GET"
                                      methodName:kVKDatabaseGetUniversities
-                                         option:options
+                                queryParameters:options
                                        selector:_cmd];
 }
 
 #pragma mark - Private methods
 
-- (NSDictionary *)addAccessTokenKey:(NSDictionary *)options
-{
-    VK_LOG(@"%@", @{
-            @"options": options
-    });
-
-    NSMutableDictionary *ops;
-    ops = [options mutableCopy];
-
-    ops[@"access_token"] = self.user.accessToken.token;
-
-    return ops;
-}
-
 - (VKRequest *)configureRequestWithHTTPMethod:(NSString *)httpMethod
                                    methodName:(NSString *)methodName
-                                       option:(NSDictionary *)options
+                              queryParameters:(NSDictionary *)queryParameters
                                      selector:(SEL)selector
 {
     //    logging
     VK_LOG(@"%@", @{
-            @"httpMethod": httpMethod,
-            @"methodName": methodName,
-            @"options": options,
-            @"selector": NSStringFromSelector(selector)
+            @"httpMethod"      : httpMethod,
+            @"methodName"      : methodName,
+            @"queryParameters" : queryParameters,
+            @"selector"        : NSStringFromSelector(selector)
     });
 
 //    lets not work with nil values
-    if(nil == options) {
-        options = [[NSMutableDictionary alloc] init];
+    if (nil == queryParameters) {
+        queryParameters = [NSMutableDictionary new];
+    } else {
+        queryParameters = [queryParameters mutableCopy];
     }
 
 //    adding access token if needed
     if (nil != self.user) {
-        options = [self addAccessTokenKey:options];
+        ((NSMutableDictionary *)queryParameters)[@"access_token"] = self.user.accessToken.token;
     }
 
     VKRequest *req = [VKRequest requestHTTPMethod:httpMethod
                                        methodName:methodName
-                                          options:options
+                                  queryParameters:queryParameters
                                          delegate:self.delegate];
 
     req.signature = NSStringFromSelector(selector);

@@ -1,256 +1,188 @@
 //
-// Created by AndrewShmig on 6/28/13.
+// Copyright (C) 3/22/14  Andrew Shmig ( andrewshmig@yandex.ru )
+// Russian Bleeding Games. All rights reserved.
 //
-// Copyright (c) 2013 Andrew Shmig
-// 
-// Permission is hereby granted, free of charge, to any person 
-// obtaining a copy of this software and associated documentation 
-// files (the "Software"), to deal in the Software without 
-// restriction, including without limitation the rights to use, 
-// copy, modify, merge, publish, distribute, sublicense, and/or 
-// sell copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following 
-// conditions:
-// 
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
-// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
 //
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along
+// with this program; if not, write to the Free Software Foundation, Inc.,
+// 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+//
+
 #import "VKRequest.h"
+#import "VKMethods.h"
 #import "VkontakteSDK_Logger.h"
+#import "VKUser.h"
 
 
 #define kCaptchaErrorCode 14
 #define kValidationRequired 17
 
 
+@interface VKRequest (Private)
+
+- (instancetype)initWithHTTPMethod:(NSString *)HTTPMethod
+                           HTTPURL:(NSURL *)HTTPURL
+                          HTTPBody:(NSData *)HTTPBody
+               HTTPQueryParameters:(NSDictionary *)queryParameters
+                  HTTPHeaderFields:(NSDictionary *)headerFields
+                          delegate:(id <VKRequestDelegate>)delegate;
+
+@end
+
+
 @implementation VKRequest
 {
-    NSMutableURLRequest *_request;
     NSURLConnection *_connection;
-
     NSMutableData *_receivedData;
-    NSMutableData *_body;
     NSString *_boundary, *_boundaryHeader, *_boundaryFooter;
-    NSUInteger _expectedDataSize;
-
-    BOOL _isBodyEmpty;
+    NSInteger _expectedDataSize;
+    BOOL _isFileAdded;
 }
 
-#pragma mark Visible VKRequest methods
+#pragma mark - Init methods
+
+- (instancetype)initWithHTTPMethod:(NSString *)httpMethod
+                               URL:(NSURL *)URL
+                           headers:(NSDictionary *)headers
+                              body:(NSData *)body
+                          delegate:(id <VKRequestDelegate>)delegate
+{
+    VK_LOG();
+
+    return [self initWithHTTPMethod:httpMethod
+                            HTTPURL:URL
+                           HTTPBody:body
+                HTTPQueryParameters:[NSDictionary new]
+                   HTTPHeaderFields:headers
+                           delegate:delegate];
+}
+
+- (instancetype)initWithHTTPMethod:(NSString *)httpMethod
+                        methodName:(NSString *)methodName
+                   queryParameters:(NSDictionary *)queryParameters
+                          delegate:(id <VKRequestDelegate>)delegate
+{
+    VK_LOG();
+
+    return [self initWithHTTPMethod:httpMethod
+                            HTTPURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",
+                                                                                    kVkontakteAPIURL,
+                                                                                    methodName]]
+                           HTTPBody:[NSData new]
+                HTTPQueryParameters:queryParameters
+                   HTTPHeaderFields:[NSDictionary new]
+                           delegate:delegate];
+}
+
+- (instancetype)initWithMethod:(NSString *)methodName
+               queryParameters:(NSDictionary *)queryParameters
+                      delegate:(id <VKRequestDelegate>)delegate
+{
+    VK_LOG();
+
+    return [self initWithHTTPMethod:@"GET"
+                            HTTPURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",
+                                                                                    kVkontakteAPIURL,
+                                                                                    methodName]]
+                           HTTPBody:[NSData new]
+                HTTPQueryParameters:queryParameters
+                   HTTPHeaderFields:[NSDictionary new]
+                           delegate:delegate];
+}
+
+- (instancetype)initWithRequest:(NSURLRequest *)request
+                       delegate:(id <VKRequestDelegate>)delegate
+{
+    VK_LOG();
+
+//    преобразуем query строку в словарь ключей-значений
+    NSMutableDictionary *queryParameters = [NSMutableDictionary new];
+
+    NSArray *params = [request.URL.query componentsSeparatedByString:@"&"];
+    [params enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+    {
+        NSArray *param = [(NSString *) obj componentsSeparatedByString:@"="];
+        NSString *key = param[0];
+        NSString *value = param[1];
+
+        queryParameters[key] = value;
+    }];
+
+//    получаем URL без query строки
+    NSRange range = [request.URL.absoluteString rangeOfString:@"?"];
+    NSString *urlWithoutQuery = [request.URL.absoluteString substringToIndex:range.location];
+
+    NSURL *httpURL = [NSURL URLWithString:urlWithoutQuery];
+
+    return [self initWithHTTPMethod:request.HTTPMethod
+                            HTTPURL:httpURL
+                           HTTPBody:request.HTTPBody
+                HTTPQueryParameters:queryParameters
+                   HTTPHeaderFields:[NSDictionary new]
+                           delegate:delegate];
+}
+
+
 #pragma mark - Class methods
 
 + (instancetype)request:(NSURLRequest *)request
                delegate:(id <VKRequestDelegate>)delegate
 {
-    VK_LOG(@"%@", @{
-            @"request"  : request,
-            @"delegate" : delegate
-    });
+    VK_LOG();
 
-    VKRequest *returnRequest = [[VKRequest alloc]
-                                           initWithRequest:request];
-    returnRequest.delegate = delegate;
-
-    return returnRequest;
+    return [[VKRequest alloc] initWithRequest:request
+                                     delegate:delegate];
 }
 
-+ (instancetype)requestHTTPMethod:(NSString *)httpMethod
-                              URL:(NSURL *)url
-                          headers:(NSDictionary *)headers
-                             body:(NSData *)body
-                         delegate:(id <VKRequestDelegate>)delegate
++ (instancetype)requestMethod:(NSString *)methodName
+              queryParameters:(NSDictionary *)queryParameters
+                     delegate:(id <VKRequestDelegate>)delegate
 {
-    VK_LOG(@"%@", @{
-            @"httpMethod" : httpMethod,
-            @"url"        : url,
-            @"headers"    : headers,
-            @"body"       : body,
-            @"delegate"   : delegate
-    });
+    VK_LOG();
 
-    VKRequest *request = [[VKRequest alloc]
-                                     initWithHTTPMethod:httpMethod
-                                                    URL:url
-                                                headers:headers
-                                                   body:body];
-
-    request.delegate = delegate;
-
-    return request;
+    return [[VKRequest alloc] initWithMethod:methodName
+                             queryParameters:queryParameters
+                                    delegate:delegate];
 }
 
 + (instancetype)requestHTTPMethod:(NSString *)httpMethod
                        methodName:(NSString *)methodName
-                          options:(NSDictionary *)options
+                  queryParameters:(NSDictionary *)queryParameters
                          delegate:(id <VKRequestDelegate>)delegate
 {
-    VK_LOG(@"%@", @{
-            @"httpMethod" : httpMethod,
-            @"methodName" : methodName,
-            @"options"    : options,
-            @"delegate"   : delegate
-    });
+    VK_LOG();
 
-    NSString *lowercaseHTTPMethodName = [httpMethod lowercaseString];
-
-    if ([lowercaseHTTPMethodName isEqualToString:@"get"]) {
-        return [VKRequest requestMethod:methodName
-                                options:options
-                               delegate:delegate];
-    } else if ([lowercaseHTTPMethodName isEqualToString:@"post"]) {
-//        преобразуем передаваемые параметры в одну строку, закодируем её и
-//        добавим в тело запроса
-        NSMutableArray *params = [[NSMutableArray alloc] init];
-
-        [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-        {
-            NSString *param = [NSString stringWithFormat:@"%@=%@",
-                                                         [[key description]
-                                                               lowercaseString],
-                                                         [[obj description]
-                                                               encodeURL]];
-
-            [params addObject:param];
-        }];
-
-//        формируем запрос
-        NSData *body = [[params componentsJoinedByString:@"&"]
-                                dataUsingEncoding:NSUTF8StringEncoding];
-
-        NSString *urlAsString = [NSString stringWithFormat:@"%@%@",
-                                                           kVkontakteAPIURL,
-                                                           methodName];
-        NSURL *url = [NSURL URLWithString:urlAsString];
-
-        return [VKRequest requestHTTPMethod:@"POST"
-                                        URL:url
-                                    headers:@{}
-                                       body:body
-                                   delegate:delegate];
-    }
-
-    return nil;
+    return [[VKRequest alloc] initWithHTTPMethod:httpMethod
+                                      methodName:methodName
+                                 queryParameters:queryParameters
+                                        delegate:delegate];
 }
 
-+ (instancetype)requestMethod:(NSString *)methodName
-                      options:(NSDictionary *)options
-                     delegate:(id <VKRequestDelegate>)delegate
++ (instancetype)requestHTTPMethod:(NSString *)httpMethod
+                              URL:(NSURL *)URL
+                          headers:(NSDictionary *)headers
+                             body:(NSData *)body
+                         delegate:(id <VKRequestDelegate>)delegate
 {
-    VK_LOG(@"%@", @{
-            @"methodName" : methodName,
-            @"options"    : options,
-            @"delegate"   : delegate
-    });
+    VK_LOG();
 
-    VKRequest *request = [[VKRequest alloc]
-                                     initWithMethod:methodName
-                                            options:options];
-
-    request.delegate = delegate;
-
-    return request;
+    return [[VKRequest alloc] initWithHTTPMethod:httpMethod
+                                             URL:URL
+                                         headers:headers
+                                            body:body
+                                        delegate:delegate];
 }
 
-#pragma mark - Init methods
-
-- (instancetype)initWithRequest:(NSURLRequest *)request
-{
-    VK_LOG(@"%@", @{
-            @"request" : request
-    });
-
-    self = [super init];
-
-    if (nil == self)
-        return nil;
-
-    _request = [request mutableCopy];
-    _receivedData = [[NSMutableData alloc] init];
-    _body = [[NSMutableData alloc] init];
-    _boundary = [[NSProcessInfo processInfo] globallyUniqueString];
-    _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n", _boundary];
-    _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n", _boundary];
-    _expectedDataSize = NSURLResponseUnknownContentLength;
-    _cacheLiveTime = VKCacheLiveTimeOneHour;
-    _offlineMode = NO;
-    _isBodyEmpty = YES;
-
-    return self;
-}
-
-- (instancetype)initWithHTTPMethod:(NSString *)httpMethod
-                               URL:(NSURL *)url
-                           headers:(NSDictionary *)headers
-                              body:(NSData *)body
-{
-    VK_LOG(@"%@", @{
-            @"httpMethod" : httpMethod,
-            @"url"        : url,
-            @"headers"    : headers,
-            @"body"       : body
-    });
-
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-
-    [request setHTTPMethod:[httpMethod uppercaseString]];
-    [request setURL:url];
-    [request setAllHTTPHeaderFields:headers];
-    [request setHTTPBody:body];
-
-    return [self initWithRequest:request];
-}
-
-- (instancetype)initWithMethod:(NSString *)methodName
-                       options:(NSDictionary *)options
-{
-    VK_LOG(@"%@", @{
-            @"methodName" : methodName,
-            @"options"    : options
-    });
-
-    NSMutableString *fullURL = [NSMutableString string];
-    [fullURL appendFormat:@"%@%@", kVkontakteAPIURL, methodName];
-
-//    нет надобности добавлять "?", если параметров нет
-    if (0 != [options count])
-        [fullURL appendString:@"?"];
-
-    NSMutableArray *params = [NSMutableArray array];
-    [options enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-    {
-        NSString *param = [NSString stringWithFormat:@"%@=%@",
-                                                     [[key description]
-                                                           lowercaseString],
-                                                     [[obj description]
-                                                           encodeURL]];
-
-        [params addObject:param];
-    }];
-
-//    сортировка нужна для того, чтобы одинаковые запросы имели одинаковый MD5
-//    не стоит забывать, что при итерации по словарю порядок чтения записей может
-//    быть каждый раз разный
-    [params sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-
-    [fullURL appendString:[params componentsJoinedByString:@"&"]];
-
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"GET"];
-
-    return [self initWithRequest:request];
-}
-
-#pragma mark - Start & cancel request
+#pragma mark - Instance methods
 
 - (void)start
 {
@@ -265,8 +197,8 @@
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
 
-    NSData *cachedResponseData = [item.cache cacheForURL:[self removeTemporaryRequestOptions:_request.URL]
-                                             offlineMode:_offlineMode];
+    NSData *cachedResponseData = [item.cache cacheForURL:[self uniqueRequestURL]
+                                             offlineMode:self.offlineMode];
     if (nil != cachedResponseData) {
         _receivedData = [cachedResponseData mutableCopy];
         [self connectionDidFinishLoading:_connection];
@@ -276,21 +208,67 @@
         self.delegate = nil;
     }
 
-//    если тело запроса установлено, то внесем кое-какие завершающие штрихи
-    if (!_isBodyEmpty) {
-        [_request setValue:[NSString stringWithFormat:@"%d", [_body length]]
-        forHTTPHeaderField:@"Content-Length"];
-        [_request setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=\"%@\"",
-                                                      _boundary]
-        forHTTPHeaderField:@"Content-Type"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
-//        "закроем" тело
-        [_body appendData:[_boundaryFooter dataUsingEncoding:NSUTF8StringEncoding]];
-        [_request setHTTPBody:_body];
+//    HTTP метод отправки запроса
+    request.HTTPMethod = self.HTTPMethod;
+
+//    сформируем УРЛ на который будет отправлен запрос
+//    в зависимости от метода отправки запроса параметры запроса пойдут либо
+//    в УРЛ, либо в тело запроса
+    NSURL *finalURL = [self createFinalURL];
+    request.URL = finalURL;
+
+//    формируем тело запроса
+    NSMutableData *finalBody = [NSMutableData new];
+
+    if ([[self.HTTPMethod lowercaseString] isEqualToString:@"post"]) {
+        if ([self.HTTPQueryParameters count] != 0) {
+//            параметры надо добавить в тело запроса
+            NSMutableArray *queryParams = [NSMutableArray new];
+
+            [self.HTTPQueryParameters enumerateKeysAndObjectsUsingBlock:^(id key,
+                                                                          id value,
+                                                                          BOOL *stop)
+            {
+                [queryParams addObject:[NSString stringWithFormat:@"%@=%@",
+                                                                  [[key description]
+                                                                        lowercaseString],
+                                                                  [[value description]
+                                                                          encodeURL]]];
+            }];
+
+            [finalBody appendData:[[NSString stringWithFormat:@"%@",
+                                                              [queryParams componentsJoinedByString:@"&"]]
+                                                              dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+
+        if (_isFileAdded) {
+            //    добавим _boundaryHeader
+            [finalBody appendData:[_boundaryHeader dataUsingEncoding:NSUTF8StringEncoding]];
+
+            //    добавим основную часть тела
+            [finalBody appendData:self.HTTPBody];
+
+            //    добавим _boundaryFooter
+            [finalBody appendData:[_boundaryFooter dataUsingEncoding:NSUTF8StringEncoding]];
+
+            //       установим необходимые поля хэдеров
+            self.HTTPHeaderFields[@"Content-Length"] = [NSString stringWithFormat:@"%d",
+                                                                                  self.HTTPBody.length];
+            self.HTTPHeaderFields[@"Content-Type"] = [NSString stringWithFormat:@"multipart/form-data; boundary=\"%@\"",
+                                                                                _boundary];
+        }
+
+        request.HTTPBody = finalBody;
     }
 
+//    устанавливаем ключи-значения для хедеров
+    request.allHTTPHeaderFields = self.HTTPHeaderFields;
+
+//    создаем NSURLConnection и стартуем запрос
     _connection = [[NSURLConnection alloc]
-                                    initWithRequest:_request
+                                    initWithRequest:request
                                            delegate:self
                                    startImmediately:YES];
 }
@@ -300,16 +278,13 @@
     VK_LOG();
 
     _receivedData = nil;
-    _expectedDataSize = NSURLResponseUnknownContentLength;
+    _expectedDataSize = NSURLResponseUnknownLength;
     [_connection cancel];
 }
 
-#pragma mark - Request body manipulations
-
-
-- (void)appendAudioFile:(NSData *)file
-                   name:(NSString *)name
-                  field:(NSString *)field
+- (void)attachFile:(NSData *)file
+              name:(NSString *)name
+             field:(NSString *)field
 {
     VK_LOG(@"%@", @{
             @"file"  : file,
@@ -317,103 +292,70 @@
             @"field" : field
     });
 
-    [self appendFile:file
-                name:name
-               field:field];
-}
+//    файл добавляем в тело запроса
+    _isFileAdded = YES;
 
-- (void)appendDocumentFile:(NSData *)file
-                      name:(NSString *)name
-                     field:(NSString *)field
-{
-    VK_LOG(@"%@", @{
-            @"file"  : file,
-            @"name"  : name,
-            @"field" : field
-    });
+    NSString *contentDisposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",
+                                                              field,
+                                                              name];
+    [self.HTTPBody appendData:[contentDisposition dataUsingEncoding:NSUTF8StringEncoding]];
 
-    [self appendFile:file
-                name:name
-               field:field];
-}
+//    Content-Type
+    NSString *contentType = [self determineContentTypeFromExtension:[[name componentsSeparatedByString:@"."]
+                                                                           lastObject]];
+    if (nil != contentType) {
+        NSString *fullContentType = [NSString stringWithFormat:@"Content-Type: %@\r\n\r\n",
+                                                               contentType];
+        [self.HTTPBody appendData:[fullContentType dataUsingEncoding:NSUTF8StringEncoding]];
+    } else {
+        [self.HTTPBody appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    }
 
-- (void)appendImageFile:(NSData *)file
-                   name:(NSString *)name
-                  field:(NSString *)field
-{
-    VK_LOG(@"%@", @{
-            @"file"  : file,
-            @"name"  : name,
-            @"field" : field
-    });
-
-    [self appendFile:file
-                name:name
-               field:field];
-}
-
-- (void)appendVideoFile:(NSData *)file
-                   name:(NSString *)name
-                  field:(NSString *)field
-{
-    VK_LOG(@"%@", @{
-            @"file"  : file,
-            @"name"  : name,
-            @"field" : field
-    });
-
-    [self appendFile:file
-                name:name
-               field:field];
-}
-
-#pragma mark - Captcha
-
-- (void)appendCaptchaSid:(NSString *)captchaSid
-              captchaKey:(NSString *)captchaKey
-{
-    NSString *urlAsString = [_request.URL absoluteString];
-    NSString *urlAsStringWithCaptcha = [NSString stringWithFormat:@"%@&captcha_sid=%@&captcha_key=%@",
-                                                                  urlAsString,
-                                                                  [captchaSid encodeURL],
-                                                                  [captchaKey encodeURL]];
-
-    NSURL *URLWithCaptcha = [NSURL URLWithString:urlAsStringWithCaptcha];
-    _request.URL = URLWithCaptcha;
-}
-
-#pragma mark - Overridden methods
-
-- (NSString *)description
-{
-    VK_LOG();
-
-    NSDictionary *description = @{
-            @"delegate"      : self.delegate,
-            @"signature"     : self.signature,
-            @"cacheLiveTime" : @(self.cacheLiveTime),
-            @"offlineMode"   : (self.offlineMode ? @"YES" : @"NO"),
-            @"request"       : [_request description]
-    };
-
-    return [description description];
+//    file part
+    [self.HTTPBody appendData:file];
 }
 
 - (id)copyWithZone:(NSZone *)zone
 {
     VK_LOG();
 
-    VKRequest *copy = [[VKRequest alloc]
-                                  initWithRequest:_request];
+    VKRequest *copyRequest = [[VKRequest alloc]
+                                         initWithHTTPMethod:self.HTTPMethod
+                                                    HTTPURL:self.HTTPURL
+                                                   HTTPBody:self.HTTPBody
+                                        HTTPQueryParameters:self.HTTPQueryParameters
+                                           HTTPHeaderFields:self.HTTPHeaderFields
+                                                   delegate:self.delegate];
 
-    copy.signature = _signature;
-    copy.cacheLiveTime = _cacheLiveTime;
-    copy.offlineMode = _offlineMode;
+    copyRequest.signature = self.signature;
+    copyRequest.cacheLiveTime = self.cacheLiveTime;
+    copyRequest.offlineMode = self.offlineMode;
 
-    return copy;
+    return copyRequest;
 }
 
-#pragma mark - NSURLConnectionDataDelegate
+- (NSString *)description
+{
+    VK_LOG();
+
+    NSDictionary *description = @{
+            @"delegate"            : self.delegate,
+            @"signature"           : self.signature,
+            @"cacheLiveTime"       : @(self.cacheLiveTime),
+            @"offlineMode"         : (self.offlineMode ? @"YES" : @"NO"),
+            @"HTTPMethod"          : self.HTTPMethod,
+            @"HTTPURL"             : self.HTTPURL,
+            @"HTTPQueryParameters" : self.HTTPQueryParameters,
+            @"HTTPBody"            : self.HTTPBody,
+            @"HTTPHeaderFields"    : self.HTTPHeaderFields
+    };
+
+    return [description description];
+}
+
+#pragma mark - Getters & setters
+
+#pragma mark - NSURLConnectionDelegate
 
 - (void)connection:(NSURLConnection *)connection
 didReceiveResponse:(NSURLResponse *)response
@@ -426,9 +368,7 @@ didReceiveResponse:(NSURLResponse *)response
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
     if (200 != [httpResponse statusCode]) {
-
-        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:connectionErrorOccured:)]) {
-
+        if ([self.delegate respondsToSelector:@selector(VKRequest:connectionError:)]) {
             NSError *error = [NSError errorWithDomain:@"VKRequestErrorDomain"
                                                  code:[httpResponse statusCode]
                                              userInfo:@{
@@ -437,7 +377,7 @@ didReceiveResponse:(NSURLResponse *)response
                                              }];
 
             [self.delegate VKRequest:self
-              connectionErrorOccured:error];
+                     connectionError:error];
         }
 
         return;
@@ -447,12 +387,12 @@ didReceiveResponse:(NSURLResponse *)response
         NSString *contentLength = httpResponse.allHeaderFields[@"Content-Length"];
 
         if (nil != contentLength) {
-            _expectedDataSize = (NSUInteger) [contentLength integerValue];
+            _expectedDataSize = (NSInteger) [contentLength integerValue];
         } else {
-            _expectedDataSize = NSURLResponseUnknownContentLength;
+            _expectedDataSize = NSURLResponseUnknownLength;
         }
     } else {
-        _expectedDataSize = (NSUInteger) response.expectedContentLength;
+        _expectedDataSize = (NSInteger) response.expectedContentLength;
     }
 }
 
@@ -466,11 +406,11 @@ didReceiveResponse:(NSURLResponse *)response
 
     [_receivedData appendData:data];
 
-    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:downloadedBytes:)]) {
+    if ([self.delegate respondsToSelector:@selector(VKRequest:totalBytes:downloadedBytes:)]) {
 
         [self.delegate VKRequest:self
                       totalBytes:_expectedDataSize
-                 downloadedBytes:[_receivedData length]];
+                 downloadedBytes:_receivedData.length];
     }
 }
 
@@ -486,10 +426,10 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
             @"totalBytesExpectedToWrite" : @(totalBytesExpectedToWrite)
     });
 
-    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
+    if ([self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
 
         [self.delegate VKRequest:self
-                      totalBytes:[_body length]
+                      totalBytes:self.HTTPBody.length
                    uploadedBytes:(NSUInteger) totalBytesWritten];
     }
 }
@@ -510,9 +450,9 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
                                                 error:&error];
 
     if (nil != error) {
-        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:parsingErrorOccured:)]) {
+        if ([self.delegate respondsToSelector:@selector(VKRequest:parsingError:)]) {
             [self.delegate VKRequest:self
-                 parsingErrorOccured:error];
+                        parsingError:error];
         }
 
         return;
@@ -524,13 +464,13 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 //      капча ли?
         if (kCaptchaErrorCode == [json[@"error"][@"error_code"] integerValue]) {
 
-            if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:captchaSid:captchaImage:)]) {
+            if ([self.delegate respondsToSelector:@selector(VKRequest:captchaSid:captchaImage:)]) {
                 NSString *captchaSid = json[@"error"][@"captcha_sid"];
                 NSString *captchaImage = json[@"error"][@"captcha_img"];
 
                 [self.delegate VKRequest:self
                               captchaSid:captchaSid
-                            captchaImage:captchaImage];
+                            captchaImage:[NSURL URLWithString:captchaImage]];
             }
 
 //        прекращаем дальнейшую обработку
@@ -539,22 +479,22 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         }
 
 //        ошибка валидации пользователя? (security check)
-        if(kValidationRequired == [json[@"error"][@"error_code"] integerValue]) {
+        if (kValidationRequired == [json[@"error"][@"error_code"] integerValue]) {
 
-            if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:validationRedirectURI:)]) {
+            if ([self.delegate respondsToSelector:@selector(VKRequest:validationRedirectURL:)]) {
                 NSString *validationURI = json[@"error"][@"redirect_uri"];
 
                 [self.delegate VKRequest:self
-                   validationRedirectURI:validationURI];
+                   validationRedirectURL:[NSURL URLWithString:validationURI]];
             }
 
             return;
         }
 
 //        другая ошибка
-        if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:responseErrorOccured:)]) {
+        if ([self.delegate respondsToSelector:@selector(VKRequest:responseError:)]) {
             [self.delegate VKRequest:self
-                responseErrorOccured:json[@"error"]];
+                       responseError:json[@"error"]];
         }
 
 //        прекращаем дальнейшую обработку
@@ -566,14 +506,14 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 //    1. данные запроса не из кэша
 //    2. время жизни кэша не установлено в "никогда"
 //    3. метод запроса GET
-    if (VKCacheLiveTimeNever != self.cacheLiveTime && ![@"POST" isEqualToString:_request.HTTPMethod]) {
-
-        NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];
+    if (VKCacheLiveTimeNever != self.cacheLiveTime && ![[self.HTTPMethod lowercaseString]
+                                                                         isEqualToString:@"post"]) {
+        NSUInteger currentUserID = [VKUser currentUser].accessToken.userID;
         VKStorageItem *item = [[VKStorage sharedStorage]
                                           storageItemForUserID:currentUserID];
 
         [item.cache addCache:_receivedData
-                      forURL:[self removeTemporaryRequestOptions:_request.URL]
+                      forURL:[self uniqueRequestURL]
                     liveTime:self.cacheLiveTime];
     }
 
@@ -590,79 +530,127 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
             @"error"      : error
     });
 
-    if (nil != self.delegate && [self.delegate respondsToSelector:@selector(VKRequest:connectionErrorOccured:)]) {
+    if ([self.delegate respondsToSelector:@selector(VKRequest:connectionError:)]) {
         [self.delegate VKRequest:self
-          connectionErrorOccured:error];
+                 connectionError:error];
     }
 }
 
-#pragma mark - private methods
+#pragma mark - Private methods
 
-- (NSURL *)removeTemporaryRequestOptions:(NSURL *)url
+- (instancetype)initWithHTTPMethod:(NSString *)HTTPMethod
+                           HTTPURL:(NSURL *)HTTPURL
+                          HTTPBody:(NSData *)HTTPBody
+               HTTPQueryParameters:(NSDictionary *)queryParameters
+                  HTTPHeaderFields:(NSDictionary *)headerFields
+                          delegate:(id <VKRequestDelegate>)delegate
 {
-    VK_LOG(@"%@", @{
-            @"url" : url
-    });
+    VK_LOG();
+    self = [super init];
 
-//    уберем токен доступа из строки запроса
-//    токен доступа может меняться при каждом обновлении (повторном входе пользователя),
-//    но создавать каждый раз новый кэш для одинаковых запросов с всего лишь разными
-//    токенами доступа нет смысла.
-    NSString *query = [url query];
-    NSArray *params = [query componentsSeparatedByString:@"&"];
-
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF BEGINSWITH \"access_token\" OR SELF BEGINSWITH \"captcha_sid\" OR SELF BEGINSWITH \"captcha_key\")"];
-    NSArray *newParams = [params filteredArrayUsingPredicate:predicate];
-
-    NSString *part1 = [[url absoluteString]
-                            componentsSeparatedByString:@"?"][0];
-    NSString *part2 = [newParams componentsJoinedByString:@"&"];
-    NSURL *newURL;
-
-    if (0 != [part2 length]) {
-        newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@",
-                                                                 part1,
-                                                                 part2]];
-    } else {
-        newURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@", part1]];
+    if (self) {
+        _HTTPMethod = HTTPMethod;
+        _HTTPURL = HTTPURL;
+        _HTTPBody = (HTTPBody != nil ? [HTTPBody mutableCopy] : [NSMutableData new]);
+        _HTTPQueryParameters = (queryParameters != nil ? [queryParameters mutableCopy] : [NSMutableDictionary new]);
+        _HTTPHeaderFields = (headerFields != nil ? [headerFields mutableCopy] : [NSMutableDictionary new]);
+        _delegate = delegate;
+        _cacheLiveTime = VKCacheLiveTimeOneHour;
+        _offlineMode = NO;
+        _signature = nil;
+        _receivedData = [NSMutableData new];
+        _expectedDataSize = NSURLResponseUnknownLength;
+        _boundary = [[NSProcessInfo processInfo] globallyUniqueString];
+        _boundaryHeader = [NSString stringWithFormat:@"\r\n--%@\r\n",
+                                                     _boundary];
+        _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n",
+                                                     _boundary];
+        _isFileAdded = NO;
     }
 
-    return newURL;
+    return self;
 }
 
-- (void)appendFile:(NSData *)file
-              name:(NSString *)name
-             field:(NSString *)field
+// для идентификации файла кэша
+- (NSURL *)uniqueRequestURL
 {
-    VK_LOG(@"%@", @{
-            @"file"  : file,
-            @"name"  : name,
-            @"field" : field
-    });
+    VK_LOG();
 
-//    header part
-    [_body appendData:[_boundaryHeader dataUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableString *urlAsString = [NSMutableString new];
 
-    NSString *contentDisposition = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",
-                                                              field,
-                                                              name];
-    [_body appendData:[contentDisposition dataUsingEncoding:NSUTF8StringEncoding]];
+//    добавляем часть УРЛа без query строки
+    [urlAsString appendFormat:@"%@", self.HTTPURL.absoluteString];
 
-//    Content-Type
-    NSString *contentType = [self determineContentTypeFromExtension:[[name componentsSeparatedByString:@"."]
-                                                                           lastObject]];
-    if (nil != contentType) {
-        NSString *fullContentType = [NSString stringWithFormat:@"Content-Type: %@\r\n\r\n",
-                                                               contentType];
-        [_body appendData:[fullContentType dataUsingEncoding:NSUTF8StringEncoding]];
-    } else {
-        [_body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+//    добавляем параметры, которые идут в строке запроса
+//    исключаем токен доступа и данные каптчи
+    if ([self.HTTPQueryParameters count] != 0) {
+        NSMutableArray *params = [NSMutableArray array];
+
+        [self.HTTPQueryParameters enumerateKeysAndObjectsUsingBlock:^(id key,
+                                                                      id obj,
+                                                                      BOOL *stop)
+        {
+//            исключим из УРЛа временные параметры
+            if ([[key description] isEqualToString:@"access_token"] ||
+                    [[key description] isEqualToString:@"captcha_sid"] ||
+                    [[key description] isEqualToString:@"captcha_key"]) {
+            } else {
+                NSString *param = [NSString stringWithFormat:@"%@=%@",
+                                                             [[key description]
+                                                                   lowercaseString],
+                                                             [[obj description]
+                                                                   encodeURL]];
+
+                [params addObject:param];
+            }
+        }];
+
+//      сортировка нужна для того, чтобы одинаковые запросы имели одинаковый MD5
+//      не стоит забывать, что при итерации по словарю порядок чтения записей может
+//      быть каждый раз разный
+        [params sortUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+
+        [urlAsString appendFormat:@"?"];
+        [urlAsString appendString:[params componentsJoinedByString:@"&"]];
     }
 
-//    file part
-    [_body appendData:file];
+    return [NSURL URLWithString:urlAsString];
+}
 
-    _isBodyEmpty = NO;
+// для определения окончательного вида строки запроса (URL)
+- (NSURL *)createFinalURL
+{
+    VK_LOG();
+
+    NSMutableString *urlAsString = [NSMutableString new];
+
+//    добавляем часть УРЛа без query строки
+    [urlAsString appendFormat:@"%@", self.HTTPURL.absoluteString];
+
+    if ([[self.HTTPMethod lowercaseString] isEqualToString:@"get"] &&
+            [self.HTTPQueryParameters count] != 0) {
+
+        [urlAsString appendFormat:@"?"];
+
+        //    добавляем параметры, которые идут в строке запроса
+        [self.HTTPQueryParameters enumerateKeysAndObjectsUsingBlock:^(id k,
+                                                                      id o,
+                                                                      BOOL *stop)
+        {
+            NSString *key = [(NSString *) k lowercaseString];
+            NSString *value = (NSString *) o;
+
+            [urlAsString appendFormat:@"%@=%@&",
+                                      [[key description] lowercaseString],
+                                      [[value description] encodeURL]];
+        }];
+
+        //        удаляем последний символ &
+        [urlAsString deleteCharactersInRange:NSMakeRange([urlAsString length] - 1, 1)];
+    }
+
+
+    return [NSURL URLWithString:urlAsString];
 }
 
 - (NSString *)determineContentTypeFromExtension:(NSString *)extension

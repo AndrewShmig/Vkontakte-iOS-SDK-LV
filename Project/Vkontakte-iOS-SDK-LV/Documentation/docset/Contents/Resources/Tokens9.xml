@@ -137,11 +137,11 @@ could be that user denied/canceled to authorize your application.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:connectionErrorOccured:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/VKConnectorDelegate/VKConnector:connectionError:</TokenIdentifier>
 			<Abstract type="html">Method is called when connection error occurred during authorization process.</Abstract>
 			<DeclaredIn>VKConnector.h</DeclaredIn>			
 			
-			<Declaration>- (void)VKConnector:(VKConnector *)connector connectionErrorOccured:(NSError *)error</Declaration>
+			<Declaration>- (void)VKConnector:(VKConnector *)connector connectionError:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>connector</Name>
@@ -152,7 +152,7 @@ could be that user denied/canceled to authorize your application.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/VKConnector:connectionErrorOccured:</Anchor>
+			<Anchor>//api/name/VKConnector:connectionError:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

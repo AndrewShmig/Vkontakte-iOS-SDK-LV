@@ -118,8 +118,8 @@ accessTokenRenewalFailed:(VKAccessToken *)accessToken;
 @param connector VKConnector instance that sends notifications
 @param error error description
 */
-- (void)   VKConnector:(VKConnector *)connector
-connectionErrorOccured:(NSError *)error;
+- (void)VKConnector:(VKConnector *)connector
+    connectionError:(NSError *)error;
 
 /** Method is called if VK application was deleted.
 

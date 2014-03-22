@@ -184,7 +184,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
         } else if ([queryString hasPrefix:@"success"]) { // всё прошло успешно, но токена не получили - хз, что делать дальше
 //            никаких методов делегата не вызываем, потому что не знаю, что вызывать
-        }  else {
+        } else {
 //            пользователь отказался авторизовать приложение
 //            не удалось обновить/получить токен доступа
             if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalFailed:)]) {
@@ -234,7 +234,7 @@ didFailLoadWithError:(NSError *)error
             @"error"   : error
     });
 
-    if ([self.delegate respondsToSelector:@selector(VKConnector:connectionErrorOccured:)]) {
+    if ([self.delegate respondsToSelector:@selector(VKConnector:connectionError:)]) {
 
         if (!webView.hidden) {
             [self.delegate VKConnector:self
@@ -242,7 +242,7 @@ didFailLoadWithError:(NSError *)error
         }
 
         [self.delegate VKConnector:self
-            connectionErrorOccured:error];
+                   connectionError:error];
     }
 }
 

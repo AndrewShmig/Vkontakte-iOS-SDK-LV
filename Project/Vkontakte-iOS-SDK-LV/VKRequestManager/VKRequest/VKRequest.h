@@ -1,44 +1,23 @@
 //
-// Created by AndrewShmig on 6/28/13.
+// Copyright (C) 3/22/14  Andrew Shmig ( andrewshmig@yandex.ru )
+// Russian Bleeding Games. All rights reserved.
 //
-// Copyright (c) 2013 Andrew Shmig
-// 
-// Permission is hereby granted, free of charge, to any person 
-// obtaining a copy of this software and associated documentation 
-// files (the "Software"), to deal in the Software without 
-// restriction, including without limitation the rights to use, 
-// copy, modify, merge, publish, distribute, sublicense, and/or 
-// sell copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following 
-// conditions:
-// 
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
-// FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
-// CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
-// THE SOFTWARE.
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License along
+// with this program; if not, write to the Free Software Foundation, Inc.,
+// 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //
 
-
-#import <Foundation/Foundation.h>
 #import "VKCache.h"
-#import "VKMethods.h"
-#import "NSString+Utilities.h"
-#import "VKStorage.h"
-#import "VKStorageItem.h"
-#import "VKUser.h"
-#import "VKAccessToken.h"
-
-
-/** Unknown content length of server response
-*/
-#define NSURLResponseUnknownContentLength 0
 
 
 @class VKRequest;
@@ -59,8 +38,7 @@ There is only one required method - method that is getting an answer from VK ser
 @param request request that changed its state
 @param response server response as Foundation object
 */
-- (void)VKRequest:(VKRequest *)request
-         response:(id)response;
+- (void)VKRequest:(VKRequest *)request response:(id)response;
 
 @optional
 /**
@@ -71,24 +49,21 @@ There is only one required method - method that is getting an answer from VK ser
 @param request request that changed its state
 @param error error description
 */
-- (void)     VKRequest:(VKRequest *)request
-connectionErrorOccured:(NSError *)error;
+- (void)VKRequest:(VKRequest *)request connectionError:(NSError *)error;
 
 /** Method is called if any error occurs during server response parsing
 
 @param request request that changed its state
 @param error error description
 */
-- (void)  VKRequest:(VKRequest *)request
-parsingErrorOccured:(NSError *)error;
+- (void)VKRequest:(VKRequest *)request parsingError:(NSError *)error;
 
 /** Method is called if server response contains any error message
 
 @param request request that changed its state
 @param error error description as Foundation object obtained from server response
 */
-- (void)   VKRequest:(VKRequest *)request
-responseErrorOccured:(id)error;
+- (void)VKRequest:(VKRequest *)request responseError:(NSError *)error;
 
 /** Method is called if user needs to enter captcha
 
@@ -101,15 +76,15 @@ https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11
 */
 - (void)VKRequest:(VKRequest *)request
        captchaSid:(NSString *)captchaSid
-     captchaImage:(NSString *)captchaImage;
+     captchaImage:(NSURL *)captchaImage;
 
 /** Method is called if user needs to pass security validation (used _only_ for testing purposes)
 
 @param request request that changed its state
-@param redirectURI URI that user should open in any browser
+@param redirectURL URI that user should open in any browser
 */
 - (void)    VKRequest:(VKRequest *)request
-validationRedirectURI:(NSString *)redirectURI;
+validationRedirectURL:(NSURL *)redirectURL;
 
 /** Method is called each time new portion of data is received
 
@@ -119,8 +94,8 @@ than 0 is used
 @param downloadedBytes bytes already downloaded
 */
 - (void)VKRequest:(VKRequest *)request
-       totalBytes:(NSUInteger)totalBytes
-  downloadedBytes:(NSUInteger)downloadedBytes;
+       totalBytes:(NSInteger)totalBytes
+  downloadedBytes:(NSInteger)downloadedBytes;
 
 /** Method is called each time new portion of data is sent (its recommended to use
 this method while uploading images, audio, video files)
@@ -131,15 +106,87 @@ than 0 is used.
 @param uploadedBytes bytes already uploaded
 */
 - (void)VKRequest:(VKRequest *)request
-       totalBytes:(NSUInteger)totalBytes
-    uploadedBytes:(NSUInteger)uploadedBytes;
+       totalBytes:(NSInteger)totalBytes
+    uploadedBytes:(NSInteger)uploadedBytes;
 
 @end
 
 
 /** Current class allows to perform different kind of requests to VK servers.
+
+Simple example which shows how to use VKRequest class (uploading an audio file).
+
+AppDelegate.m file:
+
+        - (BOOL)          application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    {
+        // ... code ...
+
+        [[VKConnector sharedInstance] startWithAppID:kVKAppID
+                                          permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+                                             webView:self.webView
+                                            delegate:self];
+
+        // ... code ...
+    }
+
+    - (void)        VKConnector:(VKConnector *)connector
+    accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+    {
+        _rm = [[VKRequestManager alloc]
+                                 initWithDelegate:self
+                                             user:[VKUser currentUser]];
+
+        _rm.startAllRequestsImmediately = NO;
+
+        VKRequest *firstStep = [_rm audioGetUploadServer:nil];
+        firstStep.signature = @"firstStep";
+        firstStep.cacheLiveTime = VKCacheLiveTimeNever;
+
+        [firstStep start];
+    }
+
+    - (void)VKRequest:(VKRequest *)request
+             response:(id)response
+    {
+        if ([request.signature isEqualToString:@"firstStep"]) {
+            NSString *uploadURL = response[@"response"][@"upload_url"];
+            NSString *audioPath = [[NSBundle mainBundle]
+                                             pathForResource:@"123" ofType:@"mp3"];
+
+            VKRequest *secondStep = [VKRequest requestHTTPMethod:@"POST"
+                                                             URL:[NSURL URLWithString:uploadURL]
+                                                         headers:nil
+                                                            body:nil
+                                                        delegate:self];
+            [secondStep attachFile:[NSData dataWithContentsOfFile:audioPath]
+                              name:@"Above & Beyond - Alone Tonight.mp3"
+                             field:@"file"];
+            secondStep.signature = @"secondStep";
+            secondStep.cacheLiveTime = VKCacheLiveTimeNever;
+
+            [secondStep start];
+        } else if ([request.signature isEqualToString:@"secondStep"]) {
+            VKRequest *thirdStep = [_rm audioSave:@{
+                    @"server" : response[@"server"],
+                    @"hash"   : response[@"hash"],
+                    @"audio"  : response[@"audio"]
+            }];
+
+            thirdStep.signature = @"thirdStep";
+            thirdStep.delegate = self;
+            thirdStep.cacheLiveTime = VKCacheLiveTimeNever;
+
+            [thirdStep start];
+        } else if ([request.signature isEqualToString:@"thirdStep"]) {
+            NSLog(@"File was successfully uploaded!");
+        }
+    }
+
 */
 @interface VKRequest : NSObject <NSURLConnectionDataDelegate, NSCopying>
+
 
 /**
 @name Properties
@@ -147,21 +194,40 @@ than 0 is used.
 /** Delegate
 */
 @property (nonatomic, weak, readwrite) id <VKRequestDelegate> delegate;
-
 /** Request signature. Can be used as identifier for each request object.
 */
 @property (nonatomic, strong, readwrite) id signature;
-
 /** Cache lifetime for current request. Defaults to one hour.
 */
 @property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime;
-
 /** Offline mode for current request. Current mode is used to return cache data even
 if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).
 
 Defaults to NO.
 */
 @property (nonatomic, assign, readwrite) BOOL offlineMode;
+
+/** HTTP method: GET or POST
+*/
+@property (nonatomic, strong, readwrite) NSString *HTTPMethod;
+/** HTTP URL
+*/
+@property (nonatomic, strong, readwrite) NSURL *HTTPURL;
+/** Dictionary with key-value pairs for HTTP query URL part
+
+Info:
+
+    URL: http://vk.com/user.get?key=value&key2=value2
+    Query: key=value&key2=value2
+
+*/
+@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPQueryParameters;
+/** HTTP body
+*/
+@property (nonatomic, strong, readwrite) NSMutableData *HTTPBody;
+/** HTTP headers
+*/
+@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPHeaderFields;
 
 /**
 @name Class methods
@@ -179,26 +245,37 @@ VKRequestDelegate protocol)
 
 /** Creates a VKRequest request
 
-@param httpMethod GET/POST/PUT/DELETE
-@param url NSURL on which a request will be performed
-@param headers request headers
-@param body request body
+Example:
+
+    VKRequest *r = [VKRequest requestMethod:@"users.get"
+                            queryParameters:@{@"fields": @"nickname,age,city", @"count":@(100)}
+                                   delegate:self];
+
+@warning HTTP method defaults to GET.
+
+@param methodName VK method name (users.get, wall.post etc)
+@param queryParameters params which should be sent (key = value)
 @param delegate delegate that will receive notifications (should conform to
 VKRequestDelegate protocol)
 
 @return VKRequest instance
 */
-+ (instancetype)requestHTTPMethod:(NSString *)httpMethod
-                              URL:(NSURL *)url
-                          headers:(NSDictionary *)headers
-                             body:(NSData *)body
-                         delegate:(id <VKRequestDelegate>)delegate;
++ (instancetype)requestMethod:(NSString *)methodName
+              queryParameters:(NSDictionary *)queryParameters
+                     delegate:(id <VKRequestDelegate>)delegate;
 
 /** Creates a VKRequest request
 
-@param httpMethod GET/POST/PUT/DELETE
+Example:
+
+    VKRequest *r = [VKRequest requestHTTPMethod:@"POST"
+                                     methodName:@"audio.save"
+                                queryParameters:@{@"server": @"23434", @"hash":@"14c234f32f2"}
+                                       delegate:self];
+
+@param httpMethod GET/POST
 @param methodName VK method name (users.get, wall.post etc)
-@param options params which should be sent (key = value)
+@param queryParameters params which should be sent (key = value)
 @param delegate delegate that will receive notifications (should conform to
 VKRequestDelegate protocol)
 
@@ -206,21 +283,25 @@ VKRequestDelegate protocol)
 */
 + (instancetype)requestHTTPMethod:(NSString *)httpMethod
                        methodName:(NSString *)methodName
-                          options:(NSDictionary *)options
+                  queryParameters:(NSDictionary *)queryParameters
                          delegate:(id <VKRequestDelegate>)delegate;
 
 /** Creates a VKRequest request
 
-@param methodName VK method name (user.get, wall.post etc)
-@param options params which should be sent (key = value)
+@param httpMethod GET/POST/PUT/DELETE
+@param URL NSURL on which a request will be performed
+@param headers request headers
+@param body request body
 @param delegate delegate that will receive notifications (should conform to
 VKRequestDelegate protocol)
 
 @return VKRequest instance
 */
-+ (instancetype)requestMethod:(NSString *)methodName
-                      options:(NSDictionary *)options
-                     delegate:(id <VKRequestDelegate>)delegate;
++ (instancetype)requestHTTPMethod:(NSString *)httpMethod
+                              URL:(NSURL *)URL
+                          headers:(NSDictionary *)headers
+                             body:(NSData *)body
+                         delegate:(id <VKRequestDelegate>)delegate;
 
 /**
 @name Instance methods
@@ -228,39 +309,64 @@ VKRequestDelegate protocol)
 /** Main method for VKRequest initialization
 
 @param request NSURLRequest which will be used as a base request for VKRequest
+@param delegate delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)
 
 @return VKRequest instance
 */
-- (instancetype)initWithRequest:(NSURLRequest *)request;
-
-/** Method for VKRequest initialization
-
-@param httpMethod GET/POST/PUT/DELETE
-@param url NSURL on which a request will be performed
-@param headers request headers
-@param body request body
-
-@return VKRequest instance
-*/
-- (instancetype)initWithHTTPMethod:(NSString *)httpMethod
-                               URL:(NSURL *)url
-                           headers:(NSDictionary *)headers
-                              body:(NSData *)body;
+- (instancetype)initWithRequest:(NSURLRequest *)request
+                       delegate:(id <VKRequestDelegate>)delegate;
 
 /** Method for VKRequest initialization
 
 Example:
 
     VKRequest *request = [[VKRequest alloc] initWithMethod:@"users.get"
-                                        options:@{@"fields": @"nickname,bdate,status"}];
+                                        queryParameters:@{@"fields": @"nickname,bdate,status"}
+                                        delegate:self];
 
 @param methodName VK method name (users.get, wall.post etc)
-@param options params that should be transmitted to VK method
+@param queryParameters params that should be transmitted to VK method
+@param delegate delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)
 
 @return VKRequest instance
 */
 - (instancetype)initWithMethod:(NSString *)methodName
-                       options:(NSDictionary *)options;
+               queryParameters:(NSDictionary *)queryParameters
+                      delegate:(id <VKRequestDelegate>)delegate;
+
+/** Method for VKRequest initialization
+
+@param httpMethod GET/POST
+@param methodName VK method name (users.get, wall.post etc)
+@param queryParameters params that should be transmitted to VK method
+@param delegate delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)
+
+@return VKRequest instance
+*/
+- (instancetype)initWithHTTPMethod:(NSString *)httpMethod
+                        methodName:(NSString *)methodName
+                   queryParameters:(NSDictionary *)queryParameters
+                          delegate:(id <VKRequestDelegate>)delegate;
+
+/** Method for VKRequest initialization
+
+@param httpMethod GET/POST
+@param URL NSURL on which a request will be performed
+@param headers request headers
+@param body request body
+@param delegate delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)
+
+@return VKRequest instance
+*/
+- (instancetype)initWithHTTPMethod:(NSString *)httpMethod
+                               URL:(NSURL *)URL
+                           headers:(NSDictionary *)headers
+                              body:(NSData *)body
+                          delegate:(id <VKRequestDelegate>)delegate;
 
 /** Starts request
 */
@@ -271,56 +377,20 @@ Example:
 - (void)cancel;
 
 /**
-@name Captcha
-*/
-/** Appends captcha options
-
-@param captchaSid unique captcha identifier
-@param captchaKey text that user entered
-*/
-- (void)appendCaptchaSid:(NSString *)captchaSid
-              captchaKey:(NSString *)captchaKey;
-
-/**
 @name Appending files
 */
-/** Content of an audio file is added
+/** Content of any file is added
 
-@param file audio file in byte representation
-@param name audio file name
+Example:
+
+    [secondStep attachFile:[NSData dataWithContentsOfFile:audioPath]
+                      name:@"Above & Beyond - Alone Tonight.mp3"
+                     field:@"file"];
+
+@param file file byte representation
+@param name file name
 @param field HTML field name, which will be used to send (wrap) data
 */
-- (void)appendAudioFile:(NSData *)file
-                   name:(NSString *)name
-                  field:(NSString *)field;
+- (void)attachFile:(NSData *)file name:(NSString *)name field:(NSString *)field;
 
-/** Content of a video file is added
-
-@param file video file in byte representation
-@param name video file name
-@param field HTML field name, which will be used to send (wrap) data
-*/
-- (void)appendVideoFile:(NSData *)file
-                   name:(NSString *)name
-                  field:(NSString *)field;
-
-/** Content of a document file is added
-
-@param file document file in byte representation
-@param name document file name
-@param field HTML field name, which will be used to send (wrap) data
-*/
-- (void)appendDocumentFile:(NSData *)file
-                      name:(NSString *)name
-                     field:(NSString *)field;
-
-/** Content of an image file is added
-
-@param file image file in byte representation
-@param name image file name
-@param field HTML field name, which will be used to send (wrap) data
-*/
-- (void)appendImageFile:(NSData *)file
-                   name:(NSString *)name
-                  field:(NSString *)field;
 @end

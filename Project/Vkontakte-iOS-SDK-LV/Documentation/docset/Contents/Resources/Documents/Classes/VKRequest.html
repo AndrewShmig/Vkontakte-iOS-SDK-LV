@@ -39,6 +39,16 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/HTTPBody">&nbsp;&nbsp;&nbsp;&nbsp;HTTPBody</option>
+	
+	<option value="//api/name/HTTPHeaderFields">&nbsp;&nbsp;&nbsp;&nbsp;HTTPHeaderFields</option>
+	
+	<option value="//api/name/HTTPMethod">&nbsp;&nbsp;&nbsp;&nbsp;HTTPMethod</option>
+	
+	<option value="//api/name/HTTPQueryParameters">&nbsp;&nbsp;&nbsp;&nbsp;HTTPQueryParameters</option>
+	
+	<option value="//api/name/HTTPURL">&nbsp;&nbsp;&nbsp;&nbsp;HTTPURL</option>
+	
 	<option value="//api/name/cacheLiveTime">&nbsp;&nbsp;&nbsp;&nbsp;cacheLiveTime</option>
 	
 	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
@@ -56,32 +66,26 @@
 	
 	<option value="//api/name/requestHTTPMethod:URL:headers:body:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestHTTPMethod:URL:headers:body:delegate:</option>
 	
-	<option value="//api/name/requestHTTPMethod:methodName:options:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestHTTPMethod:methodName:options:delegate:</option>
+	<option value="//api/name/requestHTTPMethod:methodName:queryParameters:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestHTTPMethod:methodName:queryParameters:delegate:</option>
 	
-	<option value="//api/name/requestMethod:options:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestMethod:options:delegate:</option>
+	<option value="//api/name/requestMethod:queryParameters:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ requestMethod:queryParameters:delegate:</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/appendAudioFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendAudioFile:name:field:</option>
-	
-	<option value="//api/name/appendCaptchaSid:captchaKey:">&nbsp;&nbsp;&nbsp;&nbsp;- appendCaptchaSid:captchaKey:</option>
-	
-	<option value="//api/name/appendDocumentFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendDocumentFile:name:field:</option>
-	
-	<option value="//api/name/appendImageFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendImageFile:name:field:</option>
-	
-	<option value="//api/name/appendVideoFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- appendVideoFile:name:field:</option>
+	<option value="//api/name/attachFile:name:field:">&nbsp;&nbsp;&nbsp;&nbsp;- attachFile:name:field:</option>
 	
 	<option value="//api/name/cancel">&nbsp;&nbsp;&nbsp;&nbsp;- cancel</option>
 	
-	<option value="//api/name/initWithHTTPMethod:URL:headers:body:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithHTTPMethod:URL:headers:body:</option>
+	<option value="//api/name/initWithHTTPMethod:URL:headers:body:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithHTTPMethod:URL:headers:body:delegate:</option>
 	
-	<option value="//api/name/initWithMethod:options:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithMethod:options:</option>
+	<option value="//api/name/initWithHTTPMethod:methodName:queryParameters:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithHTTPMethod:methodName:queryParameters:delegate:</option>
 	
-	<option value="//api/name/initWithRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRequest:</option>
+	<option value="//api/name/initWithMethod:queryParameters:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithMethod:queryParameters:delegate:</option>
+	
+	<option value="//api/name/initWithRequest:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithRequest:delegate:</option>
 	
 	<option value="//api/name/start">&nbsp;&nbsp;&nbsp;&nbsp;- start</option>
 	
@@ -107,8 +111,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Instance methods">Instance methods</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Captcha">Captcha</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Appending files">Appending files</a></span></li>
 	
 </ul></li>
@@ -118,6 +120,16 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/HTTPBody">HTTPBody</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/HTTPHeaderFields">HTTPHeaderFields</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/HTTPMethod">HTTPMethod</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/HTTPQueryParameters">HTTPQueryParameters</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/HTTPURL">HTTPURL</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheLiveTime">cacheLiveTime</a></span></li>
 	
@@ -137,9 +149,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestHTTPMethod:URL:headers:body:delegate:">requestHTTPMethod:URL:headers:body:delegate:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestHTTPMethod:methodName:options:delegate:">requestHTTPMethod:methodName:options:delegate:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestHTTPMethod:methodName:queryParameters:delegate:">requestHTTPMethod:methodName:queryParameters:delegate:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestMethod:options:delegate:">requestMethod:options:delegate:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestMethod:queryParameters:delegate:">requestMethod:queryParameters:delegate:</a></span></li>
 	
 </ul></li>
 
@@ -147,23 +159,17 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendAudioFile:name:field:">appendAudioFile:name:field:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendCaptchaSid:captchaKey:">appendCaptchaSid:captchaKey:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendDocumentFile:name:field:">appendDocumentFile:name:field:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendImageFile:name:field:">appendImageFile:name:field:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendVideoFile:name:field:">appendVideoFile:name:field:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attachFile:name:field:">attachFile:name:field:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancel">cancel</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithHTTPMethod:URL:headers:body:">initWithHTTPMethod:URL:headers:body:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithHTTPMethod:URL:headers:body:delegate:">initWithHTTPMethod:URL:headers:body:delegate:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithMethod:options:">initWithMethod:options:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithHTTPMethod:methodName:queryParameters:delegate:">initWithHTTPMethod:methodName:queryParameters:delegate:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRequest:">initWithRequest:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithMethod:queryParameters:delegate:">initWithMethod:queryParameters:delegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithRequest:delegate:">initWithRequest:delegate:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start">start</a></span></li>
 	
@@ -208,6 +214,77 @@
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>Current class allows to perform different kind of requests to VK servers.</p>
+
+<p>Simple example which shows how to use VKRequest class (uploading an audio file).</p>
+
+<p>AppDelegate.m file:</p>
+
+<pre><code>    - (BOOL)          application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // ... code ...
+
+    [[VKConnector sharedInstance] startWithAppID:kVKAppID
+                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+                                         webView:self.webView
+                                        delegate:self];
+
+    // ... code ...
+}
+
+- (void)        VKConnector:(VKConnector *)connector
+accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
+{
+    _rm = [[VKRequestManager alloc]
+                             initWithDelegate:self
+                                         user:[VKUser currentUser]];
+
+    _rm.startAllRequestsImmediately = NO;
+
+    VKRequest *firstStep = [_rm audioGetUploadServer:nil];
+    firstStep.signature = @"firstStep";
+    firstStep.cacheLiveTime = VKCacheLiveTimeNever;
+
+    [firstStep start];
+}
+
+- (void)VKRequest:(VKRequest *)request
+         response:(id)response
+{
+    if ([request.signature isEqualToString:@"firstStep"]) {
+        NSString *uploadURL = response[@"response"][@"upload_url"];
+        NSString *audioPath = [[NSBundle mainBundle]
+                                         pathForResource:@"123" ofType:@"mp3"];
+
+        VKRequest *secondStep = [VKRequest requestHTTPMethod:@"POST"
+                                                         URL:[NSURL URLWithString:uploadURL]
+                                                     headers:nil
+                                                        body:nil
+                                                    delegate:self];
+        [secondStep attachFile:[NSData dataWithContentsOfFile:audioPath]
+                          name:@"Above &amp; Beyond - Alone Tonight.mp3"
+                         field:@"file"];
+        secondStep.signature = @"secondStep";
+        secondStep.cacheLiveTime = VKCacheLiveTimeNever;
+
+        [secondStep start];
+    } else if ([request.signature isEqualToString:@"secondStep"]) {
+        VKRequest *thirdStep = [_rm audioSave:@{
+                @"server" : response[@"server"],
+                @"hash"   : response[@"hash"],
+                @"audio"  : response[@"audio"]
+        }];
+
+        thirdStep.signature = @"thirdStep";
+        thirdStep.delegate = self;
+        thirdStep.cacheLiveTime = VKCacheLiveTimeNever;
+
+        [thirdStep start];
+    } else if ([request.signature isEqualToString:@"thirdStep"]) {
+        NSLog(@"File was successfully uploaded!");
+    }
+}
+</code></pre>
 					</div>
 					
 					
@@ -252,6 +329,41 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	</span>
 	<span class="task-item-suffix">property</span>
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/HTTPMethod">&nbsp;&nbsp;HTTPMethod</a></code>
+		<span class="tooltip"><p>HTTP method: GET or POST</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/HTTPURL">&nbsp;&nbsp;HTTPURL</a></code>
+		<span class="tooltip"><p>HTTP URL</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/HTTPQueryParameters">&nbsp;&nbsp;HTTPQueryParameters</a></code>
+		<span class="tooltip"><p>Dictionary with key-value pairs for HTTP query URL part</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/HTTPBody">&nbsp;&nbsp;HTTPBody</a></code>
+		<span class="tooltip"><p>HTTP body</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/HTTPHeaderFields">&nbsp;&nbsp;HTTPHeaderFields</a></code>
+		<span class="tooltip"><p>HTTP headers</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
 </li>
 						</ul>
 						
@@ -269,21 +381,21 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/requestMethod:queryParameters:delegate:">+&nbsp;requestMethod:queryParameters:delegate:</a></code>
+		<span class="tooltip"><p>Creates a VKRequest request</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestHTTPMethod:methodName:queryParameters:delegate:">+&nbsp;requestHTTPMethod:methodName:queryParameters:delegate:</a></code>
+		<span class="tooltip"><p>Creates a VKRequest request</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/requestHTTPMethod:URL:headers:body:delegate:">+&nbsp;requestHTTPMethod:URL:headers:body:delegate:</a></code>
-		<span class="tooltip"><p>Creates a VKRequest request</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestHTTPMethod:methodName:options:delegate:">+&nbsp;requestHTTPMethod:methodName:options:delegate:</a></code>
-		<span class="tooltip"><p>Creates a VKRequest request</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requestMethod:options:delegate:">+&nbsp;requestMethod:options:delegate:</a></code>
 		<span class="tooltip"><p>Creates a VKRequest request</p></span>
 	</span>
 	
@@ -298,21 +410,28 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithRequest:">&ndash;&nbsp;initWithRequest:</a></code>
+		<code><a href="#//api/name/initWithRequest:delegate:">&ndash;&nbsp;initWithRequest:delegate:</a></code>
 		<span class="tooltip"><p>Main method for VKRequest initialization</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithHTTPMethod:URL:headers:body:">&ndash;&nbsp;initWithHTTPMethod:URL:headers:body:</a></code>
+		<code><a href="#//api/name/initWithMethod:queryParameters:delegate:">&ndash;&nbsp;initWithMethod:queryParameters:delegate:</a></code>
 		<span class="tooltip"><p>Method for VKRequest initialization</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithMethod:options:">&ndash;&nbsp;initWithMethod:options:</a></code>
+		<code><a href="#//api/name/initWithHTTPMethod:methodName:queryParameters:delegate:">&ndash;&nbsp;initWithHTTPMethod:methodName:queryParameters:delegate:</a></code>
+		<span class="tooltip"><p>Method for VKRequest initialization</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithHTTPMethod:URL:headers:body:delegate:">&ndash;&nbsp;initWithHTTPMethod:URL:headers:body:delegate:</a></code>
 		<span class="tooltip"><p>Method for VKRequest initialization</p></span>
 	</span>
 	
@@ -335,50 +454,14 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 						</ul>
 						
 						
-						<a title="Captcha" name="task_Captcha"></a>
-						<h3 class="subsubtitle task-title">Captcha</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/appendCaptchaSid:captchaKey:">&ndash;&nbsp;appendCaptchaSid:captchaKey:</a></code>
-		<span class="tooltip"><p>Appends captcha options</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
 						<a title="Appending files" name="task_Appending files"></a>
 						<h3 class="subsubtitle task-title">Appending files</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/appendAudioFile:name:field:">&ndash;&nbsp;appendAudioFile:name:field:</a></code>
-		<span class="tooltip"><p>Content of an audio file is added</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/appendVideoFile:name:field:">&ndash;&nbsp;appendVideoFile:name:field:</a></code>
-		<span class="tooltip"><p>Content of a video file is added</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/appendDocumentFile:name:field:">&ndash;&nbsp;appendDocumentFile:name:field:</a></code>
-		<span class="tooltip"><p>Content of a document file is added</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/appendImageFile:name:field:">&ndash;&nbsp;appendImageFile:name:field:</a></code>
-		<span class="tooltip"><p>Content of an image file is added</p></span>
+		<code><a href="#//api/name/attachFile:name:field:">&ndash;&nbsp;attachFile:name:field:</a></code>
+		<span class="tooltip"><p>Content of any file is added</p></span>
 	</span>
 	
 	
@@ -394,6 +477,195 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/HTTPBody" title="HTTPBody"></a>
+	<h3 class="subsubtitle method-title">HTTPBody</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>HTTP body</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSMutableData *HTTPBody</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/HTTPHeaderFields" title="HTTPHeaderFields"></a>
+	<h3 class="subsubtitle method-title">HTTPHeaderFields</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>HTTP headers</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPHeaderFields</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/HTTPMethod" title="HTTPMethod"></a>
+	<h3 class="subsubtitle method-title">HTTPMethod</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>HTTP method: GET or POST</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSString *HTTPMethod</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/HTTPQueryParameters" title="HTTPQueryParameters"></a>
+	<h3 class="subsubtitle method-title">HTTPQueryParameters</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Dictionary with key-value pairs for HTTP query URL part</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPQueryParameters</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Info:</p>
+
+<pre><code>URL: http://vk.com/user.get?key=value&amp;key2=value2
+Query: key=value&amp;key2=value2
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/HTTPURL" title="HTTPURL"></a>
+	<h3 class="subsubtitle method-title">HTTPURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>HTTP URL</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readwrite) NSURL *HTTPURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/cacheLiveTime" title="cacheLiveTime"></a>
@@ -622,7 +894,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (instancetype)requestHTTPMethod:(NSString *)<em>httpMethod</em> URL:(NSURL *)<em>url</em> headers:(NSDictionary *)<em>headers</em> body:(NSData *)<em>body</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)requestHTTPMethod:(NSString *)<em>httpMethod</em> URL:(NSURL *)<em>URL</em> headers:(NSDictionary *)<em>headers</em> body:(NSData *)<em>body</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
 	
@@ -635,7 +907,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
+			<dt><em>URL</em></dt>
 			<dd><p>NSURL on which a request will be performed</p></dd>
 		</dl>
 		
@@ -683,8 +955,8 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestHTTPMethod:methodName:options:delegate:" title="requestHTTPMethod:methodName:options:delegate:"></a>
-	<h3 class="subsubtitle method-title">requestHTTPMethod:methodName:options:delegate:</h3>
+	<a name="//api/name/requestHTTPMethod:methodName:queryParameters:delegate:" title="requestHTTPMethod:methodName:queryParameters:delegate:"></a>
+	<h3 class="subsubtitle method-title">requestHTTPMethod:methodName:queryParameters:delegate:</h3>
 	
 	
 	
@@ -694,7 +966,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (instancetype)requestHTTPMethod:(NSString *)<em>httpMethod</em> methodName:(NSString *)<em>methodName</em> options:(NSDictionary *)<em>options</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)requestHTTPMethod:(NSString *)<em>httpMethod</em> methodName:(NSString *)<em>methodName</em> queryParameters:(NSDictionary *)<em>queryParameters</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
 	
@@ -703,7 +975,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>httpMethod</em></dt>
-			<dd><p>GET/POST/PUT/DELETE</p></dd>
+			<dd><p>GET/POST</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -712,7 +984,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>options</em></dt>
+			<dt><em>queryParameters</em></dt>
 			<dd><p>params which should be sent (key = value)</p></dd>
 		</dl>
 		
@@ -734,6 +1006,17 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Example:</p>
+
+<pre><code>VKRequest *r = [VKRequest requestHTTPMethod:@"POST"
+                                 methodName:@"audio.save"
+                            queryParameters:@{@"server": @"23434", @"hash":@"14c234f32f2"}
+                                   delegate:self];
+</code></pre>
+	</div>
 	
 	
 	
@@ -750,8 +1033,8 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/requestMethod:options:delegate:" title="requestMethod:options:delegate:"></a>
-	<h3 class="subsubtitle method-title">requestMethod:options:delegate:</h3>
+	<a name="//api/name/requestMethod:queryParameters:delegate:" title="requestMethod:queryParameters:delegate:"></a>
+	<h3 class="subsubtitle method-title">requestMethod:queryParameters:delegate:</h3>
 	
 	
 	
@@ -761,7 +1044,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (instancetype)requestMethod:(NSString *)<em>methodName</em> options:(NSDictionary *)<em>options</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)requestMethod:(NSString *)<em>methodName</em> queryParameters:(NSDictionary *)<em>queryParameters</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
 	
@@ -770,11 +1053,11 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>methodName</em></dt>
-			<dd><p>VK method name (user.get, wall.post etc)</p></dd>
+			<dd><p>VK method name (users.get, wall.post etc)</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>options</em></dt>
+			<dt><em>queryParameters</em></dt>
 			<dd><p>params which should be sent (key = value)</p></dd>
 		</dl>
 		
@@ -796,6 +1079,16 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Example:</p>
+
+<pre><code>VKRequest *r = [VKRequest requestMethod:@"users.get"
+                        queryParameters:@{@"fields": @"nickname,age,city", @"count":@(100)}
+                               delegate:self];
+</code></pre><div class="warning"><p><strong>Warning:</strong> HTTP method defaults to GET.</p></div>
+	</div>
 	
 	
 	
@@ -820,18 +1113,18 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/appendAudioFile:name:field:" title="appendAudioFile:name:field:"></a>
-	<h3 class="subsubtitle method-title">appendAudioFile:name:field:</h3>
+	<a name="//api/name/attachFile:name:field:" title="attachFile:name:field:"></a>
+	<h3 class="subsubtitle method-title">attachFile:name:field:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Content of an audio file is added</p>
+		<p>Content of any file is added</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)appendAudioFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)attachFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
 
     
 	
@@ -840,12 +1133,12 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>file</em></dt>
-			<dd><p>audio file in byte representation</p></dd>
+			<dd><p>file byte representation</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>name</em></dt>
-			<dd><p>audio file name</p></dd>
+			<dd><p>file name</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -861,224 +1154,15 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKRequest.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/appendCaptchaSid:captchaKey:" title="appendCaptchaSid:captchaKey:"></a>
-	<h3 class="subsubtitle method-title">appendCaptchaSid:captchaKey:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Appends captcha options</p>
-	</div>		
-	
-    
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Example:</p>
 
-	<div class="method-subsection method-declaration"><code>- (void)appendCaptchaSid:(NSString *)<em>captchaSid</em> captchaKey:(NSString *)<em>captchaKey</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>captchaSid</em></dt>
-			<dd><p>unique captcha identifier</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>captchaKey</em></dt>
-			<dd><p>text that user entered</p></dd>
-		</dl>
-		
+<pre><code>[secondStep attachFile:[NSData dataWithContentsOfFile:audioPath]
+                  name:@"Above &amp; Beyond - Alone Tonight.mp3"
+                 field:@"file"];
+</code></pre>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKRequest.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/appendDocumentFile:name:field:" title="appendDocumentFile:name:field:"></a>
-	<h3 class="subsubtitle method-title">appendDocumentFile:name:field:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Content of a document file is added</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)appendDocumentFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>file</em></dt>
-			<dd><p>document file in byte representation</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>name</em></dt>
-			<dd><p>document file name</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>field</em></dt>
-			<dd><p>HTML field name, which will be used to send (wrap) data</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKRequest.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/appendImageFile:name:field:" title="appendImageFile:name:field:"></a>
-	<h3 class="subsubtitle method-title">appendImageFile:name:field:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Content of an image file is added</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)appendImageFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>file</em></dt>
-			<dd><p>image file in byte representation</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>name</em></dt>
-			<dd><p>image file name</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>field</em></dt>
-			<dd><p>HTML field name, which will be used to send (wrap) data</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">VKRequest.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/appendVideoFile:name:field:" title="appendVideoFile:name:field:"></a>
-	<h3 class="subsubtitle method-title">appendVideoFile:name:field:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Content of a video file is added</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)appendVideoFile:(NSData *)<em>file</em> name:(NSString *)<em>name</em> field:(NSString *)<em>field</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>file</em></dt>
-			<dd><p>video file in byte representation</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>name</em></dt>
-			<dd><p>video file name</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>field</em></dt>
-			<dd><p>HTML field name, which will be used to send (wrap) data</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -1131,8 +1215,8 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithHTTPMethod:URL:headers:body:" title="initWithHTTPMethod:URL:headers:body:"></a>
-	<h3 class="subsubtitle method-title">initWithHTTPMethod:URL:headers:body:</h3>
+	<a name="//api/name/initWithHTTPMethod:URL:headers:body:delegate:" title="initWithHTTPMethod:URL:headers:body:delegate:"></a>
+	<h3 class="subsubtitle method-title">initWithHTTPMethod:URL:headers:body:delegate:</h3>
 	
 	
 	
@@ -1142,7 +1226,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithHTTPMethod:(NSString *)<em>httpMethod</em> URL:(NSURL *)<em>url</em> headers:(NSDictionary *)<em>headers</em> body:(NSData *)<em>body</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithHTTPMethod:(NSString *)<em>httpMethod</em> URL:(NSURL *)<em>URL</em> headers:(NSDictionary *)<em>headers</em> body:(NSData *)<em>body</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
 	
@@ -1151,11 +1235,11 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>httpMethod</em></dt>
-			<dd><p>GET/POST/PUT/DELETE</p></dd>
+			<dd><p>GET/POST</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
+			<dt><em>URL</em></dt>
 			<dd><p>NSURL on which a request will be performed</p></dd>
 		</dl>
 		
@@ -1167,6 +1251,12 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		<dl class="argument-def parameter-def">
 			<dt><em>body</em></dt>
 			<dd><p>request body</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p><a href="#//api/name/delegate">delegate</a> that will receive notifications (should conform to
+<a href="../Protocols/VKRequestDelegate.html">VKRequestDelegate</a> protocol)</p></dd>
 		</dl>
 		
 	</div>
@@ -1197,8 +1287,8 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithMethod:options:" title="initWithMethod:options:"></a>
-	<h3 class="subsubtitle method-title">initWithMethod:options:</h3>
+	<a name="//api/name/initWithHTTPMethod:methodName:queryParameters:delegate:" title="initWithHTTPMethod:methodName:queryParameters:delegate:"></a>
+	<h3 class="subsubtitle method-title">initWithHTTPMethod:methodName:queryParameters:delegate:</h3>
 	
 	
 	
@@ -1208,7 +1298,74 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithMethod:(NSString *)<em>methodName</em> options:(NSDictionary *)<em>options</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithHTTPMethod:(NSString *)<em>httpMethod</em> methodName:(NSString *)<em>methodName</em> queryParameters:(NSDictionary *)<em>queryParameters</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>httpMethod</em></dt>
+			<dd><p>GET/POST</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>methodName</em></dt>
+			<dd><p>VK method name (users.get, wall.post etc)</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>queryParameters</em></dt>
+			<dd><p>params that should be transmitted to VK method</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p><a href="#//api/name/delegate">delegate</a> that will receive notifications (should conform to
+<a href="../Protocols/VKRequestDelegate.html">VKRequestDelegate</a> protocol)</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>VKRequest instance</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">VKRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithMethod:queryParameters:delegate:" title="initWithMethod:queryParameters:delegate:"></a>
+	<h3 class="subsubtitle method-title">initWithMethod:queryParameters:delegate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method for VKRequest initialization</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithMethod:(NSString *)<em>methodName</em> queryParameters:(NSDictionary *)<em>queryParameters</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
 	
@@ -1221,8 +1378,14 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>options</em></dt>
+			<dt><em>queryParameters</em></dt>
 			<dd><p>params that should be transmitted to VK method</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p><a href="#//api/name/delegate">delegate</a> that will receive notifications (should conform to
+<a href="../Protocols/VKRequestDelegate.html">VKRequestDelegate</a> protocol)</p></dd>
 		</dl>
 		
 	</div>
@@ -1243,7 +1406,8 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		<p>Example:</p>
 
 <pre><code>VKRequest *request = [[VKRequest alloc] initWithMethod:@"users.get"
-                                    options:@{@"fields": @"nickname,bdate,status"}];
+                                    queryParameters:@{@"fields": @"nickname,bdate,status"}
+                                    delegate:self];
 </code></pre>
 	</div>
 	
@@ -1262,8 +1426,8 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithRequest:" title="initWithRequest:"></a>
-	<h3 class="subsubtitle method-title">initWithRequest:</h3>
+	<a name="//api/name/initWithRequest:delegate:" title="initWithRequest:delegate:"></a>
+	<h3 class="subsubtitle method-title">initWithRequest:delegate:</h3>
 	
 	
 	
@@ -1273,7 +1437,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (instancetype)initWithRequest:(NSURLRequest *)<em>request</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithRequest:(NSURLRequest *)<em>request</em> delegate:(id&lt;VKRequestDelegate&gt;)<em>delegate</em></code></div>
 
     
 	
@@ -1283,6 +1447,12 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 		<dl class="argument-def parameter-def">
 			<dt><em>request</em></dt>
 			<dd><p>NSURLRequest which will be used as a base request for VKRequest</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p><a href="#//api/name/delegate">delegate</a> that will receive notifications (should conform to
+<a href="../Protocols/VKRequestDelegate.html">VKRequestDelegate</a> protocol)</p></dd>
 		</dl>
 		
 	</div>
@@ -1361,7 +1531,7 @@ if its lifetime ended, no deletion occurs (use this mode if no internet connecti
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 AndrewShmig. All rights reserved. (Last updated: 2014-03-17)</span><br />
+						<p><span class="copyright">&copy; 2014 AndrewShmig. All rights reserved. (Last updated: 2014-03-22)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
