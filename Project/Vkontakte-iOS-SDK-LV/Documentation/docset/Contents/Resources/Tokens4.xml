@@ -85,7 +85,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setCacheLiveTime:</TokenIdentifier>
-			<Abstract type="html">Cache lifetime for current request. Defaults to one hour.</Abstract>
+			<Abstract type="html">Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
@@ -97,7 +97,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cacheLiveTime</TokenIdentifier>
-			<Abstract type="html">Cache lifetime for current request. Defaults to one hour.</Abstract>
+			<Abstract type="html">Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
@@ -109,7 +109,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/cacheLiveTime</TokenIdentifier>
-			<Abstract type="html">Cache lifetime for current request. Defaults to one hour.</Abstract>
+			<Abstract type="html">Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>

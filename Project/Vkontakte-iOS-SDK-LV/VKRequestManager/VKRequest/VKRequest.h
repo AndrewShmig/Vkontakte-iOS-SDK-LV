@@ -142,7 +142,6 @@ AppDelegate.m file:
 
         VKRequest *firstStep = [_rm audioGetUploadServer:nil];
         firstStep.signature = @"firstStep";
-        firstStep.cacheLiveTime = VKCacheLiveTimeNever;
 
         [firstStep start];
     }
@@ -164,7 +163,6 @@ AppDelegate.m file:
                               name:@"Above & Beyond - Alone Tonight.mp3"
                              field:@"file"];
             secondStep.signature = @"secondStep";
-            secondStep.cacheLiveTime = VKCacheLiveTimeNever;
 
             [secondStep start];
         } else if ([request.signature isEqualToString:@"secondStep"]) {
@@ -176,7 +174,6 @@ AppDelegate.m file:
 
             thirdStep.signature = @"thirdStep";
             thirdStep.delegate = self;
-            thirdStep.cacheLiveTime = VKCacheLiveTimeNever;
 
             [thirdStep start];
         } else if ([request.signature isEqualToString:@"thirdStep"]) {
@@ -197,7 +194,7 @@ AppDelegate.m file:
 /** Request signature. Can be used as identifier for each request object.
 */
 @property (nonatomic, strong, readwrite) id signature;
-/** Cache lifetime for current request. Defaults to one hour.
+/** Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.
 */
 @property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime;
 /** Offline mode for current request. Current mode is used to return cache data even

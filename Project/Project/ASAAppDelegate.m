@@ -56,7 +56,7 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
                              initWithDelegate:self
                                          user:[VKUser currentUser]];
 
-    [_rm info];
+    [_rm newsfeedGet:nil];
 }
 
 - (void)VKRequest:(VKRequest *)request

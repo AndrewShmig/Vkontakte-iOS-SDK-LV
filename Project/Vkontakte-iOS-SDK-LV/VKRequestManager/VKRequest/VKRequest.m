@@ -46,6 +46,7 @@
     NSString *_boundary, *_boundaryHeader, *_boundaryFooter;
     NSInteger _expectedDataSize;
     BOOL _isFileAdded;
+    BOOL _isDataFromCache;
 }
 
 #pragma mark - Init methods
@@ -139,8 +140,8 @@
 {
     VK_LOG();
 
-    return [[VKRequest alloc] initWithRequest:request
-                                     delegate:delegate];
+    return [[self alloc] initWithRequest:request
+                                delegate:delegate];
 }
 
 + (instancetype)requestMethod:(NSString *)methodName
@@ -149,9 +150,9 @@
 {
     VK_LOG();
 
-    return [[VKRequest alloc] initWithMethod:methodName
-                             queryParameters:queryParameters
-                                    delegate:delegate];
+    return [[self alloc] initWithMethod:methodName
+                        queryParameters:queryParameters
+                               delegate:delegate];
 }
 
 + (instancetype)requestHTTPMethod:(NSString *)httpMethod
@@ -161,10 +162,10 @@
 {
     VK_LOG();
 
-    return [[VKRequest alloc] initWithHTTPMethod:httpMethod
-                                      methodName:methodName
-                                 queryParameters:queryParameters
-                                        delegate:delegate];
+    return [[self alloc] initWithHTTPMethod:httpMethod
+                                 methodName:methodName
+                            queryParameters:queryParameters
+                                   delegate:delegate];
 }
 
 + (instancetype)requestHTTPMethod:(NSString *)httpMethod
@@ -175,11 +176,11 @@
 {
     VK_LOG();
 
-    return [[VKRequest alloc] initWithHTTPMethod:httpMethod
-                                             URL:URL
-                                         headers:headers
-                                            body:body
-                                        delegate:delegate];
+    return [[self alloc] initWithHTTPMethod:httpMethod
+                                        URL:URL
+                                    headers:headers
+                                       body:body
+                                   delegate:delegate];
 }
 
 #pragma mark - Instance methods
@@ -201,6 +202,10 @@
                                              offlineMode:self.offlineMode];
     if (nil != cachedResponseData) {
         _receivedData = [cachedResponseData mutableCopy];
+
+//        данные взяты из кэша
+        _isDataFromCache = YES;
+
         [self connectionDidFinishLoading:_connection];
 
 //        нет надобности следить за состоянием "обновляющего" запроса
@@ -353,8 +358,6 @@
     return [description description];
 }
 
-#pragma mark - Getters & setters
-
 #pragma mark - NSURLConnectionDelegate
 
 - (void)connection:(NSURLConnection *)connection
@@ -506,8 +509,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 //    1. данные запроса не из кэша
 //    2. время жизни кэша не установлено в "никогда"
 //    3. метод запроса GET
-    if (VKCacheLiveTimeNever != self.cacheLiveTime && ![[self.HTTPMethod lowercaseString]
-                                                                         isEqualToString:@"post"]) {
+    if (!_isDataFromCache && VKCacheLiveTimeNever != self.cacheLiveTime && [[self.HTTPMethod lowercaseString]
+                                                                                             isEqualToString:@"get"]) {
         NSUInteger currentUserID = [VKUser currentUser].accessToken.userID;
         VKStorageItem *item = [[VKStorage sharedStorage]
                                           storageItemForUserID:currentUserID];
@@ -555,7 +558,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         _HTTPQueryParameters = (queryParameters != nil ? [queryParameters mutableCopy] : [NSMutableDictionary new]);
         _HTTPHeaderFields = (headerFields != nil ? [headerFields mutableCopy] : [NSMutableDictionary new]);
         _delegate = delegate;
-        _cacheLiveTime = VKCacheLiveTimeOneHour;
+        _cacheLiveTime = VKCacheLiveTimeNever;
         _offlineMode = NO;
         _signature = nil;
         _receivedData = [NSMutableData new];
@@ -566,6 +569,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
         _boundaryFooter = [NSString stringWithFormat:@"\r\n--%@--\r\n",
                                                      _boundary];
         _isFileAdded = NO;
+        _isDataFromCache = NO;
     }
 
     return self;

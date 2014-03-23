@@ -243,7 +243,6 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 
     VKRequest *firstStep = [_rm audioGetUploadServer:nil];
     firstStep.signature = @"firstStep";
-    firstStep.cacheLiveTime = VKCacheLiveTimeNever;
 
     [firstStep start];
 }
@@ -265,7 +264,6 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
                           name:@"Above &amp; Beyond - Alone Tonight.mp3"
                          field:@"file"];
         secondStep.signature = @"secondStep";
-        secondStep.cacheLiveTime = VKCacheLiveTimeNever;
 
         [secondStep start];
     } else if ([request.signature isEqualToString:@"secondStep"]) {
@@ -277,7 +275,6 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 
         thirdStep.signature = @"thirdStep";
         thirdStep.delegate = self;
-        thirdStep.cacheLiveTime = VKCacheLiveTimeNever;
 
         [thirdStep start];
     } else if ([request.signature isEqualToString:@"thirdStep"]) {
@@ -317,7 +314,7 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/cacheLiveTime">&nbsp;&nbsp;cacheLiveTime</a></code>
-		<span class="tooltip"><p>Cache lifetime for current request. Defaults to one hour.</p></span>
+		<span class="tooltip"><p>Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -674,7 +671,7 @@ Query: key=value&amp;key2=value2
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Cache lifetime for current request. Defaults to one hour.</p>
+		<p>Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.</p>
 	</div>		
 	
     
