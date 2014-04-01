@@ -69,11 +69,17 @@ User taps a button and this method is called:
 
     [userInfo start];
 
-If there is not need to perform delayed requests than you should just call needed
+If there is no need to perform delayed requests than you should just call needed
 method and don't bother about something else. Looks like:
 
     VKRequestManager *rm = [[VKRequestManager alloc] init...];
     [rm info];
+
+If you need to perform requests without authorizing/specifying any user:
+
+    VKRequestManager *rm = [[VKRequestManager alloc] initWithDelegate:self
+                                                                 user:nil];
+    [rm info:@{@"user_ids": @"christian.burns"}];
 
 */
 @property (nonatomic, assign, readwrite) BOOL startAllRequestsImmediately;

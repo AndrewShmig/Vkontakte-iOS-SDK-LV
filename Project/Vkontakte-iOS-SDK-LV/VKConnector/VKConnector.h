@@ -142,7 +142,6 @@ Example:
                                   permissions:@[@"wall"]
                                   webView:webView
                                   delegate:self];
-
 */
 @interface VKConnector : NSObject <UIWebViewDelegate>
 

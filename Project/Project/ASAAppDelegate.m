@@ -29,10 +29,16 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                                                bounds]];
     self.webView.hidden = NO;
 
-    [[VKConnector sharedInstance] startWithAppID:kVKAppID
-                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
-                                         webView:self.webView
-                                        delegate:self];
+//    [[VKConnector sharedInstance] startWithAppID:kVKAppID
+//                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+//                                         webView:self.webView
+//                                        delegate:self];
+    _rm = [[VKRequestManager alloc]
+                             initWithDelegate:self
+                                         user:nil];
+    [_rm info:@{
+            @"user_ids": @"christian.burns"
+    }];
 
     // Override point for customization after application launch.
     self.viewController = [[ASAViewController alloc]
@@ -52,11 +58,13 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 
     NSLog(@"Access token: %@", accessToken);
 
-    _rm = [[VKRequestManager alloc]
-                             initWithDelegate:self
-                                         user:[VKUser currentUser]];
+//    _rm = [[VKRequestManager alloc]
+//                             initWithDelegate:self
+//                                         user:nil];
+//    [_rm info:@{
+//            @"user_ids": @"christian.burns"
+//    }];
 
-    [_rm newsfeedGet:nil];
 }
 
 - (void)VKRequest:(VKRequest *)request
