@@ -46,7 +46,12 @@ Methods covered: 100%.
 */
 /** User from whose face requests are made.
 
-If the user property equals nil than no access token is added.
+If you need to perform requests without authorizing/specifying any user:
+
+    VKRequestManager *rm = [[VKRequestManager alloc] initWithDelegate:self
+                                                                 user:nil];
+    [rm info:@{@"user_ids": @"christian.burns"}];
+
 */
 @property (nonatomic, strong, readwrite) VKUser *user;
 
@@ -74,13 +79,6 @@ method and don't bother about something else. Looks like:
 
     VKRequestManager *rm = [[VKRequestManager alloc] init...];
     [rm info];
-
-If you need to perform requests without authorizing/specifying any user:
-
-    VKRequestManager *rm = [[VKRequestManager alloc] initWithDelegate:self
-                                                                 user:nil];
-    [rm info:@{@"user_ids": @"christian.burns"}];
-
 */
 @property (nonatomic, assign, readwrite) BOOL startAllRequestsImmediately;
 
