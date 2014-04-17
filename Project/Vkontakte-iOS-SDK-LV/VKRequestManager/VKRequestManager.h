@@ -101,6 +101,14 @@ Defaults to NO.
 - (instancetype)initWithDelegate:(id <VKRequestDelegate>)delegate
                             user:(VKUser *)user;
 
+/** Initialization method.
+
+No access token will be passed to VK during request.
+
+@param delegate delegate, should conform to VKRequestDelegate
+*/
+- (instancetype)initWithDelegate:(id<VKRequestDelegate>)delegate;
+
 @end
 
 @interface VKRequestManager (User)

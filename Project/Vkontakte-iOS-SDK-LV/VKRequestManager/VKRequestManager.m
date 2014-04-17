@@ -52,6 +52,12 @@
     return self;
 }
 
+- (instancetype)initWithDelegate:(id <VKRequestDelegate>)delegate
+{
+    return [self initWithDelegate:delegate
+                             user:nil];
+}
+
 #pragma mark - Users
 
 - (VKRequest *)info
