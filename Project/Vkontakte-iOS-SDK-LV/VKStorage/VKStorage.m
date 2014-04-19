@@ -128,6 +128,10 @@
     if (nil == item || nil == item.accessToken || nil == item.cache)
         return;
 
+//    удаляем данные предыдущей записи
+    [self removeItem:item];
+
+//    добавляем новые данные
     id storageKey = @(item.accessToken.userID);
     _storageItems[storageKey] = item;
 
