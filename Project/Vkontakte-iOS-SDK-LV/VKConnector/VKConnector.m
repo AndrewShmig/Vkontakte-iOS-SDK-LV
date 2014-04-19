@@ -173,6 +173,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 //            сохраняем токен доступа в хранилище
             VKStorageItem *storageItem = [[VKStorage sharedStorage]
                                                      createStorageItemForAccessToken:_accessToken];
+            [[VKStorage sharedStorage] removeItem:storageItem];
             [[VKStorage sharedStorage] storeItem:storageItem];
 
 //            уведомляем программиста, что токен был обновлён

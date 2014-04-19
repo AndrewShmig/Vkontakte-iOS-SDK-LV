@@ -29,16 +29,10 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                                                bounds]];
     self.webView.hidden = NO;
 
-//    [[VKConnector sharedInstance] startWithAppID:kVKAppID
-//                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
-//                                         webView:self.webView
-//                                        delegate:self];
-    _rm = [[VKRequestManager alloc]
-                             initWithDelegate:self
-                                         user:nil];
-    [_rm info:@{
-            @"user_ids": @"christian.burns"
-    }];
+    [[VKConnector sharedInstance] startWithAppID:kVKAppID
+                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+                                         webView:self.webView
+                                        delegate:self];
 
     // Override point for customization after application launch.
     self.viewController = [[ASAViewController alloc]
@@ -58,13 +52,21 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 
     NSLog(@"Access token: %@", accessToken);
 
-//    _rm = [[VKRequestManager alloc]
-//                             initWithDelegate:self
-//                                         user:nil];
-//    [_rm info:@{
-//            @"user_ids": @"christian.burns"
-//    }];
+    _rm = [[VKRequestManager alloc]
+                             initWithDelegate:self
+                                         user:[VKUser currentUser]];
+    [_rm info:@{
+            @"user_ids": @"christian.burns"
+    }];
 
+}
+
+- (void)VKRequest:(VKRequest *)request responseError:(NSError *)error
+{
+    [[VKConnector sharedInstance] startWithAppID:kVKAppID
+                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+                                         webView:self.webView
+                                        delegate:self];
 }
 
 - (void)VKRequest:(VKRequest *)request

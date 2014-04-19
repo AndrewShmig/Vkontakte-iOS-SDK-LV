@@ -194,7 +194,7 @@
         return;
 
 //    перед тем как начать выполнение запроса проверим кэш
-    NSUInteger currentUserID = [[[VKUser currentUser] accessToken] userID];
+    NSUInteger currentUserID = [VKUser currentUser].accessToken.userID;
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
 
