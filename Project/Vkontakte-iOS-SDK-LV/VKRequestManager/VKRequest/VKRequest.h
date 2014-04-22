@@ -21,6 +21,7 @@
 
 
 @class VKRequest;
+@class VKRequestManager;
 
 
 /** Current protocol describes basic methods which report states of a running request.
@@ -191,6 +192,9 @@ AppDelegate.m file:
 /** Delegate
 */
 @property (nonatomic, weak, readwrite) id <VKRequestDelegate> delegate;
+/** Request Manager to which current request belongs to.
+*/
+@property (nonatomic, strong, readwrite) VKRequestManager *requestManager;
 /** Request signature. Can be used as identifier for each request object.
 */
 @property (nonatomic, strong, readwrite) id signature;

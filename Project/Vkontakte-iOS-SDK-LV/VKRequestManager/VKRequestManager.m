@@ -2525,11 +2525,6 @@
         queryParameters = [queryParameters mutableCopy];
     }
 
-//    adding access token if needed
-    if (nil != self.user) {
-        ((NSMutableDictionary *)queryParameters)[@"access_token"] = self.user.accessToken.token;
-    }
-
     VKRequest *req = [VKRequest requestHTTPMethod:httpMethod
                                        methodName:methodName
                                   queryParameters:queryParameters
@@ -2537,6 +2532,7 @@
 
     req.signature = NSStringFromSelector(selector);
     req.offlineMode = self.offlineMode;
+    req.requestManager = self;
 
     if (self.startAllRequestsImmediately)
         [req start];

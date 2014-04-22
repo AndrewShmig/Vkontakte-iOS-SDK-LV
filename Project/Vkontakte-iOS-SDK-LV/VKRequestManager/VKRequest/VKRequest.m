@@ -21,6 +21,7 @@
 #import "VKMethods.h"
 #import "VkontakteSDK_Logger.h"
 #import "VKUser.h"
+#import "VKRequestManager.h"
 
 
 #define kCaptchaErrorCode 14
@@ -194,7 +195,7 @@
         return;
 
 //    перед тем как начать выполнение запроса проверим кэш
-    NSUInteger currentUserID = [VKUser currentUser].accessToken.userID;
+    NSUInteger currentUserID = self.requestManager.user.accessToken.userID;
     VKStorageItem *item = [[VKStorage sharedStorage]
                                       storageItemForUserID:currentUserID];
 
@@ -214,6 +215,9 @@
     }
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+
+//    добавляем пользовательский токен доступа
+    self.HTTPQueryParameters[@"access_token"] = item.accessToken.token;
 
 //    HTTP метод отправки запроса
     request.HTTPMethod = self.HTTPMethod;
@@ -511,7 +515,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 //    3. метод запроса GET
     if (!_isDataFromCache && VKCacheLiveTimeNever != self.cacheLiveTime && [[self.HTTPMethod lowercaseString]
                                                                                              isEqualToString:@"get"]) {
-        NSUInteger currentUserID = [VKUser currentUser].accessToken.userID;
+        NSUInteger currentUserID = self.requestManager.user.accessToken.userID;
         VKStorageItem *item = [[VKStorage sharedStorage]
                                           storageItemForUserID:currentUserID];
 
