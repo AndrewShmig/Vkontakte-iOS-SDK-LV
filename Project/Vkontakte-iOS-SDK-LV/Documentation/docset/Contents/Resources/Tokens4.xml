@@ -48,6 +48,42 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setRequestManager:</TokenIdentifier>
+			<Abstract type="html">Request Manager to which current request belongs to.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) VKRequestManager *requestManager</Declaration>
+			
+			
+			<Anchor>//api/name/requestManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/requestManager</TokenIdentifier>
+			<Abstract type="html">Request Manager to which current request belongs to.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) VKRequestManager *requestManager</Declaration>
+			
+			
+			<Anchor>//api/name/requestManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/requestManager</TokenIdentifier>
+			<Abstract type="html">Request Manager to which current request belongs to.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) VKRequestManager *requestManager</Declaration>
+			
+			
+			<Anchor>//api/name/requestManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setSignature:</TokenIdentifier>
 			<Abstract type="html">Request signature. Can be used as identifier for each request object.</Abstract>
 			<DeclaredIn>VKRequest.h</DeclaredIn>			
