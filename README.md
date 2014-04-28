@@ -9,6 +9,8 @@ VK (Originally VKontakte, Russian: ВКонтакте, literally "in contact") i
 #Documentation & Examples & Etc
 Additional and latest documentation, hacks and features you can find [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/tree/master/Project/Vkontakte-iOS-SDK-LV/Documentation/html).
 
+Tutorials and more details you can get [here](https://andrewshmig.github.io/Vkontakte-iOS-SDK-LV/).
+
 #Vkontakte SDK
 Feature requests can be left [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/new).
 List of all versions can be found [here](https://github.com/AndrewShmig/Vkontakte-iOS-SDK-LV/releases).
