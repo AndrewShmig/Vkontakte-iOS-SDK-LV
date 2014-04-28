@@ -216,7 +216,7 @@
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
-//    добавляем пользовательский токен доступа
+//    добавляем актуальный пользовательский токен доступа
     self.HTTPQueryParameters[@"access_token"] = item.accessToken.token;
 
 //    HTTP метод отправки запроса

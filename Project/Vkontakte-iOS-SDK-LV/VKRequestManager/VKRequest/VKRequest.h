@@ -392,6 +392,8 @@ Example:
 @param name file name
 @param field HTML field name, which will be used to send (wrap) data
 */
-- (void)attachFile:(NSData *)file name:(NSString *)name field:(NSString *)field;
+- (void)attachFile:(NSData *)file
+              name:(NSString *)name
+             field:(NSString *)field;
 
 @end
