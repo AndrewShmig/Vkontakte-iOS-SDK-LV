@@ -131,8 +131,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     VK_LOG();
 
 //    вызываем метод делегата, который уведомляет о завершении загрузки
-    if ([self.delegate respondsToSelector:@selector(VKConnector:webViewDidFinishLoad:)]) {
-        [self.delegate VKConnector:self
+    if ([self.delegate respondsToSelector:@selector(connector:webViewDidFinishLoad:)]) {
+        [self.delegate connector:self
               webViewDidFinishLoad:webView];
     }
 
@@ -176,9 +176,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
             [[VKStorage sharedStorage] storeItem:storageItem];
 
 //            уведомляем программиста, что токен был обновлён
-            if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalSucceeded:)]) {
+            if ([self.delegate respondsToSelector:@selector(connector:accessTokenRenewalSucceeded:)]) {
 
-                [self.delegate VKConnector:self
+                [self.delegate connector:self
                accessTokenRenewalSucceeded:_accessToken];
             }
 
@@ -187,9 +187,9 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         } else {
 //            пользователь отказался авторизовать приложение
 //            не удалось обновить/получить токен доступа
-            if ([self.delegate respondsToSelector:@selector(VKConnector:accessTokenRenewalFailed:)]) {
+            if ([self.delegate respondsToSelector:@selector(connector:accessTokenRenewalFailed:)]) {
 
-                [self.delegate VKConnector:self
+                [self.delegate connector:self
                   accessTokenRenewalFailed:nil];
             }
         }
@@ -198,18 +198,18 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 //    показываем пользователю окно только в том случае, если от него требуются
 //    какие-то действия - ввод пароля, ввод капчи и тд
     if ([self showVKModalViewForWebView:webView]) {
-        if (webView.hidden && [self.delegate respondsToSelector:@selector(VKConnector:willShowWebView:)]) {
+        if (webView.hidden && [self.delegate respondsToSelector:@selector(connector:willShowWebView:)]) {
 
-            [self.delegate VKConnector:self
+            [self.delegate connector:self
                        willShowWebView:webView];
         }
     }
 
 //    прячем окно, если обработали либо авторизацию, либо отказ от авторизации
     if ([url hasPrefix:kVkontakteBlankURL]) {
-        if (!webView.hidden && [self.delegate respondsToSelector:@selector(VKConnector:willHideWebView:)]) {
+        if (!webView.hidden && [self.delegate respondsToSelector:@selector(connector:willHideWebView:)]) {
 
-            [self.delegate VKConnector:self
+            [self.delegate connector:self
                        willHideWebView:webView];
         }
     }
@@ -220,8 +220,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     VK_LOG();
 
 //    вызываем метод делегата, который уведомляет о завершении загрузки
-    if ([self.delegate respondsToSelector:@selector(VKConnector:webViewDidStartLoad:)]) {
-        [self.delegate VKConnector:self
+    if ([self.delegate respondsToSelector:@selector(connector:webViewDidStartLoad:)]) {
+        [self.delegate connector:self
                webViewDidStartLoad:webView];
     }
 }
@@ -234,14 +234,14 @@ didFailLoadWithError:(NSError *)error
             @"error"   : error
     });
 
-    if ([self.delegate respondsToSelector:@selector(VKConnector:connectionError:)]) {
+    if ([self.delegate respondsToSelector:@selector(connector:connectionError:)]) {
 
         if (!webView.hidden) {
-            [self.delegate VKConnector:self
+            [self.delegate connector:self
                        willHideWebView:webView];
         }
 
-        [self.delegate VKConnector:self
+        [self.delegate connector:self
                    connectionError:error];
     }
 }
@@ -259,13 +259,13 @@ didFailLoadWithError:(NSError *)error
 //    удаления приложения
     if (nil == html || [html isEmpty]) {
 
-        if ([self.delegate respondsToSelector:@selector(VKConnector:applicationWasDeleted:)]) {
+        if ([self.delegate respondsToSelector:@selector(connector:applicationWasDeleted:)]) {
 
             NSError *error = [NSError errorWithDomain:kVKErrorDomain
                                                  code:kVKApplicationWasDeletedErrorCode
                                              userInfo:nil];
 
-            [self.delegate VKConnector:self
+            [self.delegate connector:self
                  applicationWasDeleted:error];
         }
 
