@@ -39,7 +39,7 @@ There is only one required method - method that is getting an answer from VK ser
 @param request request that changed its state
 @param response server response as Foundation object
 */
-- (void)VKRequest:(VKRequest *)request response:(id)response;
+- (void)request:(VKRequest *)request response:(id)response;
 
 @optional
 /**
@@ -50,21 +50,21 @@ There is only one required method - method that is getting an answer from VK ser
 @param request request that changed its state
 @param error error description
 */
-- (void)VKRequest:(VKRequest *)request connectionError:(NSError *)error;
+- (void)request:(VKRequest *)request connectionError:(NSError *)error;
 
 /** Method is called if any error occurs during server response parsing
 
 @param request request that changed its state
 @param error error description
 */
-- (void)VKRequest:(VKRequest *)request parsingError:(NSError *)error;
+- (void)request:(VKRequest *)request parsingError:(NSError *)error;
 
 /** Method is called if server response contains any error message
 
 @param request request that changed its state
 @param error error description as Foundation object obtained from server response
 */
-- (void)VKRequest:(VKRequest *)request responseError:(NSError *)error;
+- (void)request:(VKRequest *)request responseError:(NSError *)error;
 
 /** Method is called if user needs to enter captcha
 
@@ -75,7 +75,7 @@ https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11
 @param captchaSid unique captcha identifier
 @param captchaImage link to captcha (an image that should be shown to end user)
 */
-- (void)VKRequest:(VKRequest *)request
+- (void)request:(VKRequest *)request
        captchaSid:(NSString *)captchaSid
      captchaImage:(NSURL *)captchaImage;
 
@@ -84,7 +84,7 @@ https://github.com/AndrewShmig/Vkontakte-iOS-SDK-v2.0/issues/11
 @param request request that changed its state
 @param redirectURL URI that user should open in any browser
 */
-- (void)    VKRequest:(VKRequest *)request
+- (void)    request:(VKRequest *)request
 validationRedirectURL:(NSURL *)redirectURL;
 
 /** Method is called each time new portion of data is received
@@ -94,7 +94,7 @@ validationRedirectURL:(NSURL *)redirectURL;
 than 0 is used
 @param downloadedBytes bytes already downloaded
 */
-- (void)VKRequest:(VKRequest *)request
+- (void)request:(VKRequest *)request
        totalBytes:(NSInteger)totalBytes
   downloadedBytes:(NSInteger)downloadedBytes;
 
@@ -106,7 +106,7 @@ this method while uploading images, audio, video files)
 than 0 is used.
 @param uploadedBytes bytes already uploaded
 */
-- (void)VKRequest:(VKRequest *)request
+- (void)request:(VKRequest *)request
        totalBytes:(NSInteger)totalBytes
     uploadedBytes:(NSInteger)uploadedBytes;
 

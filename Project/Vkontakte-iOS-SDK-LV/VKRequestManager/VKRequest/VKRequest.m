@@ -383,7 +383,7 @@ didReceiveResponse:(NSURLResponse *)response
                                                      @"Localized status code string" : [NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]
                                              }];
 
-            [self.delegate VKRequest:self
+            [self.delegate request:self
                      connectionError:error];
         }
 
@@ -415,7 +415,7 @@ didReceiveResponse:(NSURLResponse *)response
 
     if ([self.delegate respondsToSelector:@selector(VKRequest:totalBytes:downloadedBytes:)]) {
 
-        [self.delegate VKRequest:self
+        [self.delegate request:self
                       totalBytes:_expectedDataSize
                  downloadedBytes:_receivedData.length];
     }
@@ -435,7 +435,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
     if ([self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
 
-        [self.delegate VKRequest:self
+        [self.delegate request:self
                       totalBytes:self.HTTPBody.length
                    uploadedBytes:(NSUInteger) totalBytesWritten];
     }
@@ -458,7 +458,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
     if (nil != error) {
         if ([self.delegate respondsToSelector:@selector(VKRequest:parsingError:)]) {
-            [self.delegate VKRequest:self
+            [self.delegate request:self
                         parsingError:error];
         }
 
@@ -475,7 +475,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
                 NSString *captchaSid = json[@"error"][@"captcha_sid"];
                 NSString *captchaImage = json[@"error"][@"captcha_img"];
 
-                [self.delegate VKRequest:self
+                [self.delegate request:self
                               captchaSid:captchaSid
                             captchaImage:[NSURL URLWithString:captchaImage]];
             }
@@ -491,7 +491,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
             if ([self.delegate respondsToSelector:@selector(VKRequest:validationRedirectURL:)]) {
                 NSString *validationURI = json[@"error"][@"redirect_uri"];
 
-                [self.delegate VKRequest:self
+                [self.delegate request:self
                    validationRedirectURL:[NSURL URLWithString:validationURI]];
             }
 
@@ -500,7 +500,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 
 //        другая ошибка
         if ([self.delegate respondsToSelector:@selector(VKRequest:responseError:)]) {
-            [self.delegate VKRequest:self
+            [self.delegate request:self
                        responseError:json[@"error"]];
         }
 
@@ -525,7 +525,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     }
 
 //    возвращаем Foundation объект
-    [self.delegate VKRequest:self
+    [self.delegate request:self
                     response:json];
 }
 
@@ -538,7 +538,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     });
 
     if ([self.delegate respondsToSelector:@selector(VKRequest:connectionError:)]) {
-        [self.delegate VKRequest:self
+        [self.delegate request:self
                  connectionError:error];
     }
 }
