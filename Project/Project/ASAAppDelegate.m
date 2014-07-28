@@ -16,65 +16,61 @@ static NSString *const kVKPermissionsArray = @"photos,friends,wall,audio,video,d
 
 @implementation ASAAppDelegate
 {
-    VKRequestManager *_rm;
+  VKRequestManager *_rm;
 }
 
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc]
-                             initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    self.webView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen]
-                                                               bounds]];
-    self.webView.hidden = NO;
-
-    [[VKConnector sharedInstance] startWithAppID:kVKAppID
-                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
-                                         webView:self.webView
-                                        delegate:self];
-
-    // Override point for customization after application launch.
-    self.viewController = [[ASAViewController alloc]
-                                              initWithNibName:@"ASAViewController"
-                                                       bundle:nil];
-    [self.viewController.view addSubview:self.webView];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
-
-    return YES;
+  self.window = [[UIWindow alloc]
+                 initWithFrame:[[UIScreen mainScreen] bounds]];
+  
+  self.webView = [[UIWebView alloc] initWithFrame:[[UIScreen mainScreen]
+                                                   bounds]];
+  self.webView.hidden = NO;
+  
+  [[VKConnector sharedInstance] startWithAppID:kVKAppID
+                                    permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+                                       webView:self.webView
+                                      delegate:self];
+  
+  // Override point for customization after application launch.
+  self.viewController = [[ASAViewController alloc]
+                         initWithNibName:@"ASAViewController"
+                         bundle:nil];
+  [self.viewController.view addSubview:self.webView];
+  self.window.rootViewController = self.viewController;
+  [self.window makeKeyAndVisible];
+  
+  return YES;
 }
 
-- (void)        VKConnector:(VKConnector *)connector
+- (void)        connector:(VKConnector *)connector
 accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
 {
-    NSLog(@"%s", __FUNCTION__);
-
-    NSLog(@"Access token: %@", accessToken);
-
-    _rm = [[VKRequestManager alloc]
-                             initWithDelegate:self
-                                         user:[VKUser currentUser]];
-    [_rm info:@{
-            @"user_ids": @"christian.burns"
-    }];
-
+  NSLog(@"%s", __FUNCTION__);
+  
+  NSLog(@"Access token: %@", accessToken);
+  
+  _rm = [[VKRequestManager alloc] initWithDelegate:self];
+  [_rm info:@{@"user_ids": @"christian.burns"}];
+  
 }
 
-- (void)VKRequest:(VKRequest *)request responseError:(NSError *)error
+- (void)request:(VKRequest *)request responseError:(NSError *)error
 {
-    [[VKConnector sharedInstance] startWithAppID:kVKAppID
-                                      permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
-                                         webView:self.webView
-                                        delegate:self];
+  [[VKConnector sharedInstance] startWithAppID:kVKAppID
+                                    permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
+                                       webView:self.webView
+                                      delegate:self];
 }
 
-- (void)VKRequest:(VKRequest *)request
+- (void)request:(VKRequest *)request
          response:(id)response
 {
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"request: %@", request);
-    NSLog(@"response: %@", response);
+  NSLog(@"%s", __FUNCTION__);
+  NSLog(@"request: %@", request);
+  NSLog(@"response: %@", response);
 }
 
 @end

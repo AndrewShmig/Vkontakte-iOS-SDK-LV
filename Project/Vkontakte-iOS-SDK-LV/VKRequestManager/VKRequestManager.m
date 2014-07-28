@@ -36,11 +36,6 @@
 - (instancetype)initWithDelegate:(id <VKRequestDelegate>)delegate
                             user:(VKUser *)user
 {
-    VK_LOG(@"%@", @{
-            @"delegate" : delegate,
-            @"user"     : user
-    });
-
     self = [super init];
 
     if (self) {
@@ -2510,14 +2505,6 @@
                               queryParameters:(NSDictionary *)queryParameters
                                      selector:(SEL)selector
 {
-    //    logging
-    VK_LOG(@"%@", @{
-            @"httpMethod"      : httpMethod,
-            @"methodName"      : methodName,
-            @"queryParameters" : queryParameters,
-            @"selector"        : NSStringFromSelector(selector)
-    });
-
 //    lets not work with nil values
     if (nil == queryParameters) {
         queryParameters = [NSMutableDictionary new];
