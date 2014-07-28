@@ -69,7 +69,6 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
          response:(id)response
 {
   NSLog(@"%s", __FUNCTION__);
-  NSLog(@"request: %@", request);
   NSLog(@"response: %@", response);
 }
 

@@ -377,7 +377,7 @@ didReceiveResponse:(NSURLResponse *)response
   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
   
   if (200 != [httpResponse statusCode]) {
-    if ([self.delegate respondsToSelector:@selector(VKRequest:connectionError:)]) {
+    if ([self.delegate respondsToSelector:@selector(request:connectionError:)]) {
       NSError *error = [NSError errorWithDomain:@"VKRequestErrorDomain"
                                            code:[httpResponse statusCode]
                                        userInfo:@{
@@ -415,7 +415,7 @@ didReceiveResponse:(NSURLResponse *)response
   
   [_receivedData appendData:data];
   
-  if ([self.delegate respondsToSelector:@selector(VKRequest:totalBytes:downloadedBytes:)]) {
+  if ([self.delegate respondsToSelector:@selector(request:totalBytes:downloadedBytes:)]) {
     
     [self.delegate request:self
                 totalBytes:_expectedDataSize
@@ -435,7 +435,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
                   @"totalBytesExpectedToWrite" : @(totalBytesExpectedToWrite)
                   });
   
-  if ([self.delegate respondsToSelector:@selector(VKRequest:totalBytes:uploadedBytes:)]) {
+  if ([self.delegate respondsToSelector:@selector(request:totalBytes:uploadedBytes:)]) {
     
     [self.delegate request:self
                 totalBytes:self.HTTPBody.length
@@ -459,7 +459,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
                                               error:&error];
   
   if (nil != error) {
-    if ([self.delegate respondsToSelector:@selector(VKRequest:parsingError:)]) {
+    if ([self.delegate respondsToSelector:@selector(request:parsingError:)]) {
       [self.delegate request:self
                 parsingError:error];
     }
@@ -473,7 +473,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     //      капча ли?
     if (kCaptchaErrorCode == [json[@"error"][@"error_code"] integerValue]) {
       
-      if ([self.delegate respondsToSelector:@selector(VKRequest:captchaSid:captchaImage:)]) {
+      if ([self.delegate respondsToSelector:@selector(request:captchaSid:captchaImage:)]) {
         NSString *captchaSid = json[@"error"][@"captcha_sid"];
         NSString *captchaImage = json[@"error"][@"captcha_img"];
         
@@ -490,7 +490,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     //        ошибка валидации пользователя? (security check)
     if (kValidationRequired == [json[@"error"][@"error_code"] integerValue]) {
       
-      if ([self.delegate respondsToSelector:@selector(VKRequest:validationRedirectURL:)]) {
+      if ([self.delegate respondsToSelector:@selector(request:validationRedirectURL:)]) {
         NSString *validationURI = json[@"error"][@"redirect_uri"];
         
         [self.delegate request:self
@@ -501,7 +501,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     }
     
     //        другая ошибка
-    if ([self.delegate respondsToSelector:@selector(VKRequest:responseError:)]) {
+    if ([self.delegate respondsToSelector:@selector(request:responseError:)]) {
       [self.delegate request:self
                responseError:json[@"error"]];
     }
@@ -539,7 +539,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
                   @"error"      : error
                   });
   
-  if ([self.delegate respondsToSelector:@selector(VKRequest:connectionError:)]) {
+  if ([self.delegate respondsToSelector:@selector(request:connectionError:)]) {
     [self.delegate request:self
            connectionError:error];
   }

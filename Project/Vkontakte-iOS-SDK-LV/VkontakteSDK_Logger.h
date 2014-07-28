@@ -32,7 +32,7 @@
 #define VK_VERBOSE_LOGS 1
 #define VK_MEGA_VERBOSE_LOGS 2
 
-#define VK_LOG_MODE VK_SILENT_LOGS // Current log level
+#define VK_LOG_MODE VK_MEGA_VERBOSE_LOGS // Current log level
 
 #if VK_LOG_MODE == VK_MEGA_VERBOSE_LOGS
 #   define VK_LOG(format, ...)\
