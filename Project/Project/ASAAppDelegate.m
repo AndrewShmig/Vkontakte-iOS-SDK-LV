@@ -33,6 +33,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 //                                    permissons:[kVKPermissionsArray componentsSeparatedByString:@","]
 //                                       webView:self.webView
 //                                      delegate:self];
+  
   _rm = [[VKRequestManager alloc] initWithDelegate:self];
   _rm.startAllRequestsImmediately = NO;
   
@@ -58,7 +59,7 @@ accessTokenRenewalSucceeded:(VKAccessToken *)accessToken
   
   NSLog(@"Access token: %@", accessToken);
   
-//  _rm = [[VKRequestManager alloc] initWithDelegate:self];
+//  _rm = [[VKRequestManager alloc] initWithDelegate:self user:[VKUser currentUser]];
 //  _rm.startAllRequestsImmediately = NO;
 //  
 //  VKRequest *r = [_rm info:@{@"user_ids": @"christian.burns"}];

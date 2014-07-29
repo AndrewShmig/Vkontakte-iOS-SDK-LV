@@ -95,21 +95,22 @@ static VKUser *_ghostUser;
     return _ghostUser;
   }
   
-  // проверим, если призрачный пользователь был ранее создан
   VKStorageItem *item = [[VKStorage sharedStorage] storageItemForUser:_ghostUser];
+  VKStorageItem *storageItem;
   
   if (nil == item) {
-    // пользователь не создан - создаем
     VKAccessToken *ghostUserAccessToken = [[VKAccessToken alloc] initWithUserID:kGhostUserID
                                                                     accessToken:@""];
     
     // сохраняем токен доступа в хранилище
-    VKStorageItem *storageItem = [[VKStorage sharedStorage]
-                                  createStorageItemForAccessToken:ghostUserAccessToken];
+    storageItem = [[VKStorage sharedStorage]
+                   createStorageItemForAccessToken:ghostUserAccessToken];
     [[VKStorage sharedStorage] storeItem:storageItem];
-    
-    _ghostUser = [[VKUser alloc] initWithStorageItem:storageItem];
+  } else {
+    storageItem = [[VKStorage sharedStorage] storageItemForUser:kGhostUserID];
   }
+  
+  _ghostUser = [[VKUser alloc] initWithStorageItem:storageItem];
   
   return _ghostUser;
 }
