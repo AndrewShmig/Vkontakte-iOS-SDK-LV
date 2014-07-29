@@ -30,6 +30,9 @@
 
 
 @implementation VKRequestManager
+{
+  VKUser *_user;
+}
 
 #pragma mark - Init
 
@@ -51,6 +54,16 @@
 {
     return [self initWithDelegate:delegate
                              user:nil];
+}
+
+#pragma mark - Getters & Setters
+
+- (VKUser *)user {
+  return _user ? _user : [VKUser ghostUser];
+}
+
+- (void)setUser:(VKUser *)user {
+  _user = user;
 }
 
 #pragma mark - Users

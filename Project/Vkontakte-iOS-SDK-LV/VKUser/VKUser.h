@@ -66,6 +66,14 @@ Second example:
 */
 + (instancetype)currentUser;
 
+/** Non-authorized user, guest.
+ 
+ This "ghost user" is used to help caching metchanism to work with non-authorized
+ requests (requests that don't have access_token)
+ 
+*/
++ (instancetype)ghostUser;
+
 /** Activates user with passed unique user identifier
 
 If there is no such user then NO will be returned, otherwise - YES.

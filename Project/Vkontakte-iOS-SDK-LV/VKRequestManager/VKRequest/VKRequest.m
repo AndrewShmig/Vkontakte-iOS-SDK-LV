@@ -195,29 +195,28 @@
     return;
   
   //    перед тем как начать выполнение запроса проверим кэш
-  if (self.requestManager.user) {
-    NSUInteger currentUserID = self.requestManager.user.accessToken.userID;
-    VKStorageItem *item = [[VKStorage sharedStorage]
-                           storageItemForUserID:currentUserID];
+  NSUInteger currentUserID = self.requestManager.user.accessToken.userID;
+  VKStorageItem *item = [[VKStorage sharedStorage]
+                         storageItemForUserID:currentUserID];
+  
+  NSData *cachedResponseData = [item.cache cacheForURL:[self uniqueRequestURL]
+                                           offlineMode:self.offlineMode];
+  if (nil != cachedResponseData) {
+    _receivedData = [cachedResponseData mutableCopy];
     
-    NSData *cachedResponseData = [item.cache cacheForURL:[self uniqueRequestURL]
-                                             offlineMode:self.offlineMode];
-    if (nil != cachedResponseData) {
-      _receivedData = [cachedResponseData mutableCopy];
-      
-      //        данные взяты из кэша
-      _isDataFromCache = YES;
-      
-      [self connectionDidFinishLoading:_connection];
-      
-      //        нет надобности следить за состоянием "обновляющего" запроса
-      //        только при удачном исходе данные в кэше будут обновлены
-      self.delegate = nil;
-    }
+    //        данные взяты из кэша
+    _isDataFromCache = YES;
     
-    //    добавляем актуальный пользовательский токен доступа
-    self.HTTPQueryParameters[@"access_token"] = item.accessToken.token;
+    [self connectionDidFinishLoading:_connection];
+    
+    //        нет надобности следить за состоянием "обновляющего" запроса
+    //        только при удачном исходе данные в кэше будут обновлены
+    self.delegate = nil;
   }
+  
+  //    добавляем актуальный пользовательский токен доступа
+  if (!item.accessToken.token.isEmpty)
+    self.HTTPQueryParameters[@"access_token"] = item.accessToken.token;
   
   NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
   
